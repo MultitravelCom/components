@@ -7,15 +7,15 @@
     background: #2A8BFE;
     border-radius: 40px;
 }
+.main__container__widge:hover{
+    background: #1169B7;
+}
+.main__container__widge:active{
+    background-color: #0d4e88;
+}
 .agentWidget {
     background: #2A8BFE;
     color: #FFFFFF;
-}
-.agentWidget:hover{
-    background: #1169B7;
-}
-.agentWidget:active{
-    background-color: #0d4e88;
 }
 .main__container__widget_text{
     font-style: normal;
