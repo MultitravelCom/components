@@ -1,12 +1,15 @@
 .main__container__widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 204px;
     height: 28px;
     background: #2A8BFE;
     border-radius: 40px;
 }
 .agentWidget {
-    background: #FFFFFF;
-    transform: matrix(1, 0, 0, -1, 0, 0);
+    background: #2A8BFE;
+    color: #FFFFFF;
 }
 .agentWidget:hover{
     background: #1169B7;
