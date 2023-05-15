@@ -1,3 +1,9 @@
+const ModalContactos = () =>{
+    <div>
+        <div className="glyphicon glyphicon-phone"></div>
+    </div>
+}
+
 const Widget = () =>{
     return(
        <div className="main__container__widget">
