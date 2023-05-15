@@ -2,7 +2,7 @@ const Widget = () =>{
     return(
        <div className="main__container__widget">
             <div className="glyphicon glyphicon-agent agentWidget"></div>
-            <div className="glyphicon glyphicon-info-circle">Atención personalizada</div>
+            <div className="main__container__widget_text">Atención personalizada</div>
        </div> 
     )
 }
