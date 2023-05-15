@@ -8,12 +8,13 @@
     border-radius: 40px;
 }
 .main__container__widge:hover{
-    background: #1169B7;
+    background-color: #1169B7;
 }
 .main__container__widge:active{
     background-color: #0d4e88;
 }
 .agentWidget {
+    font-size: 20px;
     background: #2A8BFE;
     color: #FFFFFF;
 }
