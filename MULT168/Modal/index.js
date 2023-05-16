@@ -106,4 +106,4 @@ const App = () => {
     );
 };
 const btnModal = document.querySelectorAll(".pull-left.hidden-xs");
-ReactDOM.render(<App />, btnModal);
+ReactDOM.createRoot(btnModal).render(<App />);
