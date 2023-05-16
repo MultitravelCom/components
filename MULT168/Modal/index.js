@@ -105,5 +105,5 @@ const App = () => {
         </>
     );
 };
-
-ReactDOM.createRoot(document.querySelector('.upper-menu__phone-wrapper')).render(<App />);
+const btnModal = document.querySelectorAll(".pull-left.hidden-xs");
+ReactDOM.render(<App />, btnModal);
