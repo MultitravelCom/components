@@ -127,8 +127,8 @@
     color: #8C8C8C;
 }
 
-.glyphicon-phone {
-    background: #0D4E88;
+.glyphicon-phone,
+.glyphicon-whatsapp-bottomless{
     width: 49px;
     height: 32px;
     border-radius: 100%;
@@ -138,7 +138,6 @@
     line-height: 0;
     color: white;
 }
-
 .row-modal {
     display: flex;
     justify-content: space-between;

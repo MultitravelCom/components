@@ -55,7 +55,7 @@ const Modal = ({ open, onClose }) => {
                         <div className="row-modal">
                             <ModalContactos
                                 iconModal="glyphicon-phone"
-                                modalClass="ventaStyle"
+                                modalClass="blue"
                                 ventasClass="blue"
                                 ventasText="Ventas<span>0800 348 0003</span>"
                                 horarioClass="blue"
@@ -68,7 +68,7 @@ const Modal = ({ open, onClose }) => {
                                 buttonText="Llamar"
                             />
                             <ModalContactos
-                                iconModal="glyphicon-phone"
+                                iconModal="glyphicon-whatsapp-bottomless"
                                 modalClass="posVentaStyle"
                                 ventasClass="green"
                                 ventasText="Posventa<span>11 4960 8454</span>"
