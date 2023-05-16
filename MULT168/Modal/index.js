@@ -118,5 +118,8 @@ const App = () => {
     );
 };
 
-const targetDiv = document.querySelector('.upper-menu_quicklinks');
-ReactDOM.render(<App />, targetDiv);
+const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
+ReactDOM.render(<App />, targetDivDesktop);
+
+const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
+ReactDOM.render(<App />, targetDivMobile);
