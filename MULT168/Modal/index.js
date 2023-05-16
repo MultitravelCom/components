@@ -13,7 +13,7 @@ function ButtonModal(props) {
 
 const ModalContactos = () => {
     return (
-        <div className="main__container__modalContactos">
+        <div className="col-xs-12 col-md-6 main__container__modalContactos">
             <div className="glyphicon glyphicon-phone"></div>
             <div className="modalContactos__telephone">
                 <p>Ventas <span>0800 348 0003</span></p>
@@ -25,8 +25,8 @@ const ModalContactos = () => {
     );
 };
 
-const Modal = ({open, onClose}) => {
-    if(!open) return null
+const Modal = ({ open, onClose }) => {
+    if (!open) return null
     return (
         <>
             <div id="overlay" className="overlay">
@@ -35,7 +35,10 @@ const Modal = ({open, onClose}) => {
                         <h3>Atención personalizada</h3>
                         <span className="closeModal" onClick={onClose}>X</span>
                     </div>
-                    <ModalContactos />
+                    <div className="row">
+                        <ModalContactos />
+                        <ModalContactos />
+                    </div>
                 </div>
             </div>
         </>
@@ -55,7 +58,7 @@ const App = () => {
                 <div className="glyphicon glyphicon-agent agentWidget"></div>
                 <div className="main__container__widget_text">Atención personalizada</div>
             </ButtonModal>
-            <Modal open={openModal} onClose={()=>setOpenModal(false)}/>
+            <Modal open={openModal} onClose={() => setOpenModal(false)} />
         </>
     );
 };
