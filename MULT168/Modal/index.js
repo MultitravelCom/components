@@ -115,5 +115,5 @@ const App = () => {
         </>
     );
 };
-const btnModal = document.querySelectorAll(".pull-left.hidden-xs");
+const btnModal = document.querySelector(".pull-left.hidden-xs");
 ReactDOM.render(<App />, document.querySelector(btnModal));
