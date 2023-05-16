@@ -19,7 +19,7 @@ const ModalContactos = () => {
                 <p>Ventas <span>0800 348 0003</span></p>
                 <p>Lunes a viernes de 10 a 20 hs</p>
                 <p>Sabados de 10 a 15 hs</p>
-                <span>Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</span>
+                <span className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</span>
             </div>
         </div>
     );
