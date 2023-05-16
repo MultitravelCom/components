@@ -77,10 +77,20 @@ const Modal = ({ open, onClose }) => {
                                 buttonStyle="btn_Style_Venta_Contactarme"
                                 buttonLink="https://wa.link/5s5eba"
                                 buttonText="Contactarme"
-
+                            />
+                            <ModalContactos
+                                iconModal="glyphicon-whatsapp-bottomless"
+                                ventasClass="green"
+                                ventasText="Posventa / Consultas <span>11 4960 8454</span>"
+                                horarioClass="green"
+                                horarioText="Nuevo asistente virtual disponible"
+                                diasClass="green"
+                                spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
+                                buttonStyle="btn_Style_Venta_Contactarme"
+                                buttonLink="https://wa.link/5s5eba"
+                                buttonText="Contactarme"
                             />
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -106,4 +116,4 @@ const App = () => {
     );
 };
 const btnModal = document.querySelectorAll(".pull-left.hidden-xs");
-ReactDOM.createRoot(btnModal).render(<App />);
+ReactDOM.render(<App />, document.querySelector(btnModal));
