@@ -56,7 +56,7 @@ const Modal = ({ open, onClose }) => {
                             <ModalContactos
                                 iconModal="glyphicon-phone"
                                 ventasClass="blue"
-                                ventasText="Ventas<span>0800 348 0003</span>"
+                                ventasText="Ventas <span>0800 348 0003</span>"
                                 horarioClass="blue"
                                 horarioText="Lunes a viernes de 10 a 20 hs"
                                 diasClass="blue"
@@ -69,7 +69,7 @@ const Modal = ({ open, onClose }) => {
                             <ModalContactos
                                 iconModal="glyphicon-whatsapp-bottomless"
                                 ventasClass="green"
-                                ventasText="Posventa<span>11 4960 8454</span>"
+                                ventasText="Posventa <span>11 4960 8454</span>"
                                 horarioClass="green"
                                 horarioText="Lunes a domingo las 24hs"
                                 diasClass="green"
