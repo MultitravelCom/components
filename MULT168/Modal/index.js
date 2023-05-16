@@ -27,7 +27,7 @@ const ModalContactos = ({ modalClass, ventasClass, ventasText, horarioClass, hor
         <div className="main__container__modalContactos">
             <div className={`glyphicon ${iconModal} ${modalClass}`}></div>
             <div className="modalContactos__telephone">
-                <p className={`ventas ${ventasClass}`}>{ventasText}</p>
+                <p className={`ventas ${ventasClass}`} dangerouslySetInnerHTML={{ __html: ventasContent }}></p>
                 <p className={`horario ${horarioClass}`}>{horarioText}</p>
                 <p className={`dias ${diasClass}`}>{diasText}</p>
                 <p className="modalContactos__telephone_span">{spanText}</p>
