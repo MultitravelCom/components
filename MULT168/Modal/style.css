@@ -89,7 +89,7 @@
     margin: 8px 8px;
     border-radius: 8px;
     height: 180px;
-    width: 330px;
+    min-width: 330px;
     gap: 12px;
 
 }
@@ -165,7 +165,7 @@
 .btn_Style_Venta_Contactarme {
     position: absolute;
     bottom: 8px;
-    width: 298px;
+    width: 90%;
     height: 37px;
     border-radius: 12px;
     border: 0;
@@ -196,5 +196,8 @@
     }
     .main__container__widget{
         background-color: #00a94f;
+    }
+    .row-modal{
+        flex-direction: column;
     }
 }
