@@ -63,4 +63,3 @@ const Widget = () => {
 };
 
 ReactDOM.createRoot(document.getElementById('upper-menu')).render(<Widget />);
-s

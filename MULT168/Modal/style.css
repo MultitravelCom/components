@@ -6,13 +6,14 @@
     height: 28px;
     background: #2A8BFE;
     border-radius: 40px;
+    border: 0;
 }
 
-.main__container__widge:hover {
+.main__container__widget:hover {
     background-color: #1169B7;
 }
 
-.main__container__widge:active {
+.main__container__widget:active {
     background-color: #0d4e88;
 }
 
