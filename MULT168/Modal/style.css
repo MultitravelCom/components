@@ -49,13 +49,14 @@
     width: 500px;
     min-height: 100px;
     background: #fff;
-    position: relative;
     border-radius: 8px;
-    padding: 20px;
+    overflow: hidden;
 }
 
 .emcabezadoModal {
     background-color: rgba(12, 125, 226, 1);
+    padding: 12px 24px;
+    position: relative;
 }
 
 .emcabezadoModal>h3 {
@@ -64,4 +65,16 @@
     line-height: 29px;
 
     color: #FFFFFF;
+}
+.closeModal{
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    width: 26px;
+    height: 26px;
+    background: #F9F9F9;
+    border-radius: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 13px;
 }
