@@ -78,6 +78,14 @@
     padding: 5px;
     font-size: 13px;
     cursor: pointer;
+    border: 0;
+}
+.closeModal:hover {
+    background-color: #e1e1e1;
+}
+.closeModal:active {
+    background-color:#969696;
+    ;
 }
 
 /* MODAL */
