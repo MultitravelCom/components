@@ -85,7 +85,6 @@
     display: flex;
     padding: 16px;
     background-color: rgba(244, 244, 244, 1);
-    color: rgba(14, 65, 104, 1);
     margin: 8px 8px;
     border-radius: 8px;
     height: 180px;
@@ -159,4 +158,11 @@
     line-height: 17px;
 
     color: #F3F3F3;
+}
+.blue{
+    color: rgba(14, 65, 104, 1);
+}
+.green{
+    color: rgba(38, 189, 76, 1);
+
 }
