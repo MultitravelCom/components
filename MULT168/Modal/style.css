@@ -88,6 +88,8 @@
     color: rgba(14, 65, 104, 1);
     margin: 8px 8px;
     border-radius: 8px;
+    height: 180px;
+    width: 330px;
 
 }
 
@@ -95,8 +97,29 @@
     margin: 0 !important;
 }
 
-.modalContactos__telephone>span {
+.ventas {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+}
+
+.ventas>span {
     font-weight: 700;
+}
+
+.horario {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 4px;
+}
+
+.dias {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 4px;
 }
 
 .modalContactos__telephone_span {
@@ -108,17 +131,20 @@
 
     color: #8C8C8C;
 }
-.glyphicon-phone{
+
+.glyphicon-phone {
     background: #0D4E88;
-    width: 32px;
+    width: 49px;
     height: 32px;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 0;
+    color: white;
 }
-.row-modal{
+
+.row-modal {
     display: flex;
     justify-content: space-between;
     align-items: center;

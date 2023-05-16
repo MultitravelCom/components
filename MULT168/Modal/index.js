@@ -16,9 +16,9 @@ const ModalContactos = () => {
         <div className="main__container__modalContactos">
             <div className="glyphicon glyphicon-phone"></div>
             <div className="modalContactos__telephone">
-                <p>Ventas <span>0800 348 0003</span></p>
-                <p>Lunes a viernes de 10 a 20 hs</p>
-                <p>Sabados de 10 a 15 hs</p>
+                <p className="ventas">Ventas<span>0800 348 0003</span></p>
+                <p className="horario">Lunes a viernes de 10 a 20 hs</p>
+                <p className="dias">Sabados de 10 a 15 hs</p>
                 <span className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</span>
             </div>
         </div>
