@@ -1,55 +1,14 @@
-function handleClickModal() {
-    const widgetClick = document.querySelector('#container__widget');
-    const modalOverlay = document.querySelector('#overlay');
-    const closeOverlay = modalOverlay.querySelector('.close');
-
-    widgetClick.addEventListener('click', () => {
-        modalOverlay.style.display = 'block';
-    });
-
-    closeOverlay.addEventListener('click', () => {
-        modalOverlay.style.display = 'none';
-    });
-}
-
-
-
 function ButtonModal(props) {
-    const handleClickModal = () => {
-        const widgetClick = document.querySelector('#container__widget');
-        const modalOverlay = document.querySelector('#overlay');
-        const closeOverlay = modalOverlay.querySelector('.close');
-
-        widgetClick.addEventListener('click', () => {
-            modalOverlay.style.display = 'block';
-        });
-
-        closeOverlay.addEventListener('click', () => {
-            modalOverlay.style.display = 'none';
-        });
-    };
-
     const handleClick = (event) => {
         event.preventDefault();
-        handleClickModal();
+        props.onClick();
     };
 
     return (
-        <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
+        <button id={props.id} className={props.style} onClick={handleClick}>
+            {props.children}
+        </button>
     );
-}
-
-const Modal = () => {
-    return (
-        <>
-            <div id="overlay" className="overlay">
-                <div className="container__modal">
-                    <span class="closeOverlay">X</span>
-                    <p>Contenido del modal...</p>
-                </div>
-            </div>
-        </>
-    )
 }
 
 const ModalContactos = () => {
@@ -68,6 +27,19 @@ const ModalContactos = () => {
             text="Contactarme"
         />
     </div>
+}
+
+const Modal = () => {
+    return (
+        <>
+            <div id="overlay" className="overlay">
+                <div className="container__modal">
+                    <span class="closeOverlay">X</span>
+                    <ModalContactos />
+                </div>
+            </div>
+        </>
+    )
 }
 
 const Widget = () => {
