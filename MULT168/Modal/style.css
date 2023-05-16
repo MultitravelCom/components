@@ -65,54 +65,55 @@
 
     color: #FFFFFF;
 }
-/* BOTON CLOSE */
-    .close-button {
-        width: 26px;
-        height: 26px;
-        background: #F9F9F9;
-        border: none;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        padding: 0;
-      }
-      
-      .close-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: #000;
-      }
-      
-      .close-icon::before,
-      .close-icon::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 8px;
-        height: 2px;
-        background: #FFF;
-        transform: translate(-50%, -50%);
-      }
-      
-      .close-icon::before {
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-      
-      .close-icon::after {
-        transform: translate(-50%, -50%) rotate(-45deg);
-      }
 
-.closeModal:hover {
+/* BOTON CLOSE */
+.close-button {
+    width: 26px;
+    height: 26px;
+    background: #F9F9F9;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #000;
+}
+
+.close-icon::before,
+.close-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 2px;
+    background: #FFF;
+    transform: translate(-50%, -50%);
+}
+
+.close-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-icon:hover {
     background-color: #e1e1e1;
 }
 
-.closeModal:active {
+.close-icon:active {
     background-color: #969696;
     ;
 }
