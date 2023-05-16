@@ -69,7 +69,7 @@ const Modal = ({ open, onClose }) => {
                             />
                             <ModalContactos
                                 iconModal="glyphicon-whatsapp-bottomless"
-                                modalClass="posVentaStyle"
+                                modalClass="green"
                                 ventasClass="green"
                                 ventasText="Posventa<span>11 4960 8454</span>"
                                 horarioClass="green"
