@@ -25,3 +25,24 @@
     line-height: 17px;
     color: #FFFFFF;
 }
+
+/* ***** MODAL *** */
+.overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+.container__modal{
+    width: 500px;
+    min-height: 100px;
+    background: #fff;
+    position: relative;
+    border-radius: 8px;
+    padding: 20px;
+}
