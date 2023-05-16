@@ -1,3 +1,9 @@
+const openModalButton = document.querySelector('.whatsAppFixes a');
+
+openModalButton.addEventListener('click', () => {
+  setOpenModal(true);
+});
+
 function Button(props) {
     const handleClick = (event) => {
         event.preventDefault();
