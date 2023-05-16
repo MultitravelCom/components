@@ -46,7 +46,7 @@
 }
 
 .container__modal {
-    width: 500px;
+    max-width: 600px;
     min-height: 100px;
     background: #fff;
     border-radius: 8px;
@@ -85,9 +85,8 @@
     display: flex;
     padding: 16px;
     background-color: rgba(244, 244, 244, 1);
-    width: 50%;
     color: rgba(14, 65, 104, 1);
-    margin: 8px;
+    margin: 8px 8px;
     border-radius: 8px;
 
 }

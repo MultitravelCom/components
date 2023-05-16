@@ -13,7 +13,7 @@ function ButtonModal(props) {
 
 const ModalContactos = () => {
     return (
-        <div className="col-xs-12 col-md-6 main__container__modalContactos">
+        <div className="main__container__modalContactos">
             <div className="glyphicon glyphicon-phone"></div>
             <div className="modalContactos__telephone">
                 <p>Ventas <span>0800 348 0003</span></p>
@@ -35,8 +35,8 @@ const Modal = ({ open, onClose }) => {
                         <h3>Atención personalizada</h3>
                         <span className="closeModal" onClick={onClose}>X</span>
                     </div>
-                    <div className="container">
-                        <div className="row">
+                    <div className="container-fluid">
+                        <div className="row-modal">
                             <ModalContactos />
                             <ModalContactos />
                         </div>
