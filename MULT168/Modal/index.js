@@ -22,15 +22,15 @@ function ButtonModal(props) {
     );
 }
 
-const ModalContactos = () => {
+const ModalContactos = ({ modalClass, ventasClass, ventasText, horarioClass, horarioText, diasClass, diasText, spanText }) => {
     return (
         <div className="main__container__modalContactos">
-            <div className="glyphicon glyphicon-phone"></div>
+            <div className={`glyphicon glyphicon-phone ${modalClass}`}></div>
             <div className="modalContactos__telephone">
-                <p className="ventas">Ventas<span>0800 348 0003</span></p>
-                <p className="horario">Lunes a viernes de 10 a 20 hs</p>
-                <p className="dias">Sabados de 10 a 15 hs</p>
-                <p className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</p>
+                <p className={`ventas ${ventasClass}`}>{ventasText}</p>
+                <p className={`horario ${horarioClass}`}>{horarioText}</p>
+                <p className={`dias ${diasClass}`}>{diasText}</p>
+                <p className="modalContactos__telephone_span">{spanText}</p>
             </div>
             <Button
                 style="btn_Style_Venta_llamar"
@@ -53,8 +53,26 @@ const Modal = ({ open, onClose }) => {
                     </div>
                     <div className="container-fluid">
                         <div className="row-modal">
-                            <ModalContactos />
-                            <ModalContactos />
+                            <ModalContactos
+                                modalClass="ventaStyle"
+                                ventasClass="blue"
+                                ventasText="Ventas<span>0800 348 0003</span>"
+                                horarioClass="blue"
+                                horarioText="Lunes a viernes de 10 a 20 hs"
+                                diasClass="blue"
+                                diasText="Sabados de 10 a 15 hs"
+                                spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
+                            />
+                            <ModalContactos
+                                modalClass="posVentaStyle"
+                                ventasClass="green"
+                                ventasText="Posventa<span>11 4960 8454</span>"
+                                horarioClass="green"
+                                horarioText="Lunes a domingo las 24hs"
+                                diasClass="green"
+                                diasText="Sabados de 10 a 15 hs"
+                                spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
+                            />
                         </div>
 
                     </div>
