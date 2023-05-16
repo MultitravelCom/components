@@ -53,7 +53,7 @@ const Widget = () => {
         <>
             <ButtonModal
                 id="container__widget"
-                className="main__container__widget"
+                style="main__container__widget"
             >
                 <div className="glyphicon glyphicon-agent agentWidget"></div>
                 <div className="main__container__widget_text">Atención personalizada</div>
