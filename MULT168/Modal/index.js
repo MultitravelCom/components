@@ -103,7 +103,7 @@ const App = () => {
 
     return (
         <>
-            <div>
+            <div className="container-fluid">
                 <ButtonModal
                     id="container__widget"
                     style="main__container__widget"
@@ -118,5 +118,5 @@ const App = () => {
     );
 };
 
-
-ReactDOM.render(<App />, document.querySelector('#upper-menu'));
+const targetDiv = document.querySelector('.top-row.d-flex');
+ReactDOM.render(<App />, targetDiv);
