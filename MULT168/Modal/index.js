@@ -115,5 +115,10 @@ const App = () => {
         </>
     );
 };
-const btnModal = document.querySelector(".pull-left.hidden-xs");
-ReactDOM.render(<App />, document.querySelector(btnModal));
+
+const UpperMenu = () => {
+    const upperMenuNode = document.getElementById('upper-menu');
+    return ReactDOM.createPortal(<App />, upperMenuNode);
+  };
+  
+  ReactDOM.render(<UpperMenu />, document.getElementById('root'));
