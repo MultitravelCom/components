@@ -103,7 +103,8 @@ const App = () => {
 
     const openModalButton = document.querySelector('.whatsAppFixes a');
 
-    openModalButton.addEventListener('click', () => {
+    openModalButton.addEventListener('click', (event) => {
+        event.preventDefault();
         setOpenModal(true);
     })
 
