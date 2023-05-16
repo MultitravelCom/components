@@ -234,7 +234,9 @@
     color: rgba(38, 189, 76, 1);
 
 }
-
+.upper-menu__phone-wrapper{
+    display: none;
+}
 @media (max-width:767px) {
     .hidden-xs {
         display: block !important;
