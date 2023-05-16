@@ -25,7 +25,7 @@ function ButtonModal(props) {
 const ModalContactos = ({ modalClass, ventasClass, ventasText, horarioClass, horarioText, diasClass, diasText, spanText, iconModal, buttonStyle, buttonLink, buttonText }) => {
     return (
         <div className="main__container__modalContactos">
-            <div className={`glyphicon ${iconModal} ${modalClass}`}></div>
+            <div className={`glyphicon ${iconModal}`}></div>
             <div className="modalContactos__telephone">
                 <p className={`ventas ${ventasClass}`} dangerouslySetInnerHTML={{ __html: ventasText }}></p>
                 <p className={`horario ${horarioClass}`}>{horarioText}</p>
@@ -55,7 +55,6 @@ const Modal = ({ open, onClose }) => {
                         <div className="row-modal">
                             <ModalContactos
                                 iconModal="glyphicon-phone"
-                                modalClass="blue"
                                 ventasClass="blue"
                                 ventasText="Ventas<span>0800 348 0003</span>"
                                 horarioClass="blue"
@@ -69,7 +68,6 @@ const Modal = ({ open, onClose }) => {
                             />
                             <ModalContactos
                                 iconModal="glyphicon-whatsapp-bottomless"
-                                modalClass="green"
                                 ventasClass="green"
                                 ventasText="Posventa<span>11 4960 8454</span>"
                                 horarioClass="green"
