@@ -49,7 +49,7 @@ const Modal = ({ open, onClose }) => {
                 <div className="container__modal">
                     <div className='emcabezadoModal'>
                         <h3>Atención personalizada</h3>
-                        <button className="closeModal" onClick={onClose}>X</button>
+                        <button className="close-button" onClick={onClose}><span>X</span></button>
                     </div>
                     <div className="container-fluid-modal">
                         <div className="row-modal">
