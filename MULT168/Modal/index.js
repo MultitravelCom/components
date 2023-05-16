@@ -118,5 +118,5 @@ const App = () => {
     );
 };
 
-const targetDiv = document.querySelector('.top-row.d-flex > div:nth-child(2)');
+const targetDiv = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDiv);
