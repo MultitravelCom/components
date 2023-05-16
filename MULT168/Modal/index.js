@@ -51,7 +51,7 @@ const Modal = ({ open, onClose }) => {
                         <h3>Atención personalizada</h3>
                         <span className="closeModal" onClick={onClose}>X</span>
                     </div>
-                    <div className="container-fluid">
+                    <div className="container-fluid-modal">
                         <div className="row-modal">
                             <ModalContactos
                                 iconModal="glyphicon-phone"
@@ -73,7 +73,6 @@ const Modal = ({ open, onClose }) => {
                                 horarioClass="green"
                                 horarioText="Lunes a domingo las 24hs"
                                 diasClass="green"
-                                diasText="Sabados de 10 a 15 hs"
                                 spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
                                 buttonStyle="btn_Style_Venta_Contactarme"
                                 buttonLink="https://wa.link/5s5eba"

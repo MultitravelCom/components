@@ -130,9 +130,9 @@
 
 .glyphicon-phone,
 .glyphicon-whatsapp-bottomless{
-    width: 49px;
+    width: 32px;
     height: 32px;
-    border-radius: 100%;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,8 +156,9 @@
 }
 .row-modal {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 8px;
+    gap: 12px;
 }
 
 .btn_Style_Venta_llamar,
