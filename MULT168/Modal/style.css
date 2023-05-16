@@ -189,3 +189,12 @@
     color: rgba(38, 189, 76, 1);
 
 }
+
+@media (max-width:767px) {
+    .hidden-xs {
+        display: block !important;
+    }
+    .main__container__widget{
+        background-color: #00a94f;
+    }
+}
