@@ -35,9 +35,12 @@ const Modal = ({ open, onClose }) => {
                         <h3>Atención personalizada</h3>
                         <span className="closeModal" onClick={onClose}>X</span>
                     </div>
-                    <div className="row">
-                        <ModalContactos />
-                        <ModalContactos />
+                    <div className="container">
+                        <div className="row">
+                            <ModalContactos />
+                            <ModalContactos />
+                        </div>
+
                     </div>
                 </div>
             </div>
