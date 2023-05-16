@@ -103,15 +103,17 @@ const App = () => {
 
     return (
         <>
-            <ButtonModal
-                id="container__widget"
-                style="main__container__widget"
-                onClick={() => setOpenModal(true)}
-            >
-                <div className="glyphicon glyphicon-agent agentWidget"></div>
-                <div className="main__container__widget_text">Atención personalizada</div>
-            </ButtonModal>
-            <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            <div>
+                <ButtonModal
+                    id="container__widget"
+                    style="main__container__widget"
+                    onClick={() => setOpenModal(true)}
+                >
+                    <div className="glyphicon glyphicon-agent agentWidget"></div>
+                    <div className="main__container__widget_text">Atención personalizada</div>
+                </ButtonModal>
+                <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            </div>
         </>
     );
 };
