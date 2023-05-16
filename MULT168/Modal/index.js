@@ -22,7 +22,7 @@ function ButtonModal(props) {
     );
 }
 
-const ModalContactos = ({ modalClass, ventasClass, ventasText, horarioClass, horarioText, diasClass, diasText, spanText, iconModal, buttonStyle, buttonLink, buttonText }) => {
+const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, diasClass, diasText, spanText, iconModal, buttonStyle, buttonLink, buttonText }) => {
     return (
         <div className="main__container__modalContactos">
             <div className={`glyphicon ${iconModal}`}></div>
@@ -107,4 +107,4 @@ const App = () => {
     );
 };
 
-ReactDOM.createRoot(document.getElementById('upper-menu')).render(<App />);
+ReactDOM.createRoot(document.querySelector('.upper-menu__phone-wrapper')).render(<App />);
