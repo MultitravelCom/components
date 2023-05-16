@@ -116,9 +116,4 @@ const App = () => {
     );
 };
 
-const UpperMenu = () => {
-    const upperMenuNode = document.getElementById('upper-menu');
-    return ReactDOM.createPortal(<App />, upperMenuNode);
-  };
-  
-  ReactDOM.render(<UpperMenu />, document.getElementById('root'));
+ReactDOM.render(<App />, document.querySelector('#upper-menu'));
