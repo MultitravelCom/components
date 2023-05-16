@@ -62,6 +62,9 @@ const Modal = ({ open, onClose }) => {
                                 diasClass="blue"
                                 diasText="Sabados de 10 a 15 hs"
                                 spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
+                                buttonStyle="btn_Style_Venta_llamar"
+                                buttonLink="https://wa.link/5s5eba"
+                                buttonText="Llamar"
                             />
                             <ModalContactos
                                 modalClass="posVentaStyle"
@@ -72,6 +75,10 @@ const Modal = ({ open, onClose }) => {
                                 diasClass="green"
                                 diasText="Sabados de 10 a 15 hs"
                                 spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
+                                buttonStyle="btn_Style_Venta_Contactarme"
+                                buttonLink="https://wa.link/5s5eba"
+                                buttonText="Contactarme"
+
                             />
                         </div>
 
