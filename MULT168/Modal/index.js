@@ -118,5 +118,5 @@ const App = () => {
     );
 };
 
-const targetDiv = document.querySelector('.pull-left.hidden-xs');
+const targetDiv = document.querySelector('.upper-menu_quicklinks');
 ReactDOM.render(<App />, targetDiv);
