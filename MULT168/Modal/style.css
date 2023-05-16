@@ -157,10 +157,12 @@
     line-height: 17px;
     color: #F3F3F3;
 }
-.btn_Style_Venta_llamar{
+.btn_Style_Venta_llamar,
+.glyphicon-phone{
     background: #0D4E88;
 }
-.btn_Style_Venta_Contactarme{
+.btn_Style_Venta_Contactarme,
+.glyphicon-whatsapp-bottomless{
     background: rgba(38, 189, 76, 1);
 }
 .blue{
