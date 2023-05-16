@@ -80,11 +80,6 @@
     right: 16px;
     border-radius: 100%;
 }
-.close-button>span{
-    position: absolute;
-    top: -12px;
-    right: 9px;
-}
 
 .close-button:hover {
     background-color: #e1e1e1;
@@ -233,5 +228,10 @@
 
     .main__container__widget_text {
         display: none;
+    }
+    .close-button>span {
+        position: absolute;
+        top: -12px;
+        right: 9px;
     }
 }
