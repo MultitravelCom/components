@@ -214,7 +214,7 @@
 .upper-menu__phone-wrapper{
     display: none;
 }
-@media (max-width:767px) {
+@media (max-width:768px) {
     .main__container__widget {
         background-color: #00a94f;
     }
