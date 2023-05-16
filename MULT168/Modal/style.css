@@ -145,19 +145,25 @@
     align-items: center;
 }
 
-.btn_Style_Venta_llamar {
+.btn_Style_Venta_llamar,
+.btn_Style_Venta_Contactarme {
     position: absolute;
     bottom: 16px;
     width: 298px;
     height: 37px;
-    background: #0D4E88;
     border-radius: 12px;
     border: 0;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-
     color: #F3F3F3;
+}
+.btn_Style_Venta_llamar{
+    background: #0D4E88;
+}
+.btn_Style_Venta_Contactarme{
+    background: rgba(38, 189, 76, 1);
+    ;
 }
 .blue{
     color: rgba(14, 65, 104, 1);
