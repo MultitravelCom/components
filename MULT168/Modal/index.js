@@ -30,12 +30,12 @@ const ModalContactos = () => {
                 <p className="ventas">Ventas<span>0800 348 0003</span></p>
                 <p className="horario">Lunes a viernes de 10 a 20 hs</p>
                 <p className="dias">Sabados de 10 a 15 hs</p>
-                <span className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</span>
+                <p className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</p>
             </div>
             <Button
-                style="btn_Style_Venta_Per"
+                style="btn_Style_Venta_llamar"
                 link="https://wa.link/5s5eba"
-                text="llamar"
+                text="Llamar"
             />
         </div>
     );
