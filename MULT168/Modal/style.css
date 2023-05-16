@@ -200,4 +200,10 @@
     .row-modal{
         flex-direction: column;
     }
+    .main__container__widget{
+        width: 100%;
+    }
+    .main__container__widget_text{
+        display: none;
+    }
 }
