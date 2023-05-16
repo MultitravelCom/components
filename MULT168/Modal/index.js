@@ -119,4 +119,4 @@ const App = () => {
 };
 
 
-ReactDOM.createPortal(<App />, document.querySelector('#upper-menu'));
+ReactDOM.render(<App />, document.querySelector('#upper-menu'));
