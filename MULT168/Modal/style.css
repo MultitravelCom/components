@@ -80,11 +80,13 @@
     cursor: pointer;
     border: 0;
 }
+
 .closeModal:hover {
     background-color: #e1e1e1;
 }
+
 .closeModal:active {
-    background-color:#969696;
+    background-color: #969696;
     ;
 }
 
@@ -137,7 +139,7 @@
 }
 
 .glyphicon-phone,
-.glyphicon-whatsapp-bottomless{
+.glyphicon-whatsapp-bottomless {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -147,6 +149,7 @@
     line-height: 0;
     color: white;
 }
+
 .btn_Style_Venta_llamar:hover {
     background-color: #283747;
 }
@@ -154,14 +157,16 @@
 .btn_Style_Venta_llamar:active {
     background-color: rgba(39, 38, 38, 1);
 }
+
 .btn_Style_Venta_Contactarme:hover {
     background-color: #00a94f;
 }
 
 .btn_Style_Venta_Contactarme:active {
-    background-color:rgba(1, 119, 56, 1);
+    background-color: rgba(1, 119, 56, 1);
     ;
 }
+
 .row-modal {
     display: flex;
     align-items: center;
@@ -182,18 +187,22 @@
     line-height: 17px;
     color: #F3F3F3;
 }
+
 .btn_Style_Venta_llamar,
-.glyphicon-phone{
+.glyphicon-phone {
     background: #0D4E88;
 }
+
 .btn_Style_Venta_Contactarme,
-.glyphicon-whatsapp-bottomless{
+.glyphicon-whatsapp-bottomless {
     background: rgba(38, 189, 76, 1);
 }
-.blue{
+
+.blue {
     color: rgba(14, 65, 104, 1);
 }
-.green{
+
+.green {
     color: rgba(38, 189, 76, 1);
 
 }
@@ -202,16 +211,21 @@
     .hidden-xs {
         display: block !important;
     }
-    .main__container__widget{
+
+    .main__container__widget {
         background-color: #00a94f;
     }
-    .row-modal{
+
+    .row-modal {
         flex-direction: column;
     }
-    .main__container__widget{
-        width: 100%;
+
+    .main__container__widget {
+        width: 80px;
+        height: 24px;
     }
-    .main__container__widget_text{
+
+    .main__container__widget_text {
         display: none;
     }
 }
