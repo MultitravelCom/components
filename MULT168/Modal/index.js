@@ -1,3 +1,14 @@
+function Button(props) {
+    const handleClick = (event) => {
+        event.preventDefault();
+        window.open(props.link, '_blank');
+    }
+
+    return (
+        <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
+    );
+}
+
 function ButtonModal(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -21,6 +32,11 @@ const ModalContactos = () => {
                 <p className="dias">Sabados de 10 a 15 hs</p>
                 <span className="modalContactos__telephone_span">Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra.</span>
             </div>
+            <Button
+                style="btn_Style_Venta_Per"
+                link="https://wa.link/5s5eba"
+                text="llamar"
+            />
         </div>
     );
 };
