@@ -118,5 +118,5 @@ const App = () => {
     );
 };
 
-const targetDiv = document.querySelector('.top-row.d-flex');
+const targetDiv = document.querySelector('.top-row.d-flex > div:nth-child(2)');
 ReactDOM.render(<App />, targetDiv);
