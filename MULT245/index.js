@@ -43,12 +43,14 @@ async function applyDisplayNoneToAllButLastButton() {
     const actionsContainer = document.querySelector('.info-card__actions');
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
   
-    for (let i = 0; i < buttonsAndLinks.length - 1; i++) {
-      buttonsAndLinks[i].style.display = 'none';
+    for (let i = 0; i < buttonsAndLinks.length; i++) {
+      if (i !== buttonsAndLinks.length - 1) {
+        buttonsAndLinks[i].style.display = 'none';
+      }
     }
   
-    const lastButton = buttonsAndLinks[buttonsAndLinks.length - 1];
-    lastButton.textContent = 'Ver detalle';
+    const lastButtonContainer = buttonsAndLinks[buttonsAndLinks.length - 1].parentNode;
+    lastButtonContainer.style.display = 'inline-block';
   }
 
 
