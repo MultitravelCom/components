@@ -50,11 +50,7 @@ async function applyDisplayNoneToAllButLastButton() {
     const lastButton = buttonsAndLinks[buttonsAndLinks.length - 1];
     lastButton.textContent = 'Ver detalle';
   }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    applyDisplayNoneToAllButLastButton();
-  });
-  
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
