@@ -1,4 +1,4 @@
-function Button(props) {
+function ButtonModalLink(props) {
     const handleClick = (event) => {
         console.log("callToPhone:", props.callToPhone);
         event.preventDefault();
@@ -37,7 +37,7 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
                 <p className={`dias ${diasClass}`}>{diasText}</p>
                 <p className="modalContactos__telephone_span">{spanText}</p>
             </div>
-            <Button
+            <ButtonModalLink
                 style={buttonStyle}
                 link={buttonLink}
                 text={buttonText}
