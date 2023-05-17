@@ -21,24 +21,25 @@ async function aplicarClaseRecomendada() {
     });
 }
 
-// async function changeCopyMap() {
-//     const resultsListPage = document.querySelector('.results-list__page');
-//     const items = resultsListPage.querySelectorAll('.results-list__item');
+async function changeCopyMap() {
+    const resultsListPage = document.querySelector('.results-list__page');
+    const items = resultsListPage.querySelectorAll('.results-list__item');
 
-//     if (!resultsListPage) {
-//         await new Promise(resolve => setTimeout(resolve, 1000));
-//         await aplicarClaseRecomendada();
-//         return; 
-//     }
+    if (!resultsListPage) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return; 
+    }
 
-//     items.forEach(item => {
-//         const mapLink = item.querySelector('.map-link');
-//         mapLink.textContent = 'Ver Mapa';
-//         mapLink.style.display = 'block';
-//     });
-// }
+    items.forEach(item => {
+        const mapLink = document.querySelector('.map-link');
+        const locationIcon = mapLink.querySelector('.info-card__location-icon');
+        
+        mapLink.textContent = 'Ver Mapa';
+    });
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
-    // await changeCopyMap();
+    await changeCopyMap();
 });
