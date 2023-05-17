@@ -11,12 +11,13 @@ async function aplicarClaseRecomendada() {
     const items = resultsListPage.querySelectorAll('.results-list__item');
   
     items.forEach(item => {
-      const tieneDeals = item.querySelector('.deals') !== null;
+        const tieneDeals = item.querySelector('.deals') !== null;
+        const hotelResult = item.querySelector('.result.hotel-result');
   
-      if (tieneDeals) {
-        item.classList.add('alojamiento-recomendado');
-        console.log(tieneDeals);
-      }
+        if (tieneDeals && hotelResult) {
+            hotelResult.classList.add('alojamiento-recomendado');
+            console.log(tieneDeals);
+          }
     });
   }
   
