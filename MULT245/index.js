@@ -14,7 +14,7 @@ async function aplicarClaseRecomendada() {
       const tieneDeals = item.querySelector('.deals') !== null;
   
       if (tieneDeals) {
-        item.classList.add('mi-clase-recomendada');
+        item.classList.add('alojamiento-recomendado');
         console.log(tieneDeals);
       }
     });
