@@ -10,5 +10,7 @@ function aplicarClaseRecomendada() {
     });
   }
   
-  aplicarClaseRecomendada();
+  document.addEventListener('DOMContentLoaded', function() {
+    aplicarClaseRecomendada();
+  });
   
