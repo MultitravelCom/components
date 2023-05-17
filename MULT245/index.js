@@ -39,7 +39,20 @@ async function changeCopyMap() {
     });
 }
 
+async function applyDisplayNoneToAllButLastButton() {
+    const actionsContainer = document.querySelector('.info-card__actions');
+    const buttons = actionsContainer.querySelectorAll('button');
+  
+    for (let i = 0; i < buttons.length - 1; i++) {
+      buttons[i].style.display = 'none';
+    }
+  
+    const lastButton = buttons[buttons.length - 1];
+    lastButton.textContent = 'Ver detalle';
+  }
+
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();
+    await applyDisplayNoneToAllButLastButton();
 });
