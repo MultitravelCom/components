@@ -141,17 +141,11 @@ const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
     const openModalButton = document.querySelector('.whatsAppFixes a');
-    const openModalButtonResult = document.querySelector('#btnBannerSearch');
 
     openModalButton.addEventListener('click', (event) => {
         event.preventDefault();
         setOpenModal(true);
     })
-    openModalButtonResult.addEventListener('click', (event) => {
-        event.preventDefault();
-        setOpenModal(true);
-    })
-
     return (
         <>
             <div className="container-fluid">
