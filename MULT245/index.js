@@ -23,19 +23,19 @@ async function aplicarClaseRecomendada() {
 
 async function changeCopyMap() {
     const resultsListPage = document.querySelector('.results-list__page');
-    const items = resultsListPage.querySelectorAll('.results-list__item');
 
     if (!resultsListPage) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await aplicarClaseRecomendada();
-        return; 
+        await changeCopyMap();
+        return;
     }
 
+    const items = resultsListPage.querySelectorAll('.results-list__item');
+
     items.forEach(item => {
-        const mapLink = document.querySelector('.map-link');
-        const locationIcon = mapLink.querySelector('.info-card__location-icon');
-        
+        const mapLink = item.querySelector('.map-link');
         mapLink.textContent = 'Ver Mapa';
+        mapLink.style.display = 'block'
     });
 }
 
