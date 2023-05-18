@@ -22,11 +22,11 @@ const Modal = ({ open, onClose }) => {
                     </div>
                     <div className="container-fluid-modal">
                         <div className="row-modal">
-                            <ModalIconsShare />
-                            <ModalIconsShare />
-                            <ModalIconsShare />
-                            <ModalIconsShare />
-                            <ModalIconsShare />
+                            <ModalIconsShare iconsShare="facebook-fill" />
+                            <ModalIconsShare iconsShare="twitter-fill" />
+                            <ModalIconsShare iconsShare="linkedin" />
+                            <ModalIconsShare iconsShare="envelope" />
+                            <ModalIconsShare iconsShare="whatsapp-bottomless" />
                         </div>
                     </div>
                 </div>
@@ -35,10 +35,12 @@ const Modal = ({ open, onClose }) => {
     );
 };
 
-const ModalIconsShare = () =>{
-    <div className="modal__iconShare">
-        <span className="glyphicon facebook-fill"></span>
-    </div>
+const ModalIconsShare = ({ iconsShare }) => {
+    return (
+        <div className="modal__iconShare">
+            <span className={`glyphicon glyphicon-${iconsShare}`}></span>
+        </div>
+    )
 }
 
 const CompartirAlojamiento = () => {
