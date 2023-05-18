@@ -22,11 +22,16 @@ const Modal = ({ open, onClose }) => {
                     </div>
                     <div className="container-fluid-modal">
                         <div className="row-modal">
-                            <ModalIconsShare iconsShare="facebook-fill" />
-                            <ModalIconsShare iconsShare="twitter-fill" />
-                            <ModalIconsShare iconsShare="linkedin" />
-                            <ModalIconsShare iconsShare="envelope" />
-                            <ModalIconsShare iconsShare="whatsapp-bottomless" />
+                            <div>
+                                <ModalIconsShare iconsShare="twitter-fill" />
+                                <ModalIconsShare iconsShare="twitter-fill" />
+                            </div>
+                            <div>
+                                <ModalIconsShare iconsShare="linkedin" />
+                                <ModalIconsShare iconsShare="envelope" />
+                                <ModalIconsShare iconsShare="whatsapp-bottomless" />
+
+                            </div>
                         </div>
                     </div>
                 </div>
