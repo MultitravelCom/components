@@ -21,6 +21,28 @@ async function aplicarClaseRecomendada() {
     });
 }
 
+async function agreeStarIcon(){
+    const resultsListPage = document.querySelector('.results-list__page');
+
+    if (!resultsListPage) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await changeCopyMap();
+        return;
+    }
+
+    const items = resultsListPage.querySelectorAll('.results-list__item');
+
+    items.forEach(item => {
+        const infoCardCategory = item.querySelector('.info-card__category');
+    
+        const newSpaninfoCardCategory = document.createElement('span');
+        newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
+    
+        // Agrega la propiedad display: block al elemento map-link
+        infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
+      });
+}
+
 async function changeCopyMap() {
     const resultsListPage = document.querySelector('.results-list__page');
 
@@ -69,6 +91,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();
     await applyDisplayNoneToAllButLastButton();
+    await agreeStarIcon();
 });
 
 
