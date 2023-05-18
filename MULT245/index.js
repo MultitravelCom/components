@@ -56,12 +56,9 @@ async function changeCopyMap() {
 
     items.forEach(item => {
         const mapLink = item.querySelector('.map-link');
-        const locationIcon = mapLink.querySelector('.info-card__location-icon');
+        // const locationIcon = mapLink.querySelector('.info-card__location-icon');
 
-        // Modifica el texto dentro del elemento mapLink
         mapLink.lastChild.textContent = ' Ver Mapa';
-
-        // Agrega la propiedad display: block al elemento map-link
         mapLink.style.display = 'block';
     });
 }
@@ -86,14 +83,6 @@ async function applyDisplayNoneToAllButLastButton() {
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', async function () {
-    await aplicarClaseRecomendada();
-    await changeCopyMap();
-    await applyDisplayNoneToAllButLastButton();
-    await agreeStarIcon();
-});
-
 const CompartirAlojamiento = () => {
     return (
         <>
@@ -113,3 +102,12 @@ infoCardContents.forEach(infoCardContent => {
 
     ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
 });
+
+
+document.addEventListener('DOMContentLoaded', async function () {
+    await aplicarClaseRecomendada();
+    await changeCopyMap();
+    await applyDisplayNoneToAllButLastButton();
+    await agreeStarIcon();
+});
+
