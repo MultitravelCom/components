@@ -108,5 +108,5 @@ const CompartirAlojamiento = () => {
 const infoCardContents = document.querySelectorAll('.info-card__content');
 
 infoCardContents.forEach(infoCardContent => {
-    ReactDOM.render(<CompartirAlojamiento />, infoCardContent);
+  ReactDOM.render(<><CompartirAlojamiento />{infoCardContent.innerHTML}</>, infoCardContent);
 });
