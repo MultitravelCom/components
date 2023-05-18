@@ -36,6 +36,8 @@ async function changeCopyMap() {
         const mapLink = item.querySelector('.map-link');
         const locationIcon = mapLink.querySelector('.info-card__location-icon');
     
+        mapLink.classList.add('display');
+
         // Reemplaza el texto dentro del elemento locationIcon sin afectar el contenido original
         locationIcon.insertAdjacentText('beforeend', ' Ver Mapa');
       });
