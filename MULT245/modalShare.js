@@ -87,6 +87,8 @@ const CompartirAlojamiento = () => {
 
 const infoCardContents = document.querySelectorAll('.info-card__content');
 
+console.log(infoCardContents); 
+
 
 infoCardContents.forEach(infoCardContent => {
     const nuevoDiv = document.createElement('div');
