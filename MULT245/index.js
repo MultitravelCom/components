@@ -27,25 +27,23 @@ async function aplicarClaseRecomendada() {
 
 async function agreeStarIcon() {
     const resultsListPage = document.querySelector('.results-list__page');
-
-    if (!resultsListPage) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await agreeStarIcon();
-        return;
+  
+    while (!resultsListPage) {
+      await wait(1000);
+      resultsListPage = document.querySelector('.results-list__page');
     }
-
+  
     const items = resultsListPage.querySelectorAll('.results-list__item');
-
+  
     items.forEach(item => {
-        const infoCardCategory = item.querySelector('.info-card__category');
-
-        const newSpaninfoCardCategory = document.createElement('span');
-        newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
-
-        // Agrega la propiedad display: block al elemento map-link
-        infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
+      const infoCardCategory = item.querySelector('.info-card__category');
+  
+      const newSpaninfoCardCategory = document.createElement('span');
+      newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
+  
+      infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
     });
-}
+  }
 
 async function changeCopyMap() {
     const resultsListPage = document.querySelector('.results-list__page');
