@@ -56,9 +56,9 @@ async function changeCopyMap() {
 
     items.forEach(item => {
         const mapLink = item.querySelector('.map-link');
-        // const locationIcon = mapLink.querySelector('.info-card__location-icon');
+        const locationIcon = mapLink.querySelector('.info-card__location-icon');
 
-        mapLink.lastChild.textContent = ' Ver Mapa';
+        mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
     });
 }
