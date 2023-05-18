@@ -20,7 +20,7 @@ async function aplicarClaseRecomendada() {
 
         if (tieneDeals && hotelResult) {
             hotelResult.classList.add('alojamiento-recomendado');
-            const bestPriceElements = item.querySelectorAll('.bestprice');
+            const bestPriceElements = item.querySelectorAll('.info-card__price');
             bestPriceElements.forEach(element => {
                 element.classList.add("info-card__price__deals");
             });
