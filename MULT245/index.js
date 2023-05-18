@@ -33,7 +33,7 @@ async function changeCopyMap() {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const mapLink = item.querySelector('.map-link');
+        const mapLink = item.querySelector('.info-card__location-icon.glyphicon.glyphicon-map-marker');
         mapLink.textContent = 'Ver Mapa';
         mapLink.style.display = 'block'
     });
@@ -65,3 +65,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     await changeCopyMap();
     await applyDisplayNoneToAllButLastButton();
 });
+
+
+const CompartirAlojamiento = () =>{
+    return (
+        <>
+        
+        </>
+    )
+}
