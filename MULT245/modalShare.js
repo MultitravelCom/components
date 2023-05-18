@@ -22,11 +22,11 @@ const ModalShare = ({ open, onClose }) => {
                     </div>
                     <div className="container-fluid-modal">
                         <div className="row-modal">
-                            <div>
+                            <div className="row-modal-icons-arriba">
                                 <ModalIconsShare iconsShare="twitter-fill" />
                                 <ModalIconsShare iconsShare="twitter-fill" />
                             </div>
-                            <div>
+                            <div className="row-modal-icons-abajo">
                                 <ModalIconsShare iconsShare="linkedin" />
                                 <ModalIconsShare iconsShare="envelope" />
                                 <ModalIconsShare iconsShare="whatsapp-bottomless" />
