@@ -237,10 +237,15 @@
 }
 
 /* CLASES MODAL SHARE HOTELS */
-.shareStyle{
-    max-width: 400px;
-    min-height: 254px;
+.shareStyle {
+    width: 400px;
+    height: 254px;
 }
 .emcabezadoModalShare{
     height: 56px;
+}
+.modal__iconShare{
+    width: 72px;
+    height: 72px;
+
 }
