@@ -51,6 +51,7 @@ async function applyDisplayNoneToAllButLastButton() {
   
     const lastButtonContainer = buttonsAndLinks[buttonsAndLinks.length - 1].parentNode;
     lastButtonContainer.style.display = 'inline-block';
+    lastButtonContainer.textContent = 'Ver detalle';
   }
 
 
