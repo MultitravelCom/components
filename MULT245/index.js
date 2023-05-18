@@ -20,8 +20,7 @@ async function aplicarClaseRecomendada() {
 
         if (tieneDeals && hotelResult) {
             hotelResult.classList.add('alojamiento-recomendado');
-            tieneDeals.classList.add("info-card__price__deals")
-            console.log(tieneDeals);
+            tieneDeals.classList.add("info-card__price__deals");
         }
     });
 }
