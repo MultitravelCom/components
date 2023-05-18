@@ -88,11 +88,25 @@ const CompartirAlojamiento = () => {
     )
 }
 
-const infoCardContents = document.querySelectorAll('.info-card__content');
-
-infoCardContents.forEach(infoCardContent => {
-    const nuevoDiv = document.createElement('div');
-    infoCardContent.appendChild(nuevoDiv);
-
-    ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-});
+async function renderCompartirAlojamiento(infoCardContent) {
+    let found = false;
+  
+    while (!found) {
+      const targetElement = infoCardContent.querySelector('.clase-deseada');
+  
+      if (targetElement) {
+        const nuevoDiv = document.createElement('div');
+        infoCardContent.appendChild(nuevoDiv);
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        found = true;
+      } else {
+        await wait(1000);
+      }
+    }
+  }
+  
+  const infoCardContents = document.querySelectorAll('.info-card__content');
+  
+  infoCardContents.forEach(infoCardContent => {
+    renderCompartirAlojamiento(infoCardContent);
+  });
