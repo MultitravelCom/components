@@ -93,12 +93,3 @@ document.addEventListener('DOMContentLoaded', async function () {
     await applyDisplayNoneToAllButLastButton();
     await agreeStarIcon();
 });
-
-
-// const CompartirAlojamiento = () =>{
-//     return (
-//         <>
-        
-//         </>
-//     )
-// }
