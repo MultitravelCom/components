@@ -23,13 +23,13 @@ const ModalShare = ({ open, onClose }) => {
                     <div className="container-fluid-modal">
                         <div className="row-modal">
                             <div className="row-modal-icons-arriba">
-                                <ModalIconsShare iconsShare="twitter-fill" />
-                                <ModalIconsShare iconsShare="twitter-fill" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"/>
                             </div>
                             <div className="row-modal-icons-abajo">
-                                <ModalIconsShare iconsShare="linkedin" />
-                                <ModalIconsShare iconsShare="envelope" />
-                                <ModalIconsShare iconsShare="whatsapp-bottomless" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg" />
 
                             </div>
                         </div>
@@ -44,7 +44,7 @@ const ModalIconsShare = ({ imageName }) => {
     return (
         <div className="modal__iconShare">
             <div className="modal__iconShare__img">
-                <img alt={`Imagen ${imageName}`} src={imageName} />
+                <img alt="redes sociales" src={imageName} />
             </div>
         </div>
     )
