@@ -283,3 +283,9 @@
     flex-direction: column;
 
 }
+
+.container-fluid-modal {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
