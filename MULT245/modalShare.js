@@ -36,7 +36,11 @@ const CompartirAlojamiento = () => {
     return (
         <>
             <div className="container-fluid">
-                <ButtonModalShare onClick={() => setOpenModal(true)}>
+                <ButtonModalShare
+                    onClick={() => setOpenModal(true)}
+                    id="container__widget"
+                    style="main__container__widget"
+                >
                     <div className="main__container__share">
                         <span className="glyphicon glyphicon-share share__icon"></span>
                         <span className="share__text">Compartí este alojamiento ahora</span>
