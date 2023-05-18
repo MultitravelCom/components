@@ -85,14 +85,12 @@ const CompartirAlojamiento = () => {
     )
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const infoCardContents = document.querySelectorAll('.info-card__content');
+const infoCardContents = document.querySelectorAll('.info-card__content');
 
 
-    infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = document.createElement('div');
-        infoCardContent.appendChild(nuevoDiv);
+infoCardContents.forEach(infoCardContent => {
+    const nuevoDiv = document.createElement('div');
+    infoCardContent.appendChild(nuevoDiv);
 
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-    });
+    ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
 });
