@@ -33,7 +33,7 @@ async function changeCopyMap() {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const mapLink = item.querySelector('.info-card__location-icon.glyphicon.glyphicon-map-marker');
+        const mapLink = item.querySelector('.map-link');
         mapLink.textContent = 'Ver Mapa';
         mapLink.style.display = 'block'
     });
