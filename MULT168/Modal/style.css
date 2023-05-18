@@ -206,9 +206,11 @@
     color: rgba(38, 189, 76, 1);
 
 }
-.upper-menu__phone-wrapper{
+
+.upper-menu__phone-wrapper {
     display: none;
 }
+
 @media (max-width:768px) {
     .main__container__widget {
         background-color: #00a94f;
@@ -229,6 +231,7 @@
     .main__container__widget_text {
         display: none;
     }
+
     .close-button>span {
         position: absolute;
         top: -12px;
@@ -241,28 +244,42 @@
     width: 400px;
     height: 254px;
 }
-.emcabezadoModalShare{
+
+.emcabezadoModalShare {
     height: 56px;
 }
-.modal__iconShare{
+
+.modal__iconShare {
     width: 72px;
     height: 72px;
 
 }
-.modal__iconShare>.glyphicon{
+
+.modal__iconShare>.glyphicon {
     font-size: 72px;
 }
-.row-modal-icons-arriba{
+
+.row-modal-icons-arriba {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 75px;
+    gap: 73px;
     align-content: stretch;
     text-align: center;
 }
-.row-modal-icons-abajo{
+
+.row-modal-icons-abajo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 82px;
+    gap: 67px;
+}
+
+.row-modal-share {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    gap: 12px;
+    flex-direction: column;
+
 }

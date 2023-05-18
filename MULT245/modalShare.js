@@ -21,7 +21,7 @@ const ModalShare = ({ open, onClose }) => {
                         <button className="close-button" onClick={onClose}><span>X</span></button>
                     </div>
                     <div className="container-fluid-modal">
-                        <div className="row-modal">
+                        <div className="row-modal-share">
                             <div className="row-modal-icons-arriba">
                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg" />
                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"/>
