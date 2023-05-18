@@ -13,8 +13,8 @@ function ButtonModalShare(props) {
 const ModalShare = ({ open, onClose }) => {
     if (!open) return null;
 
-    const socialshareModal = document.querySelector('.socialshare-modal');
-    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__link');
+    const socialshareModal = document.querySelector('.socialshare-moda');
+    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__lin');
 
     const links = Array.from(socialshareLinks).map(link => link.href);
 
