@@ -89,7 +89,7 @@ async function renderCompartirAlojamiento(infoCardContent) {
     let found = false;
   
     while (!found) {
-      const targetElement = infoCardContent.querySelector('.clase-deseada');
+      const targetElement = infoCardContent.querySelector('.info-card__content');
   
       if (targetElement) {
         const nuevoDiv = document.createElement('div');
