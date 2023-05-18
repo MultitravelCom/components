@@ -1,3 +1,7 @@
+function wait(timeout) {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+  }
+
 async function aplicarClaseRecomendada() {
     const resultsListPage = document.querySelector('.results-list__page');
 
@@ -26,7 +30,7 @@ async function agreeStarIcon() {
 
     if (!resultsListPage) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await changeCopyMap();
+        await agreeStarIcon();
         return;
     }
 
@@ -46,11 +50,10 @@ async function agreeStarIcon() {
 async function changeCopyMap() {
     const resultsListPage = document.querySelector('.results-list__page');
 
-    if (!resultsListPage) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await changeCopyMap();
-        return;
-    }
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+      }
 
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
@@ -83,6 +86,14 @@ async function applyDisplayNoneToAllButLastButton() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', async function () {
+    await aplicarClaseRecomendada();
+    await changeCopyMap();
+    await applyDisplayNoneToAllButLastButton();
+    await agreeStarIcon();
+});
+
+// *********************** MODAL *************************
 function ButtonModalShare(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -120,14 +131,15 @@ const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
         <>
-            <ButtonModalShare onClick={() => setOpenModal(true)}>
-                <div className="main__container__share">
-                    <span className="glyphicon glyphicon-share share__icon"></span>
-                    <span className="share__text">Compartí este alojamiento ahora</span>
-                </div>
-
-            </ButtonModalShare>
-            <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            <div className="container-fluid">
+                <ButtonModalShare onClick={() => setOpenModal(true)}>
+                    <div className="main__container__share">
+                        <span className="glyphicon glyphicon-share share__icon"></span>
+                        <span className="share__text">Compartí este alojamiento ahora</span>
+                    </div>
+                </ButtonModalShare>
+                <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            </div>
         </>
     )
 }
@@ -141,11 +153,4 @@ infoCardContents.forEach(infoCardContent => {
     ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
 });
 
-
-document.addEventListener('DOMContentLoaded', async function () {
-    await aplicarClaseRecomendada();
-    await changeCopyMap();
-    await applyDisplayNoneToAllButLastButton();
-    await agreeStarIcon();
-});
 
