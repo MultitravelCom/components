@@ -1,3 +1,18 @@
+function getSocialLinks() {
+    const socialshareModal = document.querySelector('.socialshare-modal');
+    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__link');
+
+    const links = Array.from(socialshareLinks).map(link => link.href);
+
+    return {
+        facebookLink: links[0],
+        linkedinLink: links[1],
+        mailLink: links[2],
+        twitterLink: links[3],
+        whatsappLink: links[4]
+    };
+}
+
 function ButtonModalShare(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -23,13 +38,13 @@ const ModalShare = ({ open, onClose }) => {
                     <div className="container-fluid-modal">
                         <div className="row-modal-share">
                             <div className="row-modal-icons-arriba">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg" />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"/>
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg" href={facebookLink} />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg" href={linkedinLink} />
                             </div>
                             <div className="row-modal-icons-abajo">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg" />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg" />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg" />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg" href={mailLink} />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg" href={twitterLink} />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg" href={whatsappLink} />
 
                             </div>
                         </div>
@@ -40,11 +55,13 @@ const ModalShare = ({ open, onClose }) => {
     );
 };
 
-const ModalIconsShare = ({ imageName }) => {
+const ModalIconsShare = ({ imageName, href }) => {
     return (
         <div className="modal__iconShare">
             <div className="modal__iconShare__img">
-                <img alt="redes sociales" src={imageName} />
+                <a className="socialshare-modal__link socialshare-modal__link-facebook" href={href} target="_blank" title="Facebook"><span></span>
+                    <img alt="redes sociales" src={imageName} />
+                </a>
             </div>
         </div>
     )
