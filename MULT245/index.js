@@ -21,7 +21,7 @@ async function aplicarClaseRecomendada() {
     });
 }
 
-async function agreeStarIcon(){
+async function agreeStarIcon() {
     const resultsListPage = document.querySelector('.results-list__page');
 
     if (!resultsListPage) {
@@ -34,13 +34,13 @@ async function agreeStarIcon(){
 
     items.forEach(item => {
         const infoCardCategory = item.querySelector('.info-card__category');
-    
+
         const newSpaninfoCardCategory = document.createElement('span');
         newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
-    
+
         // Agrega la propiedad display: block al elemento map-link
         infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
-      });
+    });
 }
 
 async function changeCopyMap() {
@@ -57,13 +57,13 @@ async function changeCopyMap() {
     items.forEach(item => {
         const mapLink = item.querySelector('.map-link');
         const locationIcon = mapLink.querySelector('.info-card__location-icon');
-    
+
         // Modifica el texto dentro del elemento mapLink
         mapLink.lastChild.textContent = ' Ver Mapa';
-    
+
         // Agrega la propiedad display: block al elemento map-link
         mapLink.style.display = 'block';
-      });
+    });
 }
 
 async function applyDisplayNoneToAllButLastButton() {
@@ -81,7 +81,7 @@ async function applyDisplayNoneToAllButLastButton() {
 
     const buttonsVerDetalle = document.querySelectorAll('.info-card__options-toggle');
 
-    for (let i = 0; i <  buttonsVerDetalle.length; i++) {
+    for (let i = 0; i < buttonsVerDetalle.length; i++) {
         buttonsVerDetalle[i].textContent = 'Ver detalle';
     }
 }
@@ -92,4 +92,21 @@ document.addEventListener('DOMContentLoaded', async function () {
     await changeCopyMap();
     await applyDisplayNoneToAllButLastButton();
     await agreeStarIcon();
+});
+
+const CompartirAlojamiento = () => {
+    return (
+        <>
+            <div className="main__container__share">
+                <span className="glyphicon glyphicon-share share__icon"></span>
+                <span className="share__text">Compartí este alojamiento ahora</span>
+            </div>
+        </>
+    )
+}
+
+const infoCardContents = document.querySelectorAll('.info-card__content');
+
+infoCardContents.forEach(infoCardContent => {
+    ReactDOM.render(<CompartirAlojamiento />, infoCardContent);
 });
