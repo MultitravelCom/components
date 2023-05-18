@@ -13,16 +13,16 @@ function ButtonModalShare(props) {
 const ModalShare = ({ open, onClose }) => {
     if (!open) return null;
 
-    const socialshareModal = document.querySelector('.socialshare-moda');
-    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__lin');
+    // const socialshareModal = document.querySelector('.socialshare-moda');
+    // const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__lin');
 
-    const links = Array.from(socialshareLinks).map(link => link.href);
+    // const links = Array.from(socialshareLinks).map(link => link.href);
 
-    const facebookLink = links[0];
-    const linkedinLink = links[1];
-    const mailLink = links[2];
-    const twitterLink = links[3];
-    const whatsappLink = links[4];
+    // const facebookLink = links[0];
+    // const linkedinLink = links[1];
+    // const mailLink = links[2];
+    // const twitterLink = links[3];
+    // const whatsappLink = links[4];
 
     return (
         <>
@@ -35,13 +35,13 @@ const ModalShare = ({ open, onClose }) => {
                     <div className="container-fluid-modal">
                         <div className="row-modal-share">
                             <div className="row-modal-icons-arriba">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg" href={facebookLink} />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg" href={linkedinLink} />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg"  />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"  />
                             </div>
                             <div className="row-modal-icons-abajo">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg" href={mailLink} />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg" href={twitterLink} />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg" href={whatsappLink} />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg"  />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg"  />
+                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg"  />
 
                             </div>
                         </div>
