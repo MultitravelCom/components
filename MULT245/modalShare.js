@@ -10,7 +10,7 @@ function ButtonModalShare(props) {
         </button>
     );
 }
-const Modal = ({ open, onClose }) => {
+const ModalShare = ({ open, onClose }) => {
     if (!open) return null;
     return (
         <>
@@ -63,7 +63,7 @@ const CompartirAlojamiento = () => {
                         <span className="share__text">Compartí este alojamiento ahora</span>
                     </div>
                 </ButtonModalShare>
-                <Modal open={openModal} onClose={() => setOpenModal(false)} />
+                <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
     )
