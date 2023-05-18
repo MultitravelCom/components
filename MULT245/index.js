@@ -83,14 +83,6 @@ async function applyDisplayNoneToAllButLastButton() {
         buttonsVerDetalle[i].textContent = 'Ver detalle';
     }
 }
-
-document.addEventListener('DOMContentLoaded', async function () {
-    await aplicarClaseRecomendada();
-    await changeCopyMap();
-    await applyDisplayNoneToAllButLastButton();
-    await agreeStarIcon();
-});
-
 // *********************** MODAL *************************
 function ButtonModalShare(props) {
     const handleClick = (event) => {
@@ -151,4 +143,9 @@ infoCardContents.forEach(infoCardContent => {
     ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
 });
 
-
+document.addEventListener('DOMContentLoaded', async function () {
+    await aplicarClaseRecomendada();
+    await changeCopyMap();
+    await applyDisplayNoneToAllButLastButton();
+    await agreeStarIcon();
+});
