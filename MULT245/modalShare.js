@@ -40,10 +40,12 @@ const ModalShare = ({ open, onClose }) => {
     );
 };
 
-const ModalIconsShare = ({ iconsShare }) => {
+const ModalIconsShare = ({ imageName }) => {
     return (
         <div className="modal__iconShare">
-            <span className={`glyphicon glyphicon-${iconsShare}`}></span>
+            <div className="modal__iconShare__img">
+                <img alt={`Imagen ${imageName}`} src={imageName} />
+            </div>
         </div>
     )
 }
