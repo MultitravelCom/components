@@ -1,18 +1,3 @@
-function getSocialLinks() {
-    const socialshareModal = document.querySelector('.socialshare-modal');
-    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__link');
-
-    const links = Array.from(socialshareLinks).map(link => link.href);
-
-    return {
-        facebookLink: links[0],
-        linkedinLink: links[1],
-        mailLink: links[2],
-        twitterLink: links[3],
-        whatsappLink: links[4]
-    };
-}
-
 function ButtonModalShare(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -27,6 +12,18 @@ function ButtonModalShare(props) {
 }
 const ModalShare = ({ open, onClose }) => {
     if (!open) return null;
+
+    const socialshareModal = document.querySelector('.socialshare-modal');
+    const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__link');
+
+    const links = Array.from(socialshareLinks).map(link => link.href);
+
+    const facebookLink = links[0];
+    const linkedinLink = links[1];
+    const mailLink = links[2];
+    const twitterLink = links[3];
+    const whatsappLink = links[4];
+
     return (
         <>
             <div id="overlay" className="overlay">
