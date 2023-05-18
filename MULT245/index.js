@@ -21,28 +21,28 @@ async function aplicarClaseRecomendada() {
     });
 }
 
-async function changeCopyMap() {
-    const resultsListPage = document.querySelector('.results-list__page');
+// async function changeCopyMap() {
+//     const resultsListPage = document.querySelector('.results-list__page');
 
-    if (!resultsListPage) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await changeCopyMap();
-        return;
-    }
+//     if (!resultsListPage) {
+//         await new Promise(resolve => setTimeout(resolve, 1000));
+//         await changeCopyMap();
+//         return;
+//     }
 
-    const items = resultsListPage.querySelectorAll('.results-list__item');
+//     const items = resultsListPage.querySelectorAll('.results-list__item');
 
-    items.forEach(item => {
-        const mapLink = item.querySelector('.map-link');
-        const locationIcon = mapLink.querySelector('.info-card__location-icon');
+//     items.forEach(item => {
+//         const mapLink = item.querySelector('.map-link');
+//         const locationIcon = mapLink.querySelector('.info-card__location-icon');
     
-        // Modifica el texto dentro del elemento mapLink
-        mapLink.lastChild.textContent = ' Ver Mapa';
+//         // Modifica el texto dentro del elemento mapLink
+//         mapLink.lastChild.textContent = ' Ver Mapa';
     
-        // Agrega la propiedad display: block al elemento map-link
-        mapLink.style.display = 'block';
-      });
-}
+//         // Agrega la propiedad display: block al elemento map-link
+//         mapLink.style.display = 'block';
+//       });
+// }
 
 async function applyDisplayNoneToAllButLastButton() {
     const actionsContainer = document.querySelector('.info-card__actions');
