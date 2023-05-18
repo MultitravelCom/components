@@ -87,11 +87,12 @@ const CompartirAlojamiento = () => {
 
 const infoCardContents = document.querySelectorAll('.info-card__content');
 
-infoCardContents.forEach(infoCardContent => {
-    const nuevoDiv = document.createElement('div');
-    infoCardContent.appendChild(nuevoDiv);
 
-    ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-});
-
-  
+document.addEventListener('DOMContentLoaded', function() {
+    infoCardContents.forEach(infoCardContent => {
+        const nuevoDiv = document.createElement('div');
+        infoCardContent.appendChild(nuevoDiv);
+    
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+    });
+  });
