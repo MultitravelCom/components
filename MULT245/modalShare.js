@@ -91,6 +91,7 @@ const infoCardContents = document.querySelectorAll('.info-card__content');
 infoCardContents.forEach(infoCardContent => {
     const nuevoDiv = document.createElement('div');
     infoCardContent.appendChild(nuevoDiv);
+    console.log("test")
 
     ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
 });
