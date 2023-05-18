@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 
-const CompartirAlojamiento = () =>{
-    return (
-        <>
+// const CompartirAlojamiento = () =>{
+//     return (
+//         <>
         
-        </>
-    )
-}
+//         </>
+//     )
+// }
