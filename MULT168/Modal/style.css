@@ -235,3 +235,12 @@
         right: 9px;
     }
 }
+
+/* CLASES MODAL SHARE HOTELS */
+.shareStyle{
+    max-width: 400px;
+    min-height: 254px;
+}
+.emcabezadoModalShare{
+    height: 56px;
+}

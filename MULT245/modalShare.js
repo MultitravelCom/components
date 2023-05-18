@@ -15,14 +15,18 @@ const Modal = ({ open, onClose }) => {
     return (
         <>
             <div id="overlay" className="overlay">
-                <div className="container__modal">
-                    <div className='emcabezadoModal'>
-                        <h3>Atención personalizada</h3>
+                <div className="container__modal shareStyle">
+                    <div className='emcabezadoModal emcabezadoModalShare'>
+                        <h3>Compartir alojamiento</h3>
                         <button className="close-button" onClick={onClose}><span>X</span></button>
                     </div>
                     <div className="container-fluid-modal">
                         <div className="row-modal">
-                            <h2>hola</h2>
+                            <ModalIconsShare />
+                            <ModalIconsShare />
+                            <ModalIconsShare />
+                            <ModalIconsShare />
+                            <ModalIconsShare />
                         </div>
                     </div>
                 </div>
@@ -31,11 +35,17 @@ const Modal = ({ open, onClose }) => {
     );
 };
 
+const ModalIconsShare = () =>{
+    <div className="modal__iconShare">
+        <span className="glyphicon facebook-fill"></span>
+    </div>
+}
+
 const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
         <>
-            <div className="container-fluid">
+            <div className="cont">
                 <ButtonModalShare
                     onClick={() => setOpenModal(true)}
                     id="container__widget"
