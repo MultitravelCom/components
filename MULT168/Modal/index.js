@@ -142,15 +142,17 @@ const App = () => {
 
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes a');
+        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
 
         const handleButtonClick = () => {
             setOpenModal(true);
         };
-        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
 
         btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-            btnStyleVentaPer.addEventListener('click', () => {
+            btnStyleVentaPer.addEventListener('click', (event) => {
+                event.preventDefault();
                 setOpenModal(true);
+                console.log("test");
             });
         });
 
