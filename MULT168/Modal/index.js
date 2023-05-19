@@ -152,7 +152,7 @@ const App = () => {
             btnStyleVentaPer.addEventListener('click', (event) => {
                 event.preventDefault();
                 setOpenModal(true);
-                console-log("test");
+                console.log("test");
             });
         });
 
