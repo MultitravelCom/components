@@ -149,24 +149,28 @@ const App = () => {
         };
 
         function buscarBtnStyleVentaPer() {
-            const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+            const isDesktop = window.innerWidth > 768;
 
-            if (btnStyleVentaPerList.length > 0) {
-                btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-                    btnStyleVentaPer.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        setOpenModal(true);
-                        console.log("test");
+            if (isDesktop) {
+                const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+
+                if (btnStyleVentaPerList.length > 0) {
+                    btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
+                        btnStyleVentaPer.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            setOpenModal(true);
+                            console.log("test");
+                        });
                     });
-                });
-            } else {
-                // Si el selector no se encuentra en el DOM, se vuelve a intentar después de un breve retraso
-                setTimeout(buscarBtnStyleVentaPer, 1000); // Ajusta el retraso según tus necesidades
+                } else {
+                    setTimeout(buscarBtnStyleVentaPer, 1000);
+                }
             }
         }
+        if (window.innerWidth > 768) {
+            buscarBtnStyleVentaPer();
+        }
 
-        // Llamar a la función para iniciar la búsqueda
-        buscarBtnStyleVentaPer();
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
