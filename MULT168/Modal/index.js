@@ -80,7 +80,7 @@ const Modal = ({ open, onClose }) => {
                         spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/5s5eba"
-                        buttonText="Contactarme"
+                        buttonText="Enviar mensaje"
                     />
                 </>
             );
@@ -110,7 +110,7 @@ const Modal = ({ open, onClose }) => {
                         spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/5s5eba"
-                        buttonText="Contactarme"
+                        buttonText="Enviar mensaje"
                     />
                 </>
             );
