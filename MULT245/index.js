@@ -6,10 +6,9 @@ async function aplicarClaseRecomendada() {
     const resultsListPage = document.querySelector('.results-list__page');
 
     if (!resultsListPage) {
-        // No se encontró el elemento, espera un breve período y vuelve a intentar
         await new Promise(resolve => setTimeout(resolve, 1000));
         await aplicarClaseRecomendada();
-        return; // Salir de la función para evitar ejecutar el resto del código
+        return; 
     }
 
     const items = resultsListPage.querySelectorAll('.results-list__item');
