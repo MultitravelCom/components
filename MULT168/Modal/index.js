@@ -141,17 +141,13 @@ const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
     React.useEffect(() => {
-
         const openModalButton = document.querySelector('.whatsAppFixes a');
-
-        openModalButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            setOpenModal(true);
-        })
 
         const handleButtonClick = () => {
             setOpenModal(true);
         };
+
+        const btnStyleVentaPer = document.querySelector('.btn_Style_Venta_Per a');
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
@@ -160,6 +156,16 @@ const App = () => {
                 clearInterval(checkButtonExistence);
             }
         }, 500);
+
+        openModalButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        });
+
+        btnStyleVentaPer.addEventListener('click', (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        });
 
         return () => {
             clearInterval(checkButtonExistence);
