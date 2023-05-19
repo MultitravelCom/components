@@ -147,7 +147,7 @@ const App = () => {
             setOpenModal(true);
         };
 
-        const btnStyleVentaPer = document.querySelector('.btn_Style_Venta_Per a');
+        const btnStyleVentaPer = document.querySelector('.btn_Style_Venta_Per');
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
