@@ -240,6 +240,10 @@
 }
 
 /* CLASES MODAL SHARE HOTELS */
+.main__container__widget__share{
+    border: 0;
+    background-color: transparent;
+}
 .shareStyle {
     width: 400px;
     height: 254px;
