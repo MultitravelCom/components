@@ -149,10 +149,8 @@ const App = () => {
         const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
 
         btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-            btnStyleVentaPer.addEventListener('click', (event) => {
-                event.preventDefault();
+            btnStyleVentaPer.addEventListener('click', () => {
                 setOpenModal(true);
-                console.log("test");
             });
         });
 
