@@ -160,7 +160,7 @@ const App = () => {
             setOpenModal(true);
         });
 
-        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per a');
 
         btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
             btnStyleVentaPer.addEventListener('click', (event) => {
