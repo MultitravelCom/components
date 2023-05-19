@@ -7,7 +7,7 @@ function ButtonModalLink(props) {
         } else {
             window.open(props.link, '_blank');
         }
-    }
+    }   
 
     return (
         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
@@ -140,28 +140,12 @@ const Modal = ({ open, onClose }) => {
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
-    React.useEffect(() => {
-        const openModalButtonWhatsApp = document.querySelector('.whatsAppFixes a');
-        const openModalButtonNew = document.getElementById('btnBannerSearch');
+    const openModalButton = document.querySelector('.whatsAppFixes a');
 
-        const handleWhatsAppClick = (event) => {
-            event.preventDefault();
-            setOpenModal(true);
-        };
-
-        const handleNewButtonClick = (event) => {
-            event.preventDefault();
-            setOpenModal(true);
-        };
-
-        openModalButtonWhatsApp.addEventListener('click', handleWhatsAppClick);
-        openModalButtonNew.addEventListener('click', handleNewButtonClick);
-
-        return () => {
-            openModalButtonWhatsApp.removeEventListener('click', handleWhatsAppClick);
-            openModalButtonNew.removeEventListener('click', handleNewButtonClick);
-        };
-    }, []);
+    openModalButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        setOpenModal(true);
+    })
     return (
         <>
             <div className="container-fluid">
