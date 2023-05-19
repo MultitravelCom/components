@@ -7,7 +7,7 @@ function ButtonModalLink(props) {
         } else {
             window.open(props.link, '_blank');
         }
-    }   
+    }
 
     return (
         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
@@ -140,12 +140,32 @@ const Modal = ({ open, onClose }) => {
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
-    const openModalButton = document.querySelector('.whatsAppFixes a');
+    React.useEffect(() => {
 
-    openModalButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        setOpenModal(true);
-    })
+        const openModalButton = document.querySelector('.whatsAppFixes a');
+
+        openModalButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        })
+
+        const handleButtonClick = () => {
+            setOpenModal(true);
+        };
+
+        const checkButtonExistence = setInterval(() => {
+            const openModalButtonNew = document.getElementById('btnBannerSearch');
+            if (openModalButtonNew) {
+                openModalButtonNew.addEventListener('click', handleButtonClick);
+                clearInterval(checkButtonExistence);
+            }
+        }, 500);
+
+        return () => {
+            clearInterval(checkButtonExistence);
+        };
+    }, []);
+
     return (
         <>
             <div className="container-fluid">
