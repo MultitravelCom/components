@@ -146,6 +146,15 @@ const App = () => {
         const handleButtonClick = () => {
             setOpenModal(true);
         };
+        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+
+        btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
+            btnStyleVentaPer.addEventListener('click', (event) => {
+                event.preventDefault();
+                setOpenModal(true);
+                console-log("test");
+            });
+        });
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
@@ -158,15 +167,6 @@ const App = () => {
         openModalButton.addEventListener('click', (event) => {
             event.preventDefault();
             setOpenModal(true);
-        });
-
-        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
-
-        btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-            btnStyleVentaPer.addEventListener('click', (event) => {
-                event.preventDefault();
-                setOpenModal(true);
-            });
         });
 
         return () => {
