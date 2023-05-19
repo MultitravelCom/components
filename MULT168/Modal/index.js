@@ -7,7 +7,7 @@ function ButtonModalLink(props) {
         } else {
             window.open(props.link, '_blank');
         }
-    }   
+    }
 
     return (
         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
@@ -109,7 +109,7 @@ const Modal = ({ open, onClose }) => {
                         diasClass="green"
                         spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
                         buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/0tl29b"
+                        buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
                     />
                 </>
@@ -140,12 +140,28 @@ const Modal = ({ open, onClose }) => {
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
-    const openModalButton = document.querySelector('.whatsAppFixes a');
+    React.useEffect(() => {
+        const openModalButtonWhatsApp = document.querySelector('.whatsAppFixes a');
+        const openModalButtonNew = document.getElementById('btnBannerSearch');
 
-    openModalButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        setOpenModal(true);
-    })
+        const handleWhatsAppClick = (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        };
+
+        const handleNewButtonClick = (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        };
+
+        openModalButtonWhatsApp.addEventListener('click', handleWhatsAppClick);
+        openModalButtonNew.addEventListener('click', handleNewButtonClick);
+
+        return () => {
+            openModalButtonWhatsApp.removeEventListener('click', handleWhatsAppClick);
+            openModalButtonNew.removeEventListener('click', handleNewButtonClick);
+        };
+    }, []);
     return (
         <>
             <div className="container-fluid">
