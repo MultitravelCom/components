@@ -142,19 +142,31 @@ const App = () => {
 
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes a');
-        const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+
 
         const handleButtonClick = () => {
             setOpenModal(true);
         };
 
-        btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-            btnStyleVentaPer.addEventListener('click', (event) => {
-                event.preventDefault();
-                setOpenModal(true);
-                console.log("test");
-            });
-        });
+        function buscarBtnStyleVentaPer() {
+            const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+
+            if (btnStyleVentaPerList.length > 0) {
+                btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
+                    btnStyleVentaPer.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        setOpenModal(true);
+                        console.log("test");
+                    });
+                });
+            } else {
+                // Si el selector no se encuentra en el DOM, se vuelve a intentar después de un breve retraso
+                setTimeout(buscarBtnStyleVentaPer, 1000); // Ajusta el retraso según tus necesidades
+            }
+        }
+
+        // Llamar a la función para iniciar la búsqueda
+        buscarBtnStyleVentaPer();
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
