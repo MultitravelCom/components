@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectElement = document.querySelector(".results-list__order-by-selector");
     const optionElements = selectElement.querySelectorAll('option');
 
-    const optionsElements = document.querySelectorAll('.select2-results__option');
-
     optionElements.forEach(function (optionElement) {
         if (optionElement.value === "etiqueta") {
             optionElement.textContent = "Más elegidos";
@@ -24,15 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
             optionElement.style.display = "none";
         }
     });
+    
+    const liElement = document.querySelector("#select2-order-u6-result-jdjc-etiqueta");
+    if (liElement && liElement.textContent.trim() === "Recomendado") {
+        liElement.textContent = "Mas elegidos";
+    }
 
-    optionsElements.forEach(function (optionElement) {
-        if (optionElement.textContent.trim() === "Recomendado") {
-            optionElement.textContent = "Más elegidos";
-        }
-    });
-
-    const lastTwoOptions = Array.from(optionElements).slice(-2);
-    lastTwoOptions.forEach(function (optionElement) {
-        optionElement.style.display = "none";
-    });
+    const spanElement = document.querySelector("#select2-order-u6-container");
+    if (spanElement && spanElement.textContent.trim() === "Recomendado") {
+        spanElement.textContent = "Mas elegidos";
+        spanElement.setAttribute("title", "Mas elegidos");
+    }
 });
