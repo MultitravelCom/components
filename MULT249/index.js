@@ -27,14 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const select2Span = document.querySelector("#select2-order-kk-container");
-    if (select2Span && select2Span.textContent.trim() === "Recomendado") {
-        select2Span.textContent = "Más elegidos";
-        select2Span.setAttribute("title", "Más elegidos");
+    function checkSelectors() {
+        const select2Span = document.querySelector("#select2-order-5b-container");
+        const select2Li = document.querySelector("#select2-order-ip-result-rra1-etiqueta");
+
+        if (select2Span && select2Span.textContent.trim() === "Recomendado") {
+            select2Span.textContent = "Más elegido";
+            select2Span.setAttribute("title", "Más elegido");
+        }
+
+        if (select2Li && select2Li.textContent.trim() === "Recomendado") {
+            select2Li.textContent = "Más elegidos";
+        }
+
+        if (!select2Span || !select2Li) {
+            setTimeout(checkSelectors, 2000); // Volver a intentar después de 2000 ms (2 segundos)
+        }
     }
-    const select2Li = document.querySelector("#select2-order-ip-result-rra1-etiqueta");
-    if (select2Li && select2Li.textContent.trim() === "Recomendado") {
-        select2Li.textContent = "Más elegidos";
-    }
+    setTimeout(checkSelectors, 2000); // Iniciar la verificación después de 2000 ms (2 segundos) del evento "DOMContentLoaded"
 
 });
