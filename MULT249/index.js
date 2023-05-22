@@ -32,5 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
         select2Span.textContent = "Más elegidos";
         select2Span.setAttribute("title", "Más elegidos");
     }
+    const select2Li = document.querySelector("#select2-order-ip-result-rra1-etiqueta");
+    if (select2Li && select2Li.textContent.trim() === "Recomendado") {
+        select2Li.textContent = "Más elegidos";
+    }
 
 });
