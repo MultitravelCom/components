@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const selectElement = document.querySelector(".results-list__order-by-selector");
     const optionElements = selectElement.querySelectorAll('option');
 
-    const selectResults = document.querySelector(".select2-results__options");
-    const optionsElements = selectResults.querySelectorAll('.select2-results__option');
+    const optionsElements = document.querySelectorAll('.select2-results__option');
 
     optionElements.forEach(function (optionElement) {
         if (optionElement.value === "etiqueta") {
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             optionElement.textContent = "Estrellas: mayor a menor";
         }
         if (optionElement.value === "nombre" || optionElement.value === "nombreInv") {
-            optionElement.hidden = true;
+            optionElement.style.display = "none";
         }
     });
 
@@ -37,6 +35,4 @@ document.addEventListener("DOMContentLoaded", function () {
     lastTwoOptions.forEach(function (optionElement) {
         optionElement.style.display = "none";
     });
-
-
 });
