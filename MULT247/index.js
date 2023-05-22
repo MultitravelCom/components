@@ -1,30 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    const selectores = [
-        {
-            selector: ".details-card__section.details-card__description"
-        },
-        {
-            selector: ".details-card__amenities"
-        }
+    const selectors = [
+        ".details-card__amenities .details-card__section",
+        ".details-card__description.details-card__section"
+        // Agrega aquí los selectores adicionales que desees
     ];
 
-    selectores.forEach(function (selectorObj) {
-        const section = document.querySelector(selectorObj.selector);
-        const content = section.querySelector(".details-card__section-content");
-        const iconChevron = document.createElement('div');
-        iconChevron.className = "glyphicon glyphicon-chevron-down";
+    selectors.forEach(function (selector) {
+        const sections = document.querySelectorAll(selector);
 
-        section.addEventListener("click", function () {
-            if (content.style.display === "none") {
-                content.style.display = "block";
-                icon.style.transform = "rotate(180deg)";
-            } else {
-                content.style.display = "none";
-                icon.style.transform = "rotate(0deg)";
-            }
+        sections.forEach(function (section) {
+            const content = section.querySelector(".details-card__section-content");
+            const icon = section.querySelector(".glyphicon");
+
+            section.addEventListener("click", function () {
+                if (content.style.display === "none") {
+                    content.style.display = "block";
+                    icon.style.transform = "rotate(180deg)";
+                } else {
+                    content.style.display = "none";
+                    icon.style.transform = "rotate(0deg)";
+                }
+            });
         });
-
-        section.appendChild(icon);
     });
+
+
 });
