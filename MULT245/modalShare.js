@@ -10,59 +10,70 @@ function ButtonModalShare(props) {
         </button>
     );
 }
-const ModalShare = ({ open, onClose }) => {
-    if (!open) return null;
+// const ModalShare = ({ open, onClose }) => {
+//     if (!open) return null;
 
-    // const socialshareModal = document.querySelector('.socialshare-moda');
-    // const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__lin');
+//     // const socialshareModal = document.querySelector('.socialshare-moda');
+//     // const socialshareLinks = socialshareModal.querySelectorAll('.socialshare-modal__lin');
 
-    // const links = Array.from(socialshareLinks).map(link => link.href);
+//     // const links = Array.from(socialshareLinks).map(link => link.href);
 
-    // const facebookLink = links[0];
-    // const linkedinLink = links[1];
-    // const mailLink = links[2];
-    // const twitterLink = links[3];
-    // const whatsappLink = links[4];
+//     // const facebookLink = links[0];
+//     // const linkedinLink = links[1];
+//     // const mailLink = links[2];
+//     // const twitterLink = links[3];
+//     // const whatsappLink = links[4];
 
-    return (
-        <>
-            <div id="overlay" className="overlay">
-                <div className="container__modal shareStyle">
-                    <div className='emcabezadoModal emcabezadoModalShare'>
-                        <h3>Compartir alojamiento</h3>
-                        <button className="close-button" onClick={onClose}><span>X</span></button>
-                    </div>
-                    <div className="container-fluid-modal">
-                        <div className="row-modal-share">
-                            <div className="row-modal-icons-arriba">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg"  />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"  />
-                            </div>
-                            <div className="row-modal-icons-abajo">
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg"  />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg"  />
-                                <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg"  />
+//     return (
+//         <>
+//             <div id="overlay" className="overlay">
+//                 <div className="container__modal shareStyle">
+//                     <div className='emcabezadoModal emcabezadoModalShare'>
+//                         <h3>Compartir alojamiento</h3>
+//                         <button className="close-button" onClick={onClose}><span>X</span></button>
+//                     </div>
+//                     <div className="container-fluid-modal">
+//                         <div className="row-modal-share">
+//                             <div className="row-modal-icons-arriba">
+//                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Facebook.svg"  />
+//                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/LinkedIn.svg"  />
+//                             </div>
+//                             <div className="row-modal-icons-abajo">
+//                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Mail.svg"  />
+//                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/Twitter.svg"  />
+//                                 <ModalIconsShare imageName="https://multitravelcom.github.io/components/MULT245/icons/WhatsApp.svg"  />
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-};
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
 
-const ModalIconsShare = ({ imageName, href }) => {
-    return (
-        <div className="modal__iconShare">
-            <div className="modal__iconShare__img">
-                <a className="socialshare-modal__link socialshare-modal__link-facebook" href={href} target="_blank" title="Facebook"><span></span>
-                    <img alt="redes sociales" src={imageName} />
-                </a>
-            </div>
-        </div>
-    )
-}
+// const ModalIconsShare = ({ imageName, href }) => {
+//     return (
+//         <div className="modal__iconShare">
+//             <div className="modal__iconShare__img">
+//                 <a className="socialshare-modal__link socialshare-modal__link-facebook" href={href} target="_blank" title="Facebook"><span></span>
+//                     <img alt="redes sociales" src={imageName} />
+//                 </a>
+//             </div>
+//         </div>
+//     )
+// }
+
+const ModalShare = ({ open }) => {
+    React.useEffect(() => {
+      const modalElement = document.getElementById("modal-social");
+      if (modalElement) {
+        modalElement.style.display = open ? "block" : "none";
+      }
+    }, [open]);
+  
+    return null;
+  };
 
 const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
