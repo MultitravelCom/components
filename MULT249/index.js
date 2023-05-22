@@ -23,9 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const liElement = document.querySelector("#select2-bar9-container");
-    if (liElement && liElement.textContent.trim() === "Recomendado") {
-        liElement.textContent = "Mas elegidos";
+    const select2Span = document.querySelector('span[title="Recomendado"]');
+    if (select2Span) {
+        select2Span.textContent = "Más elegidos";
+        select2Span.setAttribute("title", "Más elegidos");
     }
 
     const spanElement = document.querySelector(".select2-results__option.select2-results__option--highlighted");
