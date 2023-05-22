@@ -1,4 +1,4 @@
-function initFunctionWhenSelectorAvailable() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const selectores = [
         {
@@ -27,29 +27,4 @@ function initFunctionWhenSelectorAvailable() {
 
         section.appendChild(icon);
     });
-}
-
-function observeDOM() {
-    const observer = new MutationObserver(function (mutationsList, observer) {
-        for (let mutation of mutationsList) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                for (let addedNode of mutation.addedNodes) {
-                    if (addedNode.nodeType === Node.ELEMENT_NODE && addedNode.matches('.details-card__section.details-card__description')) {
-                        observer.disconnect();
-                        initFunctionWhenSelectorAvailable();
-                        return;
-                    }
-                }
-            }
-        }
-    });
-
-    observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    observeDOM();
 });
