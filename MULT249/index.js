@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
             optionElement.style.display = "none";
         }
     });
-    
+
     const liElement = document.querySelector("#select2-order-u6-result-jdjc-etiqueta");
     if (liElement && liElement.textContent.trim() === "Recomendado") {
         liElement.textContent = "Mas elegidos";
     }
 
-    const spanElement = document.querySelector("#select2-order-u6-container");
+    const spanElement = document.querySelector(".select2-results__option select2-results__option--highlighted");
     if (spanElement && spanElement.textContent.trim() === "Recomendado") {
         spanElement.textContent = "Mas elegidos";
         spanElement.setAttribute("title", "Mas elegidos");
