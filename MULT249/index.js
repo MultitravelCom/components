@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const liElement = document.querySelector("#select2-order-u6-result-jdjc-etiqueta");
+    const liElement = document.querySelector("#select2-bar9-container");
     if (liElement && liElement.textContent.trim() === "Recomendado") {
         liElement.textContent = "Mas elegidos";
     }
