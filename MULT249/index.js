@@ -19,10 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (optionElement.value === "categoriaInv") {
             optionElement.textContent = "Estrellas: mayor a menor";
         }
-        optionElements.forEach(function (optionElement) {
-            if (optionElement.value === "nombre" || optionElement.value === "nombreInv") {
-                optionElement.style.display = "none";
-            }
-        });
     });
+
+    optionElements.forEach(function (optionElement) {
+        if (optionElement.value === "nombre" || optionElement.value === "nombreInv") {
+            optionElement.style.display = "none";
+        }
+    });
+
+    const select2Span = document.querySelector("#select2-order-kk-container");
+    if (select2Span && select2Span.textContent.trim() === "Recomendado") {
+        select2Span.textContent = "Más elegidos";
+        select2Span.setAttribute("title", "Más elegidos");
+    }
+
 });
