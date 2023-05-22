@@ -69,22 +69,22 @@ async function changeCopyMap() {
 async function applyDisplayNoneToAllButLastButton() {
     const actionsContainer = document.querySelector('.info-card__actions');
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
-  
+
     for (let i = 0; i < buttonsAndLinks.length; i++) {
-      if (i !== buttonsAndLinks.length - 1) {
-        buttonsAndLinks[i].style.display = 'none';
-      }
+        if (i !== buttonsAndLinks.length - 1) {
+            buttonsAndLinks[i].style.display = 'none';
+        }
     }
-  
+
     const lastButtonContainer = buttonsAndLinks[buttonsAndLinks.length - 1].parentNode;
     lastButtonContainer.style.display = 'inline-block';
-  
+
     const buttonsVerDetalle = document.querySelectorAll('.info-card__options-toggle');
-  
+
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
-      buttonsVerDetalle[i].textContent = 'Ver detalle';
+        buttonsVerDetalle[i].textContent = 'Ver detalle';
     }
-  }
+}
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();

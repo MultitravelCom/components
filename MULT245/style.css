@@ -29,3 +29,6 @@
     top: -34px;
     right: 12px;
 }
+.info-card__action-item--share.js-social-share{
+    display: block;
+}
