@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const icon = document.createElement('div');
-            icon.className = "glyphicon glyphicon-chevron-down";
+            icon.className = "glyphicon glyphicon-chevron-down chevron-down-hotels";
             section.appendChild(icon);
         });
     });
