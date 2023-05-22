@@ -1,8 +1,8 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
-const resultsListPage = document.querySelector('.results-list__page');
-const resultsItems = resultsListPage.querySelectorAll('.results-list__item');
+const resultsListPageModal = document.querySelector('.results-list__page');
+const resultsItems = resultsListPageModal.querySelectorAll('.results-list__item');
 
 resultsItems.forEach(function (item) {
     const button1 = item.querySelector('.btn.btn-outline-secondary.btn-small.info-card__action-item.info-card__action-item--share.js-social-share');
