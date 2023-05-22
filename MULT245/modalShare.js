@@ -81,25 +81,42 @@ const ModalShare = ({ open }) => {
     return null;
   };
 
-const CompartirAlojamiento = () => {
+  const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
+  
+    const openShareModal = () => {
+      const modalElement = document.getElementById("modal-social");
+      if (modalElement) {
+        modalElement.classList.add("in");
+        modalElement.style.display = "block";
+      }
+    };
+  
+    const closeShareModal = () => {
+      const modalElement = document.getElementById("modal-social");
+      if (modalElement) {
+        modalElement.classList.remove("in");
+        modalElement.style.display = "none";
+      }
+    };
+  
     return (
-        <>
-            <div className="cont">
-                <ButtonModalShare
-                    onClick={() => setOpenModal(true)}
-                    style="main__container__widget__share"
-                >
-                    <div className="main__container__share">
-                        <span className="glyphicon glyphicon-share share__icon"></span>
-                        <span className="share__text">Compartí este alojamiento ahora</span>
-                    </div>
-                </ButtonModalShare>
-                <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
-            </div>
-        </>
-    )
-}
+      <>
+        <div className="cont">
+          <button
+            className="btn btn-outline-secondary btn-small info-card__action-item info-card__action-item--share js-social-share"
+            type="button"
+            data-social-share-url=""
+            title="Compartir"
+            onClick={() => setOpenModal(true)}
+          >
+            <span className="glyphicon glyphicon-share"></span>
+          </button>
+          <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
+        </div>
+      </>
+    );
+  };
 
 const checkAndRender = async () => {
     let infoCardContents = document.querySelectorAll('.info-card__content');
