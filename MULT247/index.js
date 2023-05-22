@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var descriptionSection = document.querySelector(".details-card__section.details-card__description");
-    var content = descriptionSection.querySelector(".details-card__section-content");
-  
+    const descriptionSection = document.querySelector(".details-card__section.details-card__description");
+    const content = descriptionSection.querySelector(".details-card__section-content");
+    const iconDiv = document.createElement('div'); 
+    iconDiv.className="glyphicon glyphicon-chevron-up";
+
     descriptionSection.addEventListener("click", function() {
       content.style.display = (content.style.display === "none") ? "block" : "none";
     });
