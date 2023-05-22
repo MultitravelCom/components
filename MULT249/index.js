@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         liElement.textContent = "Mas elegidos";
     }
 
-    const spanElement = document.querySelector(".select2-results__option select2-results__option--highlighted");
+    const spanElement = document.querySelector(".select2-results__option.select2-results__option--highlighted");
     if (spanElement && spanElement.textContent.trim() === "Recomendado") {
         spanElement.textContent = "Mas elegidos";
         spanElement.setAttribute("title", "Mas elegidos");
