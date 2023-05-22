@@ -1,24 +1,27 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
-  }
+}
 
-  const resultsPageModal = document.querySelector('.results-list__page');
-  const resultsItems = resultsPageModal.querySelectorAll('.results-list__item');
-  
-  resultsItems.forEach(function(item) {
-    const button1 = item.querySelector('.btn.btn-outline-secondary.btn-small.info-card__action-item.info-card__action-item--share.js-social-share');
-    const button2 = item.querySelector('.main__container__share');
-    
-    const modal = document.querySelector('#modal-social');
-    
-    button1.addEventListener('click', abrirModal);
-    button2.addEventListener('click', abrirModal);
-    
-    function abrirModal() {
-      modal.style.display = 'block';
-    }
-  });
-  
+function initializeModalButtons() {
+    const resultsPageModal = document.querySelector('.results-list__page');
+    const resultsItems = resultsPageModal.querySelectorAll('.results-list__item');
+
+    resultsItems.forEach(function (item) {
+        const button1 = item.querySelector('.btn.btn-outline-secondary.btn-small.info-card__action-item.info-card__action-item--share.js-social-share');
+        const button2 = item.querySelector('.main__container__share');
+
+        const modal = document.querySelector('#modal-social');
+
+        button1.addEventListener('click', abrirModal);
+        button2.addEventListener('click', abrirModal);
+
+        function abrirModal() {
+            modal.style.display = 'block';
+        }
+    });
+}
+initializeModalButtons();
+
 
 async function aplicarClaseRecomendada() {
     const resultsListPage = document.querySelector('.results-list__page');
@@ -26,7 +29,7 @@ async function aplicarClaseRecomendada() {
     if (!resultsListPage) {
         await new Promise(resolve => setTimeout(resolve, 1000));
         await aplicarClaseRecomendada();
-        return; 
+        return;
     }
 
     const items = resultsListPage.querySelectorAll('.results-list__item');
@@ -47,23 +50,23 @@ async function aplicarClaseRecomendada() {
 
 async function agreeStarIcon() {
     const resultsListPage = document.querySelector('.results-list__page');
-  
+
     while (!resultsListPage) {
-      await wait(1000);
-      resultsListPage = document.querySelector('.results-list__page');
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
     }
-  
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
-  
+
     items.forEach(item => {
-      const infoCardCategory = item.querySelector('.info-card__category');
-  
-      const newSpaninfoCardCategory = document.createElement('span');
-      newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
-  
-      infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
+        const infoCardCategory = item.querySelector('.info-card__category');
+
+        const newSpaninfoCardCategory = document.createElement('span');
+        newSpaninfoCardCategory.className = 'glyphicon glyphicon-star iconStar';
+
+        infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
     });
-  }
+}
 
 async function changeCopyMap() {
     const resultsListPage = document.querySelector('.results-list__page');
@@ -71,7 +74,7 @@ async function changeCopyMap() {
     while (!resultsListPage) {
         await wait(1000);
         resultsListPage = document.querySelector('.results-list__page');
-      }
+    }
 
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
