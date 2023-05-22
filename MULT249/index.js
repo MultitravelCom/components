@@ -19,11 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (optionElement.value === "categoriaInv") {
             optionElement.textContent = "Estrellas: mayor a menor";
         }
-    });
-
-    optionElements.forEach(function (optionElement) {
         if (optionElement.value === "nombre" || optionElement.value === "nombreInv") {
-            optionElement.style.display = "none";
+            optionElement.hidden = true;
         }
     });
 
@@ -41,9 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!select2Span || !select2Li) {
-            setTimeout(checkSelectors, 2000); // Volver a intentar después de 2000 ms (2 segundos)
+            setTimeout(checkSelectors, 2000);
         }
     }
-    setTimeout(checkSelectors, 2000); // Iniciar la verificación después de 2000 ms (2 segundos) del evento "DOMContentLoaded"
+
+    setTimeout(checkSelectors, 2000);
 
 });
