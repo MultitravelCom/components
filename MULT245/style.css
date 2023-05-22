@@ -29,9 +29,3 @@
     top: -34px;
     right: 12px;
 }
-.btn.btn-outline-secondary.btn-small.info-card__action-item.info-card__action-item--share.js-social-share{
-    display: block !important;
-    position: absolute;
-    bottom: 49px;
-    left: 22px;
-}
