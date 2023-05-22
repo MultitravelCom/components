@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         sections.forEach(function (section) {
             const content = section.querySelector(".details-card__section-content");
-            const icon = section.querySelector(".glyphicon");
 
             section.addEventListener("click", function () {
                 if (content.style.display === "none") {
@@ -21,8 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     icon.style.transform = "rotate(0deg)";
                 }
             });
+
+            const icon = document.createElement('div');
+            icon.className = "glyphicon glyphicon-chevron-down";
+            section.appendChild(icon);
         });
     });
-
-
 });
