@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectElement = document.querySelector(".results-list__order-by-selector");
     const optionElements = selectElement.querySelectorAll('option');
 
+    const selectResults = document.querySelector(".select2-results__options");
+    const optionsElements = selectResults.querySelectorAll('.select2-results__option');
+
     optionElements.forEach(function (optionElement) {
         if (optionElement.value === "etiqueta") {
             optionElement.textContent = "Más elegidos";
@@ -24,24 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function checkSelectors() {
-        const select2Span = document.querySelector("#select2-order-5b-container");
-        const select2Li = document.querySelector("#select2-order-ip-result-rra1-etiqueta");
-
-        if (select2Span && select2Span.textContent.trim() === "Recomendado") {
-            select2Span.textContent = "Más elegido";
-            select2Span.setAttribute("title", "Más elegido");
+    optionsElements.forEach(function (optionElement) {
+        if (optionElement.textContent.trim() === "Recomendado") {
+            optionElement.textContent = "Más elegidos";
         }
+    });
 
-        if (select2Li && select2Li.textContent.trim() === "Recomendado") {
-            select2Li.textContent = "Más elegidos";
-        }
+    const lastTwoOptions = Array.from(optionElements).slice(-2);
+    lastTwoOptions.forEach(function (optionElement) {
+        optionElement.style.display = "none";
+    });
 
-        if (!select2Span || !select2Li) {
-            setTimeout(checkSelectors, 2000);
-        }
-    }
-
-    setTimeout(checkSelectors, 2000);
 
 });
