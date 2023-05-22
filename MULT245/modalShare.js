@@ -66,9 +66,15 @@ function ButtonModalShare(props) {
 
 const ModalShare = ({ open }) => {
     React.useEffect(() => {
-      const modalElement = document.getElementById("modal-social");
-      if (modalElement) {
-        modalElement.style.display = open ? "block" : "none";
+      const openModal = () => {
+        const modalElement = document.getElementById("modal-social");
+        if (modalElement) {
+          modalElement.style.display = "block";
+        }
+      };
+  
+      if (open) {
+        openModal();
       }
     }, [open]);
   
