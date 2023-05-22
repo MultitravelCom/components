@@ -65,21 +65,21 @@ function ButtonModalShare(props) {
 // }
 
 const ModalShare = ({ open }) => {
-  React.useEffect(() => {
-    const modalElement = document.getElementById("modal-social");
-    if (modalElement) {
+    React.useEffect(() => {
+      const openModal = () => {
+        const modalElement = document.getElementById("modal-social");
+        if (modalElement) {
+          modalElement.style.display = "block";
+        }
+      };
+  
       if (open) {
-        modalElement.classList.add("in");
-        modalElement.style.display = "block";
-      } else {
-        modalElement.classList.remove("in");
-        modalElement.style.display = "none";
+        openModal();
       }
-    }
-  }, [open]);
-
-  return null;
-};
+    }, [open]);
+  
+    return null;
+  };
 
 const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
