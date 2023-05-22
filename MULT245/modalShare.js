@@ -66,15 +66,9 @@ function ButtonModalShare(props) {
 
 const ModalShare = ({ open }) => {
     React.useEffect(() => {
-      const openModal = () => {
-        const modalElement = document.getElementById("modal-social");
-        if (modalElement) {
-          modalElement.style.display = "block";
-        }
-      };
-  
-      if (open) {
-        openModal();
+      const modalElement = document.getElementById("modal-social");
+      if (modalElement) {
+        modalElement.style.display = open ? "block" : "none";
       }
     }, [open]);
   
@@ -90,7 +84,7 @@ const CompartirAlojamiento = () => {
                     onClick={() => setOpenModal(true)}
                     style="main__container__widget__share"
                 >
-                    <div className="main__container__share">
+                    <div className="main__container__share js-social-share">
                         <span className="glyphicon glyphicon-share share__icon"></span>
                         <span className="share__text">Compartí este alojamiento ahora</span>
                     </div>
