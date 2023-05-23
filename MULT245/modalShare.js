@@ -104,19 +104,17 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = useState(false);
+    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(false);
 
-    useEffect(() => {
+    React.useEffect(() => {
         const checkDivPresence = () => {
             const div = document.querySelector('.bestprice__taxincluded.apriclar');
             setHasBestPriceTaxIncluded(!!div);
         };
 
         checkDivPresence();
-        // Configura un intervalo para verificar periódicamente la presencia del div
-        const interval = setInterval(checkDivPresence, 1000); // Verificar cada segundo
+        const interval = setInterval(checkDivPresence, 1000); 
 
-        // Limpia el intervalo cuando el componente se desmonte
         return () => {
             clearInterval(interval);
         };
