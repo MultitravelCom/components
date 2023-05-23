@@ -50,13 +50,48 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 const Modal = ({ open, onClose }) => {
 
     const now = new Date();
+    const currentDay = now.getDay(); // 0: Domingo, 1: Lunes, ..., 6: Sábado
     const currentHour = now.getHours();
 
+
     const renderModal = () => {
-        if ((currentHour >= 10 && currentHour < 21) || currentHour === 20 && now.getMinutes() <= 59) {
-            return (
+        if (
+            (currentDay >= 1 && currentDay <= 5 && currentHour >= 10 && currentHour < 20) ||
+            (currentDay === 6 && currentHour >= 10 && currentHour < 15)
+          ) {            return (
                 <>
                     <ModalContactos
+                        iconModal="glyphicon-phone"
+                        ventasClass="blue"
+                        ventasText="Ventas <span>0800 348 0003</span>"
+                        horarioClass="blue"
+                        horarioText="Lunes a viernes de 10 a 20 hs"
+                        diasClass="blue"
+                        diasText="Sabados de 10 a 15 hs"
+                        spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
+                        buttonStyle="btn_Style_Venta_llamar"
+                        buttonLink="08003480003"
+                        buttonText="Llamar"
+                        callToPhone={true}
+                    />
+                    {/* <ModalContactos
+                        iconModal="glyphicon-whatsapp-bottomless"
+                        ventasClass="green"
+                        ventasText="Posventa <span>11 4960 8454</span>"
+                        horarioClass="green"
+                        horarioText="Lunes a domingo las 24hs"
+                        diasClass="green"
+                        spanText="Escribí al whatsapp para que nuestros especialistas te ayuden."
+                        buttonStyle="btn_Style_Venta_Contactarme"
+                        buttonLink="https://wa.link/5s5eba"
+                        buttonText="Enviar mensaje"
+                    /> */}
+                </>
+            );
+        } else {
+            return (
+                <>
+                 <ModalContactos
                         iconModal="glyphicon-phone"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
@@ -73,34 +108,16 @@ const Modal = ({ open, onClose }) => {
                     <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
-                        ventasText="Posventa <span>11 4960 8454</span>"
+                        ventasText="Consulta por ventas <span>11 4979 1877</span>"
                         horarioClass="green"
-                        horarioText="Lunes a domingo las 24hs"
+                        horarioText="Fuera de horario de venta telefónica"
                         diasClass="green"
-                        spanText="Escribí al whatsapp para que nuestros especialistas te ayuden."
+                        spanText="Dejanos tu consulta y nos contactaremos en nuestro horario de atención."
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/5s5eba"
                         buttonText="Enviar mensaje"
                     />
-                </>
-            );
-        } else {
-            return (
-                <>
-                    <ModalContactos
-                        iconModal="glyphicon-phone"
-                        ventasClass="blue"
-                        ventasText="Ventas <span>0800 348 0003</span>"
-                        horarioClass="blue"
-                        horarioText="Lunes a viernes de 10 a 20 hs"
-                        diasClass="blue"
-                        diasText="Sabados de 10 a 15 hs"
-                        spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
-                        buttonStyle="btn_Style_Venta_llamar"
-                        buttonLink="https://wa.link/5s5eba"
-                        buttonText="Llamar"
-                    />
-                    <ModalContactos
+                    {/* <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
                         ventasText="Posventa / Consultas <span>11 4979 1877</span>"
@@ -111,7 +128,7 @@ const Modal = ({ open, onClose }) => {
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
-                    />
+                    /> */}
                 </>
             );
         }
@@ -123,7 +140,7 @@ const Modal = ({ open, onClose }) => {
             <div id="overlay" className="overlay">
                 <div className="container__modal">
                     <div className='emcabezadoModal'>
-                        <h3>Atención personalizada</h3>
+                        <h3>Comunicate con tu especialista en viaje</h3>
                         <button className="close-button" onClick={onClose}><span>X</span></button>
                     </div>
                     <div className="container-fluid-modal">
@@ -199,7 +216,7 @@ const App = () => {
                     onClick={() => setOpenModal(true)}
                 >
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
-                    <div className="main__container__widget_text">Atención personalizada</div>
+                    <div className="main__container__widget_text">Ventas</div>
                 </ButtonModal>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
