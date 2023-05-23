@@ -113,7 +113,7 @@ const BannerMensageCardApp = () => {
         };
 
         checkDivPresence();
-        const interval = setInterval(checkDivPresence, 1000); 
+        const interval = setInterval(checkDivPresence, 1000);
 
         return () => {
             clearInterval(interval);
@@ -121,13 +121,13 @@ const BannerMensageCardApp = () => {
     }, []);
 
     return (
-        <div className="main__container__bannerMensageCard__App">
+        <>
             {hasBestPriceTaxIncluded ? (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             ) : (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             )}
-        </div>
+        </>
     )
 }
 
@@ -145,6 +145,9 @@ const checkAndRender = async () => {
 
         infoCardContent.appendChild(nuevoDiv);
         infoCardContent.appendChild(nuevoDivBannerMensage);
+
+        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
