@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectContainer.addEventListener('click', function () {
         console.log("click")
-        const firstOption = selectContainer.querySelector('.select2-results__option:first-child');
+        const MasElegido = document.querySelector('.select2-results__options')
+        const firstOption = MasElegido.querySelector('.select2-results__option:first-child');
         firstOption.textContent = 'Más elegidos';
     });
 
