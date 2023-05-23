@@ -252,7 +252,8 @@
         font-size: 14px;
     }
     .main__container__modalContactos {
-      height: 330px;
+      height: 195px;
+      min-width: 261px;
     
     }
     
