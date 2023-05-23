@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.setAttribute("title", "Mas elegidos");
     }
 
-
-
     const checkResultsListPage = () => {
 
         const resultsPage = document.querySelector('.results-list__page');
@@ -45,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
 
             resultsListPage.forEach(item => {
-                const selectors = item.querySelectorAll('.js-open-gallery');
+                const selectors = item.querySelectorAll('.info-card__image-holder');
 
                 selectors.forEach(selector => {
-                    selector.removeAttribute('onclick');
+                    selector.classList.remove('js-open-gallery');
                 });
             });
         } else {
