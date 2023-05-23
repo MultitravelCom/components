@@ -37,12 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectContainer = document.querySelector('.results-list__order-by-selector.select2-hidden-accessible');
 
     selectContainer.addEventListener('click', function () {
-        console.log("click")
         const MasElegido = document.querySelector('.select2-results__options')
         const firstOption = MasElegido.querySelector('.select2-results__option:first-child');
         if (firstOption) {
             firstOption.textContent = 'Más elegidos';
-            console.log('Se hizo clic en el desplegable');
           }
     });
 
