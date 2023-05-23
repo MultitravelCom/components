@@ -1,0 +1,45 @@
+/* **** MULT-251 ******* */
+.booking-payment__options>.booking-payment__options-pos,
+.booking-payment__options-prepayment {
+    background: #FFFFFF;
+    border: 1px solid #0D4E88;
+    border-radius: 8px;
+    color: #0D4E88;
+}
+.booking-payment__options{
+    display: none;
+}
+.booking-payment__options li .glyphicon{
+margin-top: 2px;
+}
+
+.booking-payment__options>.booking-payment__options-prepayment {
+    width: 211px;
+    height: 36px;
+}
+
+.glyphicon-md {
+    color: #0D4E88;
+    margin-top:2px ;
+}
+
+.booking-payment__options li.on {
+    background: #0D4E88;
+    color: #FFFFFF;
+    background: #0D4E88;
+    border-radius: 8px;
+}
+
+.booking-payment__options li.on .glyphicon {
+    color: #FFFFFF;
+}
+@media (max-width: 767px) {
+    .booking-payment__options li,
+    .booking-payment__options li{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .booking-payment__options>.booking-payment__options-prepayment {
+        width: 100%;
+    }
+}

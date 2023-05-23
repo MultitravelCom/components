@@ -82,4 +82,4 @@ const BannerMediosDePagos = () => {
     )
 }
 
-ReactDOM.render(<BannerMediosDePagos />, newDiv);
+ReactDOM.createRoot(document.getElementById('rootHome')).render(<BannerMediosDePagos />);
