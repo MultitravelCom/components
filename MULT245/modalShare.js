@@ -108,8 +108,8 @@ const BannerMensageCardApp = () => {
 
     React.useEffect(() => {
         const checkDivPresence = () => {
-            const div = document.querySelector('.bestprice__taxincluded.apriclar');
-            setHasBestPriceTaxIncluded(!!div);
+            const div = document.querySelector('.bestprice__taxincluded');
+            setHasBestPriceTaxIncluded(div && div.classList.contains('apriclar'));
         };
 
         checkDivPresence();
