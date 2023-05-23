@@ -35,14 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.setAttribute("title", "Mas elegidos");
     }
 
-    const resultsPage = document.querySelector('.results-list__page');
-    const items = resultsPage.querySelectorAll('.results-list__item');
 
-    items.forEach(item => {
-        const selectors = item.querySelectorAll('.js-open-gallery');
 
-        selectors.forEach(selector => {
-            selector.removeAttribute('onclick');
-        });
-    });
+    const checkResultsListPage = () => {
+
+        const resultsPage = document.querySelector('.results-list__page');
+        
+        if (resultsPage) {
+            const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
+
+            resultsListPage.forEach(item => {
+                const selectors = item.querySelectorAll('.js-open-gallery');
+        
+                selectors.forEach(selector => {
+                    selector.removeAttribute('onclick');
+                });
+            });
+        } else {
+          setTimeout(checkResultsListPage, 2000);
+        }
+      };
+      
+      checkResultsListPage();
 });
