@@ -66,14 +66,14 @@ function ButtonModalShare(props) {
 
 const ModalShare = ({ open }) => {
     React.useEffect(() => {
-      const modalElement = document.getElementById("modal-social");
-      if (modalElement) {
-        modalElement.style.display = open ? "block" : "none";
-      }
+        const modalElement = document.getElementById("modal-social");
+        if (modalElement) {
+            modalElement.style.display = open ? "block" : "none";
+        }
     }, [open]);
-  
+
     return null;
-  };
+};
 
 const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
@@ -94,20 +94,58 @@ const CompartirAlojamiento = () => {
         </>
     )
 }
+const BannerMensageCard = ({ text_p }) => {
+    return (
+        <div className="main__container__bannerMensageCard">
+            <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+            <p>{text_p}</p>
+        </div>
+    )
+}
+
+const BannerMensageCardApp = () => {
+    const [isDivPresent, setIsDivPresent] = React.useState(false);
+    React.useEffect(() => {
+        const checkDivPresence = () => {
+            const div = document.querySelector('.bestprice__taxincluded.apriclar');
+            setIsDivPresent(!!div);
+        };
+
+        checkDivPresence();
+        const interval = setInterval(checkDivPresence, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+    return (
+        <div className="main__container__bannerMensageCard__App">
+            {hasBestPriceTaxIncluded ? (
+                <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
+            ) : (
+                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
+            )}
+        </div>
+    )
+}
 
 const checkAndRender = async () => {
     let infoCardContents = document.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar 1 segundo antes de volver a verificar
+        await new Promise(resolve => setTimeout(resolve, 1000));
         infoCardContents = document.querySelectorAll('.info-card__content');
     }
 
     infoCardContents.forEach(infoCardContent => {
         const nuevoDiv = document.createElement('div');
+        const nuevoDivBannerMensage = document.createElement('div');
+        
         infoCardContent.appendChild(nuevoDiv);
+        infoCardContent.appendChild(nuevoDivBannerMensage);
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
 
