@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.setAttribute("title", "Mas elegidos");
     }
 
+    const resultsPage = document.querySelector('.results-list__page');
     const items = resultsPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
