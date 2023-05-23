@@ -99,7 +99,30 @@ async function changeCopyButton() {
         buttonElement.textContent = 'Comprar';
         buttonElement.style.display = 'block';
     });
+
+    const checkResultsListPage = () => {
+
+        const resultsPage = document.querySelector('.results-list__page');
+
+        if (resultsPage) {
+            const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
+
+            resultsListPage.forEach(item => {
+                const selectors = item.querySelectorAll('.info-card__image-holder');
+
+                selectors.forEach(selector => {
+                    selector.classList.remove('js-open-gallery');
+                });
+            });
+        } else {
+            setTimeout(checkResultsListPage, 2000);
+        }
+    };
+
+    checkResultsListPage();
 };
+
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
