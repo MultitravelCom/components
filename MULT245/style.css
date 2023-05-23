@@ -270,7 +270,7 @@
     display: flex;
     flex-direction: column;
 } */
-.info-card__image--action{
+/* .info-card__image--action{
     width: 100%;
     border-radius: 8px 8px 8px 40px;
 }
@@ -299,7 +299,7 @@
 a.abs{
     display: none;
     right: 9px;
-}
+} */
 
 .main__container__bannerMensageCard__App{
     position: absolute;
