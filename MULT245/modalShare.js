@@ -104,12 +104,12 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(false);
+    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
 
     React.useEffect(() => {
         const checkDivPresence = () => {
             const div = document.querySelector('.bestprice__taxincluded');
-            setHasBestPriceTaxIncluded(div && div.classList.contains('apriclar'));
+            setHasBestPriceTaxIncluded(!div);
         };
 
         checkDivPresence();
@@ -123,13 +123,13 @@ const BannerMensageCardApp = () => {
     return (
         <>
             {hasBestPriceTaxIncluded ? (
-                <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
-            ) : (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
+            ) : (
+                <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             )}
         </>
-    )
-}
+    );
+};
 
 const checkAndRender = async () => {
     let infoCardContents = document.querySelectorAll('.info-card__content');
