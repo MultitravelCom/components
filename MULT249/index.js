@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.textContent = "Mas elegidos";
         spanElement.setAttribute("title", "Mas elegidos");
     }
-    const selectContainer = document.querySelector('.select2-container');
+    const selectContainer = document.querySelector('.results-list__order-by-selector.select2-hidden-accessible');
 
     // Escuchar el evento click en el desplegable
     selectContainer.addEventListener('click', function () {
