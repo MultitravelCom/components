@@ -35,10 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.setAttribute("title", "Mas elegidos");
     }
 
-    const selectors = document.querySelectorAll('.results-list__item .js-open-gallery');
+    const items = resultsPage.querySelectorAll('.results-list__item');
 
-    // Recorrer cada selector y quitar el atributo "onclick"
-    selectors.forEach(selector => {
-        selector.removeAttribute('onclick');
+    items.forEach(item => {
+        const selectors = item.querySelectorAll('.js-open-gallery');
+
+        selectors.forEach(selector => {
+            selector.removeAttribute('onclick');
+        });
     });
 });
