@@ -32,3 +32,6 @@
 .info-card__action-item--share.js-social-share{
     display: block;
 }
+.btn.btn-secondary.info-card__options-toggle.js-optiofns-toggle{
+    display: none;
+}
