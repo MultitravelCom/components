@@ -36,12 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const selectContainer = document.querySelector('.results-list__order-by-selector.select2-hidden-accessible');
 
-    // Escuchar el evento click en el desplegable
     selectContainer.addEventListener('click', function () {
-        // Obtener el primer elemento li después de hacer clic
+        console.log("click")
         const firstOption = selectContainer.querySelector('.select2-results__option:first-child');
-
-        // Realizar el cambio de texto
         firstOption.textContent = 'Más elegidos';
     });
 
