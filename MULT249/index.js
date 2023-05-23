@@ -40,21 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkResultsListPage = () => {
 
         const resultsPage = document.querySelector('.results-list__page');
-        
+
         if (resultsPage) {
             const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
 
             resultsListPage.forEach(item => {
                 const selectors = item.querySelectorAll('.js-open-gallery');
-        
+
                 selectors.forEach(selector => {
                     selector.removeAttribute('onclick');
                 });
             });
         } else {
-          setTimeout(checkResultsListPage, 2000);
+            setTimeout(checkResultsListPage, 2000);
         }
-      };
-      
-      checkResultsListPage();
+    };
+
+    checkResultsListPage();
 });
