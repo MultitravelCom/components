@@ -1,12 +1,13 @@
 .main__container__widget {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     width: 204px;
     height: 28px;
     background: #2A8BFE;
     border-radius: 40px;
     border: 0;
+    justify-content: center;
+    gap: 17px;
 }
 
 .main__container__widget:hover {
@@ -240,10 +241,11 @@
 }
 
 /* CLASES MODAL SHARE HOTELS */
-.main__container__widget__share{
+.main__container__widget__share {
     border: 0;
     background-color: transparent;
 }
+
 .shareStyle {
     width: 400px;
     height: 254px;
