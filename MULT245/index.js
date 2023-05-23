@@ -85,9 +85,26 @@ async function applyDisplayNoneToAllButLastButton() {
         buttonsVerDetalle[i].textContent = 'Ver detalle';
     }
 }
+async function changeCopyButton() {
+    const resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+    const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
+
+    itemsButtonComprar.forEach(item => {
+        const buttonElement = item.querySelector('.info-card__options-toggle');
+        buttonElement.textContent = 'Comprar';
+        buttonElement.style.display = 'block';
+    });
+};
+
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();
     await applyDisplayNoneToAllButLastButton();
     await agreeStarIcon();
+    await changeCopyButton();
 });
