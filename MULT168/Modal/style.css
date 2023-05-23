@@ -78,7 +78,7 @@
     overflow: hidden;
     padding: 0;
     top: 16px;
-    right: 16px;
+    right: 13px;
     border-radius: 100%;
 }
 
@@ -237,6 +237,10 @@
         position: absolute;
         top: -12px;
         right: 9px;
+    }
+    .emcabezadoModal>h3 {
+        font-size: 18px;
+        text-align: center;
     }
 }
 
