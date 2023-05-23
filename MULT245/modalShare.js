@@ -104,20 +104,24 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [isDivPresent, setIsDivPresent] = React.useState(false);
-    React.useEffect(() => {
+    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = useState(false);
+
+    useEffect(() => {
         const checkDivPresence = () => {
             const div = document.querySelector('.bestprice__taxincluded.apriclar');
-            setIsDivPresent(!!div);
+            setHasBestPriceTaxIncluded(!!div);
         };
 
         checkDivPresence();
-        const interval = setInterval(checkDivPresence, 1000);
+        // Configura un intervalo para verificar periódicamente la presencia del div
+        const interval = setInterval(checkDivPresence, 1000); // Verificar cada segundo
 
+        // Limpia el intervalo cuando el componente se desmonte
         return () => {
             clearInterval(interval);
         };
     }, []);
+
     return (
         <div className="main__container__bannerMensageCard__App">
             {hasBestPriceTaxIncluded ? (
@@ -140,7 +144,7 @@ const checkAndRender = async () => {
     infoCardContents.forEach(infoCardContent => {
         const nuevoDiv = document.createElement('div');
         const nuevoDivBannerMensage = document.createElement('div');
-        
+
         infoCardContent.appendChild(nuevoDiv);
         infoCardContent.appendChild(nuevoDivBannerMensage);
 
