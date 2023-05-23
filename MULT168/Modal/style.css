@@ -248,6 +248,14 @@
         letter-spacing: 0.4px;
         font-size: 16px;
     }
+    .ventas {
+        font-size: 14px;
+    }
+    .main__container__modalContactos {
+      height: 330px;
+    
+    }
+    
 }
 
 /* CLASES MODAL SHARE HOTELS */
