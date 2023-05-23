@@ -34,4 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
         spanElement.textContent = "Mas elegidos";
         spanElement.setAttribute("title", "Mas elegidos");
     }
+
+    const selectors = document.querySelectorAll('.results-list__item .js-open-gallery');
+
+    // Recorrer cada selector y quitar el atributo "onclick"
+    selectors.forEach(selector => {
+        selector.removeAttribute('onclick');
+    });
 });
