@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("click")
         const MasElegido = document.querySelector('.select2-results__options')
         const firstOption = MasElegido.querySelector('.select2-results__option:first-child');
-        firstOption.textContent = 'Más elegidos';
+        if (firstOption) {
+            firstOption.textContent = 'Más elegidos';
+            console.log('Se hizo clic en el desplegable');
+          }
     });
 
 });
