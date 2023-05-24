@@ -14,6 +14,9 @@
     background: #0d4e88;
     color: white;
 }
+.main__container__divSeccionPagos{
+    display: flex;
+}
 
 .main__seccion__pagos__img {
     width: 273px;

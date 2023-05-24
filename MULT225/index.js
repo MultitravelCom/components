@@ -82,7 +82,7 @@ const SeccionMediosDePagos = ({ showImageFirst, title, text_p }) => {
 const BannerMediosDePagos = () => {
     return (
         <div className="main__seccion__pagos container ">
-            <div className="row align-items-start">
+            <div className="row align-items-start main__container__divSeccionPagos">
                 <div className="col-md-6 col-xs-12 divSeccionPagos">
                     <SeccionMediosDePagos showImageFirst={true} title="Vos decidís" text_p="Encontrá todos los medios de pagos exclusivos para vos" />
                 </div>
