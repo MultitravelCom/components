@@ -140,7 +140,7 @@ const Modal = ({ open, onClose }) => {
             <div id="overlay" className="overlay">
                 <div className="container__modal">
                     <div className='emcabezadoModal'>
-                        <h3>Comunicate con tu especialista en viaje</h3>
+                        <h3>Tu especialista en viajes</h3>
                         <button className="close-button" onClick={onClose}><span>X</span></button>
                     </div>
                     <div className="container-fluid-modal">
