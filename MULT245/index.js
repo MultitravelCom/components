@@ -122,35 +122,10 @@ async function changeCopyButton() {
     checkResultsListPage();
 };
 
-async function handleDOMChanges() {
+document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();
     await applyDisplayNoneToAllButLastButton();
     await agreeStarIcon();
     await changeCopyButton();
-  }
-  
-  // Crear una función para observar cambios en results-list__page
-  function observeDOMChanges() {
-    const resultsListPage = document.querySelector('.results-list__page');
-  
-    // Crear un nuevo MutationObserver
-    const observer = new MutationObserver(() => {
-      handleDOMChanges();
-    });
-  
-    // Configurar las opciones del observer
-    const observerOptions = {
-      childList: true, // Observar cambios en los nodos hijos
-      subtree: true, // Observar cambios en todos los descendientes
-    };
-  
-    // Comenzar a observar los cambios en results-list__page
-    observer.observe(resultsListPage, observerOptions);
-  }
-  
-  // Llamar a la función handleDOMChanges() al cargar el contenido
-  document.addEventListener('DOMContentLoaded', async function () {
-    await handleDOMChanges();
-    observeDOMChanges();
-  });
+});
