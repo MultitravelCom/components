@@ -123,43 +123,25 @@ async function changeCopyButton() {
 };
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Esperar a que la página se cargue completamente
-    window.addEventListener('load', function () {
-        // Seleccionar el elemento a observar
-        const targetNode = document.querySelector('.results-list__body.js-results-list-placeholder');
-
-        // Crear una función para ejecutar las funciones
-        async function executeFunctions() {
-            await aplicarClaseRecomendada();
-            await changeCopyMap();
-            await applyDisplayNoneToAllButLastButton();
-            await agreeStarIcon();
-            await changeCopyButton();
-        }
-
-        // Ejecutar las funciones al cargar la página
-        executeFunctions();
-
-        // Crear una instancia de Mutation Observer
-        const observer = new MutationObserver(function (mutationsList) {
-            // Verificar si hay cambios en el selector observado
-            if (mutationsList.length > 0) {
-                // Ejecutar las funciones nuevamente
-                executeFunctions();
-            }
-        });
-
-        // Configurar las opciones del observador
-        const observerOptions = {
-            childList: true, // Observar cambios en los hijos del elemento
-            subtree: true, // Observar cambios en todos los descendientes del elemento
-            attributes: true, // Observar cambios en los atributos del elemento
-            characterData: true // Observar cambios en los datos de caracteres del elemento
-        };
-
-        // Comenzar a observar el elemento
-        observer.observe(targetNode, observerOptions);
-    });
-});
+function executeFunctions() {
+    aplicarClaseRecomendada();
+    changeCopyMap();
+    applyDisplayNoneToAllButLastButton();
+    agreeStarIcon();
+    changeCopyButton();
+  }
+  
+  // Ejecutar las funciones inicialmente
+  executeFunctions();
+  
+  // Verificar periódicamente si el selector está presente en el DOM
+  const checkDOMInterval = setInterval(function () {
+    const targetNode = document.querySelector('.results-list__body.js-results-list-placeholder');
+    if (targetNode) {
+      // Si el selector está presente, ejecutar las funciones y detener el intervalo
+      executeFunctions();
+      clearInterval(checkDOMInterval);
+    }
+  }, 1000); // Intervalo de verificación en milisegundos (por ejemplo, cada segundo)
+  
 
