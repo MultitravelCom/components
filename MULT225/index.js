@@ -53,8 +53,8 @@ const SeccionMediosDePagosText = ({ title, text_p, linkButton }) => {
             <div className="main__seccion__pagos__text">
                 <h2>{title}</h2>
                 <p>{text_p}</p>
+                <ButtonMediosDePago style="btn btnStyleBannerSearch" link={linkButton} text="Descubri" />
             </div>
-            <ButtonMediosDePago style="btn btnStyleBannerSearch" link={linkButton} text="Descubri" />
         </>
     )
 }
