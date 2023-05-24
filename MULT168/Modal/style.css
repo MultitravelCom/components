@@ -108,7 +108,7 @@
 
 .ventas {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 19px;
     margin-bottom: 8px;
 }
@@ -214,6 +214,10 @@
     display: none;
 }
 
+.close-button>span {
+    position: initial;
+}
+
 @media (max-width:768px) {
     .main__container__widget {
         background-color: #00a94f;
@@ -248,15 +252,17 @@
         letter-spacing: 0.4px;
         font-size: 16px;
     }
+
     .ventas {
         font-size: 14px;
     }
+
     .main__container__modalContactos {
-      height: 195px;
-      min-width: 261px;
-    
+        height: 195px;
+        min-width: 261px;
+
     }
-    
+
 }
 
 /* CLASES MODAL SHARE HOTELS */
