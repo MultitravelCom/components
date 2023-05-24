@@ -49,11 +49,13 @@ const SeccionMediosDePagosImg = ({ imgPagos }) => {
 
 const SeccionMediosDePagosText = ({ title, text_p, linkButton }) => {
     return (
-        <div className="main__seccion__pagos__text">
-            <h2>{title}</h2>
-            <p>{text_p}</p>
+        <>
+            <div className="main__seccion__pagos__text">
+                <h2>{title}</h2>
+                <p>{text_p}</p>
+            </div>
             <ButtonMediosDePago style="btn btnStyleBannerSearch" link={linkButton} text="Descubri" />
-        </div>
+        </>
     )
 }
 
