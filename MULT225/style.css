@@ -4,6 +4,7 @@
     flex-direction: row-reverse;
     background: antiquewhite;
     justify-content: space-evenly;
+    padding: 50px 32px;
 }
 
 .btnStyleBannerSearch{
