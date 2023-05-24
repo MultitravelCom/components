@@ -50,7 +50,7 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 const Modal = ({ open, onClose }) => {
 
     const now = new Date();
-    const currentDay = now.getDay(); // 0: Domingo, 1: Lunes, ..., 6: Sábado
+    const currentDay = now.getDay(); 
     const currentHour = now.getHours();
 
 
