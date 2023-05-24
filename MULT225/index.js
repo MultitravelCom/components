@@ -79,9 +79,16 @@ const SeccionMediosDePagos = ({ showImageFirst, title, text_p }) => {
 
 const BannerMediosDePagos = () => {
     return (
-        <div className="main__seccion__pagos container">
-            <SeccionMediosDePagos showImageFirst={true} title="Vos decidís" text_p="Encontrá todos los medios de pagos exclusivos para vos" />
-            <SeccionMediosDePagos showImageFirst={false} title="Quienes somos" text_p="Vení a descubrir el MultiTeam pa" />
+        <div className="main__seccion__pagos container ">
+            <div className="row align-items-start">
+                <div className="col">
+                    <SeccionMediosDePagos showImageFirst={true} title="Vos decidís" text_p="Encontrá todos los medios de pagos exclusivos para vos" />
+                </div>
+                <div className="col">
+                    <SeccionMediosDePagos showImageFirst={false} title="Quienes somos" text_p="Vení a descubrir el MultiTeam pa" />
+                </div>
+
+            </div>
         </div>
 
     )
