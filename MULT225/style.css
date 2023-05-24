@@ -29,6 +29,7 @@
     height: 100%;
 }
 .main__seccion__pagos__text{
+    width: 50%;
     text-align: center;
 }
 
