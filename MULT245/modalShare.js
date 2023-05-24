@@ -34,13 +34,6 @@ const CompartirAlojamiento = () => {
                     <div className="main__container__share js-social-share">
                         <span className="glyphicon glyphicon-share share__icon"></span>
                         <span className="share__text">Compartí este alojamiento ahora </span>
-                        <div className="bestprice__price">
-                            <span className="bestprice__amount">
-                                <span className="renderPriceTag">
-
-                                </span>
-                            </span>
-                        </div>
                     </div>
                 </ButtonModalShare>
                 <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
@@ -62,17 +55,33 @@ const BannerMensageCardApp = () => {
 
     React.useEffect(() => {
         const checkDivPresence = () => {
-            const div = document.querySelector('.bestprice__taxincluded');
-            setHasBestPriceTaxIncluded(!div);
+          const div = document.querySelector('.bestprice__taxincluded');
+          setHasBestPriceTaxIncluded(!div);
         };
-
+    
+        const applyDOMChanges = async () => {
+          await aplicarClaseRecomendada();
+          await changeCopyMap();
+          await applyDisplayNoneToAllButLastButton();
+          await agreeStarIcon();
+          await changeCopyButton();
+        };
+    
+        const observer = new MutationObserver(applyDOMChanges);
+        const targetNode = document.querySelector('.results-list__page');
+    
+        if (targetNode) {
+          observer.observe(targetNode, { childList: true, subtree: true });
+        }
+    
         checkDivPresence();
         const interval = setInterval(checkDivPresence, 1000);
-
+    
         return () => {
-            clearInterval(interval);
+          clearInterval(interval);
+          observer.disconnect();
         };
-    }, []);
+      }, []);
 
     return (
         <>
@@ -84,6 +93,7 @@ const BannerMensageCardApp = () => {
         </>
     );
 };
+
 
 const checkAndRender = async () => {
     let infoCardContents = document.querySelectorAll('.info-card__content');
@@ -109,3 +119,5 @@ const checkAndRender = async () => {
 };
 
 checkAndRender();
+
+
