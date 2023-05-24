@@ -1,6 +1,5 @@
 // IMG
-const imgLeft = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop.png";
-const imgRight = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop2.png";
+
 
 const SocialsBanner = () => {
     return (
@@ -59,17 +58,19 @@ const SeccionMediosDePagosText = ({ title, text_p, linkButton }) => {
 }
 
 const SeccionMediosDePagos = ({ showImageFirst, title, text_p }) => {
+    const imgLeft = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop.png";
+    const imgRight = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop2.png";
     return (
         <div className="main__seccion__pagos">
             {showImageFirst ? (
                 <>
-                    <SeccionMediosDePagosImg imgPagos={imgLeft}/>
+                    <SeccionMediosDePagosImg imgPagos={imgLeft} />
                     <SeccionMediosDePagosText title={title} text_p={text_p} />
                 </>
             ) : (
                 <>
                     <SeccionMediosDePagosText title={title} text_p={text_p} />
-                    <SeccionMediosDePagosImg imgPagos={imgRight}/>
+                    <SeccionMediosDePagosImg imgPagos={imgRight} />
                 </>
             )}
         </div>
