@@ -35,6 +35,7 @@
 }
 
 .divSeccionPagos {
+    width: 560px;
     padding: 8px;
     background: aqua;
     border-radius: 8px;
