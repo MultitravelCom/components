@@ -3,11 +3,12 @@ function wait(timeout) {
 }
 
 async function aplicarClaseRecomendada() {
-    let resultsListPage = document.querySelector('.results-list__page');
+    const resultsListPage = document.querySelector('.results-list__page');
 
-    while (!resultsListPage) {
-        await wait(1000);
-        resultsListPage = document.querySelector('.results-list__page');
+    if (!resultsListPage) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return;
     }
 
     const items = resultsListPage.querySelectorAll('.results-list__item');
@@ -122,25 +123,11 @@ async function changeCopyButton() {
 };
 
 
-function executeFunctions() {
-    aplicarClaseRecomendada();
-    changeCopyMap();
-    applyDisplayNoneToAllButLastButton();
-    agreeStarIcon();
-    changeCopyButton();
-}
 
-// Ejecutar las funciones inicialmente
-executeFunctions();
-
-// Verificar periódicamente si el selector está presente en el DOM
-const checkDOMInterval = setInterval(function () {
-    const targetNode = document.querySelector('.results-list__body.js-results-list-placeholder');
-    if (targetNode) {
-        // Si el selector está presente, ejecutar las funciones y detener el intervalo
-        executeFunctions();
-        clearInterval(checkDOMInterval);
-    }
-}, 1000); // Intervalo de verificación en milisegundos (por ejemplo, cada segundo)
-
-
+document.addEventListener('DOMContentLoaded', async function () {
+    await aplicarClaseRecomendada();
+    await changeCopyMap();
+    await applyDisplayNoneToAllButLastButton();
+    await agreeStarIcon();
+    await changeCopyButton();
+});
