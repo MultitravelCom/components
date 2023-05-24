@@ -1,10 +1,9 @@
 .main__seccion__pagos {
-    height: 241px;
     display: flex;
     flex-direction: row-reverse;
     background: antiquewhite;
     justify-content: space-evenly;
-    padding: 50px 32px;
+    align-items: center;
 }
 
 .btnStyleBannerSearch{
