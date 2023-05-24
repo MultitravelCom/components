@@ -1,3 +1,7 @@
+// IMG
+const imgLeft = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop.png";
+const imgRight = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop2.png";
+
 const SocialsBanner = () => {
     return (
         <div className="main__SocialsBanner">
@@ -39,7 +43,7 @@ const ButtonMediosDePago = ({ style, text }) => {
 const SeccionMediosDePagosImg = ({ imgPagos }) => {
     return (
         <div className="main__seccion__pagos__img">
-            <img>{imgPagos}</img>
+            <img src={imgPagos} alt="Medios de pagos" />
         </div>
     )
 }
