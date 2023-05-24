@@ -124,10 +124,26 @@ async function changeCopyButton() {
 
 
 
-document.addEventListener('DOMContentLoaded', async function () {
-    await aplicarClaseRecomendada();
-    await changeCopyMap();
-    await applyDisplayNoneToAllButLastButton();
-    await agreeStarIcon();
-    await changeCopyButton();
-});
+function observeResultsListPage() {
+    const resultsListPage = document.querySelector('.results-list__page');
+  
+    if (!resultsListPage) {
+      setTimeout(observeResultsListPage, 1000);
+      return;
+    }
+  
+    const observer = new MutationObserver(function () {
+      // Ejecutar las funciones aquí
+      aplicarClaseRecomendada();
+      changeCopyMap();
+      applyDisplayNoneToAllButLastButton();
+      agreeStarIcon();
+      changeCopyButton();
+    });
+  
+    observer.observe(resultsListPage, { childList: true, subtree: true });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    observeResultsListPage();
+  });
