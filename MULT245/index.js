@@ -123,36 +123,43 @@ async function changeCopyButton() {
 };
 
 
-document.addEventListener('DOMContentLoaded', async function () {
-    await aplicarClaseRecomendada();
-    await changeCopyMap();
-    await applyDisplayNoneToAllButLastButton();
-    await agreeStarIcon();
-    await changeCopyButton();
-  
-    // Seleccionar el elemento que deseas observar
-    const targetNode = document.querySelector('.results-list__body.js-results-list-placeholder');
-  
-    // Crear una instancia de Mutation Observer
-    const observertargetNode = new MutationObserver(async function (mutationsList) {
-      // Cuando se produzca un cambio en el elemento observado
-      // ejecutar las funciones nuevamente
-      await aplicarClaseRecomendada();
-      await changeCopyMap();
-      await applyDisplayNoneToAllButLastButton();
-      await agreeStarIcon();
-      await changeCopyButton();
+document.addEventListener('DOMContentLoaded', function () {
+    // Esperar a que la página se cargue completamente
+    window.addEventListener('load', function () {
+        // Seleccionar el elemento a observar
+        const targetNode = document.querySelector('.results-list__body.js-results-list-placeholder');
+
+        // Crear una función para ejecutar las funciones
+        async function executeFunctions() {
+            await aplicarClaseRecomendada();
+            await changeCopyMap();
+            await applyDisplayNoneToAllButLastButton();
+            await agreeStarIcon();
+            await changeCopyButton();
+        }
+
+        // Ejecutar las funciones al cargar la página
+        executeFunctions();
+
+        // Crear una instancia de Mutation Observer
+        const observer = new MutationObserver(function (mutationsList) {
+            // Verificar si hay cambios en el selector observado
+            if (mutationsList.length > 0) {
+                // Ejecutar las funciones nuevamente
+                executeFunctions();
+            }
+        });
+
+        // Configurar las opciones del observador
+        const observerOptions = {
+            childList: true, // Observar cambios en los hijos del elemento
+            subtree: true, // Observar cambios en todos los descendientes del elemento
+            attributes: true, // Observar cambios en los atributos del elemento
+            characterData: true // Observar cambios en los datos de caracteres del elemento
+        };
+
+        // Comenzar a observar el elemento
+        observer.observe(targetNode, observerOptions);
     });
-  
-    // Configurar las opciones del observador
-    const observerOptions = {
-      childList: true, // Observar cambios en los hijos del elemento
-      subtree: true, // Observar cambios en todos los descendientes del elemento
-      attributes: true, // Observar cambios en los atributos del elemento
-      characterData: true // Observar cambios en los datos de caracteres del elemento
-    };
-  
-    // Comenzar a observar el elemento
-    observertargetNode.observe(targetNode, observerOptions);
-  });
-  
+});
+
