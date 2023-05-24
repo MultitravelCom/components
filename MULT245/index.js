@@ -123,6 +123,7 @@ async function changeCopyButton() {
 };
 
 
+
 document.addEventListener('DOMContentLoaded', async function () {
     await aplicarClaseRecomendada();
     await changeCopyMap();

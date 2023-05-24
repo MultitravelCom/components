@@ -33,8 +33,7 @@ const CompartirAlojamiento = () => {
                 >
                     <div className="main__container__share js-social-share">
                         <span className="glyphicon glyphicon-share share__icon"></span>
-                        <span className="share__text">Compartí este alojamiento ahora </span>
-
+                        <span className="share__text">Compartí este alojamiento ahora</span>
                     </div>
                 </ButtonModalShare>
                 <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
