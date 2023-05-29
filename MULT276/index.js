@@ -22,7 +22,7 @@ const CopyTaxFlight = () => {
     useEffect(() => {
       // Renderizar el componente CopyTaxFlight en el selector deseado
       if (isSelectorPresent) {
-        const portalContainer = document.querySelector('.flight-selection');
+        const portalContainer = document.querySelector('.flight-selection__breakdown');
         ReactDOM.render(<CopyTaxFlight />, portalContainer);
       }
     }, [isSelectorPresent]);
