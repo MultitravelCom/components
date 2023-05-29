@@ -1,4 +1,3 @@
-
 const CopyTaxFlight = () => {
     return (
       <div className="main_container_copyTaxFlight">
@@ -9,32 +8,32 @@ const CopyTaxFlight = () => {
   };
   
   const YourComponent = () => {
-    const [isSelectorPresent, setIsSelectorPresent] = useState(false);
-  
     useEffect(() => {
-      // Lógica para detectar la presencia del div con los selectores
-      const selectorDiv = document.querySelector('.js-results-list-selection-placeholder');
+      const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+          if (mutation.target.classList.contains('flight-selection__breakdown')) {
+            const portalContainer = mutation.target;
+            ReactDOM.render(<CopyTaxFlight />, portalContainer);
+            console.log('Componente CopyTaxFlight renderizado en el portal');
+          }
+        }
+      });
+  
+      const selectorDiv = document.querySelector('.flight-selection__breakdown');
       if (selectorDiv) {
-        setIsSelectorPresent(true);
-        console.log('Selector encontrado');
+        observer.observe(selectorDiv, { childList: true });
+        console.log('Observer iniciado');
       } else {
         console.log('Selector no encontrado');
       }
+  
+      return () => {
+        if (selectorDiv) {
+          observer.disconnect();
+          console.log('Observer detenido');
+        }
+      };
     }, []);
   
-    useEffect(() => {
-      // Renderizar el componente CopyTaxFlight en el selector deseado
-      if (isSelectorPresent) {
-        const portalContainer = document.querySelector('.flight-selection__breakdown');
-        ReactDOM.render(<CopyTaxFlight />, portalContainer);
-        console.log('Componente CopyTaxFlight renderizado en el portal');
-      }
-    }, [isSelectorPresent]);
-  
-    return (
-      <div>
-        {/* Resto del contenido de tu componente */}
-        <div className="js-results-list-selection-placeholder"></div>
-      </div>
-    );
+    return null;
   };
