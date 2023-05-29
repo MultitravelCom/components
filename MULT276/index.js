@@ -7,18 +7,31 @@ const CopyTaxFlight = () => {
     );
 };
 
+// Función para manejar el evento click
+function handleClick() {
+    // Buscar el div padre con la clase js-results-list-selection-placeholder
+    const parentDiv = document.querySelector('.js-results-list-selection-placeholder');
 
-const parentDiv = document.querySelector('.js-results-list-selection-placeholder');
+    if (parentDiv) {
+        // Buscar el div con la clase flight-selection__breakdown dentro del div padre
+        const flightSelectionBreakdownDiv = parentDiv.querySelector('.flight-selection__breakdown');
 
-// Buscar el div con la clase flight-selection__breakdown dentro del div padre
-const flightSelectionBreakdownDiv = parentDiv.querySelector('.flight-selection__breakdown');
+        // Verificar si el componente ya ha sido agregado previamente
+        const existingCopyTaxFlight = flightSelectionBreakdownDiv.querySelector('.copy-tax-flight-container');
 
-// Crear un contenedor para el componente CopyTaxFlight
-const containerCopyTaxFlight = document.createElement('div');
-containerCopyTaxFlight.classList.add('copy-tax-flight-container');
+        if (!existingCopyTaxFlight) {
+            // Crear un contenedor para el componente CopyTaxFlight
+            const containerCopyTaxFlight = document.createElement('div');
+            containerCopyTaxFlight.classList.add('copy-tax-flight-container');
 
-// Agregar el contenedor al div flight-selection__breakdown
-flightSelectionBreakdownDiv.appendChild(containerCopyTaxFlight);
+            // Agregar el contenedor al div flight-selection__breakdown
+            flightSelectionBreakdownDiv.appendChild(containerCopyTaxFlight);
 
-// Renderizar el componente CopyTaxFlight dentro del contenedor
-ReactDOM.render(<CopyTaxFlight />, containerCopyTaxFlight);
+            // Renderizar el componente CopyTaxFlight dentro del contenedor
+            ReactDOM.render(<CopyTaxFlight />, containerCopyTaxFlight);
+        }
+    }
+}
+
+// Agregar el listener al evento click
+document.addEventListener('click', handleClick);
