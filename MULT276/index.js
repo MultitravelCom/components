@@ -20,11 +20,11 @@ const CopyTaxFlight = () => {
   }
   
   function renderCopyTaxFlight() {
-    const breakdownElement = document.querySelector('.flight-selection .flight-selection__breakdown');
-    if (breakdownElement) {
+    const flightSelectionElement = document.querySelector('.flight-selection');
+    if (flightSelectionElement) {
       const copyTaxFlightContainer = document.createElement('div');
       copyTaxFlightContainer.classList.add('copy-tax-flight-container');
-      breakdownElement.appendChild(copyTaxFlightContainer);
+      flightSelectionElement.appendChild(copyTaxFlightContainer);
   
       ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
     }
