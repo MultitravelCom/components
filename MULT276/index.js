@@ -16,6 +16,9 @@ const CopyTaxFlight = () => {
       const selectorDiv = document.querySelector('.js-results-list-selection-placeholder');
       if (selectorDiv) {
         setIsSelectorPresent(true);
+        console.log('Selector encontrado');
+      } else {
+        console.log('Selector no encontrado');
       }
     }, []);
   
@@ -24,6 +27,7 @@ const CopyTaxFlight = () => {
       if (isSelectorPresent) {
         const portalContainer = document.querySelector('.flight-selection__breakdown');
         ReactDOM.render(<CopyTaxFlight />, portalContainer);
+        console.log('Componente CopyTaxFlight renderizado en el portal');
       }
     }, [isSelectorPresent]);
   
