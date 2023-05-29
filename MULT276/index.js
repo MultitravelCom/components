@@ -1,21 +1,23 @@
 function detectarAparicionClaseEnDOM() {
-    const targetElement = document.querySelector('.js-results-list-selection-placeholder');
     const customObserver = new MutationObserver(function(mutationsList) {
       for (let mutation of mutationsList) {
-        if (mutation.target.classList.contains('js-results-list-selection-placeholder')) {
-          console.log('La clase js-results-list-selection-placeholder ha aparecido en el DOM');
-          // Realiza cualquier acción adicional que desees realizar aquí
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const targetElement = mutation.target;
+          if (targetElement.classList.contains('js-results-list-selection-placeholder')) {
+            console.log('La clase js-results-list-selection-placeholder ha aparecido en el DOM');
+            // Realiza cualquier acción adicional que desees realizar aquí
+          }
         }
       }
     });
   
     const observerOptions = {
       attributes: true,
-      attributeFilter: ['class'],
+      attributeOldValue: true,
       subtree: true,
     };
   
-    customObserver.observe(targetElement, observerOptions);
+    customObserver.observe(document.documentElement, observerOptions);
   }
   
   // Llamada a la función para iniciar la detección
