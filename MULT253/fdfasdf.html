@@ -1,25 +1,209 @@
-<button id="miBoton">Abrir formulario</button>
-<div id="miModal" style="display: none">
-  <!-- Aqu&#237; ir&#225; tu formulario -->
-  <script data-b24-form="inline/54/02nb6u" data-skip-moving="true">
-    (function (w, d, u) {
-      var s = d.createElement("script");
-      s.async = true;
-      s.src = u + "?" + ((Date.now() / 180000) | 0);
-      var h = d.getElementsByTagName("script")[0];
-      h.parentNode.insertBefore(s, h);
-    })(
-      window,
-      document,
-      "https://cdn.bitrix24.com/b19657597/crm/form/loader_54.js"
-    );
-  </script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  .content-body>.container {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .main__container__contactos__body {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .content-body {
+    margin-top: 0 !important;
+  }
+
+  .page-header-bar {
+    padding: 0 !important;
+  }
+
+  .main__container__bannerAyuda {
+    max-width: 1440px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #CCCCCC;
+    border-radius: 40px 8px 40px 8px;
+    position: relative;
+  }
+
+  .main__container__contactos__BannerAyuda {
+    gap: 28px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .main__container__bannerAyuda__text {
+    color: #0D4E88;
+    width: 55%
+  }
+
+  .main__container__bannerAyuda__text>h3 {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0 0 16px 0;
+  }
+
+  .main__container__bannerAyuda__text>h3>span {
+    font-weight: bold;
+  }
+
+  .main__container__bannerAyuda__text>span {
+    font-weight: bold;
+  }
+
+  .main__container__bannerAyuda__text>p {
+    color: #0e4168;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .main__container__bannerAyuda__customer {
+    padding: 33px 24px 33px 56px;
+  }
+
+  .styleBtn__containerContactos {
+    width: 301px;
+    height: 35px;
+    border-radius: 12px;
+    border: 1px solid #0d4e88;
+    background: #0d4e88;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    right: 65px;
+    bottom: 18px;
+  }
+
+  .main__container__bannerTop {
+    display: flex;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffff;
+    background-color: #35a0ff;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .main__container__bannerTop{
+    margin-right: 14rem;
+  }
+
+  .main__container__bannerTop__img {
+    width: 423px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .main__container__bannerTop_title {
+    width: 100%;
+  }
+
+  .main__container__bannerTop_title>h1 {
+    font-size: 48px;
+  }
+
+  .main__container__bannerTop_title>p {
+    font-size: 24px;
+  }
+
+  .main__container__bannerTop__img>img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main__container__ContainerContactos {
+    height: 292px;
+    width: 459px;
+    background: #FBFBFB;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px 8px 8px 40px;
+  }
+
+  .main__container__ContainerContactos__title__icon {
+    width: 60px;
+    background: black;
+    height: 89px;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    margin-left: 32px;
+  }
+
+  .main__container__ContainerContactos__title__icon>img {
+    position: absolute;
+    bottom: 8px;
+    padding: 16px;
+  }
+
+  .main__container__ContainerContactos_text_icon {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .main__container__ContainerContactos__title__number {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 8px;
+  }
+
+  .main__container__ContainerContactos__title__number>h3 {
+    font-weight: bold;
+  }
+
+  .main__container__ContainerContactos__title__number>p {
+    margin: 0 !important;
+  }
+
+  .main__container__ContainerContactos_horarios {
+    width: 71%;
+    margin: auto;
+    padding: 1px 16px;
+  }
+
+  .main__container__ContainerContactos_horarios>p {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 6px 0 6px 0px !important;
+  }
+
+  .main__container__ContainerContactos_horarios>span {
+    font-size: 16px;
+    color: #8c8c8c;
+    font-style: italic;
+  }
+  .main__container__contactos__BannerAyuda__title__h2{
+    margin-left: 11.75%;
+    margin-bottom: 15px;
+  }
+  .main__container__contactos__BannerAyuda__title__h2>h2{
+    font-weight: bold;
+    font-size: 23px;
+  }
+
+
+  .class_color_blue {
+    color: #0d4e88;
+  }
+
+  .class_color_green {
+    color: #26bd4c;
+  }
+
+  .class_color_black {
+    color: #262626;
+  }
+</style>
+<div id="root">
+  <h1>fjkajdfl</h1>
 </div>
-<script>
-  document
-    .getElementById("miBoton")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Evita el comportamiento predeterminado del bot&#243;n
-      document.getElementById("miModal").style.display = "block";
-    });
-</script>
+<script type="text/babel"
+  src="https://raw.githubusercontent.com/MultitravelCom/vite-test/gh-pages/assets/index-59ce55e8.js"></script>
