@@ -1,0 +1,44 @@
+/* ********** MULT-247 ********************** */
+.details-card__section-content {
+    display: none;
+}
+
+.details-card__map {
+    height: 226px !important;
+    border-radius: 8px;
+}
+
+#js-results-map-container {
+    border-radius: 8px;
+}
+
+.chevron-down-hotels {
+    position: absolute;
+    right: 26px;
+    top: 13px;
+    font-size: 28px;
+}
+
+.details-card__section {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.gallery__item.item.gallery__item--with-caption {
+    border-radius: 8px;
+}
+
+.details-card__availability {
+    border-radius: 8px;
+}
+
+
+.slick-slide img {
+    border-radius: 8px;
+    max-height: 200px !important;
+}
+
+.details-card__section-title {
+    font-size: 18px !important;
+}

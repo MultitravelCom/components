@@ -1,3 +1,6 @@
+// IMG
+
+
 const SocialsBanner = () => {
     return (
         <div className="main__SocialsBanner">
@@ -39,33 +42,37 @@ const ButtonMediosDePago = ({ style, text }) => {
 const SeccionMediosDePagosImg = ({ imgPagos }) => {
     return (
         <div className="main__seccion__pagos__img">
-            <img>{imgPagos}</img>
+            <img src={imgPagos} alt="Medios de pagos" />
         </div>
     )
 }
 
 const SeccionMediosDePagosText = ({ title, text_p, linkButton }) => {
     return (
-        <div className="main__seccion__pagos__text">
-            <h2>{title}</h2>
-            <p>{text_p}</p>
-            <ButtonMediosDePago style="btn btnStyleBannerSearch" link={linkButton} text="Descubri" />
-        </div>
+        <>
+            <div className="main__seccion__pagos__text">
+                <h2>{title}</h2>
+                <p>{text_p}</p>
+                <ButtonMediosDePago style="btn btnStyleBannerSearch" link={linkButton} text="Descubri" />
+            </div>
+        </>
     )
 }
 
 const SeccionMediosDePagos = ({ showImageFirst, title, text_p }) => {
+    const imgLeft = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop.png";
+    const imgRight = "https://multitravelcom.github.io/components/MULT225/img/MedisodePago-Desktop2.png";
     return (
         <div className="main__seccion__pagos">
             {showImageFirst ? (
                 <>
-                    <SeccionMediosDePagosImg />
+                    <SeccionMediosDePagosImg imgPagos={imgLeft} />
                     <SeccionMediosDePagosText title={title} text_p={text_p} />
                 </>
             ) : (
                 <>
                     <SeccionMediosDePagosText title={title} text_p={text_p} />
-                    <SeccionMediosDePagosImg />
+                    <SeccionMediosDePagosImg imgPagos={imgRight} />
                 </>
             )}
         </div>
@@ -74,12 +81,19 @@ const SeccionMediosDePagos = ({ showImageFirst, title, text_p }) => {
 
 const BannerMediosDePagos = () => {
     return (
-        <div className="main__seccion__pagos">
-            <SeccionMediosDePagos showImageFirst={true} title="Vos decidís" text_p="Encontrá todos los medios de pagos exclusivos para vos" />
-            <SeccionMediosDePagos showImageFirst={false} title="Quienes somos" text_p="Vení a descubrir el MultiTeam pa" />
+        <div className="main__seccion__pagos container ">
+            <div className="row align-items-start main__container__divSeccionPagos">
+                <div className="col-md-6 col-xs-12 divSeccionPagos">
+                    <SeccionMediosDePagos showImageFirst={true} title="Vos decidís" text_p="Encontrá todos los medios de pagos exclusivos para vos" />
+                </div>
+                <div className="col-md-6 col-xs-12 divSeccionPagos">
+                    <SeccionMediosDePagos showImageFirst={false} title="Quienes somos" text_p="Vení a descubrir el MultiTeam pa" />
+                </div>
+
+            </div>
         </div>
 
     )
 }
 
-ReactDOM.createRoot(document.getElementById('rootHome')).render(<BannerMediosDePagos />);
+ReactDOM.render(<BannerMediosDePagos />, document.getElementById('root'));
