@@ -28,6 +28,7 @@
     width: 336px;
     background-color: #E2E6E9;
     border-radius: 40px 8px;
+    overflow: hidden;
 }
 
 .main__container_excluvisa__img>img {
