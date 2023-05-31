@@ -4,10 +4,11 @@
     justify-content: space-between;
     border-radius: 40px 8px;
     background-color: #2a8bfe;
-    align-items: center;
 }
 .main__container_excluvisa__text{
     color: white;
+    margin: auto 50px;
+    width: 68%;
 }
 .main__container_excluvisa__text__h1>h1{
     font-weight: bold;
@@ -27,4 +28,16 @@
     border-radius: 48px 0 0 0;
     width: 100%;
     height: 100%;
+}
+.btnStyleBannerHotelsResult{
+    width: 224px;
+    height: 48px;
+    position: absolute;
+    left: 66%;
+    bottom: 35%;
+    color: #FFFFFF;
+    background-color: #0d4e88;
+    font-size: 16xp;
+    font-weight: bold;
+    border-radius: 40px
 }
