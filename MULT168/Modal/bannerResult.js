@@ -1,4 +1,4 @@
-function ButtonBannerResultHotels(props) {
+function ButtonBannerResult(props) {
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -24,7 +24,7 @@ const BannerSearchResult = () => {
                         <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Secciones/ResultadoBusqueda/busqueda.webp" />
                         <img className="main__container__img__img" src="https://multitravelcom.github.io/MT/Secciones/ResultadoBusqueda/busqueda.webp" alt="Imagen banner contacto personalizado" />
                     </picture>
-                    <ButtonBannerResultHotels id="btnBannerSearch" style="btn btnStyleBannerHotelsResult" link="https://wa.link/j47nea" text="Contactarme" />
+                    <ButtonBannerResult id="btnBannerSearch" style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Contactarme" />
                 </div>
             </div>
         </>
