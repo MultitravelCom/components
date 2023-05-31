@@ -1,13 +1,13 @@
-function ButtonBannerDescuento(props) {
+// function ButtonBannerDescuento(props) {
 
-    const handleClick = (event) => {
-        event.preventDefault();
-    }
+//     const handleClick = (event) => {
+//         event.preventDefault();
+//     }
 
-    return (
-        <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
-    );
-}
+//     return (
+//         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
+//     );
+// }
 const DescuentoComponente = () => {
     return (
         <div className="main__container_excluvisa">
