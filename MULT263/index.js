@@ -1,13 +1,14 @@
-// function ButtonBannerDescuento(props) {
+function ButtonBannerDescuento(props) {
 
-//     const handleClick = (event) => {
-//         event.preventDefault();
-//     }
+    const handleClick = (event) => {
+        event.preventDefault();
+    }
 
-//     return (
-//         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
-//     );
-// }
+    return (
+        <button className={props.style} onClick={handleClick}>{props.text}</button>
+    );
+}
+
 const DescuentoComponente = () => {
     return (
         <div className="main__container_excluvisa">
@@ -22,7 +23,7 @@ const DescuentoComponente = () => {
             <div className="main__container_excluvisa__img">
                 <img src="https://multitravelcom.github.io/components/MULT263/img/alojamientoMobile.png"></img>
             </div>
-            {/* <ButtonBannerDescuento id="btnBannerSearch" style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" /> */}
+            <ButtonBannerDescuento style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" />
         </div>
     )
 }

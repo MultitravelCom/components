@@ -1,0 +1,20 @@
+.main__container_excluvisa{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 40px 8px;
+    background-color: #2a8bfe;
+}
+.main__container_excluvisa__text{
+    color: white;
+}
+.main__container_excluvisa__text__h1>h1{
+    font-weight: bold;
+    font-size: 32px;
+}
+.main__container_excluvisa__text__p>p{
+    font-weight:400;
+    font-size: 20px;
+}
+.main__container_excluvisa__img{
+    background-color: #E2E6E9;
+}
