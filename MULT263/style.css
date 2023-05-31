@@ -41,3 +41,9 @@
     font-weight: bold;
     border-radius: 40px
 }
+.btnStyleBannerHotelsResult:hover{
+  background-color: #283747;
+}
+.btnStyleBannerHotelsResult:active{
+    background-color:#272626;
+};
