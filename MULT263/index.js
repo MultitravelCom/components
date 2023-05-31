@@ -21,7 +21,12 @@ const DescuentoComponente = () => {
                 </div>
             </div>
             <div className="main__container_excluvisa__img">
-                <img src="https://multitravelcom.github.io/components/MULT263/img/alojamientoMobile.png"></img>
+            <picture>
+                        <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/components/MULT263/img/detalleAlojamiento.png" />
+                        <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/components/MULT263/img/detalleAlojamiento.png" />
+                        <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/components/MULT263/img/alojamientoMobile.png" />
+                        <img src="https://multitravelcom.github.io/components/MULT263/img/detalleAlojamiento.png" alt="Imagen banner contacto personalizado" />
+                    </picture>
             </div>
             <ButtonBannerDescuento style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" />
         </div>
