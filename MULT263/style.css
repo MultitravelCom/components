@@ -8,8 +8,8 @@
 }
 .main__container_excluvisa__text{
     color: white;
-    margin: auto 50px;
-    width: 68%;
+    margin: auto 64px;
+    width: 36%;
 }
 .main__container_excluvisa__text__h1>h1{
     font-family: Qanelas;
@@ -23,7 +23,7 @@
 .main__container_excluvisa__img{
     width: 336px;
     background-color: #E2E6E9;
-    border-radius: 40px 0 0 0;
+    border-radius: 40px 8px;
 }
 
 .main__container_excluvisa__img>img{
@@ -35,7 +35,7 @@
     width: 224px;
     height: 48px;
     position: absolute;
-    left: 60%;
+    left: 63%;
     bottom: 35%;
     color: #FFFFFF;
     background-color: #0d4e88;
