@@ -3,6 +3,7 @@
     justify-content: space-between;
     border-radius: 40px 8px;
     background-color: #2a8bfe;
+    align-items: center;
 }
 .main__container_excluvisa__text{
     color: white;
@@ -16,5 +17,12 @@
     font-size: 20px;
 }
 .main__container_excluvisa__img{
+    width: 336px;
     background-color: #E2E6E9;
+}
+
+.main__container_excluvisa__img>img{
+    border-radius: 40px 0 0 0;
+    width: 100%;
+    height: 100%;
 }
