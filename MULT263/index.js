@@ -30,12 +30,12 @@ const DescuentoComponente = () => {
 
 const insertNewComponent = async () => {
     while (true) {
-        const parentDivDescuentoComponente = document.querySelector('.details-card__top');
-        const firstChildDescuentoComponente = parentDivDescuentoComponente?.firstElementChild;
+        const parentDivDescuentoComponente = document.querySelector('.details-content');
+        const children = parentDivDescuentoComponente?.children;
 
-        if (parentDivDescuentoComponente && firstChildDescuentoComponente) {
+        if (parentDivDescuentoComponente && children && children.length >= 2) {
             const newDivDescuentoComponente = document.createElement('div');
-            firstChild.after(newDivDescuentoComponente);
+            parentDivDescuentoComponente.insertBefore(newDivDescuentoComponente, children[2]);
             ReactDOM.render(<DescuentoComponente />, newDivDescuentoComponente);
             break;
         }
