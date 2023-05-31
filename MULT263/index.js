@@ -2,7 +2,6 @@ function ButtonBannerDescuento(props) {
 
     const handleClick = (event) => {
         event.preventDefault();
-        setShowModal(true);
     }
 
     return (
