@@ -1,4 +1,4 @@
-.main__container_excluvisa{
+.main__container_excluvisa {
     display: flex;
     height: 158px;
     justify-content: space-between;
@@ -6,32 +6,37 @@
     background-color: #2a8bfe;
     position: relative;
 }
-.main__container_excluvisa__text{
+
+.main__container_excluvisa__text {
     color: white;
     margin: auto 64px;
     width: 36%;
 }
-.main__container_excluvisa__text__h1>h1{
+
+.main__container_excluvisa__text__h1>h1 {
     font-family: Qanelas;
     font-weight: bold;
     font-size: 32px;
 }
-.main__container_excluvisa__text__p>p{
-    font-weight:400;
+
+.main__container_excluvisa__text__p>p {
+    font-weight: 400;
     font-size: 20px;
 }
-.main__container_excluvisa__img{
+
+.main__container_excluvisa__img {
     width: 336px;
     background-color: #E2E6E9;
     border-radius: 40px 8px;
 }
 
-.main__container_excluvisa__img>img{
+.main__container_excluvisa__img>img {
     border-radius: 48px 0 0 0;
     width: 100%;
     height: 100%;
 }
-.btnStyleBannerHotelsResult{
+
+.btnStyleBannerHotelsResult {
     width: 224px;
     height: 48px;
     position: absolute;
@@ -43,9 +48,36 @@
     font-weight: bold;
     border-radius: 40px
 }
-.btnStyleBannerHotelsResult:hover{
-  background-color: #283747;
+
+.btnStyleBannerHotelsResult:hover {
+    background-color: #283747;
 }
-.btnStyleBannerHotelsResult:active{
-    background-color:#272626;
-};
+
+.btnStyleBannerHotelsResult:active {
+    background-color: #272626;
+}
+
+@media(max-width:468px) {
+    .main__container_excluvisa {
+        flex-direction: column;
+        border-radius: 8px 8px 40px 8px;
+    }
+
+    .main__container_excluvisa__text{
+        width: 100%;
+        padding: 17px;
+    }
+    .main__container_excluvisa__text__h1>h1 {
+        font-size: 24px;
+    }
+    
+    .main__container_excluvisa__text__p>p {
+        font-size: 16px;
+    }
+    .main__container_excluvisa{
+        height: 213px;
+    }
+    .main__container_excluvisa__img{
+        border-radius: 0 0 40px 8px;
+    }
+}
