@@ -4,6 +4,7 @@
     justify-content: space-between;
     border-radius: 40px 8px;
     background-color: #2a8bfe;
+    position: relative;
 }
 .main__container_excluvisa__text{
     color: white;
