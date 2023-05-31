@@ -21,7 +21,7 @@ const DescuentoComponente = () => {
                 </div>
             </div>
             <div className="main__container_excluvisa__img">
-                <img src=""></img>
+                <img src="https://multitravelcom.github.io/components/MULT263/img/alojamientoMobile.png"></img>
             </div>
             <ButtonBannerDescuento id="btnBannerSearch" style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" />
         </div>
