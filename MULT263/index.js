@@ -28,7 +28,7 @@ const DescuentoComponente = () => {
                     <img src="https://multitravelcom.github.io/components/MULT263/img/detalleAlojamiento.png" alt="Imagen banner contacto personalizado" />
                 </picture>
             </div>
-            <ButtonBannerDescuento style="btn btnStyleBannerSearch" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" />
+            <ButtonBannerDescuento style="btn btnStyleBannerHotelsResult" link="https://wa.link/j47nea" text="Llamá al 0800 348 0003" />
         </div>
     )
 }
