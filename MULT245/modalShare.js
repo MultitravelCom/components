@@ -121,7 +121,7 @@ function observarCambiosCheckAndRender() {
             const config = { childList: true, subtree: true };
             observer.observe(resultsListPage, config);
         } else {
-            setTimeout(checkAndRenderOnDOMChange, 1000);
+            setTimeout(checkAndRenderOnDOMChange, 2000);
         }
     };
 
