@@ -104,25 +104,25 @@ const checkAndRender = async () => {
 checkAndRender();
 
 function observarCambiosCheckAndRender() {
-    const checkAndRenderOnDOMChange = () => {
-      let infoCardContents = document.querySelectorAll('.info-card__content');
-  
-      if (infoCardContents.length > 0) {
-        const observer = new MutationSummary({
-          rootNode: infoCardContents[0].parentNode,
-          callback: () => {
-            console.log('Se detectó una modificación en .info-card__content');
-            checkAndRender();
-          },
-          queries: [{ element: '.info-card__content' }]
+    const observerConfig = {
+      rootNode: document.documentElement,
+      callback: (summaries) => {
+        summaries.forEach((summary) => {
+          if (summary.added) {
+            const addedInfoCardContents = Array.from(summary.added).filter((element) =>
+              element.classList.contains('info-card__content')
+            );
+            if (addedInfoCardContents.length > 0) {
+              console.log('Se detectó una modificación en .info-card__content');
+              checkAndRender();
+            }
+          }
         });
-      } else {
-        setTimeout(checkAndRenderOnDOMChange, 2000);
-      }
+      },
+      queries: [{ element: '.info-card__content' }],
     };
   
-    checkAndRenderOnDOMChange();
+    const observer = new MutationSummary(observerConfig);
   }
-  
 
 

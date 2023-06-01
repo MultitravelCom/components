@@ -155,31 +155,28 @@ function aplicarModificaciones() {
     changeCopyButton();
 }
 
-function observarCambiosResultados() {
-    const checkResults = () => {
-      let resultsListPage = document.querySelector('.results-list__page');
-  
-      if (resultsListPage instanceof Node) {
-        aplicarModificaciones();
-  
-        const observerListPage = new MutationSummary({
-          queries: [{ element: '.results-list__page' }],
-          callback: mutations => {
-            console.log('Se detectó una modificación en results-list__page');
-            aplicarModificaciones();
-            cargarEstilosYModales();
+function observarCambiosCheckAndRender() {
+    const observerConfig = {
+      rootNode: document.documentElement,
+      callback: (summaries) => {
+        summaries.forEach((summary) => {
+          if (summary.added) {
+            const addedInfoCardContents = Array.from(summary.added).filter((element) =>
+              element.classList.contains('info-card__content')
+            );
+            if (addedInfoCardContents.length > 0) {
+              console.log('Se detectó una modificación en .info-card__content');
+              checkAndRender();
+            }
           }
         });
-  
-        observerListPage.observe();
-  
-      } else {
-        setTimeout(checkResults, 1000);
-      }
+      },
+      queries: [{ element: '.info-card__content' }],
     };
   
-    checkResults();
+    const observer = new MutationSummary(observerConfig);
   }
+  
   
 
 document.addEventListener('DOMContentLoaded', async function () {
