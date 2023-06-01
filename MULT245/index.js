@@ -141,29 +141,15 @@ function aplicarModificaciones() {
 }
 
 function observarCambiosResultados() {
-    const checkResults = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
+    const resultsListPage = document.querySelector('.results-list__page');
 
-        if (resultsListPage) {
-            aplicarModificaciones();
+    const observer = new MutationObserver(() => {
+        aplicarModificaciones();
+    });
 
-            const observerListPage = new MutationObserver(mutationsList => {
-                for (const mutation of mutationsList) {
-                    if (mutation.target === resultsListPage) {
-                        aplicarModificaciones();
-                        break;
-                    }
-                }
-            });
+    const config = { childList: true, subtree: true };
 
-            const config = { childList: true, subtree: true };
-            observerListPage.observe(resultsListPage, config);
-        } else {
-            setTimeout(checkResults, 1000);
-        }
-    };
-
-    checkResults();
+    observer.observe(resultsListPage, config);
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
