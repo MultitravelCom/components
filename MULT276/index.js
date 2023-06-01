@@ -16,7 +16,8 @@ function renderCopyTaxFlight() {
     copyTaxFlightContainer.classList.add('copy-tax-flight-container');
 
     const bookingElement = flightSelectionElement.querySelector('.flight-selection__booking');
-    flightSelectionElement.insertBefore(copyTaxFlightContainer, bookingElement);
+    const parentElement = bookingElement.parentNode;
+    parentElement.insertBefore(copyTaxFlightContainer, bookingElement);
 
     ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
   }
