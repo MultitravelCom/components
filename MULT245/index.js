@@ -141,7 +141,7 @@ function aplicarModificaciones() {
 }
 
 function observarCambiosResultados() {
-    const resultsListPage = document.querySelector('.results-list__page');
+   let resultsListPage = document.querySelector('.results-list__page');
 
     const observer = new MutationObserver(() => {
         aplicarModificaciones();
