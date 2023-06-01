@@ -25,7 +25,7 @@
 }
 
 .main__container_excluvisa__img {
-    width: 336px;
+    width: 100%;
     background-color: #E2E6E9;
     border-radius: 40px 8px;
     overflow: hidden;
@@ -64,25 +64,30 @@
         border-radius: 8px 8px 40px 8px;
     }
 
-    .main__container_excluvisa__text{
+    .main__container_excluvisa__text {
         width: 100%;
-        padding: 17px;
+        padding: 16px;
         margin: 0;
     }
+
     .main__container_excluvisa__text__h1>h1 {
         font-size: 24px;
     }
-    
+
     .main__container_excluvisa__text__p>p {
         font-size: 16px;
     }
-    .main__container_excluvisa{
+
+    .main__container_excluvisa {
         height: 213px;
     }
-    .main__container_excluvisa__img{
+
+    .main__container_excluvisa__img {
         border-radius: 0 0 40px 8px;
     }
-    .btnStyleBannerHotelsResult{
 
+    .btnStyleBannerHotelsResult {
+        left: 16px;
+        bottom: 61px;
     }
 }
