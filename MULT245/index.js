@@ -93,7 +93,7 @@ async function applyDisplayNoneToAllButLastButton() {
     }
 }
 async function changeCopyButton() {
-    const resultsListPage = document.querySelector('.results-list__page');
+    let resultsListPage = document.querySelector('.results-list__page');
 
     while (!resultsListPage) {
         await wait(1000);
