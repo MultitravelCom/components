@@ -21,33 +21,48 @@ function renderCopyTaxFlight() {
 }
 
 
-function agregarComponenteCuandoApareceSelector() {
-  // Definir el selector objetivo
-  const selectorObjetivo = 'flight-selection';
+function agregarDivCuandoAparecePlaceholder() {
+  // Definir los selectores objetivo
+  const selectorResultado = 'results-list__item';
+  const selectorPlaceholder = 'js-results-list-selection-placeholder';
 
   // Crear una instancia de MutationSummary
   const observer = new MutationSummary({
     callback: function(summaries) {
-      // Verificar si el selector objetivo está presente en las mutaciones
-      summaries[0].added.forEach(function(element) {
-        if (element.matches(selectorObjetivo)) {
-          // El selector objetivo ha aparecido, realizar la acción deseada
-          const componente = document.createElement('div');
-          // Aquí puedes agregar lógica adicional para configurar el componente
+      // Verificar si hay elementos con el selector de resultado presentes en las mutaciones
+      const resultadosAgregados = summaries[0].added.filter(function(element) {
+        return element.matches(selectorResultado);
+      });
 
-          element.appendChild(componente);
+      // Iterar sobre los resultados agregados
+      resultadosAgregados.forEach(function(resultado) {
+        // Buscar el placeholder dentro del resultado
+        const placeholder = resultado.querySelector(selectorPlaceholder);
+        if (placeholder) {
+          // El placeholder está presente, realizar la acción deseada
+          const divNuevo = document.createElement('div');
+          // Aquí puedes agregar lógica adicional para configurar el div
+
+          resultado.appendChild(divNuevo);
 
           // Mostrar un mensaje en la consola para verificar la detección
-          console.log('Selector objetivo detectado. Se agregó el componente.');
-
-          // Detener el seguimiento de mutaciones
-          observer.disconnect();
+          console.log('Placeholder detectado. Se agregó el div.');
         }
       });
     },
-    queries: [{ element: selectorObjetivo }]
+    queries: [{ element: selectorResultado }],
+    rootNode: document.body, // Especificar el nodo raíz a observar (puede ser diferente según tus necesidades)
   });
+
+  // Detener el seguimiento de mutaciones cuando se destruya el componente o ya no se necesite
+  return function stopObserving() {
+    observer.disconnect();
+  };
 }
 
 // Llamar a la función para iniciar el seguimiento de mutaciones
-agregarComponenteCuandoApareceSelector();
+const stopObserving = agregarDivCuandoAparecePlaceholder();
+
+// Para detener la observación, llama a la función stopObserving()
+// stopObserving();
+
