@@ -9,16 +9,14 @@ const CopyTaxFlight = () => {
   );
 };
 
-function renderCopyTaxFlight() {
-  const flightSelectionElement = document.querySelector('.flight-selection');
-  if (flightSelectionElement) {
-    const copyTaxFlightContainer = document.createElement('div');
-    copyTaxFlightContainer.classList.add('copy-tax-flight-container');
-    flightSelectionElement.appendChild(copyTaxFlightContainer);
+function renderCopyTaxFlight(parentElement) {
+  const copyTaxFlightContainer = document.createElement('div');
+  copyTaxFlightContainer.classList.add('copy-tax-flight-container');
+  parentElement.appendChild(copyTaxFlightContainer);
 
-    ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
-  }
+  ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
 }
+
 function agregarComponenteCuandoApareceFlightSelection() {
   // Definir el selector objetivo
   const selectorObjetivo = '.flight-selection';
@@ -39,6 +37,9 @@ function agregarComponenteCuandoApareceFlightSelection() {
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
+          // Invocar la función renderCopyTaxFlight() para renderizar el componente dentro del div creado
+          renderCopyTaxFlight(componente);
+
           // Mostrar un mensaje en la consola para verificar la detección
           console.log('Clase flight-selection detectada. Se agregó el componente.');
         }
@@ -56,9 +57,3 @@ function agregarComponenteCuandoApareceFlightSelection() {
 
 // Llamar a la función para iniciar el seguimiento de mutaciones
 const stopObserving = agregarComponenteCuandoApareceFlightSelection();
-
-// Para detener la observación, llama a la función stopObserving()
-// stopObserving();
-
-
-
