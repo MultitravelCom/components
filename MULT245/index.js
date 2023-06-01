@@ -68,6 +68,13 @@ async function changeCopyMap() {
 
 async function applyDisplayNoneToAllButLastButton() {
     const actionsContainer = document.querySelector('.info-card__actions');
+
+    if (!actionsContainer) {
+        // Esperar un tiempo y volver a llamar a la función
+        await wait(1000);
+        await applyDisplayNoneToAllButLastButton();
+        return;
+
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
 
     for (let i = 0; i < buttonsAndLinks.length; i++) {
