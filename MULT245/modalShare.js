@@ -124,7 +124,4 @@ function observarCambiosCheckAndRender() {
     checkAndRender();
 }
 
-
-document.addEventListener('DOMContentLoaded', async function () {
-    observarCambiosCheckAndRender();
-});
+observarCambiosCheckAndRender();
