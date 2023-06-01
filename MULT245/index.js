@@ -160,12 +160,10 @@ function observarCambiosResultados() {
       let resultsListPage = document.querySelector('.results-list__page');
   
       if (resultsListPage instanceof Node) {
-        aplicarModificaciones();
   
         const observerListPage = new MutationSummary({
           queries: [{ element: '.results-list__page' }],
           callback: mutations => {
-            console.log('Se detectó una modificación en results-list__page');
             aplicarModificaciones();
             cargarEstilosYModales();
           }

@@ -106,7 +106,7 @@ function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-            console.log('Se detectó una modificación en .results-list__page');
+
             requestAnimationFrame(checkAndRender);
         },
         queries: [{ element: '.results-list__page' }],
