@@ -19,38 +19,32 @@ function renderCopyTaxFlight() {
     ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
   }
 }
-
-
-function agregarDivCuandoAparecePlaceholder() {
-  // Definir los selectores objetivo
-  const selectorResultado = 'results-list__item';
-  const selectorPlaceholder = 'js-results-list-selection-placeholder';
+function agregarComponenteCuandoApareceFlightSelection() {
+  // Definir el selector objetivo
+  const selectorObjetivo = '.flight-selection';
 
   // Crear una instancia de MutationSummary
   const observer = new MutationSummary({
     callback: function(summaries) {
-      // Verificar si hay elementos con el selector de resultado presentes en las mutaciones
-      const resultadosAgregados = summaries[0].added.filter(function(element) {
-        return element.matches(selectorResultado);
-      });
+      // Verificar si el selector objetivo está presente en las mutaciones
+      summaries[0].added.forEach(function(element) {
+        if (element.matches(selectorObjetivo)) {
+          // El selector objetivo ha aparecido, realizar la acción deseada
+          const componente = document.createElement('div');
+          // Aquí puedes agregar lógica adicional para configurar el componente
 
-      // Iterar sobre los resultados agregados
-      resultadosAgregados.forEach(function(resultado) {
-        // Buscar el placeholder dentro del resultado
-        const placeholder = resultado.querySelector(selectorPlaceholder);
-        if (placeholder) {
-          // El placeholder está presente, realizar la acción deseada
-          const divNuevo = document.createElement('div');
-          // Aquí puedes agregar lógica adicional para configurar el div
+          element.appendChild(componente);
 
-          resultado.appendChild(divNuevo);
+          // Mostrar u ocultar el componente según la presencia de la clase flight-selection
+          const mostrarComponente = element.classList.contains('flight-selection');
+          componente.style.display = mostrarComponente ? 'block' : 'none';
 
           // Mostrar un mensaje en la consola para verificar la detección
-          console.log('Placeholder detectado. Se agregó el div.');
+          console.log('Clase flight-selection detectada. Se agregó el componente.');
         }
       });
     },
-    queries: [{ element: selectorResultado }],
+    queries: [{ element: selectorObjetivo }],
     rootNode: document.body, // Especificar el nodo raíz a observar (puede ser diferente según tus necesidades)
   });
 
@@ -61,8 +55,10 @@ function agregarDivCuandoAparecePlaceholder() {
 }
 
 // Llamar a la función para iniciar el seguimiento de mutaciones
-const stopObserving = agregarDivCuandoAparecePlaceholder();
+const stopObserving = agregarComponenteCuandoApareceFlightSelection();
 
 // Para detener la observación, llama a la función stopObserving()
 // stopObserving();
+
+
 
