@@ -105,21 +105,21 @@ checkAndRender();
 
 function observarCambiosCheckAndRender() {
     const checkAndRenderOnDOMChange = () => {
-      let resultsListPage = document.querySelector('.results-list__page');
-  
-      if (resultsListPage instanceof Node) {
-        const observer = new MutationSummary({
-          rootNode: resultsListPage,
-          callback: () => {
-            console.log('Se detectó una modificación en results-list__page');
-            checkAndRender();
-          },
-          queries: [{ element: '.results-list__page' }]
-        });
-      } else {
-        setTimeout(checkAndRenderOnDOMChange, 2000);
-      }
+        let resultsListPage = document.querySelector('.results-list__page');
+
+        if (resultsListPage instanceof Node) {
+            const observer = new MutationSummary({
+                rootNode: resultsListPage,
+                callback: () => {
+                    console.log('Se detectó una modificación en sarasa');
+                    checkAndRender();
+                },
+                queries: [{ element: '.results-list__page' }]
+            });
+        } else {
+            setTimeout(checkAndRenderOnDOMChange, 2000);
+        }
     };
-  
+
     checkAndRenderOnDOMChange();
-  }
+}
