@@ -8,17 +8,7 @@ const CopyTaxFlight = () => {
       </div>
     );
   };
-  
-  function detectarAparicionClaseEnDOM() {
-    const targetElement = document.querySelector('.js-results-list-selection-placeholder');
-    if (targetElement) {
-      console.log('La clase js-results-list-selection-placeholder ha aparecido en el DOM');
-      renderCopyTaxFlight();
-    } else {
-      setTimeout(detectarAparicionClaseEnDOM, 100); // Intentar nuevamente después de un breve intervalo
-    }
-  }
-  
+
   function renderCopyTaxFlight() {
     const flightSelectionElement = document.querySelector('.flight-selection');
     if (flightSelectionElement) {
@@ -29,6 +19,27 @@ const CopyTaxFlight = () => {
       ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
     }
   }
+
   
-  // Llamada a la función para iniciar la detección
-  detectarAparicionClaseEnDOM();
+  function observarCambiosVirtualDOM() {
+    const observerConfig = {
+        rootNode: document.documentElement,
+        callback: (summaries) => {
+            summaries.forEach((summary) => {
+                const addedNodes = Array.from(summary.added);
+                const placeholderDiv = addedNodes.find(node => node.classList && node.classList.contains('js-results-list-selection-placeholder'));
+
+                if (placeholderDiv) {
+                    renderCopyTaxFlight();
+                }
+            });
+        },
+        queries: [{ element: '.js-results-list-selection-placeholder' }],
+    };
+
+    const observer = new MutationSummary(observerConfig);
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+    observarCambiosVirtualDOM();
+});
