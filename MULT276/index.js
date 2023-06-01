@@ -21,30 +21,33 @@ function renderCopyTaxFlight() {
 }
 
 
-function observarComponenteEnDOM() {
-  const observer = new MutationObserver((mutationsList) => {
-    for (let mutation of mutationsList) {
-      const addedNodes = mutation.addedNodes;
-      for (let node of addedNodes) {
-        if (node.classList && node.classList.contains('js-results-list-selection-placeholder')) {
-          console.log('El componente está presente en el DOM');
-          renderCopyTaxFlight();
-          return; // Termina el bucle si se encuentra el componente
+function agregarComponenteCuandoApareceSelector() {
+  // Definir el selector objetivo
+  const selectorObjetivo = 'flight-selection';
+
+  // Crear una instancia de MutationSummary
+  const observer = new MutationSummary({
+    callback: function(summaries) {
+      // Verificar si el selector objetivo está presente en las mutaciones
+      summaries[0].added.forEach(function(element) {
+        if (element.matches(selectorObjetivo)) {
+          // El selector objetivo ha aparecido, realizar la acción deseada
+          const componente = document.createElement('div');
+          // Aquí puedes agregar lógica adicional para configurar el componente
+
+          element.appendChild(componente);
+
+          // Mostrar un mensaje en la consola para verificar la detección
+          console.log('Selector objetivo detectado. Se agregó el componente.');
+
+          // Detener el seguimiento de mutaciones
+          observer.disconnect();
         }
-      }
-    }
+      });
+    },
+    queries: [{ element: selectorObjetivo }]
   });
-
-  const observerConfig = {
-    childList: true,
-    subtree: true,
-  };
-
-  const targetNode = document.documentElement; // Puedes ajustar el selector según tu estructura
-
-  observer.observe(targetNode, observerConfig);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  observarComponenteEnDOM();
-});
+// Llamar a la función para iniciar el seguimiento de mutaciones
+agregarComponenteCuandoApareceSelector();
