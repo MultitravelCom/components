@@ -157,31 +157,30 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
-
-        if (resultsListPage instanceof Node) {
+      let resultsListPage = document.querySelector('.results-list__page');
+  
+      if (resultsListPage instanceof Node) {
+        aplicarModificaciones();
+  
+        const observerListPage = new MutationSummary({
+          queries: [{ element: '.results-list__page' }],
+          callback: mutations => {
+            console.log('Se detectó una modificación en results-list__page');
             aplicarModificaciones();
-
-            const observerListPage = new MutationObserver(mutationsList => {
-                for (const mutation of mutationsList) {
-                    if (mutation.target === resultsListPage) {
-                        console.log('Se detectó una modificación en results-list__page');
-                        aplicarModificaciones();
-                        cargarEstilosYModales();
-                        break;
-                    }
-                }
-            });
-
-            const config = { childList: true, subtree: true };
-            observerListPage.observe(resultsListPage, config);
-        } else {
-            setTimeout(checkResults, 1000);
-        }
+            cargarEstilosYModales();
+          }
+        });
+  
+        observerListPage.observe();
+  
+      } else {
+        setTimeout(checkResults, 1000);
+      }
     };
-
+  
     checkResults();
-}
+  }
+  
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
