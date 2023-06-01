@@ -163,7 +163,7 @@
 }
 
 .main__container__bannerMensageCard {
-  width: 392px;
+  max-width: 392px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -281,7 +281,7 @@
   }
 
   .main__container__bannerMensageCard {
-    width: 230px;
+   max-width: 230px;
   }
 
   .main__container__bannerMensageCard__App {
