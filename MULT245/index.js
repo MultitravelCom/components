@@ -142,7 +142,7 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        const resultsListPage = document.querySelector('.results-list__page');
+        let resultsListPage = document.querySelector('.results-list__page');
 
         if (resultsListPage) {
             aplicarModificaciones();
