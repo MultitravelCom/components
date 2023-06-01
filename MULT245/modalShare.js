@@ -100,7 +100,7 @@ const checkAndRender = async () => {
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
-
+checkAndRender();
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
@@ -128,6 +128,5 @@ function observarCambiosCheckAndRender() {
 
 
 document.addEventListener('DOMContentLoaded', async function () {
-    checkAndRender();;
     observarCambiosCheckAndRender();
 });
