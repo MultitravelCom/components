@@ -107,12 +107,10 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: (summaries) => {
             summaries.forEach((summary) => {
-                if (summary.added) {
-                    const addedInfoCardContents = Array.from(summary.added).filter((element) =>
-                        element.classList.contains('info-card__content')
-                    );
-                    if (addedInfoCardContents.length > 0) {
-                        console.log('Se detectó una modificación en .info-card__content');
+                if (summary.added || summary.valueChanged) {
+                    const resultsListPage = document.querySelector('.results-list__page');
+                    if (resultsListPage && resultsListPage.contains(summary.target)) {
+                        console.log('Se detectó una modificación en .results-list__page');
                         checkAndRender();
                     }
                 }
