@@ -53,10 +53,12 @@
 
 .btnStyleBannerHotelsResult:hover {
     background-color: #283747;
+    color: white;
 }
 
 .btnStyleBannerHotelsResult:active {
     background-color: #272626;
+    color: white;
 }
 
 @media(max-width:468px) {
