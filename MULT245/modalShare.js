@@ -102,3 +102,28 @@ const checkAndRender = async () => {
 };
 
 checkAndRender();
+
+function observarCambiosCheckAndRender() {
+    const checkAndRenderOnDOMChange = () => {
+        let resultsListPage = document.querySelector('.results-list__page');
+
+        if (resultsListPage instanceof Node) {
+            const observer = new MutationObserver(mutationsList => {
+                for (const mutation of mutationsList) {
+                    if (mutation.target === resultsListPage) {
+                        console.log('Se detectó una modificación en results-list__page');
+                        checkAndRender();
+                        break;
+                    }
+                }
+            });
+
+            const config = { childList: true, subtree: true };
+            observer.observe(resultsListPage, config);
+        } else {
+            setTimeout(checkAndRenderOnDOMChange, 1000);
+        }
+    };
+
+    checkAndRenderOnDOMChange();
+}
