@@ -4,7 +4,7 @@ function wait(timeout) {
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
-    // const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
+    const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
 
     // Forzar la recarga del archivo CSS
     if (link) {
@@ -13,12 +13,12 @@ async function cargarEstilosYModales() {
         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
     }
 
-    // // Forzar la recarga del script de los modales de React
-    // if (scriptReact) {
-    //     scriptReact.src = '';
-    //     await wait(100);
-    //     scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
-    // }
+    // Forzar la recarga del script de los modales de React
+    if (scriptReact) {
+        scriptReact.src = '';
+        await wait(100);
+        scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
+    }
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -155,28 +155,31 @@ function aplicarModificaciones() {
     changeCopyButton();
 }
 
-function observarCambiosCheckAndRender() {
-    const observerConfig = {
-      rootNode: document.documentElement,
-      callback: (summaries) => {
-        summaries.forEach((summary) => {
-          if (summary.added) {
-            const addedInfoCardContents = Array.from(summary.added).filter((element) =>
-              element.classList.contains('info-card__content')
-            );
-            if (addedInfoCardContents.length > 0) {
-              console.log('Se detectó una modificación en .info-card__content');
-              checkAndRender();
-            }
+function observarCambiosResultados() {
+    const checkResults = () => {
+      let resultsListPage = document.querySelector('.results-list__page');
+  
+      if (resultsListPage instanceof Node) {
+        aplicarModificaciones();
+  
+        const observerListPage = new MutationSummary({
+          queries: [{ element: '.results-list__page' }],
+          callback: mutations => {
+            console.log('Se detectó una modificación en results-list__page');
+            aplicarModificaciones();
+            cargarEstilosYModales();
           }
         });
-      },
-      queries: [{ element: '.info-card__content' }],
+  
+        observerListPage.observe();
+  
+      } else {
+        setTimeout(checkResults, 1000);
+      }
     };
   
-    const observer = new MutationSummary(observerConfig);
+    checkResults();
   }
-  
   
 
 document.addEventListener('DOMContentLoaded', async function () {
