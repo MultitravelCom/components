@@ -91,3 +91,18 @@
         bottom: 61px;
     }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+    .main__container_excluvisa__text__h1>h1 {
+        font-size: 20px;
+    }
+
+    .main__container_excluvisa__text__p>p {
+        font-size: 13px;
+    }
+    .main__container_excluvisa__img{
+        width: 56%;
+    }
+    .btnStyleBannerHotelsResult{
+        left: 297px; 
+    }
+}
