@@ -162,6 +162,25 @@
   font-size: 21px;
 }
 
+.main__container__bannerMensageCard {
+  width: 392px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: #EAF4FC;
+  border-radius: 0px 16px 0px 0px;
+  padding: 6px 24px 6px 12px;
+}
+.main__container__bannerMensageCard__App {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.main__container__bannerMensageCard>p {
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 767px) {
   .main__container__share {
     width: 24px;
@@ -249,7 +268,7 @@
   }
 
   .info-card__location--action.js-result-map-toggle {
-    top: 76px;
+    top: 85px;
   }
 
   .info-card__title--action {
@@ -308,23 +327,3 @@ a.abs{
     display: none;
     right: 9px;
 } */
-
-.main__container__bannerMensageCard__App {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.main__container__bannerMensageCard {
-  width: 392px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  background-color: #EAF4FC;
-  border-radius: 0px 16px 0px 0px;
-  padding: 6px 24px 6px 12px;
-}
-
-.main__container__bannerMensageCard>p {
-  margin-bottom: 0 !important;
-}
