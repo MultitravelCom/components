@@ -9,12 +9,17 @@ const CopyTaxFlight = () => {
   );
 };
 
-function renderCopyTaxFlight(parentElement) {
-  const copyTaxFlightContainer = document.createElement('div');
-  copyTaxFlightContainer.classList.add('copy-tax-flight-container');
-  parentElement.appendChild(copyTaxFlightContainer);
+function renderCopyTaxFlight() {
+  const flightSelectionElement = document.querySelector('.flight-selection');
+  if (flightSelectionElement) {
+    const copyTaxFlightContainer = document.createElement('div');
+    copyTaxFlightContainer.classList.add('copy-tax-flight-container');
 
-  ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
+    const bookingElement = flightSelectionElement.querySelector('.flight-selection__booking');
+    flightSelectionElement.insertBefore(copyTaxFlightContainer, bookingElement);
+
+    ReactDOM.render(<CopyTaxFlight />, copyTaxFlightContainer);
+  }
 }
 
 function agregarComponenteCuandoApareceFlightSelection() {
@@ -37,8 +42,8 @@ function agregarComponenteCuandoApareceFlightSelection() {
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
-          // Invocar la función renderCopyTaxFlight() para renderizar el componente dentro del div creado
-          renderCopyTaxFlight(componente);
+          // Invocar la función renderCopyTaxFlight() para renderizar el componente
+          renderCopyTaxFlight();
 
           // Mostrar un mensaje en la consola para verificar la detección
           console.log('Clase flight-selection detectada. Se agregó el componente.');
