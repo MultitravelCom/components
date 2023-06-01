@@ -141,16 +141,31 @@ function aplicarModificaciones() {
 }
 
 function observarCambiosResultados() {
-   let resultsListPage = document.querySelector('.results-list__page');
+    const checkResults = () => {
+        let resultsListPage = document.querySelector('.results-list__page');
 
-    const observer = new MutationObserver(() => {
-        aplicarModificaciones();
-    });
+        if (resultsListPage instanceof Node) {
+            aplicarModificaciones();
 
-    const config = { childList: true, subtree: true };
+            const observerListPage = new MutationObserver(mutationsList => {
+                for (const mutation of mutationsList) {
+                    if (mutation.target === resultsListPage) {
+                        aplicarModificaciones();
+                        break;
+                    }
+                }
+            });
 
-    observer.observe(resultsListPage, config);
+            const config = { childList: true, subtree: true };
+            observerListPage.observe(resultsListPage, config);
+        } else {
+            setTimeout(checkResults, 1000);
+        }
+    };
+
+    checkResults();
 }
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
