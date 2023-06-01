@@ -74,7 +74,7 @@ async function applyDisplayNoneToAllButLastButton() {
         await wait(1000);
         await applyDisplayNoneToAllButLastButton();
         return;
-
+    }
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
 
     for (let i = 0; i < buttonsAndLinks.length; i++) {
@@ -131,13 +131,6 @@ async function changeCopyButton() {
 
 
 // Función para aplicar las modificaciones a las tarjetas
-function aplicarModificaciones() {
-    aplicarClaseRecomendada();
-    changeCopyMap();
-    applyDisplayNoneToAllButLastButton();
-    agreeStarIcon();
-    changeCopyButton();
-}
 
 function aplicarModificaciones() {
     aplicarClaseRecomendada();
