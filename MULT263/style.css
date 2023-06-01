@@ -67,6 +67,7 @@
     .main__container_excluvisa__text{
         width: 100%;
         padding: 17px;
+        margin: 0;
     }
     .main__container_excluvisa__text__h1>h1 {
         font-size: 24px;
@@ -80,5 +81,8 @@
     }
     .main__container_excluvisa__img{
         border-radius: 0 0 40px 8px;
+    }
+    .btnStyleBannerHotelsResult{
+
     }
 }
