@@ -105,19 +105,11 @@ checkAndRender();
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
-        callback: (summaries) => {
-            summaries.forEach((summary) => {
-                if (summary.added || summary.valueChanged) {
-                    const resultsListPage = document.querySelector('.results-list__page');
-                    if (resultsListPage && resultsListPage.contains(summary.target)) {
-                        console.log('Se detectó una modificación en .results-list__page');
-                        checkAndRender();
-                        console.log("test")
-                    }
-                }
-            });
+        callback: () => {
+            console.log('Se detectó una modificación en .results-list__page');
+            requestAnimationFrame(checkAndRender);
         },
-        queries: [{ element: '.info-card__content' }],
+        queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
