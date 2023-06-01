@@ -132,31 +132,41 @@ function aplicarModificaciones() {
     changeCopyButton();
 }
 
-// Función para observar los cambios en el contenedor de los resultados de búsqueda
+function aplicarModificaciones() {
+    aplicarClaseRecomendada();
+    changeCopyMap();
+    applyDisplayNoneToAllButLastButton();
+    agreeStarIcon();
+    changeCopyButton();
+}
+
 function observarCambiosResultados() {
-    const resultsListPage = document.querySelector('.results-list__page');
+    const checkResults = () => {
+        const resultsListPage = document.querySelector('.results-list__page');
 
-    // Crear un observador de mutación para detectar los cambios en el contenedor
-    const observerListPage = new MutationObserver(mutationsList => {
-        for (const mutation of mutationsList) {
-            // Verificar si los cambios afectan al contenedor de los resultados
-            if (mutation.target === resultsListPage) {
-                // Llamar a la función para aplicar las modificaciones
-                aplicarModificaciones();
-                break;
-            }
+        if (resultsListPage) {
+            aplicarModificaciones();
+
+            const observerListPage = new MutationObserver(mutationsList => {
+                for (const mutation of mutationsList) {
+                    if (mutation.target === resultsListPage) {
+                        aplicarModificaciones();
+                        break;
+                    }
+                }
+            });
+
+            const config = { childList: true, subtree: true };
+            observerListPage.observe(resultsListPage, config);
+        } else {
+            setTimeout(checkResults, 1000);
         }
-    });
+    };
 
-    // Configurar y activar el observador de mutación
-    const config = { childList: true, subtree: true };
-    observerListPage.observe(resultsListPage, config);
+    checkResults();
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    // Llamar a la función para aplicar las modificaciones al cargar la página
     aplicarModificaciones();
-
-    // Iniciar la observación de cambios en los resultados de búsqueda
     observarCambiosResultados();
 });
