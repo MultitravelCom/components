@@ -93,16 +93,19 @@
 }
 @media (min-width: 768px) and (max-width: 1023px) {
     .main__container_excluvisa__text__h1>h1 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .main__container_excluvisa__text__p>p {
-        font-size: 13px;
+        font-size: 15px;
     }
     .main__container_excluvisa__img{
-        width: 56%;
+        width: 47%;
     }
     .btnStyleBannerHotelsResult{
-        left: 297px; 
+        left: 313px; 
+    }
+    .main__container_excluvisa__text{
+        margin: auto 51px;
     }
 }
