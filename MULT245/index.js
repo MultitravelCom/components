@@ -4,7 +4,7 @@ function wait(timeout) {
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
-    const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
+    // const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
 
     // Forzar la recarga del archivo CSS
     if (link) {
@@ -13,12 +13,12 @@ async function cargarEstilosYModales() {
         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
     }
 
-    // Forzar la recarga del script de los modales de React
-    if (scriptReact) {
-        scriptReact.src = '';
-        await wait(100);
-        scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
-    }
+    // // Forzar la recarga del script de los modales de React
+    // if (scriptReact) {
+    //     scriptReact.src = '';
+    //     await wait(100);
+    //     scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
+    // }
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
