@@ -42,7 +42,7 @@ const insertNewComponent = async () => {
 
         if (parentDivDescuentoComponente && children && children.length >= 2) {
             const newDivDescuentoComponente = document.createElement('div');
-            parentDivDescuentoComponente.insertBefore(newDivDescuentoComponente, children[2]);
+            parentDivDescuentoComponente.insertBefore(newDivDescuentoComponente, children[1]);
             ReactDOM.render(<DescuentoComponente />, newDivDescuentoComponente);
             break;
         }
