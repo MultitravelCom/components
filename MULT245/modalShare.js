@@ -112,6 +112,7 @@ function observarCambiosCheckAndRender() {
                     if (resultsListPage && resultsListPage.contains(summary.target)) {
                         console.log('Se detectó una modificación en .results-list__page');
                         checkAndRender();
+                        console.log("test")
                     }
                 }
             });
