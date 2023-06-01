@@ -28,7 +28,7 @@ function observarComponenteEnDOM() {
       for (let node of addedNodes) {
         if (node.classList && node.classList.contains('js-results-list-selection-placeholder')) {
           console.log('El componente está presente en el DOM');
-          ejecutarFuncion();
+          renderCopyTaxFlight();
           return; // Termina el bucle si se encuentra el componente
         }
       }
