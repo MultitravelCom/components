@@ -3,7 +3,7 @@ function wait(timeout) {
 }
 
 async function aplicarClaseRecomendada() {
-    const resultsListPage = document.querySelector('.results-list__page');
+    let resultsListPage = document.querySelector('.results-list__page');
 
     if (!resultsListPage) {
         await new Promise(resolve => setTimeout(resolve, 1000));
@@ -28,7 +28,7 @@ async function aplicarClaseRecomendada() {
 }
 
 async function agreeStarIcon() {
-    const resultsListPage = document.querySelector('.results-list__page');
+    let resultsListPage = document.querySelector('.results-list__page');
 
     while (!resultsListPage) {
         await wait(1000);
@@ -48,18 +48,18 @@ async function agreeStarIcon() {
 }
 
 async function changeCopyMap() {
-    const resultsListPage = document.querySelector('.results-list__page');
+    let resultsListPage = document.querySelector('.results-list__page');
 
     while (!resultsListPage) {
         await wait(1000);
         resultsListPage = document.querySelector('.results-list__page');
     }
 
-    const items = resultsListPage.querySelectorAll('.results-list__item');
+    let items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const mapLink = item.querySelector('.map-link');
-        const locationIcon = mapLink.querySelector('.info-card__location-icon');
+        let mapLink = item.querySelector('.map-link');
+        let locationIcon = mapLink.querySelector('.info-card__location-icon');
 
         mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
