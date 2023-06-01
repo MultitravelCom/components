@@ -147,9 +147,6 @@ async function changeCopyButton() {
     checkResultsListPage();
 };
 
-
-// Función para aplicar las modificaciones a las tarjetas
-
 function aplicarModificaciones() {
     aplicarClaseRecomendada();
     changeCopyMap();
@@ -168,6 +165,7 @@ function observarCambiosResultados() {
             const observerListPage = new MutationObserver(mutationsList => {
                 for (const mutation of mutationsList) {
                     if (mutation.target === resultsListPage) {
+                        console.log('Se detectó una modificación en results-list__page');
                         aplicarModificaciones();
                         cargarEstilosYModales();
                         break;
@@ -184,7 +182,6 @@ function observarCambiosResultados() {
 
     checkResults();
 }
-
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
