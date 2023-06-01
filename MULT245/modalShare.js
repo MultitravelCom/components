@@ -123,6 +123,8 @@ function observarCambiosCheckAndRender() {
     };
   
     const observer = new MutationSummary(observerConfig);
+
+    checkAndRender();
   }
 
 
