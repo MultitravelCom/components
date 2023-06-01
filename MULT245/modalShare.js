@@ -105,21 +105,24 @@ checkAndRender();
 
 function observarCambiosCheckAndRender() {
     const checkAndRenderOnDOMChange = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
-
-        if (resultsListPage instanceof Node) {
-            const observer = new MutationSummary({
-                rootNode: resultsListPage,
-                callback: () => {
-                    console.log('Se detectó una modificación en sarasa');
-                    checkAndRender();
-                },
-                queries: [{ element: '.results-list__page' }]
-            });
-        } else {
-            setTimeout(checkAndRenderOnDOMChange, 2000);
-        }
+      let infoCardContents = document.querySelectorAll('.info-card__content');
+  
+      if (infoCardContents.length > 0) {
+        const observer = new MutationSummary({
+          rootNode: infoCardContents[0].parentNode,
+          callback: () => {
+            console.log('Se detectó una modificación en .info-card__content');
+            checkAndRender();
+          },
+          queries: [{ element: '.info-card__content' }]
+        });
+      } else {
+        setTimeout(checkAndRenderOnDOMChange, 2000);
+      }
     };
-
+  
     checkAndRenderOnDOMChange();
-}
+  }
+  
+
+
