@@ -372,7 +372,7 @@ const AcordeonComponen = () => {
     };
 
     return (
-        <>
+        <div className="acordeonComponen__container">
             <summary onClick={handleToggle}>
                 <div className="glyphicon glyphicon-chevron-down chevron-style"></div>
                 ¿En qué ciudades se encuentran las estaciones de ski?
@@ -382,7 +382,7 @@ const AcordeonComponen = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor.
                 </p>
             )}
-        </>
+        </div>
     );
 }
 

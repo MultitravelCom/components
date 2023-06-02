@@ -569,6 +569,7 @@ source>img {
     margin: auto;
     max-width: 1129px;
     position: relative;
+    margin-bottom: 16px;
 }
 .acordeonComponen__container > summary {
     padding: 16px;
