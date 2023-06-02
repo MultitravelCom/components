@@ -17,4 +17,4 @@ Toastify({
     style: {
         background: '#2096ff',
     }
-});
+}).showToast();
