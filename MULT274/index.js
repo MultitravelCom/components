@@ -85,9 +85,7 @@ function filtrarDestinos(destinos, nombreDestino) {
 }
 
 const btnStyles = [
-    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Mega ofertas en Paquetes - Temporada de esquí', destino: "nieve" },
-    { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Buzios - Alojamientos Buzios', destino: "Buzios" },
-    { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Brasil All Inclusive - Alojamientos Brasil All Inclusive', destino: "AllInclusive" },
+    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Mega ofertas en Paquetes - Temporada de esquí', destino: "nieve" }
 ];
 
 // *****************************************************
