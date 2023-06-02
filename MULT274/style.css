@@ -573,11 +573,11 @@ source>img {
 }
 .acordeonComponen__container > summary {
     padding: 16px;
-}
-.acordeonComponen__container > p {
-    padding: 16px;
     font-size: 16px;
     font-weight: bold;
+}
+.acordeonComponen__container__title > p {
+    padding: 16px;
 }
 .chevron-style{
     position: absolute;
