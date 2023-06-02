@@ -34,26 +34,16 @@ async function aplicarClaseRecomendada() {
     items.forEach(item => {
         const tieneDeals = item.querySelector('.deals') !== null;
         const hotelResult = item.querySelector('.result.hotel-result');
-        const optionsToggle = item.querySelectorAll('.info-card__options-toggle');
 
-        if (hotelResult) {
+        if (tieneDeals && hotelResult) {
             hotelResult.classList.add('alojamiento-recomendado');
             const bestPriceElements = item.querySelectorAll('.info-card__price');
             bestPriceElements.forEach(element => {
-                element.classList.add('info-card__price__deals');
-            });
-
-            optionsToggle.forEach(toggle => {
-                if (tieneDeals) {
-                    toggle.classList.add('right-14px');
-                } else {
-                    toggle.classList.add('right-0px');
-                }
+                element.classList.add("info-card__price__deals");
             });
         }
     });
 }
-
 
 async function agreeStarIcon() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -167,28 +157,28 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
-
-        if (resultsListPage instanceof Node) {
-
-            const observerListPage = new MutationSummary({
-                queries: [{ element: '.results-list__page' }],
-                callback: mutations => {
-                    aplicarModificaciones();
-                    cargarEstilosYModales();
-                }
-            });
-
-            observerListPage.observe();
-
-        } else {
-            setTimeout(checkResults, 1000);
-        }
+      let resultsListPage = document.querySelector('.results-list__page');
+  
+      if (resultsListPage instanceof Node) {
+  
+        const observerListPage = new MutationSummary({
+          queries: [{ element: '.results-list__page' }],
+          callback: mutations => {
+            aplicarModificaciones();
+            cargarEstilosYModales();
+          }
+        });
+  
+        observerListPage.observe();
+  
+      } else {
+        setTimeout(checkResults, 1000);
+      }
     };
-
+  
     checkResults();
-}
-
+  }
+  
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
