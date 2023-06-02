@@ -364,6 +364,37 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
     );
 };
 
+const AcordeonComponen = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <div>
+            <summary onClick={handleToggle}>
+                ¿En qué ciudades se encuentran las estaciones de ski?
+            </summary>
+            {isOpen && (
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor.
+                </p>
+            )}
+        </div>
+    );
+}
+
+const ComponetFAQ = () => {
+    return (
+        <div className="main_conteiner__s2__acordeon">
+            <AcordeonComponen />
+            <AcordeonComponen />
+            <AcordeonComponen />
+        </div>
+    )
+}
+
 function App() {
     const [loaded, setLoaded] = React.useState(false);
     const [destinos, setDestinos] = React.useState([]);
@@ -390,7 +421,9 @@ function App() {
                         <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Invierno} />
                         </div>
-
+                    </div>
+                    <div className="main__conteiner__s2">
+                        <ComponetFAQ />
                     </div>
                 </>
             )}
