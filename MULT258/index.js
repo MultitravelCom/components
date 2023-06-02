@@ -18,7 +18,7 @@ window.onload = function () {
     position: 'left', // Puedes ajustar la posición según tus necesidades
     style: {
       background: '#2096ff',
-      maxWidth: '410px',
+      maxWidth: '454px',
       height: '112px',
       padding: '16px',
       borderRadius: '8px',
