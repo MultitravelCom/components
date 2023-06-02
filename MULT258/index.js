@@ -18,11 +18,12 @@ window.onload = function () {
     position: 'left', // Puedes ajustar la posición según tus necesidades
     style: {
       background: '#2096ff',
-      width: '410px',
+      maxWidth: '410px',
       height: '112px',
       padding: '16px',
       borderRadius: '8px',
       border: '1px solid #cccccc',
+      maxWidth: 'calc(100% - 20px)',
   }
   }).showToast();
 }
