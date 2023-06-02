@@ -400,27 +400,27 @@ const ComponetFAQ = () => {
                         En Argentina, puedes disfrutar de la increíble temporada de nieve y esquí en varias ciudades.
                         <ul>
                             <li>
-                                Mendoza:
+                                <strong>Mendoza:</strong>
                                 <ul>
-                                    <li>Las Leñas: Se encuentra el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.</li>
+                                    <li><strong>Las Leñas:</strong> Se encuentra el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.</li>
                                 </ul>
                             </li>
                             <li>
-                                Bariloche (Provincia de Río Negro):
+                                <strong>Bariloche (Provincia de Río Negro):</strong>
                                 <ul>
-                                    <li>Cerro Catedral: Un destino de renombre internacional para los amantes del esquí y del snowboard.</li>
+                                    <li><strong>Cerro Catedral:</strong> Un destino de renombre internacional para los amantes del esquí y del snowboard.</li>
                                 </ul>
                             </li>
                             <li>
-                                San Martín de los Andes (Provincia de Neuquén):
+                                <strong>San Martín de los Andes (Provincia de Neuquén):</strong>
                                 <ul>
-                                    <li>Cerro Chapelco Ski Resort: Donde podrás disfrutar de una experiencia única en medio de la naturaleza.</li>
+                                    <li><strong>Cerro Chapelco Ski Resort:</strong> Donde podrás disfrutar de una experiencia única en medio de la naturaleza.</li>
                                 </ul>
                             </li>
                             <li>
-                                Ushuaia:
+                                <strong>Ushuaia:</strong>
                                 <ul>
-                                    <li>Cerro Castor: Una estación de esquí que ofrece una combinación perfecta de nieve y paisajes espectaculares.</li>
+                                    <li><strong>Cerro Castor:</strong> Una estación de esquí que ofrece una combinación perfecta de nieve y paisajes espectaculares.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -465,24 +465,26 @@ const ComponetFAQ = () => {
                 title_acord={"¿Cuentan con alquiler deski los cerros? ¿Hay escuelas deski?"}
                 p_acord={"Sí, todos los cerros cuentan con un alquiler de equipamiento de ski. Además,cuentan con escuelas de ski para que los principiantes en ski y snowboard aprendan."} />
             <AcordeonComponen
-                title_acord="¿Puedo elegir el alojamiento de mi paquete de ski?"
+                title_acord={"¿Puedo elegir el alojamiento de mi paquete de ski?"}
                 p_acord={
                     <>
                         Sí, cuentas con diferentes opciones de hospedajes que se adaptan a tus necesidades.
 
-                        Chapelco:
+                        <strong>Chapelco:</strong>
                         <ul>
                             <li>La Posta del Cazador</li>
                             <li>Apart Hotel My Friends</li>
                             <li>Patagonia Plaza Cerro Castor</li>
                         </ul>
-                        Catedral:
+
+                        <strong>Catedral:</strong>
                         <ul>
                             <li>Hampton by Hilton Bariloche</li>
                             <li>Hotel Alma del Lago Suites & Spa</li>
                             <li>Village Catedral Spa & Resort de Montaña</li>
                         </ul>
-                        Las Leñas:
+
+                        <strong>Las Leñas:</strong>
                         <ul>
                             <li>Hotel Aries</li>
                             <li>Hotel Piscis</li>
