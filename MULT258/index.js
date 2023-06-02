@@ -1,11 +1,10 @@
-window.onload = function () {
-
-  function cerrarBanner() {
+function cerrarBanner() {
     bannerToastify.style.display = 'none';
   }
 
 
-  // Crear el elemento de banner de Toastify
+window.onload = function () {
+
   let bannerToastify = document.createElement('div');
   bannerToastify.className = 'custom-div';
   bannerToastify.innerHTML =
