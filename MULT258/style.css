@@ -32,6 +32,9 @@
     height: 131px !important;
     bottom: 0 !important;
   }
+  .toastify-left{
+    left: 0 !important;
+  }
 
   .custom-img {
     display: none;
