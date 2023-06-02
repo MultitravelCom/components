@@ -21,6 +21,9 @@
   margin-bottom: 0;
   margin: 0 !important;
 }
+.custom-content-botton{
+    display: none;
+}
 @media(max-width:767px){
   .toastify{
     max-width: calc(100% - 20px);
@@ -32,5 +35,8 @@
   }
   .custom-content h2 {
     font-size: 18px;
+  }
+  .custom-content-botton{
+
   }
 }
