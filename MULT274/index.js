@@ -372,7 +372,7 @@ const AcordeonComponen = () => {
     };
 
     return (
-        <div>
+        <div className="acordeonComponen__container">
             <summary onClick={handleToggle}>
                 ¿En qué ciudades se encuentran las estaciones de ski?
             </summary>

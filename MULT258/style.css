@@ -20,6 +20,9 @@
   font-size: 12px;
   margin-bottom: 0;
 }
+.main__conteiner__s2{
+  background-color: #DAF0FF;
+}
 
 @media(max-width:767px){
   .toastify{
