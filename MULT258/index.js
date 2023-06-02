@@ -5,7 +5,7 @@ window.onload = function () {
   bannerToastify.innerHTML =
     `
     <img src="https://multitravelcom.github.io/MT/Secciones/Popup-Precio/img-popup.jpg" alt="Imagen" class="custom-img">
-    <div class="custom-content-botton">X</div>
+    <div class="custom-content-botton" onclick="cerrarBanner()">X</div>
     <div class="custom-content">
       <h2>Lo que ves, es lo que pagás</h2>
       <p>Precios finales en todos nuestros productos, impuestos incluidos. Sin costos extras en aeropuerto o destino.</p>
@@ -24,6 +24,11 @@ window.onload = function () {
       padding: '16px',
       borderRadius: '8px',
       border: '1px solid #cccccc',
-  }
+    }
   }).showToast();
+
+  function cerrarBanner() {
+    // Ocultar el banner de Toastify
+    bannerToastify.style.display = 'none';
+  }
 }
