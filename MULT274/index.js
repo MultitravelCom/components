@@ -366,37 +366,27 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
 
 const AcordeonComponen = ({ title_acord, p_acord }) => {
     const [isOpen, setIsOpen] = React.useState(false);
-
+  
     const handleToggle = () => {
-        setIsOpen(!isOpen);
+      setIsOpen(!isOpen);
     };
-
-    React.useEffect(() => {
-        const icon = document.querySelector('.glyphicon-chevron-down');
-    
-        if (isOpen) {
-          icon.classList.add('rotate-icon');
-        } else {
-          icon.classList.remove('rotate-icon');
-        }
-      }, [isOpen]);
-
+  
     return (
-        <div className="acordeonComponen__container">
-            <summary onClick={handleToggle}>
-            <div className={`glyphicon glyphicon-chevron-down chevron-style ${isOpen ? 'rotate-icon' : ''}`}></div>
-                <div className="acordeonComponen__container__title">
-                    <span>{title_acord}</span>
-                </div>
-            </summary>
-            {isOpen && (
-                <p>
-                    {p_acord}
-                </p>
-            )}
-        </div>
+      <div className="acordeonComponen__container">
+        <summary onClick={handleToggle}>
+          <div
+            className={`glyphicon glyphicon-chevron-down chevron-style ${
+              isOpen ? 'rotate-icon' : ''
+            }`}
+          ></div>
+          <div className="acordeonComponen__container__title">
+            <span>{title_acord}</span>
+          </div>
+        </summary>
+        {isOpen && <p>{p_acord}</p>}
+      </div>
     );
-}
+  };
 
 const ComponetFAQ = () => {
     return (
