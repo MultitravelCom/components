@@ -462,7 +462,7 @@ const ComponetFAQ = () => {
                 }
             />
             <AcordeonComponen
-                title_acord={"¿Cuentan con alquiler deski los cerros? ¿Hay escuelas deski?"}
+                title_acord={"¿Cuentan con alquiler de ski los cerros? ¿Hay escuelas deski?"}
                 p_acord={"Sí, todos los cerros cuentan con un alquiler de equipamiento de ski. Además,cuentan con escuelas de ski para que los principiantes en ski y snowboard aprendan."} />
             <AcordeonComponen
                 title_acord={"¿Puedo elegir el alojamiento de mi paquete de ski?"}
