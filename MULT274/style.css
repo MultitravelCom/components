@@ -610,3 +610,11 @@ details[open] summary .chevron-style {
     transform: rotate(180deg);
     transition: transform 0.3s ease;
 }
+
+@media (max-width: 767px) {
+    .glider-track {
+        width: 100% !important;
+        flex-direction: column;
+        align-items: center;
+    }
+}
