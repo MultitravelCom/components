@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 10000,
       gravity: 'bottom',
       position: 'left',
-      backgroundColor: '#2096ff'
+      style: {
+        background: '#2096ff'
+      }
     }).showToast();
   });
