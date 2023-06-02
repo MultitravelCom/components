@@ -28,7 +28,6 @@ window.onload = function () {
   }).showToast();
 
   function cerrarBanner() {
-    // Ocultar el banner de Toastify
     bannerToastify.style.display = 'none';
   }
 }
