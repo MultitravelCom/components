@@ -389,7 +389,6 @@ function App() {
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Invierno} />
-                            <WarningPrice />
                         </div>
 
                     </div>
