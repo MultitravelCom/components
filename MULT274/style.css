@@ -571,7 +571,7 @@ source>img {
     position: relative;
     margin-bottom: 16px;
 }
-.acordeonComponen__container > summary {
+.acordeonComponen__container__title > span {
     padding: 16px;
     font-size: 16px;
     font-weight: bold;

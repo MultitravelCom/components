@@ -376,7 +376,7 @@ const AcordeonComponen = ({ title_acord, p_acord }) => {
             <summary onClick={handleToggle}>
                 <div className="glyphicon glyphicon-chevron-down chevron-style"></div>
                 <div className="acordeonComponen__container__title">
-                    <p>{title_acord}</p>
+                    <span>{title_acord}</span>
                 </div>
             </summary>
             {isOpen && (
