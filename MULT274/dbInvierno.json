@@ -1,0 +1,54 @@
+{
+    "destinos": [
+        {
+            "id": "a1",
+            "destino": "Invierno",
+            "img": "https://multitravelcom.github.io/MT/Evento/InviernoSki/card-1.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "",
+            "price": "$251.900",
+            "events": "no"
+        },
+        {
+            "id": "a2",
+            "destino": "Invierno",
+            "img": "https://multitravelcom.github.io/MT/Evento/InviernoSki/card-2.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "",
+            "price": "$246.900",
+            "events": "no"
+        },
+        {
+            "id": "a3",
+            "destino": "Invierno",
+            "img": "https://multitravelcom.github.io/MT/Evento/InviernoSki/card-3.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "",
+            "price": "$276.900",
+            "events": "no"
+        },
+        {
+            "id": "a4",
+            "destino": "Invierno",
+            "img": "https://multitravelcom.github.io/MT/Evento/InviernoSki/card-4.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "",
+            "price": "$21.900",
+            "events": "no"
+        },
+        {
+            "id": "a5",
+            "destino": "Invierno",
+            "img": "https://multitravelcom.github.io/MT/Evento/InviernoSki/card-5.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "",
+            "price": "$20.400",
+            "events": "no"
+        }
+    ]
+}
