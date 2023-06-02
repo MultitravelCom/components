@@ -394,17 +394,102 @@ const ComponetFAQ = () => {
                 <h2>Preguntas frecuentes</h2>
             </div>
             <AcordeonComponen
-                title_acord={"¿En qué ciudades se encuentranlas estaciones de ski?"}
-                p_acord={"En Argentina, podés disfrutar de la increíble temporada de nieve y esquí en varias ciudades. En Mendoza, específicamenteen Las Leñas,se encuentrá el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.En Bariloche, ubicado en la provincia de Río Negro, se encuentra el cerro Catedral, un destino de renombre internacional para los amantes del esquíy del snowboard.En San Martín de los Andes, en la provincia de Neuquén, se encuentra el cerro Chapelco Ski Resort, donde podrás disfrutar de una experiencia única en medio de la naturaleza. Por último, en Ushuaia, se encuentra el Cerro Castor, una estación de esquí que ofrece una combinación perfecta de nieve y paisajes espectaculares."} />
+                title_acord="¿En qué ciudades se encuentran las estaciones de ski?"
+                p_acord={
+                    <>
+                        En Argentina, puedes disfrutar de la increíble temporada de nieve y esquí en varias ciudades.
+                        <ul>
+                            <li>
+                                Mendoza:
+                                <ul>
+                                    <li>Las Leñas: Se encuentra el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Bariloche (Provincia de Río Negro):
+                                <ul>
+                                    <li>Cerro Catedral: Un destino de renombre internacional para los amantes del esquí y del snowboard.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                San Martín de los Andes (Provincia de Neuquén):
+                                <ul>
+                                    <li>Cerro Chapelco Ski Resort: Donde podrás disfrutar de una experiencia única en medio de la naturaleza.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Ushuaia:
+                                <ul>
+                                    <li>Cerro Castor: Una estación de esquí que ofrece una combinación perfecta de nieve y paisajes espectaculares.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </>
+                }
+            />
             <AcordeonComponen
-                title_acord={"¿Los paquetesde skiincluyen el equipode nieve? "}
-                p_acord={"No, los paquetes no incluyen el equipo de nieve. Acá te dejamos lo que cuenta cada uno de ellos. Paquete Cerro Castor-3 días de ski en el Cerro Castor-Hospedaje y alojamientoen el Cerro Castor. Estos se encuentran en cercanía al cerro-Traslados al Cerro Castor-Traslados in/outPaquete Cerro Catedral-3 días de ski en el Cerro Catedral-Hospedaje y alojamiento enCatedralPaquete Las Leñas-3 días de ski en Las Leñas-Hospedaje y alojamiento en Las LeñasPaquete Chapelco-3 días de ski en Chapelco-Hospedaje y alojamiento en Chapelco. -Traslados al Cerro Chapelco-Traslados in/out"} />
+                title_acord="¿En qué ciudades se encuentran las estaciones de ski?"
+                p_acord={
+                    <>
+                        No, los paquetes no incluyen el equipo de nieve. Acá te dejamos lo que cuenta cada uno de ellos.
+                        <ul>
+                            <li>Paquete Cerro Castor</li>
+                            <ul>
+                                <li>3 días de ski en el Cerro Castor</li>
+                                <li>Hospedaje y alojamiento en el Cerro Castor. Estos se encuentran en cercanía al cerro</li>
+                                <li>Traslados al Cerro Castor</li>
+                                <li>Traslados in/out</li>
+                            </ul>
+                            <li>Paquete Cerro Catedral</li>
+                            <ul>
+                                <li>3 días de ski en el Cerro Catedral</li>
+                                <li>Hospedaje y alojamiento en Catedral</li>
+                            </ul>
+                            <li>Paquete Las Leñas</li>
+                            <ul>
+                                <li>3 días de ski en Las Leñas</li>
+                                <li>Hospedaje y alojamiento en Las Leñas</li>
+                            </ul>
+                            <li>Paquete Chapelco</li>
+                            <ul>
+                                <li>3 días de ski en Chapelco</li>
+                                <li>Hospedaje y alojamiento en Chapelco</li>
+                                <li>Traslados al Cerro Chapelco</li>
+                                <li>Traslados in/out</li>
+                            </ul>
+                        </ul>
+                    </>
+                }
+            />
             <AcordeonComponen
                 title_acord={"¿Cuentan con alquiler deski los cerros? ¿Hay escuelas deski?"}
                 p_acord={"Sí, todos los cerros cuentan con un alquiler de equipamiento de ski. Además,cuentan con escuelas de ski para que los principiantes en ski y snowboard aprendan."} />
             <AcordeonComponen
-                title_acord={"¿Puedo elegir el alojamiento de mi paquetede ski?"}
-                p_acord={"Sí, contas con diferentes opciones de hospedajes que se adaptan a tus necesidades.Chapelco(en negrita) La Posta del CazadorApart Hotel My Friends Patagonia Plaza Cerro Castor (en negrita)Hostal Del BosqueFueguino Hotel Patagónico Hotel AlbatrosCatedral (en negrita)Hampton by Hilton Bariloche Hotel Alma del Lago Suites & SpaVillage Catedral Spa & Resort de MontañaLas Leñas (en negrita)Hotel Aries Hotel Piscis"} />
+                title_acord="¿Puedo elegir el alojamiento de mi paquete de ski?"
+                p_acord={
+                    <>
+                        Sí, cuentas con diferentes opciones de hospedajes que se adaptan a tus necesidades.
+
+                        Chapelco:
+                        <ul>
+                            <li>La Posta del Cazador</li>
+                            <li>Apart Hotel My Friends</li>
+                            <li>Patagonia Plaza Cerro Castor</li>
+                        </ul>
+                        Catedral:
+                        <ul>
+                            <li>Hampton by Hilton Bariloche</li>
+                            <li>Hotel Alma del Lago Suites & Spa</li>
+                            <li>Village Catedral Spa & Resort de Montaña</li>
+                        </ul>
+                        Las Leñas:
+                        <ul>
+                            <li>Hotel Aries</li>
+                            <li>Hotel Piscis</li>
+                        </ul>
+                    </>
+                }
+            />
         </div>
     )
 }

@@ -617,4 +617,7 @@ details[open] summary .chevron-style {
         flex-direction: column;
         align-items: center;
     }
+    .acordeonComponen__container__title>span{
+        font-size: 14px;
+    }
 }
