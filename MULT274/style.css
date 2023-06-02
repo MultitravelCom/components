@@ -562,6 +562,9 @@ source>img {
     background-color: #DAF0FF;
     padding: 16px;
 }
+.main_conteiner__s2__acordeon__title > h2 {
+    margin-bottom: 1rem;
+}
 .acordeonComponen__container{
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
@@ -589,7 +592,9 @@ source>img {
     top: 16px;
 }
 
-summary:focus .chevron-style {
+details[open] summary .chevron-style {
     transform: rotate(180deg);
     transition: transform 2s ease;
   }
+
+
