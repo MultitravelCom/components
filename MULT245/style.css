@@ -100,7 +100,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 17px;
-  text-align: right;
+  text-align: left;
   margin-bottom: 4px;
 }
 
@@ -171,6 +171,7 @@
   border-radius: 0px 16px 0px 0px;
   padding: 6px 24px 6px 12px;
 }
+
 .main__container__bannerMensageCard__App {
   position: absolute;
   bottom: 0;
@@ -182,10 +183,18 @@
 }
 
 @media (max-width: 767px) {
+  .share__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 15px;
+  }
+
   .main__container__share {
     width: 24px;
-    top: -34px;
-    left: 88%;
+    top: -49px;
+    left: 84%;
+    border-radius: 100%;
   }
 
   .share__text {
@@ -262,7 +271,7 @@
   .info-card__actions .info-card__options-toggle {
     width: 120px;
     display: block;
-    bottom: -9px;
+    bottom: -12px;
     position: absolute;
     left: 15px;
   }
@@ -281,7 +290,7 @@
   }
 
   .main__container__bannerMensageCard {
-   max-width: 230px;
+    max-width: 230px;
   }
 
   .main__container__bannerMensageCard__App {
