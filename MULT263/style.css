@@ -43,7 +43,8 @@
     height: 48px;
     position: absolute;
     right: inherit;
-    bottom: 226px;
+    right: 223px;
+    bottom: 50px;
     color: #FFFFFF;
     background-color: #0d4e88;
     font-size: 16xp;
@@ -92,7 +93,7 @@
 }
 @media(min-width: 768px) and (max-width:1023px){
     .btnStyleBannerHotelsResult {
-        left: 487px;
+        left: 46%;
     }
 
     .main__container_excluvisa__text__h1>h1 {
