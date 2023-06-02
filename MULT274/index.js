@@ -365,7 +365,7 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
 };
 
 const AcordeonComponen = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
