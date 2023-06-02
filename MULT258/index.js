@@ -15,6 +15,6 @@ Toastify({
     gravity: 'bottom', // Puedes ajustar la posición según tus necesidades
     position: 'left', // Puedes ajustar la posición según tus necesidades
     style: {
-        background: '#2096ff'
+        background: '#2096ff',
     }
 }).showToast();
