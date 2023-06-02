@@ -14,7 +14,7 @@ window.onload = function() {
   // Configurar y mostrar el toast de Toastify
   Toastify({
     node: bannerToastify,
-    duration: 10000,
+    duration: -1,
     gravity: 'bottom', // Puedes ajustar la posición según tus necesidades
     position: 'left', // Puedes ajustar la posición según tus necesidades
     style: {
