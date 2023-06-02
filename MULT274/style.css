@@ -557,15 +557,19 @@ source>img {
     font-size: 19px;
     min-width: 32px;
 }
+
 /* ACORDEON */
 .main__conteiner__s2 {
     background-color: #DAF0FF;
     padding: 16px;
 }
-.main_conteiner__s2__acordeon__title > h2 {
+
+.main_conteiner__s2__acordeon__title>h2 {
     margin-bottom: 1rem;
+    font-weight: bold !important;
 }
-.acordeonComponen__container{
+
+.acordeonComponen__container {
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 8px;
@@ -575,17 +579,21 @@ source>img {
     margin-bottom: 16px;
     cursor: pointer;
 }
-.acordeonComponen__container__title{
+
+.acordeonComponen__container__title {
     padding: 16px;
 }
-.acordeonComponen__container__title > span {
+
+.acordeonComponen__container__title>span {
     font-size: 16px;
     font-weight: bold;
 }
-.acordeonComponen__container > p {
+
+.acordeonComponen__container>p {
     padding: 16px;
 }
-.chevron-style{
+
+.chevron-style {
     position: absolute;
     right: 5%;
     font-size: 26px;
@@ -595,6 +603,10 @@ source>img {
 details[open] summary .chevron-style {
     transform: rotate(180deg);
     transition: transform 2s ease;
-  }
+}
 
 
+.rotate-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
