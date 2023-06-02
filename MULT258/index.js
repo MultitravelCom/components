@@ -11,7 +11,6 @@ window.onload = function() {
     </div>
   `;
 
-  // Configurar y mostrar el toast de Toastify
   Toastify({
     node: bannerToastify,
     duration: -1,
