@@ -9,11 +9,10 @@ bannerToastify.innerHTML =
   </div>
 `
 
-
 Toastify({
     node: bannerToastify,
     duration: 10000,
     gravity: 'bottom', // Puedes ajustar la posición según tus necesidades
-    position: 'right', // Puedes ajustar la posición según tus necesidades
+    position: 'left', // Puedes ajustar la posición según tus necesidades
     backgroundColor: '#2096ff'
 }).showToast();
