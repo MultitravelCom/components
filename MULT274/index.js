@@ -428,29 +428,29 @@ const ComponetFAQ = () => {
                 }
             />
             <AcordeonComponen
-                title_acord="¿Los paquetesde skiincluyen el equipode nieve?"
+                title_acord="¿Los paquetes de ski incluyen el equipo de nieve?"
                 p_acord={
                     <>
                         No, los paquetes no incluyen el equipo de nieve. Acá te dejamos lo que cuenta cada uno de ellos.
                         <ul>
-                            <li>Paquete Cerro Castor</li>
+                            <li><strong>Paquete Cerro Castor</strong></li>
                             <ul>
                                 <li>3 días de ski en el Cerro Castor</li>
                                 <li>Hospedaje y alojamiento en el Cerro Castor. Estos se encuentran en cercanía al cerro</li>
                                 <li>Traslados al Cerro Castor</li>
                                 <li>Traslados in/out</li>
                             </ul>
-                            <li>Paquete Cerro Catedral</li>
+                            <li><strong>Paquete Cerro Catedral</strong></li>
                             <ul>
                                 <li>3 días de ski en el Cerro Catedral</li>
                                 <li>Hospedaje y alojamiento en Catedral</li>
                             </ul>
-                            <li>Paquete Las Leñas</li>
+                            <li><strong>Paquete Las Leñas</strong></li>
                             <ul>
                                 <li>3 días de ski en Las Leñas</li>
                                 <li>Hospedaje y alojamiento en Las Leñas</li>
                             </ul>
-                            <li>Paquete Chapelco</li>
+                            <li><strong>Paquete Chapelco</strong></li>
                             <ul>
                                 <li>3 días de ski en Chapelco</li>
                                 <li>Hospedaje y alojamiento en Chapelco</li>

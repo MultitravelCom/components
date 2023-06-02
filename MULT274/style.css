@@ -590,7 +590,7 @@ source>img {
 }
 
 .acordeonComponen__container>p {
-    padding: 16px;
+    padding: 0 16px;
 }
 
 .chevron-style {
