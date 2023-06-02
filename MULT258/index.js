@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+
     let bannerToastify = document.createElement('div');
     bannerToastify.className = 'custom-div';
     bannerToastify.innerHTML = `
@@ -18,4 +18,3 @@ document.addEventListener('DOMContentLoaded', function () {
             background: '#2096ff'
         }
     }).showToast();
-});
