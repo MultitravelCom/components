@@ -18,7 +18,7 @@ window.onload = function () {
 
     Toastify({
       node: bannerToastify,
-      duration: -1,
+      duration: 10000,
       gravity: 'bottom',
       position: 'left',
       style: {
