@@ -63,6 +63,7 @@
     .main__container_excluvisa {
         flex-direction: column;
         border-radius: 8px 8px 40px 8px;
+        min-height:  232px
     }
 
     .main__container_excluvisa__text {
@@ -77,10 +78,6 @@
 
     .main__container_excluvisa__text__p>p {
         font-size: 16px;
-    }
-
-    .main__container_excluvisa {
-        height: 213px;
     }
 
     .main__container_excluvisa__img {
