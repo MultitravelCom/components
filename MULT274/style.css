@@ -538,7 +538,7 @@ source>img {
     padding: 6px 16px;
     display: flex;
     align-items: center;
-    
+
 }
 
 .main__warningPrice>p {
@@ -551,11 +551,30 @@ source>img {
     min-height: 32px;
     margin: 0 !important;
 }
-.glyphicon-info-circle{
+
+.glyphicon-info-circle {
     color: #2196F3;
     font-size: 19px;
     min-width: 32px;
 }
-.main__conteiner__s2{
+
+.main__conteiner__s2 {
     background-color: #DAF0FF;
+}
+
+.main_conteiner__s2__acordeon {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.acordeonComponen__container{
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    margin: auto;
+    max-width: 1129px;
+}
+.acordeonComponen__container > summary {
+    padding: 16px;
 }

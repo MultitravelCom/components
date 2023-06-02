@@ -387,7 +387,7 @@ const AcordeonComponen = () => {
 
 const ComponetFAQ = () => {
     return (
-        <div className="main_conteiner__s2__acordeon">
+        <div className="main_conteiner__s2__acordeon container">
             <AcordeonComponen />
             <AcordeonComponen />
             <AcordeonComponen />
