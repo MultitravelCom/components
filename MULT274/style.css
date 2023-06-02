@@ -557,7 +557,7 @@ source>img {
     font-size: 19px;
     min-width: 32px;
 }
-
+/* ACORDEON */
 .main__conteiner__s2 {
     background-color: #DAF0FF;
     padding: 16px;
@@ -570,6 +570,7 @@ source>img {
     max-width: 1129px;
     position: relative;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 .acordeonComponen__container__title{
     padding: 16px;
@@ -587,3 +588,8 @@ source>img {
     font-size: 26px;
     top: 16px;
 }
+
+summary:focus .chevron-style {
+    transform: rotate(180deg);
+    transition: transform 2s ease; /* Configuración de la transición */
+  }
