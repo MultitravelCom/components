@@ -85,7 +85,7 @@ function filtrarDestinos(destinos, nombreDestino) {
 }
 
 const btnStyles = [
-    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Mega ofertas en Paquetes - Temporada de esquí', destino: "nieve" }
+    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Mega Oferta Paquetes Ski', destino: "nieve" }
 ];
 
 // *****************************************************
