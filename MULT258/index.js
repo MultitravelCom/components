@@ -1,9 +1,9 @@
-window.onload = function() {
+window.onload = function () {
   // Crear el elemento de banner de Toastify
   let bannerToastify = document.createElement('div');
   bannerToastify.className = 'custom-div';
   bannerToastify.innerHTML =
-      `
+    `
     <img src="ruta-de-la-imagen.jpg" alt="Imagen" class="custom-img">
     <div class="custom-content">
       <h2>Lo que ves, es lo que pagás</h2>
@@ -18,6 +18,11 @@ window.onload = function() {
     position: 'left', // Puedes ajustar la posición según tus necesidades
     style: {
       background: '#2096ff',
-    }
+      width: '410px',
+      height: '112px',
+      padding: '16px',
+      borderRadius: '8px',
+      border: '1px solid #cccccc',
+  }
   }).showToast();
 }
