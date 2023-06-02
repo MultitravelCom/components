@@ -560,6 +560,7 @@ source>img {
 
 .main__conteiner__s2 {
     background-color: #DAF0FF;
+    padding: 16px;
 }
 
 .main_conteiner__s2__acordeon {
@@ -576,5 +577,8 @@ source>img {
     max-width: 1129px;
 }
 .acordeonComponen__container > summary {
+    padding: 16px;
+}
+.acordeonComponen__container > p {
     padding: 16px;
 }
