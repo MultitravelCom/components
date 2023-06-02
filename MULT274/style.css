@@ -571,16 +571,19 @@ source>img {
     position: relative;
     margin-bottom: 16px;
 }
-.acordeonComponen__container__title > span {
+.acordeonComponen__container__title{
     padding: 16px;
+}
+.acordeonComponen__container__title > span {
     font-size: 16px;
     font-weight: bold;
 }
-.acordeonComponen__container__title > p {
+.acordeonComponen__container > p {
     padding: 16px;
 }
 .chevron-style{
     position: absolute;
     right: 31px;
     font-size: 26px;
+    top: 16px;
 }
