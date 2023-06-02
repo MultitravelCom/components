@@ -30,6 +30,9 @@ window.onload = function () {
       borderRadius: '8px',
       border: '1px solid #cccccc',
     }
+    onClick: function () {
+      cerrarBanner();
+    }
   }).showToast();
 
 }
