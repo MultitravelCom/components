@@ -279,7 +279,7 @@
   .info-card__actions .info-card__options-toggle {
     width: 120px;
     display: block;
-    bottom: -12px;
+    bottom: -20px;
     position: absolute;
     left: 15px;
   }
