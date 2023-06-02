@@ -5,7 +5,9 @@
     border-radius: 40px 8px;
     background-color: #2a8bfe;
     position: relative;
+    margin-bottom: 30px;
 }
+
 
 .main__container_excluvisa__text {
     color: white;
