@@ -391,6 +391,9 @@ const AcordeonComponen = ({ title_acord, p_acord }) => {
 const ComponetFAQ = () => {
     return (
         <div className="main_conteiner__s2__acordeon container">
+            <div className="main_conteiner__s2__acordeon__title">
+                <h2>Preguntas frecuentes</h2>
+            </div>
             <AcordeonComponen
                 title_acord={"¿En qué ciudades se encuentran las estaciones de ski?"}
                 p_acord={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor."} />
@@ -432,7 +435,6 @@ function App() {
                         </div>
                     </div>
                     <div className="main__conteiner__s2">
-                        <h2>Preguntas frecuentes</h2>
                         <ComponetFAQ />
                     </div>
                 </>
