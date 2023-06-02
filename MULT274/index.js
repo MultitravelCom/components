@@ -366,27 +366,26 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
 
 const AcordeonComponen = ({ title_acord, p_acord }) => {
     const [isOpen, setIsOpen] = React.useState(false);
-  
+
     const handleToggle = () => {
-      setIsOpen(!isOpen);
+        setIsOpen(!isOpen);
     };
-  
+
     return (
-      <div className="acordeonComponen__container">
-        <summary onClick={handleToggle}>
-          <div
-            className={`glyphicon glyphicon-chevron-down chevron-style ${
-              isOpen ? 'rotate-icon' : ''
-            }`}
-          ></div>
-          <div className="acordeonComponen__container__title">
-            <span>{title_acord}</span>
-          </div>
-        </summary>
-        {isOpen && <p>{p_acord}</p>}
-      </div>
+        <div className="acordeonComponen__container">
+            <summary onClick={handleToggle}>
+                <div
+                    className={`glyphicon glyphicon-chevron-down chevron-style ${isOpen ? 'rotate-icon' : ''
+                        }`}
+                ></div>
+                <div className="acordeonComponen__container__title">
+                    <span>{title_acord}</span>
+                </div>
+            </summary>
+            {isOpen && <p>{p_acord}</p>}
+        </div>
     );
-  };
+};
 
 const ComponetFAQ = () => {
     return (
@@ -395,14 +394,17 @@ const ComponetFAQ = () => {
                 <h2>Preguntas frecuentes</h2>
             </div>
             <AcordeonComponen
-                title_acord={"¿En qué ciudades se encuentran las estaciones de ski?"}
-                p_acord={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor."} />
+                title_acord={"¿En qué ciudades se encuentranlas estaciones de ski?"}
+                p_acord={"En Argentina, podés disfrutar de la increíble temporada de nieve y esquí en varias ciudades. En Mendoza, específicamenteen Las Leñas,se encuentrá el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.En Bariloche, ubicado en la provincia de Río Negro, se encuentra el cerro Catedral, un destino de renombre internacional para los amantes del esquíy del snowboard.En San Martín de los Andes, en la provincia de Neuquén, se encuentra el cerro Chapelco Ski Resort, donde podrás disfrutar de una experiencia única en medio de la naturaleza. Por último, en Ushuaia, se encuentra el Cerro Castor, una estación de esquí que ofrece una combinación perfecta de nieve y paisajes espectaculares."} />
             <AcordeonComponen
-                title_acord={"¿En qué ciudades se encuentran las estaciones de ski?"}
-                p_acord={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor."} />
+                title_acord={"¿Los paquetesde skiincluyen el equipode nieve? "}
+                p_acord={"No, los paquetes no incluyen el equipo de nieve. Acá te dejamos lo que cuenta cada uno de ellos. Paquete Cerro Castor-3 días de ski en el Cerro Castor-Hospedaje y alojamientoen el Cerro Castor. Estos se encuentran en cercanía al cerro-Traslados al Cerro Castor-Traslados in/outPaquete Cerro Catedral-3 días de ski en el Cerro Catedral-Hospedaje y alojamiento enCatedralPaquete Las Leñas-3 días de ski en Las Leñas-Hospedaje y alojamiento en Las LeñasPaquete Chapelco-3 días de ski en Chapelco-Hospedaje y alojamiento en Chapelco. -Traslados al Cerro Chapelco-Traslados in/out"} />
             <AcordeonComponen
-                title_acord={"¿En qué ciudades se encuentran las estaciones de ski?"}
-                p_acord={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus libero a tortor accumsan dignissim. Phasellus consectetur turpis ut ex auctor, vitae consectetur enim venenatis. Duis dignissim gravida ultrices. Sed tincidunt tincidunt elit, nec pulvinar velit congue a. Sed et risus ac lectus cursus consectetur. Nullam varius leo id urna commodo fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod libero dui, ut sollicitudin risus fringilla non. Sed id cursus justo, at tempus sem. Suspendisse non libero tortor."} />
+                title_acord={"¿Cuentan con alquiler deski los cerros? ¿Hay escuelas deski?"}
+                p_acord={"Sí, todos los cerros cuentan con un alquiler de equipamiento de ski. Además,cuentan con escuelas de ski para que los principiantes en ski y snowboard aprendan."} />
+            <AcordeonComponen
+                title_acord={"¿Puedo elegir el alojamiento de mi paquetede ski?"}
+                p_acord={"Sí, contas con diferentes opciones de hospedajes que se adaptan a tus necesidades.Chapelco(en negrita) La Posta del CazadorApart Hotel My Friends Patagonia Plaza Cerro Castor (en negrita)Hostal Del BosqueFueguino Hotel Patagónico Hotel AlbatrosCatedral (en negrita)Hampton by Hilton Bariloche Hotel Alma del Lago Suites & SpaVillage Catedral Spa & Resort de MontañaLas Leñas (en negrita)Hotel Aries Hotel Piscis"} />
         </div>
     )
 }
