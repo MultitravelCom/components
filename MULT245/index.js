@@ -22,39 +22,38 @@ async function cargarEstilosYModales() {
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
-  
+
     if (!resultsListPage) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      await aplicarClaseRecomendada();
-      return;
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return;
     }
-  
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
-  
+
     items.forEach(item => {
-      const tieneDeals = item.querySelector('.deals') !== null;
-      const hotelResult = item.querySelector('.result.hotel-result');
-      const optionsToggle = item.querySelectorAll('.info-card__options-toggle');
-  
-      if (tieneDeals && hotelResult) {
-        hotelResult.classList.add('alojamiento-recomendado');
-        const bestPriceElements = item.querySelectorAll('.info-card__price');
-        bestPriceElements.forEach(element => {
-          element.classList.add('info-card__price__deals');
-        });
-        
-        if (hotelResult.querySelector('.deals')) {
-          optionsToggle.forEach(toggle => {
-            toggle.style.right = '14px';
-          });
-        } else {
-          optionsToggle.forEach(toggle => {
-            toggle.style.right = '0px';
-          });
+        const tieneDeals = item.querySelector('.deals') !== null;
+        const hotelResult = item.querySelector('.result.hotel-result');
+        const optionsToggle = item.querySelectorAll('.info-card__options-toggle');
+
+        if (hotelResult) {
+            hotelResult.classList.add('alojamiento-recomendado');
+            const bestPriceElements = item.querySelectorAll('.info-card__price');
+            bestPriceElements.forEach(element => {
+                element.classList.add('info-card__price__deals');
+            });
+
+            optionsToggle.forEach(toggle => {
+                if (tieneDeals) {
+                    toggle.classList.add('right-14px');
+                } else {
+                    toggle.classList.add('right-0px');
+                }
+            });
         }
-      }
     });
-  }
+}
+
 
 async function agreeStarIcon() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -168,28 +167,28 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-      let resultsListPage = document.querySelector('.results-list__page');
-  
-      if (resultsListPage instanceof Node) {
-  
-        const observerListPage = new MutationSummary({
-          queries: [{ element: '.results-list__page' }],
-          callback: mutations => {
-            aplicarModificaciones();
-            cargarEstilosYModales();
-          }
-        });
-  
-        observerListPage.observe();
-  
-      } else {
-        setTimeout(checkResults, 1000);
-      }
+        let resultsListPage = document.querySelector('.results-list__page');
+
+        if (resultsListPage instanceof Node) {
+
+            const observerListPage = new MutationSummary({
+                queries: [{ element: '.results-list__page' }],
+                callback: mutations => {
+                    aplicarModificaciones();
+                    cargarEstilosYModales();
+                }
+            });
+
+            observerListPage.observe();
+
+        } else {
+            setTimeout(checkResults, 1000);
+        }
     };
-  
+
     checkResults();
-  }
-  
+}
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
