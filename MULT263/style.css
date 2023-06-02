@@ -6,6 +6,8 @@
     background-color: #2a8bfe;
     position: relative;
     margin-bottom: 30px;
+    background-color: #E2E6E9;
+    border-radius: 40px 8px;
     
 }
 
@@ -27,8 +29,6 @@
 }
 
 .main__container_excluvisa__img {
-    background-color: #E2E6E9;
-    border-radius: 40px 8px;
     overflow: hidden;
 }
 
