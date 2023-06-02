@@ -1,12 +1,10 @@
-.toastify {
+.main__container_excluvisa {
     display: flex;
     height: 158px;
     justify-content: space-between;
     border-radius: 40px 8px;
     background-color: #2a8bfe;
     position: relative;
-    margin-bottom: 30px;
-    background-color: #E2E6E9;    
 }
 
 .main__container_excluvisa__text {
@@ -27,6 +25,9 @@
 }
 
 .main__container_excluvisa__img {
+    width: 336px;
+    background-color: #E2E6E9;
+    border-radius: 40px 8px;
     overflow: hidden;
 }
 
@@ -40,7 +41,7 @@
     width: 224px;
     height: 48px;
     position: absolute;
-    right: 226px;
+    left: 63%;
     bottom: 35%;
     color: #FFFFFF;
     background-color: #0d4e88;
@@ -51,12 +52,10 @@
 
 .btnStyleBannerHotelsResult:hover {
     background-color: #283747;
-    color: white;
 }
 
 .btnStyleBannerHotelsResult:active {
     background-color: #272626;
-    color: white;
 }
 
 @media(max-width:468px) {
@@ -65,48 +64,21 @@
         border-radius: 8px 8px 40px 8px;
     }
 
-    .main__container_excluvisa__text {
+    .main__container_excluvisa__text{
         width: 100%;
-        padding: 16px;
-        margin: 0;
+        padding: 17px;
     }
-
-    .main__container_excluvisa__text__h1>h1 {
-        font-size: 20px;
-    }
-
-    .main__container_excluvisa__text__p>p {
-        font-size: 13px;
-    }
-
-    .main__container_excluvisa {
-        height: 213px;
-    }
-
-    .main__container_excluvisa__img {
-        border-radius: 0 0 40px 8px;
-    }
-
-    .btnStyleBannerHotelsResult {
-        left: 16px;
-        bottom: 61px;
-    }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
     .main__container_excluvisa__text__h1>h1 {
         font-size: 24px;
     }
-
+    
     .main__container_excluvisa__text__p>p {
-        font-size: 15px;
+        font-size: 16px;
+    }
+    .main__container_excluvisa{
+        height: 213px;
     }
     .main__container_excluvisa__img{
-        width: 47%;
-    }
-    .btnStyleBannerHotelsResult{
-        left: 313px; 
-    }
-    .main__container_excluvisa__text{
-        margin: auto 51px;
+        border-radius: 0 0 40px 8px;
     }
 }
