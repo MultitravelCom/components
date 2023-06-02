@@ -22,28 +22,34 @@ async function cargarEstilosYModales() {
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
-
+  
     if (!resultsListPage) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await aplicarClaseRecomendada();
-        return;
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await aplicarClaseRecomendada();
+      return;
     }
-
+  
     const items = resultsListPage.querySelectorAll('.results-list__item');
-
+  
     items.forEach(item => {
-        const tieneDeals = item.querySelector('.deals') !== null;
-        const hotelResult = item.querySelector('.result.hotel-result');
-
-        if (tieneDeals && hotelResult) {
-            hotelResult.classList.add('alojamiento-recomendado');
-            const bestPriceElements = item.querySelectorAll('.info-card__price');
-            bestPriceElements.forEach(element => {
-                element.classList.add("info-card__price__deals");
-            });
-        }
+      const tieneDeals = item.querySelector('.deals') !== null;
+      const hotelResult = item.querySelector('.result.hotel-result');
+  
+      if (tieneDeals && hotelResult) {
+        hotelResult.classList.add('alojamiento-recomendado');
+  
+        const bestPriceElements = item.querySelectorAll('.info-card__price');
+        bestPriceElements.forEach(element => {
+          element.classList.add('info-card__price__deals');
+        });
+  
+        const toggleButtons = item.querySelectorAll('.info-card__options-toggle');
+        toggleButtons.forEach(button => {
+          button.classList.add('right-14px');
+        });
+      }
     });
-}
+  }
 
 async function agreeStarIcon() {
     let resultsListPage = document.querySelector('.results-list__page');
