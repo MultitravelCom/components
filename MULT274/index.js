@@ -2,10 +2,10 @@ function addHeaderLinks() {
     const head = document.head || document.getElementsByTagName('head')[0];
     const meta = document.createElement('meta');
 
-    document.title = "Paquetes turísticos a Brasil | Multitravel.com"
+    document.title = "Paquetes turísticos a a destinos invernales"
 
     meta.setAttribute('name', 'description');
-    meta.setAttribute('content', 'Compará paquetes a Brasil y conseguí los mejores precios en alojamiento y vuelos a Bariloche, Iguazú y Mendoza. Solicitá atención personalizada por whatsapp');
+    meta.setAttribute('content', '');
 
     const linkCDNGlider = document.createElement('link');
 
