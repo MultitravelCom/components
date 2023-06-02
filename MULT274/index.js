@@ -374,6 +374,7 @@ const AcordeonComponen = () => {
     return (
         <div className="acordeonComponen__container">
             <summary onClick={handleToggle}>
+                <div className="glyphicon glyphicon-chevron-down"></div>
                 ¿En qué ciudades se encuentran las estaciones de ski?
             </summary>
             {isOpen && (
