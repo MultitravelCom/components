@@ -562,23 +562,24 @@ source>img {
     background-color: #DAF0FF;
     padding: 16px;
 }
-
-.main_conteiner__s2__acordeon {
-    background: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
 .acordeonComponen__container{
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 8px;
     margin: auto;
     max-width: 1129px;
+    position: relative;
 }
 .acordeonComponen__container > summary {
     padding: 16px;
 }
 .acordeonComponen__container > p {
     padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.chevron-style{
+    position: absolute;
+    right: 31px;
+    font-size: 26px;
 }
