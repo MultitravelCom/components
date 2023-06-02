@@ -591,5 +591,5 @@ source>img {
 
 summary:focus .chevron-style {
     transform: rotate(180deg);
-    transition: transform 2s ease; /* Configuración de la transición */
+    transition: transform 2s ease;
   }
