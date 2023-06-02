@@ -21,22 +21,39 @@
   margin-bottom: 0;
   margin: 0 !important;
 }
-.custom-content-botton{
-    display: none;
+
+.custom-content-botton {
+  display: none;
 }
-@media(max-width:767px){
-  .toastify{
+
+@media(max-width:767px) {
+  .toastify {
     max-width: calc(100% - 20px);
     height: 131px !important;
     bottom: 0 !important;
   }
-  .custom-img{
+
+  .custom-img {
     display: none;
   }
+
   .custom-content h2 {
     font-size: 18px;
+    margin-bottom: 0.5rem;
   }
-  .custom-content-botton{
 
+  .custom-content-botton {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 22px;
+    top: 16px;
+    background: white;
+    border-radius: 100%;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
