@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let bannerToastify = document.createElement('div');
     bannerToastify.className = 'custom-div';
     bannerToastify.innerHTML = `
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>Precios finales en todos nuestros productos, impuestos incluidos. Sin costos extras en aeropuerto o destino.</p>
       </div>
     `;
-  
+
     Toastify({
-      node: bannerToastify,
-      duration: 10000,
-      gravity: 'bottom',
-      position: 'left',
-      style: {
-        background: '#2096ff'
-      }
+        node: bannerToastify,
+        duration: 10000,
+        gravity: 'bottom',
+        position: 'left',
+        style: {
+            background: '#2096ff'
+        }
     }).showToast();
-  });
+});
