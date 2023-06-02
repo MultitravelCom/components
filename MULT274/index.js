@@ -428,7 +428,7 @@ const ComponetFAQ = () => {
                 }
             />
             <AcordeonComponen
-                title_acord="¿En qué ciudades se encuentran las estaciones de ski?"
+                title_acord="¿Los paquetesde skiincluyen el equipode nieve?"
                 p_acord={
                     <>
                         No, los paquetes no incluyen el equipo de nieve. Acá te dejamos lo que cuenta cada uno de ellos.
