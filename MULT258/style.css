@@ -23,11 +23,12 @@
 
 @media(max-width:767px){
   .toastify{
-    height: 131px;
-    bottom: 0;
+    max-width: calc(100% - 20px);
+    height: 131px !important;
+    bottom: 0 !important;
   }
   .custom-img{
-    display: none
+    display: none;
   }
   .custom-content h2 {
     font-size: 18px;

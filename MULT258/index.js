@@ -23,7 +23,6 @@ window.onload = function () {
       padding: '16px',
       borderRadius: '8px',
       border: '1px solid #cccccc',
-      maxWidth: 'calc(100% - 20px)',
   }
   }).showToast();
 }
