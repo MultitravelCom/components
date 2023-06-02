@@ -58,7 +58,7 @@
     background-color: #272626;
 }
 
-@media(max-width:468px) {
+@media(max-width: 767px) {
     .main__container_excluvisa {
         flex-direction: column;
         border-radius: 8px 8px 40px 8px;
