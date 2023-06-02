@@ -432,6 +432,7 @@ function App() {
                         </div>
                     </div>
                     <div className="main__conteiner__s2">
+                        <h2>Preguntas frecuentes</h2>
                         <ComponetFAQ />
                     </div>
                 </>
