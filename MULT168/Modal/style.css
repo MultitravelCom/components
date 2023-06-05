@@ -315,6 +315,7 @@
 }
 .container-fluid{
     display: flex;
+    gap: 10px;
 }
 
 .container-fluid-modal {
@@ -325,6 +326,9 @@
 
 .main_container__buttonARSEs{
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 11px;
 }
 /* **** */
 
