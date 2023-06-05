@@ -219,7 +219,10 @@
 }
 
 @media (max-width:767px) {
-    . .main__container__widget {
+    .upper-menu_quicklinks > .container-fluid{
+        display: block;
+    }
+    .main__container__widget {
         background-color: #00a94f;
     }
 
