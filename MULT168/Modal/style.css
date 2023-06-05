@@ -336,24 +336,24 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 109px !important;
-    height: 28px !important;
-    color: #0D4E88 !important;
+    width: 114px;
+    height: 28px;
+    color: #0D4E88 ;
     background-color: white;
     border: 0;
     border-radius: 40px;
 }
 
 .btn_login-button:active{
-    background-color:#283747 !important;
-    color: white !important;
-    border: 1px solid !important;
-    border-radius: 40px !important;
+    background-color:#283747 ;
+    color: white ;
+    border: 1px solid ;
+    border-radius: 40px ;
 }
 
 .btn_login-button:hover{
-    background-color:#283747 !important;
-    border: 1px solid !important;
-    border-radius: 40px !important;
-    color: white !important;
+    background-color:#283747 ;
+    border: 1px solid ;
+    border-radius: 40px;
+    color: white;
 }
