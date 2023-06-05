@@ -1,17 +1,17 @@
-.main-header #upper-menu .btn-toolbar > .btn{
+.btn_login-button{
     width: 109px;
     height: 28px;
     color: #0D4E88;
 }
 
-.main-header #upper-menu .btn-toolbar > .btn:active{
+.btn_login-button:active{
     background-color:#283747;
     color: white;
     border: 1px solid;
     border-radius: 40px;
 }
 
-.main-header #upper-menu .btn-toolbar > .btn:hover{
+.btn_login-button:hover{
     background-color:#283747;
     border: 1px solid;
     border-radius: 40px;
