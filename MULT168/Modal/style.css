@@ -356,11 +356,10 @@
     border-radius: 40px;
     color: white;
 }
-.main_container__buttonARSEs__ARS{
+
+.main_container__buttonARSEs__ARS > div {
     display: flex;
     align-items: flex-end;
-}
-.main_container__buttonARSEs__ARS > div {
     padding: 4px;
 }
 .main_container__buttonARSEs__ARS > img{
