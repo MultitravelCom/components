@@ -247,7 +247,7 @@ const App = () => {
                     style="btn_login-button js-login-box-modal"
                     onClick={() => setOpenModal(true)}
                 >
-                    <div className="glyphicon user-profile"></div>
+                    <div className="glyphicon glyphico-user-profile"></div>
                     <div className="main__container__widget_text">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />

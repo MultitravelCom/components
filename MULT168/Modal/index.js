@@ -1,26 +1,3 @@
-const ButtonARSEs = () => {
-    return (
-        <div className="main_container__buttonARSEs">
-            <div className="main_container__buttonARSEs__ARS">
-                <div>
-                    <img src="https://multitravelcom.github.io/components/MULT168/icons/IconoPesos.png"></img>
-                    <span>ARS</span>
-                </div>
-            </div>
-            <div className="main_container__buttonARSEs__ARG">
-                <div>
-                    <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
-                    <span>ES</span>
-                </div>
-            </div>
-        </div>
-    )
-}
-function ButtonIngresar(props) {
-    return (
-        <button id={props.id} className={props.style}>{props.children}</button>
-    );
-}
 
 function ButtonModalLink(props) {
     const handleClick = (event) => {
@@ -74,7 +51,7 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 const Modal = ({ open, onClose }) => {
 
     const now = new Date();
-    const currentDay = now.getDay();
+    const currentDay = now.getDay(); 
     const currentHour = now.getHours();
 
 
@@ -82,8 +59,7 @@ const Modal = ({ open, onClose }) => {
         if (
             (currentDay >= 1 && currentDay <= 5 && currentHour >= 10 && currentHour < 20) ||
             (currentDay === 6 && currentHour >= 10 && currentHour < 15)
-        ) {
-            return (
+          ) {            return (
                 <>
                     <ModalContactos
                         iconModal="glyphicon-phone"
@@ -116,7 +92,7 @@ const Modal = ({ open, onClose }) => {
         } else {
             return (
                 <>
-                    <ModalContactos
+                 <ModalContactos
                         iconModal="glyphicon-phone"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
@@ -201,6 +177,7 @@ const App = () => {
                         btnStyleVentaPer.addEventListener('click', (event) => {
                             event.preventDefault();
                             setOpenModal(true);
+                            console.log("test");
                         });
                     });
                 } else {
@@ -242,15 +219,6 @@ const App = () => {
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
-                <ButtonIngresar
-                    id="container__widget__ars"
-                    style="btn_login-button js-login-box-modal"
-                    onClick={() => setOpenModal(true)}
-                >
-                    <div className="glyphicon user-profile"></div>
-                    <div className="main__container__widget_text">Ingresar</div>
-                </ButtonIngresar>
-                <ButtonARSEs />
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
