@@ -1,14 +1,14 @@
 const buttonARSEs = () => {
     return (
         <>
-            <div>
-                <div>
+            <div className="main_container__buttonARSEs">
+                <div className="main_container__buttonARSEs__ARS">
                     <div>
                         <img src="https://multitravelcom.github.io/components/MULT168/icons/IconoPesos.png"></img>
                         <span>ARS</span>
                     </div>
                 </div>
-                <div>
+                <div className="main_container__buttonARSEs__ARG">
                     <div>
                         <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
                         <span>ES</span>
@@ -241,9 +241,10 @@ const App = () => {
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
-            </div>
-            <div>
-                <buttonARSEs />
+
+                <div>
+                    <buttonARSEs />
+                </div>
             </div>
         </>
     );
