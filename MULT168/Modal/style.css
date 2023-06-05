@@ -338,7 +338,6 @@
     justify-content: space-evenly;
     width: 114px;
     height: 28px;
-    color: #0D4E88;
     background-color: white;
     border: 0;
     border-radius: 40px;
@@ -365,5 +364,5 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
-    color: #FFFFFF;
+    color: #0D4E88;
 }
