@@ -16,6 +16,11 @@ const ButtonARSEs = () => {
         </div>
     )
 }
+const ButtonIngresar = () => {
+    return (
+        <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
+    )
+}
 
 function ButtonModalLink(props) {
     const handleClick = (event) => {
@@ -237,6 +242,13 @@ const App = () => {
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
+                <ButtonIngresar
+                    id="container__widget"
+                    style="btn_login-button"
+                    text="Ingreso"
+                >
+                </ButtonIngresar>
+                <ButtonARSEs />
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -250,4 +262,3 @@ const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
 const navButtonARSEs = document.getElementById('upper-menu');
-ReactDOM.render(<ButtonARSEs />, navButtonARSEs);
