@@ -9,6 +9,7 @@
     justify-content: center;
     gap: 5px;
 }
+
 .main__container__widget:hover {
     background-color: #1169B7;
 }
@@ -218,7 +219,7 @@
 }
 
 @media (max-width:767px) {
-    .main__container__widget {
+    . .main__container__widget {
         background-color: #00a94f;
     }
 
@@ -234,7 +235,9 @@
         border-radius: 20px;
     }
 
-    .main__container__widget_text {
+    .main__container__widget_text,
+    .main_container__buttonARSEs,
+    .btn_login-button {
         display: none;
     }
 
@@ -313,7 +316,8 @@
     flex-direction: column;
 
 }
-.container-fluid{
+
+.container-fluid {
     display: flex;
     gap: 10px;
 }
@@ -324,15 +328,16 @@
     padding: 10px;
 }
 
-.main_container__buttonARSEs{
+.main_container__buttonARSEs {
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 11px;
 }
+
 /* **** */
 
-.btn_login-button{
+.btn_login-button {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -343,36 +348,39 @@
     border-radius: 40px;
 }
 
-.btn_login-button:active{
-    background-color:#283747 ;
-    color: white ;
-    border: 1px solid ;
-    border-radius: 40px ;
+.btn_login-button:active {
+    background-color: #283747;
+    color: white;
+    border: 1px solid;
+    border-radius: 40px;
 }
 
-.btn_login-button:hover{
-    background-color:#283747 ;
-    border: 1px solid ;
+.btn_login-button:hover {
+    background-color: #283747;
+    border: 1px solid;
     border-radius: 40px;
     color: white;
 }
 
-.main_container__buttonARSEs__ARS > div {
+.main_container__buttonARSEs__ARS>div {
     display: flex;
     align-items: flex-end;
     padding: 4px;
 }
-.main_container__buttonARSEs__ARS > img{
+
+.main_container__buttonARSEs__ARS>img {
     margin-right: 2px;
 }
-.main__container__widget_text__ars{
+
+.main__container__widget_text__ars {
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
     color: #0D4E88;
 }
-#container__widget__ars > .glyphicon-user-profile{
+
+#container__widget__ars>.glyphicon-user-profile {
     font-size: 20px;
     color: #0D4E88;
     font: optional;
