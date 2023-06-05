@@ -218,58 +218,6 @@
     position: initial;
 }
 
-@media (max-width:767px) {
-    .upper-menu_quicklinks > .container-fluid{
-        display: block;
-    }
-    .main__container__widget {
-        background-color: #00a94f;
-    }
-
-    .row-modal {
-        flex-direction: column;
-    }
-
-    .main__container__widget {
-        width: 80px;
-        height: 24px;
-        background: #248DEA;
-        border: 1px solid #FFFFFF;
-        border-radius: 20px;
-    }
-
-    .main__container__widget_text,
-    .main_container__buttonARSEs,
-    .btn_login-button {
-        display: none;
-    }
-
-    .close-button>span {
-        position: absolute;
-        top: -12px;
-        right: 9px;
-    }
-
-    .emcabezadoModal>h3 {
-        font-weight: 600;
-        line-height: 29px;
-        color: #FFFFFF;
-        letter-spacing: 0.4px;
-        font-size: 16px;
-    }
-
-    .ventas {
-        font-size: 14px;
-    }
-
-    .main__container__modalContactos {
-        height: 195px;
-        min-width: 261px;
-
-    }
-
-}
-
 /* CLASES MODAL SHARE HOTELS */
 .main__container__widget__share {
     border: 0;
@@ -387,4 +335,56 @@
     font-size: 20px;
     color: #0D4E88;
     font: optional;
+}
+
+@media (max-width:767px) {
+    .upper-menu_quicklinks > .container-fluid{
+        display: block;
+    }
+    .main__container__widget {
+        background-color: #00a94f;
+    }
+
+    .row-modal {
+        flex-direction: column;
+    }
+
+    .main__container__widget {
+        width: 80px;
+        height: 24px;
+        background: #248DEA;
+        border: 1px solid #FFFFFF;
+        border-radius: 20px;
+    }
+
+    .main__container__widget_text,
+    .main_container__buttonARSEs,
+    .btn_login-button {
+        display: none;
+    }
+
+    .close-button>span {
+        position: absolute;
+        top: -12px;
+        right: 9px;
+    }
+
+    .emcabezadoModal>h3 {
+        font-weight: 600;
+        line-height: 29px;
+        color: #FFFFFF;
+        letter-spacing: 0.4px;
+        font-size: 16px;
+    }
+
+    .ventas {
+        font-size: 14px;
+    }
+
+    .main__container__modalContactos {
+        height: 195px;
+        min-width: 261px;
+
+    }
+
 }
