@@ -243,10 +243,11 @@ const App = () => {
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
                 <ButtonIngresar
-                    id="container__widget"
-                    style="btn_login-button"
-                    text="Ingreso"
+                    id="container__widget__ars"
+                    style="btn_login-button js-login-box-modal"
                 >
+                    <div className="glyphicon user-profile"></div>
+                    <div className="main__container__widget_text">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
@@ -260,5 +261,3 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-
-const navButtonARSEs = document.getElementById('upper-menu');
