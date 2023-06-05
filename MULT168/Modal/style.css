@@ -339,6 +339,9 @@
     width: 109px !important;
     height: 28px !important;
     color: #0D4E88 !important;
+    background-color: white;
+    border: 0;
+    border-radius: 40px;
 }
 
 .btn_login-button:active{
