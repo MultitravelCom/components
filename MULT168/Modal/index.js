@@ -16,7 +16,12 @@ const ButtonARSEs = () => {
         </div>
     )
 }
-const ButtonIngresar = (props) => {
+function ButtonIngresar(props) {
+    const handleClick = (event) => {
+        event.preventDefault();
+        props.onClick();
+    };
+
     return (
         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
     );
