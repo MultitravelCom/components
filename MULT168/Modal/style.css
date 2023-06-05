@@ -313,9 +313,37 @@
     flex-direction: column;
 
 }
+.container-fluid{
+    display: flex;
+}
 
 .container-fluid-modal {
     display: flex;
     justify-content: center;
     padding: 10px;
+}
+
+.main_container__buttonARSEs{
+    display: flex;
+}
+/* **** */
+
+.btn_login-button{
+    width: 109px !important;
+    height: 28px !important;
+    color: #0D4E88 !important;
+}
+
+.btn_login-button:active{
+    background-color:#283747 !important;
+    color: white !important;
+    border: 1px solid !important;
+    border-radius: 40px !important;
+}
+
+.btn_login-button:hover{
+    background-color:#283747 !important;
+    border: 1px solid !important;
+    border-radius: 40px !important;
+    color: white !important;
 }
