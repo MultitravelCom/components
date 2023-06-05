@@ -4,11 +4,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cambia el texto del elemento por "Ingreso"
     elemento.textContent = 'Ingreso';
-
-    // Obtén el elemento del botón
-    let boton = document.querySelector('.upper-menu__login-button');
-
-    // Cambia la clase del botón para mostrarlo
-    boton.classList.remove('hidden-xs');
-    boton.style.display = 'inline-block';
 });

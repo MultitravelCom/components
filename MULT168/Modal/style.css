@@ -8,8 +8,7 @@
     border: 0;
     justify-content: center;
     gap: 5px;
-
-
+}
 .main__container__widget:hover {
     background-color: #1169B7;
 }
