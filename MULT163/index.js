@@ -248,7 +248,7 @@ const App = () => {
                     onClick={() => setOpenModal(true)}
                 >
                     <div className="glyphicon glyphicon-user-profile"></div>
-                    <div className="main__container__widget_text">Ingresar</div>
+                    <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
