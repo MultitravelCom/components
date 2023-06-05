@@ -238,6 +238,7 @@ const App = () => {
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
+                <ButtonARSEs />
             </div>
         </>
     );
@@ -248,6 +249,3 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-
-const ButtonARSEsDivMobile = document.querySelector('#upper-menu');
-ReactDOM.ReactDOM(<ButtonARSEs />, ButtonARSEsDivMobile);
