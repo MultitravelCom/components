@@ -240,12 +240,11 @@ const App = () => {
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
-                <Modal open={openModal} onClose={() => setOpenModal(false)} />
-
                 <div>
                     <buttonARSEs />
                 </div>
             </div>
+            <Modal open={openModal} onClose={() => setOpenModal(false)} />
         </>
     );
 };
