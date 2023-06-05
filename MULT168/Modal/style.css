@@ -356,8 +356,15 @@
     border-radius: 40px;
     color: white;
 }
+.main_container__buttonARSEs__ARS{
+    display: flex;
+    align-items: flex-end;
+}
 .main_container__buttonARSEs__ARS > div {
     padding: 4px;
+}
+.main_container__buttonARSEs__ARS > img{
+    margin-right: 2px;
 }
 .main__container__widget_text__ars{
     font-style: normal;
