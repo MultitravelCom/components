@@ -249,3 +249,6 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
+
+const ButtonARSEsDivMobile = document.querySelector('#upper-menu');
+ReactDOM.ReactDOM(<ButtonARSEs />, ButtonARSEsDivMobile);
