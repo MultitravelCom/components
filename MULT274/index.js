@@ -397,12 +397,11 @@ const ComponetFAQ = () => {
                 title_acord="¿En qué ciudades se encuentran las estaciones de ski?"
                 p_acord={
                     <>
-                        En Argentina, puedes disfrutar de la increíble temporada de nieve y esquí en varias ciudades.
-                        <ul>
+                        En Argentina, podés disfrutar de la increíble temporada de nieve y esquí en varias ciudades.                        <ul>
                             <li>
                                 <strong>Mendoza:</strong>
                                 <ul>
-                                    <li><strong>Las Leñas:</strong> Se encuentra el reconocido centro de esquí Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.</li>
+                                    <li><strong>Las Leñas:</strong> Se encuentra el reconocido centro de sky Las Leñas, famoso por sus impresionantes pistas de ski y paisajes de montaña.</li>
                                 </ul>
                             </li>
                             <li>
@@ -462,7 +461,7 @@ const ComponetFAQ = () => {
                 }
             />
             <AcordeonComponen
-                title_acord={"¿Cuentan con alquiler de ski los cerros? ¿Hay escuelas deski?"}
+                title_acord={"¿Cuentan con alquiler de ski los cerros? ¿Hay escuelas de ski?"}
                 p_acord={"Sí, todos los cerros cuentan con un alquiler de equipamiento de ski. Además,cuentan con escuelas de ski para que los principiantes en ski y snowboard aprendan."} />
             <AcordeonComponen
                 title_acord={"¿Puedo elegir el alojamiento de mi paquete de ski?"}

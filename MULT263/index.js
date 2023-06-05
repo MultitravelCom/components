@@ -34,7 +34,6 @@ const DescuentoComponente = () => {
     )
 }
 
-
 const insertNewComponent = async () => {
     while (true) {
         const parentDivDescuentoComponente = document.querySelector('.details-content');
