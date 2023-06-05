@@ -1,17 +1,17 @@
-const buttonARSEs = () =>{
-    return(
+const buttonARSEs = () => {
+    return (
         <>
             <div>
                 <div>
                     <div>
-                        <img></img>
-                        <span></span>
+                        <img src="https://multitravelcom.github.io/components/MULT168/icons/IconoPesos.png"></img>
+                        <span>ARS</span>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <img></img>
-                        <span></span>
+                        <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
+                        <span>ES</span>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 const Modal = ({ open, onClose }) => {
 
     const now = new Date();
-    const currentDay = now.getDay(); 
+    const currentDay = now.getDay();
     const currentHour = now.getHours();
 
 
@@ -79,7 +79,8 @@ const Modal = ({ open, onClose }) => {
         if (
             (currentDay >= 1 && currentDay <= 5 && currentHour >= 10 && currentHour < 20) ||
             (currentDay === 6 && currentHour >= 10 && currentHour < 15)
-          ) {            return (
+        ) {
+            return (
                 <>
                     <ModalContactos
                         iconModal="glyphicon-phone"
@@ -112,7 +113,7 @@ const Modal = ({ open, onClose }) => {
         } else {
             return (
                 <>
-                 <ModalContactos
+                    <ModalContactos
                         iconModal="glyphicon-phone"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
@@ -240,6 +241,9 @@ const App = () => {
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            </div>
+            <div>
+                <buttonARSEs />
             </div>
         </>
     );
