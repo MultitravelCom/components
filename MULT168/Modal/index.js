@@ -16,10 +16,10 @@ const ButtonARSEs = () => {
         </div>
     )
 }
-const ButtonIngresar = () => {
+const ButtonIngresar = (props) => {
     return (
         <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
-    )
+    );
 }
 
 function ButtonModalLink(props) {
