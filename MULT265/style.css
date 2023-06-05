@@ -1,12 +1,19 @@
 .main-header #upper-menu .btn-toolbar > .btn{
     width: 109px;
     height: 28px;
-    background-color: #0D4E88;
-    border-radius: 40px;
-    border: 1px solid;
+    color: #0D4E88;
+}
+
+.main-header #upper-menu .btn-toolbar > .btn:active{
+    background-color:#283747;
     color: white;
+    border: 1px solid;
+    border-radius: 40px;
 }
 
 .main-header #upper-menu .btn-toolbar > .btn:hover{
     background-color:#283747;
+    border: 1px solid;
+    border-radius: 40px;
+    color: white;
 }
