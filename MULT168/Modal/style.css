@@ -267,8 +267,7 @@
     flex-direction: column;
 
 }
-
-.pull-left .hidden-xs>.container-fluid {
+.container-fluid {
     display: flex;
     gap: 4px;
 }
