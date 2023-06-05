@@ -237,11 +237,8 @@ const App = () => {
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
-                <div>
-                    <buttonARSEs />
-                </div>
+                <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
-            <Modal open={openModal} onClose={() => setOpenModal(false)} />
         </>
     );
 };
@@ -251,3 +248,6 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
+
+const ButonARSEsDivDesktop = document.querySelector('.upper-menu_quicklinks');
+ReactDOM.render(<buttonARSEs />, ButonARSEsDivDesktop);
