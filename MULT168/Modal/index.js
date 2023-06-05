@@ -1,21 +1,19 @@
 const buttonARSEs = () => {
     return (
-        <>
-            <div className="main_container__buttonARSEs">
-                <div className="main_container__buttonARSEs__ARS">
-                    <div>
-                        <img src="https://multitravelcom.github.io/components/MULT168/icons/IconoPesos.png"></img>
-                        <span>ARS</span>
-                    </div>
-                </div>
-                <div className="main_container__buttonARSEs__ARG">
-                    <div>
-                        <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
-                        <span>ES</span>
-                    </div>
+        <div className="main_container__buttonARSEs">
+            <div className="main_container__buttonARSEs__ARS">
+                <div>
+                    <img src="https://multitravelcom.github.io/components/MULT168/icons/IconoPesos.png"></img>
+                    <span>ARS</span>
                 </div>
             </div>
-        </>
+            <div className="main_container__buttonARSEs__ARG">
+                <div>
+                    <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
+                    <span>ES</span>
+                </div>
+            </div>
+        </div>
     )
 }
 
@@ -198,7 +196,6 @@ const App = () => {
                         btnStyleVentaPer.addEventListener('click', (event) => {
                             event.preventDefault();
                             setOpenModal(true);
-                            console.log("test");
                         });
                     });
                 } else {
