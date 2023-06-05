@@ -216,7 +216,7 @@ const App = () => {
                     onClick={() => setOpenModal(true)}
                 >
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
-                    <div className="main__container__widget_text">Ventas</div>
+                    <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
