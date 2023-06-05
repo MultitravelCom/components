@@ -17,13 +17,8 @@ const ButtonARSEs = () => {
     )
 }
 function ButtonIngresar(props) {
-    const handleClick = (event) => {
-        event.preventDefault();
-        props.onClick();
-    };
-
     return (
-        <button id={props.id} className={props.style} onClick={handleClick}>{props.text}</button>
+        <button id={props.id} className={props.style}>{props.children}</button>
     );
 }
 
@@ -250,6 +245,7 @@ const App = () => {
                 <ButtonIngresar
                     id="container__widget__ars"
                     style="btn_login-button js-login-box-modal"
+                    onClick={() => setOpenModal(true)}
                 >
                     <div className="glyphicon user-profile"></div>
                     <div className="main__container__widget_text">Ingresar</div>
