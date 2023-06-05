@@ -268,9 +268,9 @@
 
 }
 
-.container-fluid {
+.pull-left .hidden-xs>.container-fluid {
     display: flex;
-    gap: 10px;
+    gap: 4px;
 }
 
 .container-fluid-modal {
