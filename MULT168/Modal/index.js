@@ -1,4 +1,4 @@
-const buttonARSEs = () => {
+const ButtonARSEs = () => {
     return (
         <div className="main_container__buttonARSEs">
             <div className="main_container__buttonARSEs__ARS">
@@ -237,6 +237,7 @@ const App = () => {
                     <div className="glyphicon glyphicon-agent agentWidget"></div>
                     <div className="main__container__widget_text">Atención</div>
                 </ButtonModal>
+                <ButtonARSEs/>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -248,6 +249,3 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-
-const ButonARSEsDivDesktop = document.querySelector('.upper-menu_quicklinks');
-ReactDOM.render(<buttonARSEs />, ButonARSEsDivDesktop);
