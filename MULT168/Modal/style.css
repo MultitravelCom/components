@@ -318,6 +318,11 @@
     align-items: flex-end;
     padding: 4px;
 }
+.main_container__buttonARSEs__Es>div {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+}
 
 .main_container__buttonARSEs__ARS>img {
     margin-right: 2px;

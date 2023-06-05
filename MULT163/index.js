@@ -7,7 +7,7 @@ const ButtonARSEs = () => {
                     <span>ARS</span>
                 </div>
             </div>
-            <div className="main_container__buttonARSEs__ARG">
+            <div className="main_container__buttonARSEs__Es">
                 <div>
                     <img src="https://multitravelcom.github.io/components/MULT168/icons/iconoArgentina.png"></img>
                     <span>ES</span>
