@@ -1,3 +1,13 @@
+const ButtonUserMobile = () => {
+    <>
+        <button type="button" className="btn  upper-menu__last-search-button features_item js-login-box-modal" data-preview-id="lastSearch" data-toggle="modal" data-target="#-last-search-box-container">
+            <span className="glyphicon glyphicon-user-profile" aria-hidden="true"></span>
+            <span className="sr-only">Ingreso</span>
+            <span className="quicklink-elem-label">Ingreso </span>
+        </button>
+    </>
+}
+
 const ButtonARSEs = () => {
     return (
         <div className="main_container__buttonARSEs">
@@ -251,6 +261,7 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
+                
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -262,3 +273,5 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
+const targetButtonUserMobile = document.querySelector('.upper-menu_quicklinks .btn-toolbar .visible-xs-block .visible-sm-block');
+ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
