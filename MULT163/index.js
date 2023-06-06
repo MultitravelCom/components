@@ -263,9 +263,6 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
-                <div className="upper-menu_quicklinks btn-toolbar visible-xs-block visible-sm-block">
-                <ButtonUserMobileMenu />
-                </div>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -281,5 +278,5 @@ ReactDOM.render(<App />, targetDivMobile);
 const targetElementUser = document.querySelector('#main-menu-features');
 const componentContainerUser = document.createElement('div');
 componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-ReactDOM.render(<ButtonUserMobile/>, componentContainerUser);
+ReactDOM.render(<ButtonUserMobileMenu />, componentContainerUser);
 targetElementUser.appendChild(componentContainerUser);
