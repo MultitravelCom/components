@@ -23,7 +23,7 @@ const buttonHTML = `
 const componentContainerUser = document.createElement('div');
 componentContainerUser.innerHTML = buttonHTML;
 
-targetElementUser.appendChild(componentContainerUser);
+targetElementUser.append(componentContainerUser);
 
 
 
