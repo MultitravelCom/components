@@ -1,14 +1,32 @@
-const ButtonUserMobile = () => {
-    return (
-        <>
-            <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
-                <span className="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
-                <span className="sr-only">Ingreso</span>
-                <span className="quicklink-elem-label">Ingreso</span>
-            </button>
-        </>
-    )
-}
+// const ButtonUserMobile = () => {
+//     return (
+//         <>
+//             <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
+//                 <span className="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
+//                 <span className="sr-only">Ingreso</span>
+//                 <span className="quicklink-elem-label">Ingreso</span>
+//             </button>
+//         </>
+//     )
+// }
+
+const targetElementUser = document.querySelector('#main-menu-features');
+const componentContainerUser = document.createElement('div');
+componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+
+const buttonHTML = `
+  <button type="button" class="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
+    <span class="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
+    <span class="sr-only">Ingreso</span>
+    <span class="quicklink-elem-label">Ingreso</span>
+  </button>
+`;
+
+componentContainerUser.innerHTML = buttonHTML;
+targetElementUser.appendChild(componentContainerUser);
+
+
+
 
 const ButtonARSEs = () => {
     return (
@@ -193,7 +211,6 @@ const Modal = ({ open, onClose }) => {
 
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
-    const [buttonRendered, setButtonRendered] = React.useState(false);
 
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes a');
@@ -243,21 +260,6 @@ const App = () => {
             clearInterval(checkButtonExistence);
         };
     }, []);
-    
-    
-  // Efecto que se ejecuta solo una vez al montar el componente
-  React.useEffect(() => {
-    // Verificar si el componente aún no se ha renderizado
-    if (!buttonRendered) {
-      // Renderizar el componente y actualizar el estado
-      const targetElementUser = document.querySelector('#main-menu-features');
-      const componentContainerUser = document.createElement('div');
-      componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-      ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
-      targetElementUser.appendChild(componentContainerUser);
-      setButtonRendered(true);
-    }
-  }, []);
 
     return (
         <>
@@ -285,8 +287,8 @@ const App = () => {
     );
 };
 
-// const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
-// ReactDOM.render(<App />, targetDivDesktop);
+const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
+ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
