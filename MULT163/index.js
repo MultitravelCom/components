@@ -1,7 +1,7 @@
 const ButtonUserMobile = () => {
     return (
         <>
-            <button type="button" className="btn btn-secondary upper-menu__login-button js-login-box-modal hidden-xs" data-toggle="modal">
+            <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal hidden-xs" data-toggle="modal">
                 <span className="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
                 <span className="sr-only">Ingreso</span>
                 <span className="quicklink-elem-label">Ingreso</span>
