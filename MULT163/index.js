@@ -1,10 +1,13 @@
 const ButtonUserMobile = () => {
     return (
         <>
-            <button type="button" className="btn  upper-menu__last-search-button features_item js-login-box-modal" data-preview-id="lastSearch" data-toggle="modal" data-target="#-last-search-box-container">
-                <span className="glyphicon glyphicon-user-profile" aria-hidden="true"></span>
-                <span className="sr-only">Ingreso</span>
-                <span className="quicklink-elem-label">Ingreso </span>
+            <button type="button" className="btn upper-menu__newsletter-button features_item" data-toggle="modal" data-target="#-newsletter-container">
+
+                <span className="glyphicon glyphicon-newsletter" aria-hidden="true"></span>
+
+                <span className="sr-only">Boletim de novidades</span>
+
+                <span className="quicklink-elem-label">Subscrever a newsletter</span>
             </button>
         </>
     )
