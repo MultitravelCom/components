@@ -193,6 +193,7 @@ const Modal = ({ open, onClose }) => {
 
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
+    const [buttonRendered, setButtonRendered] = React.useState(false);
 
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes a');
@@ -242,6 +243,21 @@ const App = () => {
             clearInterval(checkButtonExistence);
         };
     }, []);
+    
+    
+  // Efecto que se ejecuta solo una vez al montar el componente
+  React.useEffect(() => {
+    // Verificar si el componente aún no se ha renderizado
+    if (!buttonRendered) {
+      // Renderizar el componente y actualizar el estado
+      const targetElementUser = document.querySelector('#main-menu-features');
+      const componentContainerUser = document.createElement('div');
+      componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+      ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
+      targetElementUser.appendChild(componentContainerUser);
+      setButtonRendered(true);
+    }
+  }, []);
 
     return (
         <>
@@ -274,9 +290,3 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-
-const targetElementUser = document.querySelector('#main-menu-features');
-const componentContainerUser = document.createElement('div');
-componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
-targetElementUser.appendChild(componentContainerUser);
