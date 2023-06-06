@@ -269,8 +269,14 @@ const App = () => {
     );
 };
 
-const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
-ReactDOM.render(<><App /> <ButtonUserMobile /></>, targetDivDesktop);
+// const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
+// ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
+
+const targetElementUser = document.querySelector('#main-menu-features');
+const componentContainerUser = document.createElement('div');
+componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
+targetElementUser.appendChild(componentContainerUser);
