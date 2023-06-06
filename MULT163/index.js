@@ -278,5 +278,5 @@ ReactDOM.render(<App />, targetDivMobile);
 const targetElementUser = document.querySelector('#main-menu-features');
 const componentContainerUser = document.createElement('div');
 componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-ReactDOM.render(<ButtonUserMobileMenu />, componentContainerUser);
+ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
 targetElementUser.appendChild(componentContainerUser);
