@@ -263,7 +263,7 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
-
+                
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
