@@ -8,7 +8,6 @@ const ButtonUserMobile = () => {
             </button>
         </>
     )
-
 }
 
 const ButtonARSEs = () => {
@@ -277,5 +276,5 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetButtonUserMobile = document.querySelector('#main-menu-features');
+const targetButtonUserMobile = document.querySelector('#main-menu-feature');
   ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
