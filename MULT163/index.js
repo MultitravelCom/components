@@ -272,8 +272,8 @@ const App = () => {
 // const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
 // ReactDOM.render(<App />, targetDivDesktop);
 
-const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
-ReactDOM.render(<App />, targetDivMobile);
+// const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
+// ReactDOM.render(<App />, targetDivMobile);
 
 const targetElementUser = document.querySelector('#main-menu-features');
 const componentContainerUser = document.createElement('div');
