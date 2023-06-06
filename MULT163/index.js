@@ -10,7 +10,7 @@
 //     )
 // }
 
-const targetElementUser = document.querySelector('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+const targetElementUser = document.querySelector('.upper-menu_quicklinks.btn-toolbar.visible-xs-block.visible-sm-block');
 const componentContainerUser = document.createElement('div');
 
 const buttonHTML = `
