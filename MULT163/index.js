@@ -10,6 +10,24 @@ const ButtonUserMobile = () => {
     )
 }
 
+const ButtonUserMobileWrapper = () => {
+    const [rendered, setRendered] = React.useState(false);
+
+    React.useEffect(() => {
+        if (!rendered) {
+            const targetElementUser = document.querySelector('#main-menu-features');
+            const componentContainerUser = document.createElement('div');
+            componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+            ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
+            targetElementUser.appendChild(componentContainerUser);
+            setRendered(true);
+        }
+    }, [rendered]);
+
+    return null; // El componente no renderiza nada visible en sí mismo
+};
+
+
 const ButtonARSEs = () => {
     return (
         <div className="main_container__buttonARSEs">
@@ -263,7 +281,7 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
-
+                <ButtonUserMobileWrapper />
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -275,9 +293,3 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-
-const targetElementUser = document.querySelector('#main-menu-features');
-const componentContainerUser = document.createElement('div');
-componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
-targetElementUser.appendChild(componentContainerUser);
