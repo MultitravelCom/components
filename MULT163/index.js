@@ -12,7 +12,7 @@
 
 const targetElementUser = document.querySelector('.upper-menu_quicklinks.btn-toolbar.visible-xs-block.visible-sm-block');
 
-const buttonHTML.innerHTML = `
+const buttonHTML = `
   <button type="button" class="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
     <span class="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
     <span class="sr-only">Ingreso</span>
@@ -20,7 +20,9 @@ const buttonHTML.innerHTML = `
   </button>
 `;
 
+const componentContainerUser = document.createElement('div');
 componentContainerUser.innerHTML = buttonHTML;
+
 targetElementUser.appendChild(componentContainerUser);
 
 
