@@ -10,9 +10,8 @@
 //     )
 // }
 
-const targetElementUser = document.querySelector('#main-menu-features');
+const targetElementUser = document.querySelector('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
 const componentContainerUser = document.createElement('div');
-componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
 
 const buttonHTML = `
   <button type="button" class="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
