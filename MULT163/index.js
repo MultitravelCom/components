@@ -1,4 +1,4 @@
-const ButtonUserMobileMenu = () => {
+const ButtonUserMobile = () => {
     return (
         <>
             <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
@@ -263,7 +263,9 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
-                
+                <div className="upper-menu_quicklinks btn-toolbar visible-xs-block visible-sm-block">
+                <ButtonUserMobileMenu />
+                </div>
                 <Modal open={openModal} onClose={() => setOpenModal(false)} />
             </div>
         </>
@@ -276,12 +278,8 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetElementUser = document.querySelector('#main-menu-features');
-const componentContainerUser = document.createElement('div');
-componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-
-if (!componentContainerUser.querySelector('button')) {
-  ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
-}
-
-targetElementUser.appendChild(componentContainerUser);
+// const targetElementUser = document.querySelector('#main-menu-features');
+// const componentContainerUser = document.createElement('div');
+// componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+// ReactDOM.render(<ButtonUserMobileMenu />, componentContainerUser);
+// targetElementUser.appendChild(componentContainerUser);
