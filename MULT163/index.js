@@ -245,7 +245,7 @@ const App = () => {
 
     return (
         <>
-            <div className="container-fluid">
+            <div className="container-fluid flex_container">
                 <ButtonModal
                     id="container__widget"
                     style="main__container__widget"
@@ -276,3 +276,30 @@ const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
 
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT258/index.js"></script>
+<link href="https://multitravelcom.github.io/components/MULT258/style.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<link href="https://multitravelcom.github.io/style/General/style.css" rel="stylesheet" />
+<link href="https://multitravelcom.github.io/style/Flight/style.css" rel="stylesheet" />
+<link href="https://multitravelcom.github.io/style/General/styleTest.css" rel="stylesheet" />
+<script src="https://multitravelcom.github.io/style/Flight/main.js"></script>
+<link href="https://multitravelcom.github.io/components/MULT168/Modal/style.css" rel="stylesheet" />
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT276/index.js"></script>
+<link href="https://multitravelcom.github.io/components/MULT276/style.css" rel="stylesheet" />
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT163/index.js"></script>
+<link href="https://multitravelcom.github.io/components/MULT258/style.css" rel="stylesheet" />
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT163/botonUser.js"></script>
+<script src="https://multitravelcom.github.io/components/MULT245/mutation-summary.js">
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT258/index.js"></script>
+
+
+
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT163/botonUser.js"></script>
