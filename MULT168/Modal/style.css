@@ -267,7 +267,7 @@
     flex-direction: column;
 
 }
-#upper-menu>.container-fluid {
+.flex_container {
     display: flex;
     gap: 4px;
 }
