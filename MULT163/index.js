@@ -276,7 +276,7 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetButtonUserMobile = document.querySelector('.main-menu-features');
+const targetButtonUserMobile = document.querySelector('#main-menu-features');
 const buttonUserMobile = React.createElement(ButtonUserMobile);
 
 ReactDOM.createPortal(buttonUserMobile, targetButtonUserMobile);
