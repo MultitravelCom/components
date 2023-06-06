@@ -1,13 +1,13 @@
 const ButtonUserMobile = () => {
     return (
         <>
-            <button type="button" className="btn upper-menu__newsletter-button features_item" data-toggle="modal" data-target="#-newsletter-container">
+            <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal" data-target="#-newsletter-container">
 
-                <span className="glyphicon glyphicon-newsletter" aria-hidden="true"></span>
+                <span className="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
 
-                <span className="sr-only">Boletim de novidades sdasdsad</span>
+                <span className="sr-only">Ingreso</span>
 
-                <span className="quicklink-elem-label">Subscrever a newsletter sadsa</span>
+                <span className="quicklink-elem-label">Ingreso</span>
             </button>
         </>
     )
@@ -280,5 +280,5 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetButtonUserMobile = document.querySelector('#main-menu');
+const targetButtonUserMobile = document.querySelector('.upper-menu__login-button__text.visible-lg-inline');
   ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
