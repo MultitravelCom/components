@@ -279,4 +279,4 @@ ReactDOM.render(<App />, targetDivMobile);
 const targetButtonUserMobile = document.querySelector('.main-menu-features');
 const buttonUserMobile = React.createElement(ButtonUserMobile);
 
-targetButtonUserMobile.appendChild(buttonUserMobile);
+ReactDOM.createPortal(buttonUserMobile, targetButtonUserMobile);
