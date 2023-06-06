@@ -5,9 +5,9 @@ const ButtonUserMobile = () => {
 
                 <span className="glyphicon glyphicon-newsletter" aria-hidden="true"></span>
 
-                <span className="sr-only">Boletim de novidades</span>
+                <span className="sr-only">Boletim de novidades sdasdsad</span>
 
-                <span className="quicklink-elem-label">Subscrever a newsletter</span>
+                <span className="quicklink-elem-label">Subscrever a newsletter sadsa</span>
             </button>
         </>
     )
@@ -279,5 +279,6 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
-const targetButtonUserMobile = document.querySelector('.upper-menu_quicklinks .btn-toolbar .visible-xs-block .visible-sm-block');
-ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
+
+const targetButtonUserMobile = document.querySelector('#buttons-container');
+  ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
