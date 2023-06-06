@@ -1,7 +1,7 @@
 const ButtonUserMobile = () => {
     return (
         <>
-            <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal hidden-xs" data-toggle="modal">
+            <button type="button" className="btn upper-menu__newsletter-button features_item js-login-box-modal" data-toggle="modal">
                 <span className="glyphicon glyphicon-agent agentWidget" aria-hidden="true"></span>
                 <span className="sr-only">Ingreso</span>
                 <span className="quicklink-elem-label">Ingreso</span>
@@ -277,7 +277,7 @@ const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
 
-const targetElement = document.querySelector('#main-menu-features');
-const componentContainer = document.createElement('div');
-ReactDOM.render(<ButtonUserMobile />, componentContainer);
-targetElement.appendChild(componentContainer);
+const targetElementUser = document.querySelector('#main-menu-features');
+const componentContainerUser = document.createElement('div');
+ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
+targetElementUser.appendChild(componentContainerUser);
