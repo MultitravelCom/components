@@ -10,7 +10,7 @@
 //     )
 // }
 
-const targetElementUser = document.querySelector('#main-menu-features');
+const targetElementUser = document.querySelector('#main-menu-features > .upper-menu_quicklinks.btn-toolbar.visible-xs-bloc.visible-sm-block');
 
 const buttonHTML = `
   <button type="button" class="btn features_item js-login-box-modal" data-toggle="modal">
@@ -23,7 +23,9 @@ const buttonHTML = `
 const componentContainerUser = document.createElement('div');
 componentContainerUser.innerHTML = buttonHTML;
 
-targetElementUser.appendChild(componentContainerUser);
+if (targetElementUser) {
+  targetElementUser.appendChild(componentContainerUser);
+}
 
 
 
