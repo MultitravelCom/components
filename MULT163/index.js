@@ -280,8 +280,8 @@ const renderButtonUserMobile = () => {
     const targetElement = document.querySelector('#main-menu-features');
     const componentContainer = document.createElement('div');
     ReactDOM.render(<ButtonUserMobile />, componentContainer);
-    targetElement.appendChild(componentContainer.firstChild);
-};
-
-// Llamada a la función para renderizar el componente
-renderButtonUserMobile();
+    targetElement.appendChild(componentContainer);
+  };
+  
+  // Llamada a la función para renderizar el componente
+  renderButtonUserMobile();
