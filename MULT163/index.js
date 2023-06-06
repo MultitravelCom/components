@@ -277,4 +277,6 @@ const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
 const targetButtonUserMobile = document.querySelector('.main-menu-features');
-  ReactDOM.render(<ButtonUserMobile />, targetButtonUserMobile);
+const buttonUserMobile = React.createElement(ButtonUserMobile);
+
+targetButtonUserMobile.appendChild(buttonUserMobile);
