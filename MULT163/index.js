@@ -278,7 +278,20 @@ ReactDOM.render(<App />, targetDivMobile);
 
 
 const targetElementUser = document.querySelector('#main-menu-features');
-const componentContainerUser = document.createElement('div');
-componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
-ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
-targetElementUser.appendChild(componentContainerUser);
+let isButtonUserMobileRendered = false;
+
+// Verificar si el componente ya ha sido renderizado antes
+if (!isButtonUserMobileRendered) {
+  // Crear un contenedor para el componente
+  const componentContainerUser = document.createElement('div');
+  componentContainerUser.classList.add('upper-menu_quicklinks', 'btn-toolbar', 'visible-xs-block', 'visible-sm-block');
+
+  // Renderizar el componente solo si no ha sido renderizado antes
+  ReactDOM.render(<ButtonUserMobile />, componentContainerUser);
+
+  // Agregar el componente al contenedor existente
+  targetElementUser.appendChild(componentContainerUser);
+
+  // Actualizar la bandera para indicar que el componente ha sido renderizado
+  isButtonUserMobileRendered = true;
+}
