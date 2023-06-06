@@ -20,10 +20,7 @@ const buttonHTML = `
   </button>
 `;
 
-const componentContainerUser = document.createElement('div');
-componentContainerUser.innerHTML = buttonHTML;
-
-targetElementUser.append(componentContainerUser);
+targetElementUser.insertAdjacentHTML('beforeend', buttonHTML);
 
 
 
