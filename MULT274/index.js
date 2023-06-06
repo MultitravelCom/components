@@ -468,7 +468,7 @@ const ComponetFAQ = () => {
                 p_acord={
                     <>
                         Sí, cuentas con diferentes opciones de hospedajes que se adaptan a tus necesidades.
-
+                        <br/>
                         <strong>Chapelco:</strong>
                         <ul>
                             <li>La Posta del Cazador</li>
