@@ -276,7 +276,12 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetButtonUserMobile = document.querySelector('#main-menu-features');
-const buttonUserMobile = React.createElement(ButtonUserMobile);
-
-ReactDOM.createPortal(buttonUserMobile, targetButtonUserMobile);
+const renderButtonUserMobile = () => {
+    const targetElement = document.querySelector('#main-menu-features');
+    const componentContainer = document.createElement('div');
+    ReactDOM.render(<ButtonUserMobile />, componentContainer);
+    targetElement.appendChild(componentContainer.firstChild);
+  };
+  
+  // Llamada a la función para renderizar el componente
+  renderButtonUserMobile();
