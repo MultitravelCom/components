@@ -306,16 +306,17 @@
 }
 
 .btn_login-button:hover {
+    color: white;
     background-color: #283747;
     border: 1px solid;
     border-radius: 40px;
-    color: white;
 }
 
 .main_container__buttonARSEs__ARS>div {
     display: flex;
     align-items: flex-end;
     padding: 4px;
+    gap: 2px;
 }
 .main_container__buttonARSEs__Es>div {
     display: flex;
