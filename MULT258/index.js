@@ -1,5 +1,5 @@
 function cerrarBanner() {
-  bannerToastify.style.display = 'none';
+  toastify.style.display = 'none';
 }
 
 window.onload = function () {
