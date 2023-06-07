@@ -26,13 +26,30 @@
   display: none;
 }
 
+.toast-close {
+  background: 0 0;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  opacity: .8;
+  padding: 0 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 100%;
+}
+
 @media(max-width:767px) {
   .toastify {
     max-width: calc(100% - 20px);
     height: 131px !important;
     bottom: 0 !important;
   }
-  .toastify-left{
+
+  .toastify-left {
     left: 0 !important;
   }
 
