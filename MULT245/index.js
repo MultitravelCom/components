@@ -184,28 +184,24 @@ function aplicarModificaciones() {
 }
 
 function observarCambiosResultados() {
-    const checkResults = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
-
-        if (resultsListPage instanceof Node) {
-
-            const observerListPage = new MutationSummary({
-                queries: [{ element: '.results-list__page' }],
-                callback: mutations => {
-                    aplicarModificaciones();
-                    cargarEstilosYModales();
-                }
-            });
-
-            observerListPage.observe();
-
-        } else {
-            setTimeout(checkResults, 1000);
-        }
-    };
-
-    checkResults();
-}
+    const observerResults = new MutationSummary({
+      rootNode: document.body,
+      queries: [{ element: '.results-list__page' }],
+      callback: mutations => {
+        mutations.forEach(mutation => {
+          const resultsListPage = mutation.added[0];
+          const observerListPage = new MutationSummary({
+            rootNode: resultsListPage,
+            queries: [{ element: '.results-list__item' }],
+            callback: () => {
+              aplicarModificaciones();
+              cargarEstilosYModales();
+            }
+          });
+        });
+      }
+    });
+  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
