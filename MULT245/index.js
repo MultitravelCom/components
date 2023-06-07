@@ -30,14 +30,14 @@ async function cargarEstilosYModales() {
     // Forzar la recarga del archivo CSS
     if (link) {
         link.href = '';
-        await wait(100);
+        await wait(1000);
         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
     }
 
     // Forzar la recarga del script de los modales de React
     if (scriptReact) {
         scriptReact.src = '';
-        await wait(100);
+        await wait(1000);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
 }
@@ -67,7 +67,6 @@ async function aplicarClaseRecomendada() {
             const toggleButtons = item.querySelectorAll('.info-card__options-toggle');
             toggleButtons.forEach(button => {
                 button.classList.add('right-14px');
-                button.setAttribute('target', '_blank');
             });
         }
     });
@@ -117,7 +116,7 @@ async function applyDisplayNoneToAllButLastButton() {
 
     if (!actionsContainer) {
         // Esperar un tiempo y volver a llamar a la función
-        await wait(1000);
+        await wait(2000);
         await applyDisplayNoneToAllButLastButton();
         return;
     }
@@ -182,6 +181,7 @@ function aplicarModificaciones() {
     agreeStarIcon();
     changeCopyButton();
     removeImageLinks();
+    cargarEstilosYModales()
 }
 
 function observarCambiosResultados() {
