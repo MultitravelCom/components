@@ -23,36 +23,23 @@ async function removeImageLinks() {
     });
 }
 
-function cargarEstilosYModales() {
-    const linkPromise = new Promise(resolve => {
-        const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
+async function cargarEstilosYModales() {
+    const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
+    const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
 
-        if (link) {
-            link.href = '';
-            link.addEventListener('load', () => {
-                link.removeEventListener('load', resolve);
-                resolve();
-            });
-        } else {
-            resolve();
-        }
-    });
+    // Forzar la recarga del archivo CSS
+    if (link) {
+        link.href = '';
+        await wait(1000);
+        link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
+    }
 
-    const scriptPromise = new Promise(resolve => {
-        const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
-
-        if (scriptReact) {
-            scriptReact.src = '';
-            scriptReact.addEventListener('load', () => {
-                scriptReact.removeEventListener('load', resolve);
-                resolve();
-            });
-        } else {
-            resolve();
-        }
-    });
-
-    return Promise.all([linkPromise, scriptPromise]);
+    // Forzar la recarga del script de los modales de React
+    if (scriptReact) {
+        scriptReact.src = '';
+        await wait(100);
+        scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
+    }
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -147,7 +134,7 @@ async function applyDisplayNoneToAllButLastButton() {
     const buttonsVerDetalle = document.querySelectorAll('.info-card__options-toggle');
 
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
-        buttonsVerDetalle[i].textContent = 'Comprar';
+        buttonsVerDetalle[i].textContent = 'Ver detalle';
     }
 }
 async function changeCopyButton() {
@@ -187,9 +174,7 @@ async function changeCopyButton() {
     checkResultsListPage();
 };
 
-async function aplicarModificaciones() {
-    await cargarEstilosYModales();
-
+function aplicarModificaciones() {
     aplicarClaseRecomendada();
     changeCopyMap();
     applyDisplayNoneToAllButLastButton();
