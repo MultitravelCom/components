@@ -158,7 +158,6 @@ function observarCambiosCheckAndRender() {
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
                 });
-                cargarEstilosYModales();
             });
         },
         queries: [{ element: '.results-list__page' }],
@@ -170,9 +169,9 @@ function observarCambiosCheckAndRender() {
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
     });
-    cargarEstilosYModales();
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
+    cargarEstilosYModales();
 });
