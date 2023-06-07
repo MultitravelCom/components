@@ -193,20 +193,21 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        let resultsListPage = document.querySelector('.results-list__page');
+        let resultsListPages = document.querySelectorAll('.results-list__page');
 
-        if (resultsListPage instanceof Node) {
+        if (resultsListPages.length > 0) {
+            resultsListPages.forEach(resultsListPage => {
+                const observerListPage = new MutationSummary({
+                    rootNode: resultsListPage,
+                    queries: [{ element: '.results-list__page' }],
+                    callback: mutations => {
+                        aplicarModificaciones();
+                        cargarEstilosYModales();
+                    }
+                });
 
-            const observerListPage = new MutationSummary({
-                queries: [{ element: '.results-list__page' }],
-                callback: mutations => {
-                    aplicarModificaciones();
-                    cargarEstilosYModales();
-                }
+                observerListPage.observe();
             });
-
-            observerListPage.observe();
-
         } else {
             setTimeout(checkResults, 1000);
         }
