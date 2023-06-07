@@ -30,14 +30,14 @@ async function cargarEstilosYModales() {
     // Forzar la recarga del archivo CSS
     if (link) {
         link.href = '';
-        await wait(1000);
+        await wait(100);
         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
     }
 
     // Forzar la recarga del script de los modales de React
     if (scriptReact) {
         scriptReact.src = '';
-        await wait(1000);
+        await wait(100);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
 }
