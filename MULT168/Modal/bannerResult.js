@@ -33,10 +33,10 @@ const BannerSearchResult = () => {
 const insertNewDivSearchResult = async () => {
     const observer = new MutationSummary({
       callback: handleDOMChanges,
-      queries: [{ element: '.results-list__body' }]
+      queries: [{ element: '.results-list__page' }]
     });
   
-    const parentDiv = document.querySelector('.results-list__body');
+    const parentDiv = document.querySelector('.results-list__page');
     const firstChdtDiv = document.querySelector('.results-list__item');
   
     if (parentDiv && firstChdtDiv) {
