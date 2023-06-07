@@ -1,7 +1,3 @@
-function cerrarBanner() {
-  toastify.style.display = 'none';
-}
-
 window.onload = function () {
   // Verificar la condición de la URL
   if (window.location.href.indexOf('/results.aspx?') !== -1) {
@@ -28,9 +24,6 @@ window.onload = function () {
         padding: '16px',
         borderRadius: '8px',
         border: '1px solid #cccccc',
-      },
-      onClick: function () {
-        cerrarBanner();
       }
     }).showToast();
   }
