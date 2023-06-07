@@ -187,14 +187,16 @@ async function changeCopyButton() {
     checkResultsListPage();
 };
 
-function aplicarModificaciones() {
+async function aplicarModificaciones() {
+    await cargarEstilosYModales();
+  
     aplicarClaseRecomendada();
     changeCopyMap();
     applyDisplayNoneToAllButLastButton();
     agreeStarIcon();
     changeCopyButton();
     removeImageLinks();
-}
+  }
 
 function observarCambiosResultados() {
     const observerResults = new MutationSummary({
