@@ -6,9 +6,9 @@ window.onload = function () {
   // Verificar la condición de la URL
   if (window.location.href.indexOf('/results.aspx?') !== -1) {
     let bannerToastify = document.createElement('div');
-    bannerToastify.className = 'custom-div';
+    bannerToastify.className = 'custom-div-pop';
     bannerToastify.innerHTML = `
-      <img src="https://multitravelcom.github.io/MT/Secciones/Popup-Precio/img-popup.jpg" alt="Imagen" class="custom-img">
+      <img src="https://multitravelcom.github.io/MT/Secciones/Popup-Precio/img-popup.jpg" alt="Imagen" class="custom-img-img">
       <div class="custom-content-botton" onclick="cerrarBanner()">X</div>
       <div class="custom-content">
         <h2>Lo que ves, es lo que pagás</h2>
