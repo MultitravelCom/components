@@ -31,18 +31,30 @@ const BannerSearchResult = () => {
     );
 };
 const insertNewDivSearchResult = async () => {
-    while (true) {
-        const parentDiv = document.querySelector('.results-list__body');
-        const firstChdtDiv = document.querySelector('.results-list__item');
-
-        if (parentDiv && firstChdtDiv) {
-            const newDiv = document.createElement('div');
-            firstChdtDiv.after(newDiv);
-            ReactDOM.render(<BannerSearchResult />, newDiv);
-            break;
-        }
-
-        await new Promise(resolve => setTimeout(resolve, 100));
+    const observer = new MutationSummary({
+      callback: handleDOMChanges,
+      queries: [{ element: '.results-list__body' }]
+    });
+  
+    const parentDiv = document.querySelector('.results-list__body');
+    const firstChdtDiv = document.querySelector('.results-list__item');
+  
+    if (parentDiv && firstChdtDiv) {
+      const newDiv = document.createElement('div');
+      firstChdtDiv.after(newDiv);
+      ReactDOM.render(<BannerSearchResult />, newDiv);
     }
-};
-insertNewDivSearchResult();
+  
+    function handleDOMChanges(summaries) {
+      const summary = summaries[0];
+  
+      if (summary.added.length > 0) {
+        const newDiv = document.createElement('div');
+        summary.added[0].after(newDiv);
+        ReactDOM.render(<BannerSearchResult />, newDiv);
+      }
+    }
+  };
+  
+  insertNewDivSearchResult();
+  
