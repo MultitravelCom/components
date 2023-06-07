@@ -318,7 +318,7 @@
 }
 
 .btn_login-button:hover {
-    color: white;
+    color: white !important;
     background-color: #283747;
     border: 1px solid;
     border-radius: 40px;
@@ -344,7 +344,6 @@
 
 #container__widget__ars>.glyphicon-user-profile {
     font-size: 20px;
-    font: optional;
 }
 
 @media (max-width:767px) {
