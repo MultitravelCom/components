@@ -267,6 +267,7 @@
     flex-direction: column;
 
 }
+
 .flex_container {
     display: flex;
     gap: 4px;
@@ -312,12 +313,14 @@
     border-radius: 40px;
 }
 
+.main_container__buttonARSEs__Es>div,
 .main_container__buttonARSEs__ARS>div {
     display: flex;
     align-items: flex-end;
     padding: 4px;
     gap: 2px;
 }
+
 .main_container__buttonARSEs__Es>div {
     display: flex;
     align-items: flex-end;
@@ -343,9 +346,10 @@
 }
 
 @media (max-width:767px) {
-    .upper-menu_quicklinks > .container-fluid{
+    .upper-menu_quicklinks>.container-fluid {
         display: block;
     }
+
     .main__container__widget {
         background-color: #00a94f;
     }
