@@ -2,14 +2,7 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks() {
-    let resultsListPage = document.querySelector('.results-list__page');
-
-    while (!resultsListPage) {
-        await wait(1000);
-        resultsListPage = document.querySelector('.results-list__page');
-    }
-
+async function removeImageLinks(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -41,15 +34,8 @@ async function cargarEstilosYModales() {
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
 }
-async function aplicarClaseRecomendada() {
-    let resultsListPage = document.querySelector('.results-list__page');
 
-    if (!resultsListPage) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await aplicarClaseRecomendada();
-        return;
-    }
-
+async function aplicarClaseRecomendada(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -72,14 +58,7 @@ async function aplicarClaseRecomendada() {
     });
 }
 
-async function agreeStarIcon() {
-    let resultsListPage = document.querySelector('.results-list__page');
-
-    while (!resultsListPage) {
-        await wait(1000);
-        resultsListPage = document.querySelector('.results-list__page');
-    }
-
+async function agreeStarIcon(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -92,14 +71,7 @@ async function agreeStarIcon() {
     });
 }
 
-async function changeCopyMap() {
-    let resultsListPage = document.querySelector('.results-list__page');
-
-    while (!resultsListPage) {
-        await wait(1000);
-        resultsListPage = document.querySelector('.results-list__page');
-    }
-
+async function changeCopyMap(resultsListPage) {
     let items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -137,13 +109,8 @@ async function applyDisplayNoneToAllButLastButton() {
         buttonsVerDetalle[i].textContent = 'Comprar';
     }
 }
-async function changeCopyButton() {
-    let resultsListPage = document.querySelector('.results-list__page');
 
-    while (!resultsListPage) {
-        await wait(1000);
-        resultsListPage = document.querySelector('.results-list__page');
-    }
+async function changeCopyButton(resultsListPage) {
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
 
     itemsButtonComprar.forEach(item => {
@@ -153,7 +120,6 @@ async function changeCopyButton() {
     });
 
     const checkResultsListPage = () => {
-
         const resultsPage = document.querySelector('.results-list__page');
 
         if (resultsPage) {
@@ -174,13 +140,13 @@ async function changeCopyButton() {
     checkResultsListPage();
 };
 
-function aplicarModificaciones() {
-    aplicarClaseRecomendada();
-    changeCopyMap();
-    applyDisplayNoneToAllButLastButton();
-    agreeStarIcon();
-    changeCopyButton();
-    removeImageLinks();
+function aplicarModificaciones(resultsListPage) {
+    removeImageLinks(resultsListPage);
+    aplicarClaseRecomendada(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    changeCopyMap(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
+    changeCopyButton(resultsListPage);
 }
 
 function observarCambiosCheckAndRender() {
@@ -188,35 +154,14 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                aplicarModificaciones();
-                cargarEstilosYModales();
-            });
-        },
-        queries: [{ element: '.results-list__page' }],
-    };
-
-    const observer = new MutationSummary(observerConfig);
-
-    aplicarModificaciones();
-    cargarEstilosYModales();
-}
-
-function observarCambiosCheckAndRenderDos() {
-    const observerConfig = {
-        rootNode: document.documentElement,
-        callback: () => {
-            requestAnimationFrame(() => {
-                const resultsListFooters = document.querySelectorAll('.results-list__footer');
-                resultsListFooters.forEach(resultsListFooter => {
-                    const resultsListPage = resultsListFooter.closest('.results-list__page');
-                    if (resultsListPage) {
-                        aplicarModificaciones(resultsListPage);
-                    }
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    aplicarModificaciones(resultsListPage);
                 });
                 cargarEstilosYModales();
             });
         },
-        queries: [{ element: '.results-list__footer' }],
+        queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
@@ -227,7 +172,7 @@ function observarCambiosCheckAndRenderDos() {
     });
     cargarEstilosYModales();
 }
+
 document.addEventListener('DOMContentLoaded', async function () {
-    aplicarModificaciones();
-    observarCambiosResultados();
+    observarCambiosCheckAndRender();
 });
