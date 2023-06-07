@@ -310,7 +310,6 @@
 }
 
 #container__widget__ars>.glyphicon-user-profile {
-    color: #0D4E88;
     font-size: 20px;
     font-style: normal;
     font-weight: normal;
@@ -320,7 +319,6 @@
     position: relative;
     display: inline-block;
     font-family: JBE_Iconset;
-    font-size: 1.143rem;
 }
 
 .btn_login-button:active {
