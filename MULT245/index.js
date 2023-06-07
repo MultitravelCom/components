@@ -192,16 +192,20 @@ function aplicarModificaciones() {
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        let resultsListBodies = document.querySelectorAll('.results-list__body');
+        let resultsListPages = document.querySelectorAll('.results-list__page');
 
-        if (resultsListBodies.length > 0) {
-            resultsListBodies.forEach(resultsListBody => {
-                const observerListBody = new MutationObserver(mutations => {
-                    aplicarModificaciones();
-                    cargarEstilosYModales();
+        if (resultsListPages.length > 0) {
+            resultsListPages.forEach(resultsListPage => {
+                const observerListPage = new MutationSummary({
+                    rootNode: resultsListPage,
+                    queries: [{ element: '.results-list__page' }],
+                    callback: mutations => {
+                        aplicarModificaciones();
+                        cargarEstilosYModales();
+                    }
                 });
 
-                observerListBody.observe(resultsListBody, { childList: true, subtree: true });
+                observerListPage.observe();
             });
         } else {
             setTimeout(checkResults, 1000);
