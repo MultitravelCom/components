@@ -309,6 +309,19 @@
     line-height: 17px;
 }
 
+#container__widget__ars>.glyphicon-user-profile {
+    color: #0D4E88;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+    font-family: JBE_Iconset;
+    font-size: 1.143rem;
+}
 
 .btn_login-button:active {
     background-color: #283747;
@@ -340,20 +353,6 @@
 
 .main_container__buttonARSEs__ARS>img {
     margin-right: 2px;
-}
-
-#container__widget__ars>.glyphicon-user-profile {
-    color: #0D4E88;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    font-size: 20px;
-    position: relative;
-    display: inline-block;
-    font-family: JBE_Iconset;
-    font-size: 1.143rem;
 }
 
 @media (max-width:767px) {
