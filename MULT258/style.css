@@ -22,9 +22,9 @@
   margin: 0 !important;
 }
 
-.custom-content-botton {
+/* .custom-content-botton {
   display: none;
-}
+} */
 
 @media(max-width:767px) {
   .toastify {

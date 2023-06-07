@@ -1,6 +1,6 @@
-// function cerrarBanner() {
-//   bannerToastify.style.display = 'none';
-// }
+function cerrarBanner() {
+  bannerToastify.style.display = 'none';
+}
 
 window.onload = function () {
   // Verificar la condición de la URL
@@ -29,6 +29,9 @@ window.onload = function () {
         borderRadius: '8px',
         border: '1px solid #cccccc',
       },
+      onClick: function () {
+        cerrarBanner();
+      }
     }).showToast();
   }
 };
