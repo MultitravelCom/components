@@ -188,25 +188,20 @@ function aplicarModificaciones() {
     agreeStarIcon();
     changeCopyButton();
     removeImageLinks();
-    cargarEstilosYModales()
 }
 
 function observarCambiosResultados() {
     const checkResults = () => {
-        let resultsListPages = document.querySelectorAll('.results-list__page');
+        let resultsListBodies = document.querySelectorAll('.results-list__body');
 
-        if (resultsListPages.length > 0) {
-            resultsListPages.forEach(resultsListPage => {
-                const observerListPage = new MutationSummary({
-                    rootNode: resultsListPage,
-                    queries: [{ element: '.results-list__page' }],
-                    callback: mutations => {
-                        aplicarModificaciones();
-                        cargarEstilosYModales();
-                    }
+        if (resultsListBodies.length > 0) {
+            resultsListBodies.forEach(resultsListBody => {
+                const observerListBody = new MutationObserver(mutations => {
+                    aplicarModificaciones();
+                    cargarEstilosYModales();
                 });
 
-                observerListPage.observe();
+                observerListBody.observe(resultsListBody, { childList: true, subtree: true });
             });
         } else {
             setTimeout(checkResults, 1000);
