@@ -192,10 +192,9 @@
 .right-0px {
   right: 0px;
 }
-.result-option__booking{
+.result-option__price.d-flex-right .renderPriceTag {
   font-size: 20px;
 }
-.result-option-package__table,
 .result-option__offer-info{
   display: none;
 }
