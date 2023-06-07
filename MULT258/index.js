@@ -21,6 +21,7 @@ window.onload = function () {
       duration: -1,
       gravity: 'bottom',
       position: 'left',
+      close: true,
       style: {
         background: '#2096ff',
         maxWidth: '454px',
