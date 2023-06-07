@@ -297,7 +297,7 @@
     background-color: white;
     border: 0;
     border-radius: 40px;
-    color: #0D4E88;
+    color: #0D4E88 !important;
     justify-content: center;
     gap: 5px;
 }
@@ -318,7 +318,7 @@
 }
 
 .btn_login-button:hover {
-    color: white !important;
+    color: white;
     background-color: #283747;
     border: 1px solid;
     border-radius: 40px;
