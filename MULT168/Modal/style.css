@@ -346,6 +346,9 @@
     color: #0D4E88;
     font-size: 20px;
 }
+#container__widget__ars>.glyphicon-user-profile:hover{
+    color: white;
+}
 
 @media (max-width:767px) {
     .upper-menu_quicklinks>.container-fluid {
