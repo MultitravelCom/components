@@ -195,7 +195,8 @@
 .availability__options--all-options >.pricetag__item--currency{
   font-size: 20px;
 }
-.result-option-package__table{
+.result-option-package__table,
+.result-option__offer-info{
   display: none;
 }
 
