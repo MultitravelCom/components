@@ -192,7 +192,7 @@
 .right-0px {
   right: 0px;
 }
-.availability__options--all-options >.pricetag__item--currency{
+.pricetag__item--currency{
   font-size: 20px;
 }
 .result-option-package__table,
