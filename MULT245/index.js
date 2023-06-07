@@ -2,7 +2,14 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks(resultsListPage) {
+async function removeImageLinks() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -20,22 +27,29 @@ async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
 
-    // Forzar la recarga del archivo CSS
-    if (link) {
+    // Verificar si los estilos ya están cargados
+    if (link && link.href !== 'https://multitravelcom.github.io/components/MULT245/style.css') {
         link.href = '';
         await wait(1000);
         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
     }
 
-    // Forzar la recarga del script de los modales de React
-    if (scriptReact) {
+    // Verificar si el script de los modales de React ya está cargado
+    if (scriptReact && scriptReact.src !== 'https://multitravelcom.github.io/components/MULT245/modalShare.js') {
         scriptReact.src = '';
         await wait(100);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
 }
+async function aplicarClaseRecomendada() {
+    let resultsListPage = document.querySelector('.results-list__page');
 
-async function aplicarClaseRecomendada(resultsListPage) {
+    if (!resultsListPage) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return;
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -58,7 +72,14 @@ async function aplicarClaseRecomendada(resultsListPage) {
     });
 }
 
-async function agreeStarIcon(resultsListPage) {
+async function agreeStarIcon() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -71,7 +92,14 @@ async function agreeStarIcon(resultsListPage) {
     });
 }
 
-async function changeCopyMap(resultsListPage) {
+async function changeCopyMap() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     let items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -109,8 +137,13 @@ async function applyDisplayNoneToAllButLastButton() {
         buttonsVerDetalle[i].textContent = 'Comprar';
     }
 }
+async function changeCopyButton() {
+    let resultsListPage = document.querySelector('.results-list__page');
 
-async function changeCopyButton(resultsListPage) {
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
 
     itemsButtonComprar.forEach(item => {
@@ -120,6 +153,7 @@ async function changeCopyButton(resultsListPage) {
     });
 
     const checkResultsListPage = () => {
+
         const resultsPage = document.querySelector('.results-list__page');
 
         if (resultsPage) {
@@ -140,13 +174,13 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
+function aplicarModificaciones() {
+    aplicarClaseRecomendada();
+    changeCopyMap();
+    applyDisplayNoneToAllButLastButton();
+    agreeStarIcon();
+    changeCopyButton();
+    removeImageLinks();
 }
 
 function observarCambiosCheckAndRender() {
@@ -154,10 +188,7 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    aplicarModificaciones(resultsListPage);
-                });
+                aplicarModificaciones();
                 cargarEstilosYModales();
             });
         },
@@ -166,13 +197,11 @@ function observarCambiosCheckAndRender() {
 
     const observer = new MutationSummary(observerConfig);
 
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        aplicarModificaciones(resultsListPage);
-    });
+    aplicarModificaciones();
     cargarEstilosYModales();
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    observarCambiosCheckAndRender();
+    aplicarModificaciones();
+    observarCambiosResultados();
 });
