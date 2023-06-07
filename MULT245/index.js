@@ -13,7 +13,7 @@ async function removeImageLinks() {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const image = item.querySelector('.info-card__image');
+        const image = item.querySelector('.info-card__image--action');
 
         if (image) {
             image.removeEventListener('click', function (event) {
