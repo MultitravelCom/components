@@ -40,12 +40,6 @@ async function cargarEstilosYModales() {
         await wait(100);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
-
-    if (scriptJavascript) {
-        scriptJavascript.src = '';
-        await wait(100);
-        scriptJavascript.src = 'https://multitravelcom.github.io/components/MULT245/index.js';
-    }
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -190,26 +184,28 @@ function aplicarModificaciones() {
 }
 
 function observarCambiosResultados() {
-    const observerResults = new MutationSummary({
-      rootNode: document.body,
-      queries: [{ element: '.results-list__page' }],
-      callback: mutations => {
-        mutations.forEach(mutation => {
-          const addedNodes = Array.from(mutation.added);
-          addedNodes.forEach(addedNode => {
+    const checkResults = () => {
+        let resultsListPage = document.querySelector('.results-list__page');
+
+        if (resultsListPage instanceof Node) {
+
             const observerListPage = new MutationSummary({
-              rootNode: addedNode,
-              queries: [{ element: '.results-list__body' }],
-              callback: () => {
-                aplicarModificaciones();
-                cargarEstilosYModales();
-              }
+                queries: [{ element: '.results-list__page' }],
+                callback: mutations => {
+                    aplicarModificaciones();
+                    cargarEstilosYModales();
+                }
             });
-          });
-        });
-      }
-    });
-  }
+
+            observerListPage.observe();
+
+        } else {
+            setTimeout(checkResults, 1000);
+        }
+    };
+
+    checkResults();
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
