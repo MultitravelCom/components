@@ -25,35 +25,35 @@ async function removeImageLinks() {
 
 function cargarEstilosYModales() {
     const linkPromise = new Promise(resolve => {
-      const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
-  
-      if (link) {
-        link.href = '';
-        link.addEventListener('load', () => {
-          link.removeEventListener('load', resolve);
-          resolve();
-        });
-      } else {
-        resolve();
-      }
+        const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
+
+        if (link) {
+            link.href = '';
+            link.addEventListener('load', () => {
+                link.removeEventListener('load', resolve);
+                resolve();
+            });
+        } else {
+            resolve();
+        }
     });
-  
+
     const scriptPromise = new Promise(resolve => {
-      const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
-  
-      if (scriptReact) {
-        scriptReact.src = '';
-        scriptReact.addEventListener('load', () => {
-          scriptReact.removeEventListener('load', resolve);
-          resolve();
-        });
-      } else {
-        resolve();
-      }
+        const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
+
+        if (scriptReact) {
+            scriptReact.src = '';
+            scriptReact.addEventListener('load', () => {
+                scriptReact.removeEventListener('load', resolve);
+                resolve();
+            });
+        } else {
+            resolve();
+        }
     });
-  
+
     return Promise.all([linkPromise, scriptPromise]);
-  }
+}
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
 
@@ -189,34 +189,55 @@ async function changeCopyButton() {
 
 async function aplicarModificaciones() {
     await cargarEstilosYModales();
-  
+
     aplicarClaseRecomendada();
     changeCopyMap();
     applyDisplayNoneToAllButLastButton();
     agreeStarIcon();
     changeCopyButton();
     removeImageLinks();
-  }
+}
 
 function observarCambiosResultados() {
     const observerResults = new MutationSummary({
-      rootNode: document.body,
-      queries: [{ element: '.results-list__page' }],
-      callback: mutations => {
-        mutations.forEach(mutation => {
-          const resultsListPage = mutation.added[0];
-          const observerListPage = new MutationSummary({
-            rootNode: resultsListPage,
-            queries: [{ element: '.results-list__item' }],
-            callback: () => {
-              aplicarModificaciones();
-              cargarEstilosYModales();
-            }
-          });
-        });
-      }
+        rootNode: document.body,
+        queries: [{ element: '.results-list__page' }],
+        callback: mutations => {
+            mutations.forEach(mutation => {
+                const resultsListPage = mutation.added[0];
+                const observerListPage = new MutationSummary({
+                    rootNode: resultsListPage,
+                    queries: [{ element: '.results-list__item' }],
+                    callback: () => {
+                        aplicarModificaciones();
+                        cargarEstilosYModales();
+                    }
+                });
+            });
+        }
     });
-  }
+
+    // Observar cambios en el documento para detectar la creación de nuevos elementos .results-list__page
+    const observerDocument = new MutationSummary({
+        rootNode: document.body,
+        queries: [{ element: '.results-list__page' }],
+        callback: mutations => {
+            mutations.forEach(mutation => {
+                const addedNodes = mutation.added;
+                addedNodes.forEach(node => {
+                    const observerListPage = new MutationSummary({
+                        rootNode: node,
+                        queries: [{ element: '.results-list__item' }],
+                        callback: () => {
+                            aplicarModificaciones();
+                            cargarEstilosYModales();
+                        }
+                    });
+                });
+            });
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
