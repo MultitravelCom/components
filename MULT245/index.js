@@ -2,7 +2,14 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks(resultsListPage) {
+async function removeImageLinks() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -34,8 +41,15 @@ async function cargarEstilosYModales() {
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
 }
+async function aplicarClaseRecomendada() {
+    let resultsListPage = document.querySelector('.results-list__page');
 
-async function aplicarClaseRecomendada(resultsListPage) {
+    if (!resultsListPage) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return;
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -58,7 +72,14 @@ async function aplicarClaseRecomendada(resultsListPage) {
     });
 }
 
-async function agreeStarIcon(resultsListPage) {
+async function agreeStarIcon() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -71,7 +92,14 @@ async function agreeStarIcon(resultsListPage) {
     });
 }
 
-async function changeCopyMap(resultsListPage) {
+async function changeCopyMap() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
     let items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -109,8 +137,13 @@ async function applyDisplayNoneToAllButLastButton() {
         buttonsVerDetalle[i].textContent = 'Comprar';
     }
 }
+async function changeCopyButton() {
+    let resultsListPage = document.querySelector('.results-list__page');
 
-async function changeCopyButton(resultsListPage) {
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
 
     itemsButtonComprar.forEach(item => {
@@ -120,6 +153,7 @@ async function changeCopyButton(resultsListPage) {
     });
 
     const checkResultsListPage = () => {
+
         const resultsPage = document.querySelector('.results-list__page');
 
         if (resultsPage) {
@@ -140,13 +174,13 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
+function aplicarModificaciones() {
+    aplicarClaseRecomendada();
+    changeCopyMap();
+    applyDisplayNoneToAllButLastButton();
+    agreeStarIcon();
+    changeCopyButton();
+    removeImageLinks();
 }
 
 function observarCambiosCheckAndRender() {
@@ -154,14 +188,35 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    aplicarModificaciones(resultsListPage);
-                });
+                aplicarModificaciones();
                 cargarEstilosYModales();
             });
         },
         queries: [{ element: '.results-list__page' }],
+    };
+
+    const observer = new MutationSummary(observerConfig);
+
+    aplicarModificaciones();
+    cargarEstilosYModales();
+}
+
+function observarCambiosCheckAndRenderDos() {
+    const observerConfig = {
+        rootNode: document.documentElement,
+        callback: () => {
+            requestAnimationFrame(() => {
+                const resultsListFooters = document.querySelectorAll('.results-list__footer');
+                resultsListFooters.forEach(resultsListFooter => {
+                    const resultsListPage = resultsListFooter.closest('.results-list__page');
+                    if (resultsListPage) {
+                        aplicarModificaciones(resultsListPage);
+                    }
+                });
+                cargarEstilosYModales();
+            });
+        },
+        queries: [{ element: '.results-list__footer' }],
     };
 
     const observer = new MutationSummary(observerConfig);
@@ -172,7 +227,7 @@ function observarCambiosCheckAndRender() {
     });
     cargarEstilosYModales();
 }
-
 document.addEventListener('DOMContentLoaded', async function () {
-    observarCambiosCheckAndRender();
+    aplicarModificaciones();
+    observarCambiosResultados();
 });
