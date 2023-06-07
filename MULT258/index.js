@@ -4,7 +4,7 @@ function cerrarBanner() {
 
 window.onload = function () {
   // Verificar la condición de la URL
-  if (window.location.href.indexOf('/results.aspx?searchSessionID=') !== -1) {
+  if (window.location.href.indexOf('/results.aspx?') !== -1) {
     let bannerToastify = document.createElement('div');
     bannerToastify.className = 'custom-div';
     bannerToastify.innerHTML = `
