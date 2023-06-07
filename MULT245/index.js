@@ -2,6 +2,27 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
+async function removeImageLinks() {
+    let resultsListPage = document.querySelector('.results-list__page');
+
+    while (!resultsListPage) {
+        await wait(1000);
+        resultsListPage = document.querySelector('.results-list__page');
+    }
+
+    const items = resultsListPage.querySelectorAll('.results-list__item');
+
+    items.forEach(item => {
+        const image = item.querySelector('.info-card__image');
+
+        if (image) {
+            image.removeEventListener('click', function (event) {
+                event.preventDefault();
+            });
+        }
+    });
+}
+
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
@@ -22,34 +43,34 @@ async function cargarEstilosYModales() {
 }
 async function aplicarClaseRecomendada() {
     let resultsListPage = document.querySelector('.results-list__page');
-  
+
     if (!resultsListPage) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      await aplicarClaseRecomendada();
-      return;
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await aplicarClaseRecomendada();
+        return;
     }
-  
+
     const items = resultsListPage.querySelectorAll('.results-list__item');
-  
+
     items.forEach(item => {
-      const tieneDeals = item.querySelector('.deals') !== null;
-      const hotelResult = item.querySelector('.result.hotel-result');
-  
-      if (tieneDeals && hotelResult) {
-        hotelResult.classList.add('alojamiento-recomendado');
-  
-        const bestPriceElements = item.querySelectorAll('.info-card__price');
-        bestPriceElements.forEach(element => {
-          element.classList.add('info-card__price__deals');
-        });
-  
-        const toggleButtons = item.querySelectorAll('.info-card__options-toggle');
-        toggleButtons.forEach(button => {
-          button.classList.add('right-14px');
-        });
-      }
+        const tieneDeals = item.querySelector('.deals') !== null;
+        const hotelResult = item.querySelector('.result.hotel-result');
+
+        if (tieneDeals && hotelResult) {
+            hotelResult.classList.add('alojamiento-recomendado');
+
+            const bestPriceElements = item.querySelectorAll('.info-card__price');
+            bestPriceElements.forEach(element => {
+                element.classList.add('info-card__price__deals');
+            });
+
+            const toggleButtons = item.querySelectorAll('.info-card__options-toggle');
+            toggleButtons.forEach(button => {
+                button.classList.add('right-14px');
+            });
+        }
     });
-  }
+}
 
 async function agreeStarIcon() {
     let resultsListPage = document.querySelector('.results-list__page');
@@ -159,32 +180,33 @@ function aplicarModificaciones() {
     applyDisplayNoneToAllButLastButton();
     agreeStarIcon();
     changeCopyButton();
+    removeImageLinks();
 }
 
 function observarCambiosResultados() {
     const checkResults = () => {
-      let resultsListPage = document.querySelector('.results-list__page');
-  
-      if (resultsListPage instanceof Node) {
-  
-        const observerListPage = new MutationSummary({
-          queries: [{ element: '.results-list__page' }],
-          callback: mutations => {
-            aplicarModificaciones();
-            cargarEstilosYModales();
-          }
-        });
-  
-        observerListPage.observe();
-  
-      } else {
-        setTimeout(checkResults, 1000);
-      }
+        let resultsListPage = document.querySelector('.results-list__page');
+
+        if (resultsListPage instanceof Node) {
+
+            const observerListPage = new MutationSummary({
+                queries: [{ element: '.results-list__page' }],
+                callback: mutations => {
+                    aplicarModificaciones();
+                    cargarEstilosYModales();
+                }
+            });
+
+            observerListPage.observe();
+
+        } else {
+            setTimeout(checkResults, 1000);
+        }
     };
-  
+
     checkResults();
-  }
-  
+}
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
