@@ -207,7 +207,6 @@ function observarCambiosResultados() {
     checkResults();
 }
 
-
 document.addEventListener('DOMContentLoaded', async function () {
     aplicarModificaciones();
     observarCambiosResultados();
