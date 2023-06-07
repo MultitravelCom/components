@@ -1,4 +1,4 @@
-.custom-img {
+.custom-img-img {
   width: 64px;
   height: 80px;
   border-radius: 4px;
@@ -36,7 +36,7 @@
     left: 0 !important;
   }
 
-  .custom-img {
+  .custom-img-img {
     display: none;
   }
 
