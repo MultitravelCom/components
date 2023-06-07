@@ -183,45 +183,22 @@ function aplicarModificaciones() {
     removeImageLinks();
 }
 
-function observarCambiosResultados() {
-    const observerResults = new MutationSummary({
-        rootNode: document.body,
-        queries: [{ element: '.results-list__page' }],
-        callback: mutations => {
-            mutations.forEach(mutation => {
-                const resultsListPage = mutation.added[0];
-                const observerListPage = new MutationSummary({
-                    rootNode: resultsListPage,
-                    queries: [{ element: '.results-list__item' }],
-                    callback: () => {
-                        aplicarModificaciones();
-                        cargarEstilosYModales();
-                    }
-                });
+function observarCambiosCheckAndRender() {
+    const observerConfig = {
+        rootNode: document.documentElement,
+        callback: () => {
+            requestAnimationFrame(() => {
+                aplicarModificaciones();
+                cargarEstilosYModales();
             });
-        }
-    });
+        },
+        queries: [{ element: '.results-list__page' }],
+    };
 
-    // Observar cambios en el documento para detectar la creación de nuevos elementos .results-list__page
-    const observerDocument = new MutationSummary({
-        rootNode: document.body,
-        queries: [{ element: '.results-list__page' }],
-        callback: mutations => {
-            mutations.forEach(mutation => {
-                const addedNodes = mutation.added;
-                addedNodes.forEach(node => {
-                    const observerListPage = new MutationSummary({
-                        rootNode: node,
-                        queries: [{ element: '.results-list__item' }],
-                        callback: () => {
-                            aplicarModificaciones();
-                            cargarEstilosYModales();
-                        }
-                    });
-                });
-            });
-        }
-    });
+    const observer = new MutationSummary(observerConfig);
+
+    aplicarModificaciones();
+    cargarEstilosYModales();
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
