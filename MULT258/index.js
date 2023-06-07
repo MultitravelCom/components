@@ -9,7 +9,6 @@ window.onload = function () {
     bannerToastify.className = 'custom-div-pop';
     bannerToastify.innerHTML = `
       <img src="https://multitravelcom.github.io/MT/Secciones/Popup-Precio/img-popup.jpg" alt="Imagen" class="custom-img-img">
-      <div class="custom-content-botton" onclick="cerrarBanner()">X</div>
       <div class="custom-content">
         <h2>Lo que ves, es lo que pagás</h2>
         <p>Precios finales en todos nuestros productos, impuestos incluidos. Sin costos extras en aeropuerto o destino.</p>
