@@ -134,7 +134,7 @@ async function applyDisplayNoneToAllButLastButton() {
     const buttonsVerDetalle = document.querySelectorAll('.info-card__options-toggle');
 
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
-        buttonsVerDetalle[i].textContent = 'Ver detalle';
+        buttonsVerDetalle[i].textContent = 'Comprar';
     }
 }
 async function changeCopyButton() {
