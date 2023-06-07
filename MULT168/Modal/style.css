@@ -345,9 +345,15 @@
 #container__widget__ars>.glyphicon-user-profile {
     color: #0D4E88;
     font-size: 20px;
-}
-#container__widget__ars>.glyphicon-user-profile:hover{
-    color: white;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+    font-family: JBE_Iconset;
+    font-size: 1.143rem;
 }
 
 @media (max-width:767px) {
