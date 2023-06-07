@@ -297,7 +297,16 @@
     background-color: white;
     border: 0;
     border-radius: 40px;
+    color: #0D4E88;
 }
+
+.main__container__widget_text__ars {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+}
+
 
 .btn_login-button:active {
     background-color: #283747;
@@ -329,14 +338,6 @@
 
 .main_container__buttonARSEs__ARS>img {
     margin-right: 2px;
-}
-
-.main__container__widget_text__ars {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    color: #0D4E88;
 }
 
 #container__widget__ars>.glyphicon-user-profile {
