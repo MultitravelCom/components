@@ -67,6 +67,7 @@ async function aplicarClaseRecomendada() {
             const toggleButtons = item.querySelectorAll('.info-card__options-toggle');
             toggleButtons.forEach(button => {
                 button.classList.add('right-14px');
+                button.setAttribute('target', '_blank');
             });
         }
     });
