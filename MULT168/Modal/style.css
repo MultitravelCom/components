@@ -298,6 +298,8 @@
     border: 0;
     border-radius: 40px;
     color: #0D4E88;
+    justify-content: center;
+    gap: 5px;
 }
 
 .main__container__widget_text__ars {
