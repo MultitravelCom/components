@@ -193,10 +193,10 @@
   right: 0px;
 }
 .result-option__price.d-flex-right .renderPriceTag {
-  font-size: 20px;
+  font-size: 20px !important;
 }
-.result-option__offer-info{
-  display: none;
+.result-option__offer-info {
+  display: none !important;
 }
 
 @media (max-width: 767px) {
