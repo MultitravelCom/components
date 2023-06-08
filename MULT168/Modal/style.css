@@ -352,6 +352,10 @@
 .main_container__buttonARSEs__ARS>img {
     margin-right: 2px;
 }
+.upper-menu__login-button {
+    display: none;
+}
+
 
 @media (max-width:767px) {
     .upper-menu_quicklinks>.container-fluid {
