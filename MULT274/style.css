@@ -1,5 +1,9 @@
 /* <!-- CSS --> */
 /* container */
+.upper-menu__login-button {
+    display: none;
+}
+
 .page-header-bar {
     padding: 0 !important;
 }
