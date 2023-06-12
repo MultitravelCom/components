@@ -300,6 +300,7 @@
     width: 244px;
     display: block;
     bottom: -56px;
+    right: -7px;
   }
 
   .info-card__location--action.js-result-map-toggle {
