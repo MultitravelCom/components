@@ -331,7 +331,8 @@
     text-align: left;
   }
   .right-14px{
-    right: 0 !important;
+    width: 241px;
+    right: -5px !important;
   }
 }
 
