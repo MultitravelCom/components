@@ -410,7 +410,17 @@
 }
 
 /* ***************** MULT-305 **************** */
-.footer-bottom__link > .glyphicon-whatsapp-bottomless{
+.footer-bottom__link > .glyphicon .glyphicon-whatsapp-bottomless{
     color: rgba(255, 255, 255, .85) !important;
     font-size: 1.5rem !important;
+    position: relative;
+    display: inline-block;
+    font-family: JBE_Iconset;
+    font-size: 1.143rem;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
