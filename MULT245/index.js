@@ -6,7 +6,7 @@ async function removeImageLinks(resultsListPage) {
     const items = document.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const card = item.querySelector('.info-card__image-holder');
+        const card = item.querySelector('.info-card__image .info-card__image--action');
 
         if (card) {
             card.addEventListener('click', (event) => {
