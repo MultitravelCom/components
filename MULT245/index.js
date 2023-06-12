@@ -6,12 +6,10 @@ async function removeImageLinks(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const image = item.querySelector('.info-card__image-holder img, .info-card__image--action');
+        const image = item.querySelector('.info-card__image-holder img');
 
         if (image) {
-            image.removeEventListener('click', function (event) {
-                event.preventDefault();
-            });
+            image.removeAttribute('loading');
         }
     });
 }
