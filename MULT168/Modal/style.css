@@ -410,7 +410,7 @@
 }
 
 /* ***************** MULT-305 **************** */
-.main-footer .footer__text .glyphicon {
+.footer-bottom__link > glyphicon-whatsapp-bottomless{
     color: rgba(255, 255, 255, .85) !important;
     font-size: 1.5rem !important;
   }
