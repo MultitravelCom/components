@@ -78,12 +78,8 @@
 }
 
 .info-card__actions {
-  width: 117px;
-  bottom: 24px;
-  position: absolute;
-  right: 19px;
-  padding-right: 0 !important;
   display: block;
+  padding-right: 0 !important;
 }
 
 .info-card__actions>.btn-small {
@@ -289,7 +285,7 @@
   }
 
   .info-card__options-toggle {
-    width: 244px;
+    width: 100%
   }
 
   .info-card__location--action.js-result-map-toggle {
@@ -322,42 +318,3 @@
   }
 
 }
-
-/* .result.hotel-result{
-    height: 100%;
-}
-.info-card{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-} */
-/* .info-card__image--action{
-    width: 100%;
-    border-radius: 8px 8px 8px 40px;
-}
-.info-card__image-holder{
-    width: 100%;
-    border-radius: 8px 8px 8px 40px;
-}
-.info-card__image-holder>img{
-    width: 100%;
-}
-.info-card__content{
-    position: relative;
-}
-.info-card__price{
-    position: absolute !important;
-    width: 119px;
-}
-.main__container__share{
-    top: -34px;
-    right: 12px;
-}
-.info-card__action-item--share.js-social-share{
-    display: block;
-}
-
-a.abs{
-    display: none;
-    right: 9px;
-} */
