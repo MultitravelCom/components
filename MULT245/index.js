@@ -4,15 +4,16 @@ function wait(timeout) {
 
 async function removeImageLinks(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
-
+  
     items.forEach(item => {
-        const image = item.querySelector('.info-card__image-holder img');
-
-        if (image) {
-            image.removeAttribute('loading');
-        }
+      const image = item.querySelector('.info-card__image-holder img');
+  
+      if (image) {
+        image.removeAttribute('loading');
+        image.removeEventListener('click', eventoClickOriginal);
+      }
     });
-}
+  }
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
