@@ -281,6 +281,8 @@
   }
 
   .info-card__actions {
+    display: flex;
+    justify-content: space-evenly;
     bottom: -33px;
   }
 
