@@ -4,7 +4,7 @@ function addHideDuplicateButtonLogic() {
     const buttonHTML = `
       <div class="upper-menu_quicklinks btn-toolbar visible-xs-block visible-sm-block">
         <button type="button" class="btn upper-menu__newsletter-button features_item js-login-box-modal btn-user">
-          <span class="glyphicon glyphicon-agent" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-user-profile" aria-hidden="true"></span>
           <span class="sr-only">Ingreso</span>
           <span class="quicklink-elem-label">Ingreso</span>
         </button>
