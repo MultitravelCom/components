@@ -68,6 +68,7 @@
 }
 
 .info-card__options-toggle {
+  width: 150px;
   font-weight: 600;
   letter-spacing: 1px;
   height: 34px;
@@ -80,6 +81,7 @@
 .info-card__actions {
   display: block;
   padding-right: 0 !important;
+  right: 42px;
 }
 
 .info-card__actions>.btn-small {
