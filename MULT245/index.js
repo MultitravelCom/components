@@ -2,7 +2,7 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks() {
+async function removeImageLinks(resultsListPage) {
     const items = document.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -142,7 +142,7 @@ async function changeCopyButton(resultsListPage) {
 };
 
 function aplicarModificaciones(resultsListPage) {
-    removeImageLinks();
+    removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
@@ -175,5 +175,4 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    removeImageLinks();
 });
