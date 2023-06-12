@@ -2,11 +2,11 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks(resultsListPage) {
-    const items = resultsListPage.querySelectorAll('.results-list__item');
+async function removeImageLinks() {
+    const items = document.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
-        const card = item.querySelector('.info-card__image .info-card__image--action');
+        const card = item.querySelector('.info-card__image-holder');
 
         if (card) {
             card.addEventListener('click', (event) => {
