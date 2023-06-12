@@ -285,7 +285,7 @@
   }
 
   .info-card__options-toggle {
-    width: 100%
+    width: 250px;
   }
 
   .info-card__location--action.js-result-map-toggle {
