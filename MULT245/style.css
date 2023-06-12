@@ -81,7 +81,9 @@
 .info-card__actions {
   display: block;
   padding-right: 0 !important;
-  right: 42px;
+  right: 11px;
+  width: 100% !important;
+  text-align: end;
 }
 
 .info-card__actions>.btn-small {
