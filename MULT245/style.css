@@ -290,6 +290,7 @@
     display: flex;
     justify-content: space-evenly;
     bottom: -33px;
+    left: 0;
   }
 
   .info-card__options-toggle {
