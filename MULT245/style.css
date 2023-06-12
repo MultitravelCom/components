@@ -290,7 +290,7 @@
   .info-card__actions .info-card__options-toggle {
     width: 231px;
     display: block;
-    bottom: -64px;
+    bottom: -56px;
     position: absolute;
     left: -108px;
   }
@@ -319,8 +319,9 @@
   .divTaxCopyStyle {
     position: absolute;
     width: 150px;
-    right: 40px;
-    bottom: 3px;
+    right: -155px;
+    bottom: 2px;
+    text-align: left;
   }
 }
 
