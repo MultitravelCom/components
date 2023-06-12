@@ -140,7 +140,7 @@
     color: #8C8C8C;
 }
 
-/* .main__container__modalContactos.glyphicon-phone,
+.main__container__modalContactos.glyphicon-phone,
 .main__container__modalContactos.glyphicon-whatsapp-bottomless {
     width: 32px;
     height: 32px;
@@ -151,19 +151,8 @@
     line-height: 0;
     color: white;
     padding: 16px;
-} */
+}
 
-.glyphicon[class$="${iconModal}"] {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 0;
-    color: white;
-    padding: 16px;
-  }
 
 .btn_Style_Venta_llamar:hover {
     background-color: #283747;
