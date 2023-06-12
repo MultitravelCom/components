@@ -351,6 +351,7 @@
 .main_container__buttonARSEs__ARS>img {
     margin-right: 2px;
 }
+
 .upper-menu__login-button {
     display: none;
 }
@@ -406,9 +407,13 @@
 
     }
 
+    .glyphicon-user-profile {
+        font-size: 1.5rem
+    }
+
 }
 
 /* ***************** MULT-305 **************** */
-.footer__text .glyphicon.glyphicon-whatsapp-bottomless{
+.footer__text .glyphicon.glyphicon-whatsapp-bottomless {
     background: transparent;
-  }
+}
