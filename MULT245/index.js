@@ -11,6 +11,7 @@ async function removeImageLinks(resultsListPage) {
         if (card) {
             card.addEventListener('click', (event) => {
                 event.preventDefault();
+                console.log('Clic en info-card');
             });
         }
     });
