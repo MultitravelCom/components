@@ -327,3 +327,8 @@
   }
 
 }
+@media (min-width: 767px) and (max-width: 1024px){
+  .main__container__bannerMensageCard__App{
+    width: 260px;
+  }
+}
