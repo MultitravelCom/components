@@ -175,5 +175,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    removeImageLinks(resultsListPage);
+    removeImageLinks();
 });
