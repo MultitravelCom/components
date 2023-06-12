@@ -140,8 +140,7 @@
     color: #8C8C8C;
 }
 
-.glyphicon-phone,
-.glyphicon-whatsapp-bottomless {
+.main__container__modalContactos .glyphicon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -411,16 +410,5 @@
 
 /* ***************** MULT-305 **************** */
 .footer__text .glyphicon.glyphicon-whatsapp-bottomless{
-    color: rgba(255, 255, 255, .85) !important;
-    font-size: 1.5rem !important;
-    position: relative;
-    display: inline-block;
-    font-family: JBE_Iconset;
-    font-size: 1.143rem;
-    color: #000;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: transparent;
   }
