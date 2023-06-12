@@ -196,7 +196,9 @@
 .result-option__offer-info {
   display: none !important;
 }
-
+.abs{
+  display: inline-block;
+}
 
 @media (max-width: 767px) {
   .share__icon {
