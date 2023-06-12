@@ -81,7 +81,7 @@
 }
 
 .info-card__actions {
-  width: 117px !important;
+  width: 117px;
   bottom: 24px;
   position: absolute;
   right: 32px;
