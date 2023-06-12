@@ -124,7 +124,7 @@ const Modal = ({ open, onClose }) => {
                         callToPhone={true}
                     />
                     {/* <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
+                        iconModal="glyphicon-whatsapp-bottomlesss"
                         ventasClass="green"
                         ventasText="Posventa <span>11 4960 8454</span>"
                         horarioClass="green"
@@ -155,7 +155,7 @@ const Modal = ({ open, onClose }) => {
                         callToPhone={true}
                     />
                     <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
+                        iconModal="glyphicon-whatsapp-bottomlesss"
                         ventasClass="green"
                         ventasText="Consulta por ventas <span>11 4979 1877</span>"
                         horarioClass="green"
@@ -167,7 +167,7 @@ const Modal = ({ open, onClose }) => {
                         buttonText="Enviar mensaje"
                     />
                     {/* <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
+                        iconModal="glyphicon-whatsapp-bottomlesss"
                         ventasClass="green"
                         ventasText="Posventa / Consultas <span>11 4979 1877</span>"
                         horarioClass="green"
