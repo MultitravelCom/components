@@ -287,12 +287,19 @@
     left: 10px;
   }
 
+  .info-card__actions {
+    width: 88%;
+    bottom: 24px;
+    position: absolute;
+    right: 23px;
+    padding-right: 0 !important;
+    display: block;
+  }
+
   .info-card__actions .info-card__options-toggle {
-    width: 231px;
+    width: 100%;
     display: block;
     bottom: -56px;
-    position: absolute;
-    left: -108px;
   }
 
   .info-card__location--action.js-result-map-toggle {
