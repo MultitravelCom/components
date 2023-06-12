@@ -296,7 +296,7 @@
     display: block;
   }
 
-  .info-card__actions .info-card__options-toggle {
+  .info-card__options-toggle {
     width: 244px;
     display: block;
     bottom: -56px;
