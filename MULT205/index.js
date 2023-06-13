@@ -1,28 +1,24 @@
 function moveBookingBreakdownTable() {
-    const container = document.querySelector('.promocodes__container');
-    const applyButton = document.querySelector('.promocode__apply-button');
+    const observer = new MutationSummary({
+      rootNode: document.querySelector('.confirm-booking__promocodes'),
+      callback: handleChanges,
+      queries: [{ element: '.booking-breakdown__table' }],
+    });
   
-    const observer = new MutationObserver(mutationsList => {
-      for (let mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'disabled' && !applyButton.disabled) {
-          const bookingBreakdownTable = container.querySelector('.booking-breakdown__table');
-          if (bookingBreakdownTable) {
-            const shoppingBasketLines = document.querySelector('.shopping-basket__lines');
-            shoppingBasketLines.appendChild(bookingBreakdownTable);
+    function handleChanges(summaries) {
+      for (let summary of summaries) {
+        const addedNodes = summary.added;
+        for (let node of addedNodes) {
+          if (node.classList && node.classList.contains('booking-breakdown__table')) {
+            const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+            shoppingBasketLines.appendChild(node);
           }
         }
       }
-    });
-  
-    const observerOptions = {
-      attributes: true,
-      attributeFilter: ['disabled']
-    };
-  
-    observer.observe(applyButton, observerOptions);
+    }
   }
   
-  // Llama a la función para iniciar la observación
+  // Llama a la función para iniciar la detección y el movimiento
   moveBookingBreakdownTable();
 
 
