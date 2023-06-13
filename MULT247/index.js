@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         sections.forEach(function (section) {
             const content = section.querySelector(".details-card__section-content");
 
+            // Establecer un valor predeterminado para content.style.display
+            content.style.display = "none";
+
             section.addEventListener("click", function () {
                 if (content.style.display === "none") {
                     content.style.display = "block";
