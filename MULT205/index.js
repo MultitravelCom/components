@@ -93,7 +93,13 @@ const App = () => {
 };
 
 const confirmBooking = document.querySelector('.confirm-booking__promocodes');
-ReactDOM.render(<App />, confirmBooking);
+if (confirmBooking) {
+    const newElementBookingCupons = document.createElement('div');
+    newElementBookingCupons.classList.add('container__conocer__cupones');
+    ReactDOM.render(<App />, newElementBookingCupons);
+
+    confirmBooking.appendChild(newElementBookingCupons);
+}
 
 // function handleClick(event) {
 //     event.preventDefault()
