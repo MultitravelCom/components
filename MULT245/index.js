@@ -90,7 +90,7 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     if (!actionsContainer) {
         // Esperar un tiempo y volver a llamar a la función
         await wait(2000);
-        await applyDisplayNoneToAllButLastButton();
+        await applyDisplayNoneToAllButLastButton(resultsListPage);
         return;
     }
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
