@@ -179,7 +179,7 @@ if (confirmBooking) {
 
 async function run() {
     await changeText();
-    await agreeBtn();
+    // await agreeBtn();
     showPromocodesDiv();
 }
 
