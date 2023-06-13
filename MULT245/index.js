@@ -3,7 +3,7 @@ function wait(timeout) {
 }
 
 async function removeImageLinks(resultsListPage) {
-    const items = document.querySelectorAll('.results-list__item');
+    const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
         const card = item.querySelector('.info-card__image .info-card__image--action');
@@ -84,8 +84,8 @@ async function changeCopyMap(resultsListPage) {
     });
 }
 
-async function applyDisplayNoneToAllButLastButton() {
-    const actionsContainer = document.querySelector('.info-card__actions');
+async function applyDisplayNoneToAllButLastButton(resultsListPage) {
+    const actionsContainer = resultsListPage.querySelector('.info-card__actions');
 
     if (!actionsContainer) {
         // Esperar un tiempo y volver a llamar a la función
