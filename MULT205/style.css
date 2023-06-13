@@ -164,6 +164,11 @@
         position: inherit;
     }
 
+    .close-modal-cupon {
+        top: 18px;
+        right: 21px;
+    }
+
 }
 
 
@@ -219,12 +224,13 @@
     font-style: normal;
     font-weight: 600;
     color: #FFFFFF;
+    padding: 4px;
 }
 
 .modal__content-title>h2 {
     font-style: normal;
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
     color: #FFFFFF;
 }
 
@@ -297,6 +303,10 @@
     align-items: center;
 }
 
+.modal__content-title-circle {
+    margin-bottom: 6px;
+}
+
 .modal__content-uno-title {
     display: flex;
     width: 100%;
@@ -305,7 +315,7 @@
 .modal-content__cupones-row {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .modal__content-uno,
@@ -326,8 +336,8 @@
     width: 100%;
     flex-direction: column;
     padding: 1rem;
-    border-right: 1px dashed #0D4E88;
-
+    border-right: 1px solid #0D4E88;
+    position: relative;
 }
 
 .modal__content-title-circleCalendar p {
