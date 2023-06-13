@@ -236,6 +236,7 @@
     line-height: 25px;
     text-align: center;
     color: #0D4E88;
+    margin: 0px 30px;
 }
 
 .modal__content-cupon {
@@ -281,7 +282,6 @@
 
 .modal__content-uno-title {
     display: flex;
-    align-items: center;
     width: 100%;
 }
 
@@ -306,6 +306,7 @@
 
 .modal__content-title-circleCalendar {
     display: flex;
+    width: 100%;
     flex-direction: column;
     padding: 1rem;
     border-right: 1px dashed #0D4E88;
@@ -316,7 +317,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    margin: auto;
     padding: 0 5px 0 0;
     max-width: 390px;
     margin: 0 !important;
@@ -332,6 +332,7 @@
 
 .modal__content-uno-logo>img {
     margin: 0 16px;
+    padding: 8px;
 }
 
 .close {
@@ -411,6 +412,7 @@
 
     .modal__content-title-circleCalendar {
         flex-direction: column;
+        align-items: center;
         padding: 0.5rem 1rem;
         border-bottom: 1px dashed #0D4E88;
         border-left: 0px dashed #0D4E88;
