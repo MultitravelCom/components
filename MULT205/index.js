@@ -109,13 +109,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="NEWSLETTER15OFF"
-                            cupon_texto_a="15% en tu primera compra"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 30/06/2023 hasta las 23:59"
-                        />
                     </div>
                 </div>
             </div>
