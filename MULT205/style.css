@@ -1,0 +1,31 @@
+.confirm-booking__promocodes {
+    border-radius: 8px;
+    border: 2px solid #0D4E88;
+    background-color: #DEE9F5;
+    background-image: url(https://multitravelcom.github.io/style/General/img/cupon%20descuento.svg);
+    height: auto;
+    background-size: 100% auto;
+  }
+  .promocodes__container--image{
+    display: none;
+  }
+  .promocodes__container{
+    margin-bottom: 2rem;
+    margin-left: 7rem;
+  }
+  
+  .promocode__apply-button {
+    background: #0D4E88;
+    border-color: #0D4E88;
+    border-radius: 8px;
+    width: 83px;
+    height: 40px;
+  }
+  
+  .promocode__apply-button:hover {
+    background: #0D4E88 !important;
+    border-color: #0D4E88 !important;
+  }
+  .promocodes__container--title>.glyphicon-info-circle{
+    display: none;
+  }
