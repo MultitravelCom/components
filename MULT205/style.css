@@ -42,8 +42,11 @@
 }
 
 /* ********************************************* */
-
 /* MULT-205 */
+.confirm-booking__section {
+    margin-bottom: 30px;
+}
+
 .confirm-booking__promocodes {
     display: none;
     justify-content: space-between;
