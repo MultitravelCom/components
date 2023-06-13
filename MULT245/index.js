@@ -135,7 +135,10 @@ async function changeCopyButton(resultsListPage) {
           const absLinks = item.querySelectorAll('.info-card__actions a.abs');
   
           absLinks.forEach(link => {
-            link.setAttribute('target', '_blank');
+            link.addEventListener('click', event => {
+              event.preventDefault();
+              window.open(link.href, '_blank');
+            });
           });
         });
       } else {
@@ -145,6 +148,7 @@ async function changeCopyButton(resultsListPage) {
   
     checkResultsListPage();
   };
+  
   
 
 function aplicarModificaciones(resultsListPage) {
