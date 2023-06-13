@@ -117,6 +117,9 @@
 .promocodes__container--title>.glyphicon-info-circle {
     display: none;
 }
+.container__conocer__cupones__p>p {
+    font-size: 14px;
+}
 
 @media(max-width: 767px) {
     .container__conocer__cupones {
@@ -153,10 +156,6 @@
         position: relative;
     }
 
-    .container__conocer__cupones__p>p {
-        font-size: 14px;
-    }
-
     .cupones__btn__style {
         position: absolute;
         left: 28%;
@@ -168,6 +167,9 @@
         bottom: 16px;
         left: 15%;
         margin-left: 0;
+    }
+    .promocodes__container td {
+        padding: 4px 10px 0 !important;
     }
 }
 
@@ -356,9 +358,6 @@
 }
 
 @media(max-width: 467px) {
-    .promocodes__container {
-        margin-left: 4rem;
-    }
 
     .modal__cupones {
         width: 90%;
