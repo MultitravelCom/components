@@ -24,8 +24,6 @@ function moveBookingBreakdownTable() {
   
   // Llama a la función para iniciar la observación
   moveBookingBreakdownTable();
-  // Llama a la función para iniciar la observación
-  moveBookingBreakdownTable();
 
 
 async function changeText() {

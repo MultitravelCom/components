@@ -68,10 +68,6 @@
     border-radius: 16px 0px 0 40px;
     padding: 16px;
 }
-.promocodes{
-    display: flex;
-    flex-direction: column;
-}
 
 .promocodes__container--image {
     display: none;
@@ -91,10 +87,10 @@
     color: #FFFFFF;
 }
 
-/* .promocodes__container {
+.promocodes__container {
     position: absolute;
     left: 15%;
-} */
+}
 
 .promocode__apply-button {
     background: #0D4E88;
@@ -131,12 +127,6 @@
 .form-control {
     border-radius: 8px !important;
 }
-.promocodes__container > .booking-breakdown__table {
-    width: 90% !important;
-    margin: auto;
-    text-align: left;
-    position: inherit !important;
-}
 
 @media(max-width: 467px) {
     .modal__cupones {
@@ -160,6 +150,7 @@
     .confirm-booking__promocodes {
         flex-direction: column;
         align-items: flex-end;
+        height: 271px;
     }
 
     .promocodes {
@@ -198,12 +189,12 @@
         bottom: 16px;
     }
 
-    /* .promocodes__container {
+    .promocodes__container {
         position: absolute;
         bottom: 16px;
         left: 15%;
         margin-left: 0;
-    } */
+    }
 
     .promocodes__container td {
         padding: 4px 10px 0 !important;
