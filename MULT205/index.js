@@ -53,11 +53,11 @@ function ComponenteCupones() {
 const ModalCupones = ({ isOpen, onClose }) => {
 
     const handleOutsideClick = (event) => {
-        if (event.target.classList.contains('modal')) {
-            setModalOpen(false);
+        if (event.target.classList.contains('overlay__cupones')) {
+            onClose();
         }
     };
-    
+
     if (!isOpen) {
         return null;
     }
@@ -103,7 +103,6 @@ const App = () => {
         </>
     );
 };
-
 
 async function run() {
     await changeText();
