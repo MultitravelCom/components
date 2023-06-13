@@ -27,6 +27,7 @@ const ContainerCuponer = ({ isOpen, onClose }) => {
     }
 
     return (
+
         <div className="overlay__cupones" id="overlay__cupones">
             <div className="modal__cupones">
                 <div className="modal-content">
@@ -34,37 +35,27 @@ const ContainerCuponer = ({ isOpen, onClose }) => {
                         <h2>Te damos la bienvenida a nuestra cuponera</h2>
                         <span className="close" onClick={onClose}>X</span>
                     </div>
-                    <div className="overlay__cupones" id="overlay__cupones">
-                        <div className="modal__cupones">
-                            <div className="modal-content">
-                                <div className="modal__content-title">
-                                    <h2>Te damos la bienvenida a nuestra cuponera</h2>
-                                    <span className="close" onClick={onClose}>X</span>
+                    <div className="row modal-content__cupones-row">
+                        <div className="modal__content-uno">
+                            <div className="modal__content-uno-title">
+                                <div className="modal__content-uno-logo">
+                                    <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
                                 </div>
-                                <div className="row modal-content__cupones-row">
-                                    <div className="modal__content-uno">
-                                        <div className="modal__content-uno-title">
-                                            <div className="modal__content-uno-logo">
-                                                <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
-                                            </div>
-                                            <div className="modal__content-title-circleCalendar">
-                                                <div className="modal__content-title-h3">
-                                                    <h2>15% OFF sobre la tarifa base</h2>
-                                                </div>
-                                                <div className="modal__content-title-circle">
-                                                    <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                                    <p>Vuelos a Miami y Nueva York con Aerolineas Argentinas.</p>
-                                                </div>
-                                                <div className="modal__content-title-calendar">
-                                                    <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>                                 <p>Disponible hasta el 12/05/2023 hasta las 23:59.</p>
-                                                </div>
-                                            </div>
-                                            <div className="modal__content-cupon">
-                                                <h2>ARMTSALE15</h2>
-                                                <span>Copia el siguiente código</span>
-                                            </div>
-                                        </div>
+                                <div className="modal__content-title-circleCalendar">
+                                    <div className="modal__content-title-h3">
+                                        <h2>15% OFF sobre la tarifa base</h2>
                                     </div>
+                                    <div className="modal__content-title-circle">
+                                        <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+                                        <p>Vuelos a Miami y Nueva York con Aerolineas Argentinas.</p>
+                                    </div>
+                                    <div className="modal__content-title-calendar">
+                                        <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>                                 <p>Disponible hasta el 12/05/2023 hasta las 23:59.</p>
+                                    </div>
+                                </div>
+                                <div className="modal__content-cupon">
+                                    <h2>ARMTSALE15</h2>
+                                    <span>Copia el siguiente código</span>
                                 </div>
                             </div>
                         </div>
