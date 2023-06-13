@@ -21,28 +21,28 @@ async function showPromocodesDiv() {
     }
 }
 
-function ComponenteCupones() {
+function ComponenteCupones({ img_logo_cupon, code_cupon, cupon_texto_a, cupon_texto_b, cupon_texto_c }) {
     return (
         <div className="modal__content-uno">
             <div className="modal__content-uno-title">
                 <div className="modal__content-uno-logo">
-                    <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
+                    <img src={img_logo_cupon} />
                 </div>
                 <div className="modal__content-title-circleCalendar">
                     <div className="modal__content-title-h3">
-                        <h2>15% OFF sobre la tarifa base</h2>
+                        <h2>{cupon_texto_a}</h2>
                     </div>
                     <div className="modal__content-title-circle">
                         <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                        <p>Vuelos a Miami y Nueva York con Aerolineas Argentinas.</p>
+                        <p>{cupon_texto_b}</p>
                     </div>
                     <div className="modal__content-title-calendar">
                         <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
-                        <p>Disponible hasta el 12/05/2023 hasta las 23:59.</p>
+                        <p>{cupon_texto_c}</p>
                     </div>
                 </div>
                 <div className="modal__content-cupon">
-                    <h2>ARMTSALE15</h2>
+                    <h2>{code_cupon}</h2>
                     <span>Copia el siguiente código</span>
                 </div>
             </div>
@@ -72,7 +72,20 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        <ComponenteCupones />
+                        <ComponenteCupones
+                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
+                            code_cupon="DIADELPADRE10"
+                            cupon_texto_a="10% OFF para regalarle a papá"
+                            cupon_texto_b="Todos los productos"
+                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
+                        />
+                          <ComponenteCupones
+                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
+                            code_cupon="NEWSLETTER15OFF"
+                            cupon_texto_a="15% en tu primera compra"
+                            cupon_texto_b="Todos los productos"
+                            cupon_texto_c="Disponible hasta el 30/06/2023 hasta las 23:59"
+                        />
                     </div>
                 </div>
             </div>
