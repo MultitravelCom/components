@@ -319,7 +319,7 @@
     line-height: 14px;
     padding: 0 5px 0 0;
     max-width: 390px;
-    margin: 0 !important;
+    margin: 2px 0 !important;
 }
 
 .modal__content-uno-logo {
@@ -363,6 +363,9 @@
     .modal__cupones {
         width: 90%;
     }
+    .modal__content-title-h3>h2 {
+        font-size: 16px;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -380,7 +383,6 @@
         height: 35px;
         width: 100%;
         margin-bottom: 0.5rem;
-        background-size: 15%;
         border-radius: 1rem 1rem 0 0;
         border-right: 0;
     }
