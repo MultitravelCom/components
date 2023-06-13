@@ -216,9 +216,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 23px;
-    line-height: 49px;
     color: #FFFFFF;
-
 }
 
 .modal__content-title-h3>h2 {
@@ -380,7 +378,8 @@
     .modal__content-title>h2 {
         font-size: 13px;
         text-align: left;
-        padding-left: 20px;
+        width: 79%;
+        padding: 8px 16px;
     }
 
     .modal__content-uno-logo {
