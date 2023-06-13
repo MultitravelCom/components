@@ -68,17 +68,18 @@ const ContainerCuponer = ({ isOpen, onClose }) => {
 const App = () => {
     const [modalOpen, setModalOpen] = React.useState(false);
 
-    const handleOpenModal = () => {
+    const handleOpenModal = (event) => {
+        event.preventDefault();
         setModalOpen(true);
-    };
-
-    const handleCloseModal = () => {
+      };
+      
+      const handleCloseModal = () => {
         setModalOpen(false);
-    };
+      };
 
     return (
         <div>
-            <div className="confirm-booking__promocodes">
+            
                 <div className="container__conocer__cupones">
                     <div className="container__conocer__cupones__p">
                         <p>Conoce y elige de nuestros diferentes cupones el que más te convenga</p>
@@ -87,7 +88,6 @@ const App = () => {
                         <button className="cupones__btn__style" onClick={handleOpenModal}>Conocer cupones</button>
                     </div>
                 </div>
-            </div>
             <ContainerCuponer isOpen={modalOpen} onClose={handleCloseModal} />
         </div>
     );
