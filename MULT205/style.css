@@ -413,7 +413,7 @@
 
     .modal__content-cupon {
         padding: 5px;
-    }
+        width: 100%;
 
     .modal-content__cupones-row {
         margin: 0 1rem;
