@@ -380,11 +380,11 @@
     }
 
     .modal__content-uno-logo {
-        height: 35px;
         width: 100%;
         margin-bottom: 0.5rem;
         border-radius: 1rem 1rem 0 0;
         border-right: 0;
+        padding: 6px;
     }
 
     .modal__content-cupon {
