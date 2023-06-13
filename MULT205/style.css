@@ -62,7 +62,6 @@
 .container__conocer__cupones {
     max-width: 366px;
     min-height: 130px;
-
     background: #2A91EB;
     border: 1px solid #FFFFFF;
     border-right: 0;
@@ -147,12 +146,13 @@
         border-radius: 16px 16px 16px 40px;
         border: 1px solid #FFFFFF;
         margin: auto;
+        margin-top: 9px;
     }
 
     .confirm-booking__promocodes {
         flex-direction: column;
         align-items: flex-end;
-        height: 271px;
+        min-height: 285px;
     }
 
     .promocodes {
