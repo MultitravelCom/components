@@ -120,6 +120,28 @@ function handleClick(event) {
     });
 }
 
+const ContainerCuponer = ({ title_cupon, destination__cupon, data__cupon }) => {
+    return (
+        <>
+            <div classList="main__container__cupon">
+                <div classList="main__container__cupon__img">
+                    
+                </div>
+                <div classList="main__container__cupon__text">
+                    <h2>{title_cupon}</h2>
+                    <div class="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+                    <p>{destination__cupon}</p>
+                    <div class="main__warningPric__icon glyphicon glyphicon-calendar"></div>
+                    <p>{data__cupon}</p>
+                </div>
+                <div classList="main__container__cupon__cupon">
+
+                </div>
+            </div >
+        </>
+    )
+}
+
 async function run() {
     await changeText();
     await agreeBtn();

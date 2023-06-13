@@ -294,6 +294,7 @@
 
 .modal__content-uno-title {
     display: flex;
+    width: 100%;
 }
 
 .modal-content__cupones-row {
@@ -414,6 +415,7 @@
         padding: 0.5rem 1rem;
         border-bottom: 1px dashed #0D4E88;
         border-left: 0px dashed #0D4E88;
+        border-right: 0;
     }
 
     .modal__content-dos-logo,
