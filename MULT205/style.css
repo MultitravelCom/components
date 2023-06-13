@@ -250,7 +250,9 @@
 }
 
 .modal__content-cupon {
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     margin: auto;
 }
@@ -294,6 +296,7 @@
 
 .modal__content-uno-title {
     display: flex;
+    align-items: center;
     width: 100%;
 }
 
@@ -325,12 +328,10 @@
 }
 
 .modal__content-uno-logo {
-    width: 130px;
+    display: flex;
+    justify-content: center;
     border-radius: 1rem 0 0 1rem;
-    background-repeat: no-repeat;
-    background-position: center;
     background: rgba(13, 78, 136, 0.1);
-    background-image: url(https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg);
     border-right: 1px dashed #0D4E88;
 }
 
@@ -359,7 +360,6 @@
 }
 
 @media(max-width: 467px) {
-
     .modal__cupones {
         width: 90%;
     }

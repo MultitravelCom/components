@@ -51,18 +51,18 @@ function handleClick(event) {
     const modalCupones = document.createElement('div');
     modalCupones.classList.add('modal-cupones');
     modalCupones.innerHTML = `
-        <div class="overlay__cupones" id="overlay__cupones">
-        <div class="modal__cupones">
-            <div class="modal-content">
-                <div class="modal__content-title">
-                    <h2>Te damos la bienvenida a nuestra cuponera</h2>
-                    <span class="close">X</span>
-                </div>
+    <div class="overlay__cupones" id="overlay__cupones">
+    <div class="modal__cupones">
+        <div class="modal-content">
+            <div class="modal__content-title">
+                <h2>Te damos la bienvenida a nuestra cuponera</h2>
+                <span class="close">X</span>
+            </div>
             <div class="row modal-content__cupones-row">
                 <div class="modal__content-uno">
                     <div class="modal__content-uno-title">
                         <div class="modal__content-uno-logo">
-                        <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
+                            <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
                         </div>
                         <div class="modal__content-title-circleCalendar">
                             <div class="modal__content-title-h3">
@@ -70,23 +70,23 @@ function handleClick(event) {
                             </div>
                             <div class="modal__content-title-circle">
                                 <div class="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                    <p>Vuelos a Miami y Nueva York con Aerolineas Argentinas.</p>
-                                </div>
+                                <p>Vuelos a Miami y Nueva York con Aerolineas Argentinas.</p>
+                            </div>
                             <div class="modal__content-title-calendar">
                                 <div class="main__warningPric__icon glyphicon glyphicon-calendar"></div>
                                 <p>Disponible hasta el 12/05/2023 hasta las 23:59.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal__content-cupon">
-                        <h2>ARMTSALE15</h2>
-                        <span>Copia el siguiente código</span>
+                        <div class="modal__content-cupon">
+                            <h2>ARMTSALE15</h2>
+                            <span>Copia el siguiente código</span>
+                        </div>
                     </div>
                 </div>
                 <div class="modal__content-uno">
                     <div class="modal__content-uno-title">
                         <div class="modal__content-uno-logo">
-                        <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
+                            <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
                         </div>
                         <div class="modal__content-title-circleCalendar">
                             <div class="modal__content-title-h3">
@@ -94,8 +94,8 @@ function handleClick(event) {
                             </div>
                             <div class="modal__content-title-circle">
                                 <div class="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                    <p>Vuelos a Madrid, Rio de Janeiro, Cancun, Punta Cana, Bogota, Havana, Lima, Roma, Santiago de Chile, Salvador de Bahia, Porto Seguro con Aerolíneas Argentinas.</p>
-                                </div>
+                                <p>Vuelos a Madrid, Rio de Janeiro, Cancun, Punta Cana, Bogota, Havana, Lima, Roma, Santiago de Chile, Salvador de Bahia, Porto Seguro con Aerolíneas Argentinas.</p>
+                            </div>
                             <div class="modal__content-title-calendar">
                                 <div class="main__warningPric__icon glyphicon glyphicon-calendar"></div>
                                 <p>Disponible hasta el 12/05/2023 hasta las 23:59.</p>
@@ -108,9 +108,9 @@ function handleClick(event) {
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </div>
+</div>
         `;
 
     // Agrega el modal al DOM
