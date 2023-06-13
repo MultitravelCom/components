@@ -113,7 +113,7 @@ async function applyDisplayNoneToAllButLastButton() {
     const absLinks = actionsContainer.querySelectorAll('a.abs');
 
     absLinks.forEach(link => {
-        link.target = '_blank';
+        link.setAttribute('target', '_blank');
     });
 }
 
