@@ -86,7 +86,6 @@
 }
 
 .promocodes__container {
-    margin-bottom: 2rem;
     margin-left: 9rem;
 }
 
@@ -124,6 +123,7 @@
 
     .confirm-booking__promocodes {
         flex-direction: column;
+        align-items: flex-end;
     }
 
     .promocodes {
