@@ -129,6 +129,12 @@ const App = () => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+
+    React.useEffect(() => {
+        const confirmBookingPromocodes = document.querySelector('.confirm-booking__promocodes');
+        confirmBookingPromocodes.style.display = 'flex';
+    }, []);
+
     return (
         <>
             <div className="container__conocer__cupones__p">
