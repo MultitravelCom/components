@@ -1,28 +1,28 @@
-function moveBookingBreakdownTable() {
-    const observer = new MutationSummary({
-      rootNode: document.querySelector('.confirm-booking__promocodes'),
-      callback: handleChanges,
-      queries: [{ element: '.booking-breakdown__table' }],
-    });
+// function moveBookingBreakdownTable() {
+//     const observer = new MutationSummary({
+//       rootNode: document.querySelector('.confirm-booking__promocodes'),
+//       callback: handleChanges,
+//       queries: [{ element: '.booking-breakdown__table' }],
+//     });
   
-    function handleChanges(summaries) {
-      for (let summary of summaries) {
-        const addedNodes = summary.added;
-        for (let node of addedNodes) {
-          if (node.classList && node.classList.contains('booking-breakdown__table')) {
-            const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-            shoppingBasketLines.appendChild(node);
-          }
-        }
-      }
-    }
+//     function handleChanges(summaries) {
+//       for (let summary of summaries) {
+//         const addedNodes = summary.added;
+//         for (let node of addedNodes) {
+//           if (node.classList && node.classList.contains('booking-breakdown__table')) {
+//             const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+//             shoppingBasketLines.appendChild(node);
+//           }
+//         }
+//       }
+//     }
   
-    // Invocar handleChanges() inicialmente para manejar los elementos existentes
-    handleChanges(observer.query());
-  }
+//     // Invocar handleChanges() inicialmente para manejar los elementos existentes
+//     handleChanges(observer.query());
+//   }
   
-  // Llama a la función para iniciar la detección y el movimiento
-  moveBookingBreakdownTable();
+//   // Llama a la función para iniciar la detección y el movimiento
+//   moveBookingBreakdownTable();
 
 
 async function changeText() {
