@@ -141,9 +141,9 @@
     }
 
     .container__conocer__cupones {
-        width: 96%;
         border-radius: 16px 16px 16px 40px;
         border: 1px solid #FFFFFF;
+        margin: auto;
     }
 
     .confirm-booking__promocodes {
