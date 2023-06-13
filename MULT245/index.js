@@ -112,33 +112,40 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
 
 async function changeCopyButton(resultsListPage) {
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
-
+  
     itemsButtonComprar.forEach(item => {
-        const buttonElement = item.querySelector('.info-card__options-toggle');
-        buttonElement.textContent = 'Comprar';
-        buttonElement.style.display = 'block';
+      const buttonElement = item.querySelector('.info-card__options-toggle');
+      buttonElement.textContent = 'Comprar';
+      buttonElement.style.display = 'block';
     });
-
+  
     const checkResultsListPage = () => {
-        const resultsPage = document.querySelector('.results-list__page');
-
-        if (resultsPage) {
-            const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
-
-            resultsListPage.forEach(item => {
-                const selectors = item.querySelectorAll('.info-card__image-holder');
-
-                selectors.forEach(selector => {
-                    selector.classList.remove('js-open-gallery');
-                });
-            });
-        } else {
-            setTimeout(checkResultsListPage, 2000);
-        }
+      const resultsPage = document.querySelector('.results-list__page');
+  
+      if (resultsPage) {
+        const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
+  
+        resultsListPage.forEach(item => {
+          const selectors = item.querySelectorAll('.info-card__image-holder');
+  
+          selectors.forEach(selector => {
+            selector.classList.remove('js-open-gallery');
+          });
+  
+          const absLinks = item.querySelectorAll('.info-card__actions a.abs');
+  
+          absLinks.forEach(link => {
+            link.setAttribute('target', '_blank');
+          });
+        });
+      } else {
+        setTimeout(checkResultsListPage, 2000);
+      }
     };
-
+  
     checkResultsListPage();
-};
+  };
+  
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
