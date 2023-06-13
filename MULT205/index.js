@@ -1,3 +1,33 @@
+function moveBookingBreakdownTable() {
+    const container = document.querySelector('.promocodes__container');
+    const applyButton = document.querySelector('.promocode__apply-button');
+  
+    const observer = new MutationObserver(mutationsList => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'disabled' && !applyButton.disabled) {
+          const bookingBreakdownTable = container.querySelector('.booking-breakdown__table');
+          if (bookingBreakdownTable) {
+            const shoppingBasketLines = document.querySelector('.shopping-basket__lines');
+            shoppingBasketLines.appendChild(bookingBreakdownTable);
+          }
+        }
+      }
+    });
+  
+    const observerOptions = {
+      attributes: true,
+      attributeFilter: ['disabled']
+    };
+  
+    observer.observe(applyButton, observerOptions);
+  }
+  
+  // Llama a la función para iniciar la observación
+  moveBookingBreakdownTable();
+  // Llama a la función para iniciar la observación
+  moveBookingBreakdownTable();
+
+
 async function changeText() {
     const span = document.querySelector('.promocodes__container tr:nth-child(3) td span');
 
