@@ -13,7 +13,7 @@ function moveBookingBreakdownTable() {
             for (let node of addedNodes) {
                 if (node.classList && node.classList.contains('booking-breakdown__table')) {
                     const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-                    node.classList.add('shopping-basket__line'); /
+                    node.classList.add('shopping-basket__line'); 
                     shoppingBasketLines.appendChild(node);
 
                     const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line-price');
