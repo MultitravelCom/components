@@ -292,10 +292,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #FFFFFF;
-    border: 1px solid #0D4E88;
     border-radius: 16px;
     z-index: 2;
     overflow: hidden;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
 }
 
 .modal-content__cupones {
