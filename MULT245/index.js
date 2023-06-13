@@ -137,6 +137,38 @@ async function changeCopyButton(resultsListPage) {
 
                 selectors.forEach(selector => {
                     selector.classList.remove('js-open-gallery');
+                    async function changeCopyButton(resultsListPage) {
+                        const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
+
+                        itemsButtonComprar.forEach(item => {
+                            const buttonElement = item.querySelector('.info-card__options-toggle');
+                            buttonElement.textContent = 'Comprar';
+                            buttonElement.style.display = 'block';
+                        });
+
+                        const checkResultsListPage = () => {
+                            const resultsPage = document.querySelector('.results-list__page');
+
+                            if (resultsPage) {
+                                const resultsListPage = resultsPage.querySelectorAll('.results-list__item');
+
+                                resultsListPage.forEach(item => {
+                                    const selectors = item.querySelectorAll('.info-card__image-holder');
+
+                                    selectors.forEach(selector => {
+                                        selector.classList.remove('js-open-gallery');
+                                        selector.addEventListener('click', (event) => {
+                                            event.preventDefault();
+                                        });
+                                    });
+                                });
+                            } else {
+                                setTimeout(checkResultsListPage, 2000);
+                            }
+                        };
+
+                        checkResultsListPage();
+                    };
                 });
             });
         } else {
