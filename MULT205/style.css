@@ -142,7 +142,7 @@
 
 }
 
-@media(min-width:769px) and (max-width: 1025px) {
+@media(min-width:768px) and (max-width: 1025px) {
     .confirm-booking__promocodes {
         justify-content: flex-end;
     }
@@ -355,7 +355,7 @@
     z-index: 0 !important;
 }
 
-@media(max-width: 467) {
+@media(max-width: 467px) {
     .promocodes__container {
         margin-left: 4rem;
     }
