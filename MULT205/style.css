@@ -197,8 +197,6 @@
     color: white;
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 49px;
     color: #FFFFFF;
     padding: .5rem;
 }
@@ -345,8 +343,8 @@
     opacity: .8;
     padding: 0 5px;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 14px;
+    right: 10px;
     background: white;
     border-radius: 100%;
 }
