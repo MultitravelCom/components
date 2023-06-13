@@ -141,7 +141,7 @@
     }
 
     .container__conocer__cupones {
-        width: 96%;
+        width: 94%;
         border-radius: 16px 16px 16px 40px;
         border: 1px solid #FFFFFF;
         margin: auto;
@@ -448,9 +448,5 @@
     .modal__content-dos-logo,
     .modal__content-tres-logo {
         height: 67px;
-    }
-
-    .container__conocer__cupones {
-        width: 100%;
     }
 }
