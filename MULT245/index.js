@@ -112,9 +112,9 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
 
     const absLinks = actionsContainer.querySelectorAll('a.abs');
 
-    absLinks.forEach(link => {
-        link.setAttribute('target', '_blank');
-    });
+    for (let i = 0; i < absLinks.length; i++) {
+        absLinks[i].setAttribute('target', '_blank');
+    }
 }
 
 async function changeCopyButton(resultsListPage) {
