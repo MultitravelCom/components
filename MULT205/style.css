@@ -122,7 +122,18 @@
     font-size: 14px;
 }
 
+@media(max-width: 467px) {
+    .modal__cupones {
+        width: 90%;
+    }
+}
+
 @media(max-width: 767px) {
+
+    .modal__content-title-h3>h2 {
+        font-size: 16px;
+    }
+
     .container__conocer__cupones {
         width: 100%;
     }
@@ -145,6 +156,7 @@
     }
 
 }
+
 
 @media(min-width:768px) and (max-width: 1025px) {
     .confirm-booking__promocodes {
@@ -198,7 +210,6 @@
     font-style: normal;
     font-weight: 600;
     color: #FFFFFF;
-    padding: .5rem;
 }
 
 .modal__content-title>h2 {
@@ -227,6 +238,7 @@
     padding: 0 5px 0 0;
     max-width: 390px;
 }
+
 .modal__content-cupon>h2 {
     font-style: normal;
     font-weight: 700;
@@ -310,6 +322,7 @@
     border-right: 1px dashed #0D4E88;
 
 }
+
 .modal__content-title-circleCalendar p {
     font-style: italic;
     font-weight: 500;
@@ -418,14 +431,5 @@
 
     .container__conocer__cupones {
         width: 100%;
-    }
-}
-
-@media(max-width: 467px) {
-    .modal__cupones {
-        width: 90%;
-    }
-    .modal__content-title-h3>h2 {
-        font-size: 16px;
     }
 }
