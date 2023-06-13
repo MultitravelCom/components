@@ -1,28 +1,31 @@
-// function moveBookingBreakdownTable() {
-//     const observer = new MutationSummary({
-//       rootNode: document.querySelector('.confirm-booking__promocodes'),
-//       callback: handleChanges,
-//       queries: [{ element: '.booking-breakdown__table' }],
-//     });
+function moveBookingBreakdownTable() {
+    const observer = new MutationObserver((mutationsList, observer) => {
+      for (let mutation of mutationsList) {
+        const addedNodes = mutation.addedNodes;
+        for (let node of addedNodes) {
+          if (node.classList && node.classList.contains('booking-breakdown__table')) {
+            const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+            shoppingBasketLines.appendChild(node);
+          }
+        }
+      }
+    });
   
-//     function handleChanges(summaries) {
-//       for (let summary of summaries) {
-//         const addedNodes = summary.added;
-//         for (let node of addedNodes) {
-//           if (node.classList && node.classList.contains('booking-breakdown__table')) {
-//             const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-//             shoppingBasketLines.appendChild(node);
-//           }
-//         }
-//       }
-//     }
+    const targetNode = document.querySelector('.confirm-booking__promocodes');
+    const config = { childList: true, subtree: true };
   
-//     // Invocar handleChanges() inicialmente para manejar los elementos existentes
-//     handleChanges(observer.query());
-//   }
+    observer.observe(targetNode, config);
   
-//   // Llama a la función para iniciar la detección y el movimiento
-//   moveBookingBreakdownTable();
+    // Mover los elementos existentes inicialmente
+    const existingTables = document.querySelectorAll('.confirm-booking__promocodes .booking-breakdown__table');
+    for (let table of existingTables) {
+      const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+      shoppingBasketLines.appendChild(table);
+    }
+  }
+  
+  // Llama a la función para iniciar la detección y el movimiento
+  moveBookingBreakdownTable();
 
 
 async function changeText() {
