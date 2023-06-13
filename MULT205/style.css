@@ -117,6 +117,7 @@
 .promocodes__container--title>.glyphicon-info-circle {
     display: none;
 }
+
 .container__conocer__cupones__p>p {
     font-size: 14px;
 }
@@ -168,6 +169,7 @@
         left: 15%;
         margin-left: 0;
     }
+
     .promocodes__container td {
         padding: 4px 10px 0 !important;
     }
@@ -224,22 +226,9 @@
     font-size: 12px;
     line-height: 14px;
     margin: auto;
-    padding: 15px 0;
+    padding: 0 5px 0 0;
     max-width: 390px;
 }
-
-.glyphicon-calendar>p {
-    margin: auto 0;
-}
-
-.modal__content-title-calendar {
-
-    font-style: italic;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-}
-
 .modal__content-cupon>h2 {
     font-style: normal;
     font-weight: 700;
@@ -254,10 +243,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: auto;
-}
-
-.glyphicon-info-circle {
     margin: auto;
 }
 
@@ -326,6 +311,16 @@
     border-right: 1px dashed #0D4E88;
 
 }
+.modal__content-title-circleCalendar p {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin: auto;
+    padding: 0 5px 0 0;
+    max-width: 390px;
+    margin: 0 !important;
+}
 
 .modal__content-uno-logo {
     display: flex;
@@ -333,6 +328,10 @@
     border-radius: 1rem 0 0 1rem;
     background: rgba(13, 78, 136, 0.1);
     border-right: 1px dashed #0D4E88;
+}
+
+.modal__content-uno-logo>img {
+    margin: 0 16px;
 }
 
 .close {
