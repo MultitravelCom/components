@@ -21,7 +21,6 @@ async function showPromocodesDiv() {
     }
 }
 
-
 function ComponenteCupones() {
     return (
         <div className="modal__content-uno">
@@ -51,21 +50,26 @@ function ComponenteCupones() {
     )
 }
 
-
-
 const ModalCupones = ({ isOpen, onClose }) => {
+
+    const handleOutsideClick = (event) => {
+        if (event.target.classList.contains('modal')) {
+            setModalOpen(false);
+        }
+    };
+    
     if (!isOpen) {
         return null;
     }
 
     return (
 
-        <div className="overlay__cupones" id="overlay__cupones">
+        <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick}>
             <div className="modal__cupones">
                 <div className="modal-content">
                     <div className="modal__content-title">
                         <h2>Te damos la bienvenida a nuestra cuponera</h2>
-                        <span className="close" onClick={onClose}>X</span>
+                        <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
                         <ComponenteCupones />
@@ -87,7 +91,6 @@ const App = () => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
-
     return (
         <>
             <div className="container__conocer__cupones__p">

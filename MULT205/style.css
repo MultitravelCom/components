@@ -336,17 +336,19 @@
 }
 
 .close {
-    position: absolute;
-    top: 6px;
-    right: 12px;
-    font-size: 14px;
-    font-weight: bold;
+    background: 0 0;
+    border: 0;
     color: black;
     cursor: pointer;
-    border-radius: 50%;
+    font-family: inherit;
+    font-size: 1em;
+    opacity: .8;
+    padding: 0 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     background: white;
-    padding: 8px;
-    opacity: 1 !important;
+    border-radius: 100%;
 }
 
 .glyphicon-calendar {
@@ -357,15 +359,6 @@
 
 .booking-steps__item {
     z-index: 0 !important;
-}
-
-@media(max-width: 467px) {
-    .modal__cupones {
-        width: 90%;
-    }
-    .modal__content-title-h3>h2 {
-        font-size: 16px;
-    }
 }
 
 @media(max-width: 1024px) {
@@ -381,7 +374,6 @@
 
     .modal__content-uno-logo {
         width: 100%;
-        margin-bottom: 0.5rem;
         border-radius: 1rem 1rem 0 0;
         border-right: 0;
         padding: 6px;
@@ -428,5 +420,14 @@
 
     .container__conocer__cupones {
         width: 100%;
+    }
+}
+
+@media(max-width: 467px) {
+    .modal__cupones {
+        width: 90%;
+    }
+    .modal__content-title-h3>h2 {
+        font-size: 16px;
     }
 }
