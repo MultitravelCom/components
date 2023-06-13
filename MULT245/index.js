@@ -86,37 +86,36 @@ async function changeCopyMap(resultsListPage) {
 
 async function applyDisplayNoneToAllButLastButton() {
     const actionsContainer = document.querySelector('.info-card__actions');
-  
+
     if (!actionsContainer) {
-      // Esperar un tiempo y volver a llamar a la función
-      await wait(2000);
-      await applyDisplayNoneToAllButLastButton();
-      return;
+        // Esperar un tiempo y volver a llamar a la función
+        await wait(2000);
+        await applyDisplayNoneToAllButLastButton();
+        return;
     }
-  
     const buttonsAndLinks = actionsContainer.querySelectorAll('button, a');
-  
+
     for (let i = 0; i < buttonsAndLinks.length; i++) {
-      if (i !== buttonsAndLinks.length - 1) {
-        buttonsAndLinks[i].style.display = 'none';
-      } else {
-        const anchorTags = buttonsAndLinks[i].querySelectorAll('a.abs');
-        anchorTags.forEach(tag => {
-          tag.setAttribute('target', '_blank');
-        });
-      }
+        if (i !== buttonsAndLinks.length - 1) {
+            buttonsAndLinks[i].style.display = 'none';
+        }
     }
-  
+
     const lastButtonContainer = buttonsAndLinks[buttonsAndLinks.length - 1].parentNode;
     lastButtonContainer.style.display = 'inline-block';
-  
+
     const buttonsVerDetalle = document.querySelectorAll('.info-card__options-toggle');
-  
+
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
-      buttonsVerDetalle[i].textContent = 'Comprar';
+        buttonsVerDetalle[i].textContent = 'Comprar';
     }
-  }
-  
+
+    const absLinks = actionsContainer.querySelectorAll('a.abs');
+
+    absLinks.forEach(link => {
+        link.target = '_blank';
+    });
+}
 
 async function changeCopyButton(resultsListPage) {
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
