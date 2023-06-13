@@ -62,6 +62,7 @@ function handleClick(event) {
                 <div class="modal__content-uno">
                     <div class="modal__content-uno-title">
                         <div class="modal__content-uno-logo">
+                        <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
                         </div>
                         <div class="modal__content-title-circleCalendar">
                             <div class="modal__content-title-h3">
@@ -85,6 +86,7 @@ function handleClick(event) {
                 <div class="modal__content-uno">
                     <div class="modal__content-uno-title">
                         <div class="modal__content-uno-logo">
+                        <img src="https://multitravelcom.github.io/style/General/img/Logo%20AA%20cupon.svg" />
                         </div>
                         <div class="modal__content-title-circleCalendar">
                             <div class="modal__content-title-h3">
@@ -120,27 +122,27 @@ function handleClick(event) {
     });
 }
 
-const ContainerCuponer = ({ title_cupon, destination__cupon, data__cupon }) => {
-    return (
-        <>
-            <div classList="main__container__cupon">
-                <div classList="main__container__cupon__img">
-                    
-                </div>
-                <div classList="main__container__cupon__text">
-                    <h2>{title_cupon}</h2>
-                    <div class="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                    <p>{destination__cupon}</p>
-                    <div class="main__warningPric__icon glyphicon glyphicon-calendar"></div>
-                    <p>{data__cupon}</p>
-                </div>
-                <div classList="main__container__cupon__cupon">
+// const ContainerCuponer = ({ title_cupon, destination__cupon, data__cupon }) => {
+//     return (
+//         <>
+//             <div classList="main__container__cupon">
+//                 <div classList="main__container__cupon__img">
 
-                </div>
-            </div >
-        </>
-    )
-}
+//                 </div>
+//                 <div classList="main__container__cupon__text">
+//                     <h2>{title_cupon}</h2>
+//                     <div class="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+//                     <p>{destination__cupon}</p>
+//                     <div class="main__warningPric__icon glyphicon glyphicon-calendar"></div>
+//                     <p>{data__cupon}</p>
+//                 </div>
+//                 <div classList="main__container__cupon__cupon">
+
+//                 </div>
+//             </div >
+//         </>
+//     )
+// }
 
 async function run() {
     await changeText();
