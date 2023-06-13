@@ -71,25 +71,24 @@ const App = () => {
     const handleOpenModal = (event) => {
         event.preventDefault();
         setModalOpen(true);
-      };
-      
-      const handleCloseModal = () => {
+    };
+
+    const handleCloseModal = () => {
         setModalOpen(false);
-      };
+    };
 
     return (
-        <div>
-            
-                <div className="container__conocer__cupones">
-                    <div className="container__conocer__cupones__p">
-                        <p>Conoce y elige de nuestros diferentes cupones el que más te convenga</p>
-                    </div>
-                    <div className="container__conocer__cupones__btn">
-                        <button className="cupones__btn__style" onClick={handleOpenModal}>Conocer cupones</button>
-                    </div>
+       <>
+            <div className="container__conocer__cupones">
+                <div className="container__conocer__cupones__p">
+                    <p>Conoce y elige de nuestros diferentes cupones el que más te convenga</p>
                 </div>
+                <div className="container__conocer__cupones__btn">
+                    <button className="cupones__btn__style" onClick={handleOpenModal}>Conocer cupones</button>
+                </div>
+            </div>
             <ContainerCuponer isOpen={modalOpen} onClose={handleCloseModal} />
-        </div>
+        </>
     );
 };
 
