@@ -88,7 +88,6 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     const actionsContainer = resultsListPage.querySelector('.info-card__actions');
 
     if (!actionsContainer) {
-        // Esperar un tiempo y volver a llamar a la función
         await wait(2000);
         await applyDisplayNoneToAllButLastButton(resultsListPage);
         return;
@@ -108,12 +107,6 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
 
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
         buttonsVerDetalle[i].textContent = 'Comprar';
-    }
-
-    const absLinks = actionsContainer.querySelectorAll('a.abs');
-
-    for (let i = 0; i < absLinks.length; i++) {
-        absLinks[i].setAttribute('target', '_blank');
     }
 }
 
