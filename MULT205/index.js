@@ -13,11 +13,10 @@ function moveBookingBreakdownTable() {
             for (let node of addedNodes) {
                 if (node.classList && node.classList.contains('booking-breakdown__table')) {
                     const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-                    node.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
+                    node.classList.add('shopping-basket__line'); /
                     shoppingBasketLines.appendChild(node);
 
-                    // Aplicar estilo display: none a los elementos .shopping-basket--full .shopping-basket__line:nth-child(2n)
-                    const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line:nth-child(2n)');
+                    const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line-price');
                     fullLines.forEach(line => {
                         line.style.display = 'none';
                     });
@@ -31,15 +30,13 @@ function moveBookingBreakdownTable() {
 
     observer.observe(targetNode, config);
 
-    // Mover los elementos existentes inicialmente
     const existingTables = document.querySelectorAll('.confirm-booking__promocodes .booking-breakdown__table');
     for (let table of existingTables) {
         const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-        table.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
+        table.classList.add('shopping-basket__line');
         shoppingBasketLines.appendChild(table);
 
-        // Aplicar estilo display: none a los elementos .shopping-basket--full .shopping-basket__line:nth-child(2n)
-        const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line:nth-child(2n)');
+        const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line-price');
         fullLines.forEach(line => {
             line.style.display = 'none';
         });
