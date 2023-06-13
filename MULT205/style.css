@@ -87,7 +87,8 @@
 }
 
 .promocodes__container {
-    position: absolute
+    position: absolute;
+    left: 15%;
 }
 
 .promocode__apply-button {
