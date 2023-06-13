@@ -328,11 +328,11 @@
     border-radius: 1rem 0 0 1rem;
     background: rgba(13, 78, 136, 0.1);
     border-right: 1px dashed #0D4E88;
+    padding: 1rem;
 }
 
 .modal__content-uno-logo>img {
-    margin: 0 16px;
-    padding: 8px;
+    margin: 0 24px;
 }
 
 .close {
