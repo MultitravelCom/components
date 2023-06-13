@@ -1,34 +1,45 @@
 function moveBookingBreakdownTable() {
     const observer = new MutationObserver((mutationsList, observer) => {
-        for (let mutation of mutationsList) {
-            const addedNodes = mutation.addedNodes;
-            for (let node of addedNodes) {
-                if (node.classList && node.classList.contains('booking-breakdown__table')) {
-                    const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-                    node.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
-                    shoppingBasketLines.appendChild(node);
-                }
-            }
+      for (let mutation of mutationsList) {
+        const addedNodes = mutation.addedNodes;
+        for (let node of addedNodes) {
+          if (node.classList && node.classList.contains('booking-breakdown__table')) {
+            const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+            node.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
+            shoppingBasketLines.appendChild(node);
+  
+            // Aplicar estilo display: none a los elementos .shopping-basket--full .shopping-basket__line:nth-child(2n)
+            const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line:nth-child(2n)');
+            fullLines.forEach(line => {
+              line.style.display = 'none';
+            });
+          }
         }
+      }
     });
-
+  
     const targetNode = document.querySelector('.confirm-booking__promocodes');
     const config = { childList: true, subtree: true };
-
+  
     observer.observe(targetNode, config);
-
+  
     // Mover los elementos existentes inicialmente
     const existingTables = document.querySelectorAll('.confirm-booking__promocodes .booking-breakdown__table');
     for (let table of existingTables) {
-        const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-        table.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
-        shoppingBasketLines.appendChild(table);
+      const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+      table.classList.add('shopping-basket__line'); // Agregar la clase shopping-basket__line
+      shoppingBasketLines.appendChild(table);
+  
+      // Aplicar estilo display: none a los elementos .shopping-basket--full .shopping-basket__line:nth-child(2n)
+      const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line:nth-child(2n)');
+      fullLines.forEach(line => {
+        line.style.display = 'none';
+      });
     }
-}
-
-// Llama a la función para iniciar la detección y el movimiento
-moveBookingBreakdownTable();
-
+  }
+  
+  // Llama a la función para iniciar la detección y el movimiento
+  moveBookingBreakdownTable();
 
 async function changeText() {
     const span = document.querySelector('.promocodes__container tr:nth-child(3) td span');
