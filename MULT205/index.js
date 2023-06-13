@@ -1,25 +1,25 @@
 function moveBookingBreakdownTable() {
     const observer = new MutationSummary({
-      rootNode: document.querySelector('.confirm-booking__promocodes'),
-      callback: handleChanges,
-      queries: [{ element: '.booking-breakdown__table' }],
+        rootNode: document.querySelector('.confirm-booking__promocodes'),
+        callback: handleChanges,
+        queries: [{ element: '.booking-breakdown__table' }],
     });
-  
+
     function handleChanges(summaries) {
-      for (let summary of summaries) {
-        const addedNodes = summary.added;
-        for (let node of addedNodes) {
-          if (node.classList && node.classList.contains('booking-breakdown__table')) {
-            const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-            shoppingBasketLines.appendChild(node);
-          }
+        for (let summary of summaries) {
+            const addedNodes = summary.added;
+            for (let node of addedNodes) {
+                if (node.classList && node.classList.contains('booking-breakdown__table')) {
+                    const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
+                    shoppingBasketLines.appendChild(node);
+                }
+            }
         }
-      }
     }
-  }
-  
-  // Llama a la función para iniciar la detección y el movimiento
-  moveBookingBreakdownTable();
+}
+
+// Llama a la función para iniciar la detección y el movimiento
+moveBookingBreakdownTable();
 
 
 async function changeText() {
@@ -103,7 +103,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                          <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="NEWSLETTER15OFF"
                             cupon_texto_a="15% en tu primera compra"
