@@ -118,13 +118,13 @@ async function changeCopyButton(resultsListPage) {
         buttonElement.textContent = 'Comprar';
         buttonElement.style.display = 'block';
 
-        buttonElement.addEventListener('click', (event) => {
-            event.preventDefault();
-            const link = item.querySelector('a.abs');
-            if (link) {
-                window.open(link.href, '_blank');
-            }
-        });
+        // buttonElement.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     const link = item.querySelector('a.abs');
+        //     if (link) {
+        //         window.open(link.href, '_blank');
+        //     }
+        // });
     });
 
     const checkResultsListPage = () => {
@@ -149,8 +149,6 @@ async function changeCopyButton(resultsListPage) {
 };
 
   
-  
-
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
