@@ -66,7 +66,7 @@ const ContainerCuponer = ({ isOpen, onClose }) => {
 }
 
 const App = () => {
-    const [modalOpen, setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = React.useState(false);
 
     const handleOpenModal = () => {
         setModalOpen(true);
