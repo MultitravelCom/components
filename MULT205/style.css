@@ -415,38 +415,39 @@
         padding: 5px;
         width: 100%;
 
-    .modal-content__cupones-row {
-        margin: 0 1rem;
-    }
+        .modal-content__cupones-row {
+            margin: 0 1rem;
+        }
 
-    .modal__content-title-h3>h2 {
-        font-size: 19px;
-        line-height: 12px;
-        text-align: center;
-        line-height: 24px;
-    }
+        .modal__content-title-h3>h2 {
+            font-size: 19px;
+            line-height: 12px;
+            text-align: center;
+            line-height: 24px;
+        }
 
-    .modal__content-uno,
-    .modal__content-dos,
-    .modal__content-tres {
-        flex-direction: column;
-    }
+        .modal__content-uno,
+        .modal__content-dos,
+        .modal__content-tres {
+            flex-direction: column;
+        }
 
-    .modal__content-uno-title {
-        flex-direction: column;
-    }
+        .modal__content-uno-title {
+            flex-direction: column;
+        }
 
-    .modal__content-title-circleCalendar {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        border-bottom: 1px dashed #0D4E88;
-        border-left: 0px dashed #0D4E88;
-        border-right: 0;
-    }
+        .modal__content-title-circleCalendar {
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px dashed #0D4E88;
+            border-left: 0px dashed #0D4E88;
+            border-right: 0;
+        }
 
-    .modal__content-dos-logo,
-    .modal__content-tres-logo {
-        height: 67px;
+        .modal__content-dos-logo,
+        .modal__content-tres-logo {
+            height: 67px;
+        }
     }
 }
