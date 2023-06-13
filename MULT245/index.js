@@ -84,8 +84,8 @@ async function changeCopyMap(resultsListPage) {
     });
 }
 
-async function applyDisplayNoneToAllButLastButton(resultsListPage) {
-    const actionsContainer = resultsListPage.querySelector('.info-card__actions');
+async function applyDisplayNoneToAllButLastButton() {
+    const actionsContainer = document.querySelector('.info-card__actions');
 
     if (!actionsContainer) {
         // Esperar un tiempo y volver a llamar a la función
