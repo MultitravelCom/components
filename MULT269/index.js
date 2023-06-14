@@ -24,16 +24,12 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let filtersInner = document.querySelector('.sidebar-filters__inner');
-    let placeholderDiv = filtersInner.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
-    
-    if (placeholderDiv) {
-      let filterItem = placeholderDiv.querySelector('.filter.results-sidebar__item');
-      let filterHeader = filterItem.querySelector('.filter__header');
-      
-      if (filterHeader) {
-        filterHeader.innerText = 'Alimentación';
-      }
+    let placeholder = document.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
+    if (placeholder) {
+        let filterHeader = placeholder.querySelector('.filter__header');
+        if (filterHeader) {
+            filterHeader.innerText = 'Alimentación';
+        }
     }
 }
 
