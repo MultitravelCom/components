@@ -2,6 +2,16 @@
   display: none;
 }
 
+.results-list__order-by-label {
+  color: black !important;
+  font-weight: bold !important;
+}
+
+.select2.select2-container.select2-container--default .select2-selection {
+  border-radius: 8px;
+  border: 1px solid;
+}
+
 @media (max-width: 767px) {
   .whatsAppFixes {
     display: none;
@@ -10,14 +20,17 @@
   .view-selector {
     display: none;
   }
-  .results-list__filter-toggle-wrapper{
+
+  .results-list__filter-toggle-wrapper {
     display: none;
   }
-  .results-list__order-by{
+
+  .results-list__order-by {
     width: 100%;
     border-radius: 8px;
   }
-  .results-list__order-by-label{
-    display: block ;
+
+  .results-list__order-by-label {
+    display: block;
   }
 }
