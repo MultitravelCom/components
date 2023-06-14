@@ -1,11 +1,16 @@
 function cambiarTextoMapaYBoton() {
-    let sidebarElements = document.querySelectorAll('.js-sidebar-map-placeholder .sidebar-map');
+    const sidebarElements = document.querySelectorAll('.js-sidebar-map-placeholder .sidebar-map');
+
     sidebarElements.forEach(function (element) {
-        var span = element.querySelector('span.btn.btn-secondary');
-        if (span.innerText === 'Abrir mapa') {
+        const span = element.querySelector('span.btn.btn-secondary');
+
+        if (span && span.innerText === 'Abrir mapa') {
             span.innerText = 'Ver en mapa';
+            return;
         }
     });
+
+    setTimeout(cambiarTextoMapaYBoton, 1000);
 }
 
 function cambiarTextoFiltro() {
@@ -26,39 +31,39 @@ function cambiarTextoFiltro() {
 function cambiarTextoRegimen() {
     const filtersInner = document.querySelector('.sidebar-filters__inner');
     const placeholderDiv = filtersInner.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
-  
+
     if (placeholderDiv) {
-      const filterHeader = placeholderDiv.querySelector('.filter__header');
-  
-      if (filterHeader) {
-        filterHeader.innerText = 'Alimentación';
-      } else {
+        const filterHeader = placeholderDiv.querySelector('.filter__header');
+
+        if (filterHeader) {
+            filterHeader.innerText = 'Alimentación';
+        } else {
+            // Si no se encuentra el div con el texto, volver a llamar a la función después de un intervalo de tiempo
+            setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
+        }
+    } else {
         // Si no se encuentra el div con el texto, volver a llamar a la función después de un intervalo de tiempo
         setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
-      }
-    } else {
-      // Si no se encuentra el div con el texto, volver a llamar a la función después de un intervalo de tiempo
-      setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
     }
-  }
+}
 
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
-  
+
     // Crear una instancia de MutationObserver
-    const observer = new MutationObserver(function(mutationsList) {
-      // Verificar si hay mutaciones dentro de sidebarFilters
-      for (let mutation of mutationsList) {
-        if (mutation.target === sidebarFilters) {
-          cambiarTextoFiltro();
-          break;
+    const observer = new MutationObserver(function (mutationsList) {
+        // Verificar si hay mutaciones dentro de sidebarFilters
+        for (let mutation of mutationsList) {
+            if (mutation.target === sidebarFilters) {
+                cambiarTextoFiltro();
+                break;
+            }
         }
-      }
     });
-  
+
     // Configurar las opciones de observación
     const observerOptions = { childList: true, subtree: true };
-  
+
     // Iniciar la observación
     observer.observe(sidebarFilters, observerOptions);
 }
