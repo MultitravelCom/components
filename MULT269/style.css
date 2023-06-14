@@ -1,0 +1,10 @@
+.results-list__view-selector.js-view-selector-placeholder .view-selector div:nth-child(3) {
+    display: none;
+}
+
+
+@media (max-width: 767px) {
+    .whatsAppFixes {
+      display: none;
+    }
+  }
