@@ -13,4 +13,8 @@
   .results-list__filter-toggle-wrapper{
     display: none;
   }
+  .results-list__order-by{
+    width: 100%;
+    border-radius: 8px;
+  }
 }
