@@ -24,12 +24,15 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let placeholder = document.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
-    let filterHeader = placeholder.querySelector('.filter__header');
+    let placeholders = document.querySelectorAll('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
 
-    if (filterHeader && filterHeader.innerText.includes('Plano de alimentação')) {
-        filterHeader.innerText = 'Alimentação';
-    }
+    placeholders.forEach(function (placeholder) {
+        let filterHeader = placeholder.querySelector('.filter__header');
+
+        if (filterHeader) {
+            filterHeader.innerText = 'Alimentación';
+        }
+    });
 }
 
 
