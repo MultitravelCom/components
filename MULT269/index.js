@@ -5,8 +5,17 @@ function cambiarTextoMapa(span) {
     }
   }
   
+  // Función para iterar y cambiar el texto del botón en .results__sidebar
+  function cambiarTextoBoton() {
+    var sidebarElements = document.querySelectorAll('.results__sidebar .sidebar-map');
+    sidebarElements.forEach(function(element) {
+      var span = element.querySelector('span.btn.btn-secondary');
+      cambiarTextoMapa(span);
+    });
+  }
+  
   // Configuración para MutationSummary
-  let observerConfig = {
+  var observerConfig = {
     callback: function(summaries) {
       summaries[0].added.forEach(function(element) {
         if (element.classList.contains('sidebar-map')) {
@@ -24,7 +33,6 @@ function cambiarTextoMapa(span) {
   // Crear una nueva instancia de MutationSummary
   var observer = new MutationSummary(observerConfig);
   
-  // Llamar a la función inicial para cambiar el texto del mapa
-  let span = document.querySelector('.results__sidebar .sidebar-map span.btn.btn-secondary');
-  cambiarTextoMapa(span);
+  // Llamar a la función inicial para cambiar el texto del botón
+  cambiarTextoBoton();
   
