@@ -27,9 +27,11 @@ function cambiarTextoRegimen() {
     let filterDiv = document.querySelector('.filter.results-sidebar__item');
     let filterHeader = filterDiv.querySelector('.filter__header');
 
-    if (filterHeader && filterHeader.innerText.trim() === 'Régimen') {
-        filterHeader.innerText = 'Alimentación';
-    }
+    filterHeader.forEach(function (header, index) {
+        if (index === 0) {
+            header.innerText = 'Alimentacion';
+        }
+    });
 }
 
 
