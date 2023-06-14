@@ -8,7 +8,17 @@ function cambiarTextoMapaYBoton() {
     });
 }
 
+function cambiarTextoFiltro() {
+    let filtersInner = document.querySelector('.sidebar-filters__inner');
+    let filterHeaders = filtersInner.querySelectorAll('.filter__header');
+    
+    filterHeaders.forEach(function (header) {
+        header.innerText = 'Nombre de alojamiento';
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
+    cambiarTextoFiltro()
 });
