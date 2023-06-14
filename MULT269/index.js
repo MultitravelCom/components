@@ -24,17 +24,23 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let filtersInner = document.querySelector('.sidebar-filters__inner');
-    let placeholderDiv = filtersInner.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
-
+    const filtersInner = document.querySelector('.sidebar-filters__inner');
+    const placeholderDiv = filtersInner.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
+  
     if (placeholderDiv) {
-        let filterHeader = placeholderDiv.querySelector('.filter__header');
-
-        if (filterHeader) {
-            filterHeader.innerText = 'Alimentación';
-        }
+      const filterHeader = placeholderDiv.querySelector('.filter__header');
+  
+      if (filterHeader) {
+        filterHeader.innerText = 'Alimentación';
+      } else {
+        // Si no se encuentra el div con el texto, volver a llamar a la función después de un intervalo de tiempo
+        setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
+      }
+    } else {
+      // Si no se encuentra el div con el texto, volver a llamar a la función después de un intervalo de tiempo
+      setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
     }
-}
+  }
 
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
