@@ -10,7 +10,7 @@ function cambiarTextoMapaYBoton() {
         }
     });
 
-    setTimeout(cambiarTextoMapaYBoton, 1000);
+    setTimeout(cambiarTextoMapaYBoton, 100);
 }
 
 function cambiarTextoFiltro() {
