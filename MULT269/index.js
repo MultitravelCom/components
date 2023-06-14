@@ -11,25 +11,30 @@ function cambiarTextoMapaYBoton() {
 function cambiarTextoFiltro() {
     let filtersInner = document.querySelector('.sidebar-filters__inner');
     let filterHeaders = filtersInner.querySelectorAll('.filter__header');
-    
+
     filterHeaders.forEach(function (header, index) {
-      if (index === 0) {
-        header.innerText = 'Nombre de alojamiento';
-      } else if (index === 1) {
-        header.innerText = 'Zonas';
-      } else if (index === 2) {
-        header.innerText = 'Precio';
-      } else if (header.innerText.trim() === 'Régimen') {
-        header.innerText = 'Alimentación';
-      }
+        if (index === 0) {
+            header.innerText = 'Nombre de alojamiento';
+        } else if (index === 1) {
+            header.innerText = 'Zonas';
+        } else if (index === 2) {
+            header.innerText = 'Precio';
+        }
     });
-  }
-  
-  cambiarTextoFiltro();
-  
+}
+
+function cambiarTextoRegimen() {
+    let filterDiv = document.querySelector('.filter.results-sidebar__item');
+    let filterHeader = filterDiv.querySelector('.filter__header');
+
+    if (filterHeader && filterHeader.innerText.trim() === 'Régimen') {
+        filterHeader.innerText = 'Alimentación';
+    }
+}
 
 
 document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
-    cambiarTextoFiltro()
+    cambiarTextoFiltro();
+    cambiarTextoRegimen();
 });
