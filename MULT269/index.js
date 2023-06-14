@@ -24,16 +24,13 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let placeholders = document.querySelectorAll('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
+    let filterHeader = document.querySelector('.results-sidebar > .sidebar-filters > .sidebar-filters__inner > .results-sidebar__placeholder.js-filter-by-boards-placeholder > .filter__header');
 
-    placeholders.forEach(function (placeholder) {
-        let filterHeader = placeholder.querySelector('.filter__header');
-
-        if (filterHeader) {
-            filterHeader.innerText = 'Alimentación';
-        }
-    });
+    if (filterHeader) {
+        filterHeader.innerText = 'Alimentación';
+    }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', async function () {
