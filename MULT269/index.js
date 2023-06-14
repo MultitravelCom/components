@@ -24,8 +24,7 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let sidebar = document.querySelector('.results__sidebar');
-    let placeholder = sidebar.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
+    let placeholder = document.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
     let filterHeader = placeholder.querySelector('.filter__header');
 
     if (filterHeader) {
