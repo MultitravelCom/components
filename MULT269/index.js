@@ -25,7 +25,7 @@ function cambiarTextoMapaYBoton() {
     });
   
     // Volver a llamar a la función si no se encontró el div con el texto a cambiar
-    setTimeout(cambiarTextoMapaYBoton, 1000); // Ajusta el intervalo de tiempo según tus necesidades
+    setTimeout(cambiarTextoMapaYBoton, 100); // Ajusta el intervalo de tiempo según tus necesidades
   }
 
 function cambiarTextoFiltro() {
