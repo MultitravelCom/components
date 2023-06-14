@@ -24,11 +24,13 @@ function cambiarTextoFiltro() {
 }
 
 function cambiarTextoRegimen() {
-    let filterHeader = document.querySelector('.results-sidebar > .sidebar-filters > .sidebar-filters__inner > .results-sidebar__placeholder.js-filter-by-boards-placeholder > .filter__header');
-
-    if (filterHeader) {
-        filterHeader.innerText = 'Alimentación';
-    }
+    setTimeout(function() {
+        let filterHeader = document.querySelector('.results-sidebar > .sidebar-filters > .sidebar-filters__inner > .results-sidebar__placeholder.js-filter-by-boards-placeholder > .filter__header');
+    
+        if (filterHeader) {
+          filterHeader.innerText = 'Alimentación';
+        }
+      }, 1000);
 }
 
 
