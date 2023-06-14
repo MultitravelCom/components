@@ -1,29 +1,32 @@
 function cambiarTextoMapaYBoton() {
     const sidebarElements = document.querySelectorAll('.js-sidebar-map-placeholder .sidebar-map');
-
+    
     sidebarElements.forEach(function (element) {
-        const span = element.querySelector('span.btn.btn-secondary');
-
-        if (span && span.innerText === 'Abrir mapa') {
-            span.innerText = 'Ver en mapa';
-            return; // Salir de la función forEach una vez que se haya realizado el cambio
-        }
+      const span = element.querySelector('span.btn.btn-secondary');
+      
+      if (span && span.innerText === 'Abrir mapa') {
+        span.innerText = 'Ver en mapa';
+        return; // Salir de la función forEach una vez que se haya realizado el cambio
+      }
     });
-
-    const viewSelectorItems = document.querySelectorAll('.view-selector__item[data-view="map"]');
-
+  
+    const viewSelectorItems = document.querySelectorAll('.view-selector__item');
+    
     viewSelectorItems.forEach(function (item) {
-        const label = item.querySelector('.view-selector__label.view-selector__label--full');
-
-        if (label && label.innerText === 'Vista por mapa') {
-            label.innerText = 'Ver en mapa';
-            return; // Salir de la función forEach una vez que se haya realizado el cambio
+      const label = item.querySelector('.view-selector__label.view-selector__label--full');
+      
+      if (label) {
+        if (label.innerText === 'Vista por mapa') {
+          label.innerText = 'Ver en mapa';
+        } else if (label.innerText === 'Vista resumo') {
+          label.innerText = 'Ver en lista';
         }
+      }
     });
-
+  
     // Volver a llamar a la función si no se encontró el div con el texto a cambiar
-    setTimeout(cambiarTextoMapaYBoton, 100); // Ajusta el intervalo de tiempo según tus necesidades
-}
+    setTimeout(cambiarTextoMapaYBoton, 1000); // Ajusta el intervalo de tiempo según tus necesidades
+  }
 
 function cambiarTextoFiltro() {
     let filtersInner = document.querySelector('.sidebar-filters__inner');
