@@ -36,7 +36,24 @@ function cambiarTextoRegimen() {
     }
 }
 
+const sidebarFilters = document.querySelector('.sidebar-filters__inner');
 
+// Crear una instancia de MutationObserver
+const observer = new MutationObserver(function(mutationsList) {
+  // Verificar si hay mutaciones dentro de sidebarFilters
+  for (let mutation of mutationsList) {
+    if (mutation.target === sidebarFilters) {
+      cambiarTextoFiltro();
+      break;
+    }
+  }
+});
+
+// Configurar las opciones de observación
+const observerOptions = { childList: true, subtree: true };
+
+// Iniciar la observación
+observer.observe(sidebarFilters, observerOptions);
 
 document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
