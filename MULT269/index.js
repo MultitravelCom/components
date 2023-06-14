@@ -25,12 +25,12 @@ function cambiarTextoFiltro() {
 
 function cambiarTextoRegimen() {
     let placeholder = document.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
-  if (placeholder) {
-    let filterHeader = placeholder.querySelector('.filter__header');
-    if (filterHeader) {
-      filterHeader.textContent = 'Alimentación';
+    if (placeholder) {
+        let filterHeader = placeholder.querySelector('.filter__header');
+        if (filterHeader) {
+            filterHeader.innerText = 'Alimentación';
+        }
     }
-  }
 }
 
 
