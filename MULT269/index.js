@@ -1,5 +1,5 @@
 function cambiarTextoMapaYBoton() {
-    let sidebarElements = document.querySelectorAll('.results__sidebar .sidebar-map, .js-sidebar-map-placeholder .sidebar-map');
+    let sidebarElements = document.querySelectorAll('.js-sidebar-map-placeholder .sidebar-map');
     sidebarElements.forEach(function (element) {
         var span = element.querySelector('span.btn.btn-secondary');
         if (span.innerText === 'Abrir mapa') {
@@ -7,6 +7,7 @@ function cambiarTextoMapaYBoton() {
         }
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
