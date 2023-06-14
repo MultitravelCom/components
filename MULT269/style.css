@@ -1,10 +1,16 @@
 .results-list__view-selector.js-view-selector-placeholder .view-selector div:nth-child(3) {
-    display: none;
+  display: none;
 }
 
-
 @media (max-width: 767px) {
-    .whatsAppFixes {
-      display: none;
-    }
+  .whatsAppFixes {
+    display: none;
   }
+
+  .view-selector {
+    display: none;
+  }
+  .results-list__filter-toggle-wrapper{
+    display: none;
+  }
+}
