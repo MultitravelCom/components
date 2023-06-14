@@ -27,8 +27,8 @@ function cambiarTextoRegimen() {
     let placeholder = document.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
     let filterHeader = placeholder.querySelector('.filter__header');
 
-    if (filterHeader) {
-        filterHeader.innerText = 'Alimentación';
+    if (filterHeader && filterHeader.innerText.includes('Plano de alimentação')) {
+        filterHeader.innerText = 'Alimentação';
     }
 }
 
