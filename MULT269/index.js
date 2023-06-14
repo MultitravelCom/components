@@ -6,11 +6,23 @@ function cambiarTextoMapaYBoton() {
 
         if (span && span.innerText === 'Abrir mapa') {
             span.innerText = 'Ver en mapa';
-            return;
+            return; // Salir de la función forEach una vez que se haya realizado el cambio
         }
     });
 
-    setTimeout(cambiarTextoMapaYBoton, 100);
+    const viewSelectorItems = document.querySelectorAll('.view-selector__item[data-view="map"]');
+
+    viewSelectorItems.forEach(function (item) {
+        const label = item.querySelector('.view-selector__label.view-selector__label--full');
+
+        if (label && label.innerText === 'Vista por mapa') {
+            label.innerText = 'Nueva etiqueta para mapa';
+            return; // Salir de la función forEach una vez que se haya realizado el cambio
+        }
+    });
+
+    // Volver a llamar a la función si no se encontró el div con el texto a cambiar
+    setTimeout(cambiarTextoMapaYBoton, 100); // Ajusta el intervalo de tiempo según tus necesidades
 }
 
 function cambiarTextoFiltro() {
