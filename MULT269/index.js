@@ -16,7 +16,7 @@ function cambiarTextoMapaYBoton() {
         const label = item.querySelector('.view-selector__label.view-selector__label--full');
 
         if (label && label.innerText === 'Vista por mapa') {
-            label.innerText = 'Nueva etiqueta para mapa';
+            label.innerText = 'Ver en mapa';
             return; // Salir de la función forEach una vez que se haya realizado el cambio
         }
     });
