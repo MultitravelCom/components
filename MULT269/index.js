@@ -19,9 +19,14 @@ function cambiarTextoFiltro() {
         header.innerText = 'Zonas';
       } else if (index === 2) {
         header.innerText = 'Precio';
+      } else if (header.innerText.trim() === 'Régimen') {
+        header.innerText = 'Alimentación';
       }
     });
   }
+  
+  cambiarTextoFiltro();
+  
 
 
 document.addEventListener('DOMContentLoaded', async function () {
