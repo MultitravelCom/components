@@ -17,4 +17,7 @@
     width: 100%;
     border-radius: 8px;
   }
+  .results-list__order-by-label{
+    display: block ;
+  }
 }
