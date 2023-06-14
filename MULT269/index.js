@@ -25,7 +25,7 @@ function cambiarTextoFiltro() {
 
 function cambiarTextoRegimen() {
     let filterDiv = document.querySelector('.filter.results-sidebar__item');
-    let filterHeader = filterDiv.querySelector('.filter__header');
+    let filterHeader = filterDiv.querySelectorAll('.filter__header');
 
     filterHeader.forEach(function (header, index) {
         if (index === 0) {
