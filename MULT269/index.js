@@ -36,7 +36,7 @@ function cambiarTextoRegimen() {
     }
 }
 
-const sidebarFilters = document.querySelector('.sidebar-filters__inner');
+const sidebarFilters = document.querySelector('.results__sidebar');
 
 // Crear una instancia de MutationObserver
 const observer = new MutationObserver(function(mutationsList) {
