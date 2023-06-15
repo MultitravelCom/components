@@ -147,7 +147,7 @@ mutationObserver.observe(document.body, observerConfig);
 // *********************************************************************************************
 
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
-    const scrollThreshold = 0.035;
+    const scrollThreshold = 100;
 
     function checkScrollThreshold() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
