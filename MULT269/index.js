@@ -113,19 +113,29 @@ function agregarNewsButtons() {
         });
     });
 
-    const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
+    const sidebarFilters = document.querySelector('.sidebar-filters');
     const buttonFilter = buttonsMapFilter.querySelector('.main__container__newsButtons');
 
-    if (sidebarFiltersInner && buttonFilter) {
-        const computedStyles = getComputedStyle(sidebarFiltersInner);
-        const leftValue = parseInt(computedStyles.left, 10);
+    // Función para verificar si el sidebar-filters está presente y visible
+    function isSidebarFiltersVisible() {
+        return sidebarFilters && sidebarFilters.offsetLeft === 0;
+    }
 
-        if (leftValue === 0) {
+    // Función para actualizar el z-index del botón en función del estado del sidebar-filters
+    function updateButtonFilterZIndex() {
+        if (isSidebarFiltersVisible()) {
             buttonFilter.style.zIndex = '0';
         } else {
             buttonFilter.style.zIndex = '9999999';
         }
     }
+
+    // Llamar a la función para actualizar el z-index inicialmente
+    updateButtonFilterZIndex();
+
+    // Observar cambios en el DOM utilizando MutationObserver
+    const observer = new MutationObserver(updateButtonFilterZIndex);
+    observer.observe(document.body, { childList: true, subtree: true });
 
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
