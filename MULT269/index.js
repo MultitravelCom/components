@@ -90,8 +90,8 @@ function agregarNewsButtons() {
     buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
       `
-      <button class="buttonStyleHotels button__filter">
-        <a href="#" class="buttonStyleHotels button__map">
+      <button class="buttonStyleHotels button__map">
+        <a href="#" class="buttonStyleHotels">
             <div class="glyphicon glyphicon-view-map"></div>
             <p>Ver en mapa</p>
         </a>
