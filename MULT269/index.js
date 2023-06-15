@@ -84,21 +84,7 @@ function observarSidebarFilters() {
 }
 
 
-function obtenerHrefMapa() {
-    const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
-    if (mapLink) {
-      const href = mapLink.getAttribute('href');
-      return href;
-    } else {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          obtenerHrefMapa().then(resolve).catch(reject);
-        }, 100);
-      });
-    }
-  }
-
-  function agregarNewsButtons() {
+function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
   
     const buttonsMapFilter = document.createElement("div");
@@ -119,15 +105,6 @@ function obtenerHrefMapa() {
   
     results__list.appendChild(buttonsMapFilter);
   
-    const mapButton = buttonsMapFilter.querySelector('.button__map a');
-    if (mapButton) {
-      obtenerHrefMapa().then(href => {
-        if (href) {
-          mapButton.href = href;
-        }
-      });
-    }
-  
     const buttons = buttonsMapFilter.querySelectorAll('button');
   
     buttons.forEach(button => {
@@ -136,8 +113,28 @@ function obtenerHrefMapa() {
         console.log("Clic en el botón");
       });
     });
+  
+    obtenerHrefMapa().then(href => {
+      const mapButton = buttonsMapFilter.querySelector('.button__map a');
+      if (mapButton && href) {
+        mapButton.href = href;
+      }
+    });
   }
-
+  
+  function obtenerHrefMapa() {
+    return new Promise((resolve, reject) => {
+      const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
+      if (mapLink) {
+        const href = mapLink.getAttribute('href');
+        resolve(href);
+      } else {
+        setTimeout(() => {
+          obtenerHrefMapa().then(resolve).catch(reject);
+        }, 100);
+      }
+    });
+  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
