@@ -83,7 +83,6 @@ function observarSidebarFilters() {
     observer.observe(sidebarFilters, observerOptions);
 }
 
-
 function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
 
@@ -130,7 +129,7 @@ function agregarNewsButtons() {
 
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
-    const scrollThreshold = 0.05;
+    const scrollThreshold = 0.04;
 
     // Función para verificar el porcentaje de recorrido y mostrar/ocultar los botones
     function checkScrollThreshold() {
