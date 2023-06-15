@@ -83,53 +83,60 @@ function observarSidebarFilters() {
     observer.observe(sidebarFilters, observerOptions);
 }
 
-function agregarNewsButtons() {
-    const results__list = document.getElementById("results-list");
 
+function obtenerHrefMapa() {
+    const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
+    if (mapLink) {
+      const href = mapLink.getAttribute('href');
+      return href;
+    } else {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          obtenerHrefMapa().then(resolve).catch(reject);
+        }, 100);
+      });
+    }
+  }
+
+  function agregarNewsButtons() {
+    const results__list = document.getElementById("results-list");
+  
     const buttonsMapFilter = document.createElement("div");
     buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
-        `
-      <button class="buttonStyleHotels button__map">
-        <a href="#" class="buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
-            <div class="glyphicon glyphicon-view-map"></div>
-            <p>Ver en mapa</p>
-        </a>
-      </button>
-      <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
-          <div class="glyphicon glyphicon-loungroom"></div>
-          <p>Filtrar</p>
-      </button>
-      `;
-
+      `
+    <button class="buttonStyleHotels button__map">
+      <a href="#" class="buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
+          <div class="glyphicon glyphicon-view-map"></div>
+          <p>Ver en mapa</p>
+      </a>
+    </button>
+    <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
+        <div class="glyphicon glyphicon-loungroom"></div>
+        <p>Filtrar</p>
+    </button>
+    `;
+  
     results__list.appendChild(buttonsMapFilter);
-
-    const buttons = buttonsMapFilter.querySelectorAll('button');
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
-            console.log("Clic en el botón");
-        });
-    });
-    const obtenerHrefMapa = () => {
-        const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
-        if (mapLink) {
-            const href = mapLink.getAttribute('href');
-            return href;
-        } else {
-            setTimeout(obtenerHrefMapa, 100);
-        }
-    };
-
+  
     const mapButton = buttonsMapFilter.querySelector('.button__map a');
     if (mapButton) {
-        const href = obtenerHrefMapa();
+      obtenerHrefMapa().then(href => {
         if (href) {
-            mapButton.href = href;
+          mapButton.href = href;
         }
+      });
     }
-};
+  
+    const buttons = buttonsMapFilter.querySelectorAll('button');
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("Clic en el botón");
+      });
+    });
+  }
 
 
 document.addEventListener('DOMContentLoaded', async function () {
