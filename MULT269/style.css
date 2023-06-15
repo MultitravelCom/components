@@ -40,11 +40,9 @@
 .main__container__newsButtons {
   width: 310px;
   height: 34px;
-  display: flex;
+  display: none;
   position: fixed;
   bottom: 39px;
-  align-items: center;
-  justify-content: space-evenly;
   text-align: center;
   background: #0D4E88;
   border: 1px solid #F3F3F3;
@@ -81,4 +79,12 @@
 
 .buttonStyleHotels:hover {
   background-color: #283747;
+}
+
+@media (max-width: 767px) {
+  .main__container__newsButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
