@@ -116,19 +116,29 @@ function agregarNewsButtons() {
         });
     });
 
-    const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
     const buttonFilter = buttonsMapFilter.querySelector('.main__container__newsButtons');
-    
-    if (sidebarFiltersInner && buttonFilter) {
-      const computedStyles = getComputedStyle(sidebarFiltersInner);
-      const leftValue = parseInt(computedStyles.left, 10);
-    
-      if (leftValue === 0) {
-        buttonFilter.style.zIndex = '0';
-      } else {
-        buttonFilter.style.zIndex = '9999999';
-      }
-    }
+
+    // Función para verificar la presencia del selector y ajustar el valor de z-index
+    const checkSidebarFiltersDetached = () => {
+        const sidebarFiltersDetached = document.querySelector('.sidebar-filters.sidebar-filters--detached');
+
+        if (sidebarFiltersDetached) {
+            buttonFilter.style.zIndex = '0';
+        } else {
+            buttonFilter.style.zIndex = '9999999';
+        }
+    };
+
+    // Observador de mutaciones para detectar cambios en el DOM
+    const observer = new MutationObserver(() => {
+        checkSidebarFiltersDetached();
+    });
+
+    // Configuración del observador para observar cambios en el cuerpo del documento
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Verificar el estado inicial al cargar la página
+    checkSidebarFiltersDetached();
 
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
