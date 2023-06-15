@@ -109,12 +109,26 @@ function agregarNewsButtons() {
 
     buttons__filter.forEach(button => {
         button.addEventListener('click', function (event) {
-          if (button.classList.contains('button__filter')) {
-            event.preventDefault();
-          }
-          console.log("Clic en el botón");
+            if (button.classList.contains('button__filter')) {
+                event.preventDefault();
+            }
+            console.log("Clic en el botón");
         });
-      });
+    });
+
+    const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
+    const buttonFilter = buttonsMapFilter.querySelector('.button__filter');
+
+    if (sidebarFiltersInner && buttonFilter) {
+        const computedStyles = getComputedStyle(sidebarFiltersInner);
+        const leftValue = computedStyles.left;
+
+        if (leftValue === '0px') {
+            buttonFilter.style.zIndex = '0';
+        } else {
+            buttonFilter.style.zIndex = '9999999';
+        }
+    }
 
     obtenerHrefMapa().then(href => {
         const mapButton = buttonsMapFilter.querySelector('.button__map a');
