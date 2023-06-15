@@ -118,11 +118,21 @@ function agregarNewsButtons() {
         const href = link.getAttribute('href');
         console.log(href);
     }
-};
-    document.addEventListener('DOMContentLoaded', async function () {
-        observarSidebarFilters();
-        cambiarTextoMapaYBoton();
-        cambiarTextoFiltro();
-        cambiarTextoRegimen();
-        agregarNewsButtons();
+
+    const buttons = buttonsMapFilter.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault(); // Evitar que la página se recargue al hacer clic en el botón
+            // Aquí puedes agregar el código que deseas ejecutar al hacer clic en el botón
+            console.log("Clic en el botón");
+        });
     });
+};
+document.addEventListener('DOMContentLoaded', async function () {
+    observarSidebarFilters();
+    cambiarTextoMapaYBoton();
+    cambiarTextoFiltro();
+    cambiarTextoRegimen();
+    agregarNewsButtons();
+});
