@@ -87,7 +87,7 @@ function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
 
     const buttonsMapFilter = document.createElement("div");
-    // buttonsMapFilter.classList.add("main__container__newsButtons");
+    buttonsMapFilter.classList.add("main__container__newsButtons--mobile");
     buttonsMapFilter.innerHTML =
         `
         <div class="main__container__newsButtons">

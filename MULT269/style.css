@@ -36,6 +36,10 @@
 }
 
 /* BOTONES FILTER / MAP */
+.main__container__newsButtons--mobile {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .main__container__newsButtons {
   width: 310px;
@@ -86,6 +90,7 @@
   color: white;
   text-decoration: none;
 }
+
 .buttonStyleHotels:hover {
   background-color: #283747;
   color: white;
