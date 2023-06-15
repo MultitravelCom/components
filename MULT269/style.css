@@ -53,11 +53,17 @@
 }
 
 .main__container__newsBottons p {
-  margin: 0;
+  margin: 0 5px;
+}
+
+.main__container__newsBottons .glyphicon {
+  color: white;
 }
 
 .botton__map,
 .botton__filter {
   display: flex;
   align-items: center;
+  width: 155px;
+  justify-content: center;
 }
