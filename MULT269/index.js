@@ -91,12 +91,10 @@ function agregarNewsButtons() {
     buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
         `
-    <button class="buttonStyleHotels button__map">
-      <a href="#" class="buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
+      <a href="#" class="button__map buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
           <div class="glyphicon glyphicon-view-map"></div>
           <p>Ver en mapa</p>
       </a>
-    </button>
     <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
@@ -118,16 +116,16 @@ function agregarNewsButtons() {
 
     const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
     const buttonFilter = buttonsMapFilter.querySelector('.main__container__newsButtons');
-    
+
     if (sidebarFiltersInner && buttonFilter) {
-      const computedStyles = getComputedStyle(sidebarFiltersInner);
-      const leftValue = parseInt(computedStyles.left, 10);
-    
-      if (leftValue === 0) {
-        buttonFilter.style.zIndex = '0';
-      } else {
-        buttonFilter.style.zIndex = '9999999';
-      }
+        const computedStyles = getComputedStyle(sidebarFiltersInner);
+        const leftValue = parseInt(computedStyles.left, 10);
+
+        if (leftValue === 0) {
+            buttonFilter.style.zIndex = '0';
+        } else {
+            buttonFilter.style.zIndex = '9999999';
+        }
     }
 
     // Obtener los botones y el porcentaje de recorrido
