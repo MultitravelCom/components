@@ -84,10 +84,8 @@ function observarSidebarFilters() {
 }
 
 function agregarNewsButtons() {
-
-    const oldButton__map = document.querySelector(".view-selector__item-wrapper a");
+    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
     const newButton__map = document.querySelector(".button__map");
-
     const hrefValueMap = oldButton__map.getAttribute('href');
 
     newButton__map.onclick = function () {
