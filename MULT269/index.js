@@ -141,7 +141,7 @@ function agregarNewsButtons() {
 
     window.addEventListener('scroll', checkScrollThreshold);
     checkScrollThreshold();
-
+// **************************************************************
     // Obtener referencia al botón
     let mapButton = buttonsMapFilter.querySelector('.button__map');
     let hrefMap, hrefResumed;
@@ -151,7 +151,7 @@ function agregarNewsButtons() {
         hrefMap = href.hrefMap;
         hrefResumed = href.hrefResumed;
         // Asignar el href inicial al botón
-        mapButton.href = hrefMap;
+        mapButton.href = hrefResumed;
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
