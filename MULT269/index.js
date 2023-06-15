@@ -100,10 +100,10 @@ function agregarNewsButtons() {
     buttonsMapFilter.classList.add("main__container__newsButtons")
     buttonsMapFilter.innerHTML =
         `
-    <div class="buttonStyleHotels button__map">
+    <a href="${hrefValueMap}" class="buttonStyleHotels button__map">
         <div class="glyphicon glyphicon-view-map"></div>
         <p>Ver en mapa</p>
-    </div>
+    </a>
     <div class="buttonStyleHotels button__filter">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
