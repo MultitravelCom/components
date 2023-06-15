@@ -104,17 +104,10 @@ function agregarNewsButtons() {
 
     results__list.appendChild(buttonsMapFilter);
 
-    const viewSelector = document.querySelector('.view-selector');
-
-    if (viewSelector) {
-      const itemWrappers = viewSelector.querySelectorAll('.view-selector__item-wrapper');
-    
-      if (itemWrappers.length >= 3) {
-        const thirdItemWrapper = itemWrappers[2];
-        const link = thirdItemWrapper.querySelector('a');
-        const href = link.getAttribute('href');
+    const mapLink = document.querySelector('.view-selector__item-wrapper:nth-child(3) a[data-view="map"]');
+    if (mapLink) {
+        const href = mapLink.getAttribute('href');
         console.log(href);
-      }
     }
 
     const buttons = buttonsMapFilter.querySelectorAll('button');
