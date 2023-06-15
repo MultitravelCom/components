@@ -112,24 +112,31 @@ function agregarNewsButtons() {
             console.log("Clic en el botón");
         });
     });
+    const obtenerHrefMapa = () => {
+        const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
+        if (mapLink) {
+            const href = mapLink.getAttribute('href');
+            return href;
+        } else {
+            setTimeout(obtenerHrefMapa, 100);
+        }
+    };
+
+    const mapButton = buttonsMapFilter.querySelector('.button__map a');
+    if (mapButton) {
+        const href = obtenerHrefMapa();
+        if (href) {
+            mapButton.href = href;
+        }
+    }
 };
 
-function obtenerHrefMapa() {
-    const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
-    if (mapLink) {
-      const href = mapLink.getAttribute('href');
-      console.log(href);
-    } else {
-      // El enlace del mapa no está disponible, se volverá a intentar en 100ms
-      setTimeout(obtenerHrefMapa, 100);
-    }
-  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
     cambiarTextoRegimen();
-    agregarNewsButtons();
     obtenerHrefMapa();
+    agregarNewsButtons();
 });
