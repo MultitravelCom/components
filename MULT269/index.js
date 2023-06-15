@@ -85,8 +85,8 @@ function observarSidebarFilters() {
 
 function agregarNewsButtons() {
 
-    const oldButton__map = document.getElementById(".view-selector__item-wrapper a");
-    const newButton__map = document.getElementById("button__map");
+    const oldButton__map = document.querySelector(".view-selector__item-wrapper a");
+    const newButton__map = document.querySelector(".button__map");
 
     const hrefValueMap = oldButton__map.getAttribute('href');
 
