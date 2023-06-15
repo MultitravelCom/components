@@ -113,10 +113,6 @@ function agregarNewsButtons() {
         });
     });
 
-    // Observar cambios en el DOM utilizando MutationObserver
-    const observer = new MutationObserver(updateButtonFilterZIndex);
-    observer.observe(document.body, { childList: true, subtree: true });
-
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
     const scrollThreshold = 0.035;
