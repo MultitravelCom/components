@@ -105,6 +105,7 @@ function agregarNewsButtons() {
     results__list.appendChild(buttonsMapFilter);
 
     const itemWrappers = document.querySelectorAll('.view-selector__item-wrapper');
+    console.log(itemWrappers);
 
     // Verificar que haya al menos tres elementos
     if (itemWrappers.length >= 3) {
@@ -123,12 +124,13 @@ function agregarNewsButtons() {
 
     buttons.forEach(button => {
         button.addEventListener('click', function (event) {
-            event.preventDefault(); // Evitar que la página se recargue al hacer clic en el botón
-            // Aquí puedes agregar el código que deseas ejecutar al hacer clic en el botón
+            event.preventDefault();
             console.log("Clic en el botón");
         });
     });
 };
+
+
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
