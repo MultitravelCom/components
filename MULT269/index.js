@@ -113,6 +113,38 @@ function agregarNewsButtons() {
             }
         });
     });
+    // ***********************************************************************************
+    const mainContainer = document.querySelector('.main__container__newsButtons');
+const sidebarFilters = document.querySelector('.sidebar-filters.sidebar-filters--detached');
+
+// Configuración del observador de mutaciones
+const observerConfig = { childList: true, subtree: true };
+
+// Función para cambiar el z-index del mainContainer
+function changeZIndex(isVisible) {
+  mainContainer.style.zIndex = isVisible ? '1' : '9999';
+}
+
+// Función de callback para el observador de mutaciones
+function mutationCallback(mutationsList) {
+  for (let mutation of mutationsList) {
+    if (mutation.type === 'childList' && mutation.target.contains(sidebarFilters)) {
+      // El div sidebar-filters se ha agregado al DOM
+      changeZIndex(true);
+    } else if (mutation.type === 'childList' && !mutation.target.contains(sidebarFilters)) {
+      // El div sidebar-filters se ha eliminado del DOM
+      changeZIndex(false);
+    }
+  }
+}
+
+// Crear un nuevo observador de mutaciones
+const mutationObserver = new MutationObserver(mutationCallback);
+
+// Observar cambios en el DOM
+mutationObserver.observe(document.body, observerConfig);
+
+// *********************************************************************************************
 
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
     const scrollThreshold = 0.035;
