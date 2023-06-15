@@ -151,19 +151,19 @@ function agregarNewsButtons() {
         hrefMap = href.hrefMap;
         hrefResumed = href.hrefResumed;
         // Asignar el href inicial al botón
-        mapButton.href = hrefResumed;
+        mapButton.href = hrefMap;
+        // Agregar evento click al botón
+        mapButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            let isMapVisible = mapButton.getAttribute('href') === hrefMap
+            mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
+            mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
+            window.location.href = mapButton.getAttribute('href');
+        });
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
 
-    // Agregar evento click al botón
-    mapButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        let isMapVisible = mapButton.getAttribute('href') === hrefMap
-        mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
-        mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
-        window.location.href = mapButton.getAttribute('href');
-    });
 }
 
 function obtenerHrefMapa() {
