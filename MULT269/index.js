@@ -165,9 +165,10 @@ function agregarNewsButtons() {
         // Agregar evento click al botón
         mapButton.addEventListener('click', function (event) {
             event.preventDefault();
-            let isMapVisible = mapButton.getAttribute('href') === hrefMap
+            let isMapVisible = mapButton.getAttribute('href') === hrefMap;
             mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
             mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
+            mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
             window.location.href = mapButton.getAttribute('href');
         });
     }).catch(function (error) {
