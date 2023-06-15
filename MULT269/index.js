@@ -167,7 +167,7 @@ function agregarNewsButtons() {
         const mapButton = buttonsMapFilter.querySelector('.button__map');
         if (mapButton && href) {
             mapButton.href = href;
-            console.log(href)
+            console.log('Aplicado href al botón:', href);
         }
     });
 }
@@ -178,6 +178,7 @@ function obtenerHrefMapa() {
         if (mapLink) {
             const href = mapLink.getAttribute('href');
             resolve(href);
+            console.log('Aplicado href al botón:', href);
         } else {
             setTimeout(() => {
                 obtenerHrefMapa().then(resolve).catch(reject);
