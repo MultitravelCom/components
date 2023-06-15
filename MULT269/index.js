@@ -114,6 +114,9 @@ function agregarNewsButtons() {
         });
     });
     // ***********************************************************************************
+    const buttonsContainer = document.querySelector('.main__container__newsButtons');
+    let isScrolled = false;
+
     function checkScrollThreshold() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -125,11 +128,13 @@ function agregarNewsButtons() {
         // Verificar si el main__container se ve solo en dispositivos móviles
         const isMobileView = window.innerWidth <= 767; // Considerar ancho máximo de 767px como vista móvil
 
-        if (scrolledPercentage >= scrollThreshold && isMobileView && !isInFooter()) {
+        if ((scrolledPercentage >= 0.015 || isScrolled) && isMobileView && !isInFooter()) {
             buttonsContainer.style.display = 'flex';
         } else {
             buttonsContainer.style.display = 'none';
         }
+
+        isScrolled = true;
     }
 
     function isInFooter() {
@@ -145,6 +150,7 @@ function agregarNewsButtons() {
     window.addEventListener('resize', checkScrollThreshold);
 
     checkScrollThreshold();
+
     // **************************************************************
     // Obtener referencia al botón
     let mapButton = buttonsMapFilter.querySelector('.button__map');
