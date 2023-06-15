@@ -132,9 +132,8 @@ function agregarNewsButtons() {
     window.addEventListener('scroll', checkScrollThreshold);
     checkScrollThreshold();
 
-
     // Obtener referencia al botón
-    let mapButton = buttonsMapFilter.querySelector('a.button__map');
+    let mapButton = buttonsMapFilter.querySelector('.button__map');
     let hrefMap, hrefResumed;
 
     // Obtener los href de los botones
@@ -155,7 +154,7 @@ function agregarNewsButtons() {
         let isMapVisible = mapButton.href === hrefMap;
 
         // Cambiar el texto del botón
-        mapButton.innerHTML = isMapVisible ? 'Ver en lista' : 'Ver en mapa';
+        mapButton.querySelector('p').textContent = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
 
         // Cambiar el valor del href
         mapButton.href = isMapVisible ? hrefResumed : hrefMap;
