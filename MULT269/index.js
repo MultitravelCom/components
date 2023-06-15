@@ -84,32 +84,31 @@ function observarSidebarFilters() {
 }
 
 function agregarNewsButtons() {
-
     const results__list = document.getElementById("results-list");
 
     const buttonsMapFilter = document.createElement("div");
     buttonsMapFilter.classList.add("main__container__newsButtons")
     buttonsMapFilter.innerHTML =
         `
-    <a href="${hrefValueMap}" class="buttonStyleHotels button__map">
-        <div class="glyphicon glyphicon-view-map"></div>
-        <p>Ver en mapa</p>
-    </a>
-    <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
-        <div class="glyphicon glyphicon-loungroom"></div>
-        <p>Filtrar</p>
-    </button>
-`;
+      <a href="#" class="buttonStyleHotels button__map">
+          <div class="glyphicon glyphicon-view-map"></div>
+          <p>Ver en mapa</p>
+      </a>
+      <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
+          <div class="glyphicon glyphicon-loungroom"></div>
+          <p>Filtrar</p>
+      </button>
+      `;
 
     results__list.appendChild(buttonsMapFilter);
 
+    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
     const newButton__map = buttonsMapFilter.querySelector(".button__map");
 
-    let hrefValueMap; // Declarar la variable antes de asignarle un valor
+    const hrefValueMap = oldButton__map.getAttribute('href');
+    newButton__map.setAttribute('href', hrefValueMap);
 
     newButton__map.onclick = function () {
-        const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
-        hrefValueMap = oldButton__map.getAttribute('href'); // Asignar el valor aquí
         window.location.href = hrefValueMap;
     };
 }
