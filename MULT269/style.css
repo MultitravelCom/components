@@ -51,6 +51,9 @@
   border-radius: 200px;
   color: #F3F3F3;
   margin: 0 5px;
+  box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
 }
 
 .main__container__newsBottons p {
