@@ -151,7 +151,7 @@ function agregarNewsButtons() {
         event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
         // Obtener el estado actual del botón
-        let isMapVisible = mapButton.href === hrefMap;
+        let isMapVisible = mapButton.getAttribute('href') === hrefMap
 
         // Cambiar el texto del botón
         mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
@@ -160,7 +160,7 @@ function agregarNewsButtons() {
         mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
 
         // Volver a la página del href
-        window.location.href = mapButton.href;
+        window.location.href = mapButton.getAttribute('href');
     });
 }
 
