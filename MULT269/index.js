@@ -122,12 +122,20 @@ function agregarNewsButtons() {
 
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
-        if (scrolledPercentage >= scrollThreshold) {
+        // Verificar si el main__container se ve solo en dispositivos móviles
+        const isMobileView = window.innerWidth <= 767; // Considerar ancho máximo de 767px como vista móvil
+
+        if (scrolledPercentage >= scrollThreshold && isMobileView) {
             buttonsContainer.style.display = 'flex';
         } else {
             buttonsContainer.style.display = 'none';
         }
     }
+
+    window.addEventListener('scroll', checkScrollThreshold);
+    window.addEventListener('resize', checkScrollThreshold);
+
+    checkScrollThreshold();
 
     window.addEventListener('scroll', checkScrollThreshold);
     checkScrollThreshold();
@@ -148,18 +156,10 @@ function agregarNewsButtons() {
 
     // Agregar evento click al botón
     mapButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-
-        // Obtener el estado actual del botón
+        event.preventDefault();
         let isMapVisible = mapButton.getAttribute('href') === hrefMap
-
-        // Cambiar el texto del botón
         mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
-
-        // Cambiar el valor del href
         mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
-
-        // Volver a la página del href
         window.location.href = mapButton.getAttribute('href');
     });
 }

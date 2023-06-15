@@ -54,6 +54,8 @@
   -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
   z-index: 9999999;
   overflow: hidden;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .main__container__newsButtons p {
@@ -90,9 +92,9 @@
 }
 
 @media (max-width: 767px) {
-  .main__container__newsButtons {
+  /* .main__container__newsButtons {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-  }
+  } */
 }
