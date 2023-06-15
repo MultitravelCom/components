@@ -154,7 +154,7 @@ function agregarNewsButtons() {
 
 
     obtenerHrefMapa().then(href => {
-        const mapButton = buttonsMapFilter.querySelector('.button__map a');
+        const mapButton = buttonsMapFilter.querySelector('.button__map');
         if (mapButton && href) {
             mapButton.href = href;
         }
