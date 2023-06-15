@@ -148,7 +148,9 @@ function agregarNewsButtons() {
     });
 
     // Agregar evento click al botón
-    mapButton.addEventListener('click', function () {
+    mapButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
         // Obtener el estado actual del botón
         let isMapVisible = mapButton.href === hrefMap;
 
