@@ -86,11 +86,11 @@ function observarSidebarFilters() {
 
 function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
-  
+
     const buttonsMapFilter = document.createElement("div");
     buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
-      `
+        `
     <button class="buttonStyleHotels button__map">
       <a href="#" class="buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
           <div class="glyphicon glyphicon-view-map"></div>
@@ -102,39 +102,41 @@ function agregarNewsButtons() {
         <p>Filtrar</p>
     </button>
     `;
-  
+
     results__list.appendChild(buttonsMapFilter);
-  
-    const buttons = buttonsMapFilter.querySelectorAll('button');
-  
-    buttons.forEach(button => {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("Clic en el botón");
+
+    const buttons__filter = buttonsMapFilter.querySelectorAll('button');
+
+    buttons__filter.forEach(button => {
+        button.addEventListener('click', function (event) {
+          if (button.classList.contains('button__filter')) {
+            event.preventDefault();
+          }
+          console.log("Clic en el botón");
+        });
       });
-    });
-  
+
     obtenerHrefMapa().then(href => {
-      const mapButton = buttonsMapFilter.querySelector('.button__map a');
-      if (mapButton && href) {
-        mapButton.href = href;
-      }
+        const mapButton = buttonsMapFilter.querySelector('.button__map a');
+        if (mapButton && href) {
+            mapButton.href = href;
+        }
     });
-  }
-  
-  function obtenerHrefMapa() {
+}
+
+function obtenerHrefMapa() {
     return new Promise((resolve, reject) => {
-      const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
-      if (mapLink) {
-        const href = mapLink.getAttribute('href');
-        resolve(href);
-      } else {
-        setTimeout(() => {
-          obtenerHrefMapa().then(resolve).catch(reject);
-        }, 100);
-      }
+        const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
+        if (mapLink) {
+            const href = mapLink.getAttribute('href');
+            resolve(href);
+        } else {
+            setTimeout(() => {
+                obtenerHrefMapa().then(resolve).catch(reject);
+            }, 100);
+        }
     });
-  }
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
