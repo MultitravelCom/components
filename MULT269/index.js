@@ -104,20 +104,19 @@ function agregarNewsButtons() {
 
     results__list.appendChild(buttonsMapFilter);
 
-    const itemWrappers = document.querySelectorAll('.view-selector__item-wrapper');
-    console.log(itemWrappers);
+    const viewSelector = document.querySelector('.view-selector');
 
-    // Verificar que haya al menos tres elementos
-    if (itemWrappers.length >= 3) {
-        // Obtener el tercer elemento
-        const thirdItemWrapper = itemWrappers[2];
-
-        // Obtener el enlace dentro del elemento
-        const link = thirdItemWrapper.querySelector('a');
-
-        // Obtener el valor del atributo "href"
-        const href = link.getAttribute('href');
-        console.log(href);
+    if (viewSelector) {
+      let href;
+    
+      viewSelector.querySelectorAll('.view-selector__item-wrapper').forEach((itemWrapper, index) => {
+        if (index === 2) {
+          const link = itemWrapper.querySelector('a');
+          href = link.getAttribute('href');
+        }
+      });
+    
+      console.log(href);
     }
 
     const buttons = buttonsMapFilter.querySelectorAll('button');
