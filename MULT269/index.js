@@ -134,7 +134,7 @@ function agregarNewsButtons() {
 
 
     // Obtener referencia al botón
-    let mapButton = buttonsMapFilter.querySelector('a');
+    let mapButton = buttonsMapFilter.querySelector('a.button__map');
     let hrefMap, hrefResumed;
 
     // Obtener los href de los botones
