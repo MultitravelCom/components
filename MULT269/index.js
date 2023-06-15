@@ -103,11 +103,13 @@ function agregarNewsButtons() {
 
     results__list.appendChild(buttonsMapFilter);
 
-    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
-    const newButton__map = document.querySelector(".button__map");
-    const hrefValueMap = oldButton__map.getAttribute('href');
+    const newButton__map = buttonsMapFilter.querySelector(".button__map");
+
+    let hrefValueMap; // Declarar la variable antes de asignarle un valor
 
     newButton__map.onclick = function () {
+        const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
+        hrefValueMap = oldButton__map.getAttribute('href'); // Asignar el valor aquí
         window.location.href = hrefValueMap;
     };
 }
