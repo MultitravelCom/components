@@ -84,13 +84,6 @@ function observarSidebarFilters() {
 }
 
 function agregarNewsButtons() {
-    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
-    const newButton__map = document.querySelector(".button__map");
-    const hrefValueMap = oldButton__map.getAttribute('href');
-
-    newButton__map.onclick = function () {
-        window.location.href = hrefValueMap;
-    };
 
     const results__list = document.getElementById("results-list");
 
@@ -109,6 +102,14 @@ function agregarNewsButtons() {
 `;
 
     results__list.appendChild(buttonsMapFilter);
+
+    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
+    const newButton__map = document.querySelector(".button__map");
+    const hrefValueMap = oldButton__map.getAttribute('href');
+
+    newButton__map.onclick = function () {
+        window.location.href = hrefValueMap;
+    };
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
