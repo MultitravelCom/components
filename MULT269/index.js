@@ -104,12 +104,6 @@ function agregarNewsButtons() {
 
     results__list.appendChild(buttonsMapFilter);
 
-    const mapLink = document.querySelector('.view-selector__item-wrapper:nth-child(3) a[data-view="map"]');
-    if (mapLink) {
-        const href = mapLink.getAttribute('href');
-        console.log(href);
-    }
-
     const buttons = buttonsMapFilter.querySelectorAll('button');
 
     buttons.forEach(button => {
@@ -120,6 +114,16 @@ function agregarNewsButtons() {
     });
 };
 
+function obtenerHrefMapa() {
+    const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
+    if (mapLink) {
+      const href = mapLink.getAttribute('href');
+      console.log(href);
+    } else {
+      // El enlace del mapa no está disponible, se volverá a intentar en 100ms
+      setTimeout(obtenerHrefMapa, 100);
+    }
+  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
@@ -127,4 +131,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoFiltro();
     cambiarTextoRegimen();
     agregarNewsButtons();
+    obtenerHrefMapa();
 });
