@@ -1,32 +1,32 @@
 function cambiarTextoMapaYBoton() {
     const sidebarElements = document.querySelectorAll('.js-sidebar-map-placeholder .sidebar-map');
-    
+
     sidebarElements.forEach(function (element) {
-      const span = element.querySelector('span.btn.btn-secondary');
-      
-      if (span && span.innerText === 'Abrir mapa') {
-        span.innerText = 'Ver en mapa';
-        return; // Salir de la función forEach una vez que se haya realizado el cambio
-      }
-    });
-  
-    const viewSelectorItems = document.querySelectorAll('.view-selector__item');
-    
-    viewSelectorItems.forEach(function (item) {
-      const label = item.querySelector('.view-selector__label.view-selector__label--full');
-      
-      if (label) {
-        if (label.innerText === 'Vista por mapa') {
-          label.innerText = 'Ver en mapa';
-        } else if (label.innerText === 'Vista resumo') {
-          label.innerText = 'Ver en lista';
+        const span = element.querySelector('span.btn.btn-secondary');
+
+        if (span && span.innerText === 'Abrir mapa') {
+            span.innerText = 'Ver en mapa';
+            return; // Salir de la función forEach una vez que se haya realizado el cambio
         }
-      }
     });
-  
+
+    const viewSelectorItems = document.querySelectorAll('.view-selector__item');
+
+    viewSelectorItems.forEach(function (item) {
+        const label = item.querySelector('.view-selector__label.view-selector__label--full');
+
+        if (label) {
+            if (label.innerText === 'Vista por mapa') {
+                label.innerText = 'Ver en mapa';
+            } else if (label.innerText === 'Vista resumo') {
+                label.innerText = 'Ver en lista';
+            }
+        }
+    });
+
     // Volver a llamar a la función si no se encontró el div con el texto a cambiar
     setTimeout(cambiarTextoMapaYBoton, 100); // Ajusta el intervalo de tiempo según tus necesidades
-  }
+}
 
 function cambiarTextoFiltro() {
     let filtersInner = document.querySelector('.sidebar-filters__inner');
@@ -83,9 +83,30 @@ function observarSidebarFilters() {
     observer.observe(sidebarFilters, observerOptions);
 }
 
+function agregarNewsBottons() {
+    const results__list = document.getElementById("results__list");
+
+    // Crear el nuevo elemento con innerHTML
+    const bottonsMapFilter = document.createElement("div");
+    bottonsMapFilter.innerHTML =
+        `
+    <div class="botton__map">
+        <div class="glyphicon glyphicon-view-map"></div>
+        <p>Ver en mapa</p>
+    </div>
+    <div class="botton__filter">
+        <div class="glyphicon glyphicon-loungroom"></div>
+        <p>Filtrar</p>
+    </div>
+`;
+
+    results__list.appendChild(bottonsMapFilter);
+}
+
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
     cambiarTextoRegimen();
+    agregarNewsBottons();
 });
