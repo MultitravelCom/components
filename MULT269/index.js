@@ -117,7 +117,7 @@ function agregarNewsButtons() {
     });
 
     const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
-    const buttonFilter = buttonsMapFilter.querySelector('.button__filter');
+    const buttonFilter = buttonsMapFilter.querySelector('.main__container__newsButtons');
 
     if (sidebarFiltersInner && buttonFilter) {
         const computedStyles = getComputedStyle(sidebarFiltersInner);
