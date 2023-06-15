@@ -118,16 +118,16 @@ function agregarNewsButtons() {
 
     const sidebarFiltersInner = document.querySelector('.sidebar-filters__inner');
     const buttonFilter = buttonsMapFilter.querySelector('.main__container__newsButtons');
-
+    
     if (sidebarFiltersInner && buttonFilter) {
-        const computedStyles = getComputedStyle(sidebarFiltersInner);
-        const leftValue = computedStyles.left;
-
-        if (leftValue === '0px') {
-            buttonFilter.style.zIndex = '0';
-        } else {
-            buttonFilter.style.zIndex = '9999999';
-        }
+      const computedStyles = getComputedStyle(sidebarFiltersInner);
+      const leftValue = parseInt(computedStyles.left, 10);
+    
+      if (leftValue === 0) {
+        buttonFilter.style.zIndex = '0';
+      } else {
+        buttonFilter.style.zIndex = '9999999';
+      }
     }
 
     // Obtener los botones y el porcentaje de recorrido
