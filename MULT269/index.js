@@ -91,7 +91,7 @@ function agregarNewsButtons() {
     buttonsMapFilter.innerHTML =
         `
       <button class="buttonStyleHotels button__map">
-        <a href="#" class="buttonStyleHotels">
+        <a href="#" class="buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
             <div class="glyphicon glyphicon-view-map"></div>
             <p>Ver en mapa</p>
         </a>
