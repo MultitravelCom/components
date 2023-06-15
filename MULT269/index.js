@@ -132,7 +132,7 @@ function agregarNewsButtons() {
 
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
-    const scrollThreshold = 0.07;
+    const scrollThreshold = 0.04;
 
     // Función para verificar el porcentaje de recorrido y mostrar/ocultar los botones
     function checkScrollThreshold() {
