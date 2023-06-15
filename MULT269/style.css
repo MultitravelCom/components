@@ -44,15 +44,20 @@
   position: fixed;
   bottom: 39px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   background: #0D4E88;
   border: 1px solid #F3F3F3;
   border-radius: 200px;
   color: #F3F3F3;
-
 }
+
+.main__container__newsBottons p {
+  margin: 0;
+}
+
 .botton__map,
-.botton__filter{
+.botton__filter {
   display: flex;
+  align-items: center;
 }
