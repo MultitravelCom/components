@@ -54,6 +54,7 @@
   box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
   -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
+  z-index: 9999999;
 }
 
 .main__container__newsButtons p {

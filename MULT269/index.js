@@ -85,11 +85,11 @@ function observarSidebarFilters() {
 
 function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
-
+  
     const buttonsMapFilter = document.createElement("div");
-    buttonsMapFilter.classList.add("main__container__newsButtons")
+    buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
-        `
+      `
       <a href="#" class="buttonStyleHotels button__map">
           <div class="glyphicon glyphicon-view-map"></div>
           <p>Ver en mapa</p>
@@ -99,21 +99,28 @@ function agregarNewsButtons() {
           <p>Filtrar</p>
       </button>
       `;
-
+  
     results__list.appendChild(buttonsMapFilter);
-
-    const oldButton__map = document.querySelector(".view-selector__item-wrapper:nth-child(3) a");
+  
     const newButton__map = buttonsMapFilter.querySelector(".button__map");
-
-    const hrefValueMap = oldButton__map.getAttribute('href');
-    newButton__map.setAttribute('href', hrefValueMap);
-
+  
+    const oldButtons = document.querySelectorAll(".view-selector__item-wrapper a");
+    let hrefValueMap = "#"; // Valor por defecto si no se encuentra el enlace
+  
+    for (let i = 0; i < oldButtons.length; i++) {
+      const button = oldButtons[i];
+      if (button.dataset.view === "map") {
+        hrefValueMap = button.getAttribute("href");
+        break; // Se encontró el enlace, salir del bucle
+      }
+    }
+  
+    newButton__map.setAttribute("href", hrefValueMap);
+  
     newButton__map.onclick = function () {
-        if (hrefValueMap !== '#') {
-            window.location.href = hrefValueMap;
-        }
+      window.location.href = hrefValueMap;
     };
-}
+  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarSidebarFilters();
