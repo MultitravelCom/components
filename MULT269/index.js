@@ -85,11 +85,11 @@ function observarSidebarFilters() {
 
 function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
-  
+
     const buttonsMapFilter = document.createElement("div");
     buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
-      `
+        `
       <button class="buttonStyleHotels button__map">
         <a href="#" class="buttonStyleHotels">
             <div class="glyphicon glyphicon-view-map"></div>
@@ -101,33 +101,28 @@ function agregarNewsButtons() {
           <p>Filtrar</p>
       </button>
       `;
-  
-    results__list.appendChild(buttonsMapFilter);
-  
-    const newButton__map = buttonsMapFilter.querySelector(".button__map");
-  
-    const oldButtons = document.querySelectorAll(".view-selector__item-wrapper a");
-    let hrefValueMap = "#"; // Valor por defecto si no se encuentra el enlace
-  
-    for (let i = 0; i < oldButtons.length; i++) {
-      const button = oldButtons[i];
-      if (button.dataset.view === "map") {
-        hrefValueMap = button.getAttribute("href");
-        break; // Se encontró el enlace, salir del bucle
-      }
-    }
-  
-    newButton__map.setAttribute("href", hrefValueMap);
-  
-    newButton__map.onclick = function () {
-      window.location.href = hrefValueMap;
-    };
-  }
 
-document.addEventListener('DOMContentLoaded', async function () {
-    observarSidebarFilters();
-    cambiarTextoMapaYBoton();
-    cambiarTextoFiltro();
-    cambiarTextoRegimen();
-    agregarNewsButtons();
-});
+    results__list.appendChild(buttonsMapFilter);
+
+    const itemWrappers = document.querySelectorAll('.view-selector__item-wrapper');
+
+    // Verificar que haya al menos tres elementos
+    if (itemWrappers.length >= 3) {
+        // Obtener el tercer elemento
+        const thirdItemWrapper = itemWrappers[2];
+
+        // Obtener el enlace dentro del elemento
+        const link = thirdItemWrapper.querySelector('a');
+
+        // Obtener el valor del atributo "href"
+        const href = link.getAttribute('href');
+        console.log(href);
+    }
+};
+    document.addEventListener('DOMContentLoaded', async function () {
+        observarSidebarFilters();
+        cambiarTextoMapaYBoton();
+        cambiarTextoFiltro();
+        cambiarTextoRegimen();
+        agregarNewsButtons();
+    });
