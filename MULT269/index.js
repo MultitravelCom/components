@@ -154,10 +154,10 @@ function agregarNewsButtons() {
         let isMapVisible = mapButton.href === hrefMap;
 
         // Cambiar el texto del botón
-        mapButton.querySelector('p').textContent = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
+        mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
 
         // Cambiar el valor del href
-        mapButton.href = isMapVisible ? hrefResumed : hrefMap;
+        mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
 
         // Volver a la página del href
         window.location.href = mapButton.href;
