@@ -109,7 +109,9 @@ function agregarNewsButtons() {
     newButton__map.setAttribute('href', hrefValueMap);
 
     newButton__map.onclick = function () {
-        window.location.href = hrefValueMap;
+        if (hrefValueMap !== '#') {
+            window.location.href = hrefValueMap;
+        }
     };
 }
 
