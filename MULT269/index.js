@@ -87,9 +87,10 @@ function agregarNewsButtons() {
     const results__list = document.getElementById("results-list");
 
     const buttonsMapFilter = document.createElement("div");
-    buttonsMapFilter.classList.add("main__container__newsButtons");
+    // buttonsMapFilter.classList.add("main__container__newsButtons");
     buttonsMapFilter.innerHTML =
         `
+        <div class="main__container__newsButtons">
       <a href="#" class="button__map buttonStyleHotels view-selector__item js-view-selector-toggle" data-view="map" >
           <div class="glyphicon glyphicon-view-map"></div>
           <p>Ver en mapa</p>
@@ -97,6 +98,7 @@ function agregarNewsButtons() {
     <div class="buttonStyleHotels button__filter js-results-list-filter-toggle">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
+    </div>
     </div>
     `;
 
