@@ -84,9 +84,8 @@ function observarSidebarFilters() {
 }
 
 function agregarNewsBottons() {
-    const results__list = document.getElementById("results__list");
+    const results__list = document.getElementById("results-list");
 
-    // Crear el nuevo elemento con innerHTML
     const bottonsMapFilter = document.createElement("div");
     bottonsMapFilter.innerHTML =
         `
