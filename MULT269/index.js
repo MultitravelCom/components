@@ -130,6 +130,32 @@ function agregarNewsButtons() {
         }
     }
 
+    // Obtener los botones y el porcentaje de recorrido
+    const buttonsContainer = document.querySelector('.main__container__newsButtons');
+    const scrollThreshold = 0.25;
+
+    // Función para verificar el porcentaje de recorrido y mostrar/ocultar los botones
+    function checkScrollThreshold() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        const scrolledPercentage = scrollY / (documentHeight - windowHeight);
+
+        if (scrolledPercentage >= scrollThreshold) {
+            buttonsContainer.style.display = 'block';
+        } else {
+            buttonsContainer.style.display = 'none';
+        }
+    }
+
+    // Escuchar el evento de desplazamiento y llamar a la función checkScrollThreshold
+    window.addEventListener('scroll', checkScrollThreshold);
+
+    // Llamar a la función checkScrollThreshold inicialmente para verificar el estado inicial
+    checkScrollThreshold();
+
+
     obtenerHrefMapa().then(href => {
         const mapButton = buttonsMapFilter.querySelector('.button__map a');
         if (mapButton && href) {
