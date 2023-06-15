@@ -109,7 +109,6 @@ function agregarNewsButtons() {
             if (button.classList.contains('button__filter')) {
                 event.preventDefault();
             }
-            console.log("Clic en el botón");
         });
     });
 
@@ -134,21 +133,47 @@ function agregarNewsButtons() {
     checkScrollThreshold();
 
 
-    obtenerHrefMapa().then(href => {
-        const mapButton = buttonsMapFilter.querySelector('a');
-        if (mapButton && href) {
-            mapButton.href = href;
-        }
+    // Obtener referencia al botón
+    let mapButton = buttonsMapFilter.querySelector('a');
+    let hrefMap, hrefResumed;
+
+    // Obtener los href de los botones
+    obtenerHrefMapa().then(function (href) {
+        hrefMap = href.hrefMap;
+        hrefResumed = href.hrefResumed;
+        // Asignar el href inicial al botón
+        mapButton.href = hrefMap;
+    }).catch(function (error) {
+        console.error('Error al obtener los href:', error);
+    });
+
+    // Agregar evento click al botón
+    mapButton.addEventListener('click', function () {
+        // Obtener el estado actual del botón
+        let isMapVisible = mapButton.href === hrefMap;
+
+        // Cambiar el texto del botón
+        mapButton.innerHTML = isMapVisible ? 'Ver en lista' : 'Ver en mapa';
+
+        // Cambiar el valor del href
+        mapButton.href = isMapVisible ? hrefResumed : hrefMap;
+
+        // Volver a la página del href
+        window.location.href = mapButton.href;
     });
 }
 
 function obtenerHrefMapa() {
     return new Promise((resolve, reject) => {
         const mapLink = document.querySelector('.view-selector__item-wrapper a[data-view="map"]');
-        if (mapLink) {
-            const href = mapLink.getAttribute('href');
-            resolve(href);
-            console.log('Aplicado href al botón:', href);
+        const resumedLink = document.querySelector('.view-selector__item-wrapper a[data-view="resumed"]');
+
+        if (mapLink && resumedLink) {
+            const hrefMap = mapLink.getAttribute('href');
+            const hrefResumed = resumedLink.getAttribute('href');
+            resolve({ hrefMap, hrefResumed });
+            console.log('Aplicado href al botón de mapa:', hrefMap);
+            console.log('Aplicado href al botón de resumido:', hrefResumed);
         } else {
             setTimeout(() => {
                 obtenerHrefMapa().then(resolve).catch(reject);
