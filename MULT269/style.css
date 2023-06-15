@@ -53,6 +53,7 @@
   -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
   z-index: 9999999;
+  overflow: hidden;
 }
 
 .main__container__newsButtons p {
@@ -79,6 +80,13 @@
 
 .buttonStyleHotels:hover {
   background-color: #283747;
+  color: white;
+  text-decoration: none;
+}
+.buttonStyleHotels:hover {
+  background-color: #283747;
+  color: white;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {

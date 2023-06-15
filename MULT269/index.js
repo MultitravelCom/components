@@ -94,10 +94,10 @@ function agregarNewsButtons() {
           <div class="glyphicon glyphicon-view-map"></div>
           <p>Ver en mapa</p>
       </a>
-    <button class="buttonStyleHotels button__filter js-results-list-filter-toggle">
+    <div class="buttonStyleHotels button__filter js-results-list-filter-toggle">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
-    </button>
+    </div>
     `;
 
     results__list.appendChild(buttonsMapFilter);
@@ -113,11 +113,9 @@ function agregarNewsButtons() {
         });
     });
 
-    // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
     const scrollThreshold = 0.035;
 
-    // Función para verificar el porcentaje de recorrido y mostrar/ocultar los botones
     function checkScrollThreshold() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -132,10 +130,7 @@ function agregarNewsButtons() {
         }
     }
 
-    // Escuchar el evento de desplazamiento y llamar a la función checkScrollThreshold
     window.addEventListener('scroll', checkScrollThreshold);
-
-    // Llamar a la función checkScrollThreshold inicialmente para verificar el estado inicial
     checkScrollThreshold();
 
 
@@ -143,7 +138,6 @@ function agregarNewsButtons() {
         const mapButton = buttonsMapFilter.querySelector('a');
         if (mapButton && href) {
             mapButton.href = href;
-            console.log('Aplicado href al botón:', href);
         }
     });
 }
