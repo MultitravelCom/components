@@ -114,34 +114,38 @@ function agregarNewsButtons() {
         });
     });
     // ***********************************************************************************
-    const buttonsContainer = document.querySelector('.main__container__newsButtons');
-    const scrollThreshold = 0.015;
-
     function checkScrollThreshold() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         const documentHeight = document.documentElement.scrollHeight;
+        const footerElement = document.querySelector('footer');
 
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
         // Verificar si el main__container se ve solo en dispositivos móviles
         const isMobileView = window.innerWidth <= 767; // Considerar ancho máximo de 767px como vista móvil
 
-        if (scrolledPercentage >= scrollThreshold && isMobileView) {
+        if (scrolledPercentage >= scrollThreshold && isMobileView && !isInFooter()) {
             buttonsContainer.style.display = 'flex';
         } else {
             buttonsContainer.style.display = 'none';
         }
     }
 
+    function isInFooter() {
+        const footerElement = document.querySelector('footer');
+        const footerRect = footerElement.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Verificar si el footer está visible en la ventana actual
+        return footerRect.top <= windowHeight;
+    }
+
     window.addEventListener('scroll', checkScrollThreshold);
     window.addEventListener('resize', checkScrollThreshold);
 
     checkScrollThreshold();
-
-    window.addEventListener('scroll', checkScrollThreshold);
-    checkScrollThreshold();
-// **************************************************************
+    // **************************************************************
     // Obtener referencia al botón
     let mapButton = buttonsMapFilter.querySelector('.button__map');
     let hrefMap, hrefResumed;
