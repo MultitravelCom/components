@@ -167,6 +167,7 @@ function agregarNewsButtons() {
         const mapButton = buttonsMapFilter.querySelector('.button__map');
         if (mapButton && href) {
             mapButton.href = href;
+            console.log(href)
         }
     });
 }
