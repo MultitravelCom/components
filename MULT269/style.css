@@ -37,7 +37,7 @@
 
 /* BOTONES FILTER / MAP */
 
-.main__container__newsBottons {
+.main__container__newsButtons {
   width: 310px;
   height: 34px;
   display: flex;
@@ -56,21 +56,21 @@
   -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.23);
 }
 
-.main__container__newsBottons p {
+.main__container__newsButtons p {
   margin: 0 5px;
   font-size: 12px;
   font-weight: bolder;
 }
 
-.main__container__newsBottons .glyphicon {
+.main__container__newsButtons .glyphicon {
   color: white;
 }
 
-.botton__map {
+.button__map {
   border-right: 1px solid #F3F3F3;
 }
 
-.bottonStyleHotels {
+.buttonStyleHotels {
   display: flex;
   align-items: center;
   width: 155px;
@@ -78,6 +78,6 @@
   justify-content: center;
 }
 
-.bottonStyleHotels:hover {
+.buttonStyleHotels:hover {
   background-color: #283747;
 }

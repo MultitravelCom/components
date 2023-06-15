@@ -83,24 +83,34 @@ function observarSidebarFilters() {
     observer.observe(sidebarFilters, observerOptions);
 }
 
-function agregarNewsBottons() {
+function agregarNewsButtons() {
+
+    const oldButton__map = document.getElementById(".view-selector__item-wrapper a");
+    const newButton__map = document.getElementById("button__map");
+
+    const hrefValueMap = oldButton__map.getAttribute('href');
+
+    newButton__map.onclick = function () {
+        window.location.href = hrefValueMap;
+    };
+
     const results__list = document.getElementById("results-list");
 
-    const bottonsMapFilter = document.createElement("div");
-    bottonsMapFilter.classList.add("main__container__newsBottons")
-    bottonsMapFilter.innerHTML =
+    const buttonsMapFilter = document.createElement("div");
+    buttonsMapFilter.classList.add("main__container__newsButtons")
+    buttonsMapFilter.innerHTML =
         `
-    <div class="bottonStyleHotels botton__map">
+    <div class="buttonStyleHotels button__map">
         <div class="glyphicon glyphicon-view-map"></div>
         <p>Ver en mapa</p>
     </div>
-    <div class="bottonStyleHotels botton__filter">
+    <div class="buttonStyleHotels button__filter">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
     </div>
 `;
 
-    results__list.appendChild(bottonsMapFilter);
+    results__list.appendChild(buttonsMapFilter);
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -108,5 +118,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
     cambiarTextoRegimen();
-    agregarNewsBottons();
+    agregarNewsButtons();
 });
