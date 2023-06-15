@@ -90,11 +90,11 @@ function agregarNewsBottons() {
     bottonsMapFilter.classList.add("main__container__newsBottons")
     bottonsMapFilter.innerHTML =
         `
-    <div class="botton__map">
+    <div class="bottonStyleHotels botton__map">
         <div class="glyphicon glyphicon-view-map"></div>
         <p>Ver en mapa</p>
     </div>
-    <div class="botton__filter">
+    <div class="bottonStyleHotels botton__filter">
         <div class="glyphicon glyphicon-loungroom"></div>
         <p>Filtrar</p>
     </div>

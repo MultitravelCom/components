@@ -50,20 +50,31 @@
   border: 1px solid #F3F3F3;
   border-radius: 200px;
   color: #F3F3F3;
+  margin: 0 5px;
 }
 
 .main__container__newsBottons p {
   margin: 0 5px;
+  font-size: 12px;
+  font-weight: bolder;
 }
 
 .main__container__newsBottons .glyphicon {
   color: white;
 }
 
-.botton__map,
-.botton__filter {
+.botton__map {
+  border-right: 1px solid #F3F3F3;
+}
+
+.bottonStyleHotels {
   display: flex;
   align-items: center;
   width: 155px;
+  height: 100%;
   justify-content: center;
+}
+
+.bottonStyleHotels:hover {
+  background-color: #283747;
 }
