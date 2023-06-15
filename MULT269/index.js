@@ -87,6 +87,7 @@ function agregarNewsBottons() {
     const results__list = document.getElementById("results-list");
 
     const bottonsMapFilter = document.createElement("div");
+    bottonsMapFilter.classList.add("main__container__newsBottons")
     bottonsMapFilter.innerHTML =
         `
     <div class="botton__map">

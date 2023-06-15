@@ -34,3 +34,25 @@
     display: block;
   }
 }
+
+/* BOTONES FILTER / MAP */
+
+.main__container__newsBottons {
+  width: 310px;
+  height: 34px;
+  display: flex;
+  position: fixed;
+  bottom: 39px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #0D4E88;
+  border: 1px solid #F3F3F3;
+  border-radius: 200px;
+  color: #F3F3F3;
+
+}
+.botton__map,
+.botton__filter{
+  display: flex;
+}
