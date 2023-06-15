@@ -128,6 +128,12 @@ function agregarNewsButtons() {
         // Verificar si el main__container se ve solo en dispositivos móviles
         const isMobileView = window.innerWidth <= 767; // Considerar ancho máximo de 767px como vista móvil
 
+        if (scrollY > 0 || isScrolled) {
+            buttonsContainer.style.display = 'flex';
+        } else {
+            buttonsContainer.style.display = 'none';
+        }
+
         if ((scrolledPercentage >= 0.015 || isScrolled) && isMobileView && !isInFooter()) {
             buttonsContainer.style.display = 'flex';
         } else {
@@ -150,6 +156,7 @@ function agregarNewsButtons() {
     window.addEventListener('resize', checkScrollThreshold);
 
     checkScrollThreshold();
+
 
     // **************************************************************
     // Obtener referencia al botón
