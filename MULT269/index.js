@@ -132,7 +132,7 @@ function agregarNewsButtons() {
 
     // Obtener los botones y el porcentaje de recorrido
     const buttonsContainer = document.querySelector('.main__container__newsButtons');
-    const scrollThreshold = 0.25;
+    const scrollThreshold = 0.07;
 
     // Función para verificar el porcentaje de recorrido y mostrar/ocultar los botones
     function checkScrollThreshold() {
@@ -143,7 +143,7 @@ function agregarNewsButtons() {
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
         if (scrolledPercentage >= scrollThreshold) {
-            buttonsContainer.style.display = 'block';
+            buttonsContainer.style.display = 'flex';
         } else {
             buttonsContainer.style.display = 'none';
         }
