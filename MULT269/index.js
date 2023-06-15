@@ -141,6 +141,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
     cambiarTextoRegimen();
-    obtenerHrefMapa();
     agregarNewsButtons();
 });
