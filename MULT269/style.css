@@ -2,7 +2,7 @@
   display: none;
 }
 
-.results-list__header .results-list__order-by-label {
+.results-list__order-by .results-list__order-by-label {
   color: black !important;
   font-weight: bold !important;
 }
