@@ -17,23 +17,22 @@ async function removeImageLinks(resultsListPage) {
     });
 }
 
-function removeLinkOnClick() {
-    // Obtener todas las imágenes con la clase "info-card__image-holder"
-    const images = document.querySelectorAll('.info-card__image-holder');
+function removeDataTarget() {
+    const imageContainers = document.querySelectorAll('.info-card__image.info-card__image--action');
   
-    // Verificar si se encontraron imágenes
-    if (images.length > 0) {
-      // Iterar sobre cada imagen y agregar un manejador de eventos para evitar el comportamiento de clic
-      images.forEach(function(image) {
-        image.addEventListener('click', function(event) {
-          event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-        });
-      });
-    } else {
-      // Si no se encontraron imágenes, volver a verificar después de 100 ms
-      setTimeout(removeLinkOnClick, 100);
-    }
+    imageContainers.forEach(function(container) {
+      const imageHolder = container.querySelector('.info-card__image-holder');
+      if (imageHolder) {
+        imageHolder.removeAttribute('data-target');
+      }
+    });
+  
+    // Volver a verificar después de 100 ms
+    setTimeout(removeDataTarget, 100);
   }
+  
+  // Llamar a la función inicialmente
+  removeDataTarget();
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
@@ -168,7 +167,7 @@ async function changeCopyButton(resultsListPage) {
 
   
 function aplicarModificaciones(resultsListPage) {
-    removeLinkOnClick();
+    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
