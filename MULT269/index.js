@@ -125,8 +125,8 @@ function agregarNewsButtons() {
 
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
-        // Verificar si el main__container se ve solo en dispositivos móviles
-        const isMobileView = window.innerWidth <= 767; // Considerar ancho máximo de 767px como vista móvil
+        
+        const isMobileView = window.innerWidth <= 767;
 
         if ((scrolledPercentage >= 0.015 || isScrolled) && isMobileView && !isInFooter()) {
             buttonsContainer.style.display = 'flex';
@@ -141,8 +141,6 @@ function agregarNewsButtons() {
         const footerElement = document.querySelector('footer');
         const footerRect = footerElement.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        // Verificar si el footer está visible en la ventana actual
         return footerRect.top <= windowHeight;
     }
 
@@ -152,42 +150,34 @@ function agregarNewsButtons() {
     checkScrollThreshold();
 
     // **************************************************************
-    // Obtener referencia al botón
     let mapButton = buttonsMapFilter.querySelector('.button__map');
     let hrefMap, hrefResumed;
 
-    // Obtener los href de los botones
     obtenerHrefMapa().then(function (href) {
         hrefMap = href.hrefMap;
         hrefResumed = href.hrefResumed;
 
-        // Función para cambiar el texto y el icono del botón
         function toggleButtonText() {
             let isMapVisible = mapButton.getAttribute('href') === hrefMap;
             mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
             mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
         }
 
-        // Asignar el href inicial al botón
+        toggleButtonText(); 
         mapButton.href = hrefMap;
-        toggleButtonText(); // Cambiar el texto y el icono inicial
 
-        // Agregar evento click al botón
         mapButton.addEventListener('click', function (event) {
             event.preventDefault();
-            toggleButtonText(); // Cambiar el texto y el icono
+            toggleButtonText(); 
 
             let isMapVisible = mapButton.getAttribute('href') === hrefMap;
 
             if (isMapVisible) {
-                // Cambiar a resumed
                 mapButton.setAttribute('href', hrefResumed);
             } else {
-                // Cambiar a map
                 mapButton.setAttribute('href', hrefMap);
             }
 
-            // Abrir el enlace
             window.location.href = mapButton.getAttribute('href');
         });
     }).catch(function (error) {
