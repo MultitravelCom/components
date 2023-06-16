@@ -174,13 +174,13 @@ function agregarNewsButtons() {
             if (isMapVisible) {
                 // Cambiar a resumed
                 mapButton.setAttribute('href', hrefResumed);
-                mapButton.querySelector('p').innerHTML = 'Ver en lista';
-                iconElement.className = 'glyphicon glyphicon-view-resumed';
+                iconElement.className = 'glyphicon glyphicon-view-map';
+                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
             } else {
                 // Cambiar a map
                 mapButton.setAttribute('href', hrefMap);
-                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
-                iconElement.className = 'glyphicon glyphicon-view-map';
+                iconElement.className = 'glyphicon glyphicon-view-resumed';
+                mapButton.querySelector('p').innerHTML = 'Ver en lista';
             }
 
             // Abrir el enlace
@@ -189,6 +189,7 @@ function agregarNewsButtons() {
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
+
 
 
 }
