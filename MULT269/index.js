@@ -161,29 +161,35 @@ function agregarNewsButtons() {
         hrefMap = href.hrefMap;
         hrefResumed = href.hrefResumed;
 
+        // Función para cambiar el texto y el icono del botón
+        function toggleButtonText() {
+            let isMapVisible = mapButton.getAttribute('href') === hrefMap;
+            mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
+            mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
+        }
+
+        // Asignar el href inicial al botón
+        mapButton.href = hrefMap;
+        toggleButtonText(); // Cambiar el texto y el icono inicial
+
         // Agregar evento click al botón
         mapButton.addEventListener('click', function (event) {
             event.preventDefault();
+            toggleButtonText(); // Cambiar el texto y el icono
+
             let isMapVisible = mapButton.getAttribute('href') === hrefMap;
 
             if (isMapVisible) {
                 // Cambiar a resumed
                 mapButton.setAttribute('href', hrefResumed);
-                mapButton.querySelector('.glyphicon').className = 'glyphicon glyphicon-view-map';
-                mapButton.querySelector('p').innerHTML = 'Ver en lista';
             } else {
                 // Cambiar a map
                 mapButton.setAttribute('href', hrefMap);
-                mapButton.querySelector('.glyphicon').className = 'glyphicon glyphicon-view-resumed';
-                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
             }
 
             // Abrir el enlace
             window.location.href = mapButton.getAttribute('href');
         });
-
-        // Asignar el href inicial al botón
-        mapButton.href = hrefMap;
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
