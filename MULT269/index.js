@@ -160,11 +160,6 @@ function agregarNewsButtons() {
     obtenerHrefMapa().then(function (href) {
         hrefMap = href.hrefMap;
         hrefResumed = href.hrefResumed;
-        // Asignar el href inicial al botón
-        mapButton.href = hrefMap;
-
-        // Obtener referencia al ícono
-        let iconElement = mapButton.querySelector('.glyphicon');
 
         // Agregar evento click al botón
         mapButton.addEventListener('click', function (event) {
@@ -174,22 +169,24 @@ function agregarNewsButtons() {
             if (isMapVisible) {
                 // Cambiar a resumed
                 mapButton.setAttribute('href', hrefResumed);
-                iconElement.className = 'glyphicon glyphicon-view-map';
-                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
+                mapButton.querySelector('.glyphicon').className = 'glyphicon glyphicon-view-map';
+                mapButton.querySelector('p').innerHTML = 'Ver en lista';
             } else {
                 // Cambiar a map
                 mapButton.setAttribute('href', hrefMap);
-                iconElement.className = 'glyphicon glyphicon-view-resumed';
-                mapButton.querySelector('p').innerHTML = 'Ver en lista';
+                mapButton.querySelector('.glyphicon').className = 'glyphicon glyphicon-view-resumed';
+                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
             }
 
             // Abrir el enlace
             window.location.href = mapButton.getAttribute('href');
         });
+
+        // Asignar el href inicial al botón
+        mapButton.href = hrefMap;
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
-
 
 
 }
