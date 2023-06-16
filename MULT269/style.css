@@ -37,6 +37,7 @@
 
 /* BOTONES FILTER / MAP */
 .main__container__newsButtons--mobile {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
