@@ -125,7 +125,7 @@ function agregarNewsButtons() {
 
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
-
+        
         const isMobileView = window.innerWidth <= 767;
 
         if ((scrolledPercentage >= 0.015 || isScrolled) && isMobileView && !isInFooter()) {
@@ -150,40 +150,36 @@ function agregarNewsButtons() {
     checkScrollThreshold();
 
     // **************************************************************
-    let mapButton = buttonsMapFilter.querySelector('.button__map');
-    let hrefMap, hrefResumed;
-    let isFirstClick = true;
+   let mapButton = buttonsMapFilter.querySelector('.button__map');
+let hrefMap, hrefResumed;
+let isFirstClick = true; // Variable para controlar el primer clic
 
-    obtenerHrefMapa().then(function (href) {
-        hrefMap = href.hrefMap;
-        hrefResumed = href.hrefResumed;
+obtenerHrefMapa().then(function (href) {
+  hrefMap = href.hrefMap;
+  hrefResumed = href.hrefResumed;
 
-        function toggleButtonText() {
-            let isMapVisible = mapButton.getAttribute('href') === hrefMap;
-            mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
-            mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
-        }
+  function toggleButtonText() {
+    let isMapVisible = mapButton.getAttribute('href') === hrefMap;
+    mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
+    mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
+  }
 
-        mapButton.href = hrefMap;
-        toggleButtonText();
+  mapButton.href = hrefMap;
+  toggleButtonText(); 
 
-        mapButton.addEventListener('click', function (event) {
-            event.preventDefault();
-            toggleButtonText();
+  mapButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    toggleButtonText();
+  
+    let isMapVisible = mapButton.getAttribute('href') === hrefMap;
+    mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
+    window.location.href = mapButton.getAttribute('href');
+  });
+}).catch(function (error) {
+  console.error('Error al obtener los href:', error);
+});
 
-            if (isFirstClick) {
-                isFirstClick = false;
-                mapButton.href = hrefResumed; // Actualizar el enlace
-                mapButton.click(); // Simular el clic en el enlace
-            } else {
-                let isMapVisible = mapButton.getAttribute('href') === hrefMap;
-                mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
-                mapButton.click(); // Simular el clic en el enlace
-            }
-        });
-    }).catch(function (error) {
-        console.error('Error al obtener los href:', error);
-    });
+
 }
 
 function obtenerHrefMapa() {
