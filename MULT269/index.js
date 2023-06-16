@@ -163,8 +163,8 @@ function agregarNewsButtons() {
             mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
         }
 
-        toggleButtonText(); 
         mapButton.href = hrefMap;
+        toggleButtonText(); 
 
         mapButton.addEventListener('click', function (event) {
             event.preventDefault();
