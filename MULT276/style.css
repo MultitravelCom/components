@@ -49,7 +49,7 @@
   font-size: 12px;
   line-height: 144%;
   color: #0D3C61;
-  padding: 0;
+  padding: 0 !important;
 }
 
 @media (max-width: 767px) {
