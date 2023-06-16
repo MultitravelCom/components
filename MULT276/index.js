@@ -23,12 +23,11 @@ function renderCopyTaxFlight() {
   }
 }
 
-function moveButton() {
-  var bookingButton = document.querySelector('.flight-selection__booking-button');
-  var copyContainer = document.querySelector('.copy-tax-flight-container');
-  var parentDiv = document.querySelector('.flight-selection__booking').parentNode;
+function moveDiv() {
+  let bookingDiv = document.querySelector('.flight-selection__booking');
+  let copyContainer = document.querySelector('.copy-tax-flight-container');
 
-  copyContainer.insertBefore(bookingButton, parentDiv.nextSibling);
+  copyContainer.appendChild(bookingDiv);
 }
 
 function agregarComponenteCuandoApareceFlightSelection() {
