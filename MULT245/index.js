@@ -17,22 +17,20 @@ async function removeImageLinks(resultsListPage) {
     });
 }
 
-function removeDataTarget() {
-    const imageContainers = document.querySelectorAll('.info-card__image.info-card__image--action');
-  
-    imageContainers.forEach(function(container) {
-      const imageHolder = container.querySelector('.info-card__image-holder');
-      if (imageHolder) {
-        imageHolder.removeAttribute('data-target');
-      }
+function removeDataTarget(resultsListPage) {
+    const items = resultsListPage.querySelectorAll('.results-list__item');
+
+    items.forEach(item => {
+        const card = item.querySelector('.info-card__image .info-card__image--action');
+
+        if (card) {
+            imageHolder.removeAttribute('data-target');
+        }
     });
-  
+
     // Volver a verificar después de 100 ms
     setTimeout(removeDataTarget, 100);
-  }
-  
-  // Llamar a la función inicialmente
-  removeDataTarget();
+}
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
@@ -165,9 +163,9 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-  
+
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget();
+    removeDataTarget(resultsListPage);
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
