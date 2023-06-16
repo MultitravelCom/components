@@ -173,15 +173,12 @@ function agregarNewsButtons() {
 
             if (isFirstClick) {
                 isFirstClick = false;
-
-                setTimeout(function () {
-                    mapButton.setAttribute('href', hrefResumed);
-                    window.location.href = mapButton.getAttribute('href');
-                }, 0);
+                mapButton.href = hrefResumed; // Actualizar el enlace
+                mapButton.click(); // Simular el clic en el enlace
             } else {
                 let isMapVisible = mapButton.getAttribute('href') === hrefMap;
                 mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
-                window.location.href = mapButton.getAttribute('href');
+                mapButton.click(); // Simular el clic en el enlace
             }
         });
     }).catch(function (error) {
