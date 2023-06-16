@@ -163,24 +163,33 @@ function agregarNewsButtons() {
         // Asignar el href inicial al botón
         mapButton.href = hrefMap;
 
+        // Obtener referencia al ícono
+        let iconElement = mapButton.querySelector('.glyphicon');
+
         // Agregar evento click al botón
         mapButton.addEventListener('click', function (event) {
             event.preventDefault();
             let isMapVisible = mapButton.getAttribute('href') === hrefMap;
-            mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
 
             if (isMapVisible) {
-                // Abrir el enlace directamente
-                window.location.href = hrefMap;
-            } else {
-                // Cambiar el href y el icono
+                // Cambiar a resumed
                 mapButton.setAttribute('href', hrefResumed);
-                mapButton.querySelector('.glyphicon').className = 'glyphicon glyphicon-view-resumed';
+                mapButton.querySelector('p').innerHTML = 'Ver en lista';
+                iconElement.className = 'glyphicon glyphicon-view-resumed';
+            } else {
+                // Cambiar a map
+                mapButton.setAttribute('href', hrefMap);
+                mapButton.querySelector('p').innerHTML = 'Ver en mapa';
+                iconElement.className = 'glyphicon glyphicon-view-map';
             }
+
+            // Abrir el enlace
+            window.location.href = mapButton.getAttribute('href');
         });
     }).catch(function (error) {
         console.error('Error al obtener los href:', error);
     });
+
 
 }
 
