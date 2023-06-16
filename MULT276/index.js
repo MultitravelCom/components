@@ -52,7 +52,7 @@ function agregarComponenteCuandoApareceFlightSelection() {
 
           // Invocar la función renderCopyTaxFlight() para renderizar el componente
           renderCopyTaxFlight();
-          moveButton();
+          moveDiv()
 
           // Mostrar un mensaje en la consola para verificar la detección
           console.log('Clase flight-selection detectada. Se agregó el componente.');
