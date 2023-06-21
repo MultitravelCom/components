@@ -119,13 +119,13 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        <ComponenteCupones
+                        {/* <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>
