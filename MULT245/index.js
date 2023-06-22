@@ -2,18 +2,12 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks(resultsListPage) {
-    const items = resultsListPage.querySelectorAll('.results-list__item');
-
-    items.forEach(item => {
-        const card = item.querySelector('.info-card__image .info-card__image--action');
-
-        if (card) {
-            card.addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log('Clic en info-card');
-            });
-        }
+async function removeImageLinks() {
+    let images = document.querySelectorAll('.info-card__image-holder img');
+    images.forEach(function (image) {
+        image.addEventListener('click', function (event) {
+            event.preventDefault();
+        });
     });
 }
 
