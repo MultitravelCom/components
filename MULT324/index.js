@@ -66,7 +66,7 @@ changeWaLink();
 
 // ***************************  Conexion a BD ***************************************
 const fetchDestinos = async () => {
-    const response = await fetch('https://raw.githubusercontent.com/MultitravelCom/style/main/Estaticas/Brasil/dbBrasil.json');
+    const response = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/MULT324/dbCaribe.json');
     const data = await response.json();
 
     return data;
