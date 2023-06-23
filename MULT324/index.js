@@ -105,37 +105,37 @@ const Loader = () => {
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     );
 };
-// function shouldShowEvent() {
-//     const startDate = new Date("2023-05-07T23:59:00");
-//     const endDate = new Date("2023-05-10T23:59:00");
-//     const now = new Date();
+function shouldShowEvent() {
+    const startDate = new Date("2023-05-07T23:59:00");
+    const endDate = new Date("2023-05-10T23:59:00");
+    const now = new Date();
 
-//     return now >= startDate && now <= endDate;
-// }
+    return now >= startDate && now <= endDate;
+}
 
-// const EventImg = (props) => {
-//     const { shouldShowEvent } = props;
+const EventImg = (props) => {
+    const { shouldShowEvent } = props;
 
-//     if (!shouldShowEvent()) {
-//         return (
-//             <div className={props.style}>
-//                 <img
-//                     alt={`Imagen evento promocion`}
-//                     src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/iconHotWeek.webp"}
-//                 />
-//             </div>
-//         );
-//     }
+    if (!shouldShowEvent()) {
+        return (
+            <div className={props.style}>
+                <img
+                    alt={`Imagen evento promocion`}
+                    src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/iconHotWeek.webp"}
+                />
+            </div>
+        );
+    }
 
-//     return (
-//         <div className={props.style}>
-//             <img
-//                 alt={`Imagen evento promocion`}
-//                 src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/logohotsale.webp"}
-//             />
-//         </div>
-//     );
-// };
+    return (
+        <div className={props.style}>
+            <img
+                alt={`Imagen evento promocion`}
+                src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/logohotsale.webp"}
+            />
+        </div>
+    );
+};
 
 const WarningPrice = () => {
     return (
@@ -215,7 +215,7 @@ const Card = ({ destinos }) => {
                                 className="main__conteiner__s1__destacado__card uno"
                                 style={{ height: "100%", width: "100%" }}
                             >
-                                {destino.events === "no" && <EventImg style="eventImg" shouldShowEvent={shouldShowEvent} />}
+                                {/* {destino.events === "no" && <EventImg style="eventImg" shouldShowEvent={shouldShowEvent} />} */}
                                 <picture>
                                     <map name={destino.id}>
                                         <area
