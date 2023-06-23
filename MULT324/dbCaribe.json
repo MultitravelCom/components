@@ -63,7 +63,7 @@
         {
             "id": "b1",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-1.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-1.webp",
             "className": "uno",
             "linkWa": "https://wa.link/n1y7se",
             "title": "Paquete Riu Tequila",
@@ -73,7 +73,7 @@
         {
             "id": "b2",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-2.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-2.webp",
             "className": "uno",
             "linkWa": "https://wa.link/fsf72k",
             "title": "Paquete Grand Riviera Princess",
@@ -83,7 +83,7 @@
         {
             "id": "b3",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-3.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-3.webp",
             "className": "uno",
             "linkWa": "https://wa.link/e4ksdi",
             "title": "Paquete Iberostar Tucán",
@@ -93,7 +93,7 @@
         {
             "id": "b4",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-4.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-4.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ggn9q9",
             "title": "The Reef Playacar",
@@ -103,7 +103,7 @@
         {
             "id": "b5",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-5.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-5.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Sandos Caracol Eco Resort",
@@ -113,7 +113,7 @@
         {
             "id": "b6",
             "destino": "PlayaDelCarmen",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-6.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayaDelCarmen/carmen-6.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Iberostar Paraíso Beach Resort",
@@ -123,7 +123,7 @@
         {
             "id": "c1",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-1.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-1.webp",
             "className": "uno",
             "linkWa": "https://wa.link/n1y7se",
             "title": "Paquete Bahía Principe Grand Bavaro",
@@ -133,7 +133,7 @@
         {
             "id": "c2",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-2.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-2.webp",
             "className": "uno",
             "linkWa": "https://wa.link/fsf72k",
             "title": "Paquete Tropical Deluxe Princess",
@@ -143,7 +143,7 @@
         {
             "id": "c3",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-3.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-3.webp",
             "className": "uno",
             "linkWa": "https://wa.link/e4ksdi",
             "title": "Paquete Catalonia Royal Bavaro",
@@ -153,7 +153,7 @@
         {
             "id": "c4",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-4.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-4.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ggn9q9",
             "title": "Impressive Punta Cana",
@@ -163,7 +163,7 @@
         {
             "id": "c5",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-5.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-5.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Majestic Colonial",
@@ -173,7 +173,7 @@
         {
             "id": "c6",
             "destino": "PuntaCana",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-6.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-6.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Grand Palladium Punta Cana",
@@ -183,7 +183,7 @@
         {
             "id": "d1",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-1.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-1.webp",
             "className": "uno",
             "linkWa": "https://wa.link/n1y7se",
             "title": "Paquete Riu Panamá",
@@ -193,7 +193,7 @@
         {
             "id": "d2",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-2.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-2.webp",
             "className": "uno",
             "linkWa": "https://wa.link/fsf72k",
             "title": "Paquete Royal Decameron",
@@ -203,7 +203,7 @@
         {
             "id": "d3",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-3.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-3.webp",
             "className": "uno",
             "linkWa": "https://wa.link/e4ksdi",
             "title": "Paquete Tropical Suites",
@@ -213,7 +213,7 @@
         {
             "id": "d4",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-4.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-4.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ggn9q9",
             "title": "Ramada Plaza By Wyndham Panama Punta Pacifica",
@@ -223,7 +223,7 @@
         {
             "id": "d5",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-5.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-5.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Riu Playa Blanca",
@@ -233,7 +233,7 @@
         {
             "id": "d6",
             "destino": "Panama",
-            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-6.webp",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-6.webp",
             "className": "uno",
             "linkWa": "https://wa.link/ybn04x",
             "title": "Azul Paradise Bocas Town",
