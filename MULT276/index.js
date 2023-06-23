@@ -23,15 +23,22 @@ function renderCopyTaxFlight() {
   }
 }
 
+function moveDiv() {
+  let bookingDiv = document.querySelector('.flight-selection__booking');
+  let copyContainer = document.querySelector('.copy-tax-flight-container');
+
+  copyContainer.appendChild(bookingDiv);
+}
+
 function agregarComponenteCuandoApareceFlightSelection() {
   // Definir el selector objetivo
   const selectorObjetivo = '.flight-selection';
 
   // Crear una instancia de MutationSummary
   const observer = new MutationSummary({
-    callback: function(summaries) {
+    callback: function (summaries) {
       // Verificar si el selector objetivo está presente en las mutaciones
-      summaries[0].added.forEach(function(element) {
+      summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
           // El selector objetivo ha aparecido, realizar la acción deseada
           const componente = document.createElement('div');
@@ -45,6 +52,7 @@ function agregarComponenteCuandoApareceFlightSelection() {
 
           // Invocar la función renderCopyTaxFlight() para renderizar el componente
           renderCopyTaxFlight();
+          moveDiv()
 
           // Mostrar un mensaje en la consola para verificar la detección
           console.log('Clase flight-selection detectada. Se agregó el componente.');

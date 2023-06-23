@@ -1,54 +1,75 @@
 /* ******************** MULT-209 ***************************/
 /* Warning Price */
 .main__warningPrice {
-    background: #EAF4FC;
-    border-radius: 8px;
-    padding: 6px 16px;
-    display: flex;
-    align-items: center;
-    
-  }
-  
-  .main__warningPrice>p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 144%;
-    color: #000000;
-    max-width: 524px;
-    min-height: 32px;
-    margin: 0 !important;
-  }
-  .glyphicon-info-circle{
-    color: #2196F3;
-    font-size: 19px;
-    min-width: 32px;
-  }
-  .booking-breakdown__item.booking-breakdown__item--total.booking-breakdown__item--total-price.booking-breakdown__item--is-pay-web{
-    margin-top: 0 !important;
-  }
-  /* **********************************************/
+  background: #EAF4FC;
+  border-radius: 8px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
 
+}
+
+.main__warningPrice>p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 144%;
+  color: #000000;
+  max-width: 524px;
+  min-height: 32px;
+  margin: 0 !important;
+}
+
+.glyphicon-info-circle {
+  color: #2196F3;
+  font-size: 19px;
+  min-width: 32px;
+}
+
+.booking-breakdown__item.booking-breakdown__item--total.booking-breakdown__item--total-price.booking-breakdown__item--is-pay-web {
+  margin-top: 0 !important;
+}
+
+/* **********************************************/
+
+.main_container_copyTaxFlight {
+  max-width: 568px;
+  display: flex;
+  background: #EAF4FC;
+  border: 1px solid #0D4E88;
+  border-radius: 8px;
+  flex-direction: row;
+  padding: 16px;
+}
+
+.main_container_copyTaxFlight p {
+  margin: 0 !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 144%;
+  color: #0D3C61;
+  padding: 0 !important;
+}
+
+@media (max-width: 767px) {
   .main_container_copyTaxFlight {
-    width: 100%;
-    display: flex;
-    background: #EAF4FC;
-    border: 1px solid #0D4E88;
-    border-radius: 8px;
-    flex-direction: row;
-    padding: 16px;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
-  .main_container_copyTaxFlight>p{
-    margin: 0 !important;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 144%;
-    color: #0D3C61;
+}
+
+/* ********* mult-313 ********** */
+.copy-tax-flight-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 4rem;
+}
+
+@media (max-width: 767px) {
+  .copy-tax-flight-container {
+    flex-direction: column;
+    gap: 1rem;
   }
-  @media (max-witdh: 767px) {
-    .main_container_copyTaxFlight{
-      margin-bottom: 0;
-    }
-  }
+}

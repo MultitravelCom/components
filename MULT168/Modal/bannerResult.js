@@ -37,11 +37,11 @@ const insertNewDivSearchResult = async () => {
     });
   
     const parentDiv = document.querySelector('.results-list__page');
-    const firstChdtDiv = document.querySelector('.results-list__item');
+    const firstChildDiv = document.querySelector('.results-list__item');
   
-    if (parentDiv && firstChdtDiv) {
+    if (parentDiv && firstChildDiv) {
       const newDiv = document.createElement('div');
-      firstChdtDiv.after(newDiv);
+      firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
       ReactDOM.render(<BannerSearchResult />, newDiv);
     }
   
@@ -50,7 +50,8 @@ const insertNewDivSearchResult = async () => {
   
       if (summary.added.length > 0) {
         const newDiv = document.createElement('div');
-        summary.added[0].after(newDiv);
+        const firstChildDiv = summary.added[0].querySelector('.results-list__item');
+        firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
         ReactDOM.render(<BannerSearchResult />, newDiv);
       }
     }

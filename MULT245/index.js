@@ -2,19 +2,28 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
-async function removeImageLinks(resultsListPage) {
+async function removeImageLinks() {
+    let images = document.querySelectorAll('.info-card__image-holder img');
+    images.forEach(function (image) {
+        image.addEventListener('click', function (event) {
+            event.preventDefault();
+        });
+    });
+}
+
+function removeDataTarget(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
         const card = item.querySelector('.info-card__image .info-card__image--action');
 
         if (card) {
-            card.addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log('Clic en info-card');
-            });
+            imageHolder.removeAttribute('data-target');
         }
     });
+
+    // Volver a verificar después de 100 ms
+    setTimeout(removeDataTarget, 100);
 }
 
 async function cargarEstilosYModales() {
@@ -148,8 +157,9 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-  
+
 function aplicarModificaciones(resultsListPage) {
+    removeDataTarget(resultsListPage);
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
