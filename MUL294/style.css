@@ -20,6 +20,11 @@
 .result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
+.result-option__remove-button, .result-option__change-button{
+    border-radius: 4px;
+    border: 1px solid #0F5EA3;
+    background: none;
+}
 
 .result-option__product-gallery .gallery__canvas {
     border-radius: 8px;
