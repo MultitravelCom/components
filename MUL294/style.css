@@ -51,3 +51,10 @@
     margin-top: 1rem;
     border-radius: 8px;
 }
+.result-option-package__row .result-option-package__item{
+    margin-bottom: .8rem;
+}
+.info-card >.info-card__content{
+    background-color: #F3F3F3;
+
+}
