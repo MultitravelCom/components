@@ -22,7 +22,7 @@
 }
 
 .package-result--master .result__options {
-    border-radius: 8xp;
+    border-radius: 8px;
 }
 
 .result-option:nth-child(even) {
@@ -103,4 +103,7 @@
 .your-selection__message::before,
 .your-selection__messag::after{
     display: none;
+}
+.result-option-package__row .result-option-package__booking{
+    top: 16px;
 }
