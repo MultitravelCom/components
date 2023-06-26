@@ -20,6 +20,12 @@
 .result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
+.package-result--master .result__options{
+    border-radius: 8xp;
+}
+.result-option:nth-child(even){
+    border-radius: 0 0 8px 8px;
+}
 
 .result-option__remove-button,
 .result-option__change-button {
