@@ -72,3 +72,13 @@
     border-radius: 4px;
     background: #1585E6;
 }
+
+.info-card__action-item+.info-card__action-item {
+    border-radius: 4px;
+    border: 1px solid #0F5EA3;
+    background: none;
+    color: #0F5EA3;
+    font-size: 14px;
+    font-family: Qanelas Soft;
+    font-weight: 600;
+}
