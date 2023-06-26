@@ -10,41 +10,44 @@ function cambiarTextoBoton() {
 }
 cambiarTextoBoton();
 
-function findAndAttachClickEvent() {
-    const link = document.querySelector('.info-card__action-item');
-
-    link.addEventListener('click', () => {
-        const app = document.querySelector('#root');
-        app.querySelector('button').click();
-    });
-}
-
-function App() {
-    const [modalIsOpen, setModalIsOpen] = React.useState(false);
-
-    const openModal = () => {
-        setModalIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalIsOpen(false);
-    };
-
-    React.useEffect(() => {
-        findAndAttachClickEvent();
-    }, []);
-
-    return (
-        <div>
-            <button onClick={openModal}>Abrir Modal</button>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-                <h2>Título del Modal</h2>
-                <p>Contenido del modal...</p>
-                <button onClick={closeModal}>Cerrar Modal</button>
-            </Modal>
+function initializeModal() {
+    const myLink = document.querySelector(".js-result-selected-action--extended-hotel-info");
+  
+    function openModal() {
+      const modal = document.createElement("div");
+      modal.id = "myModal";
+      modal.className = "modal";
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Título del Modal</h2>
+          <p>Contenido del Modal</p>
         </div>
-    );
-}
-
-const targetDivDesktop = document.querySelector('#main-content');
-ReactDOM.render(<App />, targetDivDesktop);
+      `;
+  
+      document.body.appendChild(modal);
+  
+      const closeBtn = modal.getElementsByClassName("close")[0];
+      closeBtn.onclick = closeModal;
+  
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+    }
+  
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      if (modal) {
+        modal.parentNode.removeChild(modal);
+      }
+    }
+  
+    if (myLink) {
+      myLink.onclick = openModal;
+    }
+  }
+  
+  initializeModal();
+  
