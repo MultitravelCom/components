@@ -77,12 +77,15 @@
 }
 
 .results-list__package .result-option__book-button {
+    width: 193px;
     height: 38px;
     border-radius: 4px;
     background: #1585E6;
     border: #1585E6;
 }
-
+.results-list__package .info-card__price{
+    width: 31% !important;
+}
 .results-list__package .info-card__content a {
     border-radius: 4px;
     border: 1px solid #0F5EA3;
