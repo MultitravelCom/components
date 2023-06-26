@@ -16,6 +16,7 @@
     color: white;
 }
 
-.result-option-package__moreinfo-toggle .glyphicon-menu-down {
+.result-option-package__moreinfo-toggle .glyphicon-menu-down,
+.result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
