@@ -1,0 +1,244 @@
+{
+    "destinos": [
+        {
+            "id": "a1",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-1.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "",
+            "price": "$870.699",
+            "events": "no"
+        },
+        {
+            "id": "a2",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-2.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "",
+            "price": "$890.759",
+            "events": "no"
+        },
+        {
+            "id": "a3",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-3.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "",
+            "price": "$923.429",
+            "events": "no"
+        },
+        {
+            "id": "a4",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-4.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "",
+            "price": "$83.539",
+            "events": "no"
+        },
+        {
+            "id": "a5",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-5.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "",
+            "price": "$132.879",
+            "events": "no"
+        },
+        {
+            "id": "a6",
+            "destino": "Cancun",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Cancun/cancun-6.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "",
+            "price": "$170.049",
+            "events": "no"
+        },
+        {
+            "id": "b1",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-1.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Riu Tequila",
+            "price": "$776.849",
+            "events": "no"
+        },
+        {
+            "id": "b2",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-2.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Grand Riviera Princess",
+            "price": "$819.169",
+            "events": "no"
+        },
+        {
+            "id": "b3",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-3.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Iberostar Tucán",
+            "price": "$889.919",
+            "events": "no"
+        },
+        {
+            "id": "b4",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-4.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "The Reef Playacar",
+            "price": "$79.016",
+            "events": "no"
+        },
+        {
+            "id": "b5",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-5.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Sandos Caracol Eco Resort",
+            "price": "$95.055",
+            "events": "no"
+        },
+        {
+            "id": "b6",
+            "destino": "PlayaDelCarmen",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PlayadelCarmen/carmen-6.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Iberostar Paraíso Beach Resort",
+            "price": "$114.219",
+            "events": "no"
+        },
+        {
+            "id": "c1",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-1.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Bahía Principe Grand Bavaro",
+            "price": "$809.899",
+            "events": "no"
+        },
+        {
+            "id": "c2",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-2.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Tropical Deluxe Princess",
+            "price": "$821.679",
+            "events": "no"
+        },
+        {
+            "id": "c3",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-3.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Catalonia Royal Bavaro",
+            "price": "$847.859",
+            "events": "no"
+        },
+        {
+            "id": "c4",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-4.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "Impressive Punta Cana",
+            "price": "$72.749",
+            "events": "no"
+        },
+        {
+            "id": "c5",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-5.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Majestic Colonial",
+            "price": "$106.859",
+            "events": "no"
+        },
+        {
+            "id": "c6",
+            "destino": "PuntaCana",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/PuntaCana/puntacana-6.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Grand Palladium Punta Cana",
+            "price": "$119.429 ",
+            "events": "no"
+        },
+        {
+            "id": "d1",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-1.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Riu Panamá",
+            "price": "$723.319",
+            "events": "no"
+        },
+        {
+            "id": "d2",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-2.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Royal Decameron",
+            "price": "$894.289",
+            "events": "no"
+        },
+        {
+            "id": "d3",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-3.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Tropical Suites",
+            "price": "$935.919",
+            "events": "no"
+        },
+        {
+            "id": "d4",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-4.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "Ramada Plaza By Wyndham Panama Punta Pacifica",
+            "price": "$43.839",
+            "events": "no"
+        },
+        {
+            "id": "d5",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-5.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Riu Playa Blanca",
+            "price": "$73.529",
+            "events": "no"
+        },
+        {
+            "id": "d6",
+            "destino": "Panama",
+            "img": "https://multitravelcom.github.io/MT/Evento/Caribe/Panama/panama-6.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ybn04x",
+            "title": "Azul Paradise Bocas Town",
+            "price": "$73.389",
+            "events": "no"
+        }
+    ]
+}
