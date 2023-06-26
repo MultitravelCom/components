@@ -1,10 +1,21 @@
-.result{
+.result {
     border-radius: 8px;
     border: 1px solid rgba(204, 204, 204, 0.80);
     background: #FBFBFB !important;
 }
-.result-option--selected{
+
+.result-option--selected {
     border-radius: 0px 0px 8px 8px;
     border: 1px solid #E4E4E4;
     background: #F3F3F3 !important;
+}
+
+.result-option-package__moreinfo-toggle {
+    border-radius: 4px;
+    background: #1585E6;
+    color: white;
+}
+
+.result-option-package__moreinfo-toggle .glyphicon-menu-down {
+    color: white;
 }
