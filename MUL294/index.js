@@ -8,46 +8,48 @@ function cambiarTextoBoton() {
 
     setTimeout(cambiarTextoBoton, 100);
 }
-cambiarTextoBoton();
-
 function initializeModal() {
     const myLink = document.querySelector(".js-result-selected-action--extended-hotel-info");
-  
+
     function openModal() {
-      const modal = document.createElement("div");
-      modal.id = "myModal";
-      modal.className = "modal";
-      modal.innerHTML = `
+        console.log("Se ha hecho clic en el botón");
+        const modal = document.createElement("div");
+        modal.id = "myModal";
+        modal.className = "modal";
+        modal.innerHTML = `
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>Título del Modal</h2>
           <p>Contenido del Modal</p>
         </div>
       `;
-  
-      document.body.appendChild(modal);
-  
-      const closeBtn = modal.getElementsByClassName("close")[0];
-      closeBtn.onclick = closeModal;
-  
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          closeModal();
-        }
-      };
+
+        document.body.appendChild(modal);
+
+        const closeBtn = modal.getElementsByClassName("close")[0];
+        closeBtn.onclick = closeModal;
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
     }
-  
+
     function closeModal() {
-      const modal = document.getElementById("myModal");
-      if (modal) {
-        modal.parentNode.removeChild(modal);
-      }
+        const modal = document.getElementById("myModal");
+        if (modal) {
+            modal.parentNode.removeChild(modal);
+        }
     }
-  
+
     if (myLink) {
-      myLink.onclick = openModal;
+        myLink.onclick = openModal;
     }
-  }
-  
-  initializeModal();
-  
+}
+
+initializeModal();
+
+
+cambiarTextoBoton();
+
