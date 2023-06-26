@@ -73,7 +73,7 @@
     background-color: #F3F3F3;
 }
 
-.result__bottom-price>.result-option__book-button {
+.result-option__book-button {
     height: 38px;
     border-radius: 4px;
     background: #1585E6;
