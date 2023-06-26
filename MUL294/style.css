@@ -20,3 +20,12 @@
 .result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
+
+.result-option__product-gallery .gallery__canvas {
+    border-radius: 8px;
+    border: 1px solid rgba(204, 204, 204, 0.80);
+    background: #F3F3F3;
+}
+.result-option__product-gallery .gallery__image-wrapper img{
+    border-radius: 8px;
+}
