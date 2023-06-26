@@ -26,6 +26,14 @@
     border: 1px solid rgba(204, 204, 204, 0.80);
     background: #F3F3F3;
 }
-.result-option__product-gallery .gallery__image-wrapper img{
+.info-card__image-holder img{
+    border-radius: 8px;
+}
+.result-option__product-gallery .gallery__image-wrapper img,
+.result-option__product-gallery .gallery__thumb-item img{
+    border-radius: 8px;
+}
+.result-option__product-gallery .gallery__message{
+    margin-top: 1rem;
     border-radius: 8px;
 }
