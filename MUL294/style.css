@@ -36,14 +36,20 @@
     border-radius: 8px;
     border: 1px solid rgba(204, 204, 204, 0.80);
     background: #F3F3F3;
+    padding: 1rem;
 }
 
 .info-card__image-holder img {
     border-radius: 8px;
 }
 
+.result-option__product-gallery .gallery__image-wrapper img {
+    height: 100%;
+}
+
 .result-option__product-gallery .gallery__image-wrapper img,
-.result-option__product-gallery .gallery__thumb-item img {
+.result-option__product-gallery .gallery__thumb-item img,
+.result-option__product-gallery .gallery__more-images {
     border-radius: 8px;
 }
 
@@ -51,10 +57,17 @@
     margin-top: 1rem;
     border-radius: 8px;
 }
-.result-option-package__row .result-option-package__item{
+
+.result-option-package__row .result-option-package__item {
     margin-bottom: .8rem;
 }
-.result-option__product-description >.info-card__content{
-    background-color: #F3F3F3;
 
+.result-option__product-description>.info-card__content {
+    background-color: #F3F3F3;
+}
+
+.result__bottom-price>.result-option__book-button {
+    height: 38px;
+    border-radius: 4px;
+    background: #1585E6;
 }
