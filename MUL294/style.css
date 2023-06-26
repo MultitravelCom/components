@@ -20,10 +20,16 @@
 .result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
-.result-option__remove-button, .result-option__change-button{
+
+.result-option__remove-button,
+.result-option__change-button {
     border-radius: 4px;
     border: 1px solid #0F5EA3;
     background: none;
+    color: #0F5EA3;
+    font-size: 14px;
+    font-family: Qanelas Soft;
+    font-weight: 600;
 }
 
 .result-option__product-gallery .gallery__canvas {
@@ -31,14 +37,17 @@
     border: 1px solid rgba(204, 204, 204, 0.80);
     background: #F3F3F3;
 }
-.info-card__image-holder img{
+
+.info-card__image-holder img {
     border-radius: 8px;
 }
+
 .result-option__product-gallery .gallery__image-wrapper img,
-.result-option__product-gallery .gallery__thumb-item img{
+.result-option__product-gallery .gallery__thumb-item img {
     border-radius: 8px;
 }
-.result-option__product-gallery .gallery__message{
+
+.result-option__product-gallery .gallery__message {
     margin-top: 1rem;
     border-radius: 8px;
 }
