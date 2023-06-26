@@ -48,8 +48,8 @@ function initializeModal() {
     }
 }
 
-initializeModal();
-
-
-cambiarTextoBoton();
-
+document.addEventListener("DOMContentLoaded", function() {
+    initializeModal();
+    cambiarTextoBoton();
+  });
+  
