@@ -41,6 +41,7 @@
 
 .info-card__image-holder img {
     border-radius: 8px;
+    width: 100%;
 }
 
 .result-option__product-gallery .gallery__image-wrapper img {
