@@ -21,7 +21,8 @@
     color: white;
 }
 
-.package-result--master .result__options {
+.package-result--master .result__options,
+.result-option--extended {
     border-radius: 8px;
 }
 
