@@ -20,10 +20,12 @@
 .result-option-package__moreinfo-toggle .glyphicon-menu-up {
     color: white;
 }
-.package-result--master .result__options{
+
+.package-result--master .result__options {
     border-radius: 8xp;
 }
-.result-option:nth-child(even){
+
+.result-option:nth-child(even) {
     border-radius: 0 0 8px 8px;
 }
 
@@ -77,6 +79,7 @@
     height: 38px;
     border-radius: 4px;
     background: #1585E6;
+    border: #1585E6;
 }
 
 .info-card__content a {
@@ -87,4 +90,17 @@
     font-size: 14px;
     font-family: Qanelas Soft;
     font-weight: 600;
+}
+
+.your-selection__message{
+    border-radius: 8px;
+    border: 1px solid #9AD0FF;
+    background: #EAF4FC;
+    color: #0D3C61;
+    font-size: 13.918px;
+    font-weight: 500;
+}
+.your-selection__message::before,
+.your-selection__messag::after{
+    display: none;
 }
