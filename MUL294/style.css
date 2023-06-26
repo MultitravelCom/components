@@ -101,7 +101,7 @@
     font-weight: 500;
 }
 .your-selection__message::before,
-.your-selection__messag::after{
+.your-selection__message::after{
     display: none;
 }
 .result-option-package__row .result-option-package__booking{
