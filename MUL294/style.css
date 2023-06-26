@@ -1,7 +1,7 @@
 .result{
     border-radius: 8px;
     border: 1px solid rgba(204, 204, 204, 0.80);
-    background: #FBFBFB;
+    background: #FBFBFB !important;
 }
 .result-option--selected{
     border-radius: 0px 0px 8px 8px;
