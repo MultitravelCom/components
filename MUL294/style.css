@@ -175,21 +175,11 @@
         position: relative;
     }
 
-    .ver-vuelo {
-        position: absolute;
-        top: 8px;
-        right: 20px;
-        color: #0D4E88;
-        font-size: 7.295px;
-        font-family: Qanelas Soft;
-        font-weight: 600;
-    }
-
+    .ver-vuelo,
     .ver-servicio {
         position: absolute;
         top: 8px;
         right: 20px;
-        color: #0D4E88;
         font-size: 7.295px;
         font-family: Qanelas Soft;
         font-weight: 600;
