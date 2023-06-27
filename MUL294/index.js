@@ -16,18 +16,7 @@ function moverDescripcionAlModal() {
 
         if (descriptionDiv && modalContent) {
             clearInterval(intervalId);
-
-            const descriptionText = descriptionDiv.textContent;
-            const paragraphs = descriptionText.split('\n');
-
-            modalContent.innerHTML = ''; // Limpiar el contenido existente en modalContent
-
-            paragraphs.forEach((paragraph) => {
-                const paragraphElement = document.createElement('p');
-                paragraphElement.textContent = paragraph.trim();
-                modalContent.appendChild(paragraphElement);
-            });
-
+            modalContent.appendChild(descriptionDiv);
             descriptionDiv.style.display = 'block';
         }
     }, 100);
