@@ -57,13 +57,13 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+    const descriptionDiv = document.querySelector('.package-result--master .js-result-package-option__hotel-description');
     const modal = document.querySelector('#modal-packages');
 
     if (descriptionDiv && modal) {
         console.log('Div encontrado:', descriptionDiv);
 
-        const modalContent = modal.querySelector('#modal-packages');
+        const modalContent = modal.querySelector('.modal-content');
 
         // Mover el div dentro del modal
         modalContent.innerHTML = '';
@@ -72,7 +72,7 @@ function moverDescripcionAlModal() {
         // Mostrar el modal después de un retraso
         setTimeout(function () {
             modal.style.display = 'block';
-        }, 2000); // Cambia el valor 2000 por el tiempo de retraso deseado en milisegundos
+        }, 2000); 
     }
 }
 
