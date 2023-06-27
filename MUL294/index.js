@@ -15,21 +15,38 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    let intervalId = setInterval(function () {
-        const link = document.querySelector('.package-result--selected .info-card__action-item');
-
-        if (link) {
-            clearInterval(intervalId);
-            console.log('Elemento <a> encontrado:', link);
-
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                abrirVentanaModal('Título del modal', 'Contenido del modal');
-            });
-        }
+    let intervalId = setInterval(function() {
+      const link = document.querySelector('result.package-result--selected.package-result--master .info-card__action-item');
+      const modalContent = document.querySelector('#modal-packages .modal-content');
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+  
+      if (link && modalContent && descriptionDiv) {
+        clearInterval(intervalId);
+        console.log('Elemento <a> encontrado:', link);
+  
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+  
+          // Mover el contenido del descriptionDiv al modal
+          while (descriptionDiv.firstChild) {
+            modalContent.appendChild(descriptionDiv.firstChild);
+          }
+  
+          abrirVentanaModal('Título del modal', 'Contenido del modal');
+        });
+      }
     }, 100);
-}
-
+  }
+  Esta modificación agregará la lógica para mover el contenido de la clase "js-result-package-option__hotel-description" al modal antes de abrirlo. Utiliza un bucle while para mover todos los elementos hijos del "descriptionDiv" al "modalContent". Después de mover el contenido, se llama a la función "abrirVentanaModal" con el título y contenido deseados.
+  
+  Espero que esto te ayude. Si tienes alguna otra pregunta, no dudes en preguntar.
+  
+  
+  
+  
+  
+  
+  
 function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
 
