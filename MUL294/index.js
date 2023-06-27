@@ -64,15 +64,17 @@ function moverDescripcionAlModal() {
     const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
     const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
     const modalContent = document.querySelector('#modal-packages .modal-content');
-  
+
     if (link && descriptionDiv && modalContent) {
-      console.log('Elemento <a> encontrado:', link);
-      
-      modalContent.appendChild(descriptionDiv);
+        console.log('Elemento <a> encontrado:', link);
+
+        const clonedDescription = descriptionDiv.cloneNode(true);
+        modalContent.innerHTML = '';
+        modalContent.appendChild(clonedDescription);
     } else {
-      setTimeout(moverDescripcionAlModal, 100);
+        setTimeout(moverDescripcionAlModal, 100);
     }
-  }
+}
 
 // Agregar textos
 function agregarTextos() {
