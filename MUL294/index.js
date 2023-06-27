@@ -59,7 +59,7 @@ function cambiarTextoBoton() {
 function moverDescripcionAlModal() {
     const intervalId = setInterval(() => {
         const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#modal-packages .modal-content');
+        const modalContent = document.querySelector('#modal-packages');
 
         if (descriptionDiv && modalContent) {
             clearInterval(intervalId); // Detener el setInterval una vez que ambos selectores se encuentren
@@ -70,7 +70,7 @@ function moverDescripcionAlModal() {
         }
     }, 100);
 }
-// Agregar textos
+
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
 
