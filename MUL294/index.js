@@ -16,7 +16,7 @@ function cambiarTextoBoton() {
 
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function() {
-      const link = document.querySelector('result.package-result--selected.package-result--master .info-card__action-item');
+      const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
       const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
   
       if (link && descriptionDiv) {
