@@ -63,50 +63,46 @@ function cambiarTextoBoton() {
 // }
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function () {
-        const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-
-        if (link && descriptionDiv) {
-            clearInterval(intervalId);
-            console.log('Elemento <a> encontrado:', link);
-
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                abrirVentanaModal('Título del modal', '', function () {
-                    const modalContent = document.querySelector('#modal-packages .modal-content');
-                    while (descriptionDiv.firstChild) {
-                        modalContent.appendChild(descriptionDiv.firstChild);
-                    }
-                });
+      const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+  
+      if (link && descriptionDiv) {
+        clearInterval(intervalId);
+        console.log('Elemento <a> encontrado:', link);
+  
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+  
+          setTimeout(function () {
+            abrirVentanaModal('Título del modal', '', function () {
+              const modalContent = document.querySelector('#modal-packages .modal-content');
+              while (descriptionDiv.firstChild) {
+                modalContent.appendChild(descriptionDiv.firstChild);
+              }
             });
-        }
+          }, 100); // Espera 100ms antes de abrir el modal
+        });
+      }
     }, 100);
-}
+  }
 function abrirVentanaModal(titulo, contenido, callback) {
     let modal = document.querySelector('#miModal');
-
+  
     if (!modal) {
-        modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.setAttribute('id', 'miModal');
-        document.body.appendChild(modal);
+      modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.setAttribute('id', 'miModal');
+      document.body.appendChild(modal);
     }
-
+  
     modal.style.display = 'flex';
-
-    actualizarContenidoModal(titulo, contenido);
-
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
+  
     if (typeof callback === 'function') {
-        callback();
+      callback();
     }
-}
+  
+    actualizarContenidoModal(titulo, contenido);
+  }
 
 function actualizarContenidoModal(titulo, contenido) {
     let modalContent = document.querySelector('#modal-packages');
