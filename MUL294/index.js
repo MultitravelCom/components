@@ -80,31 +80,33 @@ function abrirVentanaModal() {
 }
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768; // Verificar si la resolución es igual o inferior a 768px (puedes ajustar este valor según tus necesidades)
-  
+
     if (!isMobile) {
-      return; // Salir de la función si no es un dispositivo móvil
+        return; // Salir de la función si no es un dispositivo móvil
     }
-  
-    let intervalId = setInterval(function() {
-      const packageResultMaster = document.querySelector('.package-result--master');
-      if (packageResultMaster) {
-        const resultOptions = packageResultMaster.querySelector('.result__options');
-        if (resultOptions) {
-          clearInterval(intervalId);
-  
-          const divVerVuelo = document.createElement('div');
-          divVerVuelo.textContent = 'Ver vuelo';
-  
-          const divVerServicio = document.createElement('div');
-          divVerServicio.textContent = 'Ver servicio';
-  
-          resultOptions.appendChild(divVerVuelo);
-          resultOptions.appendChild(divVerServicio);
+
+    let intervalId = setInterval(function () {
+        const packageResultMaster = document.querySelector('.package-result--master');
+        if (packageResultMaster) {
+            const resultOptions = packageResultMaster.querySelector('.result__options');
+            if (resultOptions) {
+                clearInterval(intervalId);
+
+                const divVerVuelo = document.createElement('div');
+                divVerVuelo.textContent = 'Ver vuelo';
+                divVerVuelo.classList.add('ver-vuelo'); // Agregar la clase 'ver-vuelo'
+
+                const divVerServicio = document.createElement('div');
+                divVerServicio.textContent = 'Ver servicio';
+                divVerServicio.classList.add('ver-servicio'); // Agregar la clase 'ver-servicio'
+
+                resultOptions.appendChild(divVerVuelo);
+                resultOptions.appendChild(divVerServicio);
+            }
         }
-      }
     }, 150);
-  }
-  
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     moverDescripcionAlModal()
