@@ -12,7 +12,7 @@ function cambiarTextoBoton() {
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function() {
         const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modal = document.querySelector('#miModal');
+        const modalContent = document.querySelector('#miModal');
 
         if (descriptionDiv && modalContent) {
             clearInterval(intervalId);
