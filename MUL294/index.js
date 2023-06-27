@@ -26,18 +26,16 @@ function cambiarTextoBoton() {
         link.addEventListener('click', function(event) {
           event.preventDefault();
   
-          abrirVentanaModal('Título del modal', '', function() {
-            const modalContent = document.querySelector('#modal-packages .modal-content');
-            while (descriptionDiv.firstChild) {
-              modalContent.appendChild(descriptionDiv.firstChild);
-            }
-          });
+          const tituloModal = 'Título del modal';
+          const contenidoModal = descriptionDiv.innerHTML;
+  
+          abrirVentanaModal(tituloModal, contenidoModal);
         });
       }
     }, 100);
   }
   
-  function abrirVentanaModal(titulo, contenido, callback) {
+  function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
   
     if (!modal) {
@@ -50,16 +48,6 @@ function cambiarTextoBoton() {
     modal.style.display = 'flex';
   
     actualizarContenidoModal(titulo, contenido);
-  
-    modal.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  
-    if (typeof callback === 'function') {
-      callback();
-    }
   }
   
   function actualizarContenidoModal(titulo, contenido) {
@@ -69,13 +57,15 @@ function cambiarTextoBoton() {
       modalContent = document.createElement('div');
       modalContent.setAttribute('id', 'modal-packages');
       modalContent.classList.add('modal-content');
+      modalContent.innerHTML = `
+        <h2>${titulo}</h2>
+        <p>${contenido}</p>
+      `;
       document.querySelector('#miModal').appendChild(modalContent);
+    } else {
+      modalContent.querySelector('h2').textContent = titulo;
+      modalContent.querySelector('p').innerHTML = contenido;
     }
-  
-    modalContent.innerHTML = `
-      <h2>${titulo}</h2>
-      <p>${contenido}</p>
-    `;
   }
   
   function agregarTextos() {
