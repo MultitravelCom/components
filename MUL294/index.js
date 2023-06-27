@@ -16,7 +16,7 @@ function cambiarTextoBoton() {
 
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function () {
-        const link = document.querySelector('.info-card__action-item');
+        const link = document.querySelector('result.package-result--selected.package-result--master .info-card__action-item');
         const modalContent = document.querySelector('#modal-packages .modal-content');
 
         if (link && modalContent) {
