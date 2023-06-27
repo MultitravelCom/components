@@ -155,8 +155,7 @@
 
     .results-list__package .result-option__book-button {
         width: 90%;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin: 1rem;
     }
 
     .results-list__package .result__bottom-price .info-card__price {
