@@ -168,5 +168,9 @@
         width: 100%;
         position: inherit !important;
     }
+    .results-list__package .result-option-package__row .result-option-package__booking{
+        width: 100%;
+        position: initial;
+    }
 
 }
