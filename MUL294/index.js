@@ -57,34 +57,17 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
     const modalContent = document.querySelector('#modal-packages .modal-content');
-
-    if (descriptionDiv && modalContent) {
-        console.log('Div encontrado:', descriptionDiv);
-
-        // Mover el div dentro del modal
-        modalContent.innerHTML = '';
+  
+    const intervalId = setInterval(() => {
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+      if (descriptionDiv && modalContent) {
         modalContent.appendChild(descriptionDiv);
+        clearInterval(intervalId); // Detener el setInterval una vez que se encuentre y mueva el elemento
+      }
+    }, 100);
+  }
 
-        // Actualizar el contenido del modal con el div movido
-        actualizarContenidoModal('Título del modal', ''); // Puedes proporcionar el título y contenido que desees
-
-        // Mostrar el modal después de un retraso
-        setTimeout(function () {
-            const modal = document.querySelector('#miModal');
-            modal.style.display = 'flex';
-        }, 2000); // Cambia el valor 2000 por el tiempo de retraso deseado en milisegundos
-    }
-}
-
-const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-if (link) {
-    link.addEventListener('click', function () {
-        moverDescripcionAlModal();
-        // Aquí puedes agregar cualquier otra lógica que desees ejecutar al hacer clic en el botón
-    });
-}
 // Agregar textos
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
@@ -134,4 +117,5 @@ document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
     agregarTextos();
+    moverDescripcionAlModal()
 });
