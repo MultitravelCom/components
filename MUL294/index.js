@@ -37,16 +37,8 @@ function moverDescripcionAlModal() {
       }
     }, 100);
   }
-  Esta modificación agregará la lógica para mover el contenido de la clase "js-result-package-option__hotel-description" al modal antes de abrirlo. Utiliza un bucle while para mover todos los elementos hijos del "descriptionDiv" al "modalContent". Después de mover el contenido, se llama a la función "abrirVentanaModal" con el título y contenido deseados.
   
-  Espero que esto te ayude. Si tienes alguna otra pregunta, no dudes en preguntar.
-  
-  
-  
-  
-  
-  
-  
+
 function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
 
