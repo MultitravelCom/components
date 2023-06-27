@@ -9,14 +9,18 @@ function cambiarTextoBoton() {
     setTimeout(cambiarTextoBoton, 100);
 }
 
-// function moverDescripcionAlModal(modalContent) {
-//     const modalDescription = document.querySelector('.js-result-package-option__hotel-description');
+function moverDescripcionAlModal() {
+    let intervalId = setInterval(function() {
+        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+        const modalContent = document.querySelector('.modal-content');
 
-//     if (modalDescription && modalContent) {
-//         modalContent.appendChild(modalDescription);
-//         modalDescription.style.display = 'block';
-//     }
-// }
+        if (descriptionDiv && modalContent) {
+            clearInterval(intervalId);
+            modalContent.appendChild(descriptionDiv);
+            descriptionDiv.style.display = 'block';
+        }
+    }, 100);
+}
 
 function abrirVentanaModal() {
     let intervalId = setInterval(function() {
