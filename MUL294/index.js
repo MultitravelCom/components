@@ -21,7 +21,16 @@ function moverDescripcionAlModal() {
         }
     }, 100);
 }
+function cambiarTextoBoton() {
+    const boton = document.querySelector('.result-option__change-button');
+    const dataProduct = boton.getAttribute('data-product');
 
+    if (dataProduct === 'flight') {
+        boton.textContent = 'Cambiar vuelo';
+    } else if (dataProduct === 'hotel') {
+        boton.textContent = 'Cambiar alojamiento';
+    }
+}
 function abrirVentanaModal() {
     let intervalId = setInterval(function() {
         const link = document.querySelector('.info-card__action-item');
@@ -69,4 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     moverDescripcionAlModal()
     abrirVentanaModal();
+    cambiarTextoBoton();
+
+    const boton = document.querySelector('.result-option__change-button');
+    boton.addEventListener('click', cambiarTextoBoton);
 });
