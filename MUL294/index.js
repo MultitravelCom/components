@@ -65,10 +65,9 @@ function moverDescripcionAlModal() {
       console.log('Elemento <a> encontrado:', link);
   
       const modalContent = modal.querySelector('.modal-content');
-      const clonedDescription = descriptionDiv.cloneNode(true);
   
       modalContent.innerHTML = '';
-      modalContent.appendChild(clonedDescription);
+      modalContent.appendChild(descriptionDiv);
   
       modal.style.display = 'block';
     } else {
