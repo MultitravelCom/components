@@ -86,7 +86,7 @@ function agregarTextos() {
     }
   
     let intervalId = setInterval(function() {
-      const divResultado = document.querySelector('.result-package-result--selected.package-result--master');
+      const divResultado = document.querySelector('.package-result--master');
       if (divResultado && divResultado.children.length > 0) {
         clearInterval(intervalId);
   
