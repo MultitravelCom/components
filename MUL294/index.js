@@ -9,12 +9,10 @@ function cambiarTextoBoton() {
     setTimeout(cambiarTextoBoton, 100);
 }
 
-function moverDescripcionAlModal() {
+function moverDescripcionAlModal(modalContent) {
     const modalDescription = document.querySelector('.js-result-package-option__hotel-description');
-    const modal = document.querySelector('.modal');
-    const modalContent = document.querySelector('.modal-content');
 
-    if (modalDescription && modal && modalContent) {
+    if (modalDescription && modalContent) {
         modalContent.appendChild(modalDescription);
         modalDescription.style.display = 'block';
     }
