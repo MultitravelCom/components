@@ -174,7 +174,9 @@
     .results-list__package .result-option.result-option--extended {
         position: relative;
     }
-
+    .results-list__package .result-option.result-option--extended .result-option-package__list{
+        padding-left: 8px;
+    }
     .ver-vuelo,
     .ver-servicio {
         position: absolute;
@@ -183,5 +185,8 @@
         font-size: 7.295px;
         font-family: Qanelas Soft;
         font-weight: 600;
+    }
+    .results-list__package .result-option-package__moreinfo-toggle{
+        display: none;
     }
 }
