@@ -82,10 +82,12 @@
     border-radius: 4px;
     background: #1585E6;
     border: #1585E6;
+    margin-top: 1rem;
 }
 
 .results-list__package .info-card__price {
     width: 31% !important;
+    margin-top: 1rem;
 }
 
 .results-list__package .info-card__content a {
@@ -136,4 +138,30 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+}
+
+
+@media (max-width: 767px) {
+    #packages .info-card__price {
+        width: 100%;
+        text-align: center;
+        float: right;
+    }
+
+    .result__bottom-price .bestprice {
+        float: none !important;
+        text-align: right;
+    }
+
+    .results-list__package .result-option__book-button {
+        width: 90%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .result__bottom-price .info-card__price {
+        width: 100%;
+        margin: 0 !important;
+    }
+
 }
