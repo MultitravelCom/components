@@ -39,7 +39,7 @@ function abrirVentanaModal() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    abrirVentanaModal();
     cambiarTextoBoton();
+    abrirVentanaModal();
 });
 
