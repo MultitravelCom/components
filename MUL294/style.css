@@ -140,7 +140,6 @@
     width: 80%;
 }
 
-
 @media (max-width: 767px) {
     #packages .info-card__price {
         width: 100%;
@@ -166,9 +165,25 @@
         width: 100%;
         position: inherit !important;
     }
-    .results-list__package .result-option-package__row .result-option-package__booking{
+
+    .results-list__package .result-option-package__row .result-option-package__booking {
         width: 100%;
         position: initial;
     }
 
+    .results-list__package .result-option {
+        position: relative;
+    }
+
+    .ver-vuelo {
+        position: absolute;
+        top: 8px;
+        right: 20px;
+    }
+
+    .ver-servicio {
+        position: absolute;
+        top: 8px;
+        right: 20px;
+    }
 }
