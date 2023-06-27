@@ -31,7 +31,7 @@ function cambiarTextoBoton() {
             descriptionDiv.style.display = 'block';
   
             // Actualizar el contenido del modal
-            actualizarContenidoModal('Título del modal', 'Contenido del modal');
+            abrirVentanaModal('Título del modal', 'Contenido del modal');
           });
         }
       }
