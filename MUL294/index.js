@@ -16,7 +16,18 @@ function moverDescripcionAlModal() {
 
         if (descriptionDiv && modalContent) {
             clearInterval(intervalId);
-            modalContent.appendChild(descriptionDiv);
+
+            const descriptionText = descriptionDiv.textContent;
+            const paragraphs = descriptionText.split('\n');
+
+            modalContent.innerHTML = ''; // Limpiar el contenido existente en modalContent
+
+            paragraphs.forEach((paragraph) => {
+                const paragraphElement = document.createElement('p');
+                paragraphElement.textContent = paragraph.trim();
+                modalContent.appendChild(paragraphElement);
+            });
+
             descriptionDiv.style.display = 'block';
         }
     }, 100);
@@ -27,7 +38,7 @@ function abrirVentanaModal() {
         const link = document.querySelector('.info-card__action-item');
 
         if (link) {
-            clearInterval(intervalId); // Finalizar el intervalo
+            clearInterval(intervalId);
             console.log('Enlace encontrado:', link);
 
             link.addEventListener('click', function (event) {
