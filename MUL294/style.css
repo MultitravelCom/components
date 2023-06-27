@@ -148,7 +148,7 @@
         float: right;
     }
 
-    .results-list__package  .result__bottom-price .bestprice {
+    .results-list__package .result__bottom-price .bestprice {
         float: none !important;
         text-align: right;
     }
@@ -163,7 +163,8 @@
         width: 100%;
         margin: 0 !important;
     }
-    .results-list__package .result-option-package__row .result-option-package__booking{
+
+    .results-list__package .result-option__change-button {
         width: 100%;
         position: inherit !important;
     }
