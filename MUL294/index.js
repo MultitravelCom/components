@@ -35,7 +35,7 @@ function abrirVentanaModal() {
             // modalDescription.innerHTML = hotelDescription.innerHTML;
 
             modalContent.appendChild(modalTitle);
-            modalContent.appendChild(modalText);
+            // modalContent.appendChild(modalText);
             modal.appendChild(modalContent);
 
             document.body.appendChild(modal);
