@@ -1,5 +1,5 @@
 function cambiarTextoBoton() {
-    let button = document.querySelector('.result-option__book-button');
+    let button = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
 
     if (button) {
         button.textContent = 'Comprar';
@@ -10,18 +10,14 @@ function cambiarTextoBoton() {
 }
 
 function abrirVentanaModal() {
-    // Obtén la referencia al elemento <a> mediante su clase o cualquier otro selector válido
-    const link = document.querySelector('.info-card__action-item');
+    const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
 
-    // Verifica si se ha encontrado el enlace
     if (link) {
         console.log('Enlace encontrado:', link);
 
-        // Añade un evento de clic al enlace
         link.addEventListener('click', function (event) {
-            event.preventDefault(); // Evita que se realice la acción predeterminada del enlace
+            event.preventDefault();
 
-            // Crea y muestra la ventana modal
             const modal = document.createElement('div');
             modal.classList.add('modal');
             modal.style.display = 'block';
@@ -40,6 +36,13 @@ function abrirVentanaModal() {
             modal.appendChild(modalContent);
 
             document.body.appendChild(modal);
+
+            // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
         });
     } else {
         console.log('Enlace no encontrado');
@@ -50,5 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     abrirVentanaModal();
 });
+
 
 
