@@ -110,16 +110,23 @@ function agregarTextosYModales() {
     function agregarTextos() {
         const divResultado = document.querySelector('.result-package-result--selected.package-result--master');
 
+        const divVerVuelo = document.createElement('div');
+        divVerVuelo.classList.add('ver-vuelo');
+
+        const divVerServicio = document.createElement('div');
+        divVerServicio.classList.add('ver-servicio');
+
         const verVuelo = document.createElement('span');
-        verVuelo.classList.add('ver-vuelo');
         verVuelo.textContent = 'Ver vuelo';
 
         const verServicio = document.createElement('span');
-        verServicio.classList.add('ver-servicio');
         verServicio.textContent = 'Ver servicio';
 
-        divResultado.appendChild(verVuelo);
-        divResultado.appendChild(verServicio);
+        divVerVuelo.appendChild(verVuelo);
+        divVerServicio.appendChild(verServicio);
+
+        divResultado.appendChild(divVerVuelo);
+        divResultado.appendChild(divVerServicio);
     }
 
     let intervalId = setInterval(function () {
@@ -129,17 +136,17 @@ function agregarTextosYModales() {
             clearInterval(intervalId);
             agregarTextos();
 
-            const verVuelo = document.querySelector('.ver-vuelo');
-            const verServicio = document.querySelector('.ver-servicio');
+            const divVerVuelo = document.querySelector('.ver-vuelo');
+            const divVerServicio = document.querySelector('.ver-servicio');
 
-            if (verVuelo) {
-                verVuelo.addEventListener('click', function () {
+            if (divVerVuelo) {
+                divVerVuelo.addEventListener('click', function () {
                     abrirModal('Modal de vuelo', 'Contenido del modal de vuelo.');
                 });
             }
 
-            if (verServicio) {
-                verServicio.addEventListener('click', function () {
+            if (divVerServicio) {
+                divVerServicio.addEventListener('click', function () {
                     abrirModal('Modal de servicio', 'Contenido del modal de servicio.');
                 });
             }
