@@ -62,9 +62,8 @@ function moverDescripcionAlModal() {
         const modalContent = document.querySelector('#modal-packages');
 
         if (descriptionDiv && modalContent) {
-            clearInterval(intervalId); // Detener el setInterval una vez que ambos selectores se encuentren
-
-            // Mover el div dentro del modal
+            clearInterval(intervalId); 
+            console.log('Se encontraron los dos selectores.');
             modalContent.innerHTML = '';
             modalContent.appendChild(descriptionDiv);
         }
