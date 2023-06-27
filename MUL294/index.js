@@ -61,20 +61,26 @@ function moverDescripcionAlModal() {
     const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
     const modal = document.querySelector('#modal-packages');
   
-    if (link && descriptionDiv && modal && descriptionDiv.offsetHeight !== 0) {
+    if (link && descriptionDiv && modal) {
       console.log('Elemento <a> encontrado:', link);
   
       const modalContent = modal.querySelector('.modal-content');
   
+      // Ocultar el modal antes de realizar cualquier cambio
+      modal.style.display = 'none';
+  
+      // Mover el div dentro del modal
       modalContent.innerHTML = '';
       modalContent.appendChild(descriptionDiv);
   
-      modal.style.display = 'block';
+      // Mostrar el modal después de un retraso
+      setTimeout(function() {
+        modal.style.display = 'block';
+      }, 100); // Cambia el valor 100 por el tiempo de retraso deseado en milisegundos
     } else {
       setTimeout(moverDescripcionAlModal, 100);
     }
   }
-
 // Agregar textos
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
