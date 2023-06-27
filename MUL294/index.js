@@ -15,30 +15,36 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    let intervalId = setInterval(function () {
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#modal-packages');
-
-        if (descriptionDiv && modalContent) {
-            clearInterval(intervalId);
-
-            const link = document.querySelector('.info-card__action-item');
-            if (link) {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-
-                    const modalDescription = modalContent.querySelector('.js-result-package-option__hotel-description');
-                    modalDescription.innerHTML = descriptionDiv.innerHTML;
-
-                    modalContent.style.display = 'block';
-
-                    // Llamar a abrirVentanaModal sin pasar el contenido
-                    abrirVentanaModal('Título del modal');
-                });
+    let intervalId = setInterval(function() {
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+      const modalContent = document.querySelector('#modal-packages .modal-content');
+  
+      if (descriptionDiv && modalContent) {
+        clearInterval(intervalId);
+  
+        const link = document.querySelector('.info-card__action-item');
+        if (link) {
+          link.addEventListener('click', function(event) {
+            event.preventDefault();
+  
+            const modalDescriptionDiv = document.createElement('div');
+            modalDescriptionDiv.innerHTML = descriptionDiv.innerHTML;
+  
+            // Eliminar el contenido anterior del modal
+            while (modalContent.firstChild) {
+              modalContent.removeChild(modalContent.firstChild);
             }
+  
+            // Agregar el contenido del descriptionDiv al modal
+            modalContent.appendChild(modalDescriptionDiv);
+  
+            // Mostrar el modal
+            abrirVentanaModal('Título del modal');
+          });
         }
+      }
     }, 100);
-}
+  }
 function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
 
