@@ -155,7 +155,4 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 767) {
         agregarTextosYModales();
     }
-
-    const boton = document.querySelector('.result-option__change-button');
-    boton.addEventListener('click', cambiarTextoBoton);
 });
