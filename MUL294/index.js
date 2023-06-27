@@ -115,5 +115,5 @@ document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
     agregarTextos();
-   moverDescripcionAlModal;
+   moverDescripcionAlModal();
 });
