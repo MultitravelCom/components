@@ -19,29 +19,6 @@ function moverDescripcionAlModal() {
         const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
         const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
 
-        if (link && descriptionDiv) {
-            clearInterval(intervalId);
-            console.log('Elemento <a> encontrado:', link);
-
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                const modalContent = document.querySelector('#modal-packages .modal-content');
-                while (descriptionDiv.firstChild) {
-                    modalContent.appendChild(descriptionDiv.firstChild);
-                }
-
-                abrirVentanaModal('Título del modal', '');
-            });
-        }
-    }, 100);
-}
-
-function moverDescripcionAlModal() {
-    let intervalId = setInterval(function () {
-        const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-
         if (link) {
             clearInterval(intervalId);
             console.log('Elemento <a> encontrado:', link);
@@ -58,6 +35,35 @@ function moverDescripcionAlModal() {
             });
         }
     }, 100);
+}
+
+function abrirVentanaModal(titulo, contenido, callback) {
+    let modal = document.querySelector('#miModal');
+
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.setAttribute('id', 'miModal');
+
+        document.body.appendChild(modal);
+    }
+
+    modal.style.display = 'flex';
+
+    // Actualizar el contenido del modal
+    actualizarContenidoModal(titulo, contenido);
+
+    // Ejecutar el callback si se proporciona
+    if (typeof callback === 'function') {
+        callback();
+    }
+
+    // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
 
 function actualizarContenidoModal(titulo, contenido) {
