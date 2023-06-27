@@ -12,7 +12,7 @@ function cambiarTextoBoton() {
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function() {
         const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#miModal');
+        const modalContent = document.querySelector('#modal-packages');
 
         if (descriptionDiv && modalContent) {
             clearInterval(intervalId);
@@ -40,7 +40,7 @@ function abrirVentanaModal() {
                     modal.classList.add('modal');
                     modal.setAttribute('id', 'miModal');
                     modal.innerHTML = `
-                        <div class="modal-content">
+                        <div id="modal-packages" class="modal-content">
                             <h2>Ventana Modal</h2>
                             <p>Contenido de la ventana modal.</p>
                         </div>
