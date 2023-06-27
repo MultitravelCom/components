@@ -22,13 +22,18 @@ function moverDescripcionAlModal() {
     }, 100);
 }
 function cambiarTextoBoton() {
-    const boton = document.querySelector('.result-option__change-button');
-    const dataProduct = boton.getAttribute('data-product');
+    const botonDataProduct = document.querySelector('.result-option__change-button');
 
-    if (dataProduct === 'flight') {
-        boton.textContent = 'Cambiar vuelo';
-    } else if (dataProduct === 'hotel') {
-        boton.textContent = 'Cambiar alojamiento';
+    if (botonDataProduct) {
+        const dataProduct = boton.dataset.product;
+
+        if (dataProduct === 'flight') {
+            botonDataProduct.textContent = 'Cambiar vuelo';
+        } else if (dataProduct === 'hotel') {
+            botonDataProduct.textContent = 'Cambiar alojamiento';
+        }
+    } else {
+        setTimeout(cambiarTextoBoton, 100);
     }
 }
 function abrirVentanaModal() {
