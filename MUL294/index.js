@@ -59,33 +59,24 @@ function cambiarTextoBoton() {
 function moverDescripcionAlModal() {
     const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
     const modalContent = document.querySelector('#modal-packages .modal-content');
-  
+
     if (descriptionDiv && modalContent) {
-      console.log('Div encontrado:', descriptionDiv);
-  
-      // Mover el div dentro del modal
-      modalContent.innerHTML = '';
-      modalContent.appendChild(descriptionDiv);
-  
-      // Actualizar el contenido del modal con el div movido
-      actualizarContenidoModal('Título del modal', ''); // Puedes proporcionar el título y contenido que desees
-  
-      // Mostrar el modal después de un retraso
-      setTimeout(function() {
-        const modal = document.querySelector('#miModal');
-        modal.style.display = 'flex';
-      }, 2000); // Cambia el valor 2000 por el tiempo de retraso deseado en milisegundos
+        console.log('Div encontrado:', descriptionDiv);
+
+        // Mover el div dentro del modal
+        modalContent.innerHTML = '';
+        modalContent.appendChild(descriptionDiv);
+
+        // Actualizar el contenido del modal con el div movido
+        actualizarContenidoModal('Título del modal', ''); // Puedes proporcionar el título y contenido que desees
+
+        // Mostrar el modal después de un retraso
+        setTimeout(function () {
+            const modal = document.querySelector('#miModal');
+            modal.style.display = 'flex';
+        }, 2000); // Cambia el valor 2000 por el tiempo de retraso deseado en milisegundos
     }
-  }
-  
-  const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-  if (link) {
-    link.addEventListener('click', function() {
-      moverDescripcionAlModal();
-      // Aquí puedes agregar cualquier otra lógica que desees ejecutar al hacer clic en el botón
-    });
-  }
-  
+}
 
 const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
 if (link) {
@@ -142,12 +133,5 @@ function agregarTextos() {
 document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
-    const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-    if (link) {
-        link.addEventListener('click', function () {
-            moverDescripcionAlModal();
-            // Aquí puedes agregar cualquier otra lógica que desees ejecutar al hacer clic en el botón
-        });
-    }
     agregarTextos();
 });
