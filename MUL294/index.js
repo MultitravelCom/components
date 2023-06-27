@@ -1,5 +1,5 @@
 function cambiarTextoBoton() {
-    let button = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+    let button = document.querySelector('.result-option__book-button');
 
     if (button) {
         button.textContent = 'Comprar';
@@ -10,7 +10,8 @@ function cambiarTextoBoton() {
 }
 
 function abrirVentanaModal() {
-    const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+    // Obtén la referencia al elemento <a> mediante su clase o cualquier otro selector válido
+    const link = document.querySelector('.info-card__action-item');
 
     if (link) {
         console.log('Enlace encontrado:', link);
@@ -53,6 +54,5 @@ document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     abrirVentanaModal();
 });
-
 
 
