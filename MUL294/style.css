@@ -148,8 +148,7 @@
     }
 
     .results-list__package .result__bottom-price .bestprice {
-        float: none !important;
-        text-align: right;
+        float: right !important;
     }
 
     .results-list__package .result-option__book-button {
