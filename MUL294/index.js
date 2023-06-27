@@ -12,9 +12,9 @@ function cambiarTextoBoton() {
 function abrirVentanaModal() {
     // Obtén la referencia al elemento <a> mediante su clase o cualquier otro selector válido
     const link = document.querySelector('.info-card__action-item');
-    const hotelDescription = document.querySelector('.js-result-package-option__hotel-description');
+    // const hotelDescription = document.querySelector('.js-result-package-option__hotel-description');
 
-    if (link && hotelDescription) {
+    if (link) {
         console.log('Enlace encontrado:', link);
 
         link.addEventListener('click', function (event) {
