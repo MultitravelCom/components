@@ -30,8 +30,8 @@ function cambiarTextoBoton() {
             modalContent.appendChild(descriptionDiv);
             descriptionDiv.style.display = 'block';
   
-            
-            abrirVentanaModal('Título del modal', 'Contenido del modal');
+            // Actualizar el contenido del modal
+            actualizarContenidoModal('Título del modal', 'Contenido del modal');
           });
         }
       }
@@ -45,17 +45,14 @@ function cambiarTextoBoton() {
       modal = document.createElement('div');
       modal.classList.add('modal');
       modal.setAttribute('id', 'miModal');
-      modal.innerHTML = `
-        <div id="modal-packages" class="modal-content">
-          <h2>${titulo}</h2>
-          <p>${contenido}</p>
-        </div>
-      `;
   
       document.body.appendChild(modal);
     }
   
     modal.style.display = 'flex';
+  
+    // Actualizar el contenido del modal
+    actualizarContenidoModal(titulo, contenido);
   
     // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
     modal.addEventListener('click', function(event) {
@@ -65,8 +62,24 @@ function cambiarTextoBoton() {
     });
   }
   
+  function actualizarContenidoModal(titulo, contenido) {
+    let modalContent = document.querySelector('#modal-packages');
+  
+    if (!modalContent) {
+      modalContent = document.createElement('div');
+      modalContent.setAttribute('id', 'modal-packages');
+      modalContent.classList.add('modal-content');
+      document.querySelector('#miModal').appendChild(modalContent);
+    }
+  
+    modalContent.innerHTML = `
+      <h2>${titulo}</h2>
+      <p>${contenido}</p>
+    `;
+  }
+  
   function agregarTextos() {
-    const isMobile = window.innerWidth <= 768; // Verificar si la resolución es igual o inferior a 768px (puedes ajustar este valor según tus necesidades)
+    const isMobile = window.innerWidth <= 768;
   
     if (!isMobile) {
       return;
@@ -81,11 +94,11 @@ function cambiarTextoBoton() {
   
           const divVerVuelo = document.createElement('div');
           divVerVuelo.textContent = 'Ver vuelo';
-          divVerVuelo.classList.add('ver-vuelo'); // Agregar la clase 'ver-vuelo'
+          divVerVuelo.classList.add('ver-vuelo');
   
           const divVerServicio = document.createElement('div');
           divVerServicio.textContent = 'Ver servicio';
-          divVerServicio.classList.add('ver-servicio'); // Agregar la clase 'ver-servicio'
+          divVerServicio.classList.add('ver-servicio');
   
           const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
   
