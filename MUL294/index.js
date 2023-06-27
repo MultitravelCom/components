@@ -27,16 +27,10 @@ function moverDescripcionAlModal() {
           link.addEventListener('click', function(event) {
             event.preventDefault();
   
-            const modalDescriptionDiv = document.createElement('div');
-            modalDescriptionDiv.innerHTML = descriptionDiv.innerHTML;
-  
-            // Eliminar el contenido anterior del modal
-            while (modalContent.firstChild) {
-              modalContent.removeChild(modalContent.firstChild);
+            // Mover el contenido del descriptionDiv al modal
+            while (descriptionDiv.firstChild) {
+              modalContent.appendChild(descriptionDiv.firstChild);
             }
-  
-            // Agregar el contenido del descriptionDiv al modal
-            modalContent.appendChild(modalDescriptionDiv);
   
             // Mostrar el modal
             abrirVentanaModal('Título del modal');
