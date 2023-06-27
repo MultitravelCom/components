@@ -51,7 +51,7 @@ function abrirVentanaModal() {
                     // moverDescripcionAlModal(modal.querySelector('.modal-content'));
                 }
 
-                modal.style.display = 'block';
+                modal.style.display = 'flex';
 
                 // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
                 modal.addEventListener('click', function (event) {

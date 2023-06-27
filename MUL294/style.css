@@ -72,7 +72,7 @@
     margin-bottom: .8rem;
 }
 
-.results-list__package .result-option__product-description > .info-card__content {
+.results-list__package .result-option__product-description>.info-card__content {
     background-color: #F3F3F3;
 }
 
@@ -83,9 +83,11 @@
     background: #1585E6;
     border: #1585E6;
 }
-.results-list__package .info-card__price{
+
+.results-list__package .info-card__price {
     width: 31% !important;
 }
+
 .results-list__package .info-card__content a {
     border-radius: 4px;
     border: 1px solid #0F5EA3;
@@ -114,9 +116,11 @@
     top: 16px;
 }
 
- /* Estilos para la ventana modal */
- .modal {
+/* Estilos para la ventana modal */
+.modal {
     display: none;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -125,12 +129,12 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-  }
+}
