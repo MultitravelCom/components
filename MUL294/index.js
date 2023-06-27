@@ -30,9 +30,9 @@ function abrirVentanaModal() {
             const modalTitle = document.createElement('h2');
             modalTitle.textContent = 'Ventana Modal';
 
-            const modalDescription = document.createElement('div');
-            modalDescription.classList.add('modal-description');
-            modalDescription.innerHTML = hotelDescription.innerHTML;
+            // const modalDescription = document.createElement('div');
+            // modalDescription.classList.add('modal-description');
+            // modalDescription.innerHTML = hotelDescription.innerHTML;
 
             modalContent.appendChild(modalTitle);
             modalContent.appendChild(modalText);
