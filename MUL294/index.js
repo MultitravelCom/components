@@ -25,7 +25,7 @@ function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
 
     if (botonDataProduct) {
-        const dataProduct = boton.dataset.product;
+        const dataProduct = botonDataProduct.dataset.product;
 
         if (dataProduct === 'flight') {
             botonDataProduct.textContent = 'Cambiar vuelo';
