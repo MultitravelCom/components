@@ -12,8 +12,9 @@ function cambiarTextoBoton() {
 function abrirVentanaModal() {
     // Obtén la referencia al elemento <a> mediante su clase o cualquier otro selector válido
     const link = document.querySelector('.info-card__action-item');
+    const hotelDescription = document.querySelector('.js-result-package-option__hotel-description');
 
-    if (link) {
+    if (link && hotelDescription) {
         console.log('Enlace encontrado:', link);
 
         link.addEventListener('click', function (event) {
@@ -29,8 +30,9 @@ function abrirVentanaModal() {
             const modalTitle = document.createElement('h2');
             modalTitle.textContent = 'Ventana Modal';
 
-            const modalText = document.createElement('p');
-            modalText.textContent = 'Contenido de la ventana modal.';
+            const modalDescription = document.createElement('div');
+            modalDescription.classList.add('modal-description');
+            modalDescription.innerHTML = hotelDescription.innerHTML;
 
             modalContent.appendChild(modalTitle);
             modalContent.appendChild(modalText);
