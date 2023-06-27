@@ -15,28 +15,27 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    let intervalId = setInterval(function () {
-        const link = document.querySelector('result.package-result--selected.package-result--master .info-card__action-item');
-        const modalContent = document.querySelector('#modal-packages .modal-content');
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-
-        if (link && descriptionDiv) {
-            clearInterval(intervalId);
-            console.log('Elemento <a> encontrado:', link);
-
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                // Mover el contenido del descriptionDiv al modal
-                while (descriptionDiv.firstChild) {
-                    modalContent.appendChild(descriptionDiv.firstChild);
-                }
-
-                abrirVentanaModal('Título del modal', 'Contenido del modal');
-            });
-        }
+    let intervalId = setInterval(function() {
+      const link = document.querySelector('result.package-result--selected.package-result--master .info-card__action-item');
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+  
+      if (link && descriptionDiv) {
+        clearInterval(intervalId);
+        console.log('Elemento <a> encontrado:', link);
+  
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+  
+          const modalContent = document.querySelector('#modal-packages .modal-content');
+          while (descriptionDiv.firstChild) {
+            modalContent.appendChild(descriptionDiv.firstChild);
+          }
+  
+          abrirVentanaModal('Título del modal', '');
+        });
+      }
     }, 100);
-}
+  }
 
 function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
