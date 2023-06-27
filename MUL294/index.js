@@ -15,22 +15,22 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    let intervalId = setInterval(function() {
-      const link = document.querySelector('.info-card__action-item');
-      const modalContent = document.querySelector('#modal-packages .modal-content');
-  
-      if (link && modalContent) {
-        clearInterval(intervalId);
-  
-        link.addEventListener('click', function(event) {
-          event.preventDefault();
-  
-          // Mostrar el modal con título y contenido
-          abrirVentanaModal('Título del modal', 'Contenido del modal');
-        });
-      }
+    let intervalId = setInterval(function () {
+        const link = document.querySelector('.info-card__action-item');
+        const modalContent = document.querySelector('#modal-packages .modal-content');
+
+        if (link && modalContent) {
+            clearInterval(intervalId);
+            console.log('Elemento <a> encontrado:', link);
+
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                abrirVentanaModal('Título del modal', 'Contenido del modal');
+            });
+        }
     }, 100);
-  }
+}
+
 function abrirVentanaModal(titulo, contenido) {
     let modal = document.querySelector('#miModal');
 
