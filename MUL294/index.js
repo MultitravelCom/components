@@ -1,88 +1,75 @@
 function cambiarTextoBoton() {
-    let button = document.querySelector('.result-option__book-button');
-
-    if (button) {
-        button.textContent = 'Comprar';
-        return;
+    const botonDataProduct = document.querySelector('.result-option__change-button');
+  
+    if (botonDataProduct) {
+      const dataProduct = botonDataProduct.dataset.product;
+  
+      if (dataProduct === 'flight') {
+        botonDataProduct.textContent = 'Cambiar vuelo';
+      } else if (dataProduct === 'hotel') {
+        botonDataProduct.textContent = 'Cambiar alojamiento';
+      }
+    } else {
+      setTimeout(cambiarTextoBoton, 100);
     }
-
-    setTimeout(cambiarTextoBoton, 100);
-}
-function moverDescripcionAlModal() {
-    let intervalId = setInterval(function () {
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#modal-packages');
-
-        if (descriptionDiv && modalContent) {
-            clearInterval(intervalId);
+  }
+  
+  function moverDescripcionAlModal() {
+    let intervalId = setInterval(function() {
+      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+      const modalContent = document.querySelector('#modal-packages');
+  
+      if (descriptionDiv && modalContent) {
+        clearInterval(intervalId);
+  
+        const link = document.querySelector('.info-card__action-item');
+        if (link) {
+          link.addEventListener('click', function(event) {
+            event.preventDefault();
+  
             modalContent.appendChild(descriptionDiv);
             descriptionDiv.style.display = 'block';
+  
+            
+            abrirVentanaModal('Título del modal', 'Contenido del modal');
+          });
         }
+      }
     }, 100);
-}
-function cambiarTextoBoton() {
-    const botonDataProduct = document.querySelector('.result-option__change-button');
-
-    if (botonDataProduct) {
-        const dataProduct = botonDataProduct.dataset.product;
-
-        if (dataProduct === 'flight') {
-            botonDataProduct.textContent = 'Cambiar vuelo';
-        } else if (dataProduct === 'hotel') {
-            botonDataProduct.textContent = 'Cambiar alojamiento';
-        }
-    } else {
-        setTimeout(cambiarTextoBoton, 100);
+  }
+  
+  function abrirVentanaModal(titulo, contenido) {
+    let modal = document.querySelector('#miModal');
+  
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.setAttribute('id', 'miModal');
+      modal.innerHTML = `
+        <div id="modal-packages" class="modal-content">
+          <h2>${titulo}</h2>
+          <p>${contenido}</p>
+        </div>
+      `;
+  
+      document.body.appendChild(modal);
     }
-}
-function abrirVentanaModal() {
-    let intervalId = setInterval(function () {
-        const link = document.querySelector('.info-card__action-item');
-
-        if (link) {
-            clearInterval(intervalId);
-            console.log('Enlace encontrado:', link);
-
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                let modal = document.querySelector('#miModal');
-
-                if (!modal) {
-                    modal = document.createElement('div');
-                    modal.classList.add('modal');
-                    modal.setAttribute('id', 'miModal');
-                    modal.innerHTML = `
-                        <div id="modal-packages" class="modal-content">
-                            <h2>Ventana Modal</h2>
-                            <p>Contenido de la ventana modal.</p>
-                        </div>
-                    `;
-
-                    document.body.appendChild(modal);
-
-                    // moverDescripcionAlModal(modal.querySelector('.modal-content'));
-                }
-
-                modal.style.display = 'flex';
-
-                // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
-                modal.addEventListener('click', function (event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                    }
-                });
-            });
-        } else {
-            console.log('Enlace no encontrado');
-        }
-    }, 100);
-}
-function agregarTextos() {
+  
+    modal.style.display = 'flex';
+  
+    // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+  
+  function agregarTextos() {
     const isMobile = window.innerWidth <= 768; // Verificar si la resolución es igual o inferior a 768px (puedes ajustar este valor según tus necesidades)
   
     if (!isMobile) {
-      return; // Salir de la función si no es un dispositivo móvil
+      return;
     }
   
     let intervalId = setInterval(function() {
@@ -104,22 +91,27 @@ function agregarTextos() {
   
           if (resultOptionElements.length >= 1) {
             resultOptionElements[0].appendChild(divVerVuelo);
+  
+            divVerVuelo.addEventListener('click', function() {
+              abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.');
+            });
           }
   
           if (resultOptionElements.length >= 2) {
             resultOptionElements[1].appendChild(divVerServicio);
+  
+            divVerServicio.addEventListener('click', function() {
+              abrirVentanaModal('Modal de servicio', 'Contenido del modal de servicio.');
+            });
           }
         }
       }
     }, 150);
   }
-
-document.addEventListener("DOMContentLoaded", function () {
+  
+  document.addEventListener('DOMContentLoaded', function() {
     cambiarTextoBoton();
-    moverDescripcionAlModal()
-    abrirVentanaModal();
-    cambiarTextoBoton();
-
+    moverDescripcionAlModal();
     agregarTextos();
-
-});
+  });
+  
