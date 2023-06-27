@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     moverDescripcionAlModal()
     abrirVentanaModal();
     cambiarTextoBoton();
-    if (window.innerWidth <= 767) {
-        agregarTextosYModales();
-    }
+
+    agregarTextosYModales();
+
 });
