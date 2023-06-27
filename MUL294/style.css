@@ -163,5 +163,9 @@
         width: 100%;
         margin: 0 !important;
     }
+    .result-option-package__row .result-option-package__booking{
+        width: 100%;
+        position: inherit !important;
+    }
 
 }
