@@ -12,7 +12,6 @@ function crearModal() {
     document.body.appendChild(modal);
 }
 
-// Actualizar el contenido del modal
 function actualizarContenidoModal(titulo, contenido) {
     const modalContent = document.querySelector('#modal-packages');
     modalContent.innerHTML = `
@@ -21,7 +20,6 @@ function actualizarContenidoModal(titulo, contenido) {
     `;
 }
 
-// Abrir el modal
 function abrirVentanaModal(titulo, contenido) {
     return new Promise((resolve) => {
         const modal = document.querySelector('#miModal');
@@ -42,7 +40,6 @@ function abrirVentanaModal(titulo, contenido) {
     });
 }
 
-// Cambiar el texto del botón
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
 
@@ -59,22 +56,25 @@ function cambiarTextoBoton() {
     }
 }
 
-// Mover la descripción al modal
 function moverDescripcionAlModal() {
     const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
     const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-    const modalContent = document.querySelector('#modal-packages .modal-content');
-
-    if (link && descriptionDiv && modalContent) {
-        console.log('Elemento <a> encontrado:', link);
-
-        const clonedDescription = descriptionDiv.cloneNode(true);
-        modalContent.innerHTML = '';
-        modalContent.appendChild(clonedDescription);
+    const modal = document.querySelector('#modal-packages');
+  
+    if (link && descriptionDiv && modal && descriptionDiv.offsetHeight !== 0) {
+      console.log('Elemento <a> encontrado:', link);
+  
+      const modalContent = modal.querySelector('.modal-content');
+      const clonedDescription = descriptionDiv.cloneNode(true);
+  
+      modalContent.innerHTML = '';
+      modalContent.appendChild(clonedDescription);
+  
+      modal.style.display = 'block';
     } else {
-        setTimeout(moverDescripcionAlModal, 100);
+      setTimeout(moverDescripcionAlModal, 100);
     }
-}
+  }
 
 // Agregar textos
 function agregarTextos() {
