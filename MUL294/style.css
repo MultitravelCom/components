@@ -148,6 +148,7 @@
     }
 
     .results-list__package .result__bottom-price .bestprice {
+        margin-top: 1rem;
         float: right !important;
     }
 
