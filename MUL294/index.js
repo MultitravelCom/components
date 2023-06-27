@@ -86,21 +86,25 @@ function agregarTextos() {
     }
   
     let intervalId = setInterval(function() {
-      const divResultado = document.querySelector('.package-result--master');
-      if (divResultado && divResultado.children.length > 0) {
-        clearInterval(intervalId);
+      const packageResultMaster = document.querySelector('.package-result--master');
+      if (packageResultMaster) {
+        const resultOptions = packageResultMaster.querySelector('.result__options');
+        if (resultOptions) {
+          clearInterval(intervalId);
   
-        const divVerVuelo = document.createElement('div');
-        divVerVuelo.textContent = 'Ver vuelo';
+          const divVerVuelo = document.createElement('div');
+          divVerVuelo.textContent = 'Ver vuelo';
   
-        const divVerServicio = document.createElement('div');
-        divVerServicio.textContent = 'Ver servicio';
+          const divVerServicio = document.createElement('div');
+          divVerServicio.textContent = 'Ver servicio';
   
-        divResultado.appendChild(divVerVuelo);
-        divResultado.appendChild(divVerServicio);
+          resultOptions.appendChild(divVerVuelo);
+          resultOptions.appendChild(divVerServicio);
+        }
       }
     }, 150);
   }
+  
 document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     moverDescripcionAlModal()
