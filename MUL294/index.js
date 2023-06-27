@@ -15,50 +15,49 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    let intervalId = setInterval(function() {
-      const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
-      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-  
-      if (link && descriptionDiv) {
-        clearInterval(intervalId);
-        console.log('Elemento <a> encontrado:', link);
-  
-        link.addEventListener('click', function(event) {
-          event.preventDefault();
-  
-          const modalContent = document.querySelector('#modal-packages .modal-content');
-          while (descriptionDiv.firstChild) {
-            modalContent.appendChild(descriptionDiv.firstChild);
-          }
-  
-          abrirVentanaModal('Título del modal', '');
-        });
-      }
-    }, 100);
-  }
+    let intervalId = setInterval(function () {
+        const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
 
-function abrirVentanaModal(titulo, contenido) {
-    let modal = document.querySelector('#miModal');
+        if (link && descriptionDiv) {
+            clearInterval(intervalId);
+            console.log('Elemento <a> encontrado:', link);
 
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.setAttribute('id', 'miModal');
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
 
-        document.body.appendChild(modal);
-    }
+                const modalContent = document.querySelector('#modal-packages .modal-content');
+                while (descriptionDiv.firstChild) {
+                    modalContent.appendChild(descriptionDiv.firstChild);
+                }
 
-    modal.style.display = 'flex';
-
-    // Actualizar el contenido del modal
-    actualizarContenidoModal(titulo, contenido);
-
-    // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+                abrirVentanaModal('Título del modal', '');
+            });
         }
-    });
+    }, 100);
+}
+
+function moverDescripcionAlModal() {
+    let intervalId = setInterval(function () {
+        const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+
+        if (link) {
+            clearInterval(intervalId);
+            console.log('Elemento <a> encontrado:', link);
+
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                abrirVentanaModal('Título del modal', '', function () {
+                    const modalContent = document.querySelector('#modal-packages .modal-content');
+                    while (descriptionDiv.firstChild) {
+                        modalContent.appendChild(descriptionDiv.firstChild);
+                    }
+                });
+            });
+        }
+    }, 100);
 }
 
 function actualizarContenidoModal(titulo, contenido) {
