@@ -144,7 +144,6 @@
 @media (max-width: 767px) {
     #packages .info-card__price {
         width: 100%;
-        text-align: center;
         float: right;
     }
 
