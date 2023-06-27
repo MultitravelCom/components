@@ -78,80 +78,28 @@ function abrirVentanaModal() {
         }
     }, 100);
 }
-function agregarTextosYModales() {
-    function abrirModal(titulo, contenido) {
-        const modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.style.display = 'block';
+function agregarTextos() {
+    const isMobile = window.innerWidth <= 768; // Verificar si la resolución es igual o inferior a 768px (puedes ajustar este valor según tus necesidades)
 
-        const modalContent = document.createElement('div');
-        modalContent.classList.add('modal-content');
-
-        const modalTitle = document.createElement('h2');
-        modalTitle.textContent = titulo;
-
-        const modalText = document.createElement('p');
-        modalText.textContent = contenido;
-
-        modalContent.appendChild(modalTitle);
-        modalContent.appendChild(modalText);
-        modal.appendChild(modalContent);
-
-        document.body.appendChild(modal);
-
-        // Agregar evento de clic para cerrar la ventana modal al hacer clic fuera de ella
-        modal.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
-
-    function agregarTextos() {
-        const divResultado = document.querySelector('.result-package-result--selected.package-result--master');
-
-        const divVerVuelo = document.createElement('div');
-        divVerVuelo.classList.add('ver-vuelo');
-
-        const divVerServicio = document.createElement('div');
-        divVerServicio.classList.add('ver-servicio');
-
-        const verVuelo = document.createElement('span');
-        verVuelo.textContent = 'Ver vuelo';
-
-        const verServicio = document.createElement('span');
-        verServicio.textContent = 'Ver servicio';
-
-        divVerVuelo.appendChild(verVuelo);
-        divVerServicio.appendChild(verServicio);
-
-        divResultado.appendChild(divVerVuelo);
-        divResultado.appendChild(divVerServicio);
+    if (!isMobile) {
+        return; // Salir de la función si no es un dispositivo móvil
     }
 
     let intervalId = setInterval(function () {
         const divResultado = document.querySelector('.result-package-result--selected.package-result--master');
-
         if (divResultado) {
             clearInterval(intervalId);
-            agregarTextos();
 
-            const divVerVuelo = document.querySelector('.ver-vuelo');
-            const divVerServicio = document.querySelector('.ver-servicio');
+            const divVerVuelo = document.createElement('div');
+            divVerVuelo.textContent = 'Ver vuelo';
 
-            if (divVerVuelo) {
-                divVerVuelo.addEventListener('click', function () {
-                    abrirModal('Modal de vuelo', 'Contenido del modal de vuelo.');
-                });
-            }
+            const divVerServicio = document.createElement('div');
+            divVerServicio.textContent = 'Ver servicio';
 
-            if (divVerServicio) {
-                divVerServicio.addEventListener('click', function () {
-                    abrirModal('Modal de servicio', 'Contenido del modal de servicio.');
-                });
-            }
+            divResultado.appendChild(divVerVuelo);
+            divResultado.appendChild(divVerServicio);
         }
-    }, 100); // Intervalo de tiempo en milisegundos
+    }, 150);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -160,6 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     abrirVentanaModal();
     cambiarTextoBoton();
 
-    agregarTextosYModales();
+    agregarTextos();
 
 });
