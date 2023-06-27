@@ -9,14 +9,14 @@ function cambiarTextoBoton() {
     setTimeout(cambiarTextoBoton, 100);
 }
 
-function moverDescripcionAlModal(modalContent) {
-    const modalDescription = document.querySelector('.js-result-package-option__hotel-description');
+// function moverDescripcionAlModal(modalContent) {
+//     const modalDescription = document.querySelector('.js-result-package-option__hotel-description');
 
-    if (modalDescription && modalContent) {
-        modalContent.appendChild(modalDescription);
-        modalDescription.style.display = 'block';
-    }
-}
+//     if (modalDescription && modalContent) {
+//         modalContent.appendChild(modalDescription);
+//         modalDescription.style.display = 'block';
+//     }
+// }
 
 function abrirVentanaModal() {
     const link = document.querySelector('.info-card__action-item');
@@ -42,8 +42,8 @@ function abrirVentanaModal() {
 
                 document.body.appendChild(modal);
 
-                // Mover el contenido del div al modal antes de abrirlo
-                moverDescripcionAlModal(modal.querySelector('.modal-content'));
+                    
+                // moverDescripcionAlModal(modal.querySelector('.modal-content'));
             }
 
             modal.style.display = 'block';
