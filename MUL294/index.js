@@ -57,7 +57,7 @@ function cambiarTextoBoton() {
 }
 
 function moverDescripcionAlModal() {
-    const descriptionDiv = document.querySelector('.package-result--master .js-result-package-option__hotel-description');
+    const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
     const modal = document.querySelector('#modal-packages');
 
     if (descriptionDiv && modal) {
@@ -72,7 +72,7 @@ function moverDescripcionAlModal() {
         // Mostrar el modal después de un retraso
         setTimeout(function () {
             modal.style.display = 'block';
-        }, 2000); 
+        }, 2000);
     }
 }
 
@@ -131,6 +131,12 @@ function agregarTextos() {
 document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
-    moverDescripcionAlModal();
+    const link = document.querySelector('.result.package-result--selected.package-result--master .info-card__action-item');
+    if (link) {
+        link.addEventListener('click', function () {
+            moverDescripcionAlModal();
+            // Aquí puedes agregar cualquier otra lógica que desees ejecutar al hacer clic en el botón
+        });
+    }
     agregarTextos();
 });
