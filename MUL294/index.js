@@ -27,11 +27,12 @@ function abrirVentanaModal() {
         link.addEventListener('click', function (event) {
             event.preventDefault();
 
-            let modal = document.querySelector('.modal');
+            let modal = document.querySelector('#miModal');
 
             if (!modal) {
                 modal = document.createElement('div');
                 modal.classList.add('modal');
+                modal.setAttribute('id', 'miModal');
                 modal.innerHTML = `
                     <div class="modal-content">
                         <h2>Ventana Modal</h2>
