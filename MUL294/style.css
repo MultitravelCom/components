@@ -148,7 +148,7 @@
         float: right;
     }
 
-    .result__bottom-price .bestprice {
+    .results-list__package  .result__bottom-price .bestprice {
         float: none !important;
         text-align: right;
     }
@@ -159,11 +159,11 @@
         margin-bottom: 1rem;
     }
 
-    .result__bottom-price .info-card__price {
+    .results-list__package .result__bottom-price .info-card__price {
         width: 100%;
         margin: 0 !important;
     }
-    .result-option-package__row .result-option-package__booking{
+    .results-list__package .result-option-package__row .result-option-package__booking{
         width: 100%;
         position: inherit !important;
     }
