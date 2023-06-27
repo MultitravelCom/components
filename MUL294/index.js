@@ -9,6 +9,17 @@ function cambiarTextoBoton() {
     setTimeout(cambiarTextoBoton, 100);
 }
 
+function moverDescripcionAlModal() {
+    const modalDescription = document.querySelector('.js-result-package-option__hotel-description');
+    const modal = document.querySelector('.modal');
+    const modalContent = document.querySelector('.modal-content');
+
+    if (modalDescription && modal && modalContent) {
+        modalContent.appendChild(modalDescription);
+        modalDescription.style.display = 'block';
+    }
+}
+
 function abrirVentanaModal() {
     // Obtén la referencia al elemento <a> mediante su clase o cualquier otro selector válido
     const link = document.querySelector('.info-card__action-item');
@@ -53,6 +64,7 @@ function abrirVentanaModal() {
 document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     abrirVentanaModal();
+    moverDescripcionAlModal();
 });
 
 
