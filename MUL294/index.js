@@ -16,26 +16,18 @@ function cambiarTextoBoton() {
 
 function moverDescripcionAlModal() {
     let intervalId = setInterval(function() {
-      const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+      const link = document.querySelector('.info-card__action-item');
       const modalContent = document.querySelector('#modal-packages .modal-content');
   
-      if (descriptionDiv && modalContent) {
+      if (link && modalContent) {
         clearInterval(intervalId);
   
-        const link = document.querySelector('.info-card__action-item');
-        if (link) {
-          link.addEventListener('click', function(event) {
-            event.preventDefault();
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
   
-            // Mover el contenido del descriptionDiv al modal
-            while (descriptionDiv.firstChild) {
-              modalContent.appendChild(descriptionDiv.firstChild);
-            }
-  
-            // Mostrar el modal
-            abrirVentanaModal('Título del modal');
-          });
-        }
+          // Mostrar el modal con título y contenido
+          abrirVentanaModal('Título del modal', 'Contenido del modal');
+        });
       }
     }, 100);
   }
