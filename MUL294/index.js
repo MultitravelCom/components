@@ -1,44 +1,44 @@
 // Crear el modal #modal-packages
-function crearModal() {
+function inicializarModal() {
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.setAttribute('id', 'miModal');
-
+  
     const modalContent = document.createElement('div');
     modalContent.setAttribute('id', 'modal-packages');
     modalContent.classList.add('modal-content');
-
+  
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
-}
-
-function actualizarContenidoModal(titulo, contenido) {
-    const modalContent = document.querySelector('#modal-packages');
-    modalContent.innerHTML = `
-      <h2>${titulo}</h2>
-      <p>${contenido}</p>
-    `;
-}
-
-function abrirVentanaModal(titulo, contenido) {
-    return new Promise((resolve) => {
-        const modal = document.querySelector('#miModal');
+  
+    function actualizarContenidoModal(titulo, contenido) {
+      modalContent.innerHTML = `
+        <h2>${titulo}</h2>
+        <p>${contenido}</p>
+      `;
+    }
+  
+    function abrirVentanaModal(titulo, contenido) {
+      return new Promise((resolve) => {
         modal.style.display = 'flex';
-
         actualizarContenidoModal(titulo, contenido);
-
+  
         modal.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
         });
-
-        // Resuelve la promesa después de un breve período de tiempo para permitir que el modal se muestre correctamente
+  
         setTimeout(() => {
-            resolve();
+          resolve();
         }, 50);
-    });
-}
+      });
+    }
+  
+    return {
+      abrirVentanaModal: abrirVentanaModal
+    };
+  }
 
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
@@ -54,20 +54,6 @@ function cambiarTextoBoton() {
     } else {
         setTimeout(cambiarTextoBoton, 100);
     }
-}
-
-function moverDescripcionAlModal() {
-    const intervalId = setInterval(() => {
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#modal-packages');
-
-        if (descriptionDiv && modalContent) {
-            clearInterval(intervalId); 
-            console.log('Se encontraron los dos selectores.');
-            modalContent.innerHTML = '';
-            modalContent.appendChild(descriptionDiv);
-        }
-    }, 100);
 }
 
 function agregarTextos() {
@@ -114,9 +100,51 @@ function agregarTextos() {
     }, 150);
 }
 
+
+function inicializarModalPropio() {
+    const modal = document.createElement('div');
+    modal.classList.add('modal-propio');
+    modal.setAttribute('id', 'modal-propio');
+    modal.style.display = 'none';
+
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content-propio');
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    function mostrarModalPropio(contenido) {
+        modalContent.innerHTML = '';
+        modalContent.appendChild(contenido);
+        modal.style.display = 'flex';
+    }
+
+    function moverDescripcionAlModal() {
+        const intervalId = setInterval(() => {
+            const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
+
+            if (descriptionDiv) {
+                clearInterval(intervalId);
+                console.log('Se encontró el selector .js-result-package-option__hotel-description.');
+
+                const enlaceA = document.querySelector('.js-result-selected-action--extended-hotel-info');
+                if (enlaceA) {
+                    enlaceA.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        mostrarModalPropio(descriptionDiv);
+                    });
+                }
+            }
+        }, 100);
+    }
+
+    moverDescripcionAlModal();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
     agregarTextos();
     moverDescripcionAlModal();
+    inicializarModalPropio();
 });
