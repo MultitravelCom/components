@@ -3,25 +3,26 @@ function abrirVentanaModal(titulo, contenido) {
     const modal = document.getElementById('miModal');
     const modalContent = modal.querySelector('.modal-content');
     const modalTitle = modal.querySelector('h2');
-
-    if (modal.style.display === 'none') {
-        // Abrir el modal
-        modal.style.display = 'flex';
-        modalContent.textContent = contenido;
-        modalTitle.textContent = titulo;
-
-        // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
-        document.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                // Cerrar el modal
-                modal.style.display = 'none';
-            }
-        });
-    } else {
-        // Cerrar el modal
-        modal.style.display = 'none';
+  
+    // Función para cerrar el modal
+    function cerrarModal() {
+      modal.style.display = 'none';
+      document.removeEventListener('click', cerrarModal);
     }
-}
+  
+    if (modal.style.display === 'none') {
+      // Abrir el modal
+      modal.style.display = 'flex';
+      modalContent.textContent = contenido;
+      modalTitle.textContent = titulo;
+  
+      // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
+      document.addEventListener('click', cerrarModal);
+    } else {
+      // Cerrar el modal
+      cerrarModal();
+    }
+  }
 //********************** */
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
