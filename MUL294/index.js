@@ -1,30 +1,44 @@
 // Función para abrir el modal
+function verificarModalExistente() {
+    return document.getElementById('miModal');
+}
+
+// Función para abrir el modal
 function abrirVentanaModal(titulo, contenido) {
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    modal.setAttribute('id', 'miModal');
+    let modal = verificarModalExistente();
 
-    const modalContent = document.createElement('div');
-    modalContent.setAttribute('id', 'modal-packages');
-    modalContent.classList.add('modal-content');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.setAttribute('id', 'miModal');
+
+        const modalContent = document.createElement('div');
+        modalContent.setAttribute('id', 'modal-packages');
+        modalContent.classList.add('modal-content');
+
+        const modalTitle = document.createElement('h2');
+        modalTitle.textContent = titulo;
+        modalContent.appendChild(modalTitle);
+
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        });
+    }
+
+    const modalContent = modal.querySelector('.modal-content');
+    const modalTitle = modal.querySelector('h2');
+
     modalContent.textContent = contenido;
-
-    const modalTitle = document.createElement('h2');
     modalTitle.textContent = titulo;
-    modalContent.appendChild(modalTitle);
-
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
 
     // Mostrar el modal
     modal.style.display = 'flex';
-
-    // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            cerrarModal();
-        }
-    });
 
     // Función para cerrar el modal
     function cerrarModal() {
