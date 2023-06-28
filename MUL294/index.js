@@ -1,28 +1,44 @@
 // Función para abrir el modal
 function abrirVentanaModal(titulo, contenido) {
-    const modal = document.getElementById('miModal');
-    const modalContent = modal.querySelector('.modal-content');
-    const modalTitle = modal.querySelector('h2');
-  
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.setAttribute('id', 'miModal');
+
+    const modalContent = document.createElement('div');
+    modalContent.setAttribute('id', 'modal-packages');
+    modalContent.classList.add('modal-content');
+    modalContent.textContent = contenido;
+
+    const modalTitle = document.createElement('h2');
+    modalTitle.textContent = titulo;
+    modalContent.appendChild(modalTitle);
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    // Obtener las referencias a los elementos dentro del modal
+    const modalContentUpdated = document.querySelector('#modal-packages');
+    const modalTitleUpdated = modalContentUpdated.querySelector('h2');
+
     // Función para cerrar el modal
     function cerrarModal() {
-      modal.style.display = 'none';
-      document.removeEventListener('click', cerrarModal);
+        modal.style.display = 'none';
+        document.removeEventListener('click', cerrarModal);
     }
-  
+
     if (modal.style.display === 'none') {
-      // Abrir el modal
-      modal.style.display = 'flex';
-      modalContent.textContent = contenido;
-      modalTitle.textContent = titulo;
-  
-      // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
-      document.addEventListener('click', cerrarModal);
+        // Abrir el modal
+        modal.style.display = 'flex';
+        modalContentUpdated.textContent = contenido;
+        modalTitleUpdated.textContent = titulo;
+
+        // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
+        document.addEventListener('click', cerrarModal);
     } else {
-      // Cerrar el modal
-      cerrarModal();
+        // Cerrar el modal
+        cerrarModal();
     }
-  }
+}
 //********************** */
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
