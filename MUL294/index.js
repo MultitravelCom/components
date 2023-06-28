@@ -38,7 +38,14 @@ function abrirVentanaModal(titulo, contenido, selectorTexto) {
     }
 
     const modalContent = modal.querySelector('.modal-content');
-    modalContent.textContent = contenido;
+    modalContent.textContent = ''; // Limpiar el contenido existente del modal
+
+    // Obtener el contenido del selector result-option__extended-info
+    const contenidoModal = document.querySelector(selectorTexto);
+    if (contenidoModal) {
+        const contenidoClonado = contenidoModal.cloneNode(true);
+        modalContent.appendChild(contenidoClonado);
+    }
 
     // Mostrar el modal
     modal.style.display = 'flex';
