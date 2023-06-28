@@ -79,5 +79,5 @@ function agregarTextos() {
 
 document.addEventListener('DOMContentLoaded', function () {
     cambiarTextoBoton();
-    agregarTextos();;
+    agregarTextos();
 });
