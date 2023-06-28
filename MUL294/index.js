@@ -15,6 +15,8 @@ function abrirVentanaModal(titulo, contenido) {
 
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
+
+    modal.style.display = 'flex';
 }
 //********************** */
 function cambiarTextoBoton() {
