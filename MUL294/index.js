@@ -1,16 +1,15 @@
-// Función para abrir el modal
-function verificarModalExistente() {
-    return document.getElementById('miModal');
-}
+// Objeto para almacenar los modales creados
+const modalesCreados = {};
 
 // Función para abrir el modal
-function abrirVentanaModal(titulo, contenido) {
-    let modal = verificarModalExistente();
+function abrirVentanaModal(titulo, contenido, selectorTexto) {
+    const modalId = selectorTexto.replace(/\s/g, '-').toLowerCase(); // Convertir el texto del selector a formato ID
+    let modal = modalesCreados[modalId];
 
     if (!modal) {
         modal = document.createElement('div');
         modal.classList.add('modal');
-        modal.setAttribute('id', 'miModal');
+        modal.setAttribute('id', modalId);
 
         const modalContent = document.createElement('div');
         modalContent.setAttribute('id', 'modal-packages');
@@ -29,6 +28,9 @@ function abrirVentanaModal(titulo, contenido) {
                 cerrarModal();
             }
         });
+
+        // Almacenar el modal creado en el objeto modalesCreados
+        modalesCreados[modalId] = modal;
     }
 
     const modalContent = modal.querySelector('.modal-content');
@@ -46,6 +48,7 @@ function abrirVentanaModal(titulo, contenido) {
         modal.removeEventListener('click', cerrarModal);
     }
 }
+
 //********************** */
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
@@ -65,47 +68,47 @@ function cambiarTextoBoton() {
 
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
-  
+
     if (!isMobile) {
-      return;
+        return;
     }
-  
+
     let intervalId = setInterval(function () {
-      const packageResultMaster = document.querySelector('.package-result--master');
-      if (packageResultMaster) {
-        const resultOptions = packageResultMaster.querySelector('.result__options');
-        if (resultOptions) {
-          clearInterval(intervalId);
-  
-          const divVerVuelo = document.createElement('div');
-          divVerVuelo.textContent = 'Ver vuelo';
-          divVerVuelo.classList.add('ver-vuelo');
-  
-          const divVerServicio = document.createElement('div');
-          divVerServicio.textContent = 'Ver servicio';
-          divVerServicio.classList.add('ver-servicio');
-  
-          const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
-  
-          if (resultOptionElements.length >= 1) {
-            resultOptionElements[0].appendChild(divVerVuelo);
-  
-            divVerVuelo.addEventListener('click', function () {
-              abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.');
-            });
-          }
-  
-          if (resultOptionElements.length >= 2) {
-            resultOptionElements[1].appendChild(divVerServicio);
-  
-            divVerServicio.addEventListener('click', function () {
-              abrirVentanaModal('Modal de servicio', 'Contenido del modal de servicio.');
-            });
-          }
+        const packageResultMaster = document.querySelector('.package-result--master');
+        if (packageResultMaster) {
+            const resultOptions = packageResultMaster.querySelector('.result__options');
+            if (resultOptions) {
+                clearInterval(intervalId);
+
+                const divVerVuelo = document.createElement('div');
+                divVerVuelo.textContent = 'Ver vuelo';
+                divVerVuelo.classList.add('ver-vuelo');
+
+                const divVerServicio = document.createElement('div');
+                divVerServicio.textContent = 'Ver servicio';
+                divVerServicio.classList.add('ver-servicio');
+
+                const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
+
+                if (resultOptionElements.length >= 1) {
+                    resultOptionElements[0].appendChild(divVerVuelo);
+
+                    divVerVuelo.addEventListener('click', function () {
+                        abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.');
+                    });
+                }
+
+                if (resultOptionElements.length >= 2) {
+                    resultOptionElements[1].appendChild(divVerServicio);
+
+                    divVerServicio.addEventListener('click', function () {
+                        abrirVentanaModal('Modal de servicio', 'Contenido del modal de servicio.');
+                    });
+                }
+            }
         }
-      }
     }, 150);
-  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     cambiarTextoBoton();
