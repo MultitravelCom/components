@@ -163,7 +163,7 @@ const Modal = ({ open, onClose }) => {
                         diasClass="green"
                         spanText="Dejanos tu consulta y nos contactaremos en nuestro horario de atención."
                         buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/5s5eba"
+                        buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
                     />
                     {/* <ModalContactos
@@ -175,7 +175,7 @@ const Modal = ({ open, onClose }) => {
                         diasClass="green"
                         spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
                         buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/64zdo9"
+                        buttonLink="https://wa.link/5s5eba"
                         buttonText="Enviar mensaje"
                     /> */}
                 </>
