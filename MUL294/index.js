@@ -48,8 +48,7 @@ function initializeModal() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     initializeModal();
     cambiarTextoBoton();
-  });
-  
+});
