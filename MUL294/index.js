@@ -1,17 +1,4 @@
 // Crear el modal #modal-packages
-function crearModal() {
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    modal.setAttribute('id', 'miModal');
-
-    const modalContent = document.createElement('div');
-    modalContent.setAttribute('id', 'modal-packages');
-    modalContent.classList.add('modal-content');
-
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-}
-
 function abrirVentanaModal(titulo, contenido) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -91,7 +78,6 @@ function agregarTextos() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    crearModal();
     cambiarTextoBoton();
     agregarTextos();;
 });
