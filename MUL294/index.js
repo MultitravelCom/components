@@ -3,6 +3,11 @@ const modalesCreados = {};
 
 // Función para abrir el modal
 function abrirVentanaModal(titulo, contenido, selectorTexto) {
+    if (!selectorTexto) {
+        console.error('No se ha proporcionado el selector de texto.');
+        return;
+    }
+
     const modalId = selectorTexto.replace(/\s/g, '-').toLowerCase(); // Convertir el texto del selector a formato ID
     let modal = modalesCreados[modalId];
 
@@ -94,7 +99,7 @@ function agregarTextos() {
                     resultOptionElements[0].appendChild(divVerVuelo);
 
                     divVerVuelo.addEventListener('click', function () {
-                        abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.');
+                        abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.', 'Ver vuelo');
                     });
                 }
 
@@ -102,7 +107,7 @@ function agregarTextos() {
                     resultOptionElements[1].appendChild(divVerServicio);
 
                     divVerServicio.addEventListener('click', function () {
-                        abrirVentanaModal('Modal de servicio', 'Contenido del modal de servicio.');
+                        abrirVentanaModal('Modal de servicio', 'Contenido del modal de servicio.', 'Ver servicio');
                     });
                 }
             }
