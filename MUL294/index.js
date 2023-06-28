@@ -102,7 +102,7 @@ function agregarTextos() {
                     resultOptionElements[0].appendChild(divVerVuelo);
 
                     divVerVuelo.addEventListener('click', function () {
-                        abrirVentanaModal('Modal de vuelo', 'Contenido del modal de vuelo.', '.result-option__extended-info');
+                        abrirVentanaModal('Modal de vuelo', '.result-option__extended-info', 'Ver vuelo');
                     });
                 }
 
