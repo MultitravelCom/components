@@ -12,34 +12,24 @@ function crearModal() {
     document.body.appendChild(modal);
 }
 
-function actualizarContenidoModal(titulo, contenido) {
-    const modalContent = document.querySelector('#modal-packages');
-    modalContent.innerHTML = `
-      <h2>${titulo}</h2>
-      <p>${contenido}</p>
-    `;
-}
-
 function abrirVentanaModal(titulo, contenido) {
-    return new Promise((resolve) => {
-        const modal = document.querySelector('#miModal');
-        modal.style.display = 'flex';
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.setAttribute('id', 'miModal');
 
-        actualizarContenidoModal(titulo, contenido);
+    const modalContent = document.createElement('div');
+    modalContent.setAttribute('id', 'modal-packages');
+    modalContent.classList.add('modal-content');
+    modalContent.textContent = contenido;
 
-        modal.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+    const modalTitle = document.createElement('h2');
+    modalTitle.textContent = titulo;
+    modalContent.appendChild(modalTitle);
 
-        // Resuelve la promesa después de un breve período de tiempo para permitir que el modal se muestre correctamente
-        setTimeout(() => {
-            resolve();
-        }, 50);
-    });
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
 }
-
+//********************** */
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
 
@@ -54,20 +44,6 @@ function cambiarTextoBoton() {
     } else {
         setTimeout(cambiarTextoBoton, 100);
     }
-}
-
-function moverDescripcionAlModal() {
-    const intervalId = setInterval(() => {
-        const descriptionDiv = document.querySelector('.js-result-package-option__hotel-description');
-        const modalContent = document.querySelector('#modal-packages');
-
-        if (descriptionDiv && modalContent) {
-            clearInterval(intervalId); 
-            console.log('Se encontraron los dos selectores.');
-            modalContent.innerHTML = '';
-            modalContent.appendChild(descriptionDiv);
-        }
-    }, 100);
 }
 
 function agregarTextos() {
@@ -117,6 +93,5 @@ function agregarTextos() {
 document.addEventListener('DOMContentLoaded', function () {
     crearModal();
     cambiarTextoBoton();
-    agregarTextos();
-    moverDescripcionAlModal();
+    agregarTextos();;
 });
