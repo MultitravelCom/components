@@ -1,22 +1,26 @@
-// Crear el modal #modal-packages
+// Función para abrir el modal
 function abrirVentanaModal(titulo, contenido) {
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    modal.setAttribute('id', 'miModal');
+    const modal = document.getElementById('miModal');
+    const modalContent = modal.querySelector('.modal-content');
+    const modalTitle = modal.querySelector('h2');
 
-    const modalContent = document.createElement('div');
-    modalContent.setAttribute('id', 'modal-packages');
-    modalContent.classList.add('modal-content');
-    modalContent.textContent = contenido;
+    if (modal.style.display === 'none') {
+        // Abrir el modal
+        modal.style.display = 'flex';
+        modalContent.textContent = contenido;
+        modalTitle.textContent = titulo;
 
-    const modalTitle = document.createElement('h2');
-    modalTitle.textContent = titulo;
-    modalContent.appendChild(modalTitle);
-
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    modal.style.display = 'flex';
+        // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
+        document.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                // Cerrar el modal
+                modal.style.display = 'none';
+            }
+        });
+    } else {
+        // Cerrar el modal
+        modal.style.display = 'none';
+    }
 }
 //********************** */
 function cambiarTextoBoton() {
