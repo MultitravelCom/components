@@ -21,7 +21,7 @@ function abrirVentanaModal(titulo, contenido, selectorTexto) {
         modalContent.classList.add('modal-content');
 
         const modalTitle = document.createElement('h2');
-        modalTitle.textContent = titulo;
+        modalTitle.setAttribute('id', 'modal-title'); // Agregar un ID al título del modal
         modalContent.appendChild(modalTitle);
 
         modal.appendChild(modalContent);
@@ -39,10 +39,10 @@ function abrirVentanaModal(titulo, contenido, selectorTexto) {
     }
 
     const modalContent = modal.querySelector('.modal-content');
-    const modalTitle = modal.querySelector('h2');
+    const modalTitle = modal.querySelector('#modal-title'); // Obtener el título del modal por su ID
 
     modalContent.textContent = contenido;
-    modalTitle.textContent = titulo;
+    modalTitle.textContent = titulo; // Actualizar el contenido del título
 
     // Mostrar el modal
     modal.style.display = 'flex';
