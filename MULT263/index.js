@@ -15,10 +15,10 @@ const DescuentoComponente = () => {
         <div className="main__container_excluvisa">
             <div className="main__container_excluvisa__text">
                 <div className="main__container_excluvisa__text__h1">
-                    <h1>¡OFERTA EXCLUSIVA!</h1>
+                    <h1>¿Necesitas ayuda?</h1>
                 </div>
                 <div className="main__container_excluvisa__text__p">
-                    <p>Contactate con nuestros especialistas en viajes y ahorrá hasta un 10%.</p>
+                    <p>Contactate con nuestro especialistas en tiempo real. Te estamos esperando.</p>
                 </div>
             </div>
             <div className="main__container_excluvisa__img">
