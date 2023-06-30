@@ -118,8 +118,9 @@ function agregarTextos() {
     }, 150);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // initializeModal();
     cambiarTextoBoton();
-  });
-  
+    agregarTextos()
+});
+
