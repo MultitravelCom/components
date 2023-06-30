@@ -2,7 +2,7 @@
 const modalesCreados = {};
 
 // Función para abrir el modal
-function abrirVentanaModal(titulo, selectorTexto) {
+function abrirVentanaModal(titulo, contenido, selectorTexto) {
     if (!selectorTexto) {
         console.error('No se ha proporcionado el selector de texto.');
         return;
@@ -56,12 +56,6 @@ function abrirVentanaModal(titulo, selectorTexto) {
         modal.removeEventListener('click', cerrarModal);
     }
 }
-
-// Evento de clic en "Ver vuelo" para abrir el modal y mover el contenido
-const verVueloBtn = document.getElementById('ver-vuelo');
-verVueloBtn.addEventListener('click', function() {
-    abrirVentanaModal('Detalles del vuelo', '.result-option__extended-info');
-});
 
 //********************** */
 function cambiarTextoBoton() {
@@ -124,9 +118,8 @@ function agregarTextos() {
     }, 150);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // initializeModal();
+document.addEventListener("DOMContentLoaded", function() {
     cambiarTextoBoton();
     agregarTextos()
-});
-
+  });
+  
