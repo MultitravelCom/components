@@ -1,3 +1,13 @@
+// Función recursiva para mover el contenido al modal de vuelos
+function moverContenidoVuelos() {
+    const contenidoModal = document.querySelector('.result-option__extended-info');
+    if (contenidoModal) {
+        const modalContent = document.getElementById('ver-vuelos').querySelector('.modal-content');
+        modalContent.appendChild(contenidoModal);
+    } else {
+        setTimeout(moverContenidoVuelos, 100);
+    }
+}
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
@@ -131,7 +141,8 @@ function agregarTextos() {
     }, 150);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    moverContenidoVuelos()
     crearModalesIniciales();
     cambiarTextoBoton();
     agregarTextos();
