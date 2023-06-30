@@ -1,8 +1,14 @@
 // Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
+    const modalVuelos = document.getElementById('ver-vuelos');
+    if (!modalVuelos) {
+        setTimeout(moverContenidoVuelos, 100);
+        return;
+    }
+
     const contenidoModal = document.querySelector('.result-option__extended-info');
     if (contenidoModal) {
-        const modalContent = document.getElementById('ver-vuelos').querySelector('.modal-content');
+        const modalContent = modalVuelos.querySelector('.modal-content');
         modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
