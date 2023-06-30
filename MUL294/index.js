@@ -5,7 +5,7 @@ function moverContenidoVuelos() {
     
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('.modal-content');
-        modalContent.textContent = ''; // Limpiar el contenido existente del modal
+        modalContent.textContent = '';
         modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
@@ -18,12 +18,10 @@ function crearModalesIniciales() {
     const modalesIniciales = [
         {
             titulo: 'Modal de vuelo',
-            contenido: '.result-option__extended-info',
             selectorTexto: 'Ver vuelo'
         },
         {
             titulo: 'Modal de servicio',
-            contenido: 'Este es un texto de prueba para el modal de servicio.',
             selectorTexto: 'Ver servicio'
         }
     ];
