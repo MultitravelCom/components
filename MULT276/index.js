@@ -9,6 +9,13 @@ const CopyTaxFlight = () => {
   );
 };
 
+function updateSegmentNode() {
+  const equipajeNode = segmentNode.querySelector('.flight-segments__segment-info > div:last-child');
+  if (equipajeNode && equipajeNode.textContent.trim() === 'Equipaje: Incluído') {
+    equipajeNode.textContent = 'Equipaje incluido para despachar';
+  }
+}
+
 function renderCopyTaxFlight() {
   const flightSelectionElement = document.querySelector('.flight-selection');
   if (flightSelectionElement) {
@@ -31,31 +38,23 @@ function moveDiv() {
 }
 
 function agregarComponenteCuandoApareceFlightSelection() {
-  // Definir el selector objetivo
   const selectorObjetivo = '.flight-selection';
 
-  // Crear una instancia de MutationSummary
   const observer = new MutationSummary({
     callback: function (summaries) {
-      // Verificar si el selector objetivo está presente en las mutaciones
       summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
-          // El selector objetivo ha aparecido, realizar la acción deseada
           const componente = document.createElement('div');
-          // Aquí puedes agregar lógica adicional para configurar el componente
 
           element.appendChild(componente);
 
-          // Mostrar u ocultar el componente según la presencia de la clase flight-selection
+          
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
-          // Invocar la función renderCopyTaxFlight() para renderizar el componente
           renderCopyTaxFlight();
           moveDiv()
-
-          // Mostrar un mensaje en la consola para verificar la detección
-          console.log('Clase flight-selection detectada. Se agregó el componente.');
+          updateSegmentNode()
         }
       });
     },
@@ -63,11 +62,9 @@ function agregarComponenteCuandoApareceFlightSelection() {
     rootNode: document.body, // Especificar el nodo raíz a observar (puede ser diferente según tus necesidades)
   });
 
-  // Detener el seguimiento de mutaciones cuando se destruya el componente o ya no se necesite
   return function stopObserving() {
     observer.disconnect();
   };
 }
 
-// Llamar a la función para iniciar el seguimiento de mutaciones
 const stopObserving = agregarComponenteCuandoApareceFlightSelection();
