@@ -1,7 +1,7 @@
 // Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
     const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
-    const modalVuelos = document.getElementById('ver-vuelos');
+    const modalVuelos = document.getElementById('ver-vuelo');
 
     console.log('Contenido Modal:', contenidoModal);
     console.log('Modal Vuelos:', modalVuelos);
