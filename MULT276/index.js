@@ -9,10 +9,25 @@ const CopyTaxFlight = () => {
   );
 };
 
-function updateSegmentNode() {
-  const equipajeNode = segmentNode.querySelector('.flight-segments__segment-info > div:last-child');
-  if (equipajeNode && equipajeNode.textContent.trim() === 'Equipaje: Incluído') {
-    equipajeNode.textContent = 'Equipaje incluido para despachar';
+function reemplazarTextoEquipaje() {
+  let elementos = document.querySelectorAll('.flight-segments__segment-info');
+
+  if (elementos.length > 0) {
+    elementos.forEach((elemento) => {
+      let divs = elemento.querySelectorAll('div');
+
+      divs.forEach((div) => {
+        let texto = div.textContent.trim();
+
+        if (/^Equipaje:\s*Incluído$/.test(texto)) {
+          div.textContent = 'Equipaje: Incluye equipaje a despachar';
+        } else if (/^Equipaje:\s*Sin\s+especificar$/.test(texto)) {
+          div.textContent = 'Equipaje: No incluye equipaje a despachar';
+        }
+      });
+    });
+  } else {
+    setTimeout(reemplazarTextoEquipaje, 100);
   }
 }
 
@@ -53,13 +68,13 @@ function agregarComponenteCuandoApareceFlightSelection() {
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
           renderCopyTaxFlight();
-          moveDiv()
-          updateSegmentNode()
+          moveDiv();
+          reemplazarTextoEquipaje();
         }
       });
     },
     queries: [{ element: selectorObjetivo }],
-    rootNode: document.body, // Especificar el nodo raíz a observar (puede ser diferente según tus necesidades)
+    rootNode: document.body,
   });
 
   return function stopObserving() {
