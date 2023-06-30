@@ -1,6 +1,5 @@
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
-
 // Función para crear los modales al cargar la página
 function crearModalesIniciales() {
     const modalesIniciales = [
@@ -11,7 +10,7 @@ function crearModalesIniciales() {
         },
         {
             titulo: 'Modal de servicio',
-            contenido: 'Contenido del modal de servicio.',
+            contenido: 'Este es un texto de prueba para el modal de servicio.',
             selectorTexto: 'Ver servicio'
         }
     ];
@@ -39,7 +38,7 @@ function crearModalesIniciales() {
             // Agregar evento de clic para cerrar el modal al hacer clic fuera de él
             modal.addEventListener('click', function (event) {
                 if (event.target === modal) {
-                    cerrarModal();
+                    cerrarModal(modalId);
                 }
             });
 
@@ -48,17 +47,9 @@ function crearModalesIniciales() {
         }
 
         const modalContent = modal.querySelector('.modal-content');
-        modalContent.textContent = ''; // Limpiar el contenido existente del modal
-
-        // Obtener el contenido del selector especificado en el modal inicial
-        const contenidoModal = document.querySelector(contenido);
-        if (contenidoModal) {
-            const contenidoClonado = contenidoModal.cloneNode(true);
-            modalContent.appendChild(contenidoClonado);
-        }
+        modalContent.textContent = contenido; // Establecer el contenido de prueba
     });
 }
-
 // Función para abrir el modal
 function abrirVentanaModal(modalId) {
     const modal = modalesCreados[modalId];
@@ -69,7 +60,6 @@ function abrirVentanaModal(modalId) {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
 }
-
 // Función para cerrar el modal
 function cerrarModal(modalId) {
     const modal = modalesCreados[modalId];
@@ -80,7 +70,6 @@ function cerrarModal(modalId) {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
 }
-
 // Función para cambiar el texto del botón
 function cambiarTextoBoton() {
     const botonDataProduct = document.querySelector('.result-option__change-button');
