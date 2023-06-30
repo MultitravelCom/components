@@ -115,11 +115,7 @@ function agregarTextos() {
                     resultOptionElements[0].appendChild(divVerVuelo);
 
                     divVerVuelo.addEventListener('click', function () {
-                        abrirVentanaModal('Modal de vuelo', 'Ver vuelo');
-                        const contenidoModal = document.querySelector('.result-option__extended-info');
-                        if (contenidoModal) {
-                            document.getElementById('ver-vuelo').querySelector('.modal-content').appendChild(contenidoModal);
-                        }
+                        abrirVentanaModal('ver-vuelo');
                     });
                 }
 
@@ -127,12 +123,12 @@ function agregarTextos() {
                     resultOptionElements[1].appendChild(divVerServicio);
 
                     divVerServicio.addEventListener('click', function () {
-                        abrirVentanaModal('Modal de servicio', 'Ver servicio');
+                        abrirVentanaModal('ver-servicio');
                     });
                 }
             }
         }
-    }, 100);
+    }, 150);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
