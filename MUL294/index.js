@@ -119,7 +119,7 @@ function agregarTextos() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    initializeModal();
+    // initializeModal();
     cambiarTextoBoton();
   });
   
