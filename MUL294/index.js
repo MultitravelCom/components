@@ -2,6 +2,9 @@
 function moverContenidoVuelos() {
     const contenidoModal = document.querySelector('.result-option__extended-info');
     const modalVuelos = document.getElementById('ver-vuelos');
+
+    console.log('Contenido Modal:', contenidoModal);
+    console.log('Modal Vuelos:', modalVuelos);
     
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('.modal-content');
