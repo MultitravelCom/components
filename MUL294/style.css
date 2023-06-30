@@ -189,4 +189,7 @@
     .results-list__package .result-option-package__moreinfo-toggle{
         display: none;
     }
+    .result-option__product-description{
+        display: inline-block;
+    }
 }
