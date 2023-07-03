@@ -18,7 +18,6 @@ function moverContenidoVuelos() {
     }
 }
 function moverContenidoServios() {
-
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
@@ -28,7 +27,7 @@ function moverContenidoServios() {
     const modalServicios = document.getElementById('ver-servicio');
 
     if (contenidoModalSerivios && modalServicios) {
-        const modalContentSerivios = modalServicios.querySelector('.modal-content');
+        const modalContentSerivios = modalServicios.querySelector('#ver-servicio .modal-content');
         modalContentSerivios.textContent = '';
         modalContentSerivios.appendChild(contenidoModalSerivios);
     } else {
