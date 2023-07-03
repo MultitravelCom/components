@@ -9,13 +9,28 @@ function moverContenidoVuelos() {
     const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
     const modalVuelos = document.getElementById('ver-vuelo');
 
-    console.log('Contenido Modal:', contenidoModal);
-    console.log('Modal Vuelos:', modalVuelos);
-
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('.modal-content');
         modalContent.textContent = '';
         modalContent.appendChild(contenidoModal);
+    } else {
+        setTimeout(moverContenidoVuelos, 100);
+    }
+}
+function moverContenidoServios() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        return;
+    }
+    const contenidoModalSerivios = document.querySelector('.package-result--master .js-result-package-option__hotel-description');
+    const modalServicios = document.getElementById('ver-servicio');
+
+    if (contenidoModalSerivios && modalServicios) {
+        const modalContentSerivios = modalServicios.querySelector('.modal-content');
+        modalContentSerivios.textContent = '';
+        modalContentSerivios.appendChild(contenidoModalSerivios);
     } else {
         setTimeout(moverContenidoVuelos, 100);
     }
@@ -155,5 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
     cambiarTextoBoton();
     agregarTextos();
-    moverContenidoVuelos()
+    moverContenidoVuelos();
+    moverContenidoServios();
 });
