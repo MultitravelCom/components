@@ -31,7 +31,7 @@ function moverContenidoServios() {
         modalContentSerivios.textContent = '';
         modalContentSerivios.appendChild(contenidoModalSerivios);
     } else {
-        setTimeout(moverContenidoVuelos, 100);
+        setTimeout(moverContenidoServios, 100);
     }
 }
 // Objeto para almacenar los modales creados
