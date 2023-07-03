@@ -154,17 +154,6 @@ function agregarTextos() {
                 }
 
                 if (resultOptionElements.length >= 2) {
-                    // Obtener la etiqueta <a> existente dentro de resultOptionElements[1]
-                    const enlaceVerServicio = resultOptionElements[1].querySelector('a');
-
-                    // Obtener los valores necesarios
-                    const enlaceDataHref = enlaceVerServicio.getAttribute('data-href');
-                    const enlaceClases = enlaceVerServicio.classList;
-
-                    // Agregar el atributo data-href y las clases al nuevo elemento divVerServicio
-                    divVerServicio.setAttribute('data-href', enlaceDataHref);
-                    divVerServicio.classList.add(...enlaceClases);
-
                     resultOptionElements[1].appendChild(divVerServicio);
 
                     divVerServicio.addEventListener('click', function () {
@@ -175,7 +164,6 @@ function agregarTextos() {
         }
     }, 150);
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
