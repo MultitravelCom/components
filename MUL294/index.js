@@ -123,47 +123,59 @@ function cambiarTextoBoton() {
 
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
-
+  
     if (!isMobile) {
-        return;
+      return;
     }
-
+  
     let intervalId = setInterval(function () {
-        const packageResultMaster = document.querySelector('.package-result--master');
-        if (packageResultMaster) {
-            const resultOptions = packageResultMaster.querySelector('.result__options');
-            if (resultOptions) {
-                clearInterval(intervalId);
-
-                const divVerVuelo = document.createElement('div');
-                divVerVuelo.textContent = 'Ver vuelo';
-                divVerVuelo.classList.add('ver-vuelo');
-
-                const divVerServicio = document.createElement('div');
-                divVerServicio.textContent = 'Ver servicio';
-                divVerServicio.classList.add('ver-servicio');
-
-                const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
-
-                if (resultOptionElements.length >= 1) {
-                    resultOptionElements[0].appendChild(divVerVuelo);
-
-                    divVerVuelo.addEventListener('click', function () {
-                        abrirVentanaModal('ver-vuelo');
-                    });
-                }
-
-                if (resultOptionElements.length >= 2) {
-                    resultOptionElements[1].appendChild(divVerServicio);
-
-                    divVerServicio.addEventListener('click', function () {
-                        abrirVentanaModal('ver-servicio');
-                    });
-                }
+      const packageResultMaster = document.querySelector('.package-result--master');
+      if (packageResultMaster) {
+        const resultOptions = packageResultMaster.querySelector('.result__options');
+        if (resultOptions) {
+          clearInterval(intervalId);
+  
+          const divVerVuelo = document.createElement('div');
+          divVerVuelo.textContent = 'Ver vuelo';
+          divVerVuelo.classList.add('ver-vuelo');
+  
+          const divVerServicio = document.createElement('div');
+          divVerServicio.textContent = 'Ver servicio';
+          divVerServicio.classList.add('ver-servicio');
+  
+          const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
+  
+          if (resultOptionElements.length >= 1) {
+            resultOptionElements[0].appendChild(divVerVuelo);
+  
+            divVerVuelo.addEventListener('click', function () {
+              abrirVentanaModal('ver-vuelo');
+            });
+          }
+  
+          if (resultOptionElements.length >= 2) {
+            const enlaceVerServicio = resultOptionElements[1].querySelector('a.js-result-selected-action--extended-hotel-info');
+            
+            if (enlaceVerServicio) {
+              const enlaceDataHref = enlaceVerServicio.getAttribute('data-href');
+              const enlaceClases = enlaceVerServicio.classList;
+  
+              divVerServicio.setAttribute('data-href', enlaceDataHref);
+              divVerServicio.classList.add(...enlaceClases);
+  
+              resultOptionElements[1].appendChild(divVerServicio);
+  
+              divVerServicio.addEventListener('click', function () {
+                abrirVentanaModal('ver-servicio');
+              });
             }
+          }
         }
+      }
     }, 150);
-}
+  }
+  
+
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
