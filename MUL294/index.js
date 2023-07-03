@@ -23,7 +23,7 @@ function moverContenidoServios() {
     if (!isMobile) {
         return;
     }
-    const contenidoModalSerivios = document.querySelector('.package-result--master .booking-product__details-description');
+    const contenidoModalSerivios = document.querySelector('.package-result--master .result-option__extended-info result-option__extended-info--hotel');
     const modalServicios = document.getElementById('ver-servicio');
 
     if (contenidoModalSerivios && modalServicios) {
