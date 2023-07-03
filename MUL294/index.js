@@ -10,7 +10,7 @@ function moverContenidoVuelos() {
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
-        const modalContent = modalVuelos.querySelector('#ver-servicio .modal-content');
+        const modalContent = modalVuelos.querySelector('.modal-content');
         modalContent.textContent = '';
         modalContent.appendChild(contenidoModal);
     } else {
