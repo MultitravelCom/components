@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     await replaceImage();
 });
 
-
-// document.addEventListener('DOMContentLoaded', async function() {
 //     async function replaceImage(imageDataArray) {
 //       for (const imageData of imageDataArray) {
 //         const { url, dataTitle } = imageData;

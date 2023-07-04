@@ -37,6 +37,23 @@ function addHeaderLinks() {
 }
 addHeaderLinks();
 
+function verificarYActualizarMeta() {
+    let metaTag = document.querySelector('meta[property="og:image"]');
+
+    if (metaTag) {
+        metaTag.setAttribute("content", "https://multitravelcom.github.io/MT/multitravel.webp");
+    } else {
+        metaTag = document.createElement("meta");
+        metaTag.setAttribute("property", "og:image");
+        metaTag.setAttribute("content", "https://multitravelcom.github.io/MT/multitravel.webp");
+
+        let head = document.querySelector("head");
+        head.appendChild(metaTag);
+    }
+    console.log("La etiqueta meta ha sido verificada o actualizada correctamente.");
+}
+verificarYActualizarMeta();
+
 // ************** Ancla *****************************
 function mostrarSeccion() {
     let url = window.location.href;
