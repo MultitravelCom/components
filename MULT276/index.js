@@ -9,6 +9,28 @@ const CopyTaxFlight = () => {
   );
 };
 
+function reemplazarTextoEquipaje() {
+  let elementos = document.querySelectorAll('.flight-segments__segment-info');
+
+  if (elementos.length > 0) {
+    elementos.forEach((elemento) => {
+      let divs = elemento.querySelectorAll('div');
+
+      divs.forEach((div) => {
+        let texto = div.textContent.trim();
+
+        if (/^Equipaje:\s*Incluído$/.test(texto)) {
+          div.textContent = 'Equipaje: Incluye equipaje a despachar';
+        } else if (/^Equipaje:\s*Sin\s+especificar$/.test(texto)) {
+          div.textContent = 'Equipaje: No incluye equipaje a despachar';
+        }
+      });
+    });
+  } else {
+    setTimeout(reemplazarTextoEquipaje, 100);
+  }
+}
+
 function renderCopyTaxFlight() {
   const flightSelectionElement = document.querySelector('.flight-selection');
   if (flightSelectionElement) {
@@ -31,43 +53,33 @@ function moveDiv() {
 }
 
 function agregarComponenteCuandoApareceFlightSelection() {
-  // Definir el selector objetivo
   const selectorObjetivo = '.flight-selection';
 
-  // Crear una instancia de MutationSummary
   const observer = new MutationSummary({
     callback: function (summaries) {
-      // Verificar si el selector objetivo está presente en las mutaciones
       summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
-          // El selector objetivo ha aparecido, realizar la acción deseada
           const componente = document.createElement('div');
-          // Aquí puedes agregar lógica adicional para configurar el componente
 
           element.appendChild(componente);
 
-          // Mostrar u ocultar el componente según la presencia de la clase flight-selection
+          
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
-          // Invocar la función renderCopyTaxFlight() para renderizar el componente
           renderCopyTaxFlight();
-          moveDiv()
-
-          // Mostrar un mensaje en la consola para verificar la detección
-          console.log('Clase flight-selection detectada. Se agregó el componente.');
+          moveDiv();
+          reemplazarTextoEquipaje();
         }
       });
     },
     queries: [{ element: selectorObjetivo }],
-    rootNode: document.body, // Especificar el nodo raíz a observar (puede ser diferente según tus necesidades)
+    rootNode: document.body,
   });
 
-  // Detener el seguimiento de mutaciones cuando se destruya el componente o ya no se necesite
   return function stopObserving() {
     observer.disconnect();
   };
 }
 
-// Llamar a la función para iniciar el seguimiento de mutaciones
 const stopObserving = agregarComponenteCuandoApareceFlightSelection();

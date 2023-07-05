@@ -11,19 +11,18 @@ async function removeImageLinks() {
     });
 }
 
-function removeDataTarget(resultsListPage) {
-    const items = resultsListPage.querySelectorAll('.results-list__item');
+async function removeDataTarget() {
+    const parentElement = document.querySelector('.js-results-list-placeholder');
+    const elements = parentElement.querySelectorAll('.results-list__item');
 
-    items.forEach(item => {
-        const card = item.querySelector('.info-card__image .info-card__image--action');
-
-        if (card) {
-            imageHolder.removeAttribute('data-target');
+    elements.forEach((element) => {
+        const imageHolder = element.querySelector('.result');
+        if (imageHolder) {
+            imageHolder.addEventListener('click', function(event) {
+                event.preventDefault();
+            });
         }
     });
-
-    // Volver a verificar después de 100 ms
-    setTimeout(removeDataTarget, 100);
 }
 
 async function cargarEstilosYModales() {
@@ -159,7 +158,7 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget(resultsListPage);
+    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
@@ -191,6 +190,7 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
+    removeDataTarget();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
 });
