@@ -11,9 +11,8 @@ async function removeImageLinks() {
     });
 }
 
-async function removeDataTarget() {
-    const parentElement = document.querySelector('.js-results-list-placeholder');
-    const elements = parentElement.querySelectorAll('.results-list__item');
+async function removeDataTarget(resultsListPage) {
+    const elements = resultsListPage.querySelectorAll('.results-list__item');
 
     elements.forEach((element) => {
         const imageHolder = element.querySelector('.alojamiento-recomendado');
@@ -156,7 +155,7 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget();
+    removeDataTarget(resultsListPage);
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
