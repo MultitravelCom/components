@@ -17,8 +17,8 @@ async function removeDataTarget() {
 
     elements.forEach((element) => {
         const imageHolder = element.querySelector('#results-list > div.results-list__body.js-results-list-placeholder > div > div:nth-child(1) > article');
-        if (resultDiv) {
-            resultDiv.classList.remove('result');
+        if (imageHolder ) {
+            imageHolder .classList.remove('result');
         }
     });
 }
