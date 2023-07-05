@@ -18,12 +18,9 @@ async function removeDataTarget() {
     elements.forEach((element) => {
         const imageHolder = element.querySelector('.info-card__image .info-card__image--action');
         if (imageHolder) {
-            const image = imageHolder.querySelector('img');
-            if (image) {
-                image.addEventListener('click', function (event) {
-                    event.preventDefault();
-                });
-            }
+            image.addEventListener('click', function (event) {
+                event.preventDefault();
+            });
         }
     });
 }
