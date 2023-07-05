@@ -16,7 +16,7 @@ async function removeDataTarget() {
     const elements = parentElement.querySelectorAll('.results-list__item');
 
     elements.forEach((element) => {
-        const imageHolder = element.querySelector('.info-card__image-holder');
+        const imageHolder = element.querySelector('.info-card__image .info-card__image--action');
         if (imageHolder) {
             const image = imageHolder.querySelector('img');
             if (image) {
