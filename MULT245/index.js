@@ -12,7 +12,6 @@ async function removeImageLinks() {
 }
 
 async function removeDataTarget() {
-
     const parentElement = document.querySelector('.js-results-list-placeholder');
     const elements = parentElement.querySelectorAll('.results-list__item');
 
@@ -22,7 +21,6 @@ async function removeDataTarget() {
             imageHolder.removeAttribute('data-target');
         }
     });
-
 }
 
 async function cargarEstilosYModales() {
