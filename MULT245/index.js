@@ -16,7 +16,7 @@ async function removeDataTarget() {
     const elements = parentElement.querySelectorAll('.results-list__item');
 
     elements.forEach((element) => {
-        const resultDiv = element.querySelector('.result');
+        const imageHolder = element.querySelector('.result');
         if (resultDiv) {
             resultDiv.classList.remove('result');
         }
@@ -156,7 +156,7 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    // removeDataTarget();
+    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
@@ -188,7 +188,7 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    // removeDataTarget();
+    removeDataTarget();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
 });
