@@ -12,9 +12,9 @@ async function removeImageLinks() {
 }
 
 async function removeDataTarget(resultsListPage) {
-    const elements = resultsListPage.querySelectorAll('.results-list__item');
+    const elementsDataTarget = resultsListPage.querySelectorAll('.results-list__item');
 
-    elements.forEach((element) => {
+    elementsDataTarget.forEach((element) => {
         const imageHolder = element.querySelector('.alojamiento-recomendado');
         if (imageHolder) {
             imageHolder.classList.remove('result');
