@@ -18,7 +18,9 @@ async function removeDataTarget() {
     elements.forEach((element) => {
         const imageHolder = element.querySelector('.result');
         if (imageHolder) {
-            imageHolder.classList.replace('result', '');
+            imageHolder.addEventListener('click', function(event) {
+                event.preventDefault();
+            });
         }
     });
 }
