@@ -11,8 +11,8 @@ async function removeImageLinks() {
     });
 }
 
-const imgHotels = document.querySelector('.info-card__image-holder picture img:first-child');
-imgHotels.addEventListener('click', function(event) {
+const imgHotelsPrevent = document.querySelector('.info-card__image-holder picture img:first-child');
+imgHotelsPrevent.addEventListener('click', function (event) {
     event.preventDefault();
 });
 
@@ -27,7 +27,6 @@ function removeDataTarget(resultsListPage) {
         }
     });
 
-    // Volver a verificar después de 100 ms
     setTimeout(removeDataTarget, 100);
 }
 
