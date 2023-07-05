@@ -10,21 +10,6 @@ async function removeImageLinks() {
         });
     });
 }
-
-function removeDataTarget(resultsListPage) {
-    const items = resultsListPage.querySelectorAll('.results-list__item');
-
-    items.forEach(item => {
-        const card = item.querySelector('.info-card__image .info-card__image--action');
-
-        if (card) {
-            imageHolder.removeAttribute('data-target');
-        }
-    });
-
-    setTimeout(removeDataTarget, 100);
-}
-
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
@@ -158,7 +143,6 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget(resultsListPage);
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
