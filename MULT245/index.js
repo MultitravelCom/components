@@ -158,7 +158,6 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
@@ -190,7 +189,6 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    removeDataTarget();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
 });
