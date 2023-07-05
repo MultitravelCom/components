@@ -11,13 +11,14 @@ async function removeImageLinks() {
     });
 }
 
-async function removeDataTarget(resultsListPage) {
-    const elementsDataTarget = resultsListPage.querySelectorAll('.results-list__item');
+async function removeDataTarget() {
+    const parentElement = document.querySelector('.js-results-list-placeholder');
+    const elements = parentElement.querySelectorAll('.results-list__item');
 
-    elementsDataTarget.forEach((element) => {
-        const imageHolder = element.querySelector('.alojamiento-recomendado');
-        if (imageHolder) {
-            imageHolder.classList.remove('result');
+    elements.forEach((element) => {
+        const resultDiv = element.querySelector('.result');
+        if (resultDiv) {
+            resultDiv.classList.remove('result');
         }
     });
 }
@@ -155,7 +156,7 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
-    removeDataTarget(resultsListPage);
+    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
