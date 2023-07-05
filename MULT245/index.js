@@ -12,10 +12,16 @@ async function removeImageLinks() {
 }
 
 async function removeDataTarget() {
-    const selectImg = document.querySelectorAll('.info-card__image-holder img');
-    selectImg.forEach(function (img) {
-        img.removeAttribute('data-target');
-    })
+
+    const parentElement = document.querySelector('.js-results-list-placeholder');
+    const elements = parentElement.querySelectorAll('.results-list__item');
+
+    elements.forEach((element) => {
+        const imageHolder = element.querySelector('.info-card__image-holder');
+        if (imageHolder) {
+            imageHolder.removeAttribute('data-target');
+        }
+    });
 
 }
 
