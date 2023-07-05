@@ -11,17 +11,6 @@ async function removeImageLinks() {
     });
 }
 
-function imgHotelsPrevent() {
-    const divResultsList = document.querySelector('.js-results-list-placeholder');
-    const images = divResultsList.querySelectorAll('img');
-
-    images.forEach(function(image) {
-        image.addEventListener('click', function(event) {
-            event.preventDefault();
-        });
-    });
-}
-
 function removeDataTarget(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
@@ -176,7 +165,6 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    imgHotelsPrevent();
 }
 
 function observarCambiosCheckAndRender() {
@@ -204,5 +192,4 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    imgHotelsPrevent();
 });
