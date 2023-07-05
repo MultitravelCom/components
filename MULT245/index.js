@@ -11,19 +11,19 @@ async function removeImageLinks() {
     });
 }
 
-async function removeDataTarget() {
-    const parentElement = document.querySelector('.js-results-list-placeholder');
-    const elements = parentElement.querySelectorAll('.results-list__item');
+// async function removeDataTarget() {
+//     const parentElement = document.querySelector('.js-results-list-placeholder');
+//     const elements = parentElement.querySelectorAll('.results-list__item');
 
-    elements.forEach((element) => {
-        const imageHolder = element.querySelector('.result');
-        if (imageHolder) {
-            imageHolder.addEventListener('click', function(event) {
-                event.preventDefault();
-            });
-        }
-    });
-}
+//     elements.forEach((element) => {
+//         const imageHolder = element.querySelector('.result');
+//         if (imageHolder) {
+//             imageHolder.addEventListener('click', function(event) {
+//                 event.preventDefault();
+//             });
+//         }
+//     });
+// }
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
