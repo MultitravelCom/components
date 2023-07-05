@@ -11,8 +11,8 @@ async function removeImageLinks() {
     });
 }
 
-const img = document.querySelector('.info-card__image-holder picture img:first-child');
-img.addEventListener('click', function(event) {
+const imgHotels = document.querySelector('.info-card__image-holder picture img:first-child');
+imgHotels.addEventListener('click', function(event) {
     event.preventDefault();
 });
 
