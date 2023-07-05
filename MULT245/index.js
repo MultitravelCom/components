@@ -16,9 +16,9 @@ async function removeDataTarget() {
     const elements = parentElement.querySelectorAll('.results-list__item');
 
     elements.forEach((element) => {
-        const imageHolder = element.querySelector('.result');
+        const imageHolder = element.querySelector('#results-list > div.results-list__body.js-results-list-placeholder > div > div:nth-child(1) > article');
         if (imageHolder) {
-            imageHolder.classList.remove('result');
+            imageHolder.classList.replace('result', '');
         }
     });
 }
