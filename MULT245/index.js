@@ -10,6 +10,15 @@ async function removeImageLinks() {
         });
     });
 }
+
+async function removeDataTarget() {
+    const selectImg = document.querySelectorAll('.info-card__image-holder img');
+    selectImg.forEach(function (img) {
+        img.removeAttribute('data-target');
+    })
+
+}
+
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
@@ -143,6 +152,7 @@ async function changeCopyButton(resultsListPage) {
 
 
 function aplicarModificaciones(resultsListPage) {
+    removeDataTarget();
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
@@ -174,6 +184,7 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
+    removeDataTarget();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
 });
