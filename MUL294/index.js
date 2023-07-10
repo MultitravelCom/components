@@ -170,10 +170,31 @@ function agregarTextos() {
     }, 150);
 }
 
+function observarCambiosResultsListPackage() {
+    const observerConfig = {
+      rootNode: document.documentElement,
+      queries: [
+        { element: '.results-list__package' },
+      ],
+      callback: (summaries) => {
+        console.log('Se detectaron cambios en results-list__package.');
+  
+        crearModalesIniciales();
+        cambiarTextoBoton();
+        agregarTextos();
+        moverContenidoVuelos();
+        moverContenidoServicio();
+      },
+    };
+  
+    const observer = new MutationSummary(observerConfig);
+  }
+
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
     cambiarTextoBoton();
     agregarTextos();
     moverContenidoVuelos();
     moverContenidoServicio();
+    observarCambiosResultsListPackage();
 });
