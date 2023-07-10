@@ -17,23 +17,6 @@ function moverContenidoVuelos() {
         setTimeout(moverContenidoVuelos, 100);
     }
 }
-function moverContenidoServios() {
-    const isMobile = window.innerWidth <= 768;
-
-    if (!isMobile) {
-        return;
-    }
-    const contenidoModalSerivios = document.querySelector('.package-result--master .result-option__extended-info.result-option__extended-info--hotel');
-    const modalServicios = document.getElementById('ver-servicio');
-
-    if (contenidoModalSerivios && modalServicios) {
-        const modalContentSerivios = modalServicios.querySelector('#ver-servicio .modal-content');
-        modalContentSerivios.textContent = '';
-        modalContentSerivios.appendChild(contenidoModalSerivios);
-    } else {
-        setTimeout(moverContenidoServios, 100);
-    }
-}
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
@@ -170,5 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     agregarTextos();
     moverContenidoVuelos();
-    // moverContenidoServios();
 });

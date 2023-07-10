@@ -50,7 +50,6 @@ function verificarYActualizarMeta() {
         let head = document.querySelector("head");
         head.appendChild(metaTag);
     }
-    console.log("La etiqueta meta ha sido verificada o actualizada correctamente.");
 }
 verificarYActualizarMeta();
 
