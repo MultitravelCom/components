@@ -169,6 +169,24 @@ function agregarTextos() {
         }
     }, 150);
 }
+function observarCambios() {
+    const elementosObservados = document.querySelectorAll('.result.package-result--selected.package-result--master');
+  
+    // Crear un observer con una función de callback
+    const observer = new MutationObserver(function() {
+      // Ejecutar las funciones nuevamente
+      crearModalesIniciales();
+      cambiarTextoBoton();
+      agregarTextos();
+      moverContenidoVuelos();
+      moverContenidoServicio();
+    });
+  
+    // Observar los cambios en cada elemento
+    elementosObservados.forEach(function(elemento) {
+      observer.observe(elemento, { attributes: true, childList: true, subtree: true });
+    });
+  }
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
@@ -176,4 +194,5 @@ document.addEventListener("DOMContentLoaded", function () {
     agregarTextos();
     moverContenidoVuelos();
     moverContenidoServicio();
+    observarCambios();
 });
