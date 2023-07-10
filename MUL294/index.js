@@ -171,12 +171,12 @@ function agregarTextos() {
 }
 function observarCambios() {
     const observerConfig = {
+        rootNode: document.documentElement,
         queries: [
-            { element: '.js-package-selection-placeholder', elementAttributes: 'attributes' },
-            { element: '.js-package-selection-placeholder', elementChildren: true, subtree: true }
+            { element: '.js-package-selection-placeholder' },
         ],
-        callback: function (summaries) {
-            console.log('Se detectaron cambios en el selector.');
+        callback: (summaries) => {
+            console.log('Se detectaron cambios en js-package-selection-placeholder.');
 
             crearModalesIniciales();
             cambiarTextoBoton();
@@ -184,17 +184,17 @@ function observarCambios() {
             moverContenidoVuelos();
             moverContenidoServicio();
 
-            // Dejar de observar cambios después de la primera detección
-            observer.disconnect();
-        }
+            observarCambios(); // Volver a observar cambios
+
+            requestAnimationFrame(() => {
+                summaries[0].added.forEach((element) => {
+                    aplicarModificaciones(element);
+                });
+            });
+        },
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    const elementosObservados = document.querySelectorAll('.js-package-selection-placeholder');
-    elementosObservados.forEach(function (elemento) {
-        observer.observe(elemento);
-    });
 }
 
 
