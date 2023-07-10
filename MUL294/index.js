@@ -17,6 +17,16 @@ function moverContenidoVuelos() {
         setTimeout(moverContenidoVuelos, 100);
     }
 }
+function moverContenidoServicio() {
+    var modalContent = document.querySelector("#ver-servicio .modal-content");
+    var elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
+
+    elements.forEach(function (element) {
+        modalContent.appendChild(element);
+    });
+}
+
+moveElementsToModal();
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
@@ -153,4 +163,5 @@ document.addEventListener("DOMContentLoaded", function () {
     cambiarTextoBoton();
     agregarTextos();
     moverContenidoVuelos();
+    moverContenidoServicio();
 });
