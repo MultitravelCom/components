@@ -149,6 +149,7 @@
     .result__bottom-price .bestprice {
         margin-top: 1rem;
         float: right !important;
+        margin-right: 15px !important;
     }
 
     .results-list__package .result-option__book-button {
