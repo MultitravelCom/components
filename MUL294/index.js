@@ -193,5 +193,5 @@ document.addEventListener("DOMContentLoaded", function () {
     agregarTextos();
     moverContenidoVuelos();
     moverContenidoServicio();
-    observarCambios();
+    // observarCambios();
 });
