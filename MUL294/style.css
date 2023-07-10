@@ -174,9 +174,11 @@
     .results-list__package .result-option.result-option--extended {
         position: relative;
     }
-    .results-list__package .result-option.result-option--extended .result-option-package__list{
+
+    .results-list__package .result-option.result-option--extended .result-option-package__list {
         padding-left: 8px;
     }
+
     .ver-vuelo,
     .ver-servicio {
         position: absolute;
@@ -186,12 +188,22 @@
         font-family: Qanelas Soft;
         font-weight: 600;
     }
-    .results-list__package .result-option-package__moreinfo-toggle{
+
+    .results-list__package .result-option-package__moreinfo-toggle {
         display: none;
     }
-    .result-option__product-description{
+
+    .result-option__product-description {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    #ver-servicio>div>div>div>div.info-card {
+        display: flex;
+        flex-direction: column;
+    }
+    #ver-servicio > div > div > div > div.info-card > div.info-card__image.info-card__image--action.js-result-detail-action{
+        width: 100%;
     }
 }
