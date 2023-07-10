@@ -169,32 +169,6 @@ function agregarTextos() {
         }
     }, 150);
 }
-function observarCambios() {
-    const observerConfig = {
-      rootNode: document.documentElement,
-      queries: [
-        { element: '.js-package-selection-placeholder' },
-      ],
-      callback: (summaries) => {
-        if (observarCambios.firstChange) {
-          crearModalesIniciales();
-          cambiarTextoBoton();
-          agregarTextos();
-          moverContenidoVuelos();
-          moverContenidoServicio();
-          observarCambios.firstChange = false;
-        }
-        observarCambios();
-      },
-    };
-  
-    if (typeof observarCambios.firstChange === 'undefined') {
-      observarCambios.firstChange = true;
-    }
-  
-    const observer = new MutationSummary(observerConfig);
-  }
-  
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
@@ -202,5 +176,4 @@ document.addEventListener("DOMContentLoaded", function () {
     agregarTextos();
     moverContenidoVuelos();
     moverContenidoServicio();
-    observarCambios();
 });
