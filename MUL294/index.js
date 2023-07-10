@@ -18,6 +18,12 @@ function moverContenidoVuelos() {
     }
 }
 function moverContenidoServicio() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        return;
+    }
     let intervalId = setInterval(function () {
         let modalContent = document.querySelector("#ver-servicio .modal-content");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
@@ -172,23 +178,23 @@ function agregarTextos() {
 
 function observarCambiosResultsListPackage() {
     const observerConfig = {
-      rootNode: document.documentElement,
-      queries: [
-        { element: '.results-list__package' },
-      ],
-      callback: (summaries) => {
-        console.log('Se detectaron cambios en results-list__package.');
-  
-        crearModalesIniciales();
-        cambiarTextoBoton();
-        agregarTextos();
-        moverContenidoVuelos();
-        moverContenidoServicio();
-      },
+        rootNode: document.documentElement,
+        queries: [
+            { element: '.results-list__package' },
+        ],
+        callback: (summaries) => {
+            console.log('Se detectaron cambios en results-list__package.');
+
+            crearModalesIniciales();
+            cambiarTextoBoton();
+            agregarTextos();
+            moverContenidoVuelos();
+            moverContenidoServicio();
+        },
     };
-  
+
     const observer = new MutationSummary(observerConfig);
-  }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
