@@ -417,7 +417,7 @@
 .footer__text .glyphicon.glyphicon-whatsapp-bottomless {
     background: transparent;
 }
-/* ********************** MULT-336 ************* */
-/* #main-menu-products .nav-elem:nth-child(8) {
+/* ********************** MULT-336 - paginas estaticas ************* */
+#main-menu-products .nav-elem:nth-child(8) {
     display: none;
-  } */
+  }
