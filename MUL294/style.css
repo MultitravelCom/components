@@ -203,7 +203,12 @@
         display: flex;
         flex-direction: column;
     }
-    #ver-servicio > div > div > div > div.info-card > div.info-card__image.info-card__image--action.js-result-detail-action{
+
+    #ver-servicio>div>div>div>div.info-card>div.info-card__image.info-card__image--action.js-result-detail-action {
         width: 100%;
+    }
+
+    .flight-segments__segment>div {
+        text-align: justify;
     }
 }
