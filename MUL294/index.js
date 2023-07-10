@@ -170,7 +170,7 @@ function agregarTextos() {
     }, 150);
 }
 function observarCambios() {
-    const elementosObservados = document.querySelectorAll('.result.package-result--selected.package-result--master');
+    const elementosObservados = document.querySelectorAll('.js-package-selection-placeholder');
   
     const observer = new MutationObserver(function() {
       console.log('Se detectaron cambios en el selector.');
