@@ -172,21 +172,29 @@ function agregarTextos() {
 function observarCambios() {
     const elementosObservados = document.querySelectorAll('.js-package-selection-placeholder');
   
-    const observer = new MutationObserver(function() {
-      console.log('Se detectaron cambios en el selector.');
+    const observer = new MutationSummary({
+      queries: [
+        { element: '.js-package-selection-placeholder', elementAttributes: 'attributes' },
+        { element: '.js-package-selection-placeholder', elementChildren: true, subtree: true }
+      ],
+      callback: function (summaries) {
+        console.log('Se detectaron cambios en el selector.');
   
-      crearModalesIniciales();
-      cambiarTextoBoton();
-      agregarTextos();
-      moverContenidoVuelos();
-      moverContenidoServicio();
+        crearModalesIniciales();
+        cambiarTextoBoton();
+        agregarTextos();
+        moverContenidoVuelos();
+        moverContenidoServicio();
   
-      // Dejar de observar cambios después de la primera detección
-      observer.disconnect();
+        // Dejar de observar cambios después de la primera detección
+        observer.disconnect();
+      }
     });
   
-    elementosObservados.forEach(function(elemento) {
-      observer.observe(elemento, { attributes: true, childList: true, subtree: true });
+    observer.observe(document.body);
+  
+    elementosObservados.forEach(function (elemento) {
+      observer.observe(elemento);
     });
   }
 
