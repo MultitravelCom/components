@@ -171,32 +171,30 @@ function agregarTextos() {
 }
 function observarCambios() {
     const observerConfig = {
-        rootNode: document.documentElement,
-        queries: [
-            { element: '.js-package-selection-placeholder' },
-        ],
-        callback: (summaries) => {
-            console.log('Se detectaron cambios en js-package-selection-placeholder.');
-
-            crearModalesIniciales();
-            cambiarTextoBoton();
-            agregarTextos();
-            moverContenidoVuelos();
-            moverContenidoServicio();
-
-            observarCambios(); // Volver a observar cambios
-
-            requestAnimationFrame(() => {
-                summaries[0].added.forEach((element) => {
-                    aplicarModificaciones(element);
-                });
-            });
-        },
+      rootNode: document.documentElement,
+      queries: [
+        { element: '.js-package-selection-placeholder' },
+      ],
+      callback: (summaries) => {
+        if (observarCambios.firstChange) {
+          crearModalesIniciales();
+          cambiarTextoBoton();
+          agregarTextos();
+          moverContenidoVuelos();
+          moverContenidoServicio();
+          observarCambios.firstChange = false;
+        }
+        observarCambios();
+      },
     };
-
+  
+    if (typeof observarCambios.firstChange === 'undefined') {
+      observarCambios.firstChange = true;
+    }
+  
     const observer = new MutationSummary(observerConfig);
-}
-
+  }
+  
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
