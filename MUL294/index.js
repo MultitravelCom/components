@@ -18,13 +18,18 @@ function moverContenidoVuelos() {
     }
 }
 function moverContenidoServicio() {
-    let modalContent = document.querySelector("#ver-servicio .modal-content");
-    let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
-
-    elements.forEach(function (element) {
-        modalContent.appendChild(element);
-    });
-}
+    let intervalId = setInterval(function() {
+      let modalContent = document.querySelector("#ver-servicio .modal-content");
+      let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
+  
+      if (modalContent && elements.length > 0) {
+        elements.forEach(function(element) {
+          modalContent.appendChild(element);
+        });
+        clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
+      }
+    }, 100);
+  }
 
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
