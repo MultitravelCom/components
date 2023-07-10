@@ -170,22 +170,25 @@ function agregarTextos() {
     }, 150);
 }
 function observarCambios() {
-    const elementosObservados = document.querySelectorAll('.js-package-selection-placeholder');
-    const observer = new MutationObserver(function () {
-        console.log('Se detectaron cambios en el selector.');
-
-        crearModalesIniciales();
-        cambiarTextoBoton();
-        agregarTextos();
-        moverContenidoVuelos();
-        moverContenidoServicio();
+    const elementosObservados = document.querySelectorAll('.result.package-result--selected.package-result--master');
+  
+    const observer = new MutationObserver(function() {
+      console.log('Se detectaron cambios en el selector.');
+  
+      crearModalesIniciales();
+      cambiarTextoBoton();
+      agregarTextos();
+      moverContenidoVuelos();
+      moverContenidoServicio();
+  
+      // Dejar de observar cambios después de la primera detección
+      observer.disconnect();
     });
-
-    // Observar los cambios en cada elemento
-    elementosObservados.forEach(function (elemento) {
-        observer.observe(elemento, { attributes: true, childList: true, subtree: true });
+  
+    elementosObservados.forEach(function(elemento) {
+      observer.observe(elemento, { attributes: true, childList: true, subtree: true });
     });
-}
+  }
 
 document.addEventListener("DOMContentLoaded", function () {
     crearModalesIniciales();
@@ -193,5 +196,5 @@ document.addEventListener("DOMContentLoaded", function () {
     agregarTextos();
     moverContenidoVuelos();
     moverContenidoServicio();
-    // observarCambios();
+    observarCambios();
 });
