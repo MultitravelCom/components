@@ -171,11 +171,9 @@ function agregarTextos() {
 }
 function observarCambios() {
     const elementosObservados = document.querySelectorAll('.js-package-selection-placeholder');
-
-    // Crear un observer con una función de callback
     const observer = new MutationObserver(function () {
         console.log('Se detectaron cambios en el selector.');
-        // Ejecutar las funciones nuevamente
+
         crearModalesIniciales();
         cambiarTextoBoton();
         agregarTextos();
