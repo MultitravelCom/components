@@ -1,9 +1,23 @@
 function cambiarTextoBoton() {
-    var boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
+    let boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
     if (boton) {
-        boton.textContent = 'Nuevo texto del botón';
+      let idioma = navigator.language || navigator.userLanguage; // Obtiene el idioma del navegador del usuario
+      let traduccion;
+  
+      switch (idioma) {
+        case 'es':
+          traduccion = 'Ver opciones';
+          break;
+        case 'pt':
+          traduccion = 'ver opções'; 
+          break;
+        default:
+          traduccion = 'Ver opciones';
+      }
+  
+      boton.textContent = traduccion;
     }
-}
+  }
 
 
 const CompartirAlojamiento = () => {
