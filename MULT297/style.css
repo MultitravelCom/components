@@ -25,6 +25,8 @@
 }
 
 #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button {
+    width: 109px;
+    height: 37px;
     color: #0D4E88;
     font-size: 13px;
     font-weight: 500;
