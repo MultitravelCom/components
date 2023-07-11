@@ -35,6 +35,7 @@
     border-radius: 8px;
     border: 1px solid #0D4E88;
     background: #F8F9FA;
+    padding: 0 !important;
 }
 
 @media(max-width:767px) {
