@@ -18,16 +18,35 @@
     top: 70px;
     left: 0;
 }
+
 .main__container__share {
     top: -43px;
     left: 83%;
 }
-@media(max-width:767px){
-    #main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div{
+
+#main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button {
+    color: #0D4E88;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18.57px;
+    word-wrap: break-word;
+    border-radius: 8px;
+    border: 1px solid #0D4E88;
+    background: #F8F9FA;
+}
+
+@media(max-width:767px) {
+    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div {
         display: flex;
         justify-content: space-between;
     }
-    #main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product > div{
+
+    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__product>div {
         margin-bottom: 51px;
+    }
+
+    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__product>div>span,
+    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button  {
+        display: inline-block !important;
     }
 }
