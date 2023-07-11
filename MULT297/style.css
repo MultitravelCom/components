@@ -4,3 +4,6 @@
 #main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product > button.btn.btn-outline-secondary.action-item--share.ready.js-social-share{
     display: none;
 }
+#main-content > div > article > section.details-content > div.details-card__top > div{
+    position: relative;
+}
