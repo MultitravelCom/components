@@ -40,11 +40,11 @@ const CompartirAlojamiento = () => {
 }
 
 const checkAndRender = async () => {
-    let infoCardContents = document.querySelectorAll('.details-card__heading');
+    let infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
 
     while (infoCardContents.length === 0) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = document.querySelectorAll('.details-card__heading');
+        infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
     }
 
     infoCardContents.forEach(infoCardContent => {
