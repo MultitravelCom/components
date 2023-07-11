@@ -7,7 +7,7 @@ const CompartirAlojamiento = () => {
                     onClick={() => setOpenModal(true)}
                     style="main__container__widget__share"
                 >
-                    <div className="main__container__share js-social-share">
+                    <div className="main__container__share js-social-share" id="hotelResult">
                         <span className="glyphicon glyphicon-share share__icon"></span>
                         <span className="share__text">Compartí este alojamiento ahora</span>
                     </div>

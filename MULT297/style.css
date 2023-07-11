@@ -1,12 +1,20 @@
-#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product > button.btn.btn-outline-secondary.action-item--favorites.ready{
+#main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__product>button.btn.btn-outline-secondary.action-item--favorites.ready {
     display: none;
 }
-#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product > button.btn.btn-outline-secondary.action-item--share.ready.js-social-share{
+
+#main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__product>button.btn.btn-outline-secondary.action-item--share.ready.js-social-share {
     display: none;
 }
-#main-content > div > article > section.details-content > div.details-card__top > div{
+
+#main-content>div>article>section.details-content>div.details-card__top>div {
     position: relative;
 }
-#main-content > div > article > section.details-content > div.details-card__top > div{
+
+#main-content>div>article>section.details-content>div.details-card__top>div {
     margin-bottom: 35px !important;
+}
+
+#hotelResult {
+    bottom: -13px;
+    left: 0;
 }
