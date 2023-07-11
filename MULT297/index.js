@@ -1,3 +1,11 @@
+function cambiarTextoBoton() {
+    var boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
+    if (boton) {
+        boton.textContent = 'Nuevo texto del botón';
+    }
+}
+
+
 const CompartirAlojamiento = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
@@ -34,5 +42,6 @@ const checkAndRender = async () => {
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
     });
+    cambiarTextoBoton();
 };
 checkAndRender();
