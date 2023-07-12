@@ -19,8 +19,7 @@ function cambiarTextoBoton() {
     }
 }
 
-
-const CompartirAlojamiento = () => {
+const CompartirAlojamientoResult = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
         <>
@@ -28,9 +27,9 @@ const CompartirAlojamiento = () => {
                 onClick={() => setOpenModal(true)}
                 style="main__container__widget__share"
             >
-                <div className="main__container__share js-social-share" id="hotelResult">
+                <div className="main__container__share__result js-social-share" id="hotelResult">
                     <span className="glyphicon glyphicon-share share__icon"></span>
-                    <span className="share__text">Compartí este alojamiento ahora</span>
+                    <span className="share__text__result">Compartí este alojamiento ahora</span>
                 </div>
             </ButtonModalShare>
             <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
@@ -52,7 +51,7 @@ const checkAndRender = async () => {
         infoCardContent.appendChild(nuevoDiv);
 
 
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<CompartirAlojamientoResult />, nuevoDiv);
     });
     cambiarTextoBoton();
 };
