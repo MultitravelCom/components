@@ -72,9 +72,6 @@ function crearModalesIniciales() {
             const modalTitle = document.createElement('h2');
             modalTitle.textContent = titulo; // Establecer el título del modal
 
-            const buttonContentWrapper = document.createElement('div');
-            buttonContentWrapper.classList.add('button-content-wrapper');
-
             const modalClose = document.createElement('button');
             modalClose.innerHTML = '&#10006;'; // Utilizar código HTML para representar la "X"
             modalClose.classList.add('modal-close');
@@ -82,10 +79,13 @@ function crearModalesIniciales() {
                 cerrarModal(modalId); // Llamar a la función para cerrar el modal al hacer clic en la "X"
             });
 
-            modalHeader.appendChild(modalTitle);
+            const buttonContentWrapper = document.createElement('div');
+            buttonContentWrapper.classList.add('button-content-wrapper');
             buttonContentWrapper.appendChild(modalClose);
+
+            modalHeader.appendChild(modalTitle);
+            modalHeader.appendChild(buttonContentWrapper);
             modalContent.appendChild(modalHeader);
-            modalContent.appendChild(buttonContentWrapper);
             modal.appendChild(modalContent);
             document.body.appendChild(modal);
 
@@ -101,8 +101,6 @@ function crearModalesIniciales() {
         }
     });
 }
-
-
 
 // Función para abrir el modal
 function abrirVentanaModal(modalId) {
