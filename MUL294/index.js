@@ -173,7 +173,6 @@ function agregarTextos() {
 
                     divVerVuelo.addEventListener('click', function () {
                         abrirVentanaModal('ver-vuelo');
-                        clickAutomatico();
                     });
                 }
 
@@ -182,6 +181,7 @@ function agregarTextos() {
 
                     divVerServicio.addEventListener('click', function () {
                         abrirVentanaModal('ver-servicio');
+                        clickAutomatico();
                     });
                 }
             }
