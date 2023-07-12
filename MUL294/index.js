@@ -143,6 +143,7 @@ function clickAutomatico() {
 
     buttonExtendedInfo.click();
 }
+
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
 
