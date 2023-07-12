@@ -141,7 +141,16 @@ function cambiarTextoBoton() {
 function clickAutomatico() {
     const buttonExtendedInfo = document.querySelector("#ver-servicio > div > div.result-option__extended-info.result-option__extended-info--hotel > div > div.info-card > div.info-card__content > a.btn.btn-secondary.btn-small.info-card__action-item.js-result-selected-action--extended-hotel-info");
 
-    buttonExtendedInfo.click();
+    // Verificar si el clic automático ya se ha realizado
+    const yaClickeado = buttonExtendedInfo.dataset.yaClickeado === "true";
+
+    if (!yaClickeado) {
+        // Realizar el clic automático
+        buttonExtendedInfo.click();
+
+        // Establecer el flag de clic automático a true
+        buttonExtendedInfo.dataset.yaClickeado = "true";
+    }
 }
 
 function agregarTextos() {
