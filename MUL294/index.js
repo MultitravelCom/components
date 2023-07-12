@@ -102,7 +102,6 @@ function crearModalesIniciales() {
     });
 }
 
-
 // Función para abrir el modal
 function abrirVentanaModal(modalId) {
     const modal = modalesCreados[modalId];
