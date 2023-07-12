@@ -72,6 +72,9 @@ function crearModalesIniciales() {
             const modalTitle = document.createElement('h2');
             modalTitle.textContent = titulo; // Establecer el título del modal
 
+            const buttonContentWrapper = document.createElement('div');
+            buttonContentWrapper.classList.add('button-content-wrapper');
+
             const modalClose = document.createElement('button');
             modalClose.innerHTML = '&#10006;'; // Utilizar código HTML para representar la "X"
             modalClose.classList.add('modal-close');
@@ -80,8 +83,9 @@ function crearModalesIniciales() {
             });
 
             modalHeader.appendChild(modalTitle);
-            modalHeader.appendChild(modalClose);
+            buttonContentWrapper.appendChild(modalClose);
             modalContent.appendChild(modalHeader);
+            modalContent.appendChild(buttonContentWrapper);
             modal.appendChild(modalContent);
             document.body.appendChild(modal);
 
@@ -95,15 +99,9 @@ function crearModalesIniciales() {
             // Almacenar el modal creado en el objeto modalesCreados
             modalesCreados[modalId] = modal;
         }
-
-        const modalContent = modal.querySelector('.modal-content');
-        const modalContentWrapper = document.createElement('div');
-        modalContentWrapper.classList.add('modal-content-wrapper');
-        modalContentWrapper.innerHTML = contenido; // Agregar el contenido HTML dentro del wrapper
-        modalContent.innerHTML = ''; // Limpiar el contenido existente
-        modalContent.appendChild(modalContentWrapper); // Agregar el wrapper al contenido del modal
     });
 }
+
 
 
 // Función para abrir el modal
