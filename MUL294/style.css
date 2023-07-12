@@ -129,7 +129,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color:rgb(255 255 255);
+    background-color: rgb(255 255 255);
     text-align: left !important;
 }
 
@@ -157,7 +157,7 @@
 }
 
 #ver-vuelo>div>div.modal-header>h2,
-#ver-servicio > h2 {
+#ver-servicio>h2 {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -166,6 +166,10 @@
 
 .modal .modal-header {
     margin-bottom: 0 !important;
+}
+
+.js-result-package-option__hotel-description {
+    padding: 10px;
 }
 
 @media (max-width: 767px) {
