@@ -11,7 +11,6 @@ function moverContenidoVuelos() {
 
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content');
-        modalContent.textContent = '';
         modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
