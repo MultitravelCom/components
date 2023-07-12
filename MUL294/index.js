@@ -43,10 +43,12 @@ function crearModalesIniciales() {
     const modalesIniciales = [
         {
             titulo: 'Modal de vuelo',
+            contenido: 'Contenido del modal de vuelo',
             selectorTexto: 'Ver vuelo',
         },
         {
             titulo: 'Modal de servicio',
+            contenido: 'Contenido del modal de servicio',
             selectorTexto: 'Ver servicio',
         }
     ];
