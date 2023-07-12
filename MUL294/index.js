@@ -72,8 +72,8 @@ function crearModalesIniciales() {
             const modalTitle = document.createElement('h2');
             modalTitle.textContent = titulo; // Establecer el título del modal
 
-            const modalClose = document.createElement('span');
-            modalClose.textContent = 'X';
+            const modalClose = document.createElement('button');
+            modalClose.innerHTML = '&#10006;'; // Utilizar código HTML para representar la "X"
             modalClose.classList.add('modal-close');
             modalClose.addEventListener('click', function () {
                 cerrarModal(modalId); // Llamar a la función para cerrar el modal al hacer clic en la "X"
@@ -101,6 +101,7 @@ function crearModalesIniciales() {
         modalContent.appendChild(document.createTextNode(contenido)); // Agregar el contenido como texto
     });
 }
+
 
 // Función para abrir el modal
 function abrirVentanaModal(modalId) {
