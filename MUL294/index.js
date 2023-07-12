@@ -92,7 +92,8 @@ function crearModalesIniciales() {
         }
 
         const modalContent = modal.querySelector('.modal-content');
-        modalContent.textContent = contenido; // Establecer el contenido del modal
+        modalContent.innerHTML = ''; // Limpiar el contenido existente
+        modalContent.appendChild(document.createTextNode(contenido)); // Agregar el contenido como texto
     });
 }
 
