@@ -138,7 +138,11 @@ function cambiarTextoBoton() {
         setTimeout(cambiarTextoBoton, 100);
     }
 }
+function clickAutomatico() {
+    const buttonExtendedInfo = document.querySelector("#ver-servicio > div > div.result-option__extended-info.result-option__extended-info--hotel > div > div.info-card > div.info-card__content > a.btn.btn-secondary.btn-small.info-card__action-item.js-result-selected-action--extended-hotel-info");
 
+    buttonExtendedInfo.click();
+}
 function agregarTextos() {
     const isMobile = window.innerWidth <= 768;
 
@@ -168,6 +172,7 @@ function agregarTextos() {
 
                     divVerVuelo.addEventListener('click', function () {
                         abrirVentanaModal('ver-vuelo');
+                        clickAutomatico();
                     });
                 }
 
@@ -181,12 +186,6 @@ function agregarTextos() {
             }
         }
     }, 150);
-}
-
-function clickAutomatico() {
-    const buttonExtendedInfo = document.querySelector("#ver-servicio > div > div.result-option__extended-info.result-option__extended-info--hotel > div > div.info-card > div.info-card__content > a.btn.btn-secondary.btn-small.info-card__action-item.js-result-selected-action--extended-hotel-info");
-    
-    buttonExtendedInfo.click();
 }
 
 function observarCambiosResultsListPackage() {
@@ -216,5 +215,4 @@ document.addEventListener("DOMContentLoaded", function () {
     moverContenidoVuelos();
     moverContenidoServicio();
     observarCambiosResultsListPackage();
-    clickAutomatico();
 });
