@@ -140,6 +140,32 @@
     width: 80%;
 }
 
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-close-packages {
+    border-radius: 12px;
+    background: #1585E6;
+    border: 0;
+    width: 75px;
+    height: 29px;
+    color: white;
+}
+
+#ver-vuelo>div>div.modal-header>h2 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.modal .modal-header {
+    margin-bottom: 0 !important;
+}
+
 @media (max-width: 767px) {
     #packages .info-card__price {
         width: 100%;

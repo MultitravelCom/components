@@ -37,6 +37,7 @@
     background: #ffff;
     padding: 0 !important;
 }
+
 /* Boton Share */
 .main__container__share__result {
     width: 183px;
@@ -49,9 +50,9 @@
     position: absolute;
     top: 125px;
     left: 14px;
-  }
-  
-  .share__icon__result {
+}
+
+.share__icon__result {
     background: #FFFFFF;
     border: 1px solid #0D4E88;
     border-radius: 12px;
@@ -62,28 +63,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-  
-  .share__text__result {
+}
+
+.share__text__result {
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
     color: #000000;
     margin: auto;
-  }
-  .modal-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .modal-close-packages{
-    border-radius: 12px;
-    background: #1585E6;
-    border: 0;
-    width: 75px;
-    height: 29px;
-    color: white;
-  }
+}
 
 @media(max-width:767px) {
     #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div {
@@ -93,9 +81,10 @@
     }
 
     #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__product>div>span,
-    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button  {
+    #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button {
         display: inline-block !important;
     }
+
     #hotelResult {
         top: 57%;
     }
