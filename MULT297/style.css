@@ -76,6 +76,14 @@
     align-items: center;
     justify-content: space-between;
   }
+  .modal-close-packages{
+    border-radius: 12px;
+    background: #1585E6;
+    border: 0;
+    width: 75px;
+    height: 29px;
+    color: white;
+  }
 
 @media(max-width:767px) {
     #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div {

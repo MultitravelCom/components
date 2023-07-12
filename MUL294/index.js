@@ -73,7 +73,7 @@ function crearModalesIniciales() {
             modalTitle.textContent = titulo; // Establecer el título del modal
 
             const modalClose = document.createElement('button');
-            modalClose.innerHTML = '&#10006;'; // Utilizar código HTML para representar la "X"
+            modalClose.innerHTML = 'Volver;'; // Utilizar código HTML para representar la "X"
             modalClose.classList.add('modal-close-packages');
             modalClose.addEventListener('click', function () {
                 cerrarModal(modalId); // Llamar a la función para cerrar el modal al hacer clic en la "X"
