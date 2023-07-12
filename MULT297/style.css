@@ -71,6 +71,11 @@
     color: #000000;
     margin: auto;
   }
+  .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
 @media(max-width:767px) {
     #main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div {

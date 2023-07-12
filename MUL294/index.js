@@ -42,12 +42,12 @@ const modalesCreados = {};
 function crearModalesIniciales() {
     const modalesIniciales = [
         {
-            titulo: 'Modal de vuelo',
+            titulo: 'Detalle de vuelo',
             contenido: 'Contenido del modal de vuelo',
             selectorTexto: 'Ver vuelo',
         },
         {
-            titulo: 'Modal de servicio',
+            titulo: 'Todos los servicios',
             contenido: 'Contenido del modal de servicio',
             selectorTexto: 'Ver servicio',
         }
@@ -74,7 +74,7 @@ function crearModalesIniciales() {
 
             const modalClose = document.createElement('button');
             modalClose.innerHTML = '&#10006;'; // Utilizar código HTML para representar la "X"
-            modalClose.classList.add('modal-close');
+            modalClose.classList.add('modal-close-packages');
             modalClose.addEventListener('click', function () {
                 cerrarModal(modalId); // Llamar a la función para cerrar el modal al hacer clic en la "X"
             });
