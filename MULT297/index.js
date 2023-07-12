@@ -28,7 +28,7 @@ const CompartirAlojamientoResult = () => {
                 style="main__container__widget__share"
             >
                 <div className="main__container__share__result js-social-share" id="hotelResult">
-                    <span className="glyphicon glyphicon-share share__icon"></span>
+                    <span className="glyphicon glyphicon-share share__icon__result"></span>
                     <span className="share__text__result">Compartí este alojamiento ahora</span>
                 </div>
             </ButtonModalShare>
