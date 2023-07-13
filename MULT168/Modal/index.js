@@ -300,4 +300,6 @@ const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
 const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
-ReactDOM.render(<BotonWidgetFixe />, targetDivWidgetFixe);
+if (window.innerWidth > 768) {
+    ReactDOM.render(<BotonWidgetFixe />, targetDivWidgetFixe);
+}
