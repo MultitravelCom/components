@@ -11,7 +11,7 @@ function moverContenidoVuelos() {
 
     if (contenidoModal && modalVuelos) {
 
-        const divContenidoAnterior = modalVuelos.querySelector('#ver-vuelo .modal-content-packages .contenido-ver-vuelos');
+        const divContenidoAnterior = modalVuelos.querySelector('.contenido-ver-vuelos');
         if (divContenidoAnterior) {
             divContenidoAnterior.remove();
         }
@@ -20,7 +20,7 @@ function moverContenidoVuelos() {
         divContenido.classList.add('contenido-ver-vuelos');
         divContenido.appendChild(contenidoModal);
 
-        const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
+        const modalContent = modalVuelos.querySelector('.modal-content-packages');
         modalContent.appendChild(divContenido);
     } else {
         setTimeout(moverContenidoVuelos, 100);
@@ -35,7 +35,7 @@ function moverContenidoServicio() {
     }
 
     let intervalId = setInterval(function () {
-        let modalContent = document.querySelector("#ver-servicio .contenido-ver-servicios .modal-content-packages");
+        let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
