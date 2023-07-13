@@ -1,21 +1,30 @@
 // Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
-
     const isMobile = window.innerWidth <= 768;
 
-    if (!isMobile) {
-        return;
-    }
-    const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
-    const modalVuelos = document.getElementById('ver-vuelo');
+    if (isMobile) {
+        const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
+        const modalVuelos = document.getElementById('ver-vuelo');
 
-    if (contenidoModal && modalVuelos) {
-        const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
-        modalContent.appendChild(contenidoModal);
-    } else {
-        setTimeout(moverContenidoVuelos, 100);
+        if (contenidoModal && modalVuelos) {
+            const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
+            const contenidoVerVuelos = document.createElement('div');
+            contenidoVerVuelos.classList.add('contenido-ver-vuelos');
+            contenidoVerVuelos.appendChild(contenidoModal);
+
+            // Eliminar contenido anterior si existe
+            const contenidoAnterior = modalContent.querySelector('.contenido-ver-vuelos');
+            if (contenidoAnterior) {
+                contenidoAnterior.remove();
+            }
+
+            modalContent.appendChild(contenidoVerVuelos);
+        } else {
+            setTimeout(moverContenidoVuelos, 100);
+        }
     }
 }
+
 function moverContenidoServicio() {
 
     const isMobile = window.innerWidth <= 768;
