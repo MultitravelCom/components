@@ -1,3 +1,14 @@
+// ********************** MULT-264 - Ocultar  tu reserva del footer************* */
+const BotonWidgetFixe = () => {
+    return (
+        <>
+            <div className="main__container__botonWidgetFixe">
+                <button className="main__container__botonWidgetFixe__button">Atención personalizada</button>
+            </div>
+        </>
+    )
+}
+
 function addHideDuplicateButtonLogic() {
     const targetElementUser = document.querySelector('#main-menu-features');
 
@@ -287,3 +298,6 @@ ReactDOM.render(<App />, targetDivDesktop);
 
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
+
+const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
+ReactDOM.render(<BotonWidgetFixe />, targetDivWidgetFixe);
