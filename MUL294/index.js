@@ -10,17 +10,16 @@ function moverContenidoVuelos() {
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
-
-        const divContenidoAnteriorVuelos = modalVuelos.querySelector('.contenido-ver-vuelos');
-        if (divContenidoAnteriorVuelos) {
-            divContenidoAnteriorVuelos.remove();
+        const divContenidoAnterior = modalVuelos.querySelector('.contenido-ver-vuelos');
+        if (divContenidoAnterior) {
+            divContenidoAnterior.remove();
         }
 
         const divContenido = document.createElement('div');
         divContenido.classList.add('contenido-ver-vuelos');
         divContenido.appendChild(contenidoModal);
 
-        const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
+        const modalContent = modalVuelos.querySelector('.modal-content-packages');
         modalContent.appendChild(divContenido);
     } else {
         setTimeout(moverContenidoVuelos, 100);
@@ -39,13 +38,11 @@ function moverContenidoServicio() {
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
-            // Eliminar el contenido anterior si existe
             const divContenidoAnterior = modalContent.querySelector('.contenido-ver-servicios');
             if (divContenidoAnterior) {
                 divContenidoAnterior.remove();
             }
 
-            // Crear el div con la clase "contenido-ver-servicios"
             const divContenido = document.createElement('div');
             divContenido.classList.add('contenido-ver-servicios');
 
@@ -53,13 +50,13 @@ function moverContenidoServicio() {
                 divContenido.appendChild(element);
             });
 
-            // Insertar el div en el modal
             modalContent.appendChild(divContenido);
 
-            clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
+            clearInterval(intervalId);
         }
     }, 100);
 }
+
 
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
