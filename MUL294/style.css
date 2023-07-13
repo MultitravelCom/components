@@ -140,7 +140,15 @@
     height: 100%;
     max-height: 100%;
     overflow-y: auto;
-    box-sizing: border-box; /* Añadido */
+    box-sizing: border-box;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 0px;
+}
+
+.modal-open {
+    overflow: hidden;
 }
 
 .modal-header {

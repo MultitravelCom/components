@@ -108,6 +108,7 @@ function abrirVentanaModal(modalId) {
 
     if (modal) {
         modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
     } else {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
@@ -118,6 +119,7 @@ function cerrarModal(modalId) {
 
     if (modal) {
         modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
     } else {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
