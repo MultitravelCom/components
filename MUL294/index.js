@@ -1,40 +1,56 @@
 // Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
-
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
+
     const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
+        // Crear el div con la clase "contenido-ver-vuelos"
+        const divContenido = document.createElement('div');
+        divContenido.classList.add('contenido-ver-vuelos');
+        divContenido.appendChild(contenidoModal);
+
+        // Insertar el div en el modal
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
-        modalContent.appendChild(contenidoModal);
+        modalContent.appendChild(divContenido);
     } else {
         setTimeout(moverContenidoVuelos, 100);
     }
 }
-function moverContenidoServicio() {
 
+function moverContenidoServicio() {
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
+
     let intervalId = setInterval(function () {
         let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
+            // Crear el div con la clase "contenido-ver-servicios"
+            const divContenido = document.createElement('div');
+            divContenido.classList.add('contenido-ver-servicios');
+            
             elements.forEach(function (element) {
-                modalContent.appendChild(element);
+                divContenido.appendChild(element);
             });
+
+            // Insertar el div en el modal
+            modalContent.appendChild(divContenido);
+
             clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
         }
     }, 100);
 }
+
 
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
@@ -178,12 +194,12 @@ function agregarTextos() {
                     const divVerVuelo = document.createElement('div');
                     divVerVuelo.textContent = 'Ver vuelo';
                     divVerVuelo.classList.add('ver-vuelo');
-    
+
                     const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
-    
+
                     if (resultOptionElements.length >= 1) {
                         resultOptionElements[0].appendChild(divVerVuelo);
-    
+
                         divVerVuelo.addEventListener('click', function () {
                             abrirVentanaModal('ver-vuelo');
                         });
@@ -194,12 +210,12 @@ function agregarTextos() {
                     const divVerServicio = document.createElement('div');
                     divVerServicio.textContent = 'Ver servicio';
                     divVerServicio.classList.add('ver-servicio');
-    
+
                     const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
-    
+
                     if (resultOptionElements.length >= 2) {
                         resultOptionElements[1].appendChild(divVerServicio);
-    
+
                         divVerServicio.addEventListener('click', function () {
                             abrirVentanaModal('ver-servicio');
                             clickAutomatico();
@@ -210,7 +226,6 @@ function agregarTextos() {
         }
     }, 150);
 }
-
 
 function observarCambiosResultsListPackage() {
     const observerConfig = {
