@@ -33,20 +33,18 @@ function moverContenidoServicio() {
         const elements = document.querySelectorAll('.result-option__extended-info.result-option__extended-info--hotel');
 
         if (modalContent && elements.length > 0) {
-            const contenidoVerServicio = document.createElement('div');
-            contenidoVerServicio.classList.add('contenido-ver-servicio');
+            const contenidoVerServicio = modalContent.querySelector('.contenido-ver-servicio');
+            const ultimoElemento = elements[elements.length - 1];
 
-            // Eliminar contenido anterior si existe
-            const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
-            if (contenidoAnterior) {
-                contenidoAnterior.remove();
+            if (contenidoVerServicio) {
+                contenidoVerServicio.innerHTML = '';
+                contenidoVerServicio.appendChild(ultimoElemento);
+            } else {
+                const nuevoContenido = document.createElement('div');
+                nuevoContenido.classList.add('contenido-ver-servicio');
+                nuevoContenido.appendChild(ultimoElemento);
+                modalContent.appendChild(nuevoContenido);
             }
-
-            elements.forEach(function (element) {
-                contenidoVerServicio.appendChild(element);
-            });
-
-            modalContent.appendChild(contenidoVerServicio);
         } else {
             // Eliminar contenido anterior si no hay elementos
             const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
@@ -58,6 +56,7 @@ function moverContenidoServicio() {
         }
     }
 }
+
 
 
 
