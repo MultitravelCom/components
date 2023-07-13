@@ -11,7 +11,7 @@ function moverContenidoVuelos() {
 
     if (contenidoModal && modalVuelos) {
 
-        const divContenidoAnterior = modalVuelos.querySelector('.contenido-ver-vuelos');
+        const divContenidoAnterior = modalVuelos.querySelector('#ver-vuelo .modal-content-packages .contenido-ver-vuelos');
         if (divContenidoAnterior) {
             divContenidoAnterior.remove();
         }
