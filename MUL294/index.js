@@ -8,16 +8,19 @@ function moverContenidoVuelos() {
 
         if (contenidoModal && modalVuelos) {
             const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
+
+            // Verificar si es la primera vez que se ejecuta la función
+            if (!modalContent.dataset.primerEjecucion) {
+                modalContent.dataset.primerEjecucion = true;
+            } else {
+                // Limpiar el contenido anterior si no es la primera ejecución
+                modalContent.innerHTML = '';
+            }
+
+            // Crear un nuevo div y mover el contenido dentro
             const contenidoVerVuelos = document.createElement('div');
             contenidoVerVuelos.classList.add('contenido-ver-vuelos');
             contenidoVerVuelos.appendChild(contenidoModal);
-
-            // Eliminar contenido anterior si existe
-            const contenidoAnterior = modalContent.querySelector('.contenido-ver-vuelos');
-            if (contenidoAnterior) {
-                contenidoAnterior.remove();
-            }
-
             modalContent.appendChild(contenidoVerVuelos);
         } else {
             setTimeout(moverContenidoVuelos, 100);
