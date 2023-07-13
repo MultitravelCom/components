@@ -1,40 +1,51 @@
 // Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
-
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
+
     const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
+        modalContent.innerHTML = ''; 
         modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
     }
 }
-function moverContenidoServicio() {
 
+function moverContenidoServicio() {
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
-    let intervalId = setInterval(function () {
+
+    let intervalId;
+
+    function moverElementos() {
         let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
+            modalContent.innerHTML = ''; 
             elements.forEach(function (element) {
                 modalContent.appendChild(element);
             });
-            clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
         }
-    }, 100);
+    }
+
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+
+    intervalId = setInterval(moverElementos, 100);
 }
+
 
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
