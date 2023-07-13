@@ -1,4 +1,5 @@
 // Función recursiva para mover el contenido al modal de vuelos
+// Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
     const isMobile = window.innerWidth <= 768;
 
@@ -11,8 +12,10 @@ function moverContenidoVuelos() {
 
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
-        modalContent.innerHTML = ''; 
-        modalContent.appendChild(contenidoModal);
+        const divContenido = document.createElement('div'); // Crear un nuevo div para el contenido
+        divContenido.appendChild(contenidoModal);
+        modalContent.innerHTML = ''; // Limpiar el contenido existente en el modal antes de agregar el nuevo
+        modalContent.appendChild(divContenido);
     } else {
         setTimeout(moverContenidoVuelos, 100);
     }
@@ -32,20 +35,24 @@ function moverContenidoServicio() {
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
-            modalContent.innerHTML = ''; 
+            const divContenido = document.createElement('div'); // Crear un nuevo div para el contenido
+            modalContent.innerHTML = ''; // Limpiar el contenido existente en el modal antes de agregar los nuevos elementos
+            
             elements.forEach(function (element) {
-                modalContent.appendChild(element);
+                divContenido.appendChild(element);
             });
+            
+            modalContent.appendChild(divContenido);
         }
     }
 
+    // Limpiar el intervalo existente antes de crear uno nuevo
     if (intervalId) {
         clearInterval(intervalId);
     }
 
     intervalId = setInterval(moverElementos, 100);
 }
-
 
 // Objeto para almacenar los modales creados
 const modalesCreados = {};
