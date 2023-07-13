@@ -302,8 +302,8 @@ ReactDOM.render(<App />, targetDivMobile);
 const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
 const widgetFixeComponent = <BotonWidgetFixe />;
 
-if (window.innerWidth > 768) {
-  const widgetFixeElement = document.createElement('div');
-  ReactDOM.render(widgetFixeComponent, widgetFixeElement);
-  targetDivWidgetFixe.appendChild(widgetFixeElement);
-}
+// if (window.innerWidth > 768) {
+//   const widgetFixeElement = document.createElement('div');
+//   ReactDOM.render(widgetFixeComponent, widgetFixeElement);
+//   targetDivWidgetFixe.appendChild(widgetFixeElement);
+// }
