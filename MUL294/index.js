@@ -33,19 +33,18 @@ function moverContenidoServicio() {
         const elements = document.querySelectorAll('.result-option__extended-info.result-option__extended-info--hotel');
 
         if (modalContent && elements.length > 0) {
-            // Crear un nuevo div y mover el contenido dentro
             const contenidoVerServicio = document.createElement('div');
             contenidoVerServicio.classList.add('contenido-ver-servicio');
+
+            // Eliminar contenido anterior si existe
+            const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
+            if (contenidoAnterior) {
+                contenidoAnterior.remove();
+            }
+
             elements.forEach(function (element) {
                 contenidoVerServicio.appendChild(element);
             });
-
-            // Verificar si ya existe contenido anterior
-            const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
-            if (contenidoAnterior) {
-                // Limpiar el contenido anterior
-                contenidoAnterior.remove();
-            }
 
             modalContent.appendChild(contenidoVerServicio);
         } else {
@@ -53,6 +52,7 @@ function moverContenidoServicio() {
         }
     }
 }
+
 
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
