@@ -26,23 +26,32 @@ function moverContenidoVuelos() {
 }
 
 function moverContenidoServicio() {
-
     const isMobile = window.innerWidth <= 768;
 
-    if (!isMobile) {
-        return;
-    }
-    let intervalId = setInterval(function () {
-        let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
-        let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
+    if (isMobile) {
+        const modalContent = document.querySelector('#ver-servicio .modal-content-packages');
+        const elements = document.querySelectorAll('.result-option__extended-info.result-option__extended-info--hotel');
 
         if (modalContent && elements.length > 0) {
+            // Crear un nuevo div y mover el contenido dentro
+            const contenidoVerServicio = document.createElement('div');
+            contenidoVerServicio.classList.add('contenido-ver-servicio');
             elements.forEach(function (element) {
-                modalContent.appendChild(element);
+                contenidoVerServicio.appendChild(element);
             });
-            clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
+
+            // Verificar si ya existe contenido anterior
+            const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
+            if (contenidoAnterior) {
+                // Limpiar el contenido anterior
+                contenidoAnterior.remove();
+            }
+
+            modalContent.appendChild(contenidoVerServicio);
+        } else {
+            setTimeout(moverContenidoServicio, 100);
         }
-    }, 100);
+    }
 }
 
 const modalesCreados = {};
@@ -150,7 +159,7 @@ function cambiarTextoBoton() {
 }
 // Funcion para mostrar contenido dentro del modal sin la necesidad de cliquear boton. 
 function clickAutomatico() {
-    const buttonExtendedInfo = document.querySelector(".info-card__action-item.js-result-selected-action--extended-hotel-info");
+    const buttonExtendedInfo = document.querySelector(".contenido-ver-servicio .info-card__action-item.js-result-selected-action--extended-hotel-info");
     const yaClickeado = buttonExtendedInfo.dataset.yaClickeado === "true";
 
     if (!yaClickeado) {
