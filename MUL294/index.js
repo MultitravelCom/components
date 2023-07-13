@@ -11,9 +11,9 @@ function moverContenidoVuelos() {
 
     if (contenidoModal && modalVuelos) {
 
-        const divContenidoAnterior = modalVuelos.querySelector('.contenido-ver-vuelos');
-        if (divContenidoAnterior) {
-            divContenidoAnterior.remove();
+        const divContenidoAnteriorVuelos = modalVuelos.querySelector('.contenido-ver-vuelos');
+        if (divContenidoAnteriorVuelos) {
+            divContenidoAnteriorVuelos.remove();
         }
 
         const divContenido = document.createElement('div');
