@@ -10,12 +10,16 @@ function moverContenidoVuelos() {
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
-        // Crear el div con la clase "contenido-ver-vuelos"
+
+        const divContenidoAnterior = modalVuelos.querySelector('.contenido-ver-vuelos');
+        if (divContenidoAnterior) {
+            divContenidoAnterior.remove();
+        }
+
         const divContenido = document.createElement('div');
         divContenido.classList.add('contenido-ver-vuelos');
         divContenido.appendChild(contenidoModal);
 
-        // Insertar el div en el modal
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
         modalContent.appendChild(divContenido);
     } else {
@@ -35,10 +39,16 @@ function moverContenidoServicio() {
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
+            // Eliminar el contenido anterior si existe
+            const divContenidoAnterior = modalContent.querySelector('.contenido-ver-servicios');
+            if (divContenidoAnterior) {
+                divContenidoAnterior.remove();
+            }
+
             // Crear el div con la clase "contenido-ver-servicios"
             const divContenido = document.createElement('div');
             divContenido.classList.add('contenido-ver-servicios');
-            
+
             elements.forEach(function (element) {
                 divContenido.appendChild(element);
             });
@@ -51,8 +61,6 @@ function moverContenidoServicio() {
     }, 100);
 }
 
-
-// Objeto para almacenar los modales creados
 const modalesCreados = {};
 // Función para crear los modales al cargar la página
 function crearModalesIniciales() {
@@ -159,15 +167,10 @@ function cambiarTextoBoton() {
 // Funcion para mostrar contenido dentro del modal sin la necesidad de cliquear boton. 
 function clickAutomatico() {
     const buttonExtendedInfo = document.querySelector(".contenido-ver-servicios .info-card__action-item.js-result-selected-action--extended-hotel-info");
-
-    // Verificar si el clic automático ya se ha realizado
     const yaClickeado = buttonExtendedInfo.dataset.yaClickeado === "true";
 
     if (!yaClickeado) {
-        // Realizar el clic automático
         buttonExtendedInfo.click();
-
-        // Establecer el flag de clic automático a true
         buttonExtendedInfo.dataset.yaClickeado = "true";
     }
 }
