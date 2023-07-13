@@ -48,10 +48,17 @@ function moverContenidoServicio() {
 
             modalContent.appendChild(contenidoVerServicio);
         } else {
+            // Eliminar contenido anterior si no hay elementos
+            const contenidoAnterior = modalContent.querySelector('.contenido-ver-servicio');
+            if (contenidoAnterior) {
+                contenidoAnterior.remove();
+            }
+
             setTimeout(moverContenidoServicio, 100);
         }
     }
 }
+
 
 
 const modalesCreados = {};
