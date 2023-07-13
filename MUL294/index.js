@@ -10,7 +10,7 @@ function moverContenidoVuelos() {
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
-        const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content');
+        const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
         modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
@@ -24,7 +24,7 @@ function moverContenidoServicio() {
         return;
     }
     let intervalId = setInterval(function () {
-        let modalContent = document.querySelector("#ver-servicio .modal-content");
+        let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
@@ -60,11 +60,11 @@ function crearModalesIniciales() {
 
         if (!modal) {
             modal = document.createElement('div');
-            modal.classList.add('modal');
+            modal.classList.add('modal-packages');
             modal.setAttribute('id', modalId);
 
             const modalContent = document.createElement('div');
-            modalContent.classList.add('modal-content');
+            modalContent.classList.add('modal-content-packages');
 
             const modalHeader = document.createElement('div');
             modalHeader.classList.add('modal-header');
@@ -108,7 +108,7 @@ function abrirVentanaModal(modalId) {
 
     if (modal) {
         modal.style.display = 'flex';
-        document.body.classList.add('modal-open');
+        document.body.classList.add('modal-open-packages');
     } else {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
@@ -119,7 +119,7 @@ function cerrarModal(modalId) {
 
     if (modal) {
         modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
+        document.body.classList.remove('modal-open-packages');
     } else {
         console.error(`No se encontró el modal con el ID: ${modalId}`);
     }
@@ -219,7 +219,6 @@ function observarCambiosResultsListPackage() {
             { element: '.results-list__package' },
         ],
         callback: (summaries) => {
-            console.log('Se detectaron cambios en results-list__package.');
 
             crearModalesIniciales();
             cambiarTextoBoton();
