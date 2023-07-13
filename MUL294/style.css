@@ -143,7 +143,7 @@
     box-sizing: border-box;
 }
 
-.modal-content::-webkit-scrollbar {
+.modal-content-packages::-webkit-scrollbar {
     width: 0px;
 }
 
