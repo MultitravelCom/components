@@ -175,14 +175,14 @@
     line-height: normal;
 }
 
-.modal .modal-header {
+.modal-packages .modal-header {
     margin-bottom: 0 !important;
 }
 
 .js-result-package-option__hotel-description {
     padding: 10px;
 }
-.modal:before{
+.modal-packages:before{
     content: none !important;
 }
 
