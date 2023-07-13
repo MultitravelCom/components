@@ -303,5 +303,7 @@ const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
 const widgetFixeComponent = <BotonWidgetFixe />;
 
 if (window.innerWidth > 768) {
-  targetDivWidgetFixe.appendChild(widgetFixeComponent);
+  const widgetFixeElement = document.createElement('div');
+  ReactDOM.render(widgetFixeComponent, widgetFixeElement);
+  targetDivWidgetFixe.appendChild(widgetFixeElement);
 }
