@@ -130,6 +130,7 @@
     height: 100%;
     overflow: auto;
     text-align: left !important;
+    z-index: 10;
 }
 
 .modal-content-packages {
