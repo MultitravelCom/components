@@ -28,7 +28,7 @@ function moverContenidoServicio() {
     const isMobile = window.innerWidth <= 768;
 
     if (isMobile) {
-        const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
+        const contenidoModal = document.querySelector('.result-option__extended-info.result-option__extended-info--hotel');
         const modalServicio = document.getElementById('ver-servicio');
 
         if (contenidoModal && modalServicio) {
