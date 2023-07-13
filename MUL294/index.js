@@ -158,7 +158,7 @@ function cambiarTextoBoton() {
 }
 // Funcion para mostrar contenido dentro del modal sin la necesidad de cliquear boton. 
 function clickAutomatico() {
-    const buttonExtendedInfo = document.querySelector("#ver-servicio > div > div.result-option__extended-info.result-option__extended-info--hotel > div > div.info-card > div.info-card__content > a.btn.btn-secondary.btn-small.info-card__action-item.js-result-selected-action--extended-hotel-info");
+    const buttonExtendedInfo = document.querySelector(".contenido-ver-servicios .info-card__action-item.js-result-selected-action--extended-hotel-info");
 
     // Verificar si el clic automático ya se ha realizado
     const yaClickeado = buttonExtendedInfo.dataset.yaClickeado === "true";
