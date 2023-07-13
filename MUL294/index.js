@@ -140,6 +140,7 @@ function cambiarTextoBoton() {
         setTimeout(cambiarTextoBoton, 100);
     }
 }
+// Funcion para mostrar contenido dentro del modal sin la necesidad de cliquear boton. 
 function clickAutomatico() {
     const buttonExtendedInfo = document.querySelector("#ver-servicio > div > div.result-option__extended-info.result-option__extended-info--hotel > div > div.info-card > div.info-card__content > a.btn.btn-secondary.btn-small.info-card__action-item.js-result-selected-action--extended-hotel-info");
 
@@ -169,36 +170,47 @@ function agregarTextos() {
             if (resultOptions) {
                 clearInterval(intervalId);
 
-                const divVerVuelo = document.createElement('div');
-                divVerVuelo.textContent = 'Ver vuelo';
-                divVerVuelo.classList.add('ver-vuelo');
+                // Comprobar si los textos ya se agregaron previamente
+                const existingVerVuelo = resultOptions.querySelector('.ver-vuelo');
+                const existingVerServicio = resultOptions.querySelector('.ver-servicio');
 
-                const divVerServicio = document.createElement('div');
-                divVerServicio.textContent = 'Ver servicio';
-                divVerServicio.classList.add('ver-servicio');
-
-                const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
-
-                if (resultOptionElements.length >= 1) {
-                    resultOptionElements[0].appendChild(divVerVuelo);
-
-                    divVerVuelo.addEventListener('click', function () {
-                        abrirVentanaModal('ver-vuelo');
-                    });
+                if (!existingVerVuelo) {
+                    const divVerVuelo = document.createElement('div');
+                    divVerVuelo.textContent = 'Ver vuelo';
+                    divVerVuelo.classList.add('ver-vuelo');
+    
+                    const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
+    
+                    if (resultOptionElements.length >= 1) {
+                        resultOptionElements[0].appendChild(divVerVuelo);
+    
+                        divVerVuelo.addEventListener('click', function () {
+                            abrirVentanaModal('ver-vuelo');
+                        });
+                    }
                 }
 
-                if (resultOptionElements.length >= 2) {
-                    resultOptionElements[1].appendChild(divVerServicio);
-
-                    divVerServicio.addEventListener('click', function () {
-                        abrirVentanaModal('ver-servicio');
-                        clickAutomatico();
-                    });
+                if (!existingVerServicio) {
+                    const divVerServicio = document.createElement('div');
+                    divVerServicio.textContent = 'Ver servicio';
+                    divVerServicio.classList.add('ver-servicio');
+    
+                    const resultOptionElements = resultOptions.querySelectorAll('.result-option.result-option--extended');
+    
+                    if (resultOptionElements.length >= 2) {
+                        resultOptionElements[1].appendChild(divVerServicio);
+    
+                        divVerServicio.addEventListener('click', function () {
+                            abrirVentanaModal('ver-servicio');
+                            clickAutomatico();
+                        });
+                    }
                 }
             }
         }
     }, 150);
 }
+
 
 function observarCambiosResultsListPackage() {
     const observerConfig = {
