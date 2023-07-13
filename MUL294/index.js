@@ -1,57 +1,39 @@
 // Función recursiva para mover el contenido al modal de vuelos
-// Función recursiva para mover el contenido al modal de vuelos
 function moverContenidoVuelos() {
+
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
-
     const contenidoModal = document.querySelector('.package-result--master .result-option__extended-info');
     const modalVuelos = document.getElementById('ver-vuelo');
 
     if (contenidoModal && modalVuelos) {
         const modalContent = modalVuelos.querySelector('#ver-vuelo .modal-content-packages');
-        const divContenido = document.createElement('div'); // Crear un nuevo div para el contenido
-        divContenido.appendChild(contenidoModal);
-        modalContent.innerHTML = ''; // Limpiar el contenido existente en el modal antes de agregar el nuevo
-        modalContent.appendChild(divContenido);
+        modalContent.appendChild(contenidoModal);
     } else {
         setTimeout(moverContenidoVuelos, 100);
     }
 }
-
 function moverContenidoServicio() {
+
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
-
-    let intervalId;
-
-    function moverElementos() {
+    let intervalId = setInterval(function () {
         let modalContent = document.querySelector("#ver-servicio .modal-content-packages");
         let elements = document.querySelectorAll(".result-option__extended-info.result-option__extended-info--hotel");
 
         if (modalContent && elements.length > 0) {
-            const divContenido = document.createElement('div'); // Crear un nuevo div para el contenido
-            modalContent.innerHTML = ''; // Limpiar el contenido existente en el modal antes de agregar los nuevos elementos
-            
             elements.forEach(function (element) {
-                divContenido.appendChild(element);
+                modalContent.appendChild(element);
             });
-            
-            modalContent.appendChild(divContenido);
+            clearInterval(intervalId); // Detener el setInterval una vez que se hayan movido los elementos
         }
-    }
-
-    // Limpiar el intervalo existente antes de crear uno nuevo
-    if (intervalId) {
-        clearInterval(intervalId);
-    }
-
-    intervalId = setInterval(moverElementos, 100);
+    }, 100);
 }
 
 // Objeto para almacenar los modales creados
@@ -237,6 +219,7 @@ function observarCambiosResultsListPackage() {
             { element: '.results-list__package' },
         ],
         callback: (summaries) => {
+            console.log('Se detectaron cambios en results-list__package.');
 
             crearModalesIniciales();
             cambiarTextoBoton();
