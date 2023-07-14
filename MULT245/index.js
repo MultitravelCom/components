@@ -140,7 +140,7 @@ function aplicarEstiloSegunLongitud() {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(function (item) {
-        const elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
+        const elemento = item.querySelector('.info-card__price');
         if (elemento) {
             const longitud = elemento.textContent.trim();
             const numerosDecimales = longitud.match(/\d+/g).join('');
