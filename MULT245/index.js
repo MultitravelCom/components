@@ -142,12 +142,12 @@ function aplicarEstiloSegunLongitud() {
     items.forEach(function (item) {
         const elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
         if (elemento) {
-            const longitud = elemento.textContent.length;
+            const longitud = elemento.textContent.trim();
+            const numerosDecimales = contenido.match(/\d+/g).join('');
+            const cantidadPuntos = contenido.split('.').length - 1;
 
-            if (longitud > 10) {
-                elemento.style.color = 'red';
-            } else {
-                elemento.style.color = 'blue';
+            if (cantidadPuntos >= 2) {
+                elemento.style.left = '14px';
             }
         }
     });
