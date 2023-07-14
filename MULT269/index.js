@@ -230,7 +230,7 @@ function obtenerHrefMapa() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    
+    detectarCambios();
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
