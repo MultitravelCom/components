@@ -62,7 +62,7 @@ function cambiarTextoRegimen() {
 function detectarCambios() {
     const selector = '.js-calendar-container';
     const container = document.querySelector(selector);
-    const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
+    const filterButton = document.querySelector('.main__container__newsButtons--mobile');
 
     if (!container || !filterButton) {
         console.error('No se encontró el elemento necesario');
