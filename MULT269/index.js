@@ -87,8 +87,6 @@ function detectarCambios() {
         }
     }, 100);
 }
-
-
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 

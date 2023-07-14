@@ -13,10 +13,6 @@
 }
 
 @media (max-width: 767px) {
-  .whatsAppFixes {
-    display: none;
-  }
-
   .view-selector {
     display: none;
   }
