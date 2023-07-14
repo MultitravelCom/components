@@ -61,7 +61,43 @@ function cambiarTextoRegimen() {
         setTimeout(cambiarTextoRegimen, 1000); // Puedes ajustar el intervalo de tiempo según tus necesidades
     }
 }
+function detectarCambios() {
+    // Obtener el elemento del selector
+    var selector = document.querySelector('.js-calendar-container');
 
+    // Crear un observador de mutaciones
+    var observador = new MutationObserver(function (mutationsList) {
+        mutationsList.forEach(function (mutation) {
+            // Verificar si se ha modificado la clase del selector
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                var clasesAnteriores = mutation.oldValue.split(' ');
+                var clasesActuales = selector.className.split(' ');
+
+                // Verificar si cambió de "closed" a "open"
+                if (clasesAnteriores.includes('closed') && clasesActuales.includes('open')) {
+                    console.log('El selector cambió de closed a open');
+                    // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
+                }
+
+                // Verificar si cambió de "open" a "closed"
+                if (clasesAnteriores.includes('open') && clasesActuales.includes('closed')) {
+                    console.log('El selector cambió de open a closed');
+                    // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
+                }
+            }
+        });
+    });
+
+    // Configurar las opciones del observador
+    var opcionesObservador = {
+        attributes: true, // Observar cambios en los atributos
+        attributeOldValue: true, // Guardar el valor anterior del atributo
+        attributeFilter: ['class'] // Observar solo el cambio en la clase del selector
+    };
+
+    // Comenzar a observar el elemento del selector
+    observador.observe(selector, opcionesObservador);
+}
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
@@ -125,7 +161,7 @@ function agregarNewsButtons() {
 
         const scrolledPercentage = scrollY / (documentHeight - windowHeight);
 
-        
+
         const isMobileView = window.innerWidth <= 767;
 
         if ((scrolledPercentage >= 0.015 || isScrolled) && isMobileView && !isInFooter()) {
@@ -150,34 +186,34 @@ function agregarNewsButtons() {
     checkScrollThreshold();
 
     // **************************************************************
-   let mapButton = buttonsMapFilter.querySelector('.button__map');
-let hrefMap, hrefResumed;
-let isFirstClick = true; // Variable para controlar el primer clic
+    let mapButton = buttonsMapFilter.querySelector('.button__map');
+    let hrefMap, hrefResumed;
+    let isFirstClick = true; // Variable para controlar el primer clic
 
-obtenerHrefMapa().then(function (href) {
-  hrefMap = href.hrefMap;
-  hrefResumed = href.hrefResumed;
+    obtenerHrefMapa().then(function (href) {
+        hrefMap = href.hrefMap;
+        hrefResumed = href.hrefResumed;
 
-  function toggleButtonText() {
-    let isMapVisible = mapButton.getAttribute('href') === hrefMap;
-    mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
-    mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
-  }
+        function toggleButtonText() {
+            let isMapVisible = mapButton.getAttribute('href') === hrefMap;
+            mapButton.querySelector('p').innerHTML = isMapVisible ? 'Ver en mapa' : 'Ver en lista';
+            mapButton.querySelector('.glyphicon').className = isMapVisible ? 'glyphicon glyphicon-view-map' : 'glyphicon glyphicon-view-resumed';
+        }
 
-  mapButton.href = hrefMap;
-  toggleButtonText(); 
+        mapButton.href = hrefMap;
+        toggleButtonText();
 
-  mapButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    toggleButtonText();
-  
-    let isMapVisible = mapButton.getAttribute('href') === hrefMap;
-    mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
-    window.location.href = mapButton.getAttribute('href');
-  });
-}).catch(function (error) {
-  console.error('Error al obtener los href:', error);
-});
+        mapButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            toggleButtonText();
+
+            let isMapVisible = mapButton.getAttribute('href') === hrefMap;
+            mapButton.setAttribute('href', isMapVisible ? hrefResumed : hrefMap);
+            window.location.href = mapButton.getAttribute('href');
+        });
+    }).catch(function (error) {
+        console.error('Error al obtener los href:', error);
+    });
 
 
 }
@@ -202,6 +238,7 @@ function obtenerHrefMapa() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
+    detectarCambios();
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
