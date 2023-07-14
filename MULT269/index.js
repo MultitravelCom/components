@@ -60,34 +60,32 @@ function cambiarTextoRegimen() {
     }
 }
 function detectarCambios() {
-    const selector = '.js-calendar-container';
-    const container = document.querySelector(selector);
-    const filterButton = document.querySelector('.main__container__newsButtons--mobile');
+    let intervalId = setInterval(function () {
+        const selector = '.js-calendar-container';
+        const container = document.querySelector(selector);
+        const filterButton = document.querySelector('.main__container__newsButtons');
 
-    if (!container || !filterButton) {
-        console.error('No se encontró el elemento necesario');
-        return;
-    }
+        if (container && filterButton) {
+            clearInterval(intervalId); // Cancelar el intervalo
+            const observer = new MutationObserver(function (mutationsList) {
+                mutationsList.forEach(function (mutation) {
+                    if (mutation.attributeName === 'class') {
+                        const clasesActuales = container.classList;
 
-    const observer = new MutationObserver(function (mutationsList) {
-        mutationsList.forEach(function (mutation) {
-            if (mutation.attributeName === 'class') {
-                const clasesActuales = container.classList;
+                        if (clasesActuales.contains('closed')) {
+                            console.log('La clase "closed" fue detectada');
+                            filterButton.style.display = 'flex';
+                        } else if (clasesActuales.contains('opened')) {
+                            console.log('La clase "opened" fue detectada');
+                            filterButton.style.display = 'none';
+                        }
+                    }
+                });
+            });
 
-                if (clasesActuales.contains('closed')) {
-                    console.log('La clase "closed" fue detectada');
-                    filterButton.style.display = 'block';
-                } else if (clasesActuales.contains('opened')) {
-                    console.log('La clase "opened" fue detectada');
-                    filterButton.style.display = 'none';
-                }
-            }
-        });
-    });
-
-    observer.observe(container, { attributes: true });
-
-    // Si necesitas detener la detección de cambios, puedes llamar a observer.disconnect()
+            observer.observe(container, { attributes: true });
+        }
+    }, 100);
 }
 
 
@@ -230,10 +228,10 @@ function obtenerHrefMapa() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    detectarCambios();
     observarSidebarFilters();
     cambiarTextoMapaYBoton();
     cambiarTextoFiltro();
     cambiarTextoRegimen();
     agregarNewsButtons();
+    detectarCambios();
 });
