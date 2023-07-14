@@ -135,17 +135,37 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-async function aplicarEstiloSegunLongitud(resultsListPage) {
-    const items = resultsListPage.querySelectorAll('.results-list__item');
-    let elemento = document.querySelectorAll('.pricetag__item.pricetag__item--currency');
-    let longitud = elemento.textContent.length;
+function aplicarEstiloSegunLongitud(resultsListPage) {
+    var intervalId = setInterval(function() {
+      var elemento = resultsListPage.querySelector('.pricetag__item.pricetag__item--currency');
+      if (elemento) {
+        clearInterval(intervalId);
+        var longitud = elemento.textContent.length;
+  
+        if (longitud > 10) {
+          elemento.style.color = 'red';
+        } else {
+          elemento.style.color = 'blue';
+        }
+      }
+    }, 100);
+  }
 
-    if (longitud > 10) {
-        elemento.style.color = 'red';
-    } else {
-        elemento.style.color = 'blue';
-    }
-}
+function aplicarEstiloSegunLongitud() {
+    var intervalId = setInterval(function() {
+      var elemento = document.querySelector('.pricetag__item.pricetag__item--currency');
+      if (elemento) {
+        clearInterval(intervalId);
+        var longitud = elemento.textContent.length;
+  
+        if (longitud > 10) {
+          elemento.style.color = 'red';
+        } else {
+          elemento.style.color = 'blue';
+        }
+      }
+    }, 100);
+  }
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
