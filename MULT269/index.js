@@ -68,7 +68,7 @@ function detectarCambios() {
       const observer = new MutationSummary({
         callback: function(summaries) {
           summaries.forEach(function(summary) {
-            const filterButton = document.querySelector('.main__container__newsButtons--mobile');
+            const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
   
             if (summary.value.class.includes('closed')) {
               filterButton.style.display = 'block';
