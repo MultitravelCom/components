@@ -73,10 +73,10 @@ function detectarCambios() {
                         const clasesActuales = container.classList;
 
                         if (clasesActuales.contains('closed')) {
-                            console.log('La clase "closed" fue detectada');
+
                             filterButton.style.display = 'flex';
                         } else if (clasesActuales.contains('opened')) {
-                            console.log('La clase "opened" fue detectada');
+
                             filterButton.style.display = 'none';
                         }
                     }
@@ -217,8 +217,6 @@ function obtenerHrefMapa() {
             const hrefMap = mapLink.getAttribute('href');
             const hrefResumed = resumedLink.getAttribute('href');
             resolve({ hrefMap, hrefResumed });
-            console.log('Aplicado href al botón de mapa:', hrefMap);
-            console.log('Aplicado href al botón de resumido:', hrefResumed);
         } else {
             setTimeout(() => {
                 obtenerHrefMapa().then(resolve).catch(reject);

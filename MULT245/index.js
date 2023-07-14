@@ -11,20 +11,6 @@ async function removeImageLinks() {
     });
 }
 
-// async function removeDataTarget() {
-//     const parentElement = document.querySelector('.js-results-list-placeholder');
-//     const elements = parentElement.querySelectorAll('.results-list__item');
-
-//     elements.forEach((element) => {
-//         const imageHolder = element.querySelector('.result');
-//         if (imageHolder) {
-//             imageHolder.addEventListener('click', function(event) {
-//                 event.preventDefault();
-//             });
-//         }
-//     });
-// }
-
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
@@ -126,13 +112,6 @@ async function changeCopyButton(resultsListPage) {
         buttonElement.textContent = 'Comprar';
         buttonElement.style.display = 'block';
 
-        // buttonElement.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     const link = item.querySelector('a.abs');
-        //     if (link) {
-        //         window.open(link.href, '_blank');
-        //     }
-        // });
     });
 
     const checkResultsListPage = () => {
@@ -156,6 +135,17 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
+function aplicarEstiloSegunLongitud(resultsListPage) {
+    const items = resultsListPage.querySelectorAll('.results-list__item');
+    let elemento = document.querySelector('.pricetag__item.pricetag__item--currency');
+    let longitud = elemento.textContent.length;
+  
+    if (longitud > 10) {
+      elemento.style.color = 'red';
+    } else {
+      elemento.style.color = 'blue';
+    }
+  }
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -164,6 +154,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
+    aplicarEstiloSegunLongitud(resultsListPage);
 }
 
 function observarCambiosCheckAndRender() {
@@ -191,4 +182,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
+    aplicarEstiloSegunLongitud(resultsListPage)
 });
