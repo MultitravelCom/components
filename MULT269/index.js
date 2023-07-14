@@ -60,36 +60,34 @@ function cambiarTextoRegimen() {
     }
 }
 function detectarCambios() {
-    const calendarContainers = document.querySelectorAll('.js-calendar-container');
-
-    calendarContainers.forEach((container) => {
-        console.log('Se detectó el contenedor .js-calendar-container:', container);
-
-        const observer = new MutationSummary({
-            callback: function (summaries) {
-                summaries.forEach(function (summary) {
-                    console.log('Se detectó un cambio en el contenedor .js-calendar-container:', summary);
-
-                    const filterButton = document.querySelector('.main__container__newsButtons');
-
-                    if (summary.value.class.includes('closed')) {
-                        console.log('La clase "closed" fue detectada');
-                        filterButton.style.display = 'flex';
-                    } else if (summary.value.class.includes('opened')) {
-                        console.log('La clase "opened" fue detectada');
-                        filterButton.style.display = 'none';
-                    }
-                });
-            },
-            queries: [{
-                element: container,
-                elementAttributes: 'class'
-            }]
+    const selector = '.js-calendar-container';
+  
+    const observer = new MutationSummary({
+      callback: function(summaries) {
+        summaries.forEach(function(summary) {
+          const filterButton = document.querySelector('.main__container__newsButtons--mobile');
+  
+          if (summary.value.class.includes('closed')) {
+            console.log('La clase "closed" fue detectada');
+            filterButton.style.display = 'flex';
+          } else if (summary.value.class.includes('opened')) {
+            console.log('La clase "opened" fue detectada');
+            filterButton.style.display = 'none';
+          }
         });
-
-        observer.observe();
+      },
+      queries: [{
+        element: selector,
+        elementAttributes: 'class'
+      }]
     });
-}
+  
+    observer.observe();
+  }
+  
+  // Llamar a la función para iniciar la detección de cambios
+  detectarCambios();
+  
 
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
