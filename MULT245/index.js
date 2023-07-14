@@ -143,8 +143,8 @@ function aplicarEstiloSegunLongitud() {
         const elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
         if (elemento) {
             const longitud = elemento.textContent.trim();
-            const numerosDecimales = contenido.match(/\d+/g).join('');
-            const cantidadPuntos = contenido.split('.').length - 1;
+            const numerosDecimales = longitud.match(/\d+/g).join('');
+            const cantidadPuntos = longitud.split('.').length - 1;
 
             if (cantidadPuntos >= 2) {
                 elemento.style.left = '14px';
