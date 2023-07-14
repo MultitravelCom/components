@@ -137,7 +137,7 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
-    let elemento = document.querySelector('.pricetag__item.pricetag__item--currency');
+    let elemento = document.querySelectorAll('.pricetag__item.pricetag__item--currency');
     let longitud = elemento.textContent.length;
   
     if (longitud > 10) {
