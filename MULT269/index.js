@@ -68,8 +68,13 @@ function detectarCambios() {
       const observer = new MutationSummary({
         callback: function(summaries) {
           summaries.forEach(function(summary) {
-            const filterButton = document.querySelector('.main__container__newsButtons--mobile');
-            filterButton.style.display = summary.value.class.includes('closed') ? 'block' : 'none';
+            const filterButton = document.querySelector('.results-list__filter-toggle-wrapper');
+  
+            if (summary.value.class.includes('closed')) {
+              filterButton.style.display = 'block';
+            } else if (summary.value.class.includes('opened')) {
+              filterButton.style.display = 'none';
+            }
           });
         },
         queries: [{
@@ -82,6 +87,10 @@ function detectarCambios() {
     });
   }
   
+  // Llamar a la función para iniciar la detección de cambios
+  detectarCambios();
+  
+
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
