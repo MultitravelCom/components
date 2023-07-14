@@ -62,7 +62,7 @@ function cambiarTextoRegimen() {
 function detectarCambios() {
     const selector = '.js-calendar-container';
     const container = document.querySelector(selector);
-    const filterButton = document.querySelector('.main__container__newsButtons--mobile');
+    const filterButton = document.querySelector('.main__container__newsButtons');
   
     const observer = new MutationObserver(function(mutationsList) {
       mutationsList.forEach(function(mutation) {
