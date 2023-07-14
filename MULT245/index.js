@@ -177,7 +177,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud(resultsListPage);
+    aplicarEstiloSegunLongitud();
 }
 
 function observarCambiosCheckAndRender() {
@@ -205,5 +205,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    aplicarEstiloSegunLongitud(resultsListPage)
+    aplicarEstiloSegunLongitud()
 });
