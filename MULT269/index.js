@@ -61,33 +61,30 @@ function cambiarTextoRegimen() {
 }
 function detectarCambios() {
     const selector = '.js-calendar-container';
-
-    const observer = new MutationSummary({
-        callback: function (summaries) {
-            summaries.forEach(function (summary) {
-                const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
-
-                if (summary.attributeChanged.class) {
-                    const clasesActuales = summary.value.class.split(' ');
-
-                    if (clasesActuales.includes('closed')) {
-                        console.log('La clase "closed" fue detectada');
-                        filterButton.style.display = 'flex';
-                    } else if (clasesActuales.includes('opened')) {
-                        console.log('La clase "opened" fue detectada');
-                        filterButton.style.display = 'none';
-                    }
-                }
-            });
-        },
-        queries: [{
-            element: selector,
-            elementAttributes: 'class'
-        }]
+    const container = document.querySelector(selector);
+    const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
+  
+    const observer = new MutationObserver(function(mutationsList) {
+      mutationsList.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          const clasesActuales = container.classList;
+          
+          if (clasesActuales.contains('closed')) {
+            console.log('La clase "closed" fue detectada');
+            filterButton.style.display = 'block';
+          } else if (clasesActuales.contains('opened')) {
+            console.log('La clase "opened" fue detectada');
+            filterButton.style.display = 'none';
+          }
+        }
+      });
     });
-
-    observer.observe();
-}
+  
+    observer.observe(container, { attributes: true });
+  
+    // Si necesitas detener la detección de cambios, puedes llamar a observer.disconnect()
+  }
+  
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
