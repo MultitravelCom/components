@@ -63,29 +63,31 @@ function detectarCambios() {
     const selector = '.js-calendar-container';
 
     const observer = new MutationSummary({
-      callback: function(summaries) {
-        summaries.forEach(function(summary) {
-          const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
+        callback: function (summaries) {
+            summaries.forEach(function (summary) {
+                const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
 
-          if (summary.value.class.includes('closed')) {
-            console.log('La clase "closed" fue detectada');
-            filterButton.style.display = 'flex';
-          } else if (summary.value.class.includes('opened')) {
-            console.log('La clase "opened" fue detectada');
-            filterButton.style.display = 'none';
-          }
-        });
-      },
-      queries: [{
-        element: selector,
-        elementAttributes: 'class'
-      }]
+                if (summary.attributeChanged.class) {
+                    const clasesActuales = summary.value.class.split(' ');
+
+                    if (clasesActuales.includes('closed')) {
+                        console.log('La clase "closed" fue detectada');
+                        filterButton.style.display = 'flex';
+                    } else if (clasesActuales.includes('opened')) {
+                        console.log('La clase "opened" fue detectada');
+                        filterButton.style.display = 'none';
+                    }
+                }
+            });
+        },
+        queries: [{
+            element: selector,
+            elementAttributes: 'class'
+        }]
     });
 
     observer.observe();
-  }
-
-
+}
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
