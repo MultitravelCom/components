@@ -63,33 +63,31 @@ function cambiarTextoRegimen() {
 }
 function detectarCambios() {
     const calendarContainers = document.querySelectorAll('.js-calendar-container');
-  
+
     calendarContainers.forEach((container) => {
-      const observer = new MutationSummary({
-        callback: function(summaries) {
-          summaries.forEach(function(summary) {
-            const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
-  
-            if (summary.value.class.includes('closed')) {
-              filterButton.style.display = 'block';
-            } else if (summary.value.class.includes('opened')) {
-              filterButton.style.display = 'none';
-            }
-          });
-        },
-        queries: [{
-          element: container,
-          elementAttributes: 'class'
-        }]
-      });
-  
-      observer.observe();
+        const observer = new MutationSummary({
+            callback: function (summaries) {
+                summaries.forEach(function (summary) {
+                    const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
+
+                    if (summary.value.class.includes('closed')) {
+                        filterButton.style.display = 'block';
+                    } else if (summary.value.class.includes('opened')) {
+                        filterButton.style.display = 'none';
+                    }
+                });
+            },
+            queries: [{
+                element: container,
+                elementAttributes: 'class'
+            }]
+        });
+
+        observer.observe();
     });
-  }
-  
-  // Llamar a la función para iniciar la detección de cambios
-  detectarCambios();
-  
+}
+
+
 
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
