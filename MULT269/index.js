@@ -61,12 +61,12 @@ function cambiarTextoRegimen() {
 }
 function detectarCambios() {
     const selector = '.js-calendar-container';
-  
+
     const observer = new MutationSummary({
       callback: function(summaries) {
         summaries.forEach(function(summary) {
-          const filterButton = document.querySelector('.main__container__newsButtons--mobile');
-  
+          const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
+
           if (summary.value.class.includes('closed')) {
             console.log('La clase "closed" fue detectada');
             filterButton.style.display = 'flex';
@@ -81,13 +81,10 @@ function detectarCambios() {
         elementAttributes: 'class'
       }]
     });
-  
+
     observer.observe();
   }
-  
-  // Llamar a la función para iniciar la detección de cambios
-  detectarCambios();
-  
+
 
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
