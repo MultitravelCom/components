@@ -135,17 +135,17 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-function aplicarEstiloSegunLongitud(resultsListPage) {
+async function aplicarEstiloSegunLongitud(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
     let elemento = document.querySelectorAll('.pricetag__item.pricetag__item--currency');
     let longitud = elemento.textContent.length;
-  
+
     if (longitud > 10) {
-      elemento.style.color = 'red';
+        elemento.style.color = 'red';
     } else {
-      elemento.style.color = 'blue';
+        elemento.style.color = 'blue';
     }
-  }
+}
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
