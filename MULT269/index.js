@@ -62,42 +62,29 @@ function cambiarTextoRegimen() {
     }
 }
 function detectarCambios() {
-    // Crear un observador de mutaciones
-    var observador = new MutationSummary({
-        callback: function (summaries) {
-            summaries.forEach(function (summary) {
-                // Verificar si se ha modificado la clase del selector
-                if (summary.attributeChanged.class) {
-                    var clasesAnteriores = summary.oldValue.class.split(' ');
-                    var clasesActuales = summary.value.class.split(' ');
-
-                    // Verificar si cambió de "closed" a "open"
-                    if (clasesAnteriores.includes('closed') && clasesActuales.includes('open')) {
-                        console.log('El selector cambió de closed a open');
-                        // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
-                    }
-
-                    // Verificar si cambió de "open" a "closed"
-                    if (clasesAnteriores.includes('open') && clasesActuales.includes('closed')) {
-                        console.log('El selector cambió de open a closed');
-                        // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
-                    }
-                }
-            });
+    const calendarContainers = document.querySelectorAll('.js-calendar-container');
+  
+    calendarContainers.forEach((container) => {
+      const observer = new MutationSummary({
+        callback: function(summaries) {
+          summaries.forEach(function(summary) {
+            const filterButton = document.querySelector('.main__container__newsButtons--mobile');
+            filterButton.style.display = summary.value.class.includes('closed') ? 'block' : 'none';
+          });
         },
         queries: [{
-            element: '.js-calendar-container',
-            elementAttributes: 'class'
+          element: container,
+          elementAttributes: 'class'
         }]
+      });
+  
+      observer.observe();
     });
-
-    // Comenzar a observar el DOM
-    observador.observe();
-}
+  }
+  
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
-    // Crear una instancia de MutationObserver
     const observer = new MutationObserver(function (mutationsList) {
         // Verificar si hay mutaciones dentro de sidebarFilters
         for (let mutation of mutationsList) {
