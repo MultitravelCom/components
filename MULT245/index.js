@@ -136,13 +136,13 @@ async function changeCopyButton(resultsListPage) {
 };
 
 function aplicarEstiloSegunLongitud() {
-    var resultsListPage = document.querySelector('.results-list__page');
-    var items = resultsListPage.querySelectorAll('.results-list__item');
+    const resultsListPage = document.querySelector('.results-list__page');
+    const items = resultsListPage.querySelectorAll('.results-list__item');
   
     items.forEach(function(item) {
-      var elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
+      const elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
       if (elemento) {
-        var longitud = elemento.textContent.length;
+        const longitud = elemento.textContent.length;
   
         if (longitud > 10) {
           elemento.style.color = 'red';
@@ -155,11 +155,11 @@ function aplicarEstiloSegunLongitud() {
   
 
 function aplicarEstiloSegunLongitud() {
-    var intervalId = setInterval(function() {
-      var elemento = document.querySelector('.pricetag__item.pricetag__item--currency');
+    const intervalId = setInterval(function() {
+      const elemento = document.querySelector('.pricetag__item.pricetag__item--currency');
       if (elemento) {
         clearInterval(intervalId);
-        var longitud = elemento.textContent.length;
+        const longitud = elemento.textContent.length;
   
         if (longitud > 10) {
           elemento.style.color = 'red';
