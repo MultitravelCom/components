@@ -62,41 +62,37 @@ function cambiarTextoRegimen() {
     }
 }
 function detectarCambios() {
-    // Obtener el elemento del selector
-    var selector = document.querySelector('.js-calendar-container');
-
     // Crear un observador de mutaciones
-    var observador = new MutationObserver(function (mutationsList) {
-        mutationsList.forEach(function (mutation) {
-            // Verificar si se ha modificado la clase del selector
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                var clasesAnteriores = mutation.oldValue.split(' ');
-                var clasesActuales = selector.className.split(' ');
+    var observador = new MutationSummary({
+        callback: function (summaries) {
+            summaries.forEach(function (summary) {
+                // Verificar si se ha modificado la clase del selector
+                if (summary.attributeChanged.class) {
+                    var clasesAnteriores = summary.oldValue.class.split(' ');
+                    var clasesActuales = summary.value.class.split(' ');
 
-                // Verificar si cambió de "closed" a "open"
-                if (clasesAnteriores.includes('closed') && clasesActuales.includes('open')) {
-                    console.log('El selector cambió de closed a open');
-                    // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
-                }
+                    // Verificar si cambió de "closed" a "open"
+                    if (clasesAnteriores.includes('closed') && clasesActuales.includes('open')) {
+                        console.log('El selector cambió de closed a open');
+                        // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
+                    }
 
-                // Verificar si cambió de "open" a "closed"
-                if (clasesAnteriores.includes('open') && clasesActuales.includes('closed')) {
-                    console.log('El selector cambió de open a closed');
-                    // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
+                    // Verificar si cambió de "open" a "closed"
+                    if (clasesAnteriores.includes('open') && clasesActuales.includes('closed')) {
+                        console.log('El selector cambió de open a closed');
+                        // Aquí puedes agregar la lógica que deseas ejecutar cuando se detecta el cambio
+                    }
                 }
-            }
-        });
+            });
+        },
+        queries: [{
+            element: '.js-calendar-container',
+            elementAttributes: 'class'
+        }]
     });
 
-    // Configurar las opciones del observador
-    var opcionesObservador = {
-        attributes: true, // Observar cambios en los atributos
-        attributeOldValue: true, // Guardar el valor anterior del atributo
-        attributeFilter: ['class'] // Observar solo el cambio en la clase del selector
-    };
-
-    // Comenzar a observar el elemento del selector
-    observador.observe(selector, opcionesObservador);
+    // Comenzar a observar el DOM
+    observador.observe();
 }
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
