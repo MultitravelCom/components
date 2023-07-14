@@ -135,11 +135,13 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-function aplicarEstiloSegunLongitud(resultsListPage) {
-    var intervalId = setInterval(function() {
-      var elemento = resultsListPage.querySelector('.pricetag__item.pricetag__item--currency');
+function aplicarEstiloSegunLongitud() {
+    var resultsListPage = document.querySelector('.results-list__page');
+    var items = resultsListPage.querySelectorAll('.results-list__item');
+  
+    items.forEach(function(item) {
+      var elemento = item.querySelector('.pricetag__item.pricetag__item--currency');
       if (elemento) {
-        clearInterval(intervalId);
         var longitud = elemento.textContent.length;
   
         if (longitud > 10) {
@@ -148,8 +150,9 @@ function aplicarEstiloSegunLongitud(resultsListPage) {
           elemento.style.color = 'blue';
         }
       }
-    }, 100);
+    });
   }
+  
 
 function aplicarEstiloSegunLongitud() {
     var intervalId = setInterval(function() {
