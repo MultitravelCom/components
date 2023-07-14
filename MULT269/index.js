@@ -27,7 +27,6 @@ function cambiarTextoMapaYBoton() {
     // Volver a llamar a la función si no se encontró el div con el texto a cambiar
     setTimeout(cambiarTextoMapaYBoton, 100); // Ajusta el intervalo de tiempo según tus necesidades
 }
-
 function cambiarTextoFiltro() {
     let filtersInner = document.querySelector('.sidebar-filters__inner');
     let filterHeaders = filtersInner.querySelectorAll('.filter__header');
@@ -42,7 +41,6 @@ function cambiarTextoFiltro() {
         }
     });
 }
-
 function cambiarTextoRegimen() {
     const filtersInner = document.querySelector('.sidebar-filters__inner');
     const placeholderDiv = filtersInner.querySelector('.results-sidebar__placeholder.js-filter-by-boards-placeholder');
@@ -71,7 +69,7 @@ function detectarCambios() {
                     const filterButton = document.querySelector('#results-list > div.main__container__newsButtons--mobile');
 
                     if (summary.value.class.includes('closed')) {
-                        filterButton.style.display = 'block';
+                        filterButton.style.display = 'flex';
                     } else if (summary.value.class.includes('opened')) {
                         filterButton.style.display = 'none';
                     }
@@ -86,9 +84,6 @@ function detectarCambios() {
         observer.observe();
     });
 }
-
-
-
 function observarSidebarFilters() {
     const sidebarFilters = document.querySelector('.results__sidebar');
 
