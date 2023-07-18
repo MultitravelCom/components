@@ -186,6 +186,11 @@
 .modal-packages-packages:before{
     content: none !important;
 }
+.result__bottom-price .bestprice {
+    margin-top: 1rem;
+    float: right !important;
+    margin-right: 15px !important;
+}
 
 @media (max-width: 767px) {
     #packages .info-card__price {
