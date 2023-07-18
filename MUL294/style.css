@@ -77,7 +77,7 @@
 }
 
 .results-list__package .result-option__book-button {
-    width: 193px;
+    width: 151px;
     height: 38px;
     border-radius: 4px;
     background: #1585E6;
@@ -183,13 +183,28 @@
 .js-result-package-option__hotel-description {
     padding: 10px;
 }
-.modal-packages-packages:before{
+
+.modal-packages-packages:before {
     content: none !important;
 }
+
 .result__bottom-price .bestprice {
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
     float: right !important;
     margin-right: 15px !important;
+}
+
+.result__bottom-price .bestprice__title {
+    min-width: 80px;
+    padding: 8px
+}
+
+#packages .info-card__price {
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-end;
 }
 
 @media (max-width: 767px) {
