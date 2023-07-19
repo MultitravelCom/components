@@ -137,25 +137,45 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
-  
+
     if (isMobile) {
-      const resultsListPage = document.querySelector('.results-list__page');
-      const items = resultsListPage.querySelectorAll('.results-list__item');
-  
-      items.forEach(function (item) {
-        const elemento = item.querySelector('.info-card__price');
-        if (elemento) {
-          const longitud = elemento.textContent.trim();
-          const numerosDecimales = longitud.match(/\d+/g).join('');
-          const cantidadPuntos = longitud.split('.').length - 1;
-  
-          if (cantidadPuntos >= 2) {
-            elemento.style.left = '14px';
-          }
-        }
-      });
+        const resultsListPage = document.querySelector('.results-list__page');
+        const items = resultsListPage.querySelectorAll('.results-list__item');
+
+        items.forEach(function (item) {
+            const elemento = item.querySelector('.info-card__price');
+            if (elemento) {
+                const longitud = elemento.textContent.trim();
+                const numerosDecimales = longitud.match(/\d+/g).join('');
+                const cantidadPuntos = longitud.split('.').length - 1;
+
+                if (cantidadPuntos >= 2) {
+                    elemento.style.left = '14px';
+                }
+            }
+        });
     }
-  }
+};
+
+function disableClickBehaviorInResultsItems() {
+    const itemsResults = document.querySelectorAll('.results-list__item');
+    
+    if (itemsResults.length > 0) {
+        itemsResults.forEach(item => {
+            const hotelResults = item.querySelectorAll('.hotel-result');
+            if (hotelResults.length > 0) {
+                hotelResults.forEach(hotelResult => {
+                    hotelResult.addEventListener('click', (event) => {
+                        event.preventDefault(); // Evita que se ejecute el comportamiento predeterminado del clic
+                    });
+                });
+            }
+        });
+    } else {
+        console.error('No se encontraron elementos con la clase "results-list__item".');
+    }
+}
+
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -165,6 +185,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
+    disableClickBehaviorInResultsItems();
 }
 
 function observarCambiosCheckAndRender() {
@@ -192,5 +213,6 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    aplicarEstiloSegunLongitud()
+    aplicarEstiloSegunLongitud();
+    disableClickBehaviorInResultsItems();
 });
