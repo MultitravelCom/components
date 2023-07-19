@@ -1,24 +1,3 @@
-function cambiarTextoBoton() {
-    let boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
-    if (boton) {
-        let idioma = navigator.language || navigator.userLanguage; // Obtiene el idioma del navegador del usuario
-        let traduccion;
-
-        switch (idioma) {
-            case 'es':
-                traduccion = 'Ver opciones';
-                break;
-            case 'pt':
-                traduccion = 'ver opções';
-                break;
-            default:
-                traduccion = 'Ver opciones';
-        }
-
-        boton.textContent = traduccion;
-    }
-}
-
 const CompartirAlojamientoResult = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
@@ -33,7 +12,6 @@ const CompartirAlojamientoResult = () => {
                 </div>
             </ButtonModalShare>
             <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
-
         </>
     )
 }
@@ -53,6 +31,5 @@ const checkAndRender = async () => {
 
         ReactDOM.render(<CompartirAlojamientoResult />, nuevoDiv);
     });
-    cambiarTextoBoton();
 };
 checkAndRender();
