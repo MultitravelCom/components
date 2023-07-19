@@ -2,7 +2,7 @@ function cambiarTextoBoton() {
     const boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
     if (boton) {
         boton.textContent = "Ver opciones";
-        boton.style.display = "block";
+        boton.style.display = "inline-block";
     }else {
         setTimeout(() => cambiarTextoYMostrarBotonRecursivo(nuevoTexto), 1000);
     }
