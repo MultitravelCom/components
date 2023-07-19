@@ -1,3 +1,10 @@
+function cambiarTextoBoton() {
+    const boton = document.querySelector('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button');
+    if (boton) {
+        boton.textContent = "Ver opciones";
+    }
+}
+
 const CompartirAlojamientoResult = () => {
     const [openModal, setOpenModal] = React.useState(false);
     return (
@@ -30,6 +37,8 @@ const checkAndRender = async () => {
 
 
         ReactDOM.render(<CompartirAlojamientoResult />, nuevoDiv);
+
+        cambiarTextoBoton()
     });
 };
 checkAndRender();
