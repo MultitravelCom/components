@@ -136,22 +136,26 @@ async function changeCopyButton(resultsListPage) {
 };
 
 function aplicarEstiloSegunLongitud() {
-    const resultsListPage = document.querySelector('.results-list__page');
-    const items = resultsListPage.querySelectorAll('.results-list__item');
-
-    items.forEach(function (item) {
+    const isMobile = window.innerWidth <= 768;
+  
+    if (isMobile) {
+      const resultsListPage = document.querySelector('.results-list__page');
+      const items = resultsListPage.querySelectorAll('.results-list__item');
+  
+      items.forEach(function (item) {
         const elemento = item.querySelector('.info-card__price');
         if (elemento) {
-            const longitud = elemento.textContent.trim();
-            const numerosDecimales = longitud.match(/\d+/g).join('');
-            const cantidadPuntos = longitud.split('.').length - 1;
-
-            if (cantidadPuntos >= 2) {
-                elemento.style.left = '14px';
-            }
+          const longitud = elemento.textContent.trim();
+          const numerosDecimales = longitud.match(/\d+/g).join('');
+          const cantidadPuntos = longitud.split('.').length - 1;
+  
+          if (cantidadPuntos >= 2) {
+            elemento.style.left = '14px';
+          }
         }
-    });
-}
+      });
+    }
+  }
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
