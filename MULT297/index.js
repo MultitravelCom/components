@@ -3,6 +3,8 @@ function cambiarTextoBoton() {
     if (boton) {
         boton.textContent = "Ver opciones";
         boton.style.display = "block";
+    }else {
+        setTimeout(() => cambiarTextoYMostrarBotonRecursivo(nuevoTexto), 1000);
     }
 }
 
