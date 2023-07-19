@@ -158,22 +158,17 @@ function aplicarEstiloSegunLongitud() {
 };
 
 function disableClickBehaviorInResultsItems() {
-    const itemsResults = document.querySelectorAll('.results-list__item');
-    
-    if (itemsResults.length > 0) {
-        itemsResults.forEach(item => {
-            const hotelResults = item.querySelectorAll('.hotel-result');
-            if (hotelResults.length > 0) {
-                hotelResults.forEach(hotelResult => {
-                    hotelResult.addEventListener('click', (event) => {
-                        event.preventDefault(); // Evita que se ejecute el comportamiento predeterminado del clic
-                    });
-                });
-            }
-        });
-    } else {
-        console.error('No se encontraron elementos con la clase "results-list__item".');
-    }
+    const resultsPage = document.querySelector('.results-list__page');
+    const items = resultsPage.querySelectorAll('.results-list__item');
+
+    items.forEach(item => {
+        const hotelResult = item.querySelector('.hotel-result');
+        if (hotelResult) {
+            hotelResult.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
+        }
+    });
 }
 
 
