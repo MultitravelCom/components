@@ -40,7 +40,7 @@ async function aplicarClaseRecomendada(resultsListPage) {
 
     items.forEach(item => {
         const tieneDeals = item.querySelector('.deals') !== null;
-        const hotelResult = item.querySelector('.result.hotel-result');
+        const hotelResult = item.querySelector('.hotel-result');
 
         if (tieneDeals && hotelResult) {
             hotelResult.classList.add('alojamiento-recomendado');
