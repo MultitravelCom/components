@@ -196,8 +196,14 @@
 .result-option__offer-info {
   display: none !important;
 }
-.abs{
+
+.abs {
   display: inline-block;
+}
+
+.hotel-result {
+  background: transparent;
+  border: 1px solid #cbcbcb;
 }
 
 @media (max-width: 767px) {
@@ -325,13 +331,15 @@
     bottom: 2px;
     text-align: left;
   }
-  .hotel-result{
+
+  .hotel-result {
     height: 500px;
   }
 
 }
-@media (min-width: 767px) and (max-width: 1024px){
-  .main__container__bannerMensageCard__App{
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .main__container__bannerMensageCard__App {
     width: 260px;
   }
 }
