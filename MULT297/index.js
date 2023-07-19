@@ -40,6 +40,6 @@ const checkAndRender = async () => {
         ReactDOM.render(<CompartirAlojamientoResult />, nuevoDiv);
 
     });
-    cambiarTextoBoton()
 };
+cambiarTextoBoton();
 checkAndRender();
