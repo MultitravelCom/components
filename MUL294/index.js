@@ -217,9 +217,14 @@ function agregarTextos() {
 }
 // cambiar copty al btn reserva
 function cambiarTextoBotonComprar() {
-    const botonReservar = document.querySelector('.result-option__book-button');
-    botonReservar.textContent = 'Comprar';
-  }
+    const intervalId = setInterval(() => {
+        const botonReservar = document.querySelector('.result-option__book-button');
+        if (botonReservar) {
+            botonReservar.textContent = 'Comprar';
+            clearInterval(intervalId);
+        }
+    }, 100);
+}
 function observarCambiosResultsListPackage() {
     const observerConfig = {
         rootNode: document.documentElement,
