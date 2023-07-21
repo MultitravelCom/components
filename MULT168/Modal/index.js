@@ -310,9 +310,9 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
-const widgetFixeComponent = <ButtonWidget />;
-ReactDOM.render(widgetFixeComponent, targetDivWidgetFixe);
+// const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
+// const widgetFixeComponent = <ButtonWidget />;
+// ReactDOM.render(widgetFixeComponent, targetDivWidgetFixe);
 
 
 
