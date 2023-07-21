@@ -303,7 +303,6 @@ const App = () => {
     );
 };
 
-
 const targetDivDesktop = document.querySelector('.upper-menu_quicklinks');
 ReactDOM.render(<App />, targetDivDesktop);
 

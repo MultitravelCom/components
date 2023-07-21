@@ -454,7 +454,7 @@
         height: 60px;
     }
 
-    #home>div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
+    div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
         font-size: 29px;
     }
 }
