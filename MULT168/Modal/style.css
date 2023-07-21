@@ -426,16 +426,17 @@
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 .main__container__buttonWidget:hover {
     background-color: #0D4E88;
-    color: white;
+
 }
 
 .main__container__buttonWidget:active {
     background-color: #283747;
-    color: white;
 }
 
 .whatsAppFixes>a {
