@@ -229,7 +229,7 @@ const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
     React.useEffect(() => {
-        const openModalButton = document.querySelector('.whatsAppFixes a');
+        const openModalButton = document.querySelector('.whatsAppFixes');
 
 
         const handleButtonClick = () => {
@@ -310,9 +310,6 @@ ReactDOM.render(<App />, targetDivDesktop);
 const targetDivMobile = document.querySelector('.pull-left.hidden-xs');
 ReactDOM.render(<App />, targetDivMobile);
 
-// const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
-// const widgetFixeComponent = <ButtonWidget />;
-// ReactDOM.render(widgetFixeComponent, targetDivWidgetFixe);
-
-
-
+const targetDivWidgetFixe = document.querySelector('#home > div.whatsAppFixes');
+const widgetFixeComponent = <ButtonWidget />;
+ReactDOM.render(widgetFixeComponent, targetDivWidgetFixe);
