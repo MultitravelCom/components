@@ -229,7 +229,7 @@ function observarCambiosResultsListPackage() {
     const observerConfig = {
         rootNode: document.documentElement,
         queries: [
-            { element: '.js-results-wrapper' },
+            { element: '.results-list__package' },
         ],
         callback: (summaries) => {
             moverContenidoVuelos();
