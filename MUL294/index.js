@@ -216,7 +216,7 @@ function agregarTextos() {
     }, 150);
 }
 // cambiar copty al btn reserva
-function cambiarTextoBoton() {
+function cambiarTextoBotonComprar() {
     const botonReservar = document.querySelector('.result-option__book-button');
     botonReservar.textContent = 'Comprar';
   }
@@ -227,14 +227,13 @@ function observarCambiosResultsListPackage() {
             { element: '.results-list__package' },
         ],
         callback: (summaries) => {
-            console.log('Se detectaron cambios en results-list__package.');
 
             crearModalesIniciales();
             cambiarTextoBoton();
             agregarTextos();
             moverContenidoVuelos();
             moverContenidoServicio();
-            cambiarTextoBoton();
+            cambiarTextoBotonComprar();
         },
     };
 
@@ -248,5 +247,5 @@ document.addEventListener("DOMContentLoaded", function () {
     moverContenidoVuelos();
     moverContenidoServicio();
     observarCambiosResultsListPackage();
-    cambiarTextoBoton();
+    cambiarTextoBotonComprar();
 });
