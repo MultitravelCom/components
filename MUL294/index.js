@@ -229,15 +229,14 @@ function observarCambiosResultsListPackage() {
     const observerConfig = {
         rootNode: document.documentElement,
         queries: [
-            { element: '.results-list__package' },
+            { element: '.js-results-wrapper' },
         ],
         callback: (summaries) => {
-
+            moverContenidoVuelos();
+            moverContenidoServicio();
             crearModalesIniciales();
             cambiarTextoBoton();
             agregarTextos();
-            moverContenidoVuelos();
-            moverContenidoServicio();
             cambiarTextoBotonComprar();
         },
     };
