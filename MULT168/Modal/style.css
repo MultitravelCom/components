@@ -413,14 +413,59 @@
 
 }
 
+/* ****************** Widget Style ************************* */
+.main__container__buttonWidget {
+    width: 204px;
+    height: 48px;
+    border-radius: 64px;
+    background: #2A8BFE;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.14);
+    display: flex;
+    padding: 12px 12px 12px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.main__container__buttonWidget:hover {
+    background-color: #0D4E88;
+    color: white;
+}
+
+.main__container__buttonWidget:active {
+    background-color: #283747;
+    color: white;
+}
+
+.whatsAppFixes>a {
+    display: none;
+}
+
+.whatsAppFixes {
+    height: inherit !important;
+    width: inherit !important;
+}
+
+@media (max-width:767px) {
+    .main__container__buttonWidget {
+        width: 60px;
+        height: 60px;
+    }
+
+    #home>div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
+        font-size: 29px;
+    }
+}
+
 /* ***************** MULT-305 **************** */
 .footer__text .glyphicon.glyphicon-whatsapp-bottomless {
     background: transparent;
 }
+
 /* ********************** MULT-336 - paginas estaticas ************* */
 #main-menu-products .nav-elem:nth-child(8) {
     display: none;
-  }
+}
 
-  /* **********  */
-  
+/* **********  */
