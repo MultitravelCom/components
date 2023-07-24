@@ -213,4 +213,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
+    aplicarClaseRecomendada(resultsListPage);
 });
