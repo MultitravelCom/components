@@ -157,6 +157,10 @@ function aplicarEstiloSegunLongitud() {
     }
 };
 function removeClassResultInHotelResults() {
+    function evitarClick(event) {
+        event.preventDefault();
+        // Puedes agregar más acciones aquí si es necesario
+    }
     const resultsPage = document.querySelector('.results-list__page');
     if (!resultsPage) {
         return;
@@ -170,7 +174,7 @@ function removeClassResultInHotelResults() {
     items.forEach(item => {
         const hotelResult = item.querySelector('.result.hotel-result');
         if (hotelResult) {
-            hotelResult.classList.remove('result');
+            hotelResult.addEventListener('click', evitarClick);
         }
     });
 }
@@ -208,7 +212,8 @@ function observarCambiosCheckAndRender() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', async function () {;
+document.addEventListener('DOMContentLoaded', async function () {
+    ;
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
