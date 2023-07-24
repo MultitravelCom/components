@@ -201,10 +201,10 @@
   display: inline-block;
 }
 
-.hotel-result {
+/* .hotel-result {
   background: transparent;
   border: 1px solid #cbcbcb;
-}
+} */
 
 @media (max-width: 767px) {
   .share__icon {
