@@ -1,0 +1,132 @@
+.flight-result__segments-toggle {
+    display: none;
+}
+
+.flight-result__segments-toggle, .flight-selection__segments-toggle {
+  display: inline-block;
+  margin: 0rem 0rem;
+  background-color: #0d4e88;
+}
+.flight-info__empty-div {
+    flex-grow: 5;
+    padding: 0!important;
+}
+
+.flight-result__duration.glyphicon, .flight-result__places.glyphicon, .flight-selection__duration.glyphicon, .flight-selection__places.glyphicon {
+    padding-right: 0.2rem;
+}
+.glyphicon-miles {
+    top: 0.1rem;
+}
+/* Add specific styles for mobile screens */
+@media screen and (max-width: 767px) {
+    /* Your CSS rules for mobile go here */
+    .flight-info__empty-div {
+        display: none;
+        padding: 0!important;
+    }
+    .flight-selection__segments-toggle {
+        display: flex;
+        padding: 1px 2px;
+    }
+  }
+
+  /* Add specific styles for tablet screens */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Your CSS rules for tablet go here */
+    .flight-result__stops.class_changed_description.modified_blue_dropdown {
+        padding-right: 10px;
+    }
+
+    .flight-selection__option.result-option result-option--extended .result-option__heading {
+        width: 30%;
+    }
+    .flight-selection__info.class_changed_order div {
+        padding-right: 1rem;
+    }
+  }
+
+  /* Add specific styles for desktop screens */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 1260px;
+    }
+    /* Your CSS rules for desktop go here */
+
+    body.results .results__sidebar {
+        width: 22%;
+    }
+    body.results .results__list {
+        width: 78%;
+    }
+    /*CONTROL THIS ONE*/
+    .result-option__main {
+        display: flex!important;
+        table-layout: auto!important;
+    }
+    .result-option__content {
+        display: flex!important;
+        table-layout : auto;
+        flex-grow : 1;
+    }
+    .flight-result__info {
+        display: flex;
+        align-items: center;
+        table-layout : auto;
+        flex-grow : 1;
+    }
+    .flight-result__stops {
+        flex-grow : 1;
+    }
+    .flight-result__duration {
+        flex-grow : 1;
+    }
+    .flight-result__airline {
+        flex-grow : 1;
+        text-align : center;
+    }
+    .flight-result__stops .modified_blue_dropdown {
+        flex-grow : 5;
+    }
+    .result-option--selectable .result-option--selectable--selected {
+        box-shadow: inset 0 0 0 2px #fcdf98;
+        border: 0px solid white!important;
+    }
+    .result-option--selectable .result-option--selectable--selected
+    /* SELECTED FLIGHT*/
+
+    .result-option__heading, .result-option--extended .result-option__extended-heading, .result-option--extended .result-option__heading {
+        width: auto!important; 
+        max-width: 40%;
+    }
+
+
+    .flight-selection__info.class_changed_order div {
+        padding-left: 1rem;
+    }
+    .flight-selection__option {
+        padding-right: 0px;
+    }
+
+    .flight-selection__airline {
+        display: flex;
+        
+    }
+
+    .result-option__heading {
+        display: flex;
+    }
+
+    .result-option__content {
+        display: flex;
+    }
+    .flight-selection__info {
+        display: flex!important;
+        align-items: center;
+        padding-left: 1.5rem;
+    }
+
+    .flight-selection__stops.class_changed_description.modified_blue_dropdown {
+        margin-right: 0rem!important;
+    }
+}
