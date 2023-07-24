@@ -187,7 +187,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
-    // removeClassResultInHotelResults();
+    removeClassResultInHotelResults();
 }
 
 function observarCambiosCheckAndRender() {
@@ -214,7 +214,7 @@ function observarCambiosCheckAndRender() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     ;
-    // removeClassResultInHotelResults();
+    removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
