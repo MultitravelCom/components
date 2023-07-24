@@ -196,16 +196,40 @@ function removeClassResultInHotelResults() {
     });
 }
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
-}
+function aplicarEstiloSegunLongitud() {
+    const isMobile = window.innerWidth <= 768;
+  
+    if (isMobile) {
+      let intervalId;
+  
+      const verificarElementos = () => {
+        const resultsListPage = document.querySelector('.results-list__page');
+        const items = document.querySelectorAll('.results-list__item');
+  
+        if (resultsListPage && items.length >= 2) {
+          clearInterval(intervalId); // Detener el setInterval una vez que ambos elementos estén presentes
+          aplicarEstilos(resultsListPage, items);
+        }
+      };
+  
+      intervalId = setInterval(verificarElementos, 100); // Intentar verificar los elementos cada 100 ms
+    }
+  };
+  
+  function aplicarEstilos(resultsListPage, items) {
+    items.forEach(function (item) {
+      const elemento = item.querySelector('.info-card__price');
+      if (elemento) {
+        const longitud = elemento.textContent.trim();
+        const numerosDecimales = longitud.match(/\d+/g).join('');
+        const cantidadPuntos = longitud.split('.').length - 1;
+  
+        if (cantidadPuntos >= 2) {
+          elemento.style.left = '14px';
+        }
+      }
+    });
+  }
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
