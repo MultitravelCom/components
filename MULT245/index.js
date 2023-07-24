@@ -137,23 +137,38 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
-
+  
     if (isMobile) {
-        let intervalId;
-
-        const verificarElementos = () => {
-            const resultsListPage = document.querySelector('.results-list__page');
-            const items = document.querySelectorAll('.results-list__item');
-
-            if (resultsListPage && items.length >= 2) {
-                clearInterval(intervalId); // Detener el setInterval una vez que ambos elementos estén presentes
-                aplicarEstilos(resultsListPage, items);
+      let intervalId;
+  
+      const verificarElementos = () => {
+        const resultsListPage = document.querySelector('.results-list__page');
+        const items = document.querySelectorAll('.results-list__item');
+  
+        if (resultsListPage && items.length >= 2) {
+          clearInterval(intervalId); // Detener el setInterval una vez que ambos elementos estén presentes
+          aplicarEstilos(resultsListPage, items);
+        }
+      };
+  
+      intervalId = setInterval(verificarElementos, 100); // Intentar verificar los elementos cada 100 ms
+  
+      const aplicarEstilos = (resultsListPage, items) => {
+        items.forEach(function (item) {
+          const elemento = item.querySelector('.info-card__price');
+          if (elemento) {
+            const longitud = elemento.textContent.trim();
+            const numerosDecimales = longitud.match(/\d+/g).join('');
+            const cantidadPuntos = longitud.split('.').length - 1;
+  
+            if (cantidadPuntos >= 2) {
+              elemento.style.left = '14px';
             }
-        };
-
-        intervalId = setInterval(verificarElementos, 100); // Intentar verificar los elementos cada 100 ms
+          }
+        });
+      };
     }
-};
+  }
 
 function aplicarEstilos(resultsListPage, items) {
     items.forEach(function (item) {
