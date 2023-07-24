@@ -141,30 +141,34 @@ function aplicarEstiloSegunLongitud() {
     if (isMobile) {
         let intervalId;
 
-        const buscarElemento = () => {
+        const verificarElementos = () => {
             const resultsListPage = document.querySelector('.results-list__page');
-            if (resultsListPage) {
-                clearInterval(intervalId); // Detiene el setInterval una vez que se encuentra el elemento
-                const items = resultsListPage.querySelectorAll('.results-list__item');
+            const items = document.querySelectorAll('.results-list__item');
 
-                items.forEach(function (item) {
-                    const elemento = item.querySelector('.info-card__price');
-                    if (elemento) {
-                        const longitud = elemento.textContent.trim();
-                        const numerosDecimales = longitud.match(/\d+/g).join('');
-                        const cantidadPuntos = longitud.split('.').length - 1;
-
-                        if (cantidadPuntos >= 2) {
-                            elemento.style.left = '14px';
-                        }
-                    }
-                });
+            if (resultsListPage && items.length >= 2) {
+                clearInterval(intervalId); // Detener el setInterval una vez que ambos elementos estén presentes
+                aplicarEstilos(resultsListPage, items);
             }
         };
 
-        intervalId = setInterval(buscarElemento, 100); // Intenta buscar el elemento cada 100 ms
+        intervalId = setInterval(verificarElementos, 100); // Intentar verificar los elementos cada 100 ms
     }
 };
+
+function aplicarEstilos(resultsListPage, items) {
+    items.forEach(function (item) {
+        const elemento = item.querySelector('.info-card__price');
+        if (elemento) {
+            const longitud = elemento.textContent.trim();
+            const numerosDecimales = longitud.match(/\d+/g).join('');
+            const cantidadPuntos = longitud.split('.').length - 1;
+
+            if (cantidadPuntos >= 2) {
+                elemento.style.left = '14px';
+            }
+        }
+    });
+}
 function removeClassResultInHotelResults() {
     // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
     const isMobile = window.innerWidth <= 768;
