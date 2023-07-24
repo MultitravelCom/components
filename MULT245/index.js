@@ -139,21 +139,30 @@ function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
 
     if (isMobile) {
-        const resultsListPage = document.querySelector('.results-list__page');
-        const items = resultsListPage.querySelectorAll('.results-list__item');
+        let intervalId;
 
-        items.forEach(function (item) {
-            const elemento = item.querySelector('.info-card__price');
-            if (elemento) {
-                const longitud = elemento.textContent.trim();
-                const numerosDecimales = longitud.match(/\d+/g).join('');
-                const cantidadPuntos = longitud.split('.').length - 1;
+        const buscarElemento = () => {
+            const resultsListPage = document.querySelector('.results-list__page');
+            if (resultsListPage) {
+                clearInterval(intervalId); // Detiene el setInterval una vez que se encuentra el elemento
+                const items = resultsListPage.querySelectorAll('.results-list__item');
 
-                if (cantidadPuntos >= 2) {
-                    elemento.style.left = '14px';
-                }
+                items.forEach(function (item) {
+                    const elemento = item.querySelector('.info-card__price');
+                    if (elemento) {
+                        const longitud = elemento.textContent.trim();
+                        const numerosDecimales = longitud.match(/\d+/g).join('');
+                        const cantidadPuntos = longitud.split('.').length - 1;
+
+                        if (cantidadPuntos >= 2) {
+                            elemento.style.left = '14px';
+                        }
+                    }
+                });
             }
-        });
+        };
+
+        intervalId = setInterval(buscarElemento, 100); // Intenta buscar el elemento cada 100 ms
     }
 };
 function removeClassResultInHotelResults() {
