@@ -172,7 +172,7 @@ function removeClassResultInHotelResults() {
     }
 
     items.forEach(item => {
-        const hotelResult = item.querySelector('.result.hotel-result');
+        const hotelResult = item.querySelector('.result');
         if (hotelResult) {
             hotelResult.addEventListener('click', evitarClick);
         }
