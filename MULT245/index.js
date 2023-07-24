@@ -157,6 +157,14 @@ function aplicarEstiloSegunLongitud() {
     }
 };
 function removeClassResultInHotelResults() {
+    // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
+    const isMobile = window.innerWidth <= 768;
+
+    // Si no estamos en la versión móvil, salimos de la función y no hacemos nada
+    if (!isMobile) {
+        return;
+    }
+
     const resultsPage = document.querySelector('.results-list__page');
     if (!resultsPage) {
         return;
@@ -183,7 +191,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
-    // removeClassResultInHotelResults();
+    removeClassResultInHotelResults();
 }
 
 function observarCambiosCheckAndRender() {
@@ -209,7 +217,7 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    // removeClassResultInHotelResults();
+    removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
