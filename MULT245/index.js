@@ -208,7 +208,7 @@ function observarCambiosCheckAndRender() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', async function () {;
+document.addEventListener('DOMContentLoaded', async function () {
     // removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
