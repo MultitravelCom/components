@@ -123,5 +123,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificacionesII(resultsListPage);
+        observarCambiosCheckAndRenderII(resultsListPage);
     });
 });
