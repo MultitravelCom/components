@@ -211,6 +211,7 @@ function observarCambiosCheckAndRender() {
             requestAnimationFrame(() => {
                 const resultsListPage = document.querySelector('.results-list__page');
                 aplicarModificaciones(resultsListPage);
+                checkAndRender();
             });
         },
         queries: [{ element: '.results-list__page' }],
