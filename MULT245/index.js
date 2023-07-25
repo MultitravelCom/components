@@ -30,7 +30,8 @@ async function cargarEstilosYModales() {
     }
 };
 
-async function aplicarClaseRecomendada(resultsListPage) {
+async function aplicarClaseRecomendada() {
+    const resultsListPage = document.querySelector('.results-list__page');
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
