@@ -202,7 +202,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
-    checkAndRender();
+    
 }
 
 function observarCambiosCheckAndRender() {
@@ -212,6 +212,7 @@ function observarCambiosCheckAndRender() {
             requestAnimationFrame(() => {
                 const resultsListPage = document.querySelector('.results-list__page');
                 aplicarModificaciones(resultsListPage);
+                checkAndRender();
             });
         },
         queries: [{ element: '.results-list__page' }],
@@ -227,4 +228,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
+    changeCopyMap(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
 });
