@@ -102,20 +102,26 @@ const checkAndRender = async () => {
 };
 checkAndRender();
 
-function observarCambiosCheckAndRender() {
+function observarCambiosCheckAndRenderReact() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
+            requestAnimationFrame(() => {
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    checkAndRender(resultsListPage);
+                });
+            });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
 
-    checkAndRender();
-    console.log("test")
+    const resultsListPages = document.querySelectorAll('.results-list__page');
+    resultsListPages.forEach(resultsListPage => {
+        checkAndRender(resultsListPage);
+    });
 }
 
-observarCambiosCheckAndRender();
+observarCambiosCheckAndRenderReact();
