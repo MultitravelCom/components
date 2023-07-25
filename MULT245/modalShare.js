@@ -105,16 +105,16 @@ function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
-            console.log("cambios!")
+            console.log("cambios!"); // Verificar si se detectan los cambios en la consola
+            requestAnimationFrame(() => {
+                const resultsListPage = document.querySelector('.results-list__page');
+                checkAndRender(resultsListPage);
+            });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    checkAndRender();
 }
 
 observarCambiosCheckAndRender();
