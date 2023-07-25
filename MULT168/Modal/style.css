@@ -448,8 +448,8 @@
 
 @media (max-width:767px) {
     .main__container__buttonWidget {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
