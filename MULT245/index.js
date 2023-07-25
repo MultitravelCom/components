@@ -192,7 +192,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud();
+    // aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
 };
 
@@ -223,6 +223,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
-    aplicarEstiloSegunLongitud();
+    // aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
 });
