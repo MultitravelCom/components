@@ -79,6 +79,7 @@ const BannerMensageCardApp = () => {
 };
 
 const checkAndRender = () => {
+    console.log('check...');
     const infoCardContents = document.querySelectorAll('.info-card__content');
 
     if (infoCardContents.length === 0) {
