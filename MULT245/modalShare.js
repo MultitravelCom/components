@@ -100,21 +100,36 @@ const checkAndRender = async () => {
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
-checkAndRender();
+
+// function observarCambiosCheckAndRender() {
+//     const observerConfig = {
+//         rootNode: document.documentElement,
+//         callback: () => {
+
+//             requestAnimationFrame(checkAndRender);
+//         },
+//         queries: [{ element: '.results-list__page' }],
+//     };
+
+//     const observer = new MutationSummary(observerConfig);
+
+//     checkAndRender();
+// }
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
+            requestAnimationFrame(() => {
+                const resultsListPage = document.querySelector('.results-list__page');
+                checkAndRender();
+            });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    checkAndRender();
 }
 
 observarCambiosCheckAndRender();
+checkAndRender();
