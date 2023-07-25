@@ -157,6 +157,13 @@ function aplicarEstiloSegunLongitud() {
     }
 };
 function removeClassResultInHotelResults() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        return;
+    }
+
     const resultsPage = document.querySelector('.results-list__page');
     if (!resultsPage) {
         console.error('No se encontró el elemento con la clase "results-list__page".');
