@@ -11,25 +11,6 @@ async function removeImageLinks() {
     });
 }
 
-// async function cargarEstilosYModales() {
-//     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
-//     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
-
-//     // Forzar la recarga del archivo CSS
-//     if (link) {
-//         link.href = '';
-//         await wait(1000);
-//         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
-//     }
-
-//     // Forzar la recarga del script de los modales de React
-//     if (scriptReact) {
-//         scriptReact.src = '';
-//         await wait(100);
-//         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
-//     }
-// }
-
 async function aplicarClaseRecomendada(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
@@ -137,35 +118,35 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
-  
+
     if (isMobile) {
-      const verificarElementos = () => {
-        const resultsListPage = document.querySelector('.results-list__page');
-        const items = document.querySelectorAll('.results-list__item');
-  
-        if (resultsListPage && items.length >= 2) {
-          items.forEach(function (item) {
-            const elemento = item.querySelector('.info-card__price');
-            if (elemento) {
-              const longitud = elemento.textContent.trim();
-              const numerosDecimales = longitud.match(/\d+/g).join('');
-              const cantidadPuntos = longitud.split('.').length - 1;
-  
-              if (cantidadPuntos >= 2) {
-                elemento.style.left = '14px';
-              }
+        const verificarElementos = () => {
+            const resultsListPage = document.querySelector('.results-list__page');
+            const items = document.querySelectorAll('.results-list__item');
+
+            if (resultsListPage && items.length >= 2) {
+                items.forEach(function (item) {
+                    const elemento = item.querySelector('.info-card__price');
+                    if (elemento) {
+                        const longitud = elemento.textContent.trim();
+                        const numerosDecimales = longitud.match(/\d+/g).join('');
+                        const cantidadPuntos = longitud.split('.').length - 1;
+
+                        if (cantidadPuntos >= 2) {
+                            elemento.style.left = '14px';
+                        }
+                    }
+                });
+            } else {
+                // Si los elementos no están presentes, llamar a la función recursivamente después de un breve tiempo
+                setTimeout(verificarElementos, 100);
             }
-          });
-        } else {
-          // Si los elementos no están presentes, llamar a la función recursivamente después de un breve tiempo
-          setTimeout(verificarElementos, 100);
-        }
-      };
-  
-      verificarElementos(); // Llamar a la función por primera vez
+        };
+
+        verificarElementos(); // Llamar a la función por primera vez
     }
-  }
-  
+}
+
 function removeClassResultInHotelResults() {
     // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
     const isMobile = window.innerWidth <= 768;
@@ -193,7 +174,6 @@ function removeClassResultInHotelResults() {
     });
 }
 
-
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
@@ -207,9 +187,9 @@ function observarCambiosCheckAndRender() {
         },
         queries: [{ element: '.results-list__page' }],
     };
-    
+
     const observer = new MutationSummary(observerConfig);
-    
+
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
@@ -227,5 +207,12 @@ function aplicarModificaciones(resultsListPage) {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    aplicarModificaciones(resultsListPage);
+    removeImageLinks();
+    aplicarClaseRecomendada();
+    agreeStarIcon();
+    changeCopyMap();
+    applyDisplayNoneToAllButLastButton();
+    changeCopyButton();
+    aplicarEstiloSegunLongitud();
+    removeClassResultInHotelResults();
 });
