@@ -102,12 +102,11 @@ const checkAndRender = async () => {
     });
 };
 
-function observarCambiosCheckAndRenderReact() {
+function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                console.log('Cambios detectados en el DOM');
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     checkAndRender(resultsListPage);
@@ -118,8 +117,9 @@ function observarCambiosCheckAndRenderReact() {
     };
 
     const observer = new MutationSummary(observerConfig);
-    observer.observe();
 };
 
-checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
-observarCambiosCheckAndRenderReact(); // Observar cambios en el DOM
+document.addEventListener('DOMContentLoaded', async function () {
+    checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
+    observarCambiosCheckAndRender(); // Observar cambios en el DOM
+});
