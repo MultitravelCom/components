@@ -106,10 +106,10 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             console.log("cambios!"); // Verificar si se detectan los cambios en la consola
-            requestAnimationFrame(() => {
+            setTimeout(() => { // Esperar 1 segundo antes de invocar checkAndRender
                 const resultsListPage = document.querySelector('.results-list__page');
                 checkAndRender(resultsListPage);
-            });
+            }, 1000);
         },
         queries: [{ element: '.results-list__page' }],
     };
