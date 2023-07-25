@@ -123,6 +123,7 @@ function observarCambiosCheckAndRender() {
             requestAnimationFrame(() => {
                 const resultsListPage = document.querySelector('.results-list__page');
                 checkAndRender();
+                console.log("cambios!")
             });
         },
         queries: [{ element: '.results-list__page' }],
