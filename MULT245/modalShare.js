@@ -122,7 +122,8 @@ function aplicarModificacionesII(resultsListPage) {
 document.addEventListener('DOMContentLoaded', async function () {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
-        aplicarModificacionesII(resultsListPage);
+        checkAndRender();
         observarCambiosCheckAndRenderII(resultsListPage);
+        aplicarModificacionesII(resultsListPage);
     });
 });
