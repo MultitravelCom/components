@@ -102,6 +102,7 @@ const checkAndRender = async (resultsListPage) => {
 };
 
 function observarCambiosCheckAndRenderII(resultsListPage) {
+    console.log('Observando cambios en el DOM...');
     const observerConfig = {
         rootNode: resultsListPage,
         callback: () => {
