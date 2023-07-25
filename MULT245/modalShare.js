@@ -103,22 +103,45 @@ const checkAndRender = () => {
 };
 checkAndRender();
 
-function observarCambiosCheckAndRender() {
-    const observerConfig = {
-        rootNode: document.documentElement,
-        callback: () => {
-            requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    checkAndRender();
-                    console.log('Observando cambios en el DOM...');
-                });
-            });
-        },
-        queries: [{ element: '.results-list__page' }],
-    };
+// function observarCambiosCheckAndRender() {
+//     const observerConfig = {
+//         rootNode: document.documentElement,
+//         callback: () => {
+//             requestAnimationFrame(() => {
+//                 const resultsListPages = document.querySelectorAll('.results-list__page');
+//                 resultsListPages.forEach(resultsListPage => {
+//                     checkAndRender();
+//                     console.log('Observando cambios en el DOM...');
+//                 });
+//             });
+//         },
+//         queries: [{ element: '.results-list__page' }],
+//     };
 
-    const observer = new MutationSummary(observerConfig);
-}
+//     const observer = new MutationSummary(observerConfig);
+// }
+
+function observarCambiosCheckAndRender() {
+    console.log('Observando cambios en el DOM...');
+  
+    const observerConfig = {
+      childList: true, // Observar cambios en los hijos del elemento
+      subtree: true, // Observar cambios en todos los niveles del árbol descendiente
+    };
+  
+    const observer = new MutationObserver((mutationsList) => {
+      mutationsList.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+          const resultsListPages = document.querySelectorAll('.results-list__page');
+          resultsListPages.forEach((resultsListPage) => {
+            checkAndRender();
+            console.log('Cambios detectados en el DOM, llamando a checkAndRender...');
+          });
+        }
+      });
+    });
+  
+    observer.observe(document.documentElement, observerConfig);
+  }
 
 observarCambiosCheckAndRender();
