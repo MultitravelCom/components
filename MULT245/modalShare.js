@@ -101,35 +101,20 @@ const checkAndRender = async () => {
     });
 };
 
-// function observarCambiosCheckAndRender() {
-//     const observerConfig = {
-//         rootNode: document.documentElement,
-//         callback: () => {
-
-//             requestAnimationFrame(checkAndRender);
-//         },
-//         queries: [{ element: '.results-list__page' }],
-//     };
-
-//     const observer = new MutationSummary(observerConfig);
-
-//     checkAndRender();
-// }
-
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-            requestAnimationFrame(() => {
-                const resultsListPage = document.querySelector('.results-list__page');
-                checkAndRender();
-                console.log("cambios!")
-            });
+
+            requestAnimationFrame(checkAndRender);
+            console.log("cambios!")
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
+
+    checkAndRender();
 }
 
 observarCambiosCheckAndRender();
