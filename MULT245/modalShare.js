@@ -122,7 +122,7 @@ function observarCambiosCheckAndRender() {
         callback: () => {
             requestAnimationFrame(() => {
                 const resultsListPage = document.querySelector('.results-list__page');
-                checkAndRender(resultsListPage);
+                checkAndRender();
                 console.log("cambios!")
             });
         },
