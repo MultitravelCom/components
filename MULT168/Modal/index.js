@@ -73,9 +73,9 @@ function ButtonModalLink(props) {
 }
 
 const ButtonWidget = () => {
-    if (window.innerWidth <= 768) {
-        return null;
-    }
+    // if (window.innerWidth <= 768) {
+    //     return null;
+    // }
     return (
         <div className="main__container__buttonWidget">
             <div className="glyphicon glyphicon-agent agentWidget"></div>
