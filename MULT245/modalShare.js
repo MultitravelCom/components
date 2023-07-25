@@ -78,13 +78,13 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const checkAndRender = () => {
-    console.log('check...');
+function renderComponents() {
+    console.log('Rendering components...');
     const infoCardContents = document.querySelectorAll('.info-card__content');
 
     if (infoCardContents.length === 0) {
         // Si no se encuentran los elementos, se llama a la función de nuevo después de 1000ms
-        setTimeout(checkAndRender, 1000);
+        setTimeout(renderComponents, 1000);
     } else {
         // Cuando se encuentran los elementos, se realiza la renderización
         infoCardContents.forEach(infoCardContent => {
@@ -100,8 +100,11 @@ const checkAndRender = () => {
             ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
         });
     }
-};
-checkAndRender();
+}
+
+function checkAndRender() {
+    renderComponents();
+}
 
 // function observarCambiosCheckAndRender() {
 //     const observerConfig = {
@@ -132,11 +135,8 @@ function observarCambiosCheckAndRender() {
     const observer = new MutationObserver((mutationsList) => {
         mutationsList.forEach((mutation) => {
             if (mutation.type === 'childList') {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach((resultsListPage) => {
-                    checkAndRender();
-                    console.log('Cambios detectados en el DOM, llamando a checkAndRender...');
-                });
+                renderComponents(); // Llamar a renderComponents cuando se detecten cambios en el DOM
+                console.log('Cambios detectados en el DOM, llamando a renderComponents...');
             }
         });
     });
