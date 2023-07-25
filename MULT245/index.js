@@ -1,3 +1,5 @@
+let resultsListPage;
+
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
@@ -227,9 +229,10 @@ function observarCambiosCheckAndRender() {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
+    resultsListPage = document.querySelector('.results-list__page');
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada();
+    aplicarClaseRecomendada(resultsListPage);
 });
