@@ -100,29 +100,22 @@ const checkAndRender = async () => {
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
-checkAndRender();
 
 function observarCambiosCheckAndRenderReact() {
     const observerConfig = {
         rootNode: document.documentElement,
-        callback: () => {
-            requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    checkAndRender(resultsListPage);
-                    console.log("cambios")
-                });
+        callback: (summaries) => {
+            // Obtener los elementos results-list__page afectados por los cambios
+            const resultsListPages = summaries[0].added;
+            resultsListPages.forEach(resultsListPage => {
+                checkAndRender(resultsListPage);
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        checkAndRender(resultsListPage);
-    });
 }
 
+checkAndRender();
 observarCambiosCheckAndRenderReact();
