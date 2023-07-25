@@ -60,7 +60,7 @@ function checkIfTheresZeroBaggage(resultInfoElement) {
   innerSpan.setAttribute("title", "Included 1 Bagagem (LUGG)");
   // Set the text content of the innermost <span> element
   const innerSpanText = document.createElement("span");
-  innerSpanText.textContent = "× 0";
+  innerSpanText.textContent = " × 0";
   // Step 4: Append the innermost <span> element to the outermost <span> element
   outerSpan.appendChild(innerSpan);
   outerSpan.appendChild(innerSpanText);
@@ -208,13 +208,7 @@ function changeDescriptionElementFunctions() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("window.location.href ------->>>>> ", window.location.href)
-  console.log("-> My URL: ", 'https://multitravel.com/flights/results.aspx')
-  console.log("CONTAINS? : ", (window.location.href).toLocaleLowerCase().includes('https://www.multitravel.com/flights/results.aspx'));
   if (decodeURIComponent(window.location.href).includes('https://www.multitravel.com/flights/results.aspx')) {
-    // Your script code here https://www.multitravel.com/flights/results.aspx?searchSessionID=2093016#?discount=0
-    console.log('Script is running on the specific page.');
-    
     const observer = new MutationObserver(onDivAdded);
     const observerConfig = { childList: true, subtree: true };
     observer.observe(document.documentElement, observerConfig);
