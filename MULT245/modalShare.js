@@ -78,28 +78,27 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const checkAndRender = async () => {
-    let infoCardContents = document.querySelectorAll('.info-card__content');
-
-    while (infoCardContents.length === 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = document.querySelectorAll('.info-card__content');
-    }
+function checkAndRender(resultsListPage) {
+    const infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
 
     infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = document.createElement('div');
-        const nuevoDivBannerMensage = document.createElement('div');
+        const nuevoDiv = infoCardContent.querySelector('.main__container__bannerMensageCard__App');
 
-        infoCardContent.appendChild(nuevoDiv);
-        infoCardContent.appendChild(nuevoDivBannerMensage);
+        if (!nuevoDiv) {
+            const nuevoDivBannerMensage = document.createElement('div');
+            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+            infoCardContent.appendChild(nuevoDivBannerMensage);
 
-        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+            ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
 
-
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
+            // Renderizar también la componente <CompartirAlojamiento />
+            const contDiv = infoCardContent.querySelector('.cont');
+            if (contDiv) {
+                ReactDOM.render(<CompartirAlojamiento />, contDiv);
+            }
+        }
     });
-};
+}
 
 function observarCambiosCheckAndRenderReact() {
     const observerConfig = {
