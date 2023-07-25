@@ -117,7 +117,6 @@ function observarCambiosCheckAndRenderII(resultsListPage) {
 
 function aplicarModificacionesII(resultsListPage) {
     checkAndRender(resultsListPage);
-    observarCambiosCheckAndRenderII(resultsListPage);
 };
 
 document.addEventListener('DOMContentLoaded', async function () {
