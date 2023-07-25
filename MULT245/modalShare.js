@@ -78,45 +78,53 @@ const BannerMensageCardApp = () => {
     );
 };
 
-function checkAndRender(resultsListPage) {
+const checkAndRender = async () => {
     console.log('checkAndRender ejecutándose...');
-    const infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
+    let infoCardContents = document.querySelectorAll('.info-card__content');
+
+    while (infoCardContents.length === 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        infoCardContents = document.querySelectorAll('.info-card__content');
+    }
 
     infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = infoCardContent.querySelector('.main__container__bannerMensageCard__App');
+        const nuevoDiv = document.createElement('div');
+        const nuevoDivBannerMensage = document.createElement('div');
 
-        if (!nuevoDiv) {
-            const nuevoDivBannerMensage = document.createElement('div');
-            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-            infoCardContent.appendChild(nuevoDivBannerMensage);
+        infoCardContent.appendChild(nuevoDiv);
+        infoCardContent.appendChild(nuevoDivBannerMensage);
 
-            ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
+        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
-            // Renderizar también la componente <CompartirAlojamiento />
-            const contDiv = infoCardContent.querySelector('.cont');
-            if (contDiv) {
-                ReactDOM.render(<CompartirAlojamiento />, contDiv);
-            }
-        }
+
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
-}
+};
 
 function observarCambiosCheckAndRenderReact() {
     const observerConfig = {
         rootNode: document.documentElement,
-        callback: (summaries) => {
-            console.log('Cambios detectados en el DOM');
-            // Obtener los elementos results-list__page afectados por los cambios
-            const resultsListPages = summaries[0].added;
-            resultsListPages.forEach(resultsListPage => {
-                checkAndRender(resultsListPage);
+        callback: () => {
+            requestAnimationFrame(() => {
+                console.log('Cambios detectados en el DOM');
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    checkAndRender(resultsListPage);
+                });
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-}
+
+    const resultsListPages = document.querySelectorAll('.results-list__page');
+    resultsListPages.forEach(resultsListPage => {
+        checkAndRender(resultsListPage);
+    });
+};
 
 checkAndRender();
+
 observarCambiosCheckAndRenderReact();
