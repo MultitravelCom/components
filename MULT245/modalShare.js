@@ -78,13 +78,12 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const checkAndRender = async (resultsListPage) => {
-    console.log('checkAndRender ejecutándose...');
-    let infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
+const checkAndRender = async () => {
+    let infoCardContents = document.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
+        infoCardContents = document.querySelectorAll('.info-card__content');
     }
 
     infoCardContents.forEach(infoCardContent => {
@@ -96,33 +95,26 @@ const checkAndRender = async (resultsListPage) => {
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
+
         ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
+checkAndRender();
 
-function observarCambiosCheckAndRenderII(resultsListPage) {
-    console.log('Observando cambios en el DOM...');
+function observarCambiosCheckAndRender() {
     const observerConfig = {
-        rootNode: resultsListPage,
+        rootNode: document.documentElement,
         callback: () => {
-            requestAnimationFrame(() => {
-                aplicarModificacionesII(resultsListPage);
-            });
+
+            requestAnimationFrame(checkAndRender);
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-};
 
-function aplicarModificacionesII(resultsListPage) {
-    checkAndRender(resultsListPage);
-};
-
-const resultsListPages = document.querySelectorAll('.results-list__page');
-resultsListPages.forEach(resultsListPage => {
     checkAndRender();
-    observarCambiosCheckAndRenderII(resultsListPage);
-    aplicarModificacionesII(resultsListPage);
-});
+}
+
+observarCambiosCheckAndRender();
