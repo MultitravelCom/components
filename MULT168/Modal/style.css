@@ -443,10 +443,10 @@
     display: none;
 }
 
-.whatsAppFixes {
+/* .whatsAppFixes {
     height: inherit !important;
     width: inherit !important;
-}
+} */
 
 @media (max-width:767px) {
     .main__container__buttonWidget {
