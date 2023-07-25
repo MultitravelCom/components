@@ -438,15 +438,13 @@
 .main__container__buttonWidget:active {
     background-color: #283747;
 }
+.whatsAppFixes{
+    margin-right: 175px !important;
+}
 
 .whatsAppFixes>a {
     display: none;
 }
-
-/* .whatsAppFixes {
-    height: inherit !important;
-    width: inherit !important;
-} */
 
 @media (max-width:767px) {
     .main__container__buttonWidget {
