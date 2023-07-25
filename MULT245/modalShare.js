@@ -110,6 +110,7 @@ function observarCambiosCheckAndRenderReact() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     checkAndRender(resultsListPage);
+                    console.log("cambios")
                 });
             });
         },
