@@ -4,7 +4,7 @@ function cambiarTextoBoton() {
         boton.textContent = "Ver opciones";
         boton.style.display = "inline-block";
     }else {
-        setTimeout(() => cambiarTextoBoton(nuevoTexto), 1000);
+        setTimeout(() => cambiarTextoBoton(), 1000);
     }
 }
 
