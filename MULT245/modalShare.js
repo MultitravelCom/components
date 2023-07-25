@@ -79,6 +79,7 @@ const BannerMensageCardApp = () => {
 };
 
 function checkAndRender(resultsListPage) {
+    console.log('checkAndRender ejecutándose...');
     const infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
 
     infoCardContents.forEach(infoCardContent => {
@@ -104,6 +105,7 @@ function observarCambiosCheckAndRenderReact() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: (summaries) => {
+            console.log('Cambios detectados en el DOM');
             // Obtener los elementos results-list__page afectados por los cambios
             const resultsListPages = summaries[0].added;
             resultsListPages.forEach(resultsListPage => {
