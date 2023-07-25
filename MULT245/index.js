@@ -1,6 +1,6 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
-}
+};
 
 async function removeImageLinks() {
     let images = document.querySelectorAll('.info-card__image-holder img');
@@ -9,7 +9,7 @@ async function removeImageLinks() {
             event.preventDefault();
         });
     });
-}
+};
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
@@ -28,7 +28,7 @@ async function cargarEstilosYModales() {
         await wait(100);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
-}
+};
 
 async function aplicarClaseRecomendada(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
@@ -64,7 +64,7 @@ async function agreeStarIcon(resultsListPage) {
 
         infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
     });
-}
+};
 
 async function changeCopyMap(resultsListPage) {
     let items = resultsListPage.querySelectorAll('.results-list__item');
@@ -76,7 +76,7 @@ async function changeCopyMap(resultsListPage) {
         mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
     });
-}
+};
 
 async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     const actionsContainer = resultsListPage.querySelector('.info-card__actions');
@@ -102,7 +102,7 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
         buttonsVerDetalle[i].textContent = 'Comprar';
     }
-}
+};
 
 async function changeCopyButton(resultsListPage) {
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
@@ -175,8 +175,7 @@ function removeClassResultInHotelResults() {
             hotelResult.classList.remove('result');
         }
     });
-}
-
+};
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -187,7 +186,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
-}
+};
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
@@ -209,7 +208,7 @@ function observarCambiosCheckAndRender() {
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
     });
-}
+};
 
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
