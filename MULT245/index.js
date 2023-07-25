@@ -221,9 +221,9 @@ function observarCambiosCheckAndRender() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     resultsListPage = document.querySelector('.results-list__page');
+    aplicarClaseRecomendada(resultsListPage);
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada(resultsListPage);
 });
