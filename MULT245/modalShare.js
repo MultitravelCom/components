@@ -80,7 +80,7 @@ const BannerMensageCardApp = () => {
 
 const checkAndRender = async (resultsListPage) => {
     console.log('checkAndRender ejecutándose...');
-    let infoCardContents = document.querySelectorAll('.info-card__content');
+    let infoCardContents = resultsListPage.document.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
         await new Promise(resolve => setTimeout(resolve, 1000));
