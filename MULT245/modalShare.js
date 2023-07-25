@@ -102,22 +102,19 @@ const checkAndRender = async (resultsListPage) => {
     });
 };
 
-function observarCambiosCheckAndRenderII() {
+function observarCambiosCheckAndRenderII(resultsListPage) {
     const observerConfig = {
-        rootNode: document.documentElement,
+        rootNode: resultsListPage,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    checkAndRender(resultsListPage);
-                });
+                checkAndRender(resultsListPage);
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-};
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
     const resultsListPages = document.querySelectorAll('.results-list__page');
