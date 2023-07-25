@@ -118,6 +118,7 @@ function observarCambiosCheckAndRenderReact() {
     };
 
     const observer = new MutationSummary(observerConfig);
+    observer.observe();
 };
 
 checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
