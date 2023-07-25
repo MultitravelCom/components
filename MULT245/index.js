@@ -51,7 +51,7 @@ async function aplicarClaseRecomendada(resultsListPage) {
             });
         }
     });
-}
+};
 
 async function agreeStarIcon(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
