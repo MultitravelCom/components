@@ -106,15 +106,14 @@ function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
+            checkAndRender(); // Llamar a checkAndRender al detectar cambios
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
 
-    checkAndRender();
+    checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
 
 observarCambiosCheckAndRender();
