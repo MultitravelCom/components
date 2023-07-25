@@ -120,7 +120,5 @@ function observarCambiosCheckAndRenderReact() {
     const observer = new MutationSummary(observerConfig);
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
-    observarCambiosCheckAndRenderReact(); // Observar cambios en el DOM
-});
+checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
+observarCambiosCheckAndRenderReact(); // Observar cambios en el DOM
