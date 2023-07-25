@@ -115,6 +115,7 @@ function observarCambiosCheckAndRender() {
     const observer = new MutationSummary(observerConfig);
 
     checkAndRender();
+    console.log("test")
 }
 
 observarCambiosCheckAndRender();
