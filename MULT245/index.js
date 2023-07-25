@@ -164,7 +164,7 @@ function aplicarEstiloSegunLongitud() {
   
       verificarElementos(); // Llamar a la función por primera vez
     }
-}
+  }
   
 
 function removeClassResultInHotelResults() {
@@ -194,6 +194,17 @@ function removeClassResultInHotelResults() {
     });
 }
 
+function aplicarModificaciones(resultsListPage) {
+    removeImageLinks(resultsListPage);
+    aplicarClaseRecomendada(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    changeCopyMap(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
+    changeCopyButton(resultsListPage);
+    aplicarEstiloSegunLongitud();
+    removeClassResultInHotelResults();
+}
+
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
@@ -216,21 +227,10 @@ function observarCambiosCheckAndRender() {
     });
 }
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
-}
-
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada();
+    aplicarClaseRecomendada(resultsListPage);
 });
