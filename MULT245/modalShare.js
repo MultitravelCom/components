@@ -102,7 +102,7 @@ const checkAndRender = async (resultsListPage) => {
     });
 };
 
-function observarCambiosCheckAndRender() {
+function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
@@ -123,6 +123,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         checkAndRender(resultsListPage); // Ejecutar checkAndRender para cada resultsListPage al inicio
-        observarCambiosCheckAndRender(resultsListPage); // Observar cambios en el DOM para cada resultsListPage
+        observarCambiosCheckAndRenderII(resultsListPage); // Observar cambios en el DOM para cada resultsListPage
     });
 });
