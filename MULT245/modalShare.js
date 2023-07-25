@@ -87,16 +87,16 @@ const checkAndRender = async () => {
     }
 
     infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = document.createElement('div');
+        const nuevoDivReact = document.createElement('div');
         const nuevoDivBannerMensage = document.createElement('div');
 
-        infoCardContent.appendChild(nuevoDiv);
+        infoCardContent.appendChild(nuevoDivReact);
         infoCardContent.appendChild(nuevoDivBannerMensage);
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
 
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
