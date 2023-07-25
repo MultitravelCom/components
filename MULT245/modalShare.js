@@ -135,8 +135,11 @@ function observarCambiosCheckAndRender() {
     const observer = new MutationObserver((mutationsList) => {
         mutationsList.forEach((mutation) => {
             if (mutation.type === 'childList') {
-                renderComponents(); // Llamar a renderComponents cuando se detecten cambios en el DOM
-                console.log('Cambios detectados en el DOM, llamando a renderComponents...');
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach((resultsListPage) => {
+                    renderComponents();
+                    console.log('Cambios detectados en el DOM, llamando a checkAndRender...');
+                });
             }
         });
     });
