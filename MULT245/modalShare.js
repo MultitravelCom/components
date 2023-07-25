@@ -120,11 +120,9 @@ function aplicarModificacionesII(resultsListPage) {
     checkAndRender(resultsListPage);
 };
 
-document.addEventListener('DOMContentLoaded', async function () {
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        checkAndRender();
-        observarCambiosCheckAndRenderII(resultsListPage);
-        aplicarModificacionesII(resultsListPage);
-    });
+const resultsListPages = document.querySelectorAll('.results-list__page');
+resultsListPages.forEach(resultsListPage => {
+    checkAndRender();
+    observarCambiosCheckAndRenderII(resultsListPage);
+    aplicarModificacionesII(resultsListPage);
 });
