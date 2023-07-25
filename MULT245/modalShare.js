@@ -80,42 +80,44 @@ const BannerMensageCardApp = () => {
 
 const checkAndRender = () => {
     const infoCardContents = document.querySelectorAll('.info-card__content');
-  
+
     if (infoCardContents.length === 0) {
-      // Si no se encuentran los elementos, se llama a la función de nuevo después de 1000ms
-      setTimeout(checkAndRender, 1000);
+        // Si no se encuentran los elementos, se llama a la función de nuevo después de 1000ms
+        setTimeout(checkAndRender, 1000);
     } else {
-      // Cuando se encuentran los elementos, se realiza la renderización
-      infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = document.createElement('div');
-        const nuevoDivBannerMensage = document.createElement('div');
-  
-        infoCardContent.appendChild(nuevoDiv);
-        infoCardContent.appendChild(nuevoDivBannerMensage);
-  
-        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-  
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
-      });
+        // Cuando se encuentran los elementos, se realiza la renderización
+        infoCardContents.forEach(infoCardContent => {
+            const nuevoDiv = document.createElement('div');
+            const nuevoDivBannerMensage = document.createElement('div');
+
+            infoCardContent.appendChild(nuevoDiv);
+            infoCardContent.appendChild(nuevoDivBannerMensage);
+
+            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+            ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+            ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
+        });
     }
-  };
+};
 checkAndRender();
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
+            requestAnimationFrame(() => {
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    checkAndRender();
+                    console.log('Observando cambios en el DOM...');
+                });
+            });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    checkAndRender();
-    console.log('Observando cambios en el DOM...');
 }
 
 observarCambiosCheckAndRender();
