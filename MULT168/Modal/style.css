@@ -455,6 +455,9 @@
     div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
         font-size: 29px;
     }
+    .whatsAppFixes>a {
+        display: block;
+    }
 }
 
 /* ***************** MULT-305 **************** */
