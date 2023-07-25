@@ -78,7 +78,7 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const checkAndRender = async () => {
+const checkAndRender = async (resultsListPage) => {
     console.log('checkAndRender ejecutándose...');
     let infoCardContents = document.querySelectorAll('.info-card__content');
 
@@ -120,6 +120,9 @@ function observarCambiosCheckAndRender() {
 };
 
 document.addEventListener('DOMContentLoaded', async function () {
-    checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
-    observarCambiosCheckAndRender(); // Observar cambios en el DOM
+    const resultsListPages = document.querySelectorAll('.results-list__page');
+    resultsListPages.forEach(resultsListPage => {
+        checkAndRender(resultsListPage); // Ejecutar checkAndRender para cada resultsListPage al inicio
+        observarCambiosCheckAndRender(resultsListPage); // Observar cambios en el DOM para cada resultsListPage
+    });
 });
