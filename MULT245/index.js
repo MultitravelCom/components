@@ -11,24 +11,24 @@ async function removeImageLinks() {
     });
 }
 
-async function cargarEstilosYModales() {
-    const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
-    const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
+// async function cargarEstilosYModales() {
+//     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
+//     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
 
-    // Forzar la recarga del archivo CSS
-    if (link) {
-        link.href = '';
-        await wait(1000);
-        link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
-    }
+//     // Forzar la recarga del archivo CSS
+//     if (link) {
+//         link.href = '';
+//         await wait(1000);
+//         link.href = 'https://multitravelcom.github.io/components/MULT245/style.css';
+//     }
 
-    // Forzar la recarga del script de los modales de React
-    if (scriptReact) {
-        scriptReact.src = '';
-        await wait(100);
-        scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
-    }
-}
+//     // Forzar la recarga del script de los modales de React
+//     if (scriptReact) {
+//         scriptReact.src = '';
+//         await wait(100);
+//         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
+//     }
+// }
 
 async function aplicarClaseRecomendada(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
@@ -166,7 +166,6 @@ function aplicarEstiloSegunLongitud() {
     }
   }
   
-
 function removeClassResultInHotelResults() {
     // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
     const isMobile = window.innerWidth <= 768;
@@ -194,16 +193,6 @@ function removeClassResultInHotelResults() {
     });
 }
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
-}
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
@@ -218,19 +207,25 @@ function observarCambiosCheckAndRender() {
         },
         queries: [{ element: '.results-list__page' }],
     };
-
+    
     const observer = new MutationSummary(observerConfig);
-
+    
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
     });
 }
+function aplicarModificaciones(resultsListPage) {
+    removeImageLinks(resultsListPage);
+    aplicarClaseRecomendada(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    changeCopyMap(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
+    changeCopyButton(resultsListPage);
+    aplicarEstiloSegunLongitud();
+    removeClassResultInHotelResults();
+}
 
 document.addEventListener('DOMContentLoaded', async function () {
-    removeClassResultInHotelResults();
-    observarCambiosCheckAndRender();
-    cargarEstilosYModales();
-    aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada(resultsListPage);
+    aplicarModificaciones(resultsListPage);
 });
