@@ -100,5 +100,21 @@ const checkAndRender = async () => {
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
-
 checkAndRender();
+
+function observarCambiosCheckAndRender() {
+    const observerConfig = {
+        rootNode: document.documentElement,
+        callback: () => {
+
+            requestAnimationFrame(checkAndRender);
+        },
+        queries: [{ element: '.results-list__page' }],
+    };
+
+    const observer = new MutationSummary(observerConfig);
+
+    checkAndRender();
+}
+
+observarCambiosCheckAndRender();
