@@ -201,11 +201,6 @@
   display: inline-block;
 }
 
-/* .hotel-result {
-  background: transparent;
-  border: 1px solid #cbcbcb;
-} */
-
 @media (max-width: 767px) {
   .share__icon {
     width: 40px;
@@ -334,6 +329,8 @@
 
   .hotel-result {
     height: 500px;
+    background: transparent;
+    border: 1px solid #cbcbcb;
   }
 
 }
