@@ -207,12 +207,16 @@ function aplicarModificaciones(resultsListPage) {
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    removeImageLinks();
-    aplicarClaseRecomendada();
-    agreeStarIcon();
-    changeCopyMap();
-    applyDisplayNoneToAllButLastButton();
-    changeCopyButton();
-    aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
+    const resultsListPage = document.querySelector('.results-list__page');
+
+    if (resultsListPage) {
+        removeImageLinks(resultsListPage);
+        aplicarClaseRecomendada(resultsListPage);
+        agreeStarIcon(resultsListPage);
+        changeCopyMap(resultsListPage);
+        applyDisplayNoneToAllButLastButton(resultsListPage);
+        changeCopyButton(resultsListPage);
+        aplicarEstiloSegunLongitud();
+        removeClassResultInHotelResults();
+    }
 });
