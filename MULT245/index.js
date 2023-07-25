@@ -200,8 +200,8 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
+    aplicarEstiloSegunLongitud(resultsListPage);
+    removeClassResultInHotelResults(resultsListPage);
     
 }
 
@@ -223,12 +223,12 @@ function observarCambiosCheckAndRender() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     resultsListPage = document.querySelector('.results-list__page');
-    aplicarClaseRecomendada();
-    removeClassResultInHotelResults();
-    observarCambiosCheckAndRender();
-    cargarEstilosYModales();
-    aplicarEstiloSegunLongitud();
-    changeCopyMap();
-    agreeStarIcon();
-    applyDisplayNoneToAllButLastButton();
+    aplicarClaseRecomendada(resultsListPage);
+    removeClassResultInHotelResults(resultsListPage);
+    observarCambiosCheckAndRender(resultsListPage);
+    cargarEstilosYModales(resultsListPage);
+    aplicarEstiloSegunLongitud(resultsListPage);
+    changeCopyMap(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
 });
