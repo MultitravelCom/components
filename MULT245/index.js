@@ -73,10 +73,9 @@ async function changeCopyMap(resultsListPage) {
     items.forEach(item => {
         let mapLink = item.querySelector('.map-link');
         let locationIcon = mapLink.querySelector('.info-card__location-icon');
-        
+
 
         mapLink.lastChild.textContent = 'Ver Mapa';
-        mapLink.classList.add("result");
         mapLink.style.display = 'block';
     });
 };
