@@ -209,6 +209,8 @@ function changeDescriptionElementFunctions() {
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("window.location.href ------->>>>> ", window.location.href)
+  console.log("-> My URL: ", 'https://multitravel.com/flights/results.aspx')
+  console.log("CONTAINS? : ", (window.location.href).toLocaleLowerCase().includes('https://multitravel.com/flights/results.aspx'));
   if (decodeURIComponent(window.location.href).includes('https://multitravel.com/flights/results.aspx')) {
     // Your script code here https://www.multitravel.com/flights/results.aspx?searchSessionID=2093016#?discount=0
     console.log('Script is running on the specific page.');
