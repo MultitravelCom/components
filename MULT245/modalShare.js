@@ -118,13 +118,9 @@ function observarCambiosCheckAndRenderReact() {
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        checkAndRender(resultsListPage);
-    });
 };
 
-checkAndRender();
-
-observarCambiosCheckAndRenderReact();
+document.addEventListener('DOMContentLoaded', () => {
+    checkAndRender(); // Ejecutar checkAndRender una vez en el DOMContentLoaded
+    observarCambiosCheckAndRenderReact(); // Observar cambios en el DOM
+});
