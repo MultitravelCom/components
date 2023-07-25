@@ -1,5 +1,3 @@
-let resultsListPage;
-
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
@@ -211,21 +209,14 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    aplicarModificaciones(resultsListPage);
-                });
+                const resultsListPage = document.querySelector('.results-list__page');
+                aplicarModificaciones(resultsListPage);
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        aplicarModificaciones(resultsListPage);
-    });
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
