@@ -459,7 +459,7 @@
         display: block;
     }
     .whatsAppFixes{
-        margin-right: inherit;
+        right: 0;
     }
 }
 
