@@ -137,34 +137,35 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
-
+  
     if (isMobile) {
-        const verificarElementos = () => {
-            const resultsListPage = document.querySelector('.results-list__page');
-            const items = document.querySelectorAll('.results-list__item');
-
-            if (resultsListPage && items.length >= 2) {
-                items.forEach(function (item) {
-                    const elemento = item.querySelector('.info-card__price');
-                    if (elemento) {
-                        const longitud = elemento.textContent.trim();
-                        const numerosDecimales = longitud.match(/\d+/g).join('');
-                        const cantidadPuntos = longitud.split('.').length - 1;
-
-                        if (cantidadPuntos >= 2) {
-                            elemento.style.left = '14px';
-                        }
-                    }
-                });
-            } else {
-                // Si los elementos no están presentes, llamar a la función recursivamente después de un breve tiempo
-                setTimeout(verificarElementos, 100);
+      const verificarElementos = () => {
+        const resultsListPage = document.querySelector('.results-list__page');
+        const items = document.querySelectorAll('.results-list__item');
+  
+        if (resultsListPage && items.length >= 2) {
+          items.forEach(function (item) {
+            const elemento = item.querySelector('.info-card__price');
+            if (elemento) {
+              const longitud = elemento.textContent.trim();
+              const numerosDecimales = longitud.match(/\d+/g).join('');
+              const cantidadPuntos = longitud.split('.').length - 1;
+  
+              if (cantidadPuntos >= 2) {
+                elemento.style.left = '14px';
+              }
             }
-        };
-
-        verificarElementos(); // Llamar a la función por primera vez
+          });
+        } else {
+          // Si los elementos no están presentes, llamar a la función recursivamente después de un breve tiempo
+          setTimeout(verificarElementos, 100);
+        }
+      };
+  
+      verificarElementos(); // Llamar a la función por primera vez
     }
-}
+  }
+  
 
 function removeClassResultInHotelResults() {
     // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
@@ -200,9 +201,8 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    aplicarEstiloSegunLongitud(resultsListPage);
-    removeClassResultInHotelResults(resultsListPage);
-    
+    aplicarEstiloSegunLongitud();
+    removeClassResultInHotelResults();
 }
 
 function observarCambiosCheckAndRender() {
@@ -210,25 +210,27 @@ function observarCambiosCheckAndRender() {
         rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPage = document.querySelector('.results-list__page');
-                aplicarModificaciones(resultsListPage);
-                checkAndRender();
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    aplicarModificaciones(resultsListPage);
+                });
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
+
+    const resultsListPages = document.querySelectorAll('.results-list__page');
+    resultsListPages.forEach(resultsListPage => {
+        aplicarModificaciones(resultsListPage);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
-    resultsListPage = document.querySelector('.results-list__page');
+    removeClassResultInHotelResults();
+    observarCambiosCheckAndRender();
+    cargarEstilosYModales();
+    aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada(resultsListPage);
-    removeClassResultInHotelResults(resultsListPage);
-    observarCambiosCheckAndRender(resultsListPage);
-    cargarEstilosYModales(resultsListPage);
-    aplicarEstiloSegunLongitud(resultsListPage);
-    changeCopyMap(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
 });
