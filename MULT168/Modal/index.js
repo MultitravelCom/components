@@ -1,13 +1,3 @@
-const BotonWidgetFixe = () => {
-    return (
-        <>
-            <div className="main__container__botonWidgetFixe">
-                <button className="main__container__botonWidgetFixe__button">Atención personalizada</button>
-            </div>
-        </>
-    )
-}
-
 function addHideDuplicateButtonLogic() {
     const targetElementUser = document.querySelector('#main-menu-features');
 
@@ -73,9 +63,6 @@ function ButtonModalLink(props) {
 }
 
 const ButtonWidget = () => {
-    // if (window.innerWidth <= 768) {
-    //     return null;
-    // }
     return (
         <div className="main__container__buttonWidget">
             <div className="glyphicon glyphicon-agent agentWidget"></div>
