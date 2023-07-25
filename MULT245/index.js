@@ -223,12 +223,12 @@ function observarCambiosCheckAndRender() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     resultsListPage = document.querySelector('.results-list__page');
-    aplicarClaseRecomendada(resultsListPage);
+    aplicarClaseRecomendada();
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    changeCopyMap(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
+    changeCopyMap();
+    agreeStarIcon();
+    applyDisplayNoneToAllButLastButton();
 });
