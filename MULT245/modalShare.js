@@ -78,73 +78,43 @@ const BannerMensageCardApp = () => {
     );
 };
 
-function renderComponents() {
-    console.log('Rendering components...');
-    const infoCardContents = document.querySelectorAll('.info-card__content');
+const checkAndRender = async () => {
+    let infoCardContents = document.querySelectorAll('.info-card__content');
 
-    if (infoCardContents.length === 0) {
-        // Si no se encuentran los elementos, se llama a la función de nuevo después de 1000ms
-        setTimeout(renderComponents, 1000);
-    } else {
-        // Cuando se encuentran los elementos, se realiza la renderización
-        infoCardContents.forEach(infoCardContent => {
-            const nuevoDiv = document.createElement('div');
-            const nuevoDivBannerMensage = document.createElement('div');
-
-            infoCardContent.appendChild(nuevoDiv);
-            infoCardContent.appendChild(nuevoDivBannerMensage);
-
-            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-
-            ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
-            ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
-        });
+    while (infoCardContents.length === 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        infoCardContents = document.querySelectorAll('.info-card__content');
     }
-}
 
-function checkAndRender() {
-    renderComponents();
-}
+    infoCardContents.forEach(infoCardContent => {
+        const nuevoDiv = document.createElement('div');
+        const nuevoDivBannerMensage = document.createElement('div');
 
-// function observarCambiosCheckAndRender() {
-//     const observerConfig = {
-//         rootNode: document.documentElement,
-//         callback: () => {
-//             requestAnimationFrame(() => {
-//                 const resultsListPages = document.querySelectorAll('.results-list__page');
-//                 resultsListPages.forEach(resultsListPage => {
-//                     checkAndRender();
-//                     console.log('Observando cambios en el DOM...');
-//                 });
-//             });
-//         },
-//         queries: [{ element: '.results-list__page' }],
-//     };
+        infoCardContent.appendChild(nuevoDiv);
+        infoCardContent.appendChild(nuevoDivBannerMensage);
 
-//     const observer = new MutationSummary(observerConfig);
-// }
+        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
+    });
+};
+checkAndRender();
 
 function observarCambiosCheckAndRender() {
-    console.log('Observando cambios en el DOM...');
-
     const observerConfig = {
-        childList: true, // Observar cambios en los hijos del elemento
-        subtree: true, // Observar cambios en todos los niveles del árbol descendiente
+        rootNode: document.documentElement,
+        callback: () => {
+
+            requestAnimationFrame(checkAndRender);
+        },
+        queries: [{ element: '.results-list__page' }],
     };
 
-    const observer = new MutationObserver((mutationsList) => {
-        mutationsList.forEach((mutation) => {
-            if (mutation.type === 'childList') {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach((resultsListPage) => {
-                    renderComponents();
-                    console.log('Cambios detectados en el DOM, llamando a checkAndRender...');
-                });
-            }
-        });
-    });
+    const observer = new MutationSummary(observerConfig);
 
-    observer.observe(document.documentElement, observerConfig);
+    checkAndRender();
 }
 
 observarCambiosCheckAndRender();
