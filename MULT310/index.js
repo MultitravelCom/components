@@ -208,13 +208,7 @@ function changeDescriptionElementFunctions() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("window.location.href ------->>>>> ", window.location.href)
-  if (window.location.href.includes('https://onefiveb2b.juniperbetemp.com/flights/results.aspx')) {
-    // Your script code here
-    console.log('Script is running on the specific page.');
-    
-    // Add your script code here, for example:
-    // document.getElementById('someElement').classList.add('active');
+  if (window.location.href.includes('https://multitravel.com/flights/results.aspx')) {
     const observer = new MutationObserver(onDivAdded);
     const observerConfig = { childList: true, subtree: true };
     observer.observe(document.documentElement, observerConfig);
