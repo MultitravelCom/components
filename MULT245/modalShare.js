@@ -102,24 +102,34 @@ const checkAndRender = async (resultsListPage) => {
     });
 };
 
-function observarCambiosCheckAndRenderII(resultsListPage) {
+function observarCambiosCheckAndRenderII() {
     const observerConfig = {
-        rootNode: resultsListPage,
+        rootNode: document.documentElement,
         callback: () => {
             requestAnimationFrame(() => {
-                checkAndRender(resultsListPage);
+                const resultsListPages = document.querySelectorAll('.results-list__page');
+                resultsListPages.forEach(resultsListPage => {
+                    aplicarModificacionesII(resultsListPage);
+                });
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-}
 
-document.addEventListener('DOMContentLoaded', async function () {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
-        checkAndRender(resultsListPage); // Ejecutar checkAndRender para cada resultsListPage al inicio
-        observarCambiosCheckAndRenderII(resultsListPage); // Observar cambios en el DOM para cada resultsListPage
+        aplicarModificacionesII(resultsListPage);
     });
+};
+
+function aplicarModificacionesII(resultsListPage) {
+    checkAndRender(resultsListPage);
+    observarCambiosCheckAndRenderII(resultsListPage);
+};
+
+document.addEventListener('DOMContentLoaded', async function () {
+    checkAndRender();
+    observarCambiosCheckAndRenderII();
 });
