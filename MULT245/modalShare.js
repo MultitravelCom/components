@@ -79,6 +79,7 @@ const BannerMensageCardApp = () => {
 };
 
 const checkAndRender = async () => {
+    console.log("checkAndRender...")
     let infoCardContents = document.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
@@ -102,10 +103,11 @@ const checkAndRender = async () => {
 };
 checkAndRender();
 
-function observarCambiosCheckAndRender() {
+function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
+            console.log("observarCambiosCheckAndRender")
             checkAndRender(); // Llamar a checkAndRender al detectar cambios
         },
         queries: [{ element: '.results-list__page' }],
@@ -116,4 +118,4 @@ function observarCambiosCheckAndRender() {
     checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
 
-observarCambiosCheckAndRender();
+observarCambiosCheckAndRenderII();
