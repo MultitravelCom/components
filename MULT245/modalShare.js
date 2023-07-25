@@ -80,11 +80,11 @@ const BannerMensageCardApp = () => {
 
 const checkAndRender = async (resultsListPage) => {
     console.log('checkAndRender ejecutándose...');
-    let infoCardContents = resultsListPage.document.querySelectorAll('.info-card__content');
+    let infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = document.querySelectorAll('.info-card__content');
+        infoCardContents = resultsListPage.querySelectorAll('.info-card__content');
     }
 
     infoCardContents.forEach(infoCardContent => {
@@ -96,32 +96,23 @@ const checkAndRender = async (resultsListPage) => {
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
-
         ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
 
-function observarCambiosCheckAndRenderII() {
+function observarCambiosCheckAndRenderII(resultsListPage) {
     const observerConfig = {
-        rootNode: document.documentElement,
+        rootNode: resultsListPage,
         callback: () => {
             requestAnimationFrame(() => {
-                const resultsListPages = document.querySelectorAll('.results-list__page');
-                resultsListPages.forEach(resultsListPage => {
-                    aplicarModificacionesII(resultsListPage);
-                });
+                aplicarModificacionesII(resultsListPage);
             });
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
-
-    const resultsListPages = document.querySelectorAll('.results-list__page');
-    resultsListPages.forEach(resultsListPage => {
-        aplicarModificacionesII(resultsListPage);
-    });
 };
 
 function aplicarModificacionesII(resultsListPage) {
@@ -129,5 +120,9 @@ function aplicarModificacionesII(resultsListPage) {
     observarCambiosCheckAndRenderII(resultsListPage);
 };
 
-checkAndRender();
-observarCambiosCheckAndRenderII();
+document.addEventListener('DOMContentLoaded', async function () {
+    const resultsListPages = document.querySelectorAll('.results-list__page');
+    resultsListPages.forEach(resultsListPage => {
+        aplicarModificacionesII(resultsListPage);
+    });
+});
