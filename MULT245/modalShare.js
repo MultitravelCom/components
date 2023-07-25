@@ -101,20 +101,4 @@ const checkAndRender = async () => {
     });
 };
 
-// function observarCambiosCheckAndRender() {
-//     const observerConfig = {
-//         rootNode: document.documentElement,
-//         callback: () => {
-//             console.log("cambios!");
-//             requestAnimationFrame(() => {
-//                 checkAndRender();
-//             });
-//         },
-//         queries: [{ element: '.results-list__page' }],
-//     };
-
-//     const observer = new MutationSummary(observerConfig);
-// }
-
-// observarCambiosCheckAndRender();
 checkAndRender();
