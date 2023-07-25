@@ -202,6 +202,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
+    checkAndRender();
 }
 
 function observarCambiosCheckAndRender() {
