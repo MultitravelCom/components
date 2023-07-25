@@ -217,10 +217,11 @@ function observarCambiosCheckAndRender() {
     });
 };
 
+
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada(resultsListPage);
+    aplicarClaseRecomendada();
 });
