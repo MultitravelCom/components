@@ -77,8 +77,51 @@ async function changeCopyMap(resultsListPage) {
 
         mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
+
+        mapLink.addEventListener("click", mostrarMapa);
     });
 };
+
+function mostrarMapa() {
+    var e = l.options.searchInfo && l.options.searchInfo.destination && l.options.searchInfo.destination.name,
+        t = $(this).closest(".result"),
+        s = t.data("uid"),
+        i = t.find(".result__map-placeholder"),
+        o = i.find(".result__map-selectzone"),
+        a = i.find("select[name=map-poi]"),
+        n = i.find(".js-how-to-arrive-origin-position");
+
+    var r = i.find(".result__map");
+    r.hasClass(".result__map-loaded") ? (i.slideToggle(), r.removeClass(".result__map-loaded"), r.removeClass(".result__streetview-loaded")) : $jbe.loadGmapsAPI().then((function () {
+        var e = {
+            lat: l.cache.items[s].hotel.latitude,
+            lng: l.cache.items[s].hotel.longitude
+        };
+        if (e.lat && e.lng) {
+            i.slideToggle({
+                complete: function () {
+                    google.maps.event.trigger(t, "resize");
+                    t.setCenter(e);
+                }
+            });
+            var t = new google.maps.Map(r.get(0), {
+                center: e,
+                zoom: 14,
+                styles: $jbe.arrayStyleOnMap
+            });
+            new google.maps.Marker({
+                position: e,
+                title: l.cache.items[s].hotel.name,
+                map: t,
+                icon: {
+                    url: "/img/general/markers/marker_hole.png",
+                    anchor: new google.maps.Point(11, 25)
+                }
+            });
+            r.addClass(".result__map-loaded");
+        }
+    }));
+}
 
 async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     const actionsContainer = resultsListPage.querySelector('.info-card__actions');
