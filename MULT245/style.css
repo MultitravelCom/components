@@ -340,3 +340,30 @@
     width: 260px;
   }
 }
+
+/* Galery picture */
+
+.carousel-inner>.item {
+  overflow: hidden;
+  text-align: center;
+  width: 595px;
+  height: 656px;
+  border-radius: 1rem;
+  margin: auto;
+}
+.modal-open .modal-gallery .gallery {
+  background: transparent !important;
+}
+.gallery__control.carousel-control .glyphicon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #FFFFFF;
+  font-size: 43px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
