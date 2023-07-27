@@ -59,15 +59,15 @@ mostrarSeccion();
 
 // ************************ Modificacion delinks WA **************************
 
-function changeWaLink() {
-    const linkWaHeader = document.querySelector('.btn-group.upper-menu__phone-wrapper a');
-    const linkWaFixed = document.querySelector('.whatsAppFixes a');
-    const linkWaHeaderMobile = document.querySelector('.btn.upper-menu__phone-wrapper.features_item a');
-    linkWaHeader.href = 'https://wa.link/0tl29b';
-    linkWaFixed.href = 'https://wa.link/0tl29b';
-    linkWaHeaderMobile.href = 'https://wa.link/0tl29b';
-}
-changeWaLink();
+// function changeWaLink() {
+//     const linkWaHeader = document.querySelector('.btn-group.upper-menu__phone-wrapper a');
+//     const linkWaFixed = document.querySelector('.whatsAppFixes a');
+//     const linkWaHeaderMobile = document.querySelector('.btn.upper-menu__phone-wrapper.features_item a');
+//     linkWaHeader.href = 'https://wa.link/0tl29b';
+//     linkWaFixed.href = 'https://wa.link/0tl29b';
+//     linkWaHeaderMobile.href = 'https://wa.link/0tl29b';
+// }
+// changeWaLink();
 
 // ***************************  Conexion a BD ***************************************
 const fetchDestinos = async () => {

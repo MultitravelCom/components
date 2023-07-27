@@ -4,7 +4,7 @@ function cambiarTextoBoton() {
         boton.textContent = "Ver opciones";
         boton.style.display = "inline-block";
     }else {
-        setTimeout(() => cambiarTextoYMostrarBotonRecursivo(nuevoTexto), 1000);
+        setTimeout(() => cambiarTextoBoton(), 1000);
     }
 }
 
@@ -26,7 +26,7 @@ const CompartirAlojamientoResult = () => {
     )
 }
 
-const checkAndRender = async () => {
+const checkAndRenderResult = async () => {
     let infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
 
     while (infoCardContents.length === 0) {
@@ -35,13 +35,13 @@ const checkAndRender = async () => {
     }
 
     infoCardContents.forEach(infoCardContent => {
-        const nuevoDiv = document.createElement('div');
-        infoCardContent.appendChild(nuevoDiv);
+        const nuevoDivResult = document.createElement('div');
+        infoCardContent.appendChild(nuevoDivResult);
 
 
-        ReactDOM.render(<CompartirAlojamientoResult />, nuevoDiv);
+        ReactDOM.render(<CompartirAlojamientoResult />, nuevoDivResult);
 
     });
 };
 cambiarTextoBoton();
-checkAndRender();
+checkAndRenderResult();

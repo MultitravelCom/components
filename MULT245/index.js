@@ -1,6 +1,6 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
-}
+};
 
 async function removeImageLinks() {
     let images = document.querySelectorAll('.info-card__image-holder img');
@@ -9,7 +9,7 @@ async function removeImageLinks() {
             event.preventDefault();
         });
     });
-}
+};
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
@@ -28,9 +28,10 @@ async function cargarEstilosYModales() {
         await wait(100);
         scriptReact.src = 'https://multitravelcom.github.io/components/MULT245/modalShare.js';
     }
-}
+};
 
-async function aplicarClaseRecomendada(resultsListPage) {
+async function aplicarClaseRecomendada() {
+    const resultsListPage = document.querySelector('.results-list__page');
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
@@ -51,7 +52,7 @@ async function aplicarClaseRecomendada(resultsListPage) {
             });
         }
     });
-}
+};
 
 async function agreeStarIcon(resultsListPage) {
     const items = resultsListPage.querySelectorAll('.results-list__item');
@@ -64,7 +65,7 @@ async function agreeStarIcon(resultsListPage) {
 
         infoCardCategory.insertBefore(newSpaninfoCardCategory, infoCardCategory.firstChild);
     });
-}
+};
 
 async function changeCopyMap(resultsListPage) {
     let items = resultsListPage.querySelectorAll('.results-list__item');
@@ -73,10 +74,12 @@ async function changeCopyMap(resultsListPage) {
         let mapLink = item.querySelector('.map-link');
         let locationIcon = mapLink.querySelector('.info-card__location-icon');
 
+
         mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
+
     });
-}
+};
 
 async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     const actionsContainer = resultsListPage.querySelector('.info-card__actions');
@@ -102,7 +105,7 @@ async function applyDisplayNoneToAllButLastButton(resultsListPage) {
     for (let i = 0; i < buttonsVerDetalle.length; i++) {
         buttonsVerDetalle[i].textContent = 'Comprar';
     }
-}
+};
 
 async function changeCopyButton(resultsListPage) {
     const itemsButtonComprar = resultsListPage.querySelectorAll('.results-list__item');
@@ -137,52 +140,42 @@ async function changeCopyButton(resultsListPage) {
 
 function aplicarEstiloSegunLongitud() {
     const isMobile = window.innerWidth <= 768;
-  
+
     if (isMobile) {
-      const verificarElementos = () => {
         const resultsListPage = document.querySelector('.results-list__page');
-        const items = document.querySelectorAll('.results-list__item');
-  
-        if (resultsListPage && items.length >= 2) {
-          items.forEach(function (item) {
+        const items = resultsListPage.querySelectorAll('.results-list__item');
+
+        items.forEach(function (item) {
             const elemento = item.querySelector('.info-card__price');
             if (elemento) {
-              const longitud = elemento.textContent.trim();
-              const numerosDecimales = longitud.match(/\d+/g).join('');
-              const cantidadPuntos = longitud.split('.').length - 1;
-  
-              if (cantidadPuntos >= 2) {
-                elemento.style.left = '14px';
-              }
-            }
-          });
-        } else {
-          // Si los elementos no están presentes, llamar a la función recursivamente después de un breve tiempo
-          setTimeout(verificarElementos, 100);
-        }
-      };
-  
-      verificarElementos(); // Llamar a la función por primera vez
-    }
-  }
-  
+                const longitud = elemento.textContent.trim();
+                const numerosDecimales = longitud.match(/\d+/g).join('');
+                const cantidadPuntos = longitud.split('.').length - 1;
 
+                if (cantidadPuntos >= 2) {
+                    elemento.style.left = '14px';
+                }
+            }
+        });
+    }
+};
 function removeClassResultInHotelResults() {
-    // Verificar si el ancho de la ventana es menor o igual a 768 (ajusta este valor según tus necesidades)
+
     const isMobile = window.innerWidth <= 768;
 
-    // Si no estamos en la versión móvil, salimos de la función y no hacemos nada
     if (!isMobile) {
         return;
     }
 
     const resultsPage = document.querySelector('.results-list__page');
     if (!resultsPage) {
+        console.error('No se encontró el elemento con la clase "results-list__page".');
         return;
     }
 
     const items = resultsPage.querySelectorAll('.results-list__item');
     if (items.length === 0) {
+        console.warn('No se encontraron elementos con la clase "results-list__item" dentro de "results-list__page".');
         return;
     }
 
@@ -192,7 +185,7 @@ function removeClassResultInHotelResults() {
             hotelResult.classList.remove('result');
         }
     });
-}
+};
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -203,7 +196,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
-}
+};
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
@@ -225,12 +218,13 @@ function observarCambiosCheckAndRender() {
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
     });
-}
+};
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada(resultsListPage);
+    aplicarClaseRecomendada();
 });

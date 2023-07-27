@@ -79,6 +79,7 @@ const BannerMensageCardApp = () => {
 };
 
 const checkAndRender = async () => {
+
     let infoCardContents = document.querySelectorAll('.info-card__content');
 
     while (infoCardContents.length === 0) {
@@ -102,33 +103,33 @@ const checkAndRender = async () => {
         
 
         const nuevoDiv = document.createElement('div');
+        const nuevoDivReact = document.createElement('div');
         const nuevoDivBannerMensage = document.createElement('div');
 
-        infoCardContent.appendChild(nuevoDiv);
+        infoCardContent.appendChild(nuevoDivReact);
         infoCardContent.appendChild(nuevoDivBannerMensage);
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
 
-        ReactDOM.render(<CompartirAlojamiento />, nuevoDiv);
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
 };
 checkAndRender();
 
-function observarCambiosCheckAndRender() {
+function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-
-            requestAnimationFrame(checkAndRender);
+            checkAndRender(); // Llamar a checkAndRender al detectar cambios
         },
         queries: [{ element: '.results-list__page' }],
     };
 
     const observer = new MutationSummary(observerConfig);
 
-    checkAndRender();
+    checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
 
-observarCambiosCheckAndRender();
+observarCambiosCheckAndRenderII();

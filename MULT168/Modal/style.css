@@ -439,7 +439,7 @@
     background-color: #283747;
 }
 .whatsAppFixes{
-    margin-right: 175px !important;
+    right: 140px;
 }
 
 .whatsAppFixes>a {
@@ -448,12 +448,18 @@
 
 @media (max-width:767px) {
     .main__container__buttonWidget {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     div.whatsAppFixes>div>div.glyphicon.glyphicon-agent.agentWidget {
         font-size: 29px;
+    }
+    .whatsAppFixes>a {
+        display: block;
+    }
+    .whatsAppFixes{
+        right: 0;
     }
 }
 
