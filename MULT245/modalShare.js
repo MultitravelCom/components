@@ -88,6 +88,21 @@ const checkAndRender = async () => {
     }
 
     infoCardContents.forEach(infoCardContent => {
+        /*
+        Change property of a element so it opens another tab and doesnt redirect
+        */
+        const absLink = infoCardContent.querySelector('a.abs');
+
+        // Check if the element exists before modifying it
+        if (absLink) {
+            // Add the target="_blank" attribute to the anchor element
+            absLink.setAttribute('target', '_blank');
+            
+        }
+
+        
+
+        const nuevoDiv = document.createElement('div');
         const nuevoDivReact = document.createElement('div');
         const nuevoDivBannerMensage = document.createElement('div');
 
