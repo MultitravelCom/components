@@ -220,7 +220,7 @@ function observarCambiosCheckAndRender() {
 
 
 document.addEventListener('DOMContentLoaded', async function () {
-    removeClassResultInHotelResults();
+    // removeClassResultInHotelResults();
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
