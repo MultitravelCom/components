@@ -193,7 +193,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
+    // removeClassResultInHotelResults();
 };
 
 function observarCambiosCheckAndRender() {
