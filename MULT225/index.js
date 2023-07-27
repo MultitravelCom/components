@@ -458,5 +458,4 @@ function App() {
     );
 }
 
-const targetDivDesktop = document.querySelector('#rootSeccion');
-ReactDOM.render(<App />, targetDivDesktop);
+ReactDOM.createRoot(document.getElementById('rootSeccion')).render(<App />);
