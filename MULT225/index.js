@@ -1,6 +1,6 @@
 function ButtonTresSecciones(props) {
     const [buttonText, setButtonText] = React.useState(props.text);
-    const clickInProgressRef = useRef(false);
+    const clickInProgressRef = React.useRef(false);
 
     const handleClickTresSecciones = (event) => {
         event.preventDefault();
