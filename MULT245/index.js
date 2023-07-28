@@ -180,15 +180,16 @@ function removeClassResultInHotelResults() {
         if (hotelResult) {
             const resultElement = hotelResult.querySelector('.result');
             if (resultElement) {
-                hotelResult.classList.remove('result');
+                hotelResult.removeChild(resultElement); // Elimina el elemento con la clase .result del hotelResult
                 const infoCardCategory = item.querySelector('.info-card__category');
                 if (infoCardCategory) {
-                    infoCardCategory.appendChild(resultElement);
+                    infoCardCategory.appendChild(resultElement); // Agrega el elemento .result dentro del div con la clase .info-card__category
                 }
             }
         }
     });
 };
+
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -222,7 +223,6 @@ function observarCambiosCheckAndRender() {
         aplicarModificaciones(resultsListPage);
     });
 };
-
 
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
