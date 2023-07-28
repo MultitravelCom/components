@@ -197,6 +197,7 @@ function Boxs({
     boxs_pagos_img,
     boxs_pagos_img_mobile,
     btn_position,
+    boxs_button_link,
 
 }) {
     return (
@@ -224,7 +225,7 @@ function Boxs({
             </div>
             <Button
                 style={`btn btnStylePagos ${btn_position}`}
-                link="https://www.multitravel.com/venta-personalizada/argentina"
+                link={boxs_button_link}
                 text="Descubrir"
             />
         </div>
@@ -242,6 +243,7 @@ function Pagos() {
                 boxs_pagos_img="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Desktop.png"
                 boxs_pagos_img_mobile="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Mobile.png"
                 text_position="text_position__left"
+                boxs_button_link= "https://www.multitravel.com/medios-de-pago"
             />
             <Boxs
                 text_h2_pagos="Quienes somos"
@@ -251,6 +253,7 @@ function Pagos() {
                 boxs_pagos_img="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Desktop2.png"
                 boxs_pagos_img_mobile="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Mobile2.png"
                 text_position="text_position__right"
+                boxs_button_link= "https://www.multitravel.com/quienes-somos"
             />
         </div>
     );

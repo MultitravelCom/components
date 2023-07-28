@@ -169,13 +169,11 @@ function removeClassResultInHotelResults() {
 
     const resultsPage = document.querySelector('.results-list__page');
     if (!resultsPage) {
-        console.error('No se encontró el elemento con la clase "results-list__page".');
         return;
     }
 
     const items = resultsPage.querySelectorAll('.results-list__item');
     if (items.length === 0) {
-        console.warn('No se encontraron elementos con la clase "results-list__item" dentro de "results-list__page".');
         return;
     }
 
@@ -183,6 +181,32 @@ function removeClassResultInHotelResults() {
         const hotelResult = item.querySelector('.result.hotel-result');
         if (hotelResult) {
             hotelResult.classList.remove('result');
+        }
+    });
+};
+
+function agregarClassResultInHotelResults() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        return;
+    }
+
+    const resultsPage = document.querySelector('.results-list__page');
+    if (!resultsPage) {
+        return;
+    }
+
+    const items = resultsPage.querySelectorAll('.results-list__item');
+    if (items.length === 0) {
+        return;
+    }
+
+    items.forEach(item => {
+        const startResult = item.querySelector('.info-card__category');
+        if (startResult) {
+            startResult.classList.add('result');
         }
     });
 };
@@ -196,6 +220,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
+    // agregarClassResultInHotelResults();
 };
 
 function observarCambiosCheckAndRender() {
@@ -226,5 +251,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada();
+    // aplicarClaseRecomendada();
+    // agregarClassResultInHotelResults();
 });

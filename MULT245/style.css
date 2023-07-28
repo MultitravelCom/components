@@ -154,7 +154,10 @@
 }
 
 .info-card__title {
-  max-width: 100% !important;
+  max-width: 70% !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info-card__action-item {
