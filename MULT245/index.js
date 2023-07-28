@@ -220,7 +220,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
-    agregarClassResultInHotelResults()
+    // agregarClassResultInHotelResults();
 };
 
 function observarCambiosCheckAndRender() {
