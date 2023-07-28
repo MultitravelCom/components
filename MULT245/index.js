@@ -190,7 +190,6 @@ function removeClassResultInHotelResults() {
     });
 };
 
-
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
