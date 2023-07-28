@@ -185,6 +185,32 @@ function removeClassResultInHotelResults() {
     });
 };
 
+function agregarClassResultInHotelResults() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        return;
+    }
+
+    const resultsPage = document.querySelector('.results-list__page');
+    if (!resultsPage) {
+        return;
+    }
+
+    const items = resultsPage.querySelectorAll('.results-list__item');
+    if (items.length === 0) {
+        return;
+    }
+
+    items.forEach(item => {
+        const startResult = item.querySelector('.info-card__category');
+        if (startResult) {
+            startResult.classList.add('result');
+        }
+    });
+};
+
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
@@ -194,6 +220,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     removeClassResultInHotelResults();
+    agregarClassResultInHotelResults()
 };
 
 function observarCambiosCheckAndRender() {
@@ -224,5 +251,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada();
+    // aplicarClaseRecomendada();
+    // agregarClassResultInHotelResults();
 });
