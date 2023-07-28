@@ -206,9 +206,23 @@ function changeDescriptionElementFunctions() {
         }
     }
 }
+function changeWidthOfContainer() {
+   const styleElement = document.createElement('style');
 
+   const cssRules = `
+       @media screen and (min-width: 1024px) {
+           .container {
+               width: 1260px;
+           }
+       }
+   `;
+
+   styleElement.appendChild(document.createTextNode(cssRules));
+   document.head.appendChild(styleElement);
+}
 document.addEventListener('DOMContentLoaded', () => {
   if (decodeURIComponent(window.location.href).includes('https://www.multitravel.com/flights/results.aspx')) {
+    changeWidthOfContainer();
     const observer = new MutationObserver(onDivAdded);
     const observerConfig = { childList: true, subtree: true };
     observer.observe(document.documentElement, observerConfig);

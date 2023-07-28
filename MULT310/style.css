@@ -48,9 +48,10 @@
 
   /* Add specific styles for desktop screens */
 @media screen and (min-width: 1024px) {
-    .container {
+    /*.container {
         width: 1260px;
     }
+    */
     /* Your CSS rules for desktop go here */
 
     body.results .results__sidebar {
