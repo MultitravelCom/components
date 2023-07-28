@@ -160,7 +160,9 @@ function aplicarEstiloSegunLongitud() {
     }
 };
 function removeClassResultInHotelResults() {
+
     const isMobile = window.innerWidth <= 768;
+
     if (!isMobile) {
         return;
     }
@@ -178,18 +180,10 @@ function removeClassResultInHotelResults() {
     items.forEach(item => {
         const hotelResult = item.querySelector('.result.hotel-result');
         if (hotelResult) {
-            const resultElement = hotelResult.querySelector('.result');
-            if (resultElement) {
-                hotelResult.removeChild(resultElement); // Elimina el elemento con la clase .result del hotelResult
-                const infoCardCategory = item.querySelector('.info-card__category');
-                if (infoCardCategory) {
-                    infoCardCategory.appendChild(resultElement); // Agrega el elemento .result dentro del div con la clase .info-card__category
-                }
-            }
+            hotelResult.classList.remove('result');
         }
     });
 };
-
 
 function aplicarModificaciones(resultsListPage) {
     removeImageLinks(resultsListPage);
@@ -199,7 +193,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
-    removeClassResultInHotelResults();
+    // removeClassResultInHotelResults();
 };
 
 function observarCambiosCheckAndRender() {
@@ -223,6 +217,7 @@ function observarCambiosCheckAndRender() {
         aplicarModificaciones(resultsListPage);
     });
 };
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
