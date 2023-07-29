@@ -229,7 +229,7 @@ function agregarTagAWithHREF(resultsListPage) {
         anchorElement.setAttribute("href", "javascript:void(0)");
         anchorElement.classList.add("js-result-detail-action");
         anchorElement.addEventListener("click", function(e) {
-            e.preventDefault(); // Prevent the default link behavior (scrolling to the top)
+            //e.preventDefault(); // Prevent the default link behavior (scrolling to the top)
             console.log('Link clicked');
             // Your custom handling code here
           });
