@@ -214,7 +214,7 @@ function agregarClassResultInHotelResults() {
 function agregarTagAWithHREF(resultsListPage) {
 
     const isMobile = window.innerWidth <= 768;
-
+    console.log("----------->11");
     if (!isMobile) {
         return;
     }
@@ -224,6 +224,7 @@ function agregarTagAWithHREF(resultsListPage) {
     }
 
     items.forEach(item => {
+        console.log("----------->22");
         const anchorElement = document.createElement("a");
         anchorElement.setAttribute("href", "#");
         anchorElement.classList.add("js-result-detail-action");
