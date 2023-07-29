@@ -211,14 +211,14 @@ function agregarClassResultInHotelResults() {
     });
 };
 
-function agregarTagAWithHREF() {
+function agregarTagAWithHREF(resultsListPage) {
 
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
         return;
     }
-    const items = resultsPage.querySelectorAll('.hotel-result');
+    const items = resultsListPage.querySelectorAll('.hotel-result');
     if (items.length === 0) {
         return;
     }
@@ -249,7 +249,7 @@ function aplicarModificaciones(resultsListPage) {
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
-    agregarTagAWithHREF();
+    agregarTagAWithHREF(resultsListPage);
     //removeClassResultInHotelResults();
     // agregarClassResultInHotelResults();
 };
