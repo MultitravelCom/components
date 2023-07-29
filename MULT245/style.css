@@ -25,7 +25,7 @@
   right: 24px !important;
 }
 
-.deals>.label-info {
+.deals > .label-info {
   display: inline-block;
   min-width: 161px !important;
   height: 33px !important;
@@ -39,7 +39,7 @@
 .alojamiento-recomendado {
   border-width: 2px 4px 2px 2px;
   border-style: solid;
-  border-color: #1585E6;
+  border-color: #1585e6;
   border-radius: 8px;
 }
 
@@ -57,13 +57,13 @@
   left: 10px;
 }
 
-.map-link>.glyphicon-map-marker {
+.map-link > .glyphicon-map-marker {
   font-size: 27px;
 }
 
 .map-link {
   display: none;
-  color: #0D4E88;
+  color: #0d4e88;
   font-size: 14px;
 }
 
@@ -72,7 +72,7 @@
   font-weight: 600;
   letter-spacing: 1px;
   height: 34px;
-  background: #0D4E88;
+  background: #0d4e88;
   border: 0;
   border-radius: 12px;
   float: none !important;
@@ -86,11 +86,11 @@
   text-align: end;
 }
 
-.info-card__actions>.btn-small {
+.info-card__actions > .btn-small {
   display: none;
 }
 
-.renderPriceTag>.pricetag__item--currency {
+.renderPriceTag > .pricetag__item--currency {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
@@ -108,7 +108,7 @@
 
 .iconStar {
   display: none;
-  background: #1377CE;
+  background: #1377ce;
   color: white;
   border-radius: 100%;
   font-size: 19px;
@@ -116,13 +116,12 @@
   padding: 3px 2px;
   width: 25px;
   text-align: center;
-
 }
 
 .main__container__share {
   width: 183px;
   height: 24px;
-  background: #F3F3F3;
+  background: #f3f3f3;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -133,8 +132,8 @@
 }
 
 .share__icon {
-  background: #FFFFFF;
-  border: 1px solid #0D4E88;
+  background: #ffffff;
+  border: 1px solid #0d4e88;
   border-radius: 12px;
   color: #094173;
   font-size: 12px;
@@ -164,7 +163,7 @@
   display: none;
 }
 
-.info-card__category>.glyphicon .glyphicon-star {
+.info-card__category > .glyphicon .glyphicon-star {
   font-size: 21px;
 }
 
@@ -173,7 +172,7 @@
   height: 45px;
   display: flex;
   align-items: center;
-  background-color: #EAF4FC;
+  background-color: #eaf4fc;
   border-radius: 0px 16px 0px 0px;
   padding: 6px 24px 6px 12px;
 }
@@ -184,7 +183,7 @@
   left: 0;
 }
 
-.main__container__bannerMensageCard>p {
+.main__container__bannerMensageCard > p {
   margin-bottom: 0 !important;
 }
 
@@ -221,7 +220,6 @@
 
   .share__text {
     display: none;
-
   }
 
   .recomendado {
@@ -233,13 +231,12 @@
     left: -4px;
   }
 
-  .deals>.label-info {
+  .deals > .label-info {
     border-radius: 8px !important;
   }
 
   .result.hotel-result {
     height: 100%;
-
   }
 
   .results-list__item {
@@ -276,13 +273,12 @@
     position: relative;
   }
 
-  .info-card__content>.info-card__price {
+  .info-card__content > .info-card__price {
     position: absolute !important;
     width: 135px;
     left: -17px;
     top: 165px;
     height: 50px;
-
   }
 
   .info-card__category {
@@ -335,7 +331,24 @@
     background: transparent;
     border: 1px solid #cbcbcb;
   }
+  .bestprice__taxincluded {
+    display: none;
+  }
 
+  /*
+  Styles to display map in mobile
+  */
+  .results-list__item {
+    height: fit-content;
+  }
+  .result.hotel-result {
+    height: fit-content;
+  }
+
+  .info-card {
+    height: fit-content;
+    min-height: 495px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 1024px) {
