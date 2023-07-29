@@ -235,7 +235,7 @@ function agregarTagAWithHREF(resultsListPage) {
           });
       
         // Insert the anchor element at the beginning (top) of the target element
-        item.insertBefore(anchorElement, targetElement.firstChild);
+        item.insertBefore(anchorElement, item.firstChild);
     });
     
 
