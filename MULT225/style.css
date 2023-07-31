@@ -16,6 +16,7 @@
     border: 0;
     color: white;
     bottom: 49px;
+    font-weight: bold;
 }
 
 .btnStyleOfertas {
@@ -307,11 +308,6 @@
     font-weight: 700;
     font-size: 20px !important;
     letter-spacing: 0.1px;
-}
-
-#home-top>div.home-v5__searcher {
-    /* background-color: #D3EAFF !important;
-    min-height: 257px; */
 }
 
 #home-top {
