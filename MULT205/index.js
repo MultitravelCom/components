@@ -239,6 +239,8 @@ const ModalCupones = ({ isOpen, onClose }) => {
 const App = () => {
     const [modalOpen, setModalOpen] = React.useState(false);
 
+    const whatsappRef = React.useRef(null);
+
     const handleOpenModal = (event) => {
         event.preventDefault();
         setModalOpen(true);
