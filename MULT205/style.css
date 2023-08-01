@@ -231,7 +231,8 @@
     max-height: 93vh; /* Limit the height of the modal content */
     scrollbar-width: thin; /* Para navegadores que soportan la propiedad scrollbar-width */
     scrollbar-color: #c0c0c0 #f0f0f0;
-}
+    border-top: 0 !important;
+}   
 
 .modal__content-title {
     text-align: center;
