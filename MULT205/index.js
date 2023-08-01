@@ -1,3 +1,31 @@
+function makeModalDraggable(modalSelector) {
+    const modalContainer = document.querySelector(modalSelector);
+    let isDragging = false;
+    let initialX;
+    let initialY;
+
+    modalContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        initialX = e.clientX - modalContainer.offsetLeft;
+        initialY = e.clientY - modalContainer.offsetTop;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const currentX = e.clientX - initialX;
+        const currentY = e.clientY - initialY;
+
+        modalContainer.style.left = `${currentX}px`;
+        modalContainer.style.top = `${currentY}px`;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+}
+makeModalDraggable('.modal-container');
+
 function movePromoCodesContainer() {
     const promocodesContainer = document.querySelector('.confirm-booking__promocodes');
     const sectionHolderData = document.querySelector('.confirm-booking__section.confirm-booking__holder-data');
