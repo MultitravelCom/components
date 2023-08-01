@@ -24,7 +24,6 @@ function makeModalDraggable(modalSelector) {
         isDragging = false;
     });
 }
-makeModalDraggable('.modal-container');
 
 function movePromoCodesContainer() {
     const promocodesContainer = document.querySelector('.confirm-booking__promocodes');
@@ -267,6 +266,7 @@ const App = () => {
 async function run() {
     await changeText();
     await showPromocodesDiv();
+    await makeModalDraggable('.modal-container');
 }
 
 run();
