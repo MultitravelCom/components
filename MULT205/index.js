@@ -116,10 +116,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
-    React.useEffect(() => {
-        toggleWhatsappDisplayStyle(isOpen);
-      }, [isOpen]);
-
     return (
 
         <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick}>
@@ -213,15 +209,18 @@ const App = () => {
     const handleOpenModal = (event) => {
         event.preventDefault();
         setModalOpen(true);
+        toggleWhatsappDisplayStyle(true);
     };
 
     const handleCloseModal = () => {
         setModalOpen(false);
+        toggleWhatsappDisplayStyle(false);
     };
 
     React.useEffect(() => {
         const confirmBookingPromocodes = document.querySelector('.confirm-booking__promocodes');
         confirmBookingPromocodes.style.display = 'flex';
+        whatsappRef.current = document.querySelector('.whatsAppFixes');
     }, []);
 
     return (
