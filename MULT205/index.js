@@ -143,11 +143,26 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
-    const handleKeyDown = (event) => {
-        if (event.key === 'Escape') {
-            onClose();
+    React.useEffect(() => {
+        if (isOpen) {
+            const modalSelector = '.modal__cupones'; // Cambia el selector según corresponda
+            makeModalDraggable(modalSelector);
         }
-    };
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        // Agregar el event listener del teclado aquí
+        document.addEventListener('keydown', handleKeyDown);
+
+        // Limpieza de event listener cuando el componente se desmonta
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isOpen]);
 
     return (
 
@@ -245,7 +260,6 @@ const App = () => {
         event.preventDefault();
         setModalOpen(true);
         toggleWhatsappDisplayStyle(true);
-        makeModalDraggable('.modal__cupones');
     };
 
     const handleCloseModal = () => {
@@ -257,11 +271,6 @@ const App = () => {
         const confirmBookingPromocodes = document.querySelector('.confirm-booking__promocodes');
         confirmBookingPromocodes.style.display = 'flex';
         whatsappRef.current = document.querySelector('.whatsAppFixes');
-        document.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            document.removeEventListener('keydown', handleKeyDown);
-        };
     }, []);
 
     return (
@@ -280,7 +289,6 @@ const App = () => {
 async function run() {
     await changeText();
     await showPromocodesDiv();
-   makeModalDraggable('.modal__cupones');
 }
 
 run();
