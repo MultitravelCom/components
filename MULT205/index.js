@@ -143,9 +143,15 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+            onClose();
+        }
+    };
+
     return (
 
-        <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick}>
+        <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick} onKeyDown={handleKeyDown} tabIndex={-1}>
             <div className="modal__cupones">
                 <div className="modal-content">
                     <div className="modal__content-title">
