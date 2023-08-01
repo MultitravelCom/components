@@ -232,6 +232,7 @@
     scrollbar-width: thin; /* Para navegadores que soportan la propiedad scrollbar-width */
     scrollbar-color: #c0c0c0 #f0f0f0;
     border-top: 0 !important;
+    cursor: grab;
 }   
 
 .modal-content:active {
@@ -325,7 +326,6 @@
     transform: translate(-50%, -50%);
     align-items: center; /* Center the modal vertically */
     justify-content: center; /* Center the modal horizontally */
-    cursor: grab;
 }
 
 .modal-content__cupones {
