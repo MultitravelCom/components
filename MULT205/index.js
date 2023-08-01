@@ -171,7 +171,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
     React.useEffect(() => {
         if (isOpen) {
-            const containerSelector = '.modal__content__cupones-row'; // Selector del contenedor con los cupones
+            const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
             makeScrollableContainer(containerSelector);
         }
 
