@@ -295,7 +295,7 @@ const App = () => {
     return (
         <>
             <div className="container__conocer__cupones__p">
-                <p>Conoce y elige de nuestros diferentes cupones el que más te convenga</p>
+                <p>Encuentra tu cupón ideal entre nuestra selección de ofertas</p>
             </div>
             <div className="container__conocer__cupones__btn">
                 <button className="cupones__btn__style" onClick={handleOpenModal}>Conocer cupones</button>
