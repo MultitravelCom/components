@@ -238,6 +238,8 @@
     font-weight: 600;
     color: #FFFFFF;
     padding: 4px;
+    position: sticky; /* Add this line to make the header sticky */
+    top: 0; /* Add this line to position the header at the top */
 }
 
 .modal__content-title>h2 {
@@ -308,10 +310,14 @@
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+    display: flex; /* Add this line to enable flex layout */
+    flex-direction: column; /* Add this line to set flex direction to column */
 }
 
 .modal-content__cupones {
     padding: 20px;
+    flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
+    overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
 }
 
 .modal__content-title-circle,
