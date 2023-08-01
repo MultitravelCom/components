@@ -6,6 +6,13 @@ function movePromoCodesContainer() {
 
 movePromoCodesContainer();
 
+function toggleWhatsappDisplayStyle(isOpen) {
+    const whatsappSelector = document.querySelector('.whatsapp');
+    if (whatsappSelector) {
+        whatsappSelector.style.display = isOpen ? 'none' : 'block';
+    }
+}
+
 function moveBookingBreakdownTable() {
     const observer = new MutationObserver((mutationsList, observer) => {
         for (let mutation of mutationsList) {
@@ -13,7 +20,7 @@ function moveBookingBreakdownTable() {
             for (let node of addedNodes) {
                 if (node.classList && node.classList.contains('booking-breakdown__table')) {
                     const shoppingBasketLines = document.querySelector('.confirm-booking__shopping-basket.booking-sidebar .shopping-basket__lines');
-                    node.classList.add('shopping-basket__line'); 
+                    node.classList.add('shopping-basket__line');
                     shoppingBasketLines.appendChild(node);
 
                     const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line-price');
@@ -109,6 +116,10 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
+    useEffect(() => {
+        toggleWhatsappDisplayStyle(isOpen);
+      }, [isOpen]);
+
     return (
 
         <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick}>
@@ -126,63 +137,63 @@ const ModalCupones = ({ isOpen, onClose }) => {
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
                             cupon_texto_b="Todos los productos"
                             cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
                         />
-                         <ComponenteCupones
+                        <ComponenteCupones
                             img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
                             code_cupon="DIADELPADRE10"
                             cupon_texto_a="10% OFF para regalarle a papá"
