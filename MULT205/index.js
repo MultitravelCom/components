@@ -1,4 +1,4 @@
-function makeModalDraggable(modalSelector) {
+async function makeModalDraggable(modalSelector) {
     const modalContainer = document.querySelector(modalSelector);
     let isDragging = false;
     let initialX;
