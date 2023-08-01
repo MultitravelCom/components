@@ -266,7 +266,7 @@ const App = () => {
 async function run() {
     await changeText();
     await showPromocodesDiv();
-    await makeModalDraggable('.modal-container');
+    await makeModalDraggable('.modal__cupones');
 }
 
 run();
