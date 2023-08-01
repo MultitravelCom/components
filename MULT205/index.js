@@ -1,4 +1,5 @@
-function makeModalDraggable(modalContainer) {
+function makeModalDraggable(modalSelector) {
+    const modalContainer = document.querySelector(modalSelector);
     let isDragging = false;
     let initialX;
     let initialY;
@@ -7,9 +8,6 @@ function makeModalDraggable(modalContainer) {
         isDragging = true;
         initialX = e.clientX - modalContainer.offsetLeft;
         initialY = e.clientY - modalContainer.offsetTop;
-
-        // Agregar la clase "draggable" al contenedor que deseas que sea movible
-        modalContainer.classList.add('draggable');
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -24,9 +22,6 @@ function makeModalDraggable(modalContainer) {
 
     document.addEventListener('mouseup', () => {
         isDragging = false;
-
-        // Eliminar la clase "draggable" cuando se suelta el mouse
-        modalContainer.classList.remove('draggable');
     });
 }
 
@@ -138,8 +133,6 @@ function ComponenteCupones({ img_logo_cupon, code_cupon, cupon_texto_a, cupon_te
 
 const ModalCupones = ({ isOpen, onClose }) => {
 
-    const modalContentRef = React.useRef(null);
-
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
             onClose();
@@ -158,9 +151,10 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
     React.useEffect(() => {
         if (isOpen) {
-            const modalContainer = modalContentRef.current;
-            makeModalDraggable(modalContainer);
-          }
+            const modalSelector = '.modal__cupones'; // Cambia el selector según corresponda
+            makeModalDraggable(modalSelector);
+        }
+
 
         document.addEventListener('keydown', handleKeyDown);
 
@@ -172,7 +166,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
     return (
 
         <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick} onKeyDown={handleKeyDown} tabIndex={-1}>
-            <div ref={modalContentRef} className="modal__cupones">
+            <div className="modal__cupones">
                 <div className="modal-content">
                     <div className="modal__content-title">
                         <h2>Te damos la bienvenida a nuestra cuponera</h2>
