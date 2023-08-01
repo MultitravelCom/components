@@ -302,7 +302,6 @@
     max-width: 80%;
     background: #FFFFFF;
     border-radius: 16px;
-    z-index: 2;
     overflow: hidden;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
