@@ -7,7 +7,7 @@ function movePromoCodesContainer() {
 movePromoCodesContainer();
 
 function toggleWhatsappDisplayStyle(isOpen) {
-    const whatsappSelector = document.querySelector('.whatsapp');
+    const whatsappSelector = document.querySelector('.whatsAppFixes');
     if (whatsappSelector) {
         whatsappSelector.style.display = isOpen ? 'none' : 'block';
     }
