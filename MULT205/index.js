@@ -257,6 +257,11 @@ const App = () => {
         const confirmBookingPromocodes = document.querySelector('.confirm-booking__promocodes');
         confirmBookingPromocodes.style.display = 'flex';
         whatsappRef.current = document.querySelector('.whatsAppFixes');
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
     }, []);
 
     return (
