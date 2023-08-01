@@ -225,8 +225,7 @@
     z-index: 1;
 }
 
-.modal-content,
-.modal-content__cupones-row {
+.modal-content {
     flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
     overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
     max-height: 93vh; /* Limit the height of the modal content */
@@ -351,12 +350,14 @@
     width: 100%;
 }
 
-/* .modal-content__cupones-row {
+.modal-content__cupones-row {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem;
-} */
+    overflow-y: auto
+    
+}
 
 .modal__content-uno,
 .modal__content-dos,
