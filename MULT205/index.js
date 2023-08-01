@@ -143,22 +143,21 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+            onClose();
+        }
+    };
+
     React.useEffect(() => {
         if (isOpen) {
             const modalSelector = '.modal__cupones'; // Cambia el selector según corresponda
             makeModalDraggable(modalSelector);
         }
 
-        const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
-                onClose();
-            }
-        };
 
-        // Agregar el event listener del teclado aquí
         document.addEventListener('keydown', handleKeyDown);
 
-        // Limpieza de event listener cuando el componente se desmonta
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
