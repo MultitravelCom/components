@@ -1,25 +1,49 @@
-function makeModalDraggable(modalSelector) {
-    const modalContainer = document.querySelector(modalSelector);
+// function makeModalDraggable(modalSelector) {
+//     const modalContainer = document.querySelector(modalSelector);
+//     let isDragging = false;
+//     let initialY;
+
+//     modalContainer.addEventListener('mousedown', (e) => {
+//         isDragging = true;
+//         initialY = e.clientY - modalContainer.offsetTop;
+//     });
+
+//     document.addEventListener('mousemove', (e) => {
+//         if (!isDragging) return;
+
+//         const currentY = e.clientY - initialY;
+//         modalContainer.style.top = `${currentY}px`;
+//     });
+
+//     document.addEventListener('mouseup', () => {
+//         isDragging = false;
+//     });
+// }
+
+function makeScrollableContainer(containerSelector) {
+    const container = document.querySelector(containerSelector);
     let isDragging = false;
     let initialY;
-
-    modalContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        initialY = e.clientY - modalContainer.offsetTop;
+    let initialScrollTop;
+  
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      initialY = e.clientY;
+      initialScrollTop = container.scrollTop;
     });
-
+  
     document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-
-        const currentY = e.clientY - initialY;
-        modalContainer.style.top = `${currentY}px`;
+      if (!isDragging) return;
+  
+      const deltaY = e.clientY - initialY;
+      container.scrollTop = initialScrollTop - deltaY;
     });
-
+  
     document.addEventListener('mouseup', () => {
-        isDragging = false;
+      isDragging = false;
     });
-}
-
+  }
+  
 
 function movePromoCodesContainer() {
     const promocodesContainer = document.querySelector('.confirm-booking__promocodes');
@@ -147,8 +171,8 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
     React.useEffect(() => {
         if (isOpen) {
-            const modalSelector = '.modal-content__cupones-row'; // Cambia el selector según corresponda
-            makeModalDraggable(modalSelector);
+            const containerSelector = '.modal__content__cupones-row'; // Selector del contenedor con los cupones
+            makeScrollableContainer(containerSelector);
         }
 
 
