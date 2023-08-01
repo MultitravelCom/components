@@ -299,7 +299,6 @@
 
 .modal__cupones {
     max-width: 80%;
-    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -316,9 +315,10 @@
 
 .modal-content__cupones {
     padding: 20px;
+    /* Agregar 'max-height: 80vh;' para limitar la altura del contenido */
+    max-height: 80vh;
     flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
     overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
-    max-height: calc(100% - 40px);
 }
 
 .modal__content-title-circle,
