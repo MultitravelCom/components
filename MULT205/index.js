@@ -116,7 +116,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
         return null;
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
         toggleWhatsappDisplayStyle(isOpen);
       }, [isOpen]);
 
