@@ -321,6 +321,7 @@
     transform: translate(-50%, -50%);
     align-items: center; /* Center the modal vertically */
     justify-content: center; /* Center the modal horizontally */
+    cursor: grab;
 }
 
 .modal-content__cupones {
