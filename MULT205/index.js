@@ -115,7 +115,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
             <div className="modal__cupones">
                 <div className="modal-content">
                     <div className="modal__content-title">
-                        <h2>Conoce y elige de nuestros diferentes cupones el que más te convenga</h2>
+                        <h2>Te damos la bienvenida a nuestra cuponera</h2>
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
