@@ -299,9 +299,6 @@
 
 .modal__cupones {
     max-width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: #FFFFFF;
     border-radius: 16px;
     z-index: 2;
@@ -311,14 +308,19 @@
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     display: flex; /* Add this line to enable flex layout */
     flex-direction: column; /* Add this line to set flex direction to column */
+    position: fixed; /* Keep the modal fixed on the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center; /* Center the modal vertically */
+    justify-content: center; /* Center the modal horizontally */
 }
 
 .modal-content__cupones {
     padding: 20px;
-    /* Agregar 'max-height: 80vh;' para limitar la altura del contenido */
-    max-height: 80vh;
     flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
     overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
+    max-height: 80vh; /* Limit the height of the modal content */
 }
 
 .modal__content-title-circle,
