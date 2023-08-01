@@ -226,8 +226,9 @@
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
+    overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
+    max-height: 93vh; /* Limit the height of the modal content */
 }
 
 .modal__content-title {
