@@ -147,7 +147,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
     React.useEffect(() => {
         if (isOpen) {
-            const modalSelector = '.modal-content'; // Cambia el selector según corresponda
+            const modalSelector = '.modal-content__cupones-row'; // Cambia el selector según corresponda
             makeModalDraggable(modalSelector);
         }
 
