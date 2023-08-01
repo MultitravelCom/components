@@ -232,12 +232,7 @@
     scrollbar-width: thin; /* Para navegadores que soportan la propiedad scrollbar-width */
     scrollbar-color: #c0c0c0 #f0f0f0;
     border-top: 0 !important;
-    cursor: grab;
 }   
-
-.modal-content:active {
-    cursor: grabbing; /* Cambia el cursor del mouse a la manita cerrada durante el arrastre */
-  }
 .modal-content::-webkit-scrollbar {
     display: none;
 }
@@ -355,8 +350,11 @@
     flex-direction: column;
     align-items: center;
     margin: 1rem;
-    overflow-y: auto
-    
+    overflow-y: auto;
+    cursor: grab;
+}
+.modal-content__cupones-row:active{
+    cursor: grabbing;
 }
 
 .modal__content-uno,
