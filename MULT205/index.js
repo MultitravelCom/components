@@ -1,4 +1,4 @@
-async function makeModalDraggable(modalSelector) {
+function makeModalDraggable(modalSelector) {
     const modalContainer = document.querySelector(modalSelector);
     let isDragging = false;
     let initialX;
@@ -245,6 +245,7 @@ const App = () => {
         event.preventDefault();
         setModalOpen(true);
         toggleWhatsappDisplayStyle(true);
+        makeModalDraggable('.modal__cupones');
     };
 
     const handleCloseModal = () => {
@@ -274,7 +275,7 @@ const App = () => {
 async function run() {
     await changeText();
     await showPromocodesDiv();
-    await makeModalDraggable('.modal__cupones');
+   makeModalDraggable('.modal__cupones');
 }
 
 run();
