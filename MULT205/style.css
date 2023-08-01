@@ -241,6 +241,7 @@
     padding: 4px;
     position: sticky; /* Add this line to make the header sticky */
     top: 0; /* Add this line to position the header at the top */
+    z-index: 2;
 }
 
 .modal__content-title>h2 {
