@@ -233,6 +233,10 @@
     scrollbar-color: #c0c0c0 #f0f0f0;
     border-top: 0 !important;
 }   
+
+.modal-content:active {
+    cursor: grabbing; /* Cambia el cursor del mouse a la manita cerrada durante el arrastre */
+  }
 .modal-content::-webkit-scrollbar {
     display: none;
 }
