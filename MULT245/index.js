@@ -135,7 +135,7 @@ async function changeCopyButton(resultsListPage) {
         }
     };
 
-    checkResultsListPage();
+    // checkResultsListPage();
 };
 
 function aplicarEstiloSegunLongitud() {
