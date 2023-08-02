@@ -102,7 +102,7 @@ const checkAndRender = async () => {
     infoCardImgContents.forEach(infoCardImgContent => {
         const nuevoDivIconImg = document.createElement('div');
         infoCardImgContent.appendChild(nuevoDivIconImg);
-        nuevoDivIconImg.classList.add("main__container__iconImg")
+        nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
 

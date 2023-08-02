@@ -14,14 +14,14 @@ function wait(timeout) {
 function checkURL() {
     let currentURL = window.location.href;
     let imageWrapper = document.getElementById("image-wrapper");
-    
+
     if (currentURL.includes("/details.aspx")) {
         imageWrapper.style.height = null;
     } else {
-      // La URL no contiene /details.aspx, aplicar la clase
-      imageWrapper.style.height = "80vh";
+        // La URL no contiene /details.aspx, aplicar la clase
+        imageWrapper.style.height = "80vh";
     }
-  }
+}
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
@@ -240,18 +240,18 @@ function agregarTagAWithHREF(resultsListPage) {
         const anchorElement = document.createElement("a");
         anchorElement.setAttribute("href", "javascript:void(0)");
         anchorElement.classList.add("js-result-detail-action");
-        anchorElement.addEventListener("click", function(e) {
+        anchorElement.addEventListener("click", function (e) {
             //e.preventDefault(); // Prevent the default link behavior (scrolling to the top)
             console.log('Link clicked');
             // Your custom handling code here
-          });
-      
+        });
+
         // Insert the anchor element at the beginning (top) of the target element
         item.insertBefore(anchorElement, item.firstChild);
     });
-    
 
-    
+
+
 };
 
 function aplicarModificaciones(resultsListPage) {
