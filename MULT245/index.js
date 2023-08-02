@@ -13,7 +13,7 @@ function wait(timeout) {
 
 function checkURL() {
     let currentURL = window.location.href;
-    let imageWrapper = document.getElementById("image-wrapper");
+    let imageWrapper = document.querySelector(".gallery__image-wrapper");
 
     if (currentURL.includes("/details.aspx")) {
         imageWrapper.style.height = null;
