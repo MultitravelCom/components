@@ -17,7 +17,7 @@ function checkURL() {
 
     if (currentURL.includes("/details.aspx")) {
         console.log("test")
-        imageWrapper.style.height = null;
+        imageWrapper.style.height = "inherit";
     } else {
         // La URL no contiene /details.aspx, aplicar la clase
         imageWrapper.style.height = "80vh";
