@@ -217,11 +217,23 @@ const App = () => {
 
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
+        const buttonIngresar = document.getElementById('container__widget');
+
 
 
         const handleButtonClick = () => {
             setOpenModal(true);
         };
+
+        function handleGlobalKeyPress(event) {
+            // Verificar si la tecla presionada es "Enter" (código 13)
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                setOpenModal(false); // Cerrar el modal al presionar "Enter" en cualquier parte del sitio
+            }
+        }
+
+        document.addEventListener('keydown', handleGlobalKeyPress);
 
         function buscarBtnStyleVentaPer() {
             const isDesktop = window.innerWidth > 768;
@@ -261,6 +273,8 @@ const App = () => {
 
         return () => {
             clearInterval(checkButtonExistence);
+            openModalButton.removeEventListener('keydown', handleKeyPress);
+            document.removeEventListener('keydown', handleGlobalKeyPress);
         };
     }, []);
 
