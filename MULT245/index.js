@@ -13,15 +13,17 @@ function wait(timeout) {
 
 function checkURL() {
     let currentURL = window.location.href;
-    let imageWrapper = document.querySelector(".gallery__image-wrapper");
+    let imageWrappers = document.querySelectorAll(".gallery__image-wrapper");
 
-    if (currentURL.includes("/details")) {
-        console.log("test")
-        imageWrapper.style.height = "inherit";
-    } else {
-        console.log("test 80")
-        imageWrapper.style.height = "80vh";
-    }
+    imageWrappers.forEach(imageWrapper => {
+        if (currentURL.includes("/details")) {
+            console.log("test");
+            imageWrapper.style.height = "inherit"; // Estilo para cuando la URL contiene /details
+        } else {
+            console.log("test 80");
+            imageWrapper.style.height = "80vh"; // Estilo para el resto de las páginas
+        }
+    });
 }
 
 async function cargarEstilosYModales() {
