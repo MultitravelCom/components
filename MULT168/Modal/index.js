@@ -226,10 +226,10 @@ const App = () => {
         };
 
         function handleGlobalKeyPress(event) {
-            // Verificar si la tecla presionada es "Enter" (código 13)
+            // Verificar si la tecla presionada es "Enter"
             if (event.keyCode === 13) {
                 event.preventDefault();
-                setOpenModal(false); // Cerrar el modal al presionar "Enter" en cualquier parte del sitio
+                setOpenModal(false); 
             }
         }
 

@@ -11,6 +11,18 @@ function wait(timeout) {
 //     });
 // };
 
+function checkURL() {
+    let currentURL = window.location.href;
+    let imageWrapper = document.getElementById("image-wrapper");
+    
+    if (currentURL.includes("/details.aspx")) {
+        imageWrapper.style.height = null;
+    } else {
+      // La URL no contiene /details.aspx, aplicar la clase
+      imageWrapper.style.height = "80vh";
+    }
+  }
+
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
     const scriptReact = document.querySelector('script[src="https://multitravelcom.github.io/components/MULT245/modalShare.js"]');
@@ -253,6 +265,7 @@ function aplicarModificaciones(resultsListPage) {
     agregarTagAWithHREF(resultsListPage);
     //removeClassResultInHotelResults();
     // agregarClassResultInHotelResults();
+    checkURL();
 };
 
 function observarCambiosCheckAndRender() {
@@ -283,6 +296,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
+    aplicarClaseRecomendada(resultsListPage);
     // aplicarClaseRecomendada();
     // agregarClassResultInHotelResults();
+    checkURL();
 });
