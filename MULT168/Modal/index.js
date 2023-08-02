@@ -273,7 +273,7 @@ const App = () => {
 
         return () => {
             clearInterval(checkButtonExistence);
-            openModalButton.removeEventListener('keydown', handleKeyPress);
+            openModalButton.addEventListener('click', handleButtonClick);
             document.removeEventListener('keydown', handleGlobalKeyPress);
         };
     }, []);
