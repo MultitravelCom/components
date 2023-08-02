@@ -12,13 +12,14 @@ function wait(timeout) {
 // };
 
 function checkURL() {
+    console.log("Función checkURL() llamada");
     let currentURL = window.location.href;
     let imageWrappers = document.querySelectorAll(".gallery__image-wrapper");
 
     imageWrappers.forEach(imageWrapper => {
         if (currentURL.includes("/details")) {
             console.log("test");
-            imageWrapper.style.height = "inherit"; // Estilo para cuando la URL contiene /details
+            imageWrapper.style.height = "inherit";
         } else {
             console.log("test 80");
             imageWrapper.style.height = "80vh"; // Estilo para el resto de las páginas
