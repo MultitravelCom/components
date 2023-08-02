@@ -15,12 +15,9 @@ function checkURL() {
     let currentURL = window.location.href;
     let imageWrapper = document.querySelector(".gallery__image-wrapper");
 
-    if (currentURL.includes("/details.aspx")) {
+    if (currentURL.includes("/details")) {
         console.log("test")
         imageWrapper.style.height = "inherit";
-    } else {
-        console.log("test 80")
-        imageWrapper.style.height = "80vh";
     }
 }
 
