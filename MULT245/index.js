@@ -19,7 +19,7 @@ function checkURL() {
         console.log("test")
         imageWrapper.style.height = "inherit";
     } else {
-        // La URL no contiene /details.aspx, aplicar la clase
+        console.log("test 80")
         imageWrapper.style.height = "80vh";
     }
 }
