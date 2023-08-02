@@ -17,12 +17,12 @@ function checkURL() {
     let imageWrappers = document.querySelectorAll(".gallery__image-wrapper");
 
     imageWrappers.forEach(imageWrapper => {
-        if (currentURL.includes("/details")) {
+        if (currentURL.includes("/results")) {
+            console.log("test 80");
+            imageWrapper.style.height = "80vh";
+        } else {
             console.log("test");
             imageWrapper.style.height = "inherit";
-        } else {
-            console.log("test 80");
-            imageWrapper.style.height = "80vh"; // Estilo para el resto de las páginas
         }
     });
 }
