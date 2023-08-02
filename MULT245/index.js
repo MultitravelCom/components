@@ -243,7 +243,7 @@ function agregarTagAWithHREF(resultsListPage) {
 };
 
 function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
+    // removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
