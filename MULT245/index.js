@@ -2,14 +2,14 @@ function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 };
 
-async function removeImageLinks() {
-    let images = document.querySelectorAll('.info-card__image-holder img');
-    images.forEach(function (image) {
-        image.addEventListener('click', function (event) {
-            event.preventDefault();
-        });
-    });
-};
+// async function removeImageLinks() {
+//     let images = document.querySelectorAll('.info-card__image-holder img');
+//     images.forEach(function (image) {
+//         image.addEventListener('click', function (event) {
+//             event.preventDefault();
+//         });
+//     });
+// };
 
 async function cargarEstilosYModales() {
     const link = document.querySelector('link[href="https://multitravelcom.github.io/components/MULT245/style.css"]');
