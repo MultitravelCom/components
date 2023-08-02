@@ -16,6 +16,7 @@ function checkURL() {
     let imageWrapper = document.querySelector(".gallery__image-wrapper");
 
     if (currentURL.includes("/details.aspx")) {
+        console.log("test")
         imageWrapper.style.height = null;
     } else {
         // La URL no contiene /details.aspx, aplicar la clase
