@@ -13,12 +13,16 @@ function wait(timeout) {
 
 function checkURL() {
     let currentURL = window.location.href;
-    let imageWrapper = document.querySelector(".gallery__image-wrapper");
+    const resultsListPage = document.querySelector('.results-list__page');
+    let imageWrappers = resultsListPage.querySelectorAll(".gallery__image-wrapper")
 
-    if (currentURL.includes("/details")) {
-        console.log("test")
-        imageWrapper.style.height = "inherit";
-    }
+    imageWrappers.forEach(imageWrapper => {
+        if (currentURL.includes("/details")) {
+            console.log("test")
+            imageWrapper.style.height = "inherit";
+        }
+    })
+
 }
 
 async function cargarEstilosYModales() {
