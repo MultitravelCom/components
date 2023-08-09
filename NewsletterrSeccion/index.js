@@ -46,7 +46,7 @@ const NewsletterSeccion = () => {
                                     value="Subscribe" />
                             </div>
                             <div className="indicates-required">
-                                <span className="asterisk">*</span>Campo requerido
+                                <span className="asterisk"></span>
                             </div>
                         </div>
                     </form>
