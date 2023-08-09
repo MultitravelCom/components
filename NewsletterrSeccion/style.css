@@ -33,6 +33,7 @@
     display: flex !important;
     height: 276px;
     background-color: #00325D;
+    border-radius: 48px 48px 0 0;
 }
 
 .main__container__newsletter__text>h2 {
