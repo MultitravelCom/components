@@ -37,6 +37,7 @@
 }
 .fix-margin>.newsletter__container{
     display: block !important;
+    height: 276px;
 }
 
 .main__container__newsletter__text>h2 {
