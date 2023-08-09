@@ -29,15 +29,10 @@
     justify-content: space-around;
     align-items: center;
 }
-
-.#main-content > div > div {
-    width: 100%;
-    margin-bottom: 0 !important;
-    background-color: #00325D;
-}
 .fix-margin>.newsletter__container{
     display: flex !important;
     height: 276px;
+    background-color: #00325D;
 }
 
 .main__container__newsletter__text>h2 {
