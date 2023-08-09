@@ -35,6 +35,9 @@
     background-color: #00325D !important;
     border-radius: 48px 48px 0 0;
 }
+#main-content > div > div{
+    margin-bottom: 0 !important;
+}
 
 .main__container__newsletter__text>h2 {
     color: var(--grey-scale-white, #F9F9F9);
