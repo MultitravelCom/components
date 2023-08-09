@@ -13,9 +13,7 @@ const NewsletterSeccion = () => {
                         novalidate=""
                     >
                         <div id="mc_embed_signup_scroll">
-                            <div className="indicates-required">
-                                <span className="asterisk">*</span> indicates required
-                            </div>
+                            
                             <div className="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span className="asterisk">*</span></label>
                                 <input
@@ -41,6 +39,9 @@ const NewsletterSeccion = () => {
                                     id="mc-embedded-subscribe"
                                     className="button"
                                     value="Subscribe" />
+                            </div>
+                            <div className="indicates-required">
+                                <span className="asterisk">*</span>indicates required
                             </div>
                         </div>
                     </form>
