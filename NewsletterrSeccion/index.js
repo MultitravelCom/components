@@ -1,6 +1,12 @@
 const NewsletterSeccion = () => {
     return (
         <>
+            <div className="main__container__newsletter">
+                <div className="main__container__newsletter__text">
+                    <h2>Enterate de nuestras novedades antes que nadie</h2>
+                    <p>Suscribite a nuestro Newsletter para no perderte de nada</p>
+                </div>
+            </div>
             <div id="mc_embed_shell">
                 <div id="mc_embed_signup">
                     <form
@@ -13,7 +19,6 @@ const NewsletterSeccion = () => {
                         novalidate=""
                     >
                         <div id="mc_embed_signup_scroll">
-                            
                             <div className="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span className="asterisk">*</span></label>
                                 <input
@@ -41,7 +46,7 @@ const NewsletterSeccion = () => {
                                     value="Subscribe" />
                             </div>
                             <div className="indicates-required">
-                                <span className="asterisk">*</span>indicates required
+                                <span className="asterisk">*</span>Campo requerido
                             </div>
                         </div>
                     </form>
