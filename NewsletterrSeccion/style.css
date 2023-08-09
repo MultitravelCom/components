@@ -32,7 +32,7 @@
 .fix-margin>.newsletter__container{
     display: flex !important;
     height: 276px;
-    background-color: #00325D;
+    background-color: #00325D !important;
     border-radius: 48px 48px 0 0;
 }
 
