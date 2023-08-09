@@ -59,10 +59,9 @@
     line-height: 24px;
     letter-spacing: -0.18px;
 }
-
-@media (max-width: 767px){
-    .fix-margin>.newsletter__container,
-    #mc_embed_signup_scroll{
+@media (max-width: 767px) {
+    .fix-margin > .newsletter__container,
+    #mc_embed_signup_scroll {
         flex-direction: column;
     }
 }
