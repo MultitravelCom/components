@@ -64,4 +64,8 @@
     #mc_embed_signup_scroll {
         flex-direction: column;
     }
+    #mce-EMAIL,
+    #mc-embedded-subscribe{
+        width: 312px;
+    }
 }
