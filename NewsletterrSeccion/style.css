@@ -16,3 +16,16 @@
     border: 1px solid #FFF;
     background: var(--primary-blue-dark-usafa, #00325D);
 }
+
+#mc_embed_signup_scroll {
+    display: flex;
+}
+
+.newsletter__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.home-row.home-v5.fix-margin{
+    margin-bottom: 0 !important;
+}

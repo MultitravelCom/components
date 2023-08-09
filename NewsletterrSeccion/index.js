@@ -20,7 +20,7 @@ const NewsletterSeccion = () => {
                     >
                         <div id="mc_embed_signup_scroll">
                             <div className="mc-field-group">
-                                <label for="mce-EMAIL">Email Address <span className="asterisk">*</span></label>
+                                <label for="mce-EMAIL"><span className="asterisk">*</span></label>
                                 <input
                                     type="email"
                                     name="EMAIL"
