@@ -1,4 +1,16 @@
 const NewsletterSeccion = () => {
+
+    const [email, setEmail] = useState('');
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Aquí puedes realizar acciones adicionales, como enviar el formulario
+        console.log('Email:', email);
+    };
     return (
         <>
             <div className="main__container__newsletter">
@@ -17,6 +29,7 @@ const NewsletterSeccion = () => {
                         className="validate"
                         target="_self"
                         novalidate=""
+                        onSubmit={handleSubmit}
                     >
                         <div id="mc_embed_signup_scroll">
                             <div className="mc-field-group">
@@ -31,8 +44,9 @@ const NewsletterSeccion = () => {
                                     className="required email"
                                     id="mce-EMAIL"
                                     required=""
-                                    value=""
-                                    // placeholder="Email"ASDFSDFDFSAF
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                // placeholder="Email"ASDFSDFDFSAF
                                 />
                             </div>
                             <div id="mce-responses" className="clear">
