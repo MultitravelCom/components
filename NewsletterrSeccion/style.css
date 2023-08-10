@@ -42,7 +42,6 @@
 
 .main__container__newsletter__text>h2 {
     color: var(--grey-scale-white, #F9F9F9);
-    font-family: Nunito;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -52,7 +51,7 @@
 
 .main__container__newsletter__text>p {
     color: var(--grey-scale-grey-100, #DFDFDF);
-    font-family: Nunito;
+    /* font-family: Nunito; */
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
