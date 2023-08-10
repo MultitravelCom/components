@@ -46,7 +46,7 @@ const NewsletterSeccion = () => {
                                     required=""
                                     value={email}
                                     onChange={handleEmailChange}
-                                // placeholder="Email"ASDFSDFDFSAF
+                                    placeholder="Email"
                                 />
                             </div>
                             <div id="mce-responses" className="clear">
