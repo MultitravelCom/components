@@ -7,7 +7,7 @@ const NewsletterSeccion = () => {
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         // Aquí puedes realizar acciones adicionales, como enviar el formulario
         console.log('Email:', email);
     };
