@@ -1,6 +1,6 @@
 const NewsletterSeccion = () => {
 
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = React.useState('');
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
