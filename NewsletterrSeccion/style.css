@@ -87,4 +87,7 @@
     .fix-margin>.newsletter__container{
         height: 358px;
     }
+    .icon_mc_embed{
+        top: 13px;
+    }
 }
