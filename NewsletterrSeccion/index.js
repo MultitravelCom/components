@@ -6,11 +6,11 @@ const NewsletterSeccion = () => {
         setEmail(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        // event.preventDefault();
-        // Aquí puedes realizar acciones adicionales, como enviar el formulario
-        console.log('Email:', email);
-    };
+    // const handleSubmit = (event) => {
+    //     // event.preventDefault();
+    //     // Aquí puedes realizar acciones adicionales, como enviar el formulario
+    //     console.log('Email:', email);
+    // };
     return (
         <>
             <div className="main__container__newsletter">
@@ -29,7 +29,7 @@ const NewsletterSeccion = () => {
                         className="validate"
                         target="_self"
                         novalidate=""
-                        onSubmit={handleSubmit}
+                        // onSubmit={handleSubmit}
                     >
                         <div id="mc_embed_signup_scroll">
                             <div className="mc-field-group">
