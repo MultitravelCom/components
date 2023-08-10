@@ -1,5 +1,5 @@
 #mce-EMAIL {
-    width: 351px;
+    max-width: 351px;
     padding: 18px 0px 18px 18px;
     align-items: center;
     gap: 6px;
@@ -11,7 +11,6 @@
 #mc-embedded-subscribe {
     width: 159px;
     height: 60px;
-    padding: 18px 24px;
     border-radius: 32px;
     border: 1px solid #FFF;
     background: var(--primary-blue-dark-usafa, #00325D);
@@ -66,6 +65,7 @@
     }
     #mce-EMAIL,
     #mc-embedded-subscribe{
+        min-width: 300px;
         height: 50px;
     }
     .main__container__newsletter__text>h2{
