@@ -32,7 +32,7 @@ const NewsletterSeccion = () => {
                                     id="mce-EMAIL"
                                     required=""
                                     value=""
-                                    // placeholder="Email"
+                                    // placeholder="Email"ASDFSDFDFSAF
                                 />
                             </div>
                             <div id="mce-responses" className="clear">
@@ -48,7 +48,7 @@ const NewsletterSeccion = () => {
                                     name="subscribe"
                                     id="mc-embedded-subscribe"
                                     className="button"
-                                    value="Subscribe" />
+                                    value="Suscribirse" />
                             </div>
                             <div className="indicates-required">
                                 <span className="asterisk"></span>
