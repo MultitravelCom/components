@@ -32,7 +32,7 @@ const NewsletterSeccion = () => {
                                     id="mce-EMAIL"
                                     required=""
                                     value=""
-                                    placeholder="Email"
+                                    // placeholder="Email"
                                 />
                             </div>
                             <div id="mce-responses" className="clear">
