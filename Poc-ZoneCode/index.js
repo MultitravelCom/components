@@ -18,7 +18,6 @@ const getZoneId = () => {
         }
     }, 1000);
 };
-getZoneId();
 
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
@@ -38,4 +37,7 @@ const BannerTopTravelSale = () =>{
             </div>
         </>
     );
-}
+};
+
+
+getZoneId();
