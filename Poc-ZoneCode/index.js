@@ -9,10 +9,16 @@ const renderBanner = () => {
     }
 };
 
-const BannerTopTravelSale = () =>{
+const BannerTopTravelSale = () => {
+    const bannerStyle = {
+        backgroundColor: 'blue',
+        color: 'white',
+        padding: '20px',
+    };
+
     return (
         <>
-            <div className="main__container__bannerTopTravelSale">    
+            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
             </div>
         </>
     );
@@ -22,7 +28,7 @@ const BannerTopTravelSale = () =>{
 const getZoneId = () => {
     const interval = setInterval(() => {
         const dataValueElement = document.querySelector('.zone-selector-value');
-        
+
         if (dataValueElement) {
             const dataValue = dataValueElement.value;
             const numericValue = parseInt(dataValue);
