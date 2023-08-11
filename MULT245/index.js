@@ -12,10 +12,10 @@ const getZoneId = () => {
 
             if (numericValue === 48656) {
                 clearInterval(interval);
-                console.log("Message: Found Bariloche.");
+                console.log("Bariloche. ZonaCode:", numericValue);
             } else {
                 clearInterval(interval);
-                console.log("Message: Not Bariloche. Number:", numericValue);
+                console.log("Not Bariloche. ZonaCode:", numericValue);
             }
         }
     }, 1000);
