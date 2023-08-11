@@ -12,14 +12,13 @@ const getZoneId = () => {
 
             if (numericValue === 48656) {
                 clearInterval(interval);
-                console.log("Message: Found Bariloche.", numericValue);
+                console.log("Message: Found Bariloche.");
             } else {
-                console.log("Message: Not Bariloche. Continuing the search...");
+                console.log("Message: Not Bariloche. Number:", numericValue);
             }
         }
     }, 1000);
 };
-
 getZoneId();
 // async function removeImageLinks() {
 //     let images = document.querySelectorAll('.info-card__image-holder img');
