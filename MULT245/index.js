@@ -1,7 +1,7 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 };
-
+// Funcion para obtener ZoneID.
 const getZoneId = () => {
     const interval = setInterval(() => {
         const dataValueElement = document.querySelector('.zone-selector-value');
@@ -12,7 +12,7 @@ const getZoneId = () => {
 
             if (numericValue === 48656) {
                 clearInterval(interval);
-                console.log("Message: Found Bariloche.");
+                console.log("Message: Found Bariloche.", numericValue);
             } else {
                 console.log("Message: Not Bariloche. Continuing the search...");
             }
