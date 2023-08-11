@@ -41,7 +41,7 @@ const NewsletterSeccion = () => {
                                 <input
                                     type="email"
                                     name="EMAIL"
-                                    className="required email"
+                                    className="required email mce_inline_error"
                                     id="mce-EMAIL"
                                     required=""
                                     value={email}
