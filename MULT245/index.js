@@ -7,12 +7,12 @@ const getZoneId = () => {
     const numericValue = parseInt(dataValue);
 
     if (numericValue === 48656) {
-        console.log("");
+        console.log("Message: This is Bariloche.");
     } else {
-        console.log("Default message or handle other cases");
-        setTimeout(getZoneId, 1000);
+        console.log("Message: This is not Bariloche.");
+        setTimeout(checkForValue, 1000);
     }
-} 
+};
 
 getZoneId();
 // async function removeImageLinks() {
