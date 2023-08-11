@@ -17,7 +17,7 @@ const getZoneId = () => {
                 console.log("Message: Not Bariloche. Continuing the search...");
             }
         }
-    }, 1000); // Check every 1 second
+    }, 1000);
 };
 
 getZoneId();
@@ -31,7 +31,6 @@ getZoneId();
 // };
 
 function checkURL() {
-    console.log("Función checkURL() llamada");
     let currentURL = window.location.href;
     let imageWrappers = document.querySelectorAll(".gallery__image-wrapper");
 
@@ -248,7 +247,6 @@ function agregarClassResultInHotelResults() {
 function agregarTagAWithHREF(resultsListPage) {
 
     const isMobile = window.innerWidth <= 768;
-    console.log("----------->11");
     if (!isMobile) {
         return;
     }
