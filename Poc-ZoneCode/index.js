@@ -1,22 +1,22 @@
-// const renderBanner = () => {
-//     const mainContentElement = document.getElementById('main-content');
+const renderBanner = () => {
+    const mainContentElement = document.getElementById('main-content');
 
-//     if (mainContentElement) {
-//         const nuevoDivIconImg = document.createElement('div');
-//         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
+    if (mainContentElement) {
+        const nuevoDivIconImg = document.createElement('div');
+        mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-//         ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
-//     }
-// };
+        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
+    }
+};
 
-// const BannerTopTravelSale = () =>{
-//     return (
-//         <>
-//             <div className="main__container__bannerTopTravelSale">    
-//             </div>
-//         </>
-//     );
-// };
+const BannerTopTravelSale = () =>{
+    return (
+        <>
+            <div className="main__container__bannerTopTravelSale">    
+            </div>
+        </>
+    );
+};
 
 // Funcion para obtener ZoneID.
 const getZoneId = () => {
