@@ -23,6 +23,7 @@ const BannerTopTravelSale = () => {
     return (
         <>
             <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
+                <h2>Soy un banner!</h2>
             </div>
         </>
     );
