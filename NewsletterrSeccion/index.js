@@ -22,7 +22,7 @@ const NewsletterSeccion = () => {
             <div id="mc_embed_shell">
                 <div id="mc_embed_signup">
                     <form
-                        action="https://multitravel.us9.list-manage.com/subscribe/post?u=d09ee86703b1761e8337397e9&amp;id=97b84e6acf&amp;f_id=00703ae1f0"
+                        action=""
                         method="post"
                         id="mc-embedded-subscribe-form"
                         name="mc-embedded-subscribe-form"
