@@ -14,6 +14,10 @@ const BannerTopTravelSale = () => {
         backgroundColor: 'blue',
         color: 'white',
         padding: '20px',
+        width: '300px',
+        display: 'flex',
+        justifyContent: 'center',
+        margin: 'auto'
     };
 
     return (
