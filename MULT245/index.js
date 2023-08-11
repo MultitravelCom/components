@@ -3,15 +3,26 @@ function wait(timeout) {
 };
 
 const getZoneId = () => {
-    const dataValue = document.querySelector('.zone-selector-value').value;
-    const numericValue = parseInt(dataValue);
+    const checkForValue = () => {
+        const element = document.querySelector('.zone-selector-value');
+        
+        if (element) {
+            const dataValue = element.value;
+            const numericValue = parseInt(dataValue);
 
-    if (numericValue === 48656) {
-        console.log("Message: This is Bariloche.");
-    } else {
-        console.log("Message: This is not Bariloche.");
-        setTimeout(checkForValue, 1000);
-    }
+            if (numericValue === 48656) {
+                console.log("Bariloche");
+            } else {
+                console.log("No es Bariloche");
+                setTimeout(checkForValue, 1000); // Recursive call after 1 second
+            }
+        } else {
+            setTimeout(checkForValue, 1000); // Retry after 1 second
+        }
+    };
+
+    // Start the recursive function
+    getZoneId();
 };
 
 getZoneId();
