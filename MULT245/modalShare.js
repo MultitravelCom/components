@@ -103,7 +103,7 @@ const BannerMensageCardApp = () => {
     return (
         <>
             {isBariloche ? (
-                <BannerMensageCard text_p={"Mensaje para Bariloche"} />
+                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             ) : hasBestPriceTaxIncluded ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             ) : (
