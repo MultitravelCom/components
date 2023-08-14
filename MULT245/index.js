@@ -1,26 +1,6 @@
 function wait(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout));
 };
-// Funcion para obtener ZoneID.
-// const getZoneId = () => {
-//     const interval = setInterval(() => {
-//         const dataValueElement = document.querySelector('.zone-selector-value');
-        
-//         if (dataValueElement) {
-//             const dataValue = dataValueElement.value;
-//             const numericValue = parseInt(dataValue);
-
-//             if (numericValue === 48656) {
-//                 clearInterval(interval);
-//                 console.log("Bariloche. ZonaCode:", numericValue);
-//             } else {
-//                 clearInterval(interval);
-//                 console.log("Not Bariloche. ZonaCode:", numericValue);
-//             }
-//         }
-//     }, 1000);
-// };
-// getZoneId();
 // async function removeImageLinks() {
 //     let images = document.querySelectorAll('.info-card__image-holder img');
 //     images.forEach(function (image) {

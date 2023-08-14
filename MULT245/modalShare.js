@@ -63,6 +63,7 @@ const BannerMensageCard = ({ text_p }) => {
 
 const BannerMensageCardApp = () => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
+    const [isBariloche, setIsBariloche] = React.useState(false);
 
     React.useEffect(() => {
         const checkDivPresence = () => {
@@ -78,9 +79,32 @@ const BannerMensageCardApp = () => {
         };
     }, []);
 
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            const dataValueElement = document.querySelector('.zone-selector-value');
+
+            if (dataValueElement) {
+                const dataValue = dataValueElement.value;
+                const numericValue = parseInt(dataValue);
+
+                if (numericValue === 48656) {
+                    setIsBariloche(true);
+                } else {
+                    setIsBariloche(false);
+                }
+            }
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     return (
         <>
-            {hasBestPriceTaxIncluded ? (
+            {isBariloche ? (
+                <BannerMensageCard text_p={"Mensaje para Bariloche"} />
+            ) : hasBestPriceTaxIncluded ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
@@ -88,6 +112,7 @@ const BannerMensageCardApp = () => {
         </>
     );
 };
+
 
 const checkAndRender = async () => {
 
