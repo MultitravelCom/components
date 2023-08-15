@@ -305,7 +305,7 @@ const App = () => {
                 <Modal open={openModal} onClose={() => setOpenModal(false)} >
                     <div dangerouslySetInnerHTML={{ __html: bitrixScript }} />
                 </Modal>
-        </div >
+            </div >
         </>
     );
 };
