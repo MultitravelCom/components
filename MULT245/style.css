@@ -24,14 +24,14 @@
   padding-right: 0 !important;
 }
 
-.info-card__price__deals {
-  top: 55px;
-  right: 20px;
-}
-
 .info-card__price {
   top: 23px;
   right: 31px;
+}
+
+.info-card__price__deals {
+  top: 55px;
+  right: 20px;
 }
 
 .right-14px {
