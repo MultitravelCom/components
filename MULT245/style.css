@@ -24,14 +24,14 @@
   padding-right: 0 !important;
 }
 
-.info-card__price {
-  top: 23px;
-  right: 31px;
-}
-
 .info-card__price__deals {
   top: 55px;
   right: 20px;
+}
+
+.info-card__price {
+  top: 23px;
+  right: 31px;
 }
 
 .right-14px {
@@ -317,7 +317,7 @@
 
 .gallery__control--right {
   right: 45px;
- 
+
 }
 
 .modal-open .modal-gallery__category {
@@ -458,12 +458,14 @@
   .main__container__iconImg {
     display: none;
   }
+
   /*
   Styles to display map in mobile
   */
   .results-list__item {
     height: fit-content;
   }
+
   .result.hotel-result {
     height: fit-content;
   }
@@ -477,6 +479,7 @@
     height: inherit;
   }
 }
+
 @media (min-width: 767px) and (max-width: 1024px) {
   .main__container__bannerMensageCard__App {
     width: 260px;
