@@ -84,14 +84,6 @@ function ButtonModal(props) {
     );
 }
 
-const ScriptBitrix = () => {
-    return (
-        <>
-            <script data-b24-form="inline/56/aj4a4r" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.com/b19657597/crm/form/loader_56.js');</script>
-        </>
-    )
-}
-
 const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, diasClass, diasText, spanText, iconModal, buttonStyle, buttonLink, buttonText, callToPhone }) => {
     return (
         <div className="main__container__modalContactos">
@@ -140,7 +132,6 @@ const Modal = ({ open, onClose }) => {
                         buttonText="Llamar"
                         callToPhone={true}
                     />
-                    <ScriptBitrix />
                     {/* <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
@@ -158,7 +149,7 @@ const Modal = ({ open, onClose }) => {
         } else {
             return (
                 <>
-                    {/* <ModalContactos
+                    <ModalContactos
                         iconModal="glyphicon-phone"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
@@ -183,7 +174,7 @@ const Modal = ({ open, onClose }) => {
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
-                    /> */}
+                    />
                     {/* <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
@@ -196,7 +187,6 @@ const Modal = ({ open, onClose }) => {
                         buttonLink="https://wa.link/5s5eba"
                         buttonText="Enviar mensaje"
                     /> */}
-                    <ScriptBitrix />
                 </>
             );
         }
@@ -239,7 +229,7 @@ const App = () => {
             // Verificar si la tecla presionada es "Enter"
             if (event.keyCode === 13) {
                 event.preventDefault();
-                setOpenModal(false);
+                setOpenModal(false); 
             }
         }
 
