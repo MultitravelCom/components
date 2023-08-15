@@ -46,7 +46,6 @@ async function cargarEstilosYModales() {
 };
 
 async function aplicarClaseRecomendada(resultsListPage) {
-    const resultsListPage = document.querySelector('.results-list__page');
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
     items.forEach(item => {
