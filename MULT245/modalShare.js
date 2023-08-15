@@ -167,7 +167,6 @@ function observarCambiosCheckAndRenderII() {
         rootNode: document.documentElement,
         callback: () => {
             checkAndRender();
-            aplicarClaseRecomendada();
         },
         queries: [{ element: '.results-list__page' }],
     };
