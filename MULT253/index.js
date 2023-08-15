@@ -175,4 +175,5 @@ function observarCambiosCheckAndRender() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
+    aplicarClaseRecomendada();
 });
