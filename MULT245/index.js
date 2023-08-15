@@ -45,7 +45,7 @@ async function cargarEstilosYModales() {
     }
 };
 
-async function aplicarClaseRecomendada() {
+async function aplicarClaseRecomendada(resultsListPage) {
     const resultsListPage = document.querySelector('.results-list__page');
     const items = resultsListPage.querySelectorAll('.results-list__item');
 
@@ -88,8 +88,6 @@ async function changeCopyMap(resultsListPage) {
     items.forEach(item => {
         let mapLink = item.querySelector('.map-link');
         let locationIcon = mapLink.querySelector('.info-card__location-icon');
-
-
         mapLink.lastChild.textContent = 'Ver Mapa';
         mapLink.style.display = 'block';
 
