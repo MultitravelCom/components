@@ -236,7 +236,7 @@ const App = () => {
         document.addEventListener('keydown', handleGlobalKeyPress);
 
         function buscarBtnStyleVentaPer() {
-            const isDesktop = window.innerWidth < 768;
+            const isDesktop = window.innerWidth > 768;
 
             if (isDesktop) {
                 const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
