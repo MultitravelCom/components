@@ -215,10 +215,6 @@ const Modal = ({ open, onClose }) => {
 const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
-    const bitrixScript = `
-        (function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn.bitrix24.com/b19657597/crm/form/loader_56.js');
-    `;
-
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
@@ -233,14 +229,14 @@ const App = () => {
             // Verificar si la tecla presionada es "Enter"
             if (event.keyCode === 13) {
                 event.preventDefault();
-                setOpenModal(false);
+                setOpenModal(false); 
             }
         }
 
         document.addEventListener('keydown', handleGlobalKeyPress);
 
         function buscarBtnStyleVentaPer() {
-            const isDesktop = window.innerWidth > 768;
+            const isDesktop = window.innerWidth < 768;
 
             if (isDesktop) {
                 const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
@@ -302,10 +298,8 @@ const App = () => {
                     <div className="main__container__widget_text__ars">Ingresar</div>
                 </ButtonIngresar>
                 <ButtonARSEs />
-                <Modal open={openModal} onClose={() => setOpenModal(false)} >
-                    <div dangerouslySetInnerHTML={{ __html: bitrixScript }} />
-                </Modal>
-            </div >
+                <Modal open={openModal} onClose={() => setOpenModal(false)} />
+            </div>
         </>
     );
 };
