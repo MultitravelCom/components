@@ -254,7 +254,6 @@ function agregarTagAWithHREF(resultsListPage) {
 };
 
 function aplicarModificaciones(resultsListPage) {
-    // removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
@@ -262,8 +261,6 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
-    //removeClassResultInHotelResults();
-    // agregarClassResultInHotelResults();
     checkURL();
 };
 
@@ -296,7 +293,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
-    // aplicarClaseRecomendada();
-    // agregarClassResultInHotelResults();
     checkURL();
 });

@@ -166,7 +166,8 @@ function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
-            checkAndRender(); // Llamar a checkAndRender al detectar cambios
+            checkAndRender();
+            aplicarClaseRecomendada();
         },
         queries: [{ element: '.results-list__page' }],
     };
