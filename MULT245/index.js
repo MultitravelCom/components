@@ -12,7 +12,6 @@ function wait(timeout) {
 // };
 
 function checkURL() {
-    console.log("Función checkURL() llamada");
     let currentURL = window.location.href;
     let imageWrappers = document.querySelectorAll(".gallery__image-wrapper");
 
