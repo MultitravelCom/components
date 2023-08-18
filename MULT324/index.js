@@ -150,7 +150,8 @@ const BitrixFormTitle = () => {
     return (
         <div className="BitrixFormTitle">
             <div className="bitrixFormTitle_text">
-                <p>Completa tus datos para que te contacte un especialistas en viajes, o llamanos al 0800-348-0003</p>
+                <p class="single-line">Completa tus datos para que te contacte un especialista.</p>
+                <p>o llamanos al: 0800-348-0003</p>
                 <spam>Lun a Vie 10 a 20 Hs | Sab 10 a 15 Hs</spam>
             </div>
             <ButtonBitrixForm />
