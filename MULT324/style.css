@@ -155,6 +155,11 @@ source>img {
     line-height: normal;
 }
 
+.style__btn__britrix:hover {
+    background: #0d4e88;
+    color: #fff;
+}
+
 .close-button-bitrix {
     position: absolute;
     top: 10px;
