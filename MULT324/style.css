@@ -77,7 +77,6 @@ source>img {
 .modal-content-inner {
     padding: 20px;
     overflow: auto;
-    /* A&#241;ade desplazamiento si el contenido es demasiado grande */
 }
 
 .modal-content-Bitrix input,
@@ -170,6 +169,9 @@ source>img {
 .b24-form-control-text .b24-form-control {
     height: 50px;
 }
+.b24-form-control-string .b24-form-control, .b24-form-control-list .b24-form-control, .b24-form-control-text .b24-form-control, .b24-form-control-select .field-item{
+    height: 50px !important;
+  }
 
 /* /* Banner hero * */
 .main_conteiner__s1_medio {
