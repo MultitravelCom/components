@@ -168,6 +168,9 @@ source>img {
     cursor: pointer;
     z-index: 999999;
 }
+.b24-form-control-text .b24-form-control {
+    height: 50px;
+}
 
 /* /* Banner hero * */
 .main_conteiner__s1_medio {
