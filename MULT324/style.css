@@ -47,6 +47,107 @@ source>img {
     display: block;
     height: 100%;
 }
+/* BITRIX */
+.modalBitrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    }
+    .modal-content-Bitrix {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    }
+    .modal-content-inner {
+    padding: 20px;
+    overflow: auto;
+    /* A&#241;ade desplazamiento si el contenido es demasiado grande */
+    }
+    .modal-content-Bitrix input,
+    .modal-content-Bitrix textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    .b24-form-wrapper.b24-form-shadow {
+    box-shadow: none !important;
+    }
+    .b24-form-wrapper.b24-form-border-bottom {
+    border-bottom: white !important;
+    }
+    .b24-form-control-alert {
+    margin-bottom: 0 !important;
+    }
+    .b24-form-header-padding {
+    padding: 0 !important;
+    }
+    .BitrixFormTitle {
+    display: flex;
+    padding: 1rem 1rem 0.5rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    .bitrixFormTitle_text {
+    text-align: center;
+    width: 99%;
+    }
+    .bitrixFormTitle_text > p {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 !important;
+    }
+    .b24-form-content {
+    padding: 0 31px !important;
+    }
+    .modal-content-Bitrix input,
+    .modal-content-Bitrix textarea {
+    margin-bottom: 1px !important;
+    }
+    .style__btn__britrix {
+    display: flex;
+    width: 193px;
+    height: 26px;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #0d4e88;
+    background: #fff;
+    color: #0d4e88;
+    color: #0d4e88;
+    font-family: Qanelas Soft;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    }
+    .close-button-bitrix {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999999;
+    }
 
 /* /* Banner hero * */
 .main_conteiner__s1_medio {
@@ -489,6 +590,19 @@ source>img {
     .eventImg {
         width: 38px;
         height: 38px;
+    }
+
+    .b24-form-field {
+        margin-bottom: 0px;
+    }
+
+    .b24-form-btn {
+        min-height: 37px;
+        padding: 0;
+    }
+
+    .b24-form-control-text .b24-form-control {
+        height: 72px;
     }
 }
 
