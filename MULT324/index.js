@@ -486,7 +486,7 @@ function App() {
                     {isFormVisible && (
                         <div className="modalBitrix">
                             <div className="modal-content-Bitrix">
-                                <span className="close-button" onClick={handleCloseForm}>
+                                <span className="close-button-bitrix" onClick={handleCloseForm}>
                                     &times;
                                 </span>
                                 <BitrixFormTitle />
