@@ -235,27 +235,27 @@ const App = () => {
 
         document.addEventListener('keydown', handleGlobalKeyPress);
 
-        function buscarBtnStyleVentaPer() {
-            const isDesktop = window.innerWidth > 768;
+        // function buscarBtnStyleVentaPer() {
+        //     const isDesktop = window.innerWidth > 768;
 
-            if (isDesktop) {
-                const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+        //     if (isDesktop) {
+        //         const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
 
-                if (btnStyleVentaPerList.length > 0) {
-                    btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-                        btnStyleVentaPer.addEventListener('click', (event) => {
-                            event.preventDefault();
-                            setOpenModal(true);
-                        });
-                    });
-                } else {
-                    setTimeout(buscarBtnStyleVentaPer, 1000);
-                }
-            }
-        }
-        if (window.innerWidth > 768) {
-            buscarBtnStyleVentaPer();
-        }
+        //         if (btnStyleVentaPerList.length > 0) {
+        //             btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
+        //                 btnStyleVentaPer.addEventListener('click', (event) => {
+        //                     event.preventDefault();
+        //                     setOpenModal(true);
+        //                 });
+        //             });
+        //         } else {
+        //             setTimeout(buscarBtnStyleVentaPer, 1000);
+        //         }
+        //     }
+        // }
+        // if (window.innerWidth > 768) {
+        //     buscarBtnStyleVentaPer();
+        // }
 
 
         const checkButtonExistence = setInterval(() => {
