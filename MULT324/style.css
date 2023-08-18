@@ -47,6 +47,7 @@ source>img {
     display: block;
     height: 100%;
 }
+
 /* BITRIX */
 .modalBitrix {
     position: fixed;
@@ -59,8 +60,9 @@ source>img {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    }
-    .modal-content-Bitrix {
+}
+
+.modal-content-Bitrix {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -70,57 +72,69 @@ source>img {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    }
-    .modal-content-inner {
+}
+
+.modal-content-inner {
     padding: 20px;
     overflow: auto;
     /* A&#241;ade desplazamiento si el contenido es demasiado grande */
-    }
-    .modal-content-Bitrix input,
-    .modal-content-Bitrix textarea {
+}
+
+.modal-content-Bitrix input,
+.modal-content-Bitrix textarea {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    }
-    .b24-form-wrapper.b24-form-shadow {
+}
+
+.b24-form-wrapper.b24-form-shadow {
     box-shadow: none !important;
-    }
-    .b24-form-wrapper.b24-form-border-bottom {
+}
+
+.b24-form-wrapper.b24-form-border-bottom {
     border-bottom: white !important;
-    }
-    .b24-form-control-alert {
+}
+
+.b24-form-control-alert {
     margin-bottom: 0 !important;
-    }
-    .b24-form-header-padding {
+}
+
+.b24-form-header-padding {
     padding: 0 !important;
-    }
-    .BitrixFormTitle {
+}
+
+.BitrixFormTitle {
     display: flex;
     padding: 1rem 1rem 0.5rem;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    }
-    .bitrixFormTitle_text {
+}
+
+.bitrixFormTitle_text {
     text-align: center;
     width: 99%;
-    }
-    .bitrixFormTitle_text > p {
+}
+
+.bitrixFormTitle_text>p {
     font-weight: 600;
     font-size: 16px;
     margin: 0 !important;
-    }
-    .b24-form-content {
+}
+
+.b24-form-content {
     padding: 0 31px !important;
-    }
-    .modal-content-Bitrix input,
-    .modal-content-Bitrix textarea {
+}
+
+.modal-content-Bitrix input,
+.modal-content-Bitrix textarea {
     margin-bottom: 1px !important;
-    }
-    .style__btn__britrix {
+}
+
+.style__btn__britrix {
     display: flex;
     width: 193px;
     height: 26px;
@@ -139,15 +153,16 @@ source>img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    }
-    .close-button-bitrix {
+}
+
+.close-button-bitrix {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     cursor: pointer;
     z-index: 999999;
-    }
+}
 
 /* /* Banner hero * */
 .main_conteiner__s1_medio {
