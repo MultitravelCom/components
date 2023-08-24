@@ -103,6 +103,8 @@ const BannerMensageCardApp = () => {
 
                 const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
 
+                console.log("Bariloche. ZonaCode:", numericValue);
+
                 setIsBariloche(isZoneInTravelSale);
                 setShouldRenderBanner(isZoneInTravelSale);
             }
