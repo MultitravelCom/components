@@ -184,7 +184,6 @@ const BannerTopTravelSale = () => {
         color: 'white',
         padding: '20px',
         width: '300px',
-        display: 'flex',
         justifyContent: 'center',
         margin: 'auto',
         display: 'none',
