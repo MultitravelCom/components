@@ -121,12 +121,16 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-        
-        const now = new Date();
-        const startTime = new Date(2023, 7, 24, 23, 30); // 24 de agosto de 2023 a las 23:30
-        const endTime = new Date(2023, 7, 24, 15, 16); // 25 de mayo de 2023 a las 23:30
 
-        if (now >= startTime && now <= endTime) {
+        const now = new Date();
+        const options = { timeZone: 'America/Argentina/Buenos_Aires' };
+        const startDate = new Date(Date.UTC(2023, 7, 23, 23, 30)); // 24 de agosto de 2023 a las 23:30
+        const endDate = new Date(Date.UTC(2023, 4, 24, 15, 22)); // 25 de mayo de 2023 a las 15:02
+
+        const localStartDate = new Date(startDate.toLocaleString('es-AR', options));
+        const localEndDate = new Date(endDate.toLocaleString('es-AR', options));
+
+        if (now >= localStartDate && now <= localEndDate) {
             setShouldShowCupones(true);
         }
 
