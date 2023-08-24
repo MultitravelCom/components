@@ -301,7 +301,7 @@
     justify-content: center;
     text-align: center;
     margin: auto;
-    width: 30%;
+    min-width: 25%;
     align-items: center;
 }
 
