@@ -102,7 +102,6 @@ async function showPromocodesDiv() {
 // ************************* Componentes *******************************
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-    const [shouldShowCupones, setShouldShowCupones] = React.useState(false);
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -122,14 +121,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
     React.useEffect(() => {
 
-        const now = new Date();
-        const startDate = new Date(2023, 7, 23, 23, 30); // 24 de agosto de 2023 a las 23:30
-        const endDate = new Date(2023, 7, 24, 15, 27); // 25 de mayo de 2023 a las 15:02
-
-
-        if (now >= startDate && now <= endDate) {
-            setShouldShowCupones(true);
-        }
 
         if (isOpen) {
             const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
@@ -153,7 +144,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {shouldShowCupones && <ComponenteCupones />}
+                        <ComponenteCupones />
                     </div>
                 </div>
             </div>
