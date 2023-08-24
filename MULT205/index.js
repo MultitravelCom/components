@@ -124,7 +124,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
         const now = new Date();
         const startTime = new Date(2023, 7, 24, 23, 30); // 24 de agosto de 2023 a las 23:30
-        const endTime = new Date(2023, 7, 24, 15, 11); // 25 de mayo de 2023 a las 23:30
+        const endTime = new Date(2023, 7, 24, 15, 13); // 25 de mayo de 2023 a las 23:30
 
         if (now >= startTime && now <= endTime) {
             setShouldShowCupones(true);
