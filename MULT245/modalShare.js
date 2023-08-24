@@ -106,6 +106,10 @@ const BannerMensageCardApp = () => {
     
             setIsBariloche(isZoneInTravelSale);
             setShouldRenderBanner(isZoneInTravelSale);
+
+            if (isZoneInTravelSale) {
+                renderBanner();
+            }
         }
     
         // Limpia el intervalo después de la primera ejecución
