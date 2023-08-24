@@ -121,7 +121,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-
+        
         const now = new Date();
         const startTime = new Date(2023, 7, 24, 23, 30); // 24 de agosto de 2023 a las 23:30
         const endTime = new Date(2023, 7, 24, 15, 16); // 25 de mayo de 2023 a las 23:30
