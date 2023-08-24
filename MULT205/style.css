@@ -480,13 +480,13 @@
 
 .cardCuponButtonStyle:hover {
     background: #FDCE07;
-    color: #0D4E88;
+    color: #6E37D0;
 }
 
 .cardCuponButtonStyle:active {
-    border: 2px solid #FFF;
-    background: #6E37D0;
-    color: white;
+    border-radius: 40px;
+    border: 2px solid #6E37D0;
+    background: #FFF;
 }
 
 .main_ToolTipButton {
