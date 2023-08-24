@@ -300,7 +300,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: auto;
+    margin: 36px 0;
     min-width: 25%;
     align-items: center;
     position: relative;
@@ -456,6 +456,8 @@
 }
 
 .cardCuponButtonStyle {
+    width: 101px;
+    height: 38px;
     position: absolute;
     display: inline-flex;
     padding: 10px 16px;
@@ -537,6 +539,8 @@
     .modal__content-cupon {
         padding: 5px;
         width: 100%;
+        margin: 3px 0 24px 0px;
+        height: 50px;
     }
 
     .modal-content__cupones-row {
@@ -572,5 +576,10 @@
     .modal__content-dos-logo,
     .modal__content-tres-logo {
         height: 67px;
+    }
+
+    .cardCuponButtonStyle {
+        right: inherit;
+        bottom: -12px;
     }
 }
