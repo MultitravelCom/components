@@ -303,6 +303,7 @@
     margin: auto;
     min-width: 25%;
     align-items: center;
+    position: relative;
 }
 
 .modal__content-cupon>span {
@@ -462,13 +463,13 @@
     align-items: center;
     gap: 10px;
     border-radius: 40px;
-    background: #FFF;
-    color: #0D4E88;
+    background: #0D4E88;
+    color: white;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    bottom: 16px;
-    right: 20px;
+    bottom: -40px;
+    right: 34px;
     border: 0;
 }
 
