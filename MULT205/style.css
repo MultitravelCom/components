@@ -117,11 +117,13 @@
     background: #0D4E88 !important;
     border-color: #0D4E88 !important;
 }
-.cupones__btn__style:hover{
+
+.cupones__btn__style:hover {
     background: #0D4E88 !important;
     border-color: #0D4E88 !important;
 }
-.cupones__btn__style:active{
+
+.cupones__btn__style:active {
     background: #0c3e69 !important;
     border-color: #0c3e69 !important;
 }
@@ -179,7 +181,8 @@
         top: 16px;
         right: 21px;
     }
-    .booking-breakdown__table .shopping-basket__line{
+
+    .booking-breakdown__table .shopping-basket__line {
         padding: 0 10px !important;
     }
 }
@@ -226,13 +229,18 @@
 }
 
 .modal-content {
-    flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
-    overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
-    max-height: 82vh; /* Limit the height of the modal content */
-    scrollbar-width: thin; /* Para navegadores que soportan la propiedad scrollbar-width */
+    flex-grow: 1;
+    /* Add this line to allow content to grow and be scrollable */
+    overflow-y: auto;
+    /* Add this line to enable vertical scrolling when content overflows */
+    max-height: 82vh;
+    /* Limit the height of the modal content */
+    scrollbar-width: thin;
+    /* Para navegadores que soportan la propiedad scrollbar-width */
     scrollbar-color: #c0c0c0 #f0f0f0;
     border-top: 0 !important;
-}   
+}
+
 .modal-content::-webkit-scrollbar {
     display: none;
 }
@@ -245,8 +253,10 @@
     font-weight: 600;
     color: #FFFFFF;
     padding: 4px;
-    position: sticky; /* Add this line to make the header sticky */
-    top: 0; /* Add this line to position the header at the top */
+    position: sticky;
+    /* Add this line to make the header sticky */
+    top: 0;
+    /* Add this line to position the header at the top */
     z-index: 2;
 }
 
@@ -313,21 +323,29 @@
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
-    display: flex; /* Add this line to enable flex layout */
-    flex-direction: column; /* Add this line to set flex direction to column */
-    position: fixed; /* Keep the modal fixed on the screen */
+    display: flex;
+    /* Add this line to enable flex layout */
+    flex-direction: column;
+    /* Add this line to set flex direction to column */
+    position: fixed;
+    /* Keep the modal fixed on the screen */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    align-items: center; /* Center the modal vertically */
-    justify-content: center; /* Center the modal horizontally */
+    align-items: center;
+    /* Center the modal vertically */
+    justify-content: center;
+    /* Center the modal horizontally */
 }
 
 .modal-content__cupones {
     padding: 20px;
-    flex-grow: 1; /* Add this line to allow content to grow and be scrollable */
-    overflow-y: auto; /* Add this line to enable vertical scrolling when content overflows */
-    max-height: 80vh; /* Limit the height of the modal content */
+    flex-grow: 1;
+    /* Add this line to allow content to grow and be scrollable */
+    overflow-y: auto;
+    /* Add this line to enable vertical scrolling when content overflows */
+    max-height: 80vh;
+    /* Limit the height of the modal content */
 }
 
 .modal__content-title-circle,
@@ -352,7 +370,8 @@
     margin: 1rem;
     cursor: grab;
 }
-.modal-content__cupones-row:active{
+
+.modal-content__cupones-row:active {
     cursor: grabbing;
 }
 
@@ -395,6 +414,7 @@
     background: rgba(13, 78, 136, 0.1);
     border-right: 1px dashed #0D4E88;
     padding: 1rem;
+    align-items: center;
 }
 
 .modal__content-uno-logo>img {
@@ -425,6 +445,73 @@
 
 .booking-steps__item {
     z-index: 0 !important;
+}
+
+/* BOTONES COPY */
+.main_cardCupon_CuponCode {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.cardCuponButtonStyle {
+    position: absolute;
+    display: inline-flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    background: #FFF;
+    color: #0D4E88;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    bottom: 16px;
+    right: 20px;
+    border: 0;
+}
+
+.cardCuponButtonStyle:hover {
+    background: #FDCE07;
+    color: #0D4E88;
+}
+
+.cardCuponButtonStyle:active {
+    border: 2px solid #FFF;
+    background: #6E37D0;
+    color: white;
+}
+
+.main_ToolTipButton {
+    width: 67px;
+    height: 26px;
+    position: absolute;
+    display: inline-flex;
+    padding: 4px 10px;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: #FDCE07;
+    right: 10px;
+    bottom: -15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.main_ToolTipButton.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main_ToolTipButton>p {
+    color: #6E37D0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.12px;
 }
 
 @media(max-width: 1024px) {
