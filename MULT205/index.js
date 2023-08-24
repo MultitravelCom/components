@@ -189,7 +189,7 @@ const CardCuponButton = ({ textToCopy }) => {
             <div className="cardCuponButtonStyle__copy">
                 Copiar
             </div>
-            <div class="cardCuponButtonStyle__svg" style={"color: white"}>
+            <div class="cardCuponButtonStyle__svg" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M11.3335 8.93329V10.9333C11.3335 13.6 10.2668 14.6666 7.60016 14.6666H5.06683C2.40016 14.6666 1.3335 13.6 1.3335 10.9333V8.39996C1.3335 5.73329 2.40016 4.66663 5.06683 4.66663H7.06683" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M11.3336 8.93329H9.20023C7.60023 8.93329 7.06689 8.39996 7.06689 6.79996V4.66663L11.3336 8.93329Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
