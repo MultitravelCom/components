@@ -94,24 +94,23 @@ const BannerMensageCardApp = () => {
     }, []);
 
     React.useEffect(() => {
-        const interval = setInterval(() => {
-            const dataValueElement = document.querySelector('.zone-selector-value');
-
-            if (dataValueElement) {
-                const dataValue = dataValueElement.value;
-                const numericValue = parseInt(dataValue);
-
-                const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
-
-                console.log("Bariloche. ZonaCode:", numericValue);
-
-                setIsBariloche(isZoneInTravelSale);
-                setShouldRenderBanner(isZoneInTravelSale);
-            }
-        }, 1000);
-
+        const dataValueElement = document.querySelector('.zone-selector-value');
+    
+        if (dataValueElement) {
+            const dataValue = dataValueElement.value;
+            const numericValue = parseInt(dataValue);
+    
+            const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
+    
+            console.log("Bariloche. ZonaCode:", numericValue);
+    
+            setIsBariloche(isZoneInTravelSale);
+            setShouldRenderBanner(isZoneInTravelSale);
+        }
+    
+        // Limpia el intervalo después de la primera ejecución
         return () => {
-            clearInterval(interval);
+            clearInterval(intervalRef.current);
         };
     }, []);
 
@@ -123,10 +122,8 @@ const BannerMensageCardApp = () => {
 
     return (
         <>
-            {isBariloche ? (
+            {(isBariloche || hasBestPriceTaxIncluded) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
-            ) : hasBestPriceTaxIncluded ? (
-                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             )}
