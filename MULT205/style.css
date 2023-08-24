@@ -498,7 +498,7 @@
     justify-content: center;
     gap: 10px;
     border-radius: 20px;
-    background: #FDCE07;
+    background: #6E37D0;
     right: 10px;
     bottom: -15px;
     opacity: 0;
@@ -512,7 +512,7 @@
 }
 
 .main_ToolTipButton>p {
-    color: #6E37D0;
+    color: #FFFFFF;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
