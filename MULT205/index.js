@@ -26,7 +26,7 @@ function movePromoCodesContainer() {
     const promocodesContainer = document.querySelector('.confirm-booking__promocodes');
     const sectionHolderData = document.querySelector('.confirm-booking__section.confirm-booking__holder-data');
     sectionHolderData.insertAdjacentElement('afterend', promocodesContainer);
-}
+};
 
 movePromoCodesContainer();
 
@@ -35,7 +35,7 @@ function toggleWhatsappDisplayStyle(isOpen) {
     if (whatsappSelector) {
         whatsappSelector.style.display = isOpen ? 'none' : 'block';
     }
-}
+};
 
 function moveBookingBreakdownTable() {
     const observer = new MutationObserver((mutationsList, observer) => {
@@ -72,7 +72,7 @@ function moveBookingBreakdownTable() {
             line.style.display = 'none';
         });
     }
-}
+};
 
 moveBookingBreakdownTable();
 
@@ -85,7 +85,7 @@ async function changeText() {
     } else {
         span.textContent = 'Ingresá tu código promocional';
     }
-}
+};
 
 async function showPromocodesDiv() {
     // Espera a que el elemento exista antes de intentar mostrarlo
@@ -97,7 +97,7 @@ async function showPromocodesDiv() {
         }
         await new Promise(resolve => setTimeout(resolve, 100));
     }
-}
+};
 
 // ************************* Componentes *******************************
 // Modal
@@ -142,13 +142,13 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        <ComponenteCupones />
+                        {/* <ComponenteCupones /> */}
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 // ****************************************************************************************************
 
 function ComponenteCupones() {
@@ -200,7 +200,7 @@ function ComponenteCupones() {
             ))}
         </>
     )
-}
+};
 
 const App = () => {
     const [modalOpen, setModalOpen] = React.useState(false);
