@@ -142,9 +142,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {
-                            <ComponenteCupones />
-                        }
+                        <ComponenteCupones />
                     </div>
                 </div>
             </div>
@@ -174,7 +172,7 @@ function ComponenteCupones() {
 
     return (
         <>
-            { couponsData.map(({ id, img, title, description, duration, cupon }) => {
+            {couponsData.map(({ id, img, title, description, duration, cupon }) => (
                 < div className="modal__content-uno" key={id}>
                     <div className="modal__content-uno-title">
                         <div className="modal__content-uno-logo">
@@ -199,9 +197,7 @@ function ComponenteCupones() {
                         </div>
                     </div>
                 </div >
-            })
-                
-            }
+            ))}
         </>
     )
 }
