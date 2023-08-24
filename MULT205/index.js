@@ -1,49 +1,26 @@
-// function makeModalDraggable(modalSelector) {
-//     const modalContainer = document.querySelector(modalSelector);
-//     let isDragging = false;
-//     let initialY;
-
-//     modalContainer.addEventListener('mousedown', (e) => {
-//         isDragging = true;
-//         initialY = e.clientY - modalContainer.offsetTop;
-//     });
-
-//     document.addEventListener('mousemove', (e) => {
-//         if (!isDragging) return;
-
-//         const currentY = e.clientY - initialY;
-//         modalContainer.style.top = `${currentY}px`;
-//     });
-
-//     document.addEventListener('mouseup', () => {
-//         isDragging = false;
-//     });
-// }
-
 function makeScrollableContainer(containerSelector) {
     const container = document.querySelector(containerSelector);
     let isDragging = false;
     let initialY;
     let initialScrollTop;
-  
+
     container.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      initialY = e.clientY;
-      initialScrollTop = container.scrollTop;
+        isDragging = true;
+        initialY = e.clientY;
+        initialScrollTop = container.scrollTop;
     });
-  
+
     document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-  
-      const deltaY = e.clientY - initialY;
-      container.scrollTop = initialScrollTop - deltaY;
+        if (!isDragging) return;
+
+        const deltaY = e.clientY - initialY;
+        container.scrollTop = initialScrollTop - deltaY;
     });
-  
+
     document.addEventListener('mouseup', () => {
-      isDragging = false;
+        isDragging = false;
     });
-  }
-  
+}
 
 function movePromoCodesContainer() {
     const promocodesContainer = document.querySelector('.confirm-booking__promocodes');
@@ -122,35 +99,8 @@ async function showPromocodesDiv() {
     }
 }
 
-function ComponenteCupones({ img_logo_cupon, code_cupon, cupon_texto_a, cupon_texto_b, cupon_texto_c }) {
-    return (
-        <div className="modal__content-uno">
-            <div className="modal__content-uno-title">
-                <div className="modal__content-uno-logo">
-                    <img src={img_logo_cupon} />
-                </div>
-                <div className="modal__content-title-circleCalendar">
-                    <div className="modal__content-title-h3">
-                        <h2>{cupon_texto_a}</h2>
-                    </div>
-                    <div className="modal__content-title-circle">
-                        <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                        <p>{cupon_texto_b}</p>
-                    </div>
-                    <div className="modal__content-title-calendar">
-                        <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
-                        <p>{cupon_texto_c}</p>
-                    </div>
-                </div>
-                <div className="modal__content-cupon">
-                    <h2>{code_cupon}</h2>
-                    <span>Copia el siguiente código</span>
-                </div>
-            </div>
-        </div>
-    )
-}
-
+// ************************* Componentes *******************************
+// Modal
 const ModalCupones = ({ isOpen, onClose }) => {
 
     const handleOutsideClick = (event) => {
@@ -175,7 +125,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
             makeScrollableContainer(containerSelector);
         }
 
-
         document.addEventListener('keydown', handleKeyDown);
 
         return () => {
@@ -193,81 +142,68 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {/* <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        />
-                        <ComponenteCupones
-                            img_logo_cupon="https://multitravelcom.github.io/style/General/img/Logo%20Multi%20cupon.svg"
-                            code_cupon="DIADELPADRE10"
-                            cupon_texto_a="10% OFF para regalarle a papá"
-                            cupon_texto_b="Todos los productos"
-                            cupon_texto_c="Disponible hasta el 18/06/2023 hasta las 23:59"
-                        /> */}
+                        {
+                            <ComponenteCupones />
+                        }
                     </div>
                 </div>
             </div>
         </div>
     );
+}
+// ****************************************************************************************************
+
+function ComponenteCupones() {
+
+    const [couponsData, setCouponsData] = React.useState([]);
+
+    const getCouponsFetch = async () => {
+        const res = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/MULT205/cuponesDB.json');
+        const data = await res.json();
+        console.log(data)
+        return data.cupones;
+    }
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            const data = await getCouponsFetch();
+            setCouponsData(data);
+        };
+        fetchData();
+    }, []);
+
+    return (
+        <>
+            { couponsData.map(({ id, img, title, description, duration, cupon }) => {
+                < div className="modal__content-uno" key={id}>
+                    <div className="modal__content-uno-title">
+                        <div className="modal__content-uno-logo">
+                            <img src={img} />
+                        </div>
+                        <div className="modal__content-title-circleCalendar">
+                            <div className="modal__content-title-h3">
+                                <h2>{title}</h2>
+                            </div>
+                            <div className="modal__content-title-circle">
+                                <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+                                <p>{description}</p>
+                            </div>
+                            <div className="modal__content-title-calendar">
+                                <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
+                                <p>{duration}</p>
+                            </div>
+                        </div>
+                        <div className="modal__content-cupon">
+                            <h2>{cupon}</h2>
+                            <span>Copia el siguiente código</span>
+                        </div>
+                    </div>
+                </div >
+            })
+                
+            }
+        </>
+    )
 }
 
 const App = () => {

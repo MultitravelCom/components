@@ -3,52 +3,51 @@
         {
             "id": "a1",
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE10si"
+            "title": "10% OFF en Alojamiento | Argentina",
+            "description": "Aplica para todas las provincias.",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "TRAVELARGENTINA"
         },
         {
             "id": "a2",
 
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE11si"
+            "title": "30% OFF en Alojamiento | Bariloche",
+            "description": "Aplica para el hotel Rodeo Ski, Ausonia, Bariloche City Y Mizu Reservando del 7 de enero al 9 de marzo del 2024",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "VERANOBRC"
         },
         {
             "id": "a3",
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE12si"
+            "title": "10% OFF en Alojamiento | Caribe",
+            "description": "Aplica para Cancún, Playa del Carmen y Punta Cana.",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "TRAVELCARIBE"
         },
         {
             "id": "a4",
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE13si"
+            "title": "10% OFF en Alojamiento | Estados Unidos",
+            "description": "Aplica para Miami y Nueva York.",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "TRAVELUSA"
         },
         {
             "id": "a5",
-
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE14si"
+            "title": "10% OFF en Alojamiento | Europa",
+            "description": "Aplica para Madrid, Roma, Barcelona, Londres y Paris.",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "TRAVELEUROPA"
         },
         {
             "id": "a6",
             "img": "https://multitravelcom.github.io/MT/Evento/PreViaje/Bariloche/barilo-a%20(1).webp",
-            "title": "10% OFF en vuelos y paquetes",
-            "description": "En paquetes, el descuento se aplica solo al aéreo. Tope de descuento $25.000. Cantidad limitada.",
-            "duration": "Disponible hasta el 10/05/2023 hasta las 23:59.",
-            "cupon": "MULTITRAVELHOTSALE15si"
+            "title": "10% OFF en Alojamiento | Latam",
+            "description": "Aplica para Perú, Colombia y Costa Rica.",
+            "duration": "Disponible hasta el 03/08/2023 hasta las 23:59.",
+            "cupon": "TRAVELATAM"
         }
     ]
 }
