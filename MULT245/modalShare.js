@@ -109,6 +109,8 @@ const BannerMensageCardApp = () => {
         
                 setIsBariloche(isZoneInTravelSale);
                 setShouldRenderBanner(isZoneInTravelSale);
+
+                console.log("shouldRenderBanner:", shouldRenderBanner);
             }
         }, 1000);
     
