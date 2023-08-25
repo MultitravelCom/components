@@ -79,47 +79,42 @@ const BannerMensageCardApp = () => {
     const [shouldRenderBanner, setShouldRenderBanner] = React.useState(false);
 
 
+    // React.useEffect(() => {
+    //     const checkDivPresence = () => {
+    //         const div = document.querySelector('.bestprice__taxincluded');
+    //         setHasBestPriceTaxIncluded(!div);
+    //     };
+
+    //     checkDivPresence();
+    //     const interval = setInterval(checkDivPresence, 1000);
+
+    //     return () => {
+    //         clearInterval(interval);
+    //     };
+    // }, []);
+
     React.useEffect(() => {
-        const checkDivPresence = () => {
+        const interval = setInterval(() => {
             const div = document.querySelector('.bestprice__taxincluded');
             setHasBestPriceTaxIncluded(!div);
-        };
-
-        checkDivPresence();
-        const interval = setInterval(checkDivPresence, 1000);
-
+            
+            const dataValueElement = document.querySelector('.zone-selector-value');
+            if (dataValueElement) {
+                const dataValue = dataValueElement.value;
+                const numericValue = parseInt(dataValue);
+        
+                const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
+        
+                console.log("Bariloche. ZonaCode:", numericValue);
+        
+                setIsBariloche(isZoneInTravelSale);
+                setShouldRenderBanner(isZoneInTravelSale);
+            }
+        }, 1000);
+    
         return () => {
             clearInterval(interval);
         };
-    }, []);
-
-    React.useEffect(() => {
-        const dataValueElement = document.querySelector('.zone-selector-value');
-    
-        if (dataValueElement) {
-            const dataValue = dataValueElement.value;
-            const numericValue = parseInt(dataValue);
-    
-            const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
-    
-            console.log("Bariloche. ZonaCode:", numericValue);
-    
-            setIsBariloche(isZoneInTravelSale);
-            setShouldRenderBanner(isZoneInTravelSale);
-        }
-    
-        // Limpia el intervalo después de la primera ejecución
-        return () => {
-            clearInterval(intervalRef.current);
-        };
-    }, []);
-
-    React.useEffect(() => {
-        if (shouldRenderBanner) {
-            renderBanner();
-            console.log("renderBanner")
-
-        }
     }, [shouldRenderBanner]);
 
     return (
