@@ -106,7 +106,7 @@ const BannerMensageCardApp = () => {
 
     React.useEffect(() => {
         checkAndUpdateBanner(); // Llamamos inicialmente
-    }, [shouldRenderBanner]);
+    }, []);
 
     return (
         <>
