@@ -78,35 +78,34 @@ const BannerMensageCardApp = () => {
     const [isBariloche, setIsBariloche] = React.useState(false);
     const [shouldRenderBanner, setShouldRenderBanner] = React.useState(false);
 
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            const div = document.querySelector('.bestprice__taxincluded');
-            setHasBestPriceTaxIncluded(!div);
+    const checkAndUpdateBanner = () => {
+        const div = document.querySelector('.bestprice__taxincluded');
+        setHasBestPriceTaxIncluded(!div);
 
-            const dataValueElement = document.querySelector('.zone-selector-value');
-            if (dataValueElement) {
-                const dataValue = dataValueElement.value;
-                const numericValue = parseInt(dataValue);
+        const dataValueElement = document.querySelector('.zone-selector-value');
+        if (dataValueElement) {
+            const dataValue = dataValueElement.value;
+            const numericValue = parseInt(dataValue);
 
-                const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
+            const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
 
-                console.log("Bariloche. ZonaCode:", numericValue);
+            console.log("Bariloche. ZonaCode:", numericValue);
 
-                setIsBariloche(isZoneInTravelSale);
-                setShouldRenderBanner(isZoneInTravelSale);
+            setIsBariloche(isZoneInTravelSale);
+            setShouldRenderBanner(isZoneInTravelSale);
 
-                if (isZoneInTravelSale) {
-                    clearInterval(interval); // Detener el intervalo si se cumple la condición
-                }
+            console.log("shouldRenderBanner:", shouldRenderBanner);
 
-                console.log("shouldRenderBanner:", shouldRenderBanner);
+            if (isZoneInTravelSale) {
+                renderBanner();
+                console.log("renderBanner");
             }
-        }, 1000);
+        }
+    };
 
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
+    React.useEffect(() => {
+        checkAndUpdateBanner(); // Llamamos inicialmente
+    }, [shouldRenderBanner]);
 
     return (
         <>
@@ -118,6 +117,7 @@ const BannerMensageCardApp = () => {
         </>
     );
 };
+
 
 
 const checkAndRender = async () => {
