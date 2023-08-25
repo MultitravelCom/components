@@ -175,7 +175,7 @@ const Loader = () => {
     );
 };
 function shouldShowEvent() {
-    const startDate = new Date("2023-08-24T23:59:00");
+    const startDate = new Date("2023-08-23T23:59:00");
     const endDate = new Date("2023-08-26T23:59:00");
     const now = new Date();
 
@@ -309,7 +309,9 @@ const Card = ({ destinos, onContactClick }) => {
                                 className="main__conteiner__s1__destacado__card uno"
                                 style={{ height: "100%", width: "100%" }}
                             >
-                                {destino.events === "si" && <EventImg style="eventImg" shouldShowEvent={shouldShowEvent} />}
+                                {destino.events === "si" && shouldShowEvent() && (
+                                    <EventImg style="eventImg" />
+                                )}
                                 <picture>
                                     <source media="(min-width: 1024px)" srcSet={destino.img} />
                                     <source
