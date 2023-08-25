@@ -437,7 +437,7 @@ source>img {
 }
 
 /* BANNER TRAVEL SALE */
-.main_conteiner__s1_medio__paquetes {
+.main__container_BannerTravelSale {
     display: none;
     border-radius: 16px;
     background: #6E37D0;
