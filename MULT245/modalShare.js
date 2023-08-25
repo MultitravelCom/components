@@ -92,6 +92,8 @@ const BannerMensageCardApp = () => {
 
             setIsBariloche(isZoneInTravelSale);
 
+            console.log("isZoneInTravelSale:", isZoneInTravelSale);
+
             if (isZoneInTravelSale) {
                 renderBanner();
                 console.log("renderBanner");
@@ -101,7 +103,7 @@ const BannerMensageCardApp = () => {
 
     return (
         <>
-            {(isBariloche || hasBestPriceTaxIncluded) ? (
+            {( isBariloche || hasBestPriceTaxIncluded ) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
