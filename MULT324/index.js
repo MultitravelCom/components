@@ -188,10 +188,6 @@ const EventImg = (props) => {
     if (!shouldShowEvent()) {
         return (
             <div className={props.style}>
-                <img
-                    alt={`Imagen evento promocion`}
-                    src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/iconHotWeek.webp"}
-                />
             </div>
         );
     }
@@ -336,12 +332,12 @@ const Card = ({ destinos, onContactClick }) => {
                                     <div className="priceStyle left">{destino.price}</div>
                                     <div className="priceStyle right">{destino.priceBaja}</div>
                                 </div>
-                                <Button 
-                                id={destino.title} 
-                                style="btn_Style_Venta_Per"
-                                link={destino.linkWa} 
-                                text="Contactarme" 
-                                onClick={() => onContactClick(destino.id)} />
+                                <Button
+                                    id={destino.title}
+                                    style="btn_Style_Venta_Per"
+                                    link={destino.linkWa}
+                                    text="Contactarme"
+                                    onClick={() => onContactClick(destino.id)} />
                             </div>
                         </div>
                     ))
