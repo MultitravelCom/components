@@ -150,6 +150,42 @@ const renderBanner = () => {
 
 // const checkAndRender = async () => {
 
+const checkAndRender = async () => {
+    const infoCardContents = document.querySelectorAll('.info-card__content');
+    const infoCardImgContents = document.querySelectorAll('.info-card__image');
+
+    // Esperar a que los elementos estén disponibles
+    while (infoCardContents.length === 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+
+    // Renderizar componentes de imágenes
+    infoCardImgContents.forEach(infoCardImgContent => {
+        if (!infoCardImgContent.querySelector('.main__container__iconImg')) {
+            const nuevoDivIconImg = document.createElement('div');
+            infoCardImgContent.appendChild(nuevoDivIconImg);
+            nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
+            ReactDOM.render(<IconImg />, nuevoDivIconImg);
+        }
+    });
+
+    // Renderizar componentes de contenido
+    infoCardContents.forEach(infoCardContent => {
+        if (!infoCardContent.querySelector('.main__container__bannerMensageCard__App')) {
+            const nuevoDivReact = document.createElement('div');
+            const nuevoDivBannerMensage = document.createElement('div');
+
+            infoCardContent.appendChild(nuevoDivReact);
+            infoCardContent.appendChild(nuevoDivBannerMensage);
+
+            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+            ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
+            ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
+        }
+    });
+};
+
 //     let infoCardContents = document.querySelectorAll('.info-card__content');
 //     let infoCardImgContents = document.querySelectorAll('.info-card__image');
 
@@ -194,58 +230,6 @@ const renderBanner = () => {
 //         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
 //     });
 // };
-
-const renderContentComponent = (parentElement) => {
-    const nuevoDivReact = document.createElement('div');
-    parentElement.appendChild(nuevoDivReact);
-    ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-};
-
-const renderImageComponent = (parentElement) => {
-    const nuevoDivIconImg = document.createElement('div');
-    parentElement.appendChild(nuevoDivIconImg);
-    nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
-    ReactDOM.render(<IconImg />, nuevoDivIconImg);
-};
-
-const renderBannerComponent = (parentElement) => {
-    const nuevoDivBannerMensage = document.createElement('div');
-    parentElement.appendChild(nuevoDivBannerMensage);
-    nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-    ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
-};
-
-const checkAndRender = async () => {
-    const infoCardContents = document.querySelectorAll('.info-card__content');
-    const infoCardImgContents = document.querySelectorAll('.info-card__image');
-
-    infoCardImgContents.forEach((infoCardImgContent) => {
-        const iconImgContainer = infoCardImgContent.querySelector('.icon-img-container');
-        if (iconImgContainer && !iconImgContainer.hasAttribute('data-rendered')) {
-            renderImageComponent(iconImgContainer);
-            iconImgContainer.setAttribute('data-rendered', 'true');
-        }
-    });
-
-    infoCardContents.forEach((infoCardContent) => {
-        const compartirAlojamientoContainer = infoCardContent.querySelector('.compartir-alojamiento-container');
-        if (compartirAlojamientoContainer && !compartirAlojamientoContainer.hasAttribute('data-rendered')) {
-            renderContentComponent(compartirAlojamientoContainer);
-            compartirAlojamientoContainer.setAttribute('data-rendered', 'true');
-        }
-
-        const bannerMensageContainer = infoCardContent.querySelector('.banner-mensage-container');
-        if (bannerMensageContainer && !bannerMensageContainer.hasAttribute('data-rendered')) {
-            renderBannerComponent(bannerMensageContainer);
-            bannerMensageContainer.setAttribute('data-rendered', 'true');
-        }
-    });
-
-    if (infoCardContents.length === 0 || infoCardImgContents.length === 0) {
-        setTimeout(checkAndRender, 1000);
-    }
-};
-
 
 function observarCambiosCheckAndRenderII() {
     const observerConfig = {
