@@ -106,11 +106,6 @@ const BannerMensageCardApp = () => {
     
             setIsBariloche(isZoneInTravelSale);
             setShouldRenderBanner(isZoneInTravelSale);
-
-            if (isZoneInTravelSale) {
-                renderBanner();
-                console.log("renderBanner")
-            }
         }
     
         // Limpia el intervalo después de la primera ejecución
@@ -122,6 +117,8 @@ const BannerMensageCardApp = () => {
     React.useEffect(() => {
         if (shouldRenderBanner) {
             renderBanner();
+            console.log("renderBanner")
+
         }
     }, [shouldRenderBanner]);
 
