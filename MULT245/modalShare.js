@@ -146,9 +146,8 @@ const renderBanner = (isZoneInSale) => {
     if (mainContentElement) {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
-        const isBariloche = isZoneInTravelSale();
-        
-        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isBariloche} />, nuevoDivIconImg);
+
+        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInSale} />, nuevoDivIconImg);
     }
 };
 
