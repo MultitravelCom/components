@@ -109,6 +109,7 @@ const BannerMensageCardApp = () => {
 
             if (isZoneInTravelSale) {
                 renderBanner();
+                console.log("renderBanner")
             }
         }
     
@@ -228,3 +229,4 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
+
