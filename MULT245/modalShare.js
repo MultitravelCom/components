@@ -23,7 +23,6 @@ function isZoneInTravelSale() {
     return false;
 }
 
-
 function ButtonModalShare(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -149,87 +148,88 @@ const renderBanner = () => {
 };
 
 // const checkAndRender = async () => {
+//     const infoCardContents = document.querySelectorAll('.info-card__content');
+//     const infoCardImgContents = document.querySelectorAll('.info-card__image');
 
-const checkAndRender = async () => {
-    const infoCardContents = document.querySelectorAll('.info-card__content');
-    const infoCardImgContents = document.querySelectorAll('.info-card__image');
-
-    // Esperar a que los elementos estén disponibles
-    while (infoCardContents.length === 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-
-    // Renderizar componentes de imágenes
-    infoCardImgContents.forEach(infoCardImgContent => {
-        if (!infoCardImgContent.querySelector('.main__container__iconImg')) {
-            const nuevoDivIconImg = document.createElement('div');
-            infoCardImgContent.appendChild(nuevoDivIconImg);
-            nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
-            ReactDOM.render(<IconImg />, nuevoDivIconImg);
-        }
-    });
-
-    // Renderizar componentes de contenido
-    infoCardContents.forEach(infoCardContent => {
-        if (!infoCardContent.querySelector('.main__container__bannerMensageCard__App')) {
-            const nuevoDivReact = document.createElement('div');
-            const nuevoDivBannerMensage = document.createElement('div');
-
-            infoCardContent.appendChild(nuevoDivReact);
-            infoCardContent.appendChild(nuevoDivBannerMensage);
-
-            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-
-            ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-            ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
-        }
-    });
-};
-
-//     let infoCardContents = document.querySelectorAll('.info-card__content');
-//     let infoCardImgContents = document.querySelectorAll('.info-card__image');
-
+//     // Esperar a que los elementos estén disponibles
 //     while (infoCardContents.length === 0) {
 //         await new Promise(resolve => setTimeout(resolve, 1000));
-//         infoCardContents = document.querySelectorAll('.info-card__content');
-//         infoCardImgContents = document.querySelectorAll('.info-card__image');
 //     }
+
+//     // Renderizar componentes de imágenes
 //     infoCardImgContents.forEach(infoCardImgContent => {
-//         const nuevoDivIconImg = document.createElement('div');
-//         infoCardImgContent.appendChild(nuevoDivIconImg);
-//         nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
-//         ReactDOM.render(<IconImg />, nuevoDivIconImg);
+//         if (!infoCardImgContent.querySelector('.main__container__iconImg')) {
+//             const nuevoDivIconImg = document.createElement('div');
+//             infoCardImgContent.appendChild(nuevoDivIconImg);
+//             nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
+//             ReactDOM.render(<IconImg />, nuevoDivIconImg);
+//         }
 //     });
 
+//     // Renderizar componentes de contenido
 //     infoCardContents.forEach(infoCardContent => {
-//         /*
-//         Change property of a element so it opens another tab and doesnt redirect
-//         */
-//         const absLink = infoCardContent.querySelector('a.abs');
+//         if (!infoCardContent.querySelector('.main__container__bannerMensageCard__App')) {
+//             const nuevoDivReact = document.createElement('div');
+//             const nuevoDivBannerMensage = document.createElement('div');
 
-//         // Check if the element exists before modifying it
-//         if (absLink) {
-//             // Add the target="_blank" attribute to the anchor element
-//             absLink.setAttribute('target', '_blank');
+//             infoCardContent.appendChild(nuevoDivReact);
+//             infoCardContent.appendChild(nuevoDivBannerMensage);
 
+//             nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+//             ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
+//             ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
 //         }
-
-
-
-//         const nuevoDiv = document.createElement('div');
-//         const nuevoDivReact = document.createElement('div');
-//         const nuevoDivBannerMensage = document.createElement('div');
-
-//         infoCardContent.appendChild(nuevoDivReact);
-//         infoCardContent.appendChild(nuevoDivBannerMensage);
-
-//         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-
-
-//         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-//         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
 //     });
 // };
+
+const checkAndRender = async () => {
+
+
+    let infoCardContents = document.querySelectorAll('.info-card__content');
+    let infoCardImgContents = document.querySelectorAll('.info-card__image');
+
+    while (infoCardContents.length === 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        infoCardContents = document.querySelectorAll('.info-card__content');
+        infoCardImgContents = document.querySelectorAll('.info-card__image');
+    }
+    infoCardImgContents.forEach(infoCardImgContent => {
+        const nuevoDivIconImg = document.createElement('div');
+        infoCardImgContent.appendChild(nuevoDivIconImg);
+        nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
+        ReactDOM.render(<IconImg />, nuevoDivIconImg);
+    });
+
+    infoCardContents.forEach(infoCardContent => {
+        /*
+        Change property of a element so it opens another tab and doesnt redirect
+        */
+        const absLink = infoCardContent.querySelector('a.abs');
+
+        // Check if the element exists before modifying it
+        if (absLink) {
+            // Add the target="_blank" attribute to the anchor element
+            absLink.setAttribute('target', '_blank');
+
+        }
+
+
+
+        const nuevoDiv = document.createElement('div');
+        const nuevoDivReact = document.createElement('div');
+        const nuevoDivBannerMensage = document.createElement('div');
+
+        infoCardContent.appendChild(nuevoDivReact);
+        infoCardContent.appendChild(nuevoDivBannerMensage);
+
+        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
+        ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
+    });
+};
 
 function observarCambiosCheckAndRenderII() {
     const observerConfig = {
