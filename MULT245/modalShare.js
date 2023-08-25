@@ -78,7 +78,7 @@ const BannerMensageCardApp = () => {
     const [isBariloche, setIsBariloche] = React.useState(false);
     const [shouldRenderBanner, setShouldRenderBanner] = React.useState(false);
 
-    const checkAndUpdateBanner = () => {
+    React.useEffect(() => {
         const div = document.querySelector('.bestprice__taxincluded');
         setHasBestPriceTaxIncluded(!div);
 
@@ -92,20 +92,13 @@ const BannerMensageCardApp = () => {
             console.log("Bariloche. ZonaCode:", numericValue);
 
             setIsBariloche(isZoneInTravelSale);
-            setShouldRenderBanner(isZoneInTravelSale);
-
-            console.log("shouldRenderBanner:", shouldRenderBanner);
 
             if (isZoneInTravelSale) {
+                setShouldRenderBanner(true); // Cambiamos a true directamente
                 renderBanner();
                 console.log("renderBanner");
-                console.log("shouldRenderBanner is now true");
             }
         }
-    };
-
-    React.useEffect(() => {
-        checkAndUpdateBanner(); // Llamamos inicialmente
     }, []);
 
     return (
