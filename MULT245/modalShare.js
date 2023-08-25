@@ -78,46 +78,35 @@ const BannerMensageCardApp = () => {
     const [isBariloche, setIsBariloche] = React.useState(false);
     const [shouldRenderBanner, setShouldRenderBanner] = React.useState(false);
 
-
-    // React.useEffect(() => {
-    //     const checkDivPresence = () => {
-    //         const div = document.querySelector('.bestprice__taxincluded');
-    //         setHasBestPriceTaxIncluded(!div);
-    //     };
-
-    //     checkDivPresence();
-    //     const interval = setInterval(checkDivPresence, 1000);
-
-    //     return () => {
-    //         clearInterval(interval);
-    //     };
-    // }, []);
-
     React.useEffect(() => {
         const interval = setInterval(() => {
             const div = document.querySelector('.bestprice__taxincluded');
             setHasBestPriceTaxIncluded(!div);
-            
+
             const dataValueElement = document.querySelector('.zone-selector-value');
             if (dataValueElement) {
                 const dataValue = dataValueElement.value;
                 const numericValue = parseInt(dataValue);
-        
+
                 const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
-        
+
                 console.log("Bariloche. ZonaCode:", numericValue);
-        
+
                 setIsBariloche(isZoneInTravelSale);
                 setShouldRenderBanner(isZoneInTravelSale);
+
+                if (isZoneInTravelSale) {
+                    clearInterval(interval); // Detener el intervalo si se cumple la condición
+                }
 
                 console.log("shouldRenderBanner:", shouldRenderBanner);
             }
         }, 1000);
-    
+
         return () => {
             clearInterval(interval);
         };
-    }, [shouldRenderBanner]);
+    }, []);
 
     return (
         <>
@@ -129,6 +118,7 @@ const BannerMensageCardApp = () => {
         </>
     );
 };
+
 
 const checkAndRender = async () => {
 
