@@ -194,44 +194,59 @@ const renderBanner = () => {
 //         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
 //     });
 // };
-const renderContentComponent = (element) => {
+
+const renderContentComponent = (parentElement) => {
     const nuevoDivReact = document.createElement('div');
-    element.appendChild(nuevoDivReact);
+    parentElement.appendChild(nuevoDivReact);
     ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
 };
 
-const renderImageComponent = (element) => {
+const renderImageComponent = (parentElement) => {
     const nuevoDivIconImg = document.createElement('div');
-    element.appendChild(nuevoDivIconImg);
+    parentElement.appendChild(nuevoDivIconImg);
     nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
     ReactDOM.render(<IconImg />, nuevoDivIconImg);
 };
 
-const checkAndRender = () => {
+const renderBannerComponent = (parentElement) => {
+    const nuevoDivBannerMensage = document.createElement('div');
+    parentElement.appendChild(nuevoDivBannerMensage);
+    nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+    ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
+};
+
+const checkAndRender = async () => {
     const infoCardContents = document.querySelectorAll('.info-card__content');
     const infoCardImgContents = document.querySelectorAll('.info-card__image');
 
-    infoCardContents.forEach((infoCardContent) => {
-        if (!infoCardContent.hasAttribute('data-rendered')) {
-            renderContentComponent(infoCardContent);
-            infoCardContent.setAttribute('data-rendered', 'true');
+    infoCardImgContents.forEach((infoCardImgContent) => {
+        const iconImgContainer = infoCardImgContent.querySelector('.icon-img-container');
+        if (iconImgContainer && !iconImgContainer.hasAttribute('data-rendered')) {
+            renderImageComponent(iconImgContainer);
+            iconImgContainer.setAttribute('data-rendered', 'true');
         }
     });
 
-    infoCardImgContents.forEach((infoCardImgContent) => {
-        if (!infoCardImgContent.hasAttribute('data-rendered')) {
-            renderImageComponent(infoCardImgContent);
-            infoCardImgContent.setAttribute('data-rendered', 'true');
+    infoCardContents.forEach((infoCardContent) => {
+        const compartirAlojamientoContainer = infoCardContent.querySelector('.compartir-alojamiento-container');
+        if (compartirAlojamientoContainer && !compartirAlojamientoContainer.hasAttribute('data-rendered')) {
+            renderContentComponent(compartirAlojamientoContainer);
+            compartirAlojamientoContainer.setAttribute('data-rendered', 'true');
+        }
+
+        const bannerMensageContainer = infoCardContent.querySelector('.banner-mensage-container');
+        if (bannerMensageContainer && !bannerMensageContainer.hasAttribute('data-rendered')) {
+            renderBannerComponent(bannerMensageContainer);
+            bannerMensageContainer.setAttribute('data-rendered', 'true');
         }
     });
 
     if (infoCardContents.length === 0 || infoCardImgContents.length === 0) {
-        setTimeout(checkAndRender, 1000); // Reintentar después de 1 segundo si los elementos aún no están disponibles
+        setTimeout(checkAndRender, 1000);
     }
 };
 
-// Llamar a checkAndRender al cargar la página por primera vez
-checkAndRender();
+
 function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
