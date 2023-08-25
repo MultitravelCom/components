@@ -192,6 +192,7 @@ function observarCambiosCheckAndRenderII() {
 
     checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
-checkAndRender();
+
+// checkAndRender();
 observarCambiosCheckAndRenderII();
 
