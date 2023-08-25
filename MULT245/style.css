@@ -330,7 +330,7 @@
 
 /* BANNERTOPTRAVEL */
 
-.main__container__bannerTopTravelSale {
+/* .main__container__bannerTopTravelSale {
   color: white;
   padding: 20px;
   max-width: 1120px;
@@ -342,7 +342,7 @@
   border-radius: 8px;
   background: #6E37D0;
 
-}
+} */
 
 @media (max-width: 767px) {
   .share__icon {
