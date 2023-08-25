@@ -506,7 +506,7 @@ function App() {
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
                     </div>
-                    <div>
+                    <div className="main_conteiner__s2_bannerTravelSale">
                         <BannerTravelSale />
                     </div>
                     <div className="main__conteiner main__conteiner-principal container">
