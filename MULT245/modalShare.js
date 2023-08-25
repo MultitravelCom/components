@@ -119,10 +119,12 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 
 const BannerTopTravelSale = () => {
 
+
+
 return (
     <>
 
-        <div className="main__container__bannerTopTravelSale container" >
+        <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
             <h2>Soy un banner!</h2>
         </div>
 
@@ -137,12 +139,11 @@ const renderBanner = (isZoneInSale) => {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
-        ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInSale} />, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInSale} />, nuevoDivIconImg);
     }
 };
 
-const checkAndRender = async () => {    
+const checkAndRender = async () => {
 
     let infoCardContents = document.querySelectorAll('.info-card__content');
     let infoCardImgContents = document.querySelectorAll('.info-card__image');
@@ -171,6 +172,9 @@ const checkAndRender = async () => {
             absLink.setAttribute('target', '_blank');
 
         }
+
+
+
         const nuevoDiv = document.createElement('div');
         const nuevoDivReact = document.createElement('div');
         const nuevoDivBannerMensage = document.createElement('div');
@@ -182,6 +186,7 @@ const checkAndRender = async () => {
 
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
+        ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
 };
 
