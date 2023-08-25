@@ -10,6 +10,20 @@ const zonasTravelSale = [
 ];
 //   *************************************************************
 
+function isZoneInTravelSale() {
+    const dataValueElement = document.querySelector('.zone-selector-value');
+    
+    if (dataValueElement) {
+        const dataValue = dataValueElement.value;
+        const numericValue = parseInt(dataValue);
+
+        return zonasTravelSale.includes(numericValue);
+    }
+    console.log("isZoneInTravelSale", dataValueElement);
+    return false;
+}
+
+
 function ButtonModalShare(props) {
     const handleClick = (event) => {
         event.preventDefault();
@@ -73,36 +87,20 @@ const BannerMensageCard = ({ text_p }) => {
     )
 }
 
-const BannerMensageCardApp = () => {
+const BannerMensageCardApp = ({ isZoneInSale }) => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
     const [isBariloche, setIsBariloche] = React.useState(false);
-    const [bannerRendered, setBannerRendered] = React.useState(false);
-
 
     React.useEffect(() => {
         const div = document.querySelector('.bestprice__taxincluded');
         setHasBestPriceTaxIncluded(!div);
+        setIsBariloche(isZoneInSale);
 
-        const dataValueElement = document.querySelector('.zone-selector-value');
-        if (dataValueElement) {
-            const dataValue = dataValueElement.value;
-            const numericValue = parseInt(dataValue);
-
-            const isZoneInTravelSale = zonasTravelSale.includes(numericValue);
-
-            console.log("Bariloche. ZonaCode:", numericValue);
-
-            setIsBariloche(isZoneInTravelSale);
-
-            console.log("isZoneInTravelSale:", isZoneInTravelSale);
-
-            if (isZoneInTravelSale && !bannerRendered) {
-                setIsBariloche(true);
-                setBannerRendered(true);
-                renderBanner();
-            }
+        if (isZoneInSale) {
+            setIsBariloche(true);
+            console.log("setIsBariloche", setIsBariloche);
         }
-    }, []);
+    }, [isZoneInSale]);
 
     return (
         <>
@@ -158,11 +156,20 @@ const checkAndRender = async () => {
 
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
+        ReactDOM.render(<BannerMensageCardApp  isZoneInSale={isZoneInTravelSale()}/>, nuevoDivBannerMensage);
     });
 };
 
-const BannerTopTravelSale = () => {
+const BannerTopTravelSale = ({ isZoneInSale }) => {
+    const [bannerRendered, setBannerRendered] = React.useState(false);
+
+    React.useEffect(() => {
+        if (isZoneInSale) {
+            setBannerRendered(true);
+            console.log("setBannerRendered", setBannerRendered);
+        }
+    }, [isZoneInSale]);
+
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
@@ -175,12 +182,15 @@ const BannerTopTravelSale = () => {
 
     return (
         <>
-            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
-                <h2>Soy un banner!</h2>
-            </div>
+            {bannerRendered && (
+                <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
+                    <h2>Soy un banner!</h2>
+                </div>
+            )}
         </>
     );
 };
+
 
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
@@ -189,7 +199,7 @@ const renderBanner = () => {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInTravelSale()}/>, nuevoDivIconImg);
     }
 };
 
