@@ -19,7 +19,7 @@ function isZoneInTravelSale() {
 
         return zonasTravelSale.includes(numericValue);
     }
-    console.log("isZoneInTravelSale", dataValueElement);
+
     return false;
 }
 
@@ -118,26 +118,16 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 };
 
 const BannerTopTravelSale = () => {
-  
-    const bannerStyle = {
-        backgroundColor: 'blue',
-        color: 'white',
-        padding: '20px',
-        width: '300px',
-        justifyContent: 'center',
-        margin: 'auto',
-        display: 'none',
-    };
 
-    return (
-        <>
+return (
+    <>
 
-            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
-                <h2>Soy un banner!</h2>
-            </div>
+        <div className="main__container__bannerTopTravelSale container" >
+            <h2>Soy un banner!</h2>
+        </div>
 
-        </>
-    );
+    </>
+);
 };
 
 const renderBanner = (isZoneInSale) => {

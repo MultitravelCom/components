@@ -328,6 +328,18 @@
   padding-left: 0;
 }
 
+/* BANNERTOPTRAVEL */
+
+.main__container__bannerTopTravelSale {
+  color: white;
+  padding: 20px;
+  width: 300px;
+  justify-content: center;
+  margin: auto;
+  display: none;
+  border-radius: 8px;
+  background: #6E37D0;
+}
 
 @media (max-width: 767px) {
   .share__icon {
@@ -477,6 +489,11 @@
 
   .gallery__image-wrapper {
     height: inherit;
+  }
+
+  /* TRAVELSALEBANNER */
+  .main__container__bannerTopTravelSale {
+    margin: 16px;
   }
 }
 
