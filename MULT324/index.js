@@ -183,7 +183,7 @@ function shouldShowEvent() {
 }
 
 const EventImg = (props) => {
-    if (!shouldShowEvent()) {
+    if (shouldShowEvent()) {
         return (
             <div className={props.style}>
                 <img
