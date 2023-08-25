@@ -99,7 +99,7 @@ const BannerMensageCardApp = () => {
             if (isZoneInTravelSale && !bannerRendered) {
                 setIsBariloche(true);
                 setBannerRendered(true);
-                renderBanner(); // Llamar a la función para renderizar el banner
+                renderBanner();
             }
         }
     }, [bannerRendered]);
