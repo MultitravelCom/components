@@ -102,7 +102,7 @@ const BannerMensageCardApp = () => {
                 renderBanner();
             }
         }
-    }, [bannerRendered]);
+    }, []);
 
     return (
         <>
