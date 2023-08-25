@@ -98,6 +98,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 
         if (isZoneInSale) {
             setIsBariloche(true);
+            renderBanner();
             console.log("setIsBariloche", setIsBariloche);
         }
     }, [isZoneInSale]);
@@ -160,16 +161,8 @@ const checkAndRender = async () => {
     });
 };
 
-const BannerTopTravelSale = ({ isZoneInSale }) => {
-    const [bannerRendered, setBannerRendered] = React.useState(false);
-
-    React.useEffect(() => {
-        if (bannerRendered) {
-            renderBanner();
-            console.log("setBannerRendered", setBannerRendered);
-        }
-    }, [isZoneInSale]);
-
+const BannerTopTravelSale = () => {
+  
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
@@ -191,7 +184,6 @@ const BannerTopTravelSale = ({ isZoneInSale }) => {
     );
 };
 
-
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
 
@@ -199,7 +191,7 @@ const renderBanner = () => {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInTravelSale()} />, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
     }
 };
 
