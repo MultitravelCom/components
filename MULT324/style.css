@@ -166,12 +166,17 @@ source>img {
     cursor: pointer;
     z-index: 999999;
 }
+
 .b24-form-control-text .b24-form-control {
     height: 50px;
 }
-.b24-form-control-string .b24-form-control, .b24-form-control-list .b24-form-control, .b24-form-control-text .b24-form-control, .b24-form-control-select .field-item{
+
+.b24-form-control-string .b24-form-control,
+.b24-form-control-list .b24-form-control,
+.b24-form-control-text .b24-form-control,
+.b24-form-control-select .field-item {
     height: 50px !important;
-  }
+}
 
 /* /* Banner hero * */
 .main_conteiner__s1_medio {
@@ -431,6 +436,13 @@ source>img {
     background-color: #1169B7;
 }
 
+/* BANNER TRAVEL SALE */
+.main_conteiner__s1_medio__paquetes {
+    display: none;
+    border-radius: 16px;
+    background: #6E37D0;
+}
+
 /* ---*-*-*-*-*-*-*-*-*-*- */
 /* MOBILE */
 @media (max-width: 964px) {
@@ -628,6 +640,7 @@ source>img {
     .b24-form-control-text .b24-form-control {
         height: 72px;
     }
+
     .bitrixFormTitle_text>p {
         font-size: 14px;
     }

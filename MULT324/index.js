@@ -250,6 +250,40 @@ const BannerTop = () => {
         </div>
     )
 }
+const BannerTravelSale = () => {
+    return (
+        <>
+            <div className="main__container_BannerTravelSale">
+                <picture>
+                    <source
+                        media="(min-width: 1024px)"
+                        srcSet="
+            https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-1.webp
+          "
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 1023px)"
+                        srcSet="
+                    https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-2.webp
+                    "
+                    />
+                    <source
+                        media="(max-width: 767px)"
+                        srcSet="
+                    https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-3.webp
+                    "
+                    />
+                    <img
+                        className="main_conteiner__s1_medio__paquetes__img"
+                        src="            https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-1.webp
+                    "
+                        alt="Imagen banner promociones"
+                    />
+                </picture>
+            </div>
+        </>
+    )
+}
 const Card = ({ destinos, onContactClick }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
@@ -471,6 +505,9 @@ function App() {
                 <>
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
+                    </div>
+                    <div>
+                        <BannerTravelSale />
                     </div>
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
