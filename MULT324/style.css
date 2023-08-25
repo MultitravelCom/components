@@ -544,6 +544,12 @@ source>img {
     .carrusel__siguiente {
         display: none;
     }
+
+    /* BANNER TRAVEL SALE */
+    .main__container_BannerTravelSale {
+        width: 340px;
+        height: 264px;
+    }
 }
 
 /* ****************************************************** */
