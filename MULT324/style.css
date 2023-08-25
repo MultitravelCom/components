@@ -421,16 +421,16 @@ source>img {
 
 .btn_Style_Venta_Per {
     position: absolute;
-    bottom: 3%;
+    bottom: 8px;
     right: 4%;
     padding: 2% 5%;
     color: white;
-    min-width: 44%;
-    background-color: #2A8BFE;
+    min-width: 93%;
+    background-color: #2a8bfe;
     border-radius: 40px;
     border: none;
     cursor: pointer;
-}
+  }
 
 .btn_Style_Venta_Per:hover {
     background-color: #1169B7;
