@@ -12,7 +12,7 @@ const zonasTravelSale = [
 
 function isZoneInTravelSale() {
     const dataValueElement = document.querySelector('.zone-selector-value');
-    
+
     if (dataValueElement) {
         const dataValue = dataValueElement.value;
         const numericValue = parseInt(dataValue);
@@ -156,7 +156,7 @@ const checkAndRender = async () => {
 
 
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-        ReactDOM.render(<BannerMensageCardApp  isZoneInSale={isZoneInTravelSale()}/>, nuevoDivBannerMensage);
+        ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
 };
 
@@ -164,8 +164,8 @@ const BannerTopTravelSale = ({ isZoneInSale }) => {
     const [bannerRendered, setBannerRendered] = React.useState(false);
 
     React.useEffect(() => {
-        if (isZoneInSale) {
-            setBannerRendered(true);
+        if (bannerRendered) {
+            renderBanner();
             console.log("setBannerRendered", setBannerRendered);
         }
     }, [isZoneInSale]);
@@ -182,11 +182,11 @@ const BannerTopTravelSale = ({ isZoneInSale }) => {
 
     return (
         <>
-            {bannerRendered && (
-                <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
-                    <h2>Soy un banner!</h2>
-                </div>
-            )}
+
+            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
+                <h2>Soy un banner!</h2>
+            </div>
+
         </>
     );
 };
@@ -199,7 +199,7 @@ const renderBanner = () => {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInTravelSale()}/>, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopTravelSale isZoneInSale={isZoneInTravelSale()} />, nuevoDivIconImg);
     }
 };
 
