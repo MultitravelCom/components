@@ -115,7 +115,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 };
 
 const BannerTopTravelSale = () => {
-  
+
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
@@ -148,16 +148,60 @@ const renderBanner = () => {
     }
 };
 
+// const checkAndRender = async () => {
+
+//     let infoCardContents = document.querySelectorAll('.info-card__content');
+//     let infoCardImgContents = document.querySelectorAll('.info-card__image');
+
+//     while (infoCardContents.length === 0) {
+//         await new Promise(resolve => setTimeout(resolve, 1000));
+//         infoCardContents = document.querySelectorAll('.info-card__content');
+//         infoCardImgContents = document.querySelectorAll('.info-card__image');
+//     }
+//     infoCardImgContents.forEach(infoCardImgContent => {
+//         const nuevoDivIconImg = document.createElement('div');
+//         infoCardImgContent.appendChild(nuevoDivIconImg);
+//         nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
+//         ReactDOM.render(<IconImg />, nuevoDivIconImg);
+//     });
+
+//     infoCardContents.forEach(infoCardContent => {
+//         /*
+//         Change property of a element so it opens another tab and doesnt redirect
+//         */
+//         const absLink = infoCardContent.querySelector('a.abs');
+
+//         // Check if the element exists before modifying it
+//         if (absLink) {
+//             // Add the target="_blank" attribute to the anchor element
+//             absLink.setAttribute('target', '_blank');
+
+//         }
+
+
+
+//         const nuevoDiv = document.createElement('div');
+//         const nuevoDivReact = document.createElement('div');
+//         const nuevoDivBannerMensage = document.createElement('div');
+
+//         infoCardContent.appendChild(nuevoDivReact);
+//         infoCardContent.appendChild(nuevoDivBannerMensage);
+
+//         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+
+//         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
+//         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
+//     });
+// };
 const checkAndRender = async () => {
+    const infoCardContents = document.querySelectorAll('.info-card__content');
+    const infoCardImgContents = document.querySelectorAll('.info-card__image');
 
-    let infoCardContents = document.querySelectorAll('.info-card__content');
-    let infoCardImgContents = document.querySelectorAll('.info-card__image');
-
-    while (infoCardContents.length === 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = document.querySelectorAll('.info-card__content');
-        infoCardImgContents = document.querySelectorAll('.info-card__image');
+    if (infoCardContents.length === 0) {
+        return; // No hay elementos para renderizar, salir
     }
+
     infoCardImgContents.forEach(infoCardImgContent => {
         const nuevoDivIconImg = document.createElement('div');
         infoCardImgContent.appendChild(nuevoDivIconImg);
@@ -166,19 +210,10 @@ const checkAndRender = async () => {
     });
 
     infoCardContents.forEach(infoCardContent => {
-        /*
-        Change property of a element so it opens another tab and doesnt redirect
-        */
         const absLink = infoCardContent.querySelector('a.abs');
-
-        // Check if the element exists before modifying it
         if (absLink) {
-            // Add the target="_blank" attribute to the anchor element
             absLink.setAttribute('target', '_blank');
-
         }
-
-
 
         const nuevoDiv = document.createElement('div');
         const nuevoDivReact = document.createElement('div');
@@ -189,12 +224,29 @@ const checkAndRender = async () => {
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
-
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
 };
 
+const observerConfig = {
+    childList: true, // Observar cambios en la lista de hijos del nodo objetivo
+    subtree: true, // Observar todos los descendientes, no solo los hijos directos
+};
+
+const observer = new MutationObserver((mutationsList, observer) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            checkAndRender();
+        }
+    }
+});
+
+// Comenzar a observar los cambios en el elemento con la clase 'results-list__page'
+const targetNode = document.querySelector('.results-list__page');
+if (targetNode) {
+    observer.observe(targetNode, observerConfig);
+}
 function observarCambiosCheckAndRenderII() {
     const observerConfig = {
         rootNode: document.documentElement,
@@ -208,6 +260,6 @@ function observarCambiosCheckAndRenderII() {
 
     checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
-// checkAndRender();
+checkAndRender();
 observarCambiosCheckAndRenderII();
 
