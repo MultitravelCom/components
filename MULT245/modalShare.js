@@ -142,7 +142,8 @@ const renderBanner = (isZoneInSale) => {
     }
 };
 
-const checkAndRender = async () => {
+const checkAndRender = async () => {    
+
     let infoCardContents = document.querySelectorAll('.info-card__content');
     let infoCardImgContents = document.querySelectorAll('.info-card__image');
 
@@ -151,8 +152,6 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-
-    // Renderiza IconImg en los elementos adecuados
     infoCardImgContents.forEach(infoCardImgContent => {
         const nuevoDivIconImg = document.createElement('div');
         infoCardImgContent.appendChild(nuevoDivIconImg);
@@ -160,22 +159,29 @@ const checkAndRender = async () => {
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
 
-    // Itera sobre cada elemento .info-card__content y realiza los cambios necesarios
     infoCardContents.forEach(infoCardContent => {
+        /*
+        Change property of a element so it opens another tab and doesnt redirect
+        */
         const absLink = infoCardContent.querySelector('a.abs');
-        
-        if (absLink) {
-            absLink.setAttribute('target', '_blank');
-        }
 
-        // Verifica si el componente BannerMensageCardApp ya se ha renderizado en este elemento
-        if (!infoCardContent.querySelector('.main__container__bannerMensageCard__App')) {
-            const nuevoDivBannerMensage = document.createElement('div');
-            nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-            infoCardContent.appendChild(nuevoDivBannerMensage);
-            const isZoneInSale = isZoneInTravelSale();
-            ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInSale} />, nuevoDivBannerMensage);
+        // Check if the element exists before modifying it
+        if (absLink) {
+            // Add the target="_blank" attribute to the anchor element
+            absLink.setAttribute('target', '_blank');
+
         }
+        const nuevoDiv = document.createElement('div');
+        const nuevoDivReact = document.createElement('div');
+        const nuevoDivBannerMensage = document.createElement('div');
+
+        infoCardContent.appendChild(nuevoDivReact);
+        infoCardContent.appendChild(nuevoDivBannerMensage);
+
+        nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
+
+
+        ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
     });
 };
 
@@ -192,7 +198,6 @@ function observarCambiosCheckAndRenderII() {
 
     checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
-
-// checkAndRender();
+checkAndRender();
 observarCambiosCheckAndRenderII();
 
