@@ -76,7 +76,6 @@ const BannerMensageCard = ({ text_p }) => {
 const BannerMensageCardApp = () => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
     const [isBariloche, setIsBariloche] = React.useState(false);
-    const [shouldRenderBanner, setShouldRenderBanner] = React.useState(false);
 
     React.useEffect(() => {
         const div = document.querySelector('.bestprice__taxincluded');
@@ -94,7 +93,6 @@ const BannerMensageCardApp = () => {
             setIsBariloche(isZoneInTravelSale);
 
             if (isZoneInTravelSale) {
-                setShouldRenderBanner(true); // Cambiamos a true directamente
                 renderBanner();
                 console.log("renderBanner");
             }
