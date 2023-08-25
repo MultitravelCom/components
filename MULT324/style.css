@@ -548,8 +548,9 @@ source>img {
 
     /* BANNER TRAVEL SALE */
     .main__container_BannerTravelSale {
-        width: 340px;
+        min-width: 310px;
         height: 264px;
+        margin: 20px 10px;
     }
 }
 
