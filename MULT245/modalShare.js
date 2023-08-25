@@ -140,13 +140,14 @@ const BannerTopTravelSale = () => {
     );
 };
 
-const renderBanner = () => {
+const renderBanner = (isZoneInSale) => {
     const mainContentElement = document.getElementById('main-content');
 
     if (mainContentElement) {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
-
+        const isBariloche = isZoneInTravelSale();
+        
         ReactDOM.render(<BannerTopTravelSale isZoneInSale={isBariloche} />, nuevoDivIconImg);
     }
 };
