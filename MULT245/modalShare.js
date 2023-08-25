@@ -76,6 +76,8 @@ const BannerMensageCard = ({ text_p }) => {
 const BannerMensageCardApp = () => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
     const [isBariloche, setIsBariloche] = React.useState(false);
+    const [bannerRendered, setBannerRendered] = React.useState(false);
+
 
     React.useEffect(() => {
         const div = document.querySelector('.bestprice__taxincluded');
@@ -94,16 +96,17 @@ const BannerMensageCardApp = () => {
 
             console.log("isZoneInTravelSale:", isZoneInTravelSale);
 
-            if (isZoneInTravelSale) {
-                renderBanner();
-                console.log("renderBanner");
+            if (isZoneInTravelSale && !bannerRendered) {
+                setIsBariloche(true);
+                setBannerRendered(true);
+                renderBanner(); // Llamar a la función para renderizar el banner
             }
         }
-    }, []);
+    }, [bannerRendered]);
 
     return (
         <>
-            {isBariloche ? (
+            {(isBariloche || hasBestPriceTaxIncluded) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
