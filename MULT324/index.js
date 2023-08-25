@@ -188,7 +188,7 @@ const EventImg = (props) => {
             <div className={props.style}>
                 <img
                     alt={`Imagen evento promocion`}
-                    src={"https://multitravelcom.github.io/MT/HotSale2023/iconCardsOff/logohotsale.webp"}
+                    src={"https://multitravelcom.github.io/components/MULT324/logotravelsale.svg"}
                 />
             </div>
         );
