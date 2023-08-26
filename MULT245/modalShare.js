@@ -19,7 +19,6 @@ function isZoneInTravelSale() {
 
         return zonasTravelSale.includes(numericValue);
     }
-    console.log("isZoneInTravelSale", dataValueElement);
     return false;
 }
 
@@ -59,7 +58,6 @@ const ModalShare = ({ open }) => {
 };
 
 const CompartirAlojamiento = () => {
-    console.log("--------> se ejecuta CompartirAlojamiento()")
     const [openModal, setOpenModal] = React.useState(false);
     return (
         <>
@@ -81,7 +79,6 @@ const CompartirAlojamiento = () => {
 const BannerMensageCard = ({ text_p }) => {
     return (
         <>
-        {console.log("--------> Dentro de BannerMensageCardApp: se llama BannerMensageCard para que se rendea")}
          <div className="main__container__bannerMensageCard">
             <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
             <p>{text_p}</p>
@@ -92,30 +89,15 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    //const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
-    //const [isBariloche, setIsBariloche] = React.useState(false);
+    let div = document.querySelector('.bestprice__taxincluded');
+    let travelSaleTrue = false;
 
-   // React.useEffect(() => {
-        console.log("----> useEffect que contiene if de renderBanner")
-        let div = document.querySelector('.bestprice__taxincluded');
-        //setHasBestPriceTaxIncluded(!div);
-        let travelSaleTrue = false;
-
-
-        if (isZoneInTravelSale()) {
-            console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
-            //setIsBariloche(true);
-            travelSaleTrue = true;
-            //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
-            //renderBanner();
-           // console.log("isBariloche:", isBariloche);
-        }
-        //----------------------------------------- ESCUCHA A isZoneInSale
-   // }, [isZoneInSale]);
+    if (isZoneInTravelSale()) {
+        travelSaleTrue = true;
+    }
 
     return (
         <>
-        {console.log("----->return de BannerMensageCardApp")}
             {(div || travelSaleTrue) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
             ) : (
@@ -126,7 +108,6 @@ const BannerMensageCardApp = () => {
 };
 
 const BannerTopTravelSale = () => {
-console.log("Se llama BannerTopTravelSale")
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
@@ -151,10 +132,8 @@ console.log("Se llama BannerTopTravelSale")
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
     const banner =  mainContentElement.querySelector('.main__container__bannerTopTravelSale')
-    console.log("mainContentElement.querySelector('.main__container__bannerTopTravelSale')   :", banner)
     if (mainContentElement && banner===null) {
         const nuevoDivIconImg = document.createElement('div');
-        console.log(" --***---> Se insertBefore nuevoDivIconImg a mainContentElement")
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
         ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
@@ -200,24 +179,18 @@ const renderBanner = () => {
 const checkAndRender = async () => {
     console.log("-----> se llama a checkAndRender()")
 
-//--------------------- LOGICA PARA ESTAR BUSCANDO LOS CAMBIOS TODO EL TIEMPO
-// CADA VEZ QUE HAY UN CAMBIO VUELVE A BUSCAR TODO Y A RENDERIZAR TODO
-
     let infoCardContents = document.querySelectorAll('.info-card__content');
     let infoCardImgContents = document.querySelectorAll('.info-card__image');
 
     while (infoCardContents.length === 0) {
-        console.log("-----> Se busca: infoCardContents.length === 0")
         await new Promise(resolve => setTimeout(resolve, 1000));
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
     if(isZoneInTravelSale()){
-        console.log("-------------------- se llama renderBanner()")
-                renderBanner();
+        renderBanner();
     }
     infoCardImgContents.forEach(infoCardImgContent => {
-        console.log("-----> infoCardImgContents.forEach: ReactDOM.render(<IconImg />, nuevoDivIconImg);")
 
         const nuevoDivIconImg = document.createElement('div');
         infoCardImgContent.appendChild(nuevoDivIconImg);
@@ -225,9 +198,7 @@ const checkAndRender = async () => {
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
 
-    console.log("------> infoCardContent: ", infoCardContents)
     infoCardContents.forEach(infoCardContent => {
-        console.log("-----> infoCardContents.forEach:  ReactDOM.render(<CompartirAlojamiento /> , ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />")
 
         const absLink = infoCardContent.querySelector('a.abs');
 
@@ -248,13 +219,10 @@ const checkAndRender = async () => {
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
-    console.log("isZoneInTravelSale(): ", isZoneInTravelSale())
-   
 
 };
 
 function observarCambiosCheckAndRenderII() {
-    console.log("-----> observarCambiosCheckAndRenderII()   ( se setea el obeserver que llama a checkAndRender(), escucha a cambios en element: '.results-list__page'")
 
     const observerConfig = {
         rootNode: document.documentElement,
