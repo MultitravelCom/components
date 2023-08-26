@@ -8,7 +8,6 @@ removeContainerClass();
 
 // *************************************
 
-
 function ButtonTresSecciones(props) {
     const [buttonText, setButtonText] = React.useState(props.text);
     const clickInProgressRef = React.useRef(false);
@@ -281,8 +280,7 @@ const Redes = () => {
 
     React.useEffect(() => {
         const currentDate = new Date();
-        const isWithinRange =
-            currentDate >= startDate && currentDate <= endDate;
+        const isWithinRange = currentDate >= startDate && currentDate <= endDate;
 
         const color = isWithinRange ? specialColor : originalColor;
 
