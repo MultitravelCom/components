@@ -150,6 +150,7 @@ const renderBanner = () => {
 
     if (mainContentElement) {
         const nuevoDivIconImg = document.createElement('div');
+        console.log(" --***---> Se insertBefore nuevoDivIconImg a mainContentElement")
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
         ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
