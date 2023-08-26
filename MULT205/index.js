@@ -98,10 +98,20 @@ async function showPromocodesDiv() {
         await new Promise(resolve => setTimeout(resolve, 100));
     }
 };
+// Funcion timer(para mostrar desde / hasta cierta fecha)
+const isWithinDateRange = (startDate, endDate) => {
+    const currentDate = new Date();
+    return currentDate >= startDate && currentDate <= endDate;
+};
 
 // ************************* Componentes *******************************
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
+
+    const startDate = new Date(2023, 7, 25, 23, 30); // 27 de Agosto a las 23:30
+    const endDate = new Date(2023, 8, 2, 23, 30);   // 2 de Septiembre a las 23:30
+    const shouldShowCupones = isWithinDateRange(startDate, endDate);
+
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -120,8 +130,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-
-
         if (isOpen) {
             const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
             makeScrollableContainer(containerSelector);
@@ -144,7 +152,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {/* <ComponenteCupones /> */}
+                        {shouldShowCupones ?? <ComponenteCupones />}
                     </div>
                 </div>
             </div>
