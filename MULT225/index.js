@@ -1,3 +1,14 @@
+// ****************** Funciones ************************
+function removeContainerClass() {
+    const homeContent1 = document.getElementById("home-content-5");
+    homeContent1.classList.remove("container");
+};
+
+removeContainerClass();
+
+// *************************************
+
+
 function ButtonTresSecciones(props) {
     const [buttonText, setButtonText] = React.useState(props.text);
     const clickInProgressRef = React.useRef(false);
@@ -263,7 +274,7 @@ const Redes = () => {
     const originalColor = '#2A91EB';
     const specialColor = '#6D37D1';
 
-    const startDate = new Date(2023, 7, 25, 23); // 27 de Agosto a las 23:00
+    const startDate = new Date(2023, 7, 27, 23);
     const endDate = new Date(2023, 8, 2, 23);
 
     const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
@@ -459,13 +470,6 @@ const Redes = () => {
         </div>
     );
 };
-
-function removeContainerClass() {
-    const homeContent1 = document.getElementById("home-content-5");
-    homeContent1.classList.remove("container");
-};
-
-removeContainerClass();
 
 function App() {
     return (
