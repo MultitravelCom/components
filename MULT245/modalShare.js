@@ -208,6 +208,10 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
+    if(isZoneInTravelSale()){
+        console.log("-------------------- se llama renderBanner()")
+                renderBanner();
+            }
     infoCardImgContents.forEach(infoCardImgContent => {
         console.log("-----> infoCardImgContents.forEach: ReactDOM.render(<IconImg />, nuevoDivIconImg);")
 
@@ -240,10 +244,7 @@ const checkAndRender = async () => {
         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
     console.log("isZoneInTravelSale(): ", isZoneInTravelSale())
-    if(isZoneInTravelSale()){
-console.log("-------------------- se llama renderBanner()")
-        renderBanner();
-    }
+   
 
 };
 
