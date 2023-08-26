@@ -98,7 +98,7 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    let taxIncludedTrue = document.querySelector('.bestprice__taxincluded');
+    let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
 
     if (isZoneInTravelSale()) {
