@@ -3,12 +3,18 @@ async function getFlightCards() {
     if (!res.ok) {
       throw new Error('Error!')
     }
+    const  url  = attributes.img.data[0].attributes.url;
+    console.log("URL------------>>>: ", url)
     const { data } = await res.json();
+
+    const  url2  = attributes.img.data[0].attributes.url;
+    console.log("URL2222------------>>>: ", url2)
     return data;
   }
   
   function getFlightimg({ attributes }) {
-    const { url } = attributes.img.data.attributes
+    const  url  = attributes.img.data[0].attributes.url;
+    console.log("getFlightimg URL------------>>>: ", url)
     return `https://strapicontent.apimultitravel.com/${url}`
   }
   

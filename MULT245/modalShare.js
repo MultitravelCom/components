@@ -97,15 +97,17 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 
         if (isZoneInSale) {
             setIsBariloche(true);
+            //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
             renderBanner();
             console.log("isBariloche:", isBariloche);
         }
+        //----------------------------------------- ESCUCHA A isZoneInSale
     }, [isZoneInSale]);
 
     return (
         <>
             {(isBariloche || hasBestPriceTaxIncluded) ? (
-                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
+                <BannerMensageCard text_p={"Utiliza nuestros cupones en TravelSale y ahorra."} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             )}
@@ -184,15 +186,23 @@ const renderBanner = () => {
 // };
 
 const checkAndRender = async () => {
+    console.log("-----> se llama a checkAndRender()")
+
+//--------------------- LOGICA PARA ESTAR BUSCANDO LOS CAMBIOS TODO EL TIEMPO
+// CADA VEZ QUE HAY UN CAMBIO VUELVE A BUSCAR TODO Y A RENDERIZAR TODO
+
     let infoCardContents = document.querySelectorAll('.info-card__content');
     let infoCardImgContents = document.querySelectorAll('.info-card__image');
 
     while (infoCardContents.length === 0) {
+        console.log("-----> Se busca: infoCardContents.length === 0")
         await new Promise(resolve => setTimeout(resolve, 1000));
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
     infoCardImgContents.forEach(infoCardImgContent => {
+        console.log("-----> infoCardImgContents.forEach: ReactDOM.render(<IconImg />, nuevoDivIconImg);")
+
         const nuevoDivIconImg = document.createElement('div');
         infoCardImgContent.appendChild(nuevoDivIconImg);
         nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
@@ -200,7 +210,8 @@ const checkAndRender = async () => {
     });
 
     infoCardContents.forEach(infoCardContent => {
-       
+        console.log("-----> infoCardContents.forEach:  ReactDOM.render(<CompartirAlojamiento /> , ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />")
+
         const absLink = infoCardContent.querySelector('a.abs');
 
         if (absLink) {
@@ -223,6 +234,8 @@ const checkAndRender = async () => {
 };
 
 function observarCambiosCheckAndRenderII() {
+    console.log("-----> observarCambiosCheckAndRenderII()   ( se setea el obeserver que llama a checkAndRender(), escucha a cambios en element: '.results-list__page'")
+
     const observerConfig = {
         rootNode: document.documentElement,
         callback: () => {
