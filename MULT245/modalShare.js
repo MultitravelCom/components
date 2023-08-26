@@ -104,7 +104,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
             console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
             setIsBariloche(true);
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
-            renderBanner();
+            //renderBanner();
             console.log("isBariloche:", isBariloche);
         }
         //----------------------------------------- ESCUCHA A isZoneInSale
@@ -239,6 +239,11 @@ const checkAndRender = async () => {
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
+    if(isZoneInTravelSale()){
+
+        renderBanner();
+    }
+
 };
 
 function observarCambiosCheckAndRenderII() {
