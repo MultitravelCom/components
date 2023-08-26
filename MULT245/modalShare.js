@@ -78,12 +78,15 @@ const CompartirAlojamiento = () => {
     )
 }
 const BannerMensageCard = ({ text_p }) => {
-    console.log("--------> Dentro de BannerMensageCardApp: se llama BannerMensageCard para que se rendea")
     return (
-        <div className="main__container__bannerMensageCard">
+        <>
+        {console.log("--------> Dentro de BannerMensageCardApp: se llama BannerMensageCard para que se rendea")}
+         <div className="main__container__bannerMensageCard">
             <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
             <p>{text_p}</p>
         </div>
+        </>
+        
     )
 }
 
