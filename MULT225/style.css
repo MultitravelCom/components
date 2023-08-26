@@ -177,7 +177,7 @@
     display: flex;
     max-width: 1160px;
     height: 120px;
-    background-color: #2A91EB;
+    /* background-color: #2A91EB; */
     color: white;
     border-radius: 8px 8px 40px 8px;
     position: relative;

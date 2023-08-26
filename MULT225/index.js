@@ -1,3 +1,14 @@
+// ****************** Funciones ************************
+function removeContainerClass() {
+    const homeContent1 = document.getElementById("home-content-5");
+    homeContent1.classList.remove("container");
+};
+
+removeContainerClass();
+
+// *************************************
+
+
 function ButtonTresSecciones(props) {
     const [buttonText, setButtonText] = React.useState(props.text);
     const clickInProgressRef = React.useRef(false);
@@ -260,8 +271,30 @@ function Pagos() {
 }
 
 const Redes = () => {
+    const originalColor = '#2A91EB';
+    const specialColor = '#6D37D1';
+
+    const startDate = new Date(2023, 7, 27, 23);
+    const endDate = new Date(2023, 8, 2, 23);
+
+    const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
+
+    React.useEffect(() => {
+        const currentDate = new Date();
+        const isWithinRange =
+            currentDate >= startDate && currentDate <= endDate;
+
+        const color = isWithinRange ? specialColor : originalColor;
+
+        setBackgroundColor(color);
+    }, []);
+
+    const redesStyle = {
+        backgroundColor: backgroundColor,
+    };
+
     return (
-        <div className="main__container__redes">
+        <div className="main__container__redes" style={redesStyle}>
             <div className="main__container__redes__img">
                 <img
                     src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
@@ -437,13 +470,6 @@ const Redes = () => {
         </div>
     );
 };
-
-function removeContainerClass() {
-    const homeContent1 = document.getElementById("home-content-5");
-    homeContent1.classList.remove("container");
-};
-
-removeContainerClass();
 
 function App() {
     return (
