@@ -208,7 +208,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        <ComponenteCupones />
+                        {shouldShowCupones ?? <ComponenteCupones />}
                     </div>
                 </div>
             </div>
