@@ -1,29 +1,11 @@
 <script src="https://cdn.bitrix24.com/b19657597/crm/form/loader_56.js"></script>
-<link
-  href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css"
-/>
-<script
-  crossorigin
-  src="https://unpkg.com/react@18/umd/react.production.min.js"
-></script>
-<script
-  crossorigin
-  src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css" />
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script
-  type="text/babel"
-  src="https://multitravelcom.github.io/components/MULT168/Modal/index.js"
-></script>
-<link
-  href="https://multitravelcom.github.io/components/MULT168/Modal/style.css"
-  rel="stylesheet"
-/>
+<script type="text/babel" src="https://multitravelcom.github.io/components/MULT168/Modal/index.js"></script>
+<link href="https://multitravelcom.github.io/components/MULT168/Modal/style.css" rel="stylesheet" />
 <style>
   /* BITRIX */
   .modalBitrix {
@@ -95,7 +77,7 @@
     width: 98%;
   }
 
-  .bitrixFormTitle_text > p {
+  .bitrixFormTitle_text>p {
     font-weight: 600;
     font-size: 16px;
     margin: 0 !important;
@@ -143,15 +125,18 @@
     cursor: pointer;
     z-index: 999999;
   }
+
   .b24-form-control-text .b24-form-control {
     height: 50px;
   }
+
   .b24-form-control-string .b24-form-control,
   .b24-form-control-list .b24-form-control,
   .b24-form-control-text .b24-form-control,
   .b24-form-control-select .field-item {
     height: 50px !important;
   }
+
   /* container */
   .upper-menu__login-button {
     display: none;
@@ -165,13 +150,13 @@
     margin-top: 0;
   }
 
-  .content-body > .container {
+  .content-body>.container {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
   }
 
-  .main__conteiner > img {
+  .main__conteiner>img {
     width: 100%;
     height: 100%;
   }
@@ -180,7 +165,7 @@
     margin-top: -32px;
   }
 
-  source > img {
+  source>img {
     width: 100%;
     height: 100%;
   }
@@ -196,7 +181,7 @@
     letter-spacing: 0.1px;
   }
 
-  .main__conteiner__s1__destacado__card > a {
+  .main__conteiner__s1__destacado__card>a {
     display: block;
     height: 100%;
   }
@@ -250,14 +235,14 @@
     padding-right: 0px;
   }
 
-  .main__conteiner__s1__destacado__texto > h1 {
+  .main__conteiner__s1__destacado__texto>h1 {
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
     margin-bottom: 0.4rem;
   }
 
-  .main__conteiner__s1__destacado__texto > p {
+  .main__conteiner__s1__destacado__texto>p {
     font-size: 16px;
   }
 
@@ -481,18 +466,22 @@
   }
 
   /* BANNER TRAVEL SALE */
-.main__container_BannerTravelSale {
-    display: none;
+  .main_conteiner__s2_bannerTravelSale {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__container_BannerTravelSale {
     border-radius: 16px;
     background: #6E37D0;
     max-width: 1120px;
     height: 144px;
     flex-shrink: 0;
-    /* display: flex; */
+    display: flex;
     align-items: center;
     margin: 40px auto;
     overflow: hidden;
-}
+  }
 
 
   /* ---*-*-*-*-*-*-*-*-*-*- */
@@ -521,7 +510,7 @@
       background-color: #ddd;
     }
 
-    .main__conteiner__s1 > .main__conteiner__titulos {
+    .main__conteiner__s1>.main__conteiner__titulos {
       padding-block: 0px;
     }
 
@@ -565,6 +554,7 @@
   }
 
   @media (max-width: 564px) {
+
     /* SECCION 1 */
     .main__conteiner__s1 {
       align-items: flex-start;
@@ -595,15 +585,17 @@
       margin-top: 8px;
       width: 100%;
     }
-    .bitrixFormTitle_text > p {
+
+    .bitrixFormTitle_text>p {
       font-weight: 600;
       font-size: 14px;
     }
-      /* BANNER TRAVEL SALE */
-      .main__container_BannerTravelSale {
-        min-width: 310px;
-        height: 264px;
-        margin: 20px 10px;
+
+    /* BANNER TRAVEL SALE */
+    .main__container_BannerTravelSale {
+      min-width: 310px;
+      height: 264px;
+      margin: 20px 10px;
     }
   }
 
@@ -705,7 +697,7 @@
     align-items: center;
   }
 
-  .main__warningPrice > p {
+  .main__warningPrice>p {
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
@@ -743,6 +735,7 @@
       width: 38px;
       height: 38px;
     }
+
     .b24-form-field {
       margin-bottom: 0px;
     }
@@ -759,10 +752,7 @@
 </style>
 <div class="container__" id="root"></div>
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
-<script
-  type="text/babel"
-  src="https://multitravelcom.github.io/style/Estaticas/argetina_test.js"
-></script>
+<script type="text/babel" src="https://multitravelcom.github.io/style/Estaticas/argentina_satelite.js"></script>
 <script id="mcjs">
   !(function (c, h, i, m, p) {
     (m = c.createElement(h)),
