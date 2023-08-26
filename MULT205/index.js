@@ -168,6 +168,9 @@ const ModalCupones = ({ isOpen, onClose }) => {
     const endDate = new Date(2023, 8, 2, 23, 30);   // 2 de Septiembre a las 23:30
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
+    console.log('shouldShowCupones:', shouldShowCupones); // Agrega esta línea para verificar
+
+
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
