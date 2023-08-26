@@ -90,7 +90,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
     const [isBariloche, setIsBariloche] = React.useState(false);
 
-    React.useEffect(() => {
+   // React.useEffect(() => {
         console.log("----> useEffect que contiene if de renderBanner")
         const div = document.querySelector('.bestprice__taxincluded');
         setHasBestPriceTaxIncluded(!div);
@@ -104,7 +104,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
             console.log("isBariloche:", isBariloche);
         }
         //----------------------------------------- ESCUCHA A isZoneInSale
-    }, [isZoneInSale]);
+   // }, [isZoneInSale]);
 
     return (
         <>
