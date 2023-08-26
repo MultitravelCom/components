@@ -89,7 +89,7 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    let div = document.querySelector('.bestprice__taxincluded');
+    let taxIncludedTrue = document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
 
     if (isZoneInTravelSale()) {
@@ -98,7 +98,7 @@ const BannerMensageCardApp = () => {
 
     return (
         <>
-            {(div || travelSaleTrue) ? (
+            {(taxIncludedTrue || travelSaleTrue) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
