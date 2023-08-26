@@ -489,9 +489,14 @@ function App() {
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
                     </div>
-                    <div className="main_conteiner__s2_bannerTravelSale">
-                        <BannerTravelSale />
-                    </div>
+                    {shouldShowEvent()
+                        ?
+                        <div className="main_conteiner__s2_bannerTravelSale">
+                            <BannerTravelSale />
+                        </div>
+                        : 
+                        null
+                    }
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />

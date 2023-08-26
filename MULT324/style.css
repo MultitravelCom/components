@@ -437,14 +437,17 @@ source>img {
 }
 
 /* BANNER TRAVEL SALE */
+.main_conteiner__s2_bannerTravelSale{
+    display: flex;
+    justify-content: center;
+}
 .main__container_BannerTravelSale {
-    display: none;
     border-radius: 16px;
     background: #6E37D0;
     max-width: 1120px;
     height: 144px;
     flex-shrink: 0;
-    /* display: flex; */
+    display: flex;
     align-items: center;
     margin: 40px auto;
     overflow: hidden;
