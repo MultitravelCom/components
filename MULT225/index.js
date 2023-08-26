@@ -260,8 +260,30 @@ function Pagos() {
 }
 
 const Redes = () => {
+    const originalColor = '#2A91EB';
+    const specialColor = '#6D37D1';
+
+    const startDate = new Date(2023, 7, 25, 23); // 27 de Agosto a las 23:00
+    const endDate = new Date(2023, 8, 2, 23);
+
+    const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
+
+    useEffect(() => {
+        const currentDate = new Date();
+        const isWithinRange =
+            currentDate >= startDate && currentDate <= endDate;
+
+        const color = isWithinRange ? specialColor : originalColor;
+
+        setBackgroundColor(color);
+    }, []);
+
+    const redesStyle = {
+        backgroundColor: backgroundColor,
+    };
+
     return (
-        <div className="main__container__redes">
+        <div className="main__container__redes" style={redesStyle}>
             <div className="main__container__redes__img">
                 <img
                     src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
