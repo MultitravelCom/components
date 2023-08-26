@@ -108,7 +108,7 @@ const BannerMensageCardApp = () => {
             travelSaleTrue = true;
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
             //renderBanner();
-            console.log("isBariloche:", isBariloche);
+           // console.log("isBariloche:", isBariloche);
         }
         //----------------------------------------- ESCUCHA A isZoneInSale
    // }, [isZoneInSale]);
