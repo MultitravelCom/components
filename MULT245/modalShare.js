@@ -9,6 +9,15 @@ const zonasTravelSale = [
     48952, 51042, 51194, 78783, 92253, 57648
 ];
 //   *************************************************************
+// ********************** Timer *****************************
+function shouldShowEvent() {
+    const startDate = new Date("2023-08-27T23:00:00");
+    const endDate = new Date("2023-09-02T23:00:00");
+    const now = new Date();
+
+    return now >= startDate && now <= endDate;
+}
+// **********************************************
 
 function isZoneInTravelSale() {
     const dataValueElement = document.querySelector('.zone-selector-value');
@@ -79,12 +88,12 @@ const CompartirAlojamiento = () => {
 const BannerMensageCard = ({ text_p }) => {
     return (
         <>
-         <div className="main__container__bannerMensageCard">
-            <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-            <p>{text_p}</p>
-        </div>
+            <div className="main__container__bannerMensageCard">
+                <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
+                <p>{text_p}</p>
+            </div>
         </>
-        
+
     )
 }
 
@@ -98,9 +107,15 @@ const BannerMensageCardApp = () => {
 
     return (
         <>
-            {(taxIncludedTrue || travelSaleTrue) ? (
-                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
-            ) : (
+            {shouldShowEvent() && (taxIncludedTrue || travelSaleTrue) && (
+                <BannerMensageCard text_p={"Utiliza nuestros cupones en TravelSale y ahorra."} />
+            )}
+
+            {!shouldShowEvent() && !travelSaleTrue && taxIncludedTrue && (
+                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
+            )}
+
+            {!taxIncludedTrue && (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             )}
         </>
@@ -108,6 +123,8 @@ const BannerMensageCardApp = () => {
 };
 
 const BannerTopTravelSale = () => {
+    const [isEventActive, setIsEventActive] = React.useState(false);
+
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
@@ -115,24 +132,45 @@ const BannerTopTravelSale = () => {
         width: '300px',
         justifyContent: 'center',
         margin: 'auto',
-        display: 'none',
+        display: isEventActive ? 'flex' : 'none',
     };
+
+    React.useEffect(() => {
+        setIsEventActive(shouldShowEvent());
+    }, []);
 
     return (
         <>
-
             <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
-                <h2>Soy un banner!</h2>
-            </div>
+                <picture>
+                    <source
+                        media="(min-width: 1024px)"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 1023px)"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                    />
+                    <source
+                        media="(max-width: 767px)"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Mobile.webp"
 
+                    />
+                    <img
+                        className="main__container__bannerTopTravelSaleS__img"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                        alt="Imagen banner promociones"
+                    />
+                </picture>
+            </div>
         </>
     );
 };
 
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
-    const banner =  mainContentElement.querySelector('.main__container__bannerTopTravelSale')
-    if (mainContentElement && banner===null) {
+    const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale')
+    if (mainContentElement && banner === null) {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
@@ -187,7 +225,7 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    if(isZoneInTravelSale()){
+    if (isZoneInTravelSale()) {
         renderBanner();
     }
     infoCardImgContents.forEach(infoCardImgContent => {
@@ -215,7 +253,7 @@ const checkAndRender = async () => {
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
-        
+
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
