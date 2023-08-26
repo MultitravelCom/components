@@ -164,8 +164,8 @@ function ComponenteCupones() {
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
 
-    const startDate = new Date(2023, 8, 25, 23, 30); // 27 de Agosto a las 23:30
-    const endDate = new Date(2023, 9, 2, 23, 30);   // 2 de Septiembre a las 23:30
+    const startDate = new Date(2023, 7, 25, 23, 30); // 27 de Agosto a las 23:30
+    const endDate = new Date(2023, 8, 2, 23, 30);   // 2 de Septiembre a las 23:30
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
 
@@ -208,7 +208,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {shouldShowCupones ?? <ComponenteCupones />}
+                        <ComponenteCupones />
                     </div>
                 </div>
             </div>
