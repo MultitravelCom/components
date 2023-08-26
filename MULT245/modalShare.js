@@ -98,12 +98,12 @@ const BannerMensageCardApp = () => {
    // React.useEffect(() => {
         console.log("----> useEffect que contiene if de renderBanner")
         const div = document.querySelector('.bestprice__taxincluded');
-        setHasBestPriceTaxIncluded(!div);
+        //setHasBestPriceTaxIncluded(!div);
 
 
         if (isZoneInTravelSale()) {
             console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
-            setIsBariloche(true);
+            //setIsBariloche(true);
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
             //renderBanner();
             console.log("isBariloche:", isBariloche);
@@ -221,7 +221,7 @@ const checkAndRender = async () => {
         nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
-    const zoneInSaleProp = isZoneInTravelSale();
+
     infoCardContents.forEach(infoCardContent => {
         console.log("-----> infoCardContents.forEach:  ReactDOM.render(<CompartirAlojamiento /> , ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />")
 
