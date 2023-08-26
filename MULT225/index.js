@@ -268,7 +268,7 @@ const Redes = () => {
 
     const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
 
-    useEffect(() => {
+    React.useEffect(() => {
         const currentDate = new Date();
         const isWithinRange =
             currentDate >= startDate && currentDate <= endDate;
