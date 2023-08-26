@@ -91,7 +91,7 @@ const BannerMensageCard = ({ text_p }) => {
     )
 }
 
-const BannerMensageCardApp = ({ isZoneInSale }) => {
+const BannerMensageCardApp = () => {
     const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
     const [isBariloche, setIsBariloche] = React.useState(false);
 
@@ -101,7 +101,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
         setHasBestPriceTaxIncluded(!div);
 
 
-        if (isZoneInSale) {
+        if (isZoneInTravelSale()) {
             console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
             setIsBariloche(true);
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
@@ -212,7 +212,7 @@ const checkAndRender = async () => {
     if(isZoneInTravelSale()){
         console.log("-------------------- se llama renderBanner()")
                 renderBanner();
-            }
+    }
     infoCardImgContents.forEach(infoCardImgContent => {
         console.log("-----> infoCardImgContents.forEach: ReactDOM.render(<IconImg />, nuevoDivIconImg);")
 
@@ -242,7 +242,7 @@ const checkAndRender = async () => {
 
         
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-        ReactDOM.render(<BannerMensageCardApp isZoneInSale={zoneInSaleProp} />, nuevoDivBannerMensage);
+        ReactDOM.render(<BannerMensageCardApp />, nuevoDivBannerMensage);
     });
     console.log("isZoneInTravelSale(): ", isZoneInTravelSale())
    
