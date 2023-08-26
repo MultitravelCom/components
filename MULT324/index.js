@@ -324,8 +324,8 @@ const Card = ({ destinos, onContactClick }) => {
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
-                                    <div className="priceStyle left">{destino.price}</div>
-                                    <div className="priceStyle right">{destino.priceBaja}</div>
+                                    <div className="priceStyle left">{destino.priceBaja}</div>
+                                    <div className="priceStyle right">{destino.price}</div>
                                 </div>
                                 <Button
                                     id={destino.title}
