@@ -91,11 +91,13 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
     const [isBariloche, setIsBariloche] = React.useState(false);
 
     React.useEffect(() => {
+        console.log("----> useEffect que contiene if de renderBanner")
         const div = document.querySelector('.bestprice__taxincluded');
         setHasBestPriceTaxIncluded(!div);
 
 
         if (isZoneInSale) {
+            console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
             setIsBariloche(true);
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
             renderBanner();
