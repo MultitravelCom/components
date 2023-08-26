@@ -28,7 +28,7 @@ function movePromoCodesContainer() {
     sectionHolderData.insertAdjacentElement('afterend', promocodesContainer);
 };
 
-movePromoCodesContainer();
+// movePromoCodesContainer();
 
 function toggleWhatsappDisplayStyle(isOpen) {
     const whatsappSelector = document.querySelector('.whatsAppFixes');
@@ -207,7 +207,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                    {shouldShowCupones ? <ComponenteCupones /> : <span>No hay cupones disponibles.</span>}
+                        {shouldShowCupones ? <ComponenteCupones /> : <span>No hay cupones disponibles.</span>}
                     </div>
                 </div>
             </div>
