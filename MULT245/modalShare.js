@@ -97,9 +97,9 @@ const BannerMensageCardApp = () => {
 
    // React.useEffect(() => {
         console.log("----> useEffect que contiene if de renderBanner")
-        const div = document.querySelector('.bestprice__taxincluded');
+        let div = document.querySelector('.bestprice__taxincluded');
         //setHasBestPriceTaxIncluded(!div);
-        const travelSaleTrue = false;
+        let travelSaleTrue = false;
 
 
         if (isZoneInTravelSale()) {
