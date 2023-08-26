@@ -120,7 +120,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 };
 
 const BannerTopTravelSale = () => {
-
+console.log("Se llama BannerTopTravelSale")
     const bannerStyle = {
         backgroundColor: 'blue',
         color: 'white',
