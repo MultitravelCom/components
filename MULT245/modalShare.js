@@ -111,11 +111,11 @@ const BannerMensageCardApp = () => {
 
     return (
         <>
-            {shouldShowEvent() && (!taxIncludedTrue || travelSaleTrue) && (
+            {shouldShowEvent() && travelSaleTrue && (
                 <BannerMensageCard text_p={"Utiliza nuestros cupones en TravelSale y ahorra."} />
             )}
 
-            {!shouldShowEvent() && !travelSaleTrue && taxIncludedTrue && (
+            {!shouldShowEvent() && !travelSaleTrue && !taxIncludedTrue && (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             )}
 
