@@ -221,7 +221,7 @@ const checkAndRender = async () => {
         nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
-
+    const zoneInSaleProp = isZoneInTravelSale();
     infoCardContents.forEach(infoCardContent => {
         console.log("-----> infoCardContents.forEach:  ReactDOM.render(<CompartirAlojamiento /> , ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />")
 
@@ -240,9 +240,9 @@ const checkAndRender = async () => {
 
         nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
 
-
+        
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-        ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
+        ReactDOM.render(<BannerMensageCardApp isZoneInSale={zoneInSaleProp} />, nuevoDivBannerMensage);
     });
     console.log("isZoneInTravelSale(): ", isZoneInTravelSale())
    
