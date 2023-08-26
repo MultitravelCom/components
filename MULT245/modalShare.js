@@ -109,6 +109,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
 
     return (
         <>
+        {console.log("----->return de BannerMensageCardApp")}
             {(isBariloche || hasBestPriceTaxIncluded) ? (
                 <BannerMensageCard text_p={"Utiliza nuestros cupones en TravelSale y ahorra."} />
             ) : (
