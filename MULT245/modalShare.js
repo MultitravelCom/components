@@ -92,7 +92,7 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
+    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(false);
     const [isBariloche, setIsBariloche] = React.useState(false);
 
    // React.useEffect(() => {
