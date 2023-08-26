@@ -224,7 +224,7 @@ const checkAndRender = async () => {
         ReactDOM.render(<IconImg />, nuevoDivIconImg);
     });
 
-    console.log("------> infoCardContent: ", infoCardContent)
+    console.log("------> infoCardContent: ", infoCardContents)
     infoCardContents.forEach(infoCardContent => {
         console.log("-----> infoCardContents.forEach:  ReactDOM.render(<CompartirAlojamiento /> , ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />")
 
