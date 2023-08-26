@@ -104,7 +104,7 @@ const BannerMensageCardApp = ({ isZoneInSale }) => {
             console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
             setIsBariloche(true);
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
-            //renderBanner();
+            renderBanner();
             console.log("isBariloche:", isBariloche);
         }
         //----------------------------------------- ESCUCHA A isZoneInSale
@@ -208,10 +208,10 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    if(isZoneInTravelSale()){
-        console.log("-------------------- se llama renderBanner()")
-                renderBanner();
-            }
+    // if(isZoneInTravelSale()){
+    //     console.log("-------------------- se llama renderBanner()")
+    //             renderBanner();
+    //         }
     infoCardImgContents.forEach(infoCardImgContent => {
         console.log("-----> infoCardImgContents.forEach: ReactDOM.render(<IconImg />, nuevoDivIconImg);")
 
