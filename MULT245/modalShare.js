@@ -152,7 +152,7 @@ const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
     const banner =  mainContentElement.querySelector('.main__container__bannerTopTravelSale')
     console.log("mainContentElement.querySelector('.main__container__bannerTopTravelSale')   :", banner)
-    if (mainContentElement && mainContentElement) {
+    if (mainContentElement && banner===null) {
         const nuevoDivIconImg = document.createElement('div');
         console.log(" --***---> Se insertBefore nuevoDivIconImg a mainContentElement")
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
