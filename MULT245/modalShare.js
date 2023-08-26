@@ -239,8 +239,9 @@ const checkAndRender = async () => {
         ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
         ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
     });
+    console.log("isZoneInTravelSale(): ", isZoneInTravelSale())
     if(isZoneInTravelSale()){
-
+console.log("-------------------- se llama renderBanner()")
         renderBanner();
     }
 
