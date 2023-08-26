@@ -92,18 +92,20 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
-    const [isBariloche, setIsBariloche] = React.useState(false);
+    //const [hasBestPriceTaxIncluded, setHasBestPriceTaxIncluded] = React.useState(true);
+    //const [isBariloche, setIsBariloche] = React.useState(false);
 
    // React.useEffect(() => {
         console.log("----> useEffect que contiene if de renderBanner")
         const div = document.querySelector('.bestprice__taxincluded');
         //setHasBestPriceTaxIncluded(!div);
+        const travelSaleTrue = false;
 
 
         if (isZoneInTravelSale()) {
             console.log("----> useEffect que contiene if (isZoneInSale) para llamar a renderBanner")
-            setIsBariloche(true);
+            //setIsBariloche(true);
+            travelSaleTrue = true;
             //-----------------------------------------FUNCION QUE RENDERIZA AL BANNER
             //renderBanner();
             console.log("isBariloche:", isBariloche);
@@ -114,7 +116,7 @@ const BannerMensageCardApp = () => {
     return (
         <>
         {console.log("----->return de BannerMensageCardApp")}
-            {(isBariloche || hasBestPriceTaxIncluded) ? (
+            {(div || travelSaleTrue) ? (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas."} />
             ) : (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
