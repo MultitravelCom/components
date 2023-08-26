@@ -105,6 +105,10 @@ const BannerMensageCardApp = () => {
         travelSaleTrue = true;
     }
 
+    console.log('shouldShowEvent:', shouldShowEvent());
+    console.log('taxIncludedTrue:', taxIncludedTrue);
+    console.log('travelSaleTrue:', travelSaleTrue);
+
     return (
         <>
             {shouldShowEvent() && (!taxIncludedTrue || travelSaleTrue) && (
