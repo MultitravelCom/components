@@ -113,7 +113,6 @@ function ComponenteCupones() {
     const getCouponsFetch = async () => {
         const res = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/MULT205/cuponesDB.json');
         const data = await res.json();
-        console.log(data)
         return data.cupones;
     }
 
@@ -168,9 +167,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
     const endDate = new Date(2023, 8, 2, 23, 30);   // 2 de Septiembre a las 23:30
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
-    console.log('shouldShowCupones:', shouldShowCupones); // Agrega esta línea para verificar
-
-
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -211,7 +207,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {shouldShowCupones ? <ComponenteCupones /> : null}
+                    {shouldShowCupones ? <ComponenteCupones /> : <span>No hay cupones disponibles.</span>}
                     </div>
                 </div>
             </div>
@@ -240,7 +236,6 @@ const CardCuponButton = ({ textToCopy }) => {
         try {
             document.execCommand('copy');
             setShowTooltip(true);
-            console.log('Texto copiado al portapapeles:', textToCopy);
         } catch (error) {
             console.error('Error al copiar el texto:', error);
         }
