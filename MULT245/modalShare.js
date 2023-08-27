@@ -100,26 +100,36 @@ const BannerMensageCard = ({ text_p }) => {
 const BannerMensageCardApp = () => {
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
+    let showFreezePriceMessageA = false;
+    let showFreezePriceMessageB = false;
+    let showFreezePriceMessageC = false;
 
     if (isZoneInTravelSale()) {
         travelSaleTrue = true;
     }
-
+    if (shouldShowEvent()) {
+        showFreezePriceMessageA = travelSaleTrue;
+        showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
+        showFreezePriceMessageC = taxIncludedTrue && !travelSaleTrue;
+    } else {
+        showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
+        showFreezePriceMessageC = taxIncludedTrue
+    }
     console.log('shouldShowEvent:', shouldShowEvent());
     console.log('taxIncludedTrue:', taxIncludedTrue);
     console.log('travelSaleTrue:', travelSaleTrue);
 
     return (
         <>
-            {shouldShowEvent() && travelSaleTrue && (
+            {showFreezePriceMessageA && (
                 <BannerMensageCard text_p={"Utiliza nuestros cupones en TravelSale y ahorra."} />
             )}
 
-            { !travelSaleTrue && !taxIncludedTrue && (
+            {showFreezePriceMessageB && (
                 <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
             )}
 
-            { taxIncludedTrue && !travelSaleTrue &&  (
+            {showFreezePriceMessageC && (
                 <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
             )}
         </>
