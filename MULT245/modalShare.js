@@ -130,12 +130,6 @@ const BannerTopTravelSale = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
 
     const bannerStyle = {
-        backgroundColor: 'blue',
-        color: 'white',
-        padding: '20px',
-        width: '300px',
-        justifyContent: 'center',
-        margin: 'auto',
         display: isEventActive ? 'flex' : 'none',
     };
 
