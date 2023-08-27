@@ -115,9 +115,7 @@ const BannerMensageCardApp = () => {
         showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
         showFreezePriceMessageC = taxIncludedTrue
     }
-    console.log('shouldShowEvent:', shouldShowEvent());
-    console.log('taxIncludedTrue:', taxIncludedTrue);
-    console.log('travelSaleTrue:', travelSaleTrue);
+  
 
     return (
         <>
