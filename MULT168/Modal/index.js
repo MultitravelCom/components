@@ -218,7 +218,7 @@ const App = () => {
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
-        const openModalLading = document.querySelector('btn_Style_Venta_Per');
+        const openModalLading = document.querySelector('.classOpenModal');
         
         const handleButtonClick = () => {
             setOpenModal(true);
