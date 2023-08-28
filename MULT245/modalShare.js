@@ -479,7 +479,7 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    if (isZoneInTravelSale()) {
+    if (isZoneInTravelSale() || !taxIncludedTrue ) {
         renderBanner();
     }
     infoCardImgContents.forEach(infoCardImgContent => {
