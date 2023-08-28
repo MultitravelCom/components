@@ -369,9 +369,8 @@ const BannerTopTravelSale = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     const [modalOpen, setModalOpen] = React.useState(false);
 
-
     const bannerStyle = {
-        display: isEventActive ? 'flex' : 'none',
+        display: isEventActive && !taxIncludedTrue ? 'flex' : 'none',
     };
 
     const handleOpenModal = () => {
@@ -386,6 +385,7 @@ const BannerTopTravelSale = () => {
 
     React.useEffect(() => {
         setIsEventActive(shouldShowEvent());
+        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     }, []);
 
     return (
