@@ -342,6 +342,198 @@
   background: #6E37D0;
 
 }
+/* CUPONERA */
+
+/* Promo AR */
+.banner__promo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 4px 4px 40px 4px !important;
+  min-height: 96px;
+  padding: 25px 4px !important;
+}
+
+.promo__ar {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 7px;
+}
+
+.promo__ar_parrafo>h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 !important;
+}
+
+.promo__ar__btn {
+  border-radius: 40px;
+  width: 110px;
+  height: 33px;
+  font-size: 14px;
+  margin: 0 51px;
+}
+
+/* Modal y Cupones */
+.overlay__cupones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 82vh;
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 #f0f0f0;
+  border-top: 0 !important;
+}
+
+.modal__content-title {
+  text-align: center;
+  background-color: #2A91EB;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.modal__content-title>h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.modal__content-title-h3>h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 40px;
+  margin-bottom: .5rem;
+}
+
+.modal__content-cupon>h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  text-align: center;
+  color: #0D4E88;
+  margin: 0px 30px;
+}
+
+.modal__content-cupon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 36px 0;
+  min-width: 25%;
+  align-items: center;
+  position: relative;
+}
+
+.modal__content-uno-logo>img {
+  margin: 0 24px;
+}
+
+.close-modal-cupon {
+  background: 0 0;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  opacity: .8;
+  padding: 0 5px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  background: white;
+  border-radius: 100%;
+}
+
+/* Botones Copy */
+.main_cardCupon_CuponCode {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: none;
+}
+
+.cardCuponButtonStyle {
+  width: 101px;
+  height: 38px;
+  position: absolute;
+  display: inline-flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 40px;
+  background: #0D4E88;
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  bottom: 0;
+  right: 34px;
+  border: 0;
+}
+
+.cardCuponButtonStyle:hover {
+  background: #FDCE07;
+  color: #6E37D0;
+}
+
+.cardCuponButtonStyle:active {
+  border-radius: 40px;
+  border: 2px solid #6E37D0;
+  background: #FFF;
+}
+
+.main_ToolTipButton {
+  width: 67px;
+  height: 26px;
+  position: absolute;
+  display: inline-flex;
+  padding: 4px 10px;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #6E37D0;
+  right: 10px;
+  bottom: -15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.main_ToolTipButton.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main_ToolTipButton>p {
+  color: #FFFFFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.12px;
+}
+
 
 @media (max-width: 767px) {
   .share__icon {
