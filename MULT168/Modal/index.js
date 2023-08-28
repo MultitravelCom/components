@@ -218,7 +218,8 @@ const App = () => {
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
-
+        const openModalLading = document.querySelector('btn_Style_Venta_Per');
+        
         const handleButtonClick = () => {
             setOpenModal(true);
         };
@@ -233,27 +234,27 @@ const App = () => {
 
         document.addEventListener('keydown', handleGlobalKeyPress);
 
-        // function buscarBtnStyleVentaPer() {
-        //     const isDesktop = window.innerWidth > 768;
+        function buscarBtnStyleVentaPer() {
+            const isDesktop = window.innerWidth > 768;
 
-        //     if (isDesktop) {
-        //         const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+            if (isDesktop) {
+                const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
 
-        //         if (btnStyleVentaPerList.length > 0) {
-        //             btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
-        //                 btnStyleVentaPer.addEventListener('click', (event) => {
-        //                     event.preventDefault();
-        //                     setOpenModal(true);
-        //                 });
-        //             });
-        //         } else {
-        //             setTimeout(buscarBtnStyleVentaPer, 1000);
-        //         }
-        //     }
-        // }
-        // if (window.innerWidth > 768) {
-        //     buscarBtnStyleVentaPer();
-        // }
+                if (btnStyleVentaPerList.length > 0) {
+                    btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
+                        btnStyleVentaPer.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            setOpenModal(true);
+                        });
+                    });
+                } else {
+                    setTimeout(buscarBtnStyleVentaPer, 1000);
+                }
+            }
+        }
+        if (window.innerWidth > 768) {
+            buscarBtnStyleVentaPer();
+        }
 
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
@@ -268,15 +269,9 @@ const App = () => {
             setOpenModal(true);
         });
 
-        // openModalButtonBannerTop.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     setOpenModal(true);
-        // });
-
         return () => {
             clearInterval(checkButtonExistence);
             openModalButton.addEventListener('click', handleButtonClick);
-            // openModalButtonBannerTop.addEventListener('click', handleButtonClick);
             document.removeEventListener('keydown', handleGlobalKeyPress);
         };
     }, []);
