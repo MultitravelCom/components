@@ -218,6 +218,7 @@ const App = () => {
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
+        const openModalButtonBannerTop = document.querySelector('#no_flighthotel');
 
 
 
@@ -257,7 +258,6 @@ const App = () => {
         //     buscarBtnStyleVentaPer();
         // }
 
-
         const checkButtonExistence = setInterval(() => {
             const openModalButtonNew = document.getElementById('btnBannerSearch');
             if (openModalButtonNew) {
@@ -271,9 +271,15 @@ const App = () => {
             setOpenModal(true);
         });
 
+        openModalButtonBannerTop.addEventListener('click', (event) => {
+            event.preventDefault();
+            setOpenModal(true);
+        });
+
         return () => {
             clearInterval(checkButtonExistence);
             openModalButton.addEventListener('click', handleButtonClick);
+            openModalButtonBannerTop.addEventListener('click', handleButtonClick);
             document.removeEventListener('keydown', handleGlobalKeyPress);
         };
     }, []);
