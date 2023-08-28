@@ -375,7 +375,7 @@ const BannerTopTravelSale = () => {
     console.log(taxIncludedTrue)
 
     const bannerStyle = {
-        display: !taxIncludedTrue ? 'flex' : 'none',
+        display: isEventActive ? 'flex' : 'none',
     };
 
     const handleOpenModal = () => {
