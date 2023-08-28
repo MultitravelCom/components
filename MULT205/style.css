@@ -459,7 +459,7 @@
     display: none;
 }
 
-.cardCuponButtonStyle {
+.cardCuponButtonStyle-cuponera {
     width: 101px;
     height: 38px;
     position: absolute;
@@ -479,12 +479,12 @@
     border: 0;
 }
 
-.cardCuponButtonStyle:hover {
+.cardCuponButtonStyle-cuponera:hover {
     background: #FDCE07;
     color: #6E37D0;
 }
 
-.cardCuponButtonStyle:active {
+.cardCuponButtonStyle-cuponera:active {
     border-radius: 40px;
     border: 2px solid #6E37D0;
     background: #FFF;
@@ -582,7 +582,7 @@
         height: 67px;
     }
 
-    .cardCuponButtonStyle {
+    .cardCuponButtonStyle-cuponera {
         right: inherit;
         bottom: -23px;
     }

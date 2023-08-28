@@ -249,7 +249,7 @@ const CardCuponButton = ({ textToCopy }) => {
 
     return (
 
-        <button className="cardCuponButtonStyle" onClick={handleCopyClick}>
+        <button className="cardCuponButtonStyle-cuponera" onClick={handleCopyClick}>
             <div className="cardCuponButtonStyle__copy">
                 Copiar
             </div>
