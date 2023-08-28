@@ -238,7 +238,7 @@ const App = () => {
             const isDesktop = window.innerWidth > 768;
 
             if (isDesktop) {
-                const btnStyleVentaPerList = document.querySelectorAll('.btn_Style_Venta_Per');
+                const btnStyleVentaPerList = document.querySelectorAll('.classOpenModal');
 
                 if (btnStyleVentaPerList.length > 0) {
                     btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
