@@ -289,7 +289,7 @@
   right: 8px;
 }
 
-.modal .modal-content {
+.modal .modal-content-cuponera {
   padding: 3% 10px 15px !important;
   box-shadow: none !important;
   width: 750px;
@@ -386,7 +386,7 @@
   z-index: 1;
 }
 
-.modal-content {
+.modal-content-cuponera {
   flex-grow: 1;
   overflow-y: auto;
   max-height: 82vh;
