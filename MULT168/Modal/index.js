@@ -219,8 +219,6 @@ const App = () => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
 
-
-
         const handleButtonClick = () => {
             setOpenModal(true);
         };
@@ -265,15 +263,15 @@ const App = () => {
             }
         }, 500);
 
-        // openModalButton.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     setOpenModal(true);
-        // });
-
-        openModalButtonBannerTop.addEventListener('click', (event) => {
+        openModalButton.addEventListener('click', (event) => {
             event.preventDefault();
             setOpenModal(true);
         });
+
+        // openModalButtonBannerTop.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     setOpenModal(true);
+        // });
 
         return () => {
             clearInterval(checkButtonExistence);
