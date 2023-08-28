@@ -402,7 +402,7 @@ const BannerTopTravelSale = () => {
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Mobile.webp"
                     />
                     <source
                         media="(max-width: 767px)"
