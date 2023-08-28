@@ -478,10 +478,9 @@ const checkAndRender = async () => {
         await new Promise(resolve => setTimeout(resolve, 1000));
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
-
-        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
     }
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+
     if (isZoneInTravelSale() || !taxIncludedTrue ) {
         renderBanner();
     }
