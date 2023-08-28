@@ -371,8 +371,8 @@ const BannerTopTravelSale = () => {
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); // Declare the variable here
 
-    console.log(isEventActive)
-    console.log(taxIncludedTrue)
+    console.log("isEventActive",isEventActive)
+    console.log("taxIncludedTrue", taxIncludedTrue)
 
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
