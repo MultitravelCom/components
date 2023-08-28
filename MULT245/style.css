@@ -376,6 +376,30 @@
 }
 
 /* Modal y Cupones */
+
+.modal__cupones {
+  max-width: 80%;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+  display: flex;
+  /* Add this line to enable flex layout */
+  flex-direction: column;
+  /* Add this line to set flex direction to column */
+  position: fixed;
+  /* Keep the modal fixed on the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  /* Center the modal vertically */
+  justify-content: center;
+  /* Center the modal horizontally */
+}
+
 .overlay__cupones {
   position: fixed;
   top: 0;

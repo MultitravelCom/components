@@ -273,7 +273,7 @@ const Redes = () => {
     const originalColor = '#2A91EB';
     const specialColor = '#6D37D1';
 
-    const startDate = new Date(2023, 7, 27, 23);
+    const startDate = new Date(2023, 7, 27, 22);
     const endDate = new Date(2023, 8, 2, 23);
 
     const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
