@@ -128,7 +128,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
         <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick} onKeyDown={handleKeyDown} tabIndex={-1}>
             <div className="modal__cupones">
-                <div className="modal-content">
+                <div className="modal-content-cuponera">
                     <div className="modal__content-title">
                         <h2>Te damos la bienvenida a nuestra cuponera</h2>
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
