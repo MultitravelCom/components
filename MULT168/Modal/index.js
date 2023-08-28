@@ -218,7 +218,7 @@ const App = () => {
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
-        const openModalButtonBannerTop = document.querySelector('#no_flighthotel');
+        const openModalButtonBannerTop = document.querySelector('#bannerTop__right_no_flighthotel');
 
 
 
