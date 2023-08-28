@@ -175,7 +175,7 @@ const Loader = () => {
     );
 };
 function shouldShowEvent() {
-    const startDate = new Date("2023-08-27T23:00:00");
+    const startDate = new Date("2023-08-27T22:00:00");
     const endDate = new Date("2023-09-02T23:00:00");
     const now = new Date();
 
