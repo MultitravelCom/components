@@ -419,23 +419,6 @@ source>img {
     }
 }
 
-.btn_Style_Venta_Per {
-    position: absolute;
-    bottom: 8px;
-    right: 4%;
-    padding: 2% 5%;
-    color: white;
-    min-width: 93%;
-    background-color: #2a8bfe;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-  }
-
-.btn_Style_Venta_Per:hover {
-    background-color: #1169B7;
-}
-
 /* BANNER TRAVEL SALE */
 .main_conteiner__s2_bannerTravelSale{
     display: flex;
@@ -609,6 +592,48 @@ source>img {
     text-align: center;
     overflow: hidden;
 }
+/* boton llamar */
+
+.btn_Style_Venta_Per {
+    padding: 2% 5%;
+    color: white;
+    min-width: 112px;
+    background-color: #2a8bfe;
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+  }
+ 
+  .btn_from_bitrix {
+    position: initial;
+    z-index: 999999;
+    top: 16px;
+  }
+ 
+  .btn_Style_Venta_Per:hover {
+   border: 1px solid #1169b7;
+    background-color: #1169b7;
+  }
+ 
+  .btn_FormBitrix {
+    color: #2A8BFE;
+    background-color: #ffffff;
+    border: 1px solid #2A8BFE;
+  }
+ 
+  .btn_FormBitrix:hover {
+    color: #FFFFFF;
+    background: #1480FF;
+    border: 1px solid #2A8BFE;
+  }
+ 
+  .btn_FormBitrix::selection {
+    color: #FFFFFF;
+    background: #66ACFF;
+    border: 1px solid #66ACFF;
+  }
+ 
 
 
 @media (max-width: 767px) {

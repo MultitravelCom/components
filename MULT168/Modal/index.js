@@ -225,7 +225,6 @@ const App = () => {
         };
 
         function handleGlobalKeyPress(event) {
-            // Verificar si la tecla presionada es "Enter"
             if (event.keyCode === 13) {
                 event.preventDefault();
                 setOpenModal(false); 
