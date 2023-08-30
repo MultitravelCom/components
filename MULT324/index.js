@@ -164,7 +164,7 @@ function Button(props) {
     };
 
     return (
-        <button id={props.id} className="btn_Style_Venta_Per" onClick={handleClick}>{props.text}</button>
+        <button id={props.id} className={props.className} onClick={handleClick}>{props.text}</button>
     );
 }
 const Loader = () => {
