@@ -593,6 +593,15 @@ source>img {
     overflow: hidden;
 }
 /* boton llamar */
+.main__container__buttonsCars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 3.3%;
+    width: 100%;
+    gap: 6px;
+  }
 
 .btn_Style_Venta_Per {
     padding: 2% 5%;
