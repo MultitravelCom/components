@@ -435,6 +435,9 @@ source>img {
 .btn_Style_Venta_Per:hover {
     background-color: #1169B7;
 }
+.b24-form-dropdown-container {
+    position: inherit;
+}
 
 /* BANNER TRAVEL SALE */
 .main_conteiner__s2_bannerTravelSale{
