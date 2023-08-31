@@ -26,6 +26,12 @@ const ButtonsPaymentMp = () => {
         const bookingPaymentOptions = document.querySelector('.booking-payment__options');
         bookingPaymentOptions.style.display = 'flex';
 
+        const pElement = document.querySelector('.confirm-booking__section.booking-payment> p');
+        // const pElementTwo = document.querySelector('.pos__bank-redirect-info');
+        if (pElement && configIdFromCheck === 13) {
+            pElement.style.display = 'none';
+        }
+
     }, []);
 
     return (
@@ -115,12 +121,6 @@ if (shouldRenderTransferencia) {
     const transferenciaContainer = document.createElement('div');
     ReactDOM.render(<TransferenciaComponent />, transferenciaContainer);
     posElement.appendChild(transferenciaContainer);
-}
-
-const pElement = document.querySelector('.confirm-booking__section.booking-payment> p');
-const pElementTwo = document.querySelector('.pos__bank-redirect-info');
-if (pElementTwo && pElement && shouldRenderTransferencia === 13) {
-    pElement.style.display = 'none';
 }
 
 
