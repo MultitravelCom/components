@@ -151,10 +151,8 @@ const BitrixFormTitle = () => {
         <div className="BitrixFormTitle">
             <div className="bitrixFormTitle_text">
                 <p class="single-line">Completa tus datos para que te contacte un especialista.</p>
-                <p>o llamanos al: 0800-348-0003</p>
-                <spam>Lun a Vie 10 a 20 Hs | Sab 10 a 15 Hs</spam>
             </div>
-            <ButtonBitrixForm />
+            {/* <ButtonBitrixForm /> */}
         </div>
     )
 }
@@ -166,7 +164,7 @@ function Button(props) {
     };
 
     return (
-        <button id={props.id} className="btn_Style_Venta_Per" onClick={handleClick}>{props.text}</button>
+        <button id={props.id} className={props.className} onClick={handleClick}>{props.text}</button>
     );
 }
 const Loader = () => {
@@ -276,6 +274,15 @@ const BannerTravelSale = () => {
 const Card = ({ destinos, onContactClick }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
+    const [openModal, setOpenModal] = React.useState(false);
+
+    const handleBannerClick = () => {
+        if (window.innerWidth <= 768) {
+            window.location.href = 'tel:08003480003';
+        } else {
+            setOpenModal(true);
+        }
+    };
 
     React.useEffect(() => {
         fetchDestinos()
@@ -327,12 +334,10 @@ const Card = ({ destinos, onContactClick }) => {
                                     <div className="priceStyle left">{destino.priceBaja}</div>
                                     <div className="priceStyle right">{destino.price}</div>
                                 </div>
-                                <Button
-                                    id={destino.title}
-                                    style="btn_Style_Venta_Per"
-                                    link={destino.linkWa}
-                                    text="Contactarme"
-                                    onClick={() => onContactClick(destino.id)} />
+                                <div className="main__container__buttonsCars">
+                                    <Button id={destino.id} className="btn_Style_Venta_Per classOpenModal" text="Llamar ahora" onClick={handleBannerClick} />
+                                    <Button id={destino.title} className="btn_Style_Venta_Per btn_FormBitrix" text="Agendar llamada" onClick={() => onContactClick(destino.id)} />
+                                </div>
                             </div>
                         </div>
                     ))
@@ -494,7 +499,7 @@ function App() {
                         <div className="main_conteiner__s2_bannerTravelSale">
                             <BannerTravelSale />
                         </div>
-                        : 
+                        :
                         null
                     }
                     <div className="main__conteiner main__conteiner-principal container">
