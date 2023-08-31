@@ -26,7 +26,7 @@ const ButtonsPaymentMp = () => {
 
     return (
         <>
-            {configIdFromCheck === 9 ? (
+            {configIdFromCheck === 13 ? (
                 <>
                     <li className="booking-payment__options-pos on">
                         <input type="radio" name="paymentType" value="pos" className="js-paymentType hidden" />
@@ -104,7 +104,7 @@ const TransferenciaComponent = () => {
 const buttonPaymentMp = document.querySelector('.booking-payment__options');
 ReactDOM.render(<ButtonsPaymentMp />, buttonPaymentMp);
 
-const shouldRenderTransferencia = checkPaymentMethod() === 9;
+const shouldRenderTransferencia = checkPaymentMethod() === 13;
 
 if (shouldRenderTransferencia) {
     const posElement = document.querySelector('.booking-payment__info.pos');
