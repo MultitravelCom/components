@@ -6,11 +6,13 @@
     border-radius: 8px;
     color: #0D4E88;
 }
-.booking-payment__options{
+
+.booking-payment__options {
     display: none;
 }
-.booking-payment__options li .glyphicon{
-margin-top: 2px;
+
+.booking-payment__options li .glyphicon {
+    margin-top: 2px;
 }
 
 .booking-payment__options>.booking-payment__options-prepayment {
@@ -20,7 +22,7 @@ margin-top: 2px;
 
 .glyphicon-md {
     color: #0D4E88;
-    margin-top:2px ;
+    margin-top: 2px;
 }
 
 .booking-payment__options li.on {
@@ -34,12 +36,21 @@ margin-top: 2px;
 .booking-payment__options li.on .glyphicon {
     color: #FFFFFF;
 }
+
+.icoSvgMp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 @media (max-width: 767px) {
+
     .booking-payment__options li,
-    .booking-payment__options li{
+    .booking-payment__options li {
         width: 100%;
         margin-bottom: 8px;
     }
+
     .booking-payment__options>.booking-payment__options-prepayment {
         width: 100%;
     }
