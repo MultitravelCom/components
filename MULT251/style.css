@@ -7,6 +7,11 @@
     color: #0D4E88;
 }
 
+.booking-payment__options {
+    display: flex;
+    align-items: center;
+}
+
 .booking-payment__options li .glyphicon {
     margin-top: 2px;
 }
