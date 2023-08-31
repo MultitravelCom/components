@@ -472,12 +472,13 @@ source>img {
     padding: 2% 5%;
     color: white;
     min-width: 112px;
+    height: 35px;
     background-color: #2a8bfe;
     border-radius: 32px;
     border: none;
     cursor: pointer;
-    font-size: 12px;
-}
+    font-size: 14px;
+  }
 
 .btn_from_bitrix {
     position: initial;
