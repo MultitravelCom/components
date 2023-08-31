@@ -8,8 +8,9 @@
 }
 
 .booking-payment__options {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    display: none;
 }
 
 .booking-payment__options li .glyphicon {

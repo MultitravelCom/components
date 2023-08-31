@@ -22,6 +22,9 @@ const ButtonsPaymentMp = () => {
     React.useEffect(() => {
         const configId = checkPaymentMethod();
         setConfigIdFromCheck(configId);
+
+        const bookingPaymentOptions = document.querySelector('.booking-payment__options');
+        bookingPaymentOptions.style.display = 'flex';
     }, []);
 
     return (
