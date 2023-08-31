@@ -25,6 +25,13 @@ const ButtonsPaymentMp = () => {
 
         const bookingPaymentOptions = document.querySelector('.booking-payment__options');
         bookingPaymentOptions.style.display = 'flex';
+
+        const pElement = document.querySelector('.confirm-booking__section.booking-payment p.hide-this-paragraph');
+        const pElementTwo = document.querySelector('.pos-form.JUNIPERGATEWAY-13 p.pos__bank-redirect-info');
+        if (pElementTwo && pElement && configIdFromCheck === 13) {
+            pElement.style.display = 'none';
+        }
+
     }, []);
 
     return (
