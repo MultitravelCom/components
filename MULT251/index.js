@@ -105,12 +105,14 @@ const buttonPaymentMp = document.querySelector('.booking-payment__options');
 ReactDOM.render(<ButtonsPaymentMp />, buttonPaymentMp);
 
 const shouldRenderTransferencia = checkPaymentMethod() === 12;
+const bookingPaymentOptions = document.querySelector('.booking-payment__options');
 
 if (shouldRenderTransferencia) {
     const posElement = document.querySelector('.booking-payment__info.pos');
     const transferenciaContainer = document.createElement('div');
     ReactDOM.render(<TransferenciaComponent />, transferenciaContainer);
     posElement.appendChild(transferenciaContainer);
+    bookingPaymentOptions.style.display = 'inline-block';
 }
 
 
