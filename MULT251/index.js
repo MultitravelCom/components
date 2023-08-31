@@ -119,7 +119,7 @@ if (shouldRenderTransferencia) {
 
 const pElement = document.querySelector('.confirm-booking__section.booking-payment> p');
 const pElementTwo = document.querySelector('.pos__bank-redirect-info');
-if (pElementTwo && pElement && configIdFromCheck === 13) {
+if (pElementTwo && pElement && shouldRenderTransferencia === 13) {
     pElement.style.display = 'none';
 }
 
