@@ -124,9 +124,9 @@
 // }
 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const liElement = document.querySelector('.booking-payment__options-prepayment');
-//     const bookingPaymentOptions = document.querySelector('.booking-payment__options');
+document.addEventListener('DOMContentLoaded', function () {
+    const liElement = document.querySelector('.booking-payment__options-prepayment');
+    const bookingPaymentOptions = document.querySelector('.booking-payment__options');
 
     if (liElement) {
         liElement.childNodes.forEach(node => {
