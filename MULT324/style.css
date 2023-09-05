@@ -527,6 +527,11 @@ source>img {
     color: white;
   }
 
+  .btn_Style_Venta_Per:hover svg path {
+    fill: white;
+    transition: fill 0.3s ease-in-out;
+  }
+
    /* ---*-*-*-*-*-*-*-*-*-*- */
  .whatsAppFixes{
     display: none;
