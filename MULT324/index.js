@@ -288,7 +288,7 @@ const Card = ({ destinos, onContactClick }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
-    const [buttonSwitch, setButtonSwitch] = React.useState("A");
+    const [buttonSwitch, setButtonSwitch] = React.useState("B");
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
@@ -360,7 +360,7 @@ const Card = ({ destinos, onContactClick }) => {
                                 className={buttonSwitch === "A" ? "btn_Whatsapp" : "btn_FormBitrix"}
                                 text={buttonSwitch === "A" ? "Whatsapp" : "Agendar llamada"}
                                 onClick={buttonSwitch === "A" ? handleWhatsAppClick : () => onContactClick(destino.id)}
-                                svgType={buttonSwitch === "A" ? 'whatsapp' : 'phone'}
+                                svgType={buttonSwitch === "A" ? 'whatsapp' : null }
                             />
                             <ButtonLading
                                 id={destino.id}

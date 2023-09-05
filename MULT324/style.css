@@ -451,6 +451,7 @@ source>img {
     width: 100%;
     gap: 6px;
 }
+
 .btn_Style_Venta_Per {
     display: flex;
     align-items: center;
@@ -462,80 +463,80 @@ source>img {
     border: none;
     cursor: pointer;
     font-size: 14px;
-  }
- 
-  .btn_from_bitrix {
+}
+
+.btn_from_bitrix {
     position: initial;
     z-index: 999999;
     top: 16px;
-  }
- 
-  /* .btn_Style_Venta_Per:hover {
+}
+
+/* .btn_Style_Venta_Per:hover {
     border: 1px solid #1169b7;
     background-color: #1169b7;
   } */
- 
-  .btn_FormBitrix {
-    color: #2A8BFE;
-    background-color: #ffffff;
+
+.btn_FormBitrix {
+    color: white;
+    background-color: #2A8BFE;
     border: 1px solid #2A8BFE;
-  }
- 
-  .btn_FormBitrix:hover {
+}
+
+.btn_FormBitrix:hover {
     color: #FFFFFF;
     background: #1480FF;
-    border: 1px solid #2A8BFE;
-    transition: fill 0.3s ease-in-out;
-  }
- 
-  .btn_FormBitrix::selection {
+    border: 1px solid #1480FF;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn_FormBitrix::selection {
     color: #FFFFFF;
     background: #66ACFF;
     border: 1px solid #66ACFF;
-  }
- 
-  .btn_Whatsapp {
+}
+
+.btn_Whatsapp {
     color: white;
     background-color: #03D749;
-  }
- 
-  .btn_Whatsapp:hover {
+}
+
+.btn_Whatsapp:hover {
     color: white;
     background-color: #00a94f;
     transition: fill 0.3s ease-in-out;
-  }
- 
-  .btn_Whatsapp::selection {
+}
+
+.btn_Whatsapp::selection {
     color: white;
     background-color: #017738;
-  }
- 
-  .classOpenModal {
+}
+
+.classOpenModal {
     border: 1px solid #2A8BFE;
     color: #2A8BFE;
     background-color: white;
-  }
- 
-  .classOpenModal:hover {
+}
+
+.classOpenModal:hover {
     background-color: #2A8BFE;
     color: white;
     transition: fill 0.3s ease-in-out;
-  }
- 
-  .classOpenModal::selection {
+}
+
+.classOpenModal::selection {
     background: #1169B7;
     color: white;
-  }
+}
 
-  .btn_Style_Venta_Per:hover svg path {
+.btn_Style_Venta_Per:hover svg path {
     fill: white;
     transition: fill 0.3s ease-in-out;
-  }
+}
 
-   /* ---*-*-*-*-*-*-*-*-*-*- */
- .whatsAppFixes{
+/* ---*-*-*-*-*-*-*-*-*-*- */
+.whatsAppFixes {
     display: none;
-   }
+}
 
 /* ---*-*-*-*-*-*-*-*-*-*- */
 /* MOBILE */
