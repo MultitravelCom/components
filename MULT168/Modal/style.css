@@ -194,12 +194,12 @@
 }
 
 .btn_Style_Venta_llamar,
-.glyphicon-phone {
+.stylePhoneIconModal {
     background: #0D4E88;
 }
 
 .btn_Style_Venta_Contactarme,
-.glyphicon-whatsapp-bottomless {
+.styleWaIconModal {
     background: rgba(38, 189, 76, 1);
 }
 

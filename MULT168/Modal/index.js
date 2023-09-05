@@ -119,7 +119,7 @@ const Modal = ({ open, onClose }) => {
             return (
                 <>
                     <ModalContactos
-                        iconModal="glyphicon-phone"
+                        iconModal="glyphicon-phone stylePhoneIconModal"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
                         horarioClass="blue"
@@ -150,7 +150,7 @@ const Modal = ({ open, onClose }) => {
             return (
                 <>
                     <ModalContactos
-                        iconModal="glyphicon-phone"
+                        iconModal="glyphicon-phone stylePhoneIconModal"
                         ventasClass="blue"
                         ventasText="Ventas <span>0800 348 0003</span>"
                         horarioClass="blue"
@@ -163,8 +163,8 @@ const Modal = ({ open, onClose }) => {
                         buttonText="Llamar"
                         callToPhone={true}
                     />
-                    <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
+                    {/* <ModalContactos
+                        iconModal="glyphicon-whatsapp-bottomless styleWaIconModal"
                         ventasClass="green"
                         ventasText="Consulta por ventas <span>11 4979 1877</span>"
                         horarioClass="green"
@@ -174,7 +174,7 @@ const Modal = ({ open, onClose }) => {
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
-                    />
+                    /> */}
                     {/* <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
