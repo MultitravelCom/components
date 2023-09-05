@@ -419,18 +419,6 @@ source>img {
     }
 }
 
-.btn_Style_Venta_Per {
-    padding: 2% 5%;
-    color: white;
-    min-width: 112px;
-    height: 35px;
-    background-color: #2a8bfe;
-    border-radius: 32px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
 .b24-form-dropdown-container {
     position: inherit;
 }
@@ -463,35 +451,86 @@ source>img {
     width: 100%;
     gap: 6px;
 }
-.btn_from_bitrix {
+.btn_Style_Venta_Per {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2% 5%;
+    min-width: 112px;
+    height: 35px;
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+ 
+  .btn_from_bitrix {
     position: initial;
     z-index: 999999;
     top: 16px;
-}
-
-.btn_Style_Venta_Per:hover {
+  }
+ 
+  /* .btn_Style_Venta_Per:hover {
     border: 1px solid #1169b7;
     background-color: #1169b7;
-}
-
-.btn_FormBitrix {
+  } */
+ 
+  .btn_FormBitrix {
     color: #2A8BFE;
     background-color: #ffffff;
     border: 1px solid #2A8BFE;
-}
-
-.btn_FormBitrix:hover {
+  }
+ 
+  .btn_FormBitrix:hover {
     color: #FFFFFF;
     background: #1480FF;
     border: 1px solid #2A8BFE;
-}
-
-.btn_FormBitrix::selection {
+    transition: fill 0.3s ease-in-out;
+  }
+ 
+  .btn_FormBitrix::selection {
     color: #FFFFFF;
     background: #66ACFF;
     border: 1px solid #66ACFF;
-}
+  }
+ 
+  .btn_Whatsapp {
+    color: white;
+    background-color: #03D749;
+  }
+ 
+  .btn_Whatsapp:hover {
+    color: white;
+    background-color: #00a94f;
+    transition: fill 0.3s ease-in-out;
+  }
+ 
+  .btn_Whatsapp::selection {
+    color: white;
+    background-color: #017738;
+  }
+ 
+  .classOpenModal {
+    border: 1px solid #2A8BFE;
+    color: #2A8BFE;
+    background-color: white;
+  }
+ 
+  .classOpenModal:hover {
+    background-color: #2A8BFE;
+    color: white;
+    transition: fill 0.3s ease-in-out;
+  }
+ 
+  .classOpenModal::selection {
+    background: #1169B7;
+    color: white;
+  }
 
+   /* ---*-*-*-*-*-*-*-*-*-*- */
+ .whatsAppFixes{
+    display: none;
+   }
 
 /* ---*-*-*-*-*-*-*-*-*-*- */
 /* MOBILE */
