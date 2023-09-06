@@ -288,7 +288,7 @@ const Card = ({ destinos, onContactClick }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
-    const [buttonSwitch, setButtonSwitch] = React.useState("B");
+    const [buttonSwitch, setButtonSwitch] = React.useState("A");
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
