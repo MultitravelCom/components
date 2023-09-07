@@ -546,11 +546,11 @@ function App() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                await fetchDataFromAPI(); // Llamada a la función existente
+                await fetchDataFromAPI();
                 setLoaded(true);
             } catch (error) {
                 console.error('Error al obtener datos:', error);
-                setLoaded(false);
+                setLoaded(true);
             }
         };
 
