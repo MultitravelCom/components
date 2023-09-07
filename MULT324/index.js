@@ -544,12 +544,6 @@ function App() {
     };
 
     React.useEffect(() => {
-        fetchDestinos().then(data => {
-            setDestinos(data.destinos);
-        });
-    }, []);
-
-    React.useEffect(() => {
         const fetchData = async () => {
             try {
                 await fetchDataFromAPI(); // Llamada a la función existente
@@ -561,6 +555,12 @@ function App() {
         };
 
         fetchData();
+    }, []);
+
+    React.useEffect(() => {
+        fetchDestinos().then(data => {
+            setDestinos(data.destinos);
+        });
     }, []);
 
     return (
