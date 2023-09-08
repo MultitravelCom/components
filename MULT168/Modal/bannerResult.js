@@ -57,10 +57,7 @@ const observeAndApplyBannerChanges = () => {
         const summary = summaries[0];
 
         if (!bannerRendered && summary.added.length > 0) {
-            const newDiv = document.createElement('div');
-            const firstChildDiv = summary.added[0].querySelector('.results-list__item');
-            firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
-            ReactDOM.render(<BannerSearchResult />, newDiv);
+            renderBannerSearchResult();
             bannerRendered = true;
         }
     }
