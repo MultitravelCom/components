@@ -522,6 +522,7 @@ function observarCambiosCheckAndRenderII() {
         rootNode: document.documentElement,
         callback: () => {
             checkAndRender();
+            renderBannerSearchResult(); 
         },
         queries: [{ element: '.results-list__page' }],
     };
