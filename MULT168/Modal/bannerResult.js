@@ -34,6 +34,8 @@ const BannerSearchResult = () => {
 let bannerRendered = false;
 
 const renderBannerSearchResult = () => {
+    console.log('renderBannerSearchResult - bannerRendered:', bannerRendered); // Registra el valor de bannerRendered
+
     if (!bannerRendered) {
         const parentDiv = document.querySelector('.results-list__page');
         const firstChildDiv = document.querySelector('.results-list__item');
@@ -54,7 +56,7 @@ const observeAndApplyBannerChanges = () => {
     });
 
     function handleDOMChanges(summaries) {
-        console.log('handleDOMChanges called'); // Agrega un registro para verificar si la función se llama
+        console.log('renderBannerSearchResult - bannerRendered:', bannerRendered); // Registra el valor de bannerRendered
 
         const summary = summaries[0];
 
