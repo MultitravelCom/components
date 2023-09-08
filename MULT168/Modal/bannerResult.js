@@ -54,9 +54,13 @@ const observeAndApplyBannerChanges = () => {
     });
 
     function handleDOMChanges(summaries) {
+        console.log('handleDOMChanges called'); // Agrega un registro para verificar si la función se llama
+
         const summary = summaries[0];
 
         if (!bannerRendered && summary.added.length > 0) {
+            console.log('Changes detected, rendering banner...'); // Agrega un registro para verificar si se detectan cambios
+
             renderBannerSearchResult();
             bannerRendered = true;
         }
