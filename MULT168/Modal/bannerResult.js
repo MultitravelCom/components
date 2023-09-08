@@ -30,32 +30,72 @@ const BannerSearchResult = () => {
         </>
     );
 };
-const insertNewDivSearchResult = async () => {
+
+let bannerRendered = false;
+
+const renderBannerSearchResult = () => {
+    if (!bannerRendered) {
+        const parentDiv = document.querySelector('.results-list__page');
+        const firstChildDiv = document.querySelector('.results-list__item');
+
+        if (parentDiv && firstChildDiv) {
+            const newDiv = document.createElement('div');
+            firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
+            ReactDOM.render(<BannerSearchResult />, newDiv);
+            bannerRendered = true;
+        }
+    }
+};
+
+const observeAndApplyBannerChanges = () => {
     const observer = new MutationSummary({
-      callback: handleDOMChanges,
-      queries: [{ element: '.results-list__page' }]
+        callback: handleDOMChanges,
+        queries: [{ element: '.results-list__page' }]
     });
-  
-    const parentDiv = document.querySelector('.results-list__page');
-    const firstChildDiv = document.querySelector('.results-list__item');
-  
-    if (parentDiv && firstChildDiv) {
-      const newDiv = document.createElement('div');
-      firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
-      ReactDOM.render(<BannerSearchResult />, newDiv);
-    }
-  
+
     function handleDOMChanges(summaries) {
-      const summary = summaries[0];
-  
-      if (summary.added.length > 0) {
-        const newDiv = document.createElement('div');
-        const firstChildDiv = summary.added[0].querySelector('.results-list__item');
-        firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
-        ReactDOM.render(<BannerSearchResult />, newDiv);
-      }
+        const summary = summaries[0];
+
+        if (!bannerRendered && summary.added.length > 0) {
+            const newDiv = document.createElement('div');
+            const firstChildDiv = summary.added[0].querySelector('.results-list__item');
+            firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
+            ReactDOM.render(<BannerSearchResult />, newDiv);
+            bannerRendered = true;
+        }
     }
-  };
-  
-  insertNewDivSearchResult();
-  
+};
+
+const insertNewDivSearchResult = async () => {
+    renderBannerSearchResult();
+    observeAndApplyBannerChanges();
+};
+
+// const insertNewDivSearchResult = async () => {
+//     const observer = new MutationSummary({
+//         callback: handleDOMChanges,
+//         queries: [{ element: '.results-list__page' }]
+//     });
+
+//     const parentDiv = document.querySelector('.results-list__page');
+//     const firstChildDiv = document.querySelector('.results-list__item');
+
+//     if (parentDiv && firstChildDiv) {
+//         const newDiv = document.createElement('div');
+//         firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
+//         ReactDOM.render(<BannerSearchResult />, newDiv);
+//     }
+
+//     function handleDOMChanges(summaries) {
+//         const summary = summaries[0];
+
+//         if (summary.added.length > 0) {
+//             const newDiv = document.createElement('div');
+//             const firstChildDiv = summary.added[0].querySelector('.results-list__item');
+//             firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
+//             ReactDOM.render(<BannerSearchResult />, newDiv);
+//         }
+//     }
+// };
+
+// insertNewDivSearchResult();
