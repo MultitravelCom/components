@@ -251,7 +251,7 @@ function agregarTagAWithHREF(resultsListPage) {
 
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
+    // agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
