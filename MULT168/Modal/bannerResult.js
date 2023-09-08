@@ -58,12 +58,12 @@ const observeAndApplyBannerChanges = () => {
 
         const summary = summaries[0];
 
-        if (!bannerRendered && summary.added.length > 0) {
+        if (bannerRendered) {
             console.log('Changes detected, rendering banner...'); // Agrega un registro para verificar si se detectan cambios
 
             renderBannerSearchResult();
+            bannerRendered = false;
         }
-        bannerRendered = true;
     }
 };
 
