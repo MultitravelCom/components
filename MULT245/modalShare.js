@@ -371,9 +371,6 @@ const BannerTopTravelSale = () => {
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); // Declare the variable here
 
-    console.log("isEventActive",isEventActive)
-    console.log("taxIncludedTrue", taxIncludedTrue)
-
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
     };
@@ -469,7 +466,6 @@ const renderBanner = () => {
 // };
 
 const checkAndRender = async () => {
-    console.log("-----> se llama a checkAndRender()")
 
     let infoCardContents = document.querySelectorAll('.info-card__content');
     let infoCardImgContents = document.querySelectorAll('.info-card__image');
