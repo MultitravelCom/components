@@ -95,4 +95,4 @@ const insertNewDivSearchResult = async () => {
 //     }
 // };
 
-// insertNewDivSearchResult();
+insertNewDivSearchResult();
