@@ -34,8 +34,6 @@ const BannerSearchResult = () => {
 let bannerRendered = false;
 
 const renderBannerSearchResult = () => {
-    console.log('renderBannerSearchResult - bannerRendered:', bannerRendered); // Registra el valor de bannerRendered
-
     if (!bannerRendered) {
         const parentDiv = document.querySelector('.results-list__page');
         const firstChildDiv = document.querySelector('.results-list__item');
@@ -56,12 +54,10 @@ const observeAndApplyBannerChanges = () => {
     });
 
     function handleDOMChanges(summaries) {
-        console.log('renderBannerSearchResult - bannerRendered:', bannerRendered); // Registra el valor de bannerRendered
 
         const summary = summaries[0];
 
         if (bannerRendered) {
-            console.log('Changes detected, rendering banner...'); // Agrega un registro para verificar si se detectan cambios
 
             renderBannerSearchResult();
             bannerRendered = false;
