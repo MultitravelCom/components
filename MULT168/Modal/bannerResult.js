@@ -62,8 +62,8 @@ const observeAndApplyBannerChanges = () => {
             console.log('Changes detected, rendering banner...'); // Agrega un registro para verificar si se detectan cambios
 
             renderBannerSearchResult();
-            bannerRendered = true;
         }
+        bannerRendered = true;
     }
 };
 
