@@ -355,7 +355,7 @@ const BannerMensageCardApp = () => {
             )}
 
             {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"Pagá hasta en 12 cuotas fijas"} />
+                <BannerMensageCard text_p={"Paga en 3 cuotas sin interés y hasta 12 cuotas fijas"} />
             )}
 
             {showFreezePriceMessageC && (
