@@ -365,9 +365,11 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const BannerTopHotelResult = () => {
+const BannerTopTravelSale = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     // const [modalOpen, setModalOpen] = React.useState(false);
+
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); 
 
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
@@ -421,10 +423,9 @@ const renderBanner = () => {
     const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale')
     if (mainContentElement && banner === null) {
         const nuevoDivIconImg = document.createElement('div');
-        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
     }
 };
 
@@ -464,16 +465,6 @@ const renderBanner = () => {
 //     });
 // };
 
-
-function showBannerIncludedTrue() {
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
-    if (!taxIncludedTrue) {
-        renderBanner();
-    }
-}
-
-
 const checkAndRender = async () => {
 
     let infoCardContents = document.querySelectorAll('.info-card__content');
@@ -484,7 +475,11 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    showBannerIncludedTrue()
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+
+    if ( !taxIncludedTrue ) {
+        renderBanner();
+    }
     infoCardImgContents.forEach(infoCardImgContent => {
 
         const nuevoDivIconImg = document.createElement('div');
@@ -523,7 +518,7 @@ function observarCambiosCheckAndRenderII() {
         rootNode: document.documentElement,
         callback: () => {
             checkAndRender();
-            renderBannerSearchResult();
+            renderBannerSearchResult(); 
         },
         queries: [{ element: '.results-list__page' }],
     };
@@ -534,6 +529,4 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-showBannerIncludedTrue();
-
 
