@@ -3,7 +3,7 @@ function cambiarTextoBoton() {
     if (boton) {
         boton.textContent = "Ver opciones";
         boton.style.display = "inline-block";
-    }else {
+    } else {
         setTimeout(() => cambiarTextoBoton(), 1000);
     }
 };
@@ -25,48 +25,86 @@ const CompartirAlojamientoResult = () => {
         </>
     )
 };
-
 const BannerTopHotelDetails = () => {
+    const [mostrarBanner, setMostrarBanner] = React.useState(false);
+
+    React.useEffect(() => {
+        // Función para verificar si el texto contiene la palabra "Argentina"
+        function contienePalabraArgentina(contenedor) {
+            const textoContenedor = contenedor.textContent;
+            return textoContenedor.includes('Argentina');
+        }
+
+        // Obtén el elemento contenedor
+        const elementoContenedor = document.querySelector('.details-card__top');
+
+        // Verifica si el texto contiene la palabra "Argentina" y actualiza el estado
+        if (elementoContenedor && contienePalabraArgentina(elementoContenedor)) {
+            setMostrarBanner(true);
+        } else {
+            setMostrarBanner(false);
+        }
+    }, []);
     return (
         <>
-            <div className="main__container__bannerTopTravelSale">
-                <picture>
-                    <source
-                        media="(min-width: 1024px)"
-                        srcSet="
+            {mostrarBanner && (
+                <div className="main__container__bannerTopTravelSale">
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet="
                         https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp
           "
-                    />
-                    <source
-                        media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
-                    />
-                    <source
-                        media="(max-width: 767px)"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerM-Detalle.webp"
-                    />
-                    <img
-                        className="main_conteiner__s1_medio__paquetes__img"
-                        src="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
-                        alt="Imagen banner promociones"
-                    />
-                </picture>
-            </div>
+                        />
+                        <source
+                            media="(min-width: 768px) and (max-width: 1023px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
+                        />
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerM-Detalle.webp"
+                        />
+                        <img
+                            className="main_conteiner__s1_medio__paquetes__img"
+                            src="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
+                            alt="Imagen banner promociones"
+                        />
+                    </picture>
+                </div>
+            )}
         </>
     )
 };
 
-const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+const renderBanner = () => {
+    const confirmBooking = document.querySelector('.details-card__top');
+
+    if (confirmBooking) {
+        const nuevoDivIconImg = document.createElement('div');
+        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
+        confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
+
+        ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
+    }
+};
+
+const checkAndRenderResult = async () => {
+    let infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
+
+    while (infoCardContents.length === 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
+    }
+
+    infoCardContents.forEach(infoCardContent => {
+        const nuevoDivResult = document.createElement('div');
+        infoCardContent.appendChild(nuevoDivResult);
 
 
-// const confirmBooking = document.querySelector('.details-card__top');
-
-// if (confirmBooking) {
-//     const nuevoDivIconImg = document.createElement('div');
-//         nuevoDivIconImg.className = 'container-BannerTopHotelResult';
-//         confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
-
-//         ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
-// }
+        ReactDOM.render(<CompartirAlojamientoResult />, nuevoDivResult);
+        renderBanner();
+    });
+};
 cambiarTextoBoton();
 checkAndRenderResult();
+renderBanner();
