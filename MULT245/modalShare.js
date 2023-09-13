@@ -369,7 +369,7 @@ const BannerTopTravelSale = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     const [modalOpen, setModalOpen] = React.useState(false);
 
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); // Declare the variable here
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); 
 
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
@@ -391,24 +391,24 @@ const BannerTopTravelSale = () => {
 
     return (
         <>
-            <div className="main__container__bannerTopTravelSale" style={bannerStyle} onClick={handleOpenModal}>
+            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
                 <picture>
                     <source
                         media="(min-width: 1024px)"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Mobile.webp"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Mobile.webp"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
 
                     />
                     <img
                         className="main__container__bannerTopTravelSaleS__img"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Resultado/Banner-Resultado-Desktop.webp"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>
@@ -477,7 +477,7 @@ const checkAndRender = async () => {
     }
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    if (isZoneInTravelSale() || !taxIncludedTrue ) {
+    if ( !taxIncludedTrue ) {
         renderBanner();
     }
     infoCardImgContents.forEach(infoCardImgContent => {
