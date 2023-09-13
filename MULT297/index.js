@@ -29,7 +29,7 @@ const CompartirAlojamientoResult = () => {
 const BannerTopHotelDetails = () => {
     return (
         <>
-            <div className="main__container_BannerTravelSale">
+            <div className="main__container__bannerTopTravelSale">
                 <picture>
                     <source
                         media="(min-width: 1024px)"
