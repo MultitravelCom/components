@@ -418,18 +418,13 @@ const BannerTopHotelResult = () => {
 
 const renderBanner = () => {
     const mainContentElement = document.getElementById('main-content');
-    const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale');
+    const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale')
+    if (mainContentElement && banner === null) {
+        const nuevoDivIconImg = document.createElement('div');
+        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
+        mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
-    if (!taxIncludedTrue) {
-        if (mainContentElement && banner === null) {
-            const nuevoDivIconImg = document.createElement('div');
-            nuevoDivIconImg.className = 'container-BannerTopHotelResult';
-            mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
-
-            ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
-        }
+        ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
     }
 };
 
@@ -479,9 +474,11 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    renderBanner();
-
+    if (!taxIncludedTrue) {
+        renderBanner();
+    }
     infoCardImgContents.forEach(infoCardImgContent => {
 
         const nuevoDivIconImg = document.createElement('div');
@@ -531,3 +528,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
+
+
