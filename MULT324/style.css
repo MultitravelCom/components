@@ -819,3 +819,25 @@ source>img {
     font-size: 19px;
     min-width: 32px;
 }
+
+/* ********* Mejora de popups ***** */
+.cookie-policy__readmore {
+    display: none;
+}
+
+.cookie-policy__close {
+    width: 100%;
+    padding: 8px 24px;
+    border-radius: 32px;
+    background: #FFF;
+    color: #0D4E88;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.cookie-policy__content>a {
+    text-decoration: revert;
+}
