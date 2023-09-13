@@ -528,7 +528,4 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-if (!taxIncludedTrue) {
-    renderBanner();
-}
 
