@@ -243,7 +243,7 @@ const zonasTravelSale = [
 // ********************** Timer *****************************
 function shouldShowEvent() {
     const startDate = new Date("2023-08-27T22:00:00");
-    const endDate = new Date("2023-09-02T23:30:00");
+    const endDate = new Date("2023-11-02T23:30:00");
     const now = new Date();
 
     return now >= startDate && now <= endDate;
@@ -365,9 +365,9 @@ const BannerMensageCardApp = () => {
     );
 };
 
-const BannerTopTravelSale = () => {
+const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
-    const [modalOpen, setModalOpen] = React.useState(false);
+    // const [modalOpen, setModalOpen] = React.useState(false);
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); 
 
@@ -375,15 +375,15 @@ const BannerTopTravelSale = () => {
         display: isEventActive ? 'flex' : 'none',
     };
 
-    const handleOpenModal = () => {
-        setModalOpen(true);
-        toggleWhatsappDisplayStyle(true);
-    };
+    // const handleOpenModal = () => {
+    //     setModalOpen(true);
+    //     toggleWhatsappDisplayStyle(true);
+    // };
 
-    const handleCloseModal = () => {
-        setModalOpen(false);
-        toggleWhatsappDisplayStyle(false);
-    };
+    // const handleCloseModal = () => {
+    //     setModalOpen(false);
+    //     toggleWhatsappDisplayStyle(false);
+    // };
 
     React.useEffect(() => {
         setIsEventActive(shouldShowEvent());
@@ -391,7 +391,7 @@ const BannerTopTravelSale = () => {
 
     return (
         <>
-            <div className="main__container__bannerTopTravelSale" style={bannerStyle}>
+            <div className="main__container__bannerTopTravelSale" style={bannerStyle} >
                 <picture>
                     <source
                         media="(min-width: 1024px)"
@@ -413,7 +413,7 @@ const BannerTopTravelSale = () => {
                     />
                 </picture>
             </div>
-            {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
+            {/* {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />} */}
         </>
     );
 };
@@ -425,7 +425,7 @@ const renderBanner = () => {
         const nuevoDivIconImg = document.createElement('div');
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopTravelSale />, nuevoDivIconImg);
+        ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
     }
 };
 
