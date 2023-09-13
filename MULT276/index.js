@@ -32,6 +32,8 @@ function reemplazarTextoEquipaje() {
 }
 
 function renderCopyTaxFlight() {
+  console.log('La función renderCopyTaxFlight() se ha llamado.'); // Agregar este mensaje de depuración
+
   const flightSelectionElement = document.querySelector('.flight-selection');
   if (flightSelectionElement) {
     const copyTaxFlightContainer = document.createElement('div');
@@ -60,7 +62,7 @@ function agregarComponenteCuandoApareceFlightSelection() {
       summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
 
-          console.log('Elemento añadido:', element); // Mensaje de depuración
+          console.log('Elemento añadido:', element);
 
 
           const componente = document.createElement('div');
@@ -71,7 +73,7 @@ function agregarComponenteCuandoApareceFlightSelection() {
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
-          console.log('Mostrar componente:', mostrarComponente); // Mensaje de depuración
+          console.log('Mostrar componente:', mostrarComponente);
 
 
           renderCopyTaxFlight();
@@ -90,4 +92,3 @@ function agregarComponenteCuandoApareceFlightSelection() {
 }
 
 const stopObserving = agregarComponenteCuandoApareceFlightSelection();
-renderCopyTaxFlight();
