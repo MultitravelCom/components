@@ -367,7 +367,6 @@ const BannerMensageCardApp = () => {
 
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
-    const [isTaxIncludedTrue, setTaxIncludedTrue] = React.useState(true);
     // const [modalOpen, setModalOpen] = React.useState(false);
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
@@ -388,35 +387,37 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         setIsEventActive(shouldShowEvent());
-        setTaxIncludedTrue(!taxIncludedTrue);
     }, []);
+
+
+    if (taxIncludedTrue) {
+        return null;
+    }
 
     return (
         <>
-            {isTaxIncludedTrue && (
-                <div className="main__container__bannerTopTravelSale" style={bannerStyle} >
-                    <picture>
-                        <source
-                            media="(min-width: 1024px)"
-                            src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                        />
-                        <source
-                            media="(min-width: 768px) and (max-width: 1023px)"
-                            src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                        />
-                        <source
-                            media="(max-width: 767px)"
-                            src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
+            <div className="main__container__bannerTopTravelSale" style={bannerStyle} >
+                <picture>
+                    <source
+                        media="(min-width: 1024px)"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 1023px)"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                    />
+                    <source
+                        media="(max-width: 767px)"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
 
-                        />
-                        <img
-                            className="main__container__bannerTopTravelSaleS__img"
-                            src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                            alt="Imagen banner promociones"
-                        />
-                    </picture>
-                </div>
-            )}
+                    />
+                    <img
+                        className="main__container__bannerTopTravelSaleS__img"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        alt="Imagen banner promociones"
+                    />
+                </picture>
+            </div>
             {/* {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />} */}
         </>
     );
