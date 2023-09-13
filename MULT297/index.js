@@ -6,7 +6,7 @@ function cambiarTextoBoton() {
     }else {
         setTimeout(() => cambiarTextoBoton(), 1000);
     }
-}
+};
 
 const CompartirAlojamientoResult = () => {
     const [openModal, setOpenModal] = React.useState(false);
@@ -24,24 +24,46 @@ const CompartirAlojamientoResult = () => {
             <ModalShare open={openModal} onClose={() => setOpenModal(false)} />
         </>
     )
-}
-
-const checkAndRenderResult = async () => {
-    let infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
-
-    while (infoCardContents.length === 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        infoCardContents = document.querySelectorAll('#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__product');
-    }
-
-    infoCardContents.forEach(infoCardContent => {
-        const nuevoDivResult = document.createElement('div');
-        infoCardContent.appendChild(nuevoDivResult);
-
-
-        ReactDOM.render(<CompartirAlojamientoResult />, nuevoDivResult);
-
-    });
 };
+
+const BannerTopHotelDetails = () => {
+    return (
+        <>
+            <div className="main__container_BannerTravelSale">
+                <picture>
+                    <source
+                        media="(min-width: 1024px)"
+                        srcSet="
+                        https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp
+          "
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 1023px)"
+                        srcSet="
+                        https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp"
+                    />
+                    <source
+                        media="(max-width: 767px)"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Mobile.webp"
+                    />
+                    <img
+                        className="main_conteiner__s1_medio__paquetes__img"
+                        src="https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp"
+                        alt="Imagen banner promociones"
+                    />
+                </picture>
+            </div>
+        </>
+    )
+};
+
+const confirmBooking = document.querySelector('.details-card__top');
+if (confirmBooking) {
+    const nuevoDivIconImg = document.createElement('div');
+        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
+        mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
+
+        ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
+}
 cambiarTextoBoton();
 checkAndRenderResult();
