@@ -421,6 +421,7 @@ const renderBanner = () => {
     const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale');
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+
     if (!taxIncludedTrue) {
         if (mainContentElement && banner === null) {
             const nuevoDivIconImg = document.createElement('div');
@@ -530,4 +531,3 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-renderBanner();
