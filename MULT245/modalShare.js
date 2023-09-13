@@ -418,16 +418,22 @@ const BannerTopHotelResult = () => {
         </>
     );
 };
-
 const renderBanner = () => {
-    const mainContentElement = document.getElementById('main-content');
-    const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale')
-    if (mainContentElement && banner === null) {
-        const nuevoDivIconImg = document.createElement('div');
-        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
-        mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
+    // Obtén la ruta de la URL actual
+    const currentPath = window.location.pathname;
 
-        ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
+    // Verifica si la ruta contiene "/hotels/results"
+    if (currentPath.includes('/hotels/results')) {
+        // Si contiene la ruta deseada, realiza las acciones necesarias
+        const mainContentElement = document.getElementById('main-content');
+        const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale');
+        if (mainContentElement && banner === null) {
+            const nuevoDivIconImg = document.createElement('div');
+            nuevoDivIconImg.className = 'container-BannerTopHotelResult';
+            mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
+
+            ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
+        }
     }
 };
 
