@@ -464,6 +464,16 @@ const renderBanner = () => {
 //     });
 // };
 
+
+function showBannerIncludedTrue() {
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+
+    if (!taxIncludedTrue) {
+        renderBanner();
+    }
+}
+
+
 const checkAndRender = async () => {
 
     let infoCardContents = document.querySelectorAll('.info-card__content');
@@ -474,11 +484,7 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
-    if (!taxIncludedTrue) {
-        renderBanner();
-    }
+    showBannerIncludedTrue()
     infoCardImgContents.forEach(infoCardImgContent => {
 
         const nuevoDivIconImg = document.createElement('div');
@@ -528,5 +534,6 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
+showBannerIncludedTrue();
 
 
