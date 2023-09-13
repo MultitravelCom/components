@@ -59,14 +59,14 @@ const BannerTopHotelDetails = () => {
 const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
 
-const confirmBooking = document.querySelector('.details-card__top');
+// const confirmBooking = document.querySelector('.details-card__top');
 
-if (!taxIncludedTrue) {
-    const nuevoDivIconImg = document.createElement('div');
-        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
-        confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
+// if (confirmBooking) {
+//     const nuevoDivIconImg = document.createElement('div');
+//         nuevoDivIconImg.className = 'container-BannerTopHotelResult';
+//         confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
 
-        ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
-}
+//         ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
+// }
 cambiarTextoBoton();
 checkAndRenderResult();
