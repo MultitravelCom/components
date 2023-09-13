@@ -368,9 +368,6 @@ const BannerMensageCardApp = () => {
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     // const [modalOpen, setModalOpen] = React.useState(false);
-
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded'); 
-
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
     };
