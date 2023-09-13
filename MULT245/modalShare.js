@@ -485,9 +485,9 @@ const checkAndRender = async () => {
     }
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    if ( !taxIncludedTrue ) {
-        renderBanner();
-    }
+    // if ( !taxIncludedTrue ) {
+    //     renderBanner();
+    // }
  
     infoCardImgContents.forEach(infoCardImgContent => {
 
