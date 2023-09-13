@@ -35,6 +35,9 @@ const BannerTopHotelDetails = () => {
             return textoContenedor.includes('Argentina');
         }
 
+        // Obtén el elemento contenedor
+        const elementoContenedor = document.querySelector('.details-card__top');
+
         // Verifica si el texto contiene la palabra "Argentina" y actualiza el estado
         if (contienePalabraArgentina(elementoContenedor)) {
             setMostrarBanner(true);
