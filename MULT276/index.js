@@ -63,7 +63,7 @@ function agregarComponenteCuandoApareceFlightSelection() {
 
           element.appendChild(componente);
 
-          
+
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
 
@@ -83,3 +83,4 @@ function agregarComponenteCuandoApareceFlightSelection() {
 }
 
 const stopObserving = agregarComponenteCuandoApareceFlightSelection();
+renderCopyTaxFlight();
