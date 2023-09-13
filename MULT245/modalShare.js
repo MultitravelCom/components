@@ -370,7 +370,7 @@ const BannerTopHotelResult = () => {
     // const [modalOpen, setModalOpen] = React.useState(false);
 
     const bannerStyle = {
-        display: isEventActive ? 'flex' : 'none',
+        display: isEventActive && !showBanner ? 'flex' : 'none',
     };
 
     // const handleOpenModal = () => {
@@ -424,7 +424,8 @@ const renderBanner = () => {
         nuevoDivIconImg.className = 'container-BannerTopHotelResult';
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
-        ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);
+        const showBanner = !taxIncludedTrue;
+        ReactDOM.render(<BannerTopHotelResult showBanner={showBanner} />, nuevoDivIconImg);
     }
 };
 
