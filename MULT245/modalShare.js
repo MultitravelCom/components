@@ -367,7 +367,7 @@ const BannerMensageCardApp = () => {
 
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
-    const [istaxIncludedTrue, setTaxIncludedTrue] = React.useState(false);
+    const [isTaxIncludedTrue, setTaxIncludedTrue] = React.useState(false);
     // const [modalOpen, setModalOpen] = React.useState(false);
 
     const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
@@ -388,12 +388,12 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         setIsEventActive(shouldShowEvent());
-        setTaxIncludedTrue(!taxIncludedTrue)
+        setTaxIncludedTrue(!!taxIncludedTrue);
     }, []);
 
     return (
         <>
-            {istaxIncludedTrue && (
+            {isTaxIncludedTrue && (
                 <div className="main__container__bannerTopTravelSale" style={bannerStyle} >
                     <picture>
                         <source
