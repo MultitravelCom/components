@@ -32,14 +32,13 @@ function reemplazarTextoEquipaje() {
 }
 
 function renderCopyTaxFlight() {
-  console.log('La función renderCopyTaxFlight() se ha llamado.'); // Agregar este mensaje de depuración
 
   const flightSelectionElement = document.querySelector('.flight-selection');
   if (flightSelectionElement) {
     const copyTaxFlightContainer = document.createElement('div');
     copyTaxFlightContainer.classList.add('copy-tax-flight-container');
 
-    const bookingElement = flightSelectionElement.querySelector('.flight-selection__booking');
+    const bookingElement = flightSelectionElement.querySelector('.booking__widgetBreakDown');
     const parentElement = bookingElement.parentNode;
     parentElement.insertBefore(copyTaxFlightContainer, bookingElement);
 
@@ -62,19 +61,12 @@ function agregarComponenteCuandoApareceFlightSelection() {
       summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
 
-          console.log('Elemento añadido:', element);
-
-
           const componente = document.createElement('div');
 
           element.appendChild(componente);
 
-
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
-
-          console.log('Mostrar componente:', mostrarComponente);
-
 
           renderCopyTaxFlight();
           moveDiv();
