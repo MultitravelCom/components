@@ -59,6 +59,10 @@ function agregarComponenteCuandoApareceFlightSelection() {
     callback: function (summaries) {
       summaries[0].added.forEach(function (element) {
         if (element.matches(selectorObjetivo)) {
+
+          console.log('Elemento añadido:', element); // Mensaje de depuración
+
+
           const componente = document.createElement('div');
 
           element.appendChild(componente);
@@ -66,6 +70,9 @@ function agregarComponenteCuandoApareceFlightSelection() {
 
           const mostrarComponente = element.classList.contains('flight-selection');
           componente.style.display = mostrarComponente ? 'block' : 'none';
+
+          console.log('Mostrar componente:', mostrarComponente); // Mensaje de depuración
+
 
           renderCopyTaxFlight();
           moveDiv();
