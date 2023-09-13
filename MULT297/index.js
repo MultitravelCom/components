@@ -34,21 +34,20 @@ const BannerTopHotelDetails = () => {
                     <source
                         media="(min-width: 1024px)"
                         srcSet="
-                        https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp
+                        https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp
           "
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="
-                        https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        srcSet="https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Mobile.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerM-Detalle.webp"
                     />
                     <img
                         className="main_conteiner__s1_medio__paquetes__img"
-                        src="https://multitravelcom.github.io/MT/Evento/PreViaje/Banners/BannerMKT-Desktop.webp"
+                        src="https://multitravelcom.github.io/MT/Secciones/BannerDetalle-Alojamiento/BannerD-Detalle.webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>
