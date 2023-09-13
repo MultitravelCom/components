@@ -369,8 +369,6 @@ const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     // const [modalOpen, setModalOpen] = React.useState(false);
 
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
     };
@@ -388,11 +386,6 @@ const BannerTopHotelResult = () => {
     React.useEffect(() => {
         setIsEventActive(shouldShowEvent());
     }, []);
-
-
-    if (taxIncludedTrue) {
-        return null;
-    }
 
     return (
         <>
@@ -481,12 +474,11 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    // const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    // if ( !taxIncludedTrue ) {
-    //     renderBanner();
-    // }
-    renderBanner();
+    if (!taxIncludedTrue) {
+        renderBanner();
+    }
     infoCardImgContents.forEach(infoCardImgContent => {
 
         const nuevoDivIconImg = document.createElement('div');
@@ -536,5 +528,7 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-renderBanner();
+if (!taxIncludedTrue) {
+    renderBanner();
+}
 
