@@ -61,7 +61,7 @@ const confirmBooking = document.querySelector('.details-card__top');
 if (confirmBooking) {
     const nuevoDivIconImg = document.createElement('div');
         nuevoDivIconImg.className = 'container-BannerTopHotelResult';
-        mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
+        confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
 
         ReactDOM.render(<BannerTopHotelDetails />, nuevoDivIconImg);
 }
