@@ -56,8 +56,12 @@ const BannerTopHotelDetails = () => {
     )
 };
 
+const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+
+
 const confirmBooking = document.querySelector('.details-card__top');
-if (confirmBooking) {
+
+if (!taxIncludedTrue) {
     const nuevoDivIconImg = document.createElement('div');
         nuevoDivIconImg.className = 'container-BannerTopHotelResult';
         confirmBooking.insertBefore(nuevoDivIconImg, confirmBooking.firstChild);
