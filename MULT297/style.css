@@ -13,7 +13,8 @@
 #main-content>div>article>section.details-content>div.details-card__top>div {
     margin-bottom: 35px !important;
 }
-#main-content > div > article > section.details-content > div.details-card__top > div > div.details-card__price > div > button {
+
+#main-content>div>article>section.details-content>div.details-card__top>div>div.details-card__price>div>button {
     display: none;
 }
 
@@ -75,6 +76,18 @@
     line-height: 12px;
     color: #000000;
     margin: auto;
+}
+
+.main__container__bannerTopTravelSale {
+    color: white;
+    max-width: 1120px;
+    height: 100%;
+    justify-content: center;
+    margin: 1rem auto;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+
 }
 
 @media(max-width:767px) {
