@@ -420,6 +420,7 @@ const renderBanner = () => {
     const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale')
     if (mainContentElement && banner === null) {
         const nuevoDivIconImg = document.createElement('div');
+        nuevoDivIconImg.className = 'container-BannerTopHotelResult';
         mainContentElement.insertBefore(nuevoDivIconImg, mainContentElement.firstChild);
 
         ReactDOM.render(<BannerTopHotelResult />, nuevoDivIconImg);

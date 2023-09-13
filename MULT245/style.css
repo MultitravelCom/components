@@ -338,9 +338,11 @@
   margin: 1rem auto;
   align-items: center;
   border-radius: 8px;
- 
   overflow: hidden;
 
+}
+.container-BannerTopHotelResult{
+  padding: 5px;
 }
 
 /* Promo AR */
