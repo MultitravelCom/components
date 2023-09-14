@@ -367,14 +367,7 @@ const BannerMensageCardApp = () => {
 
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
-    const [istaxIncludedTrue, settaxIncludedTrue] = React.useState(false);
     // const [modalOpen, setModalOpen] = React.useState(false);
-
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-
-    const bannerStyle = {
-        display: isEventActive ? 'flex' : 'none',
-    };
 
     // const handleOpenModal = () => {
     //     setModalOpen(true);
@@ -387,8 +380,18 @@ const BannerTopHotelResult = () => {
     // };
 
     React.useEffect(() => {
-        setIsEventActive(shouldShowEvent());
+        setIsEventActive(showTaxIncludedTrue());
     }, []);
+
+    const showTaxIncludedTrue = () => {
+        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+        return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
+    };
+
+    
+    const bannerStyle = {
+        display: isEventActive ? 'flex' : 'none',
+    };
 
     return (
         <>
@@ -483,11 +486,8 @@ const checkAndRender = async () => {
         infoCardContents = document.querySelectorAll('.info-card__content');
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
-    const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    // if ( !taxIncludedTrue ) {
-    //     renderBanner();
-    // }
+    renderBanner();
  
     infoCardImgContents.forEach(infoCardImgContent => {
 
