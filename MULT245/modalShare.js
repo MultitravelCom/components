@@ -392,16 +392,22 @@ const BannerTopHotelResult = () => {
     };
 
     React.useEffect(() => {
-        window.addEventListener('load', showTaxIncludedTrue);
+        const loadingModal = document.getElementById('loading-modal');
+        const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+                if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
+                    showTaxIncludedTrue();
+                    observer.disconnect(); // Detener el observador una vez que se cumple la condición
+                }
+            }
+        });
+
+        observer.observe(loadingModal, { attributes: true });
 
         return () => {
-            window.removeEventListener('load', showTaxIncludedTrue);
+            observer.disconnect(); // Detener el observador al desmontar el componente
         };
     }, []);
-
-    React.useEffect(() => {
-        console.log('isEventActive changed:', isEventActive); // Agrega este console.log
-    }, [isEventActive]);
 
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
