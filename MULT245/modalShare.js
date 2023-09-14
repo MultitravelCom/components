@@ -382,7 +382,7 @@ const BannerTopHotelResult = () => {
     React.useEffect(() => {
         // Agrega un event listener para el evento 'DOMContentLoaded'
         const onDOMContentLoaded = () => {
-            setIsEventActive(shouldShowEvent());
+            setIsEventActive(showTaxIncludedTrue());
         };
 
         document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
