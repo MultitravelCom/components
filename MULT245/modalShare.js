@@ -380,17 +380,30 @@ const BannerTopHotelResult = () => {
     // };
 
     const showTaxIncludedTrue = () => {
-        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-        console.log('taxIncludedTrue:', taxIncludedTrue);
-        setIsEventActive(!taxIncludedTrue);
+        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+
+        if (taxIncludedElement) {
+            console.log('taxIncludedTrue: true');
+            setIsEventActive(false);
+        } else {
+            console.log('taxIncludedTrue: false');
+            setIsEventActive(true);
+        }
     };
 
     React.useEffect(() => {
-        showTaxIncludedTrue();
+        const onDOMContentLoaded = () => {
+            showTaxIncludedTrue();
+        };
+
+        document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+
+        return () => {
+            document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
+        };
     }, []);
 
     React.useEffect(() => {
-  
         console.log('isEventActive changed:', isEventActive); // Agrega este console.log
     }, [isEventActive]);
 
