@@ -443,7 +443,7 @@ const renderBanner = () => {
     if (currentPath.includes('/hotels/results')) {
         // Si contiene la ruta deseada, realiza las acciones necesarias
         const mainContentElement = document.getElementById('main-content');
-        const banner = mainContentElement.querySelector('.main__container__bannerTopTravelSale');
+        const banner = mainContentElement.querySelector('.main__container__bannerTopHotelResult');
         if (mainContentElement && banner === null) {
             const nuevoDivIconImg = document.createElement('div');
             nuevoDivIconImg.className = 'container-BannerTopHotelResult';
