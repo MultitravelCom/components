@@ -382,14 +382,8 @@ const BannerTopHotelResult = () => {
     const showTaxIncludedTrue = () => {
         const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
         console.log('taxIncludedTrue:', taxIncludedTrue); 
-
-        console.log('taxIncludedTrue:', taxIncludedTrue); 
         return !taxIncludedTrue; 
     };
-
-    React.useEffect(() => {
-        showTaxIncludedTrue();
-    }, []);
 
     React.useEffect(() => {
         const onDOMContentLoaded = () => {
