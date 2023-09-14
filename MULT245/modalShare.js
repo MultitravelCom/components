@@ -392,7 +392,11 @@ const BannerTopHotelResult = () => {
     };
 
     React.useEffect(() => {
-        showTaxIncludedTrue();
+        window.addEventListener('load', showTaxIncludedTrue);
+
+        return () => {
+            window.removeEventListener('load', showTaxIncludedTrue);
+        };
     }, []);
 
     React.useEffect(() => {
