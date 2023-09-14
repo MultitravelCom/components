@@ -381,7 +381,9 @@ const BannerTopHotelResult = () => {
 
     const showTaxIncludedTrue = () => {
         const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-        console.log('isEventActive:', !taxIncludedTrue); // Agrega el console.log aquí
+        console.log('taxIncludedTrue:', taxIncludedTrue); // Agrega este console.log
+
+        console.log('taxIncludedTrue:', taxIncludedTrue); // Agrega este console.log
         return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
     };
 
