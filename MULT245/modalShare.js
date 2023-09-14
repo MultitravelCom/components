@@ -379,9 +379,18 @@ const BannerTopHotelResult = () => {
     //     toggleWhatsappDisplayStyle(false);
     // };
 
-    React.useEffect(() => {
-        setIsEventActive(showTaxIncludedTrue());
-        console.log(setIsEventActive)
+    useEffect(() => {
+        // Agrega un event listener para el evento 'DOMContentLoaded'
+        const onDOMContentLoaded = () => {
+            setIsEventActive(shouldShowEvent());
+        };
+
+        document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+
+        // Limpia el event listener cuando el componente se desmonta
+        return () => {
+            document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
+        };
     }, []);
 
     const showTaxIncludedTrue = () => {
@@ -389,7 +398,7 @@ const BannerTopHotelResult = () => {
         return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
     };
 
-    
+
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
     };
@@ -489,7 +498,7 @@ const checkAndRender = async () => {
     }
 
     renderBanner();
- 
+
     infoCardImgContents.forEach(infoCardImgContent => {
 
         const nuevoDivIconImg = document.createElement('div');
