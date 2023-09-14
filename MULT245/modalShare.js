@@ -399,9 +399,9 @@ const BannerTopHotelResult = () => {
         };
     }, []);
 
-    React.useEffect(() => {
-        console.log('isEventActive changed:', isEventActive); // Agrega este console.log
-    }, [isEventActive]);
+    // React.useEffect(() => {
+    //     console.log('isEventActive changed:', isEventActive); // Agrega este console.log
+    // }, [isEventActive]);
 
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
