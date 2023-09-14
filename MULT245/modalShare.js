@@ -381,6 +381,7 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         setIsEventActive(showTaxIncludedTrue());
+        console.log(setIsEventActive)
     }, []);
 
     const showTaxIncludedTrue = () => {
