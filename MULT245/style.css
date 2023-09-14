@@ -330,7 +330,7 @@
 
 /* BANNERTOPTRAVEL */
 
-.main__container__bannerTopTravelSale {
+.main__container__bannerTopHotelResult {
   color: white;
   max-width: 1120px;
   height: 100%;
@@ -1085,7 +1085,7 @@
   }
 
   /* TRAVELSALEBANNER */
-  .main__container__bannerTopTravelSale {
+  .main__container__bannerTopHotelResult {
     margin: 16px;
   }
 }

@@ -381,37 +381,35 @@ const BannerTopHotelResult = () => {
 
     const showTaxIncludedTrue = () => {
         const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-        console.log('taxIncludedTrue:', taxIncludedTrue); // Agrega este console.log
+        console.log('taxIncludedTrue:', taxIncludedTrue); 
 
-        console.log('taxIncludedTrue:', taxIncludedTrue); // Agrega este console.log
-        return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
+        console.log('taxIncludedTrue:', taxIncludedTrue); 
+        return !taxIncludedTrue; 
     };
 
     React.useEffect(() => {
-        showTaxIncludedTrue(); // Llama a la función directamente
+        showTaxIncludedTrue();
     }, []);
 
     React.useEffect(() => {
-        // Agrega un event listener para el evento 'DOMContentLoaded'
         const onDOMContentLoaded = () => {
             setIsEventActive(showTaxIncludedTrue());
         };
 
         document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 
-        // Limpia el event listener cuando el componente se desmonta
         return () => {
             document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
         };
     }, []);
 
-    const bannerStyle = {
+    const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
     };
 
     return (
         <>
-            <div className="main__container__bannerTopTravelSale" style={bannerStyle} >
+            <div className="main__container__bannerTopHotelResult" style={bannerStyleHotelResult} >
                 <picture>
                     <source
                         media="(min-width: 1024px)"
