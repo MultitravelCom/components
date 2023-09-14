@@ -379,6 +379,16 @@ const BannerTopHotelResult = () => {
     //     toggleWhatsappDisplayStyle(false);
     // };
 
+    const showTaxIncludedTrue = () => {
+        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
+        console.log('isEventActive:', !taxIncludedTrue); // Agrega el console.log aquí
+        return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
+    };
+
+    React.useEffect(() => {
+        showTaxIncludedTrue(); // Llama a la función directamente
+    }, []);
+
     React.useEffect(() => {
         // Agrega un event listener para el evento 'DOMContentLoaded'
         const onDOMContentLoaded = () => {
@@ -392,14 +402,6 @@ const BannerTopHotelResult = () => {
             document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
         };
     }, []);
-
-    const showTaxIncludedTrue = () => {
-        const taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-        console.log('isEventActive:', !taxIncludedTrue); // Agrega el console.log aquí
-
-        return !taxIncludedTrue; // Mostrar el banner si .bestprice__taxincluded no está presente en el DOM
-    };
-
 
     const bannerStyle = {
         display: isEventActive ? 'flex' : 'none',
