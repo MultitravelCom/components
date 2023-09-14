@@ -379,7 +379,7 @@ const BannerTopHotelResult = () => {
     //     toggleWhatsappDisplayStyle(false);
     // };
 
-    useEffect(() => {
+    React.useEffect(() => {
         // Agrega un event listener para el evento 'DOMContentLoaded'
         const onDOMContentLoaded = () => {
             setIsEventActive(shouldShowEvent());
