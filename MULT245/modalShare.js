@@ -394,7 +394,10 @@ const BannerTopHotelResult = () => {
     React.useEffect(() => {
         const onDOMContentLoaded = () => {
             showTaxIncludedTrue();
+            console.log('DOM!');
         };
+
+        console.log('DOMContentLoaded event listener registered'); // Agrega este console.log
 
         document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 
