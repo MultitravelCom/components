@@ -93,6 +93,3 @@ const insertNewDivSearchResult = () => {
 };
 
 insertNewDivSearchResult();
-
-
-insertNewDivSearchResult();
