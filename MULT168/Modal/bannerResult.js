@@ -50,6 +50,7 @@ let bannerRendered = false;
 const insertNewDivSearchResult = () => {
     const parentDiv = document.querySelector('.results-list__page');
 
+    // Renderizar el banner la primera vez si no está presente
     if (!bannerRendered) {
         if (parentDiv) {
             const existingBanner = parentDiv.querySelector('.main__container__img');
@@ -75,7 +76,8 @@ const insertNewDivSearchResult = () => {
     function handleDOMChanges(summaries) {
         const summary = summaries[0];
 
-        if (!bannerRendered && summary.added.length > 0) {
+        // Verificar si se han agregado elementos y el banner aún no se ha renderizado
+        if (summary.added.length > 0 && !bannerRendered) {
             const parentDiv = summary.added[0];
             const existingBanner = parentDiv.querySelector('.main__container__img');
 
