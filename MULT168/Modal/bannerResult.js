@@ -48,9 +48,10 @@ const BannerSearchResult = () => {
 let bannerRendered = false;
 
 const insertNewDivSearchResult = () => {
+    const parentDiv = document.querySelector('.results-list__page');
+
     // Renderizar el banner la primera vez si no está presente
     if (!bannerRendered) {
-        const parentDiv = document.querySelector('.results-list__page');
         if (parentDiv) {
             const existingBanner = parentDiv.querySelector('.main__container__img');
 
@@ -66,10 +67,10 @@ const insertNewDivSearchResult = () => {
         }
     }
 
-    // Crear un observador de mutaciones para seguir observando cambios en todo el documento
+    // Crear un observador de mutaciones para seguir observando cambios
     const observer = new MutationSummary({
         callback: handleDOMChanges,
-        queries: [{ element: '*', elementAttributes: true }]
+        queries: [{ element: '.results-list__page' }]
     });
 
     console.log('Observador de mutaciones configurado');
@@ -81,19 +82,17 @@ const insertNewDivSearchResult = () => {
         // Verificar si se han agregado elementos y el banner aún no se ha renderizado
         if (summary.added.length > 0 && !bannerRendered) {
             const parentDiv = summary.added[0];
-            if (parentDiv.classList.contains('results-list__page')) {
-                const existingBanner = parentDiv.querySelector('.main__container__img');
+            const existingBanner = parentDiv.querySelector('.main__container__img');
 
-                console.log('Intento de renderizar el banner');
+            console.log('Intento de renderizar el banner');
 
-                if (!existingBanner) {
-                    const firstChildDiv = parentDiv.querySelector('.results-list__item');
-                    if (firstChildDiv) {
-                        const newDiv = document.createElement('div');
-                        firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
-                        ReactDOM.render(<BannerSearchResult />, newDiv);
-                        bannerRendered = true;
-                    }
+            if (!existingBanner) {
+                const firstChildDiv = parentDiv.querySelector('.results-list__item');
+                if (firstChildDiv) {
+                    const newDiv = document.createElement('div');
+                    firstChildDiv.parentNode.insertBefore(newDiv, firstChildDiv.nextSibling);
+                    ReactDOM.render(<BannerSearchResult />, newDiv);
+                    bannerRendered = true;
                 }
             }
         }
@@ -101,3 +100,4 @@ const insertNewDivSearchResult = () => {
 };
 
 insertNewDivSearchResult();
+
