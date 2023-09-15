@@ -73,13 +73,18 @@ const insertNewDivSearchResult = () => {
         queries: [{ element: '.results-list__page' }]
     });
 
+    console.log('Observador de mutaciones configurado');
+
     function handleDOMChanges(summaries) {
+        console.log('Cambio detectado');
         const summary = summaries[0];
 
         // Verificar si se han agregado elementos y el banner aún no se ha renderizado
         if (summary.added.length > 0 && !bannerRendered) {
             const parentDiv = summary.added[0];
             const existingBanner = parentDiv.querySelector('.main__container__img');
+
+            console.log('Intento de renderizar el banner');
 
             if (!existingBanner) {
                 const firstChildDiv = parentDiv.querySelector('.results-list__item');
@@ -95,3 +100,4 @@ const insertNewDivSearchResult = () => {
 };
 
 insertNewDivSearchResult();
+
