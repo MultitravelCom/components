@@ -123,5 +123,3 @@ const insertNewDivSearchResult = () => {
 };
 
 insertNewDivSearchResult();
-
-insertNewDivSearchResult();
