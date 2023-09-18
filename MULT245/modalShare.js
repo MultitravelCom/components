@@ -396,7 +396,7 @@ const BannerTopHotelResult = () => {
         const observer = new MutationObserver((mutationsList) => {
             for (const mutation of mutationsList) {
                 if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
-                    console.log('Estilo display cambió a none'); // Agrega este console.log
+                    console.log('Estilo display cambió a none'); 
 
                     showTaxIncludedTrue();
                     observer.disconnect(); // Detener el observador una vez que se cumple la condición

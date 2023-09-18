@@ -71,7 +71,7 @@ function Ofertas() {
                     <div className="main__container_app_components__ofertas__">
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
-                            boxs_ofertas_text="Alojamiento"
+                            boxs_ofertas_text="Alojamientos"
                             btn_link="https://www.multitravel.com/hotels/"
                         />
                         <Secciones
@@ -130,7 +130,7 @@ function Ofertas() {
                     <div className="main__container_app_components__ofertas__">
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
-                            boxs_ofertas_text="Alojamiento"
+                            boxs_ofertas_text="Alojamientos"
                             btn_link="https://www.multitravel.com/hotels/"
                         />
                         <Secciones
@@ -160,7 +160,7 @@ function Ofertas() {
                     <div className="main__container_app_components__ofertas__">
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
-                            boxs_ofertas_text="Alojamiento"
+                            boxs_ofertas_text="Alojamientos"
                             btn_link="https://www.multitravel.com/hotels/"
                         />
                         <Secciones
