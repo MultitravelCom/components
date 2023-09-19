@@ -12,16 +12,8 @@ function addHeaderLinks() {
     linkCDNGlider.rel = 'stylesheet';
     linkCDNGlider.href = 'https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css';
 
-
-    const mailchimp = document.createElement('script');
-    mailchimp.id = 'mcjs';
-    mailchimp.async = true;
-    mailchimp.src = 'https://chimpstatic.com/mcjs-connected/js/users/d09ee86703b1761e8337397e9/6e305f08d149ab3c55d2d9573.js';
-    mailchimp.textContent = '!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/d09ee86703b1761e8337397e9/6e305f08d149ab3c55d2d9573.js");';
-
     head.appendChild(meta);
     head.appendChild(linkCDNGlider);
-    head.appendChild(mailchimp);
 
     const modalAtencionStyle = document.createElement('link');
     const modalAtencionsJs = document.createElement('script');
