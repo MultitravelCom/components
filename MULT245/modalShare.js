@@ -379,38 +379,41 @@ const BannerTopHotelResult = () => {
     //     toggleWhatsappDisplayStyle(false);
     // };
 
-    // const showTaxIncludedTrue = () => {
-    //     const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+    const showTaxIncludedTrue = () => {
+        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
 
-    //     if (taxIncludedElement) {
-    //         console.log('taxIncludedTrue: true');
-    //         setIsEventActive(false);
-    //     } else {
-    //         console.log('taxIncludedTrue: false');
-    //         setIsEventActive(true);
-    //     }
-    // };
+        if (taxIncludedElement) {
+            console.log('taxIncludedTrue: true');
+            setIsEventActive(false);
+        } else {
+            console.log('taxIncludedTrue: false');
+            setIsEventActive(true);
+        }
+    };
 
     React.useEffect(() => {
         console.log("Se está ejecutando el useEffect");
     
+        // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
+        const updateEventActiveState = () => {
+            const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
+            
+            if (!taxIncludedElement) {
+                console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
+                setIsEventActive(true); // Mostrar el banner
+            } else {
+                console.log('.bestprice__taxincluded se ha encontrado en el DOM');
+                setIsEventActive(false); // Ocultar el banner
+            }
+        };
+    
+        // Configurar un observador para detectar cambios en results-list__page
         const observerConfig = {
-            rootNode: document.querySelector('.results-list__page'), // Observar cambios dentro de results-list__page
-            callback: (mutations) => {
-                for (const mutation of mutations) {
-                    if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
-                        // Verifica si '.bestprice__taxincluded' se ha agregado o eliminado del DOM
-                        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
-                        if (taxIncludedElement) {
-                            console.log('.bestprice__taxincluded se ha agregado al DOM');
-                            setIsEventActive(false);
-                        } else {
-                            console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
-                            // Si no se encuentra, muestra el banner
-                            setIsEventActive(true);
-                        }
-                    }
-                }
+            rootNode: document.querySelector('.results-list__page'), // Escuchar solo en results-list__page
+            callback: (summaries) => {
+                console.log('Cambios detectados en results-list__page:', summaries);
+
+                updateEventActiveState(); // Actualizar el estado cuando haya cambios
             },
             queries: [{ element: '.bestprice__taxincluded' }],
         };
