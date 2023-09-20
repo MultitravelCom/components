@@ -94,21 +94,6 @@ async function fetchDataFromAPI() {
     }
 }
 
-async function fetchDataFromAPIPrice() {
-    try {
-        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-caribes');
-        if (!response.ok) {
-            throw new Error('No se pudo obtener los datos de la API');
-        }
-        const responseDataPrice = await response.json();
-
-        return responseDataPrice;
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-}
-
 // ************************************************
 // Filter
 function filtrarDestinos(destinos, nombreDestino) {
@@ -311,7 +296,6 @@ const Card = ({ destinos, onContactClick }) => {
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
-    const [pricesByDestino, setPricesByDestino] = React.useState({});
 
 
     const handleBannerClick = () => {
@@ -350,6 +334,7 @@ const Card = ({ destinos, onContactClick }) => {
         const fetchData = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
+                console.log(responseData);
                 setData(responseData);
 
                 setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
@@ -360,39 +345,6 @@ const Card = ({ destinos, onContactClick }) => {
         };
 
         fetchData();
-    }, []);
-    React.useEffect(() => {
-        const fetchDataPrecio = async () => {
-            try {
-                const responseData = await fetchDataFromAPIPrice();
-
-                const prices = responseData.data.reduce((acc, item) => {
-                    const destino = item.attributes.Destino;
-                    const card = item.attributes.Card;
-
-                    if (!acc[destino]) {
-                        acc[destino] = {};
-                    }
-
-                    if (!acc[destino][card]) {
-                        acc[destino][card] = [];
-                    }
-
-                    acc[destino][card].push({
-                        Tarifa_Temporada_Alta: item.attributes.Tarifa_Temporada_Alta,
-                        Tarifa_Temporada_Baja: item.attributes.Tarifa_Temporada_Baja,
-                    });
-
-                    return acc;
-                }, {});
-                setPricesByDestino(prices);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-
-        fetchDataPrecio();
     }, []);
 
     return (
@@ -422,14 +374,8 @@ const Card = ({ destinos, onContactClick }) => {
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
-                                    {pricesByDestino[destino.destino] && (
-                                        pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
-                                            <div key={index} className="main_container_priceStyle">
-                                                <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                                <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
-                                            </div>
-                                        ))
-                                    )}
+                                    <div className="priceStyle left">{destino.priceBaja}</div>
+                                    <div className="priceStyle right">{destino.price}</div>
                                 </div>
                                 <div className="main__container__buttonsCars">
                                     <>
