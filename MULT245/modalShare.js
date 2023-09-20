@@ -395,24 +395,25 @@ const BannerTopHotelResult = () => {
         console.log("Se está ejecutando el useEffect");
     
         const observerConfig = {
-            rootNode: document.documentElement,
+            rootNode: document.querySelector('.results-list__page'), // Observar cambios dentro de results-list__page
             callback: (mutations) => {
                 for (const mutation of mutations) {
-                    if (mutation.added) {
-                        // Verifica si '.bestprice__taxincluded' se ha agregado al DOM
-                        const taxIncludedElement = document.querySelector('.results-list__page');
-                        if (!taxIncludedElement) {
+                    if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
+                        // Verifica si '.bestprice__taxincluded' se ha agregado o eliminado del DOM
+                        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+                        if (taxIncludedElement) {
                             console.log('.bestprice__taxincluded se ha agregado al DOM');
+                            showTaxIncludedTrue();
+                        } else {
+                            console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
+                            // Si no se encuentra, muestra el banner
                             setIsEventActive(true);
-                            return; // Solo necesitas verificar una vez
                         }
                     }
                 }
             },
             queries: [{ element: '.bestprice__taxincluded' }],
         };
-    
-        console.log("Antes de crear el observador"); // Agregar este log
     
         const observer = new MutationSummary(observerConfig);
     
