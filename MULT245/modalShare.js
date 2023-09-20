@@ -393,7 +393,6 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         console.log("Se esta ejectuando el useEffect")
-        console.log('Valor de display al comienzo:', loadingModal.style.display);
         // const loadingModal = document.getElementById('loading-modal');
         // const observer = new MutationObserver((mutationsList) => {
         //     for (const mutation of mutationsList) {
