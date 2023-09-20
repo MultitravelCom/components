@@ -393,25 +393,26 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         console.log("Se esta ejectuando el useEffect")
-        const loadingModal = document.getElementById('loading-modal');
         console.log('Valor de display al comienzo:', loadingModal.style.display);
-        const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-                console.log('Estilo display:', loadingModal.style.display);
-                if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
-                    console.log('Estilo display cambió a none'); 
+        // const loadingModal = document.getElementById('loading-modal');
+        // const observer = new MutationObserver((mutationsList) => {
+        //     for (const mutation of mutationsList) {
+        //         console.log('Estilo display:', loadingModal.style.display);
+        //         if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
+        //             console.log('Estilo display cambió a none'); 
 
-                    showTaxIncludedTrue();
-                    observer.disconnect(); // Detener el observador una vez que se cumple la condición
-                }
-            }
-        });
+        //             showTaxIncludedTrue();
+        //             observer.disconnect(); // Detener el observador una vez que se cumple la condición
+        //         }
+        //     }
+        // });
 
-        observer.observe(loadingModal, { attributes: true });
+        // observer.observe(loadingModal, { attributes: true });
 
-        return () => {
-            observer.disconnect(); // Detener el observador al desmontar el componente
-        };
+        // return () => {
+        //     observer.disconnect(); // Detener el observador al desmontar el componente
+        // };
+        showTaxIncludedTrue();
     }, []);
 
     const bannerStyleHotelResult = {
