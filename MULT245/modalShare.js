@@ -379,17 +379,17 @@ const BannerTopHotelResult = () => {
     //     toggleWhatsappDisplayStyle(false);
     // };
 
-    const showTaxIncludedTrue = () => {
-        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+    // const showTaxIncludedTrue = () => {
+    //     const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
 
-        if (taxIncludedElement) {
-            console.log('taxIncludedTrue: true');
-            setIsEventActive(false);
-        } else {
-            console.log('taxIncludedTrue: false');
-            setIsEventActive(true);
-        }
-    };
+    //     if (taxIncludedElement) {
+    //         console.log('taxIncludedTrue: true');
+    //         setIsEventActive(false);
+    //     } else {
+    //         console.log('taxIncludedTrue: false');
+    //         setIsEventActive(true);
+    //     }
+    // };
 
     React.useEffect(() => {
         console.log("Se está ejecutando el useEffect");
@@ -403,7 +403,7 @@ const BannerTopHotelResult = () => {
                         const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
                         if (taxIncludedElement) {
                             console.log('.bestprice__taxincluded se ha agregado al DOM');
-                            showTaxIncludedTrue();
+                            setIsEventActive(false);
                         } else {
                             console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
                             // Si no se encuentra, muestra el banner
