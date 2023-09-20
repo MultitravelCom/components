@@ -401,6 +401,7 @@ const BannerTopHotelResult = () => {
                     console.log('Estilo display cambió a none');
 
                     showTaxIncludedTrue();
+                    waitForContentToShow();
                     observer.disconnect(); // Detener el observador una vez que se cumple la condición
                 }
             }
@@ -412,6 +413,23 @@ const BannerTopHotelResult = () => {
             observer.disconnect(); // Detener el observador al desmontar el componente
         };
     }, []);
+
+    const waitForContentToShow = () => {
+        const interval = setInterval(() => {
+            const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+            if (taxIncludedElement) {
+                console.log('Contenido cargado, se encontró .bestprice__taxincluded');
+                showTaxIncludedTrue();
+                clearInterval(interval);
+            }
+        }, 1000); // Verificar cada segundo (puedes ajustar este valor)
+
+        // Establecer un límite de tiempo para dejar de esperar después de cierto tiempo
+        setTimeout(() => {
+            console.log('Tiempo de espera agotado, el contenido no se cargó.');
+            clearInterval(interval);
+        }, 10000); // Detener después de 10 segundos (ajusta este valor según sea necesario)
+    };
 
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
