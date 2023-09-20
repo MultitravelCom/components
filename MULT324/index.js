@@ -350,7 +350,6 @@ const Card = ({ destinos, onContactClick }) => {
         const fetchData = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
-                console.log(responseData);
                 setData(responseData);
 
                 setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
