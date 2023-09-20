@@ -413,16 +413,6 @@ const BannerTopHotelResult = () => {
         };
     }, []);
 
-    React.useEffect(() => {
-        // Evento 'load' para esperar a que todos los recursos se carguen
-        window.addEventListener('load', () => {
-            // Verificar la presencia de '.bestprice__taxincluded' aquí
-            console.log('carga web');
-
-            showTaxIncludedTrue();
-        });
-    }, []);
-
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
     };
