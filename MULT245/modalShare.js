@@ -393,7 +393,7 @@ const BannerTopHotelResult = () => {
 
     React.useEffect(() => {
         console.log("Se está ejecutando el useEffect");
-
+    
         const observerConfig = {
             rootNode: document.documentElement,
             callback: (mutations) => {
@@ -412,8 +412,10 @@ const BannerTopHotelResult = () => {
             queries: [{ element: '.bestprice__taxincluded' }],
         };
     
+        console.log("Antes de crear el observador"); // Agregar este log
+    
         const observer = new MutationSummary(observerConfig);
-
+    
         return () => {
             observer.disconnect();
         };
