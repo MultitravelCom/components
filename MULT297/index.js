@@ -107,4 +107,3 @@ const checkAndRenderResult = async () => {
 };
 cambiarTextoBoton();
 checkAndRenderResult();
-renderBanner();
