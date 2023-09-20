@@ -392,24 +392,26 @@ const BannerTopHotelResult = () => {
     };
 
     React.useEffect(() => {
-        console.log("Se esta ejectuando el useEffect")
-        const loadingModal = document.getElementById('loading-modal');
+        console.log("Se está ejecutando el useEffect");
+
+        // Configura un observador para detectar cambios en el DOM
         const observer = new MutationObserver((mutationsList) => {
             for (const mutation of mutationsList) {
-                console.log('Estilo display:', loadingModal.style.display);
-                if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
-                    console.log('Estilo display cambió a none');
-
-                    waitForContentToShow();
-                    observer.disconnect(); // Detener el observador una vez que se cumple la condición
+                // Verifica si el elemento '.bestprice__taxincluded' se ha agregado
+                if (mutation.addedNodes.length > 0) {
+                    showTaxIncludedTrue();
                 }
             }
         });
 
-        observer.observe(loadingModal, { attributes: true });
+        // Observa cambios en el elemento que contiene los resultados
+        const resultsContainer = document.querySelector('.results-list__page');
+        if (resultsContainer) {
+            observer.observe(resultsContainer, { childList: true, subtree: true });
+        }
 
         return () => {
-            observer.disconnect(); // Detener el observador al desmontar el componente
+            observer.disconnect();
         };
     }, []);
 
