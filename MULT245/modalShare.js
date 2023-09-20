@@ -396,6 +396,7 @@ const BannerTopHotelResult = () => {
         const loadingModal = document.getElementById('loading-modal');
         const observer = new MutationObserver((mutationsList) => {
             for (const mutation of mutationsList) {
+                console.log('Estilo display:', loadingModal.style.display);
                 if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
                     console.log('Estilo display cambió a none'); 
 
