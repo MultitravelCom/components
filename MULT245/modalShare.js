@@ -400,7 +400,6 @@ const BannerTopHotelResult = () => {
                 if (mutation.attributeName === 'style' && loadingModal.style.display === 'none') {
                     console.log('Estilo display cambió a none');
 
-                    showTaxIncludedTrue();
                     waitForContentToShow();
                     observer.disconnect(); // Detener el observador una vez que se cumple la condición
                 }
