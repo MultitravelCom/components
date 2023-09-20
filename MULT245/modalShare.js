@@ -394,43 +394,30 @@ const BannerTopHotelResult = () => {
     React.useEffect(() => {
         console.log("Se está ejecutando el useEffect");
 
-        // Configura un observador para detectar cambios en el DOM
-        const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-                // Verifica si el elemento '.bestprice__taxincluded' se ha agregado
-                if (mutation.addedNodes.length > 0) {
-                    showTaxIncludedTrue();
+        const observerConfig = {
+            rootNode: document.documentElement,
+            callback: (mutations) => {
+                for (const mutation of mutations) {
+                    if (mutation.added) {
+                        // Verifica si '.bestprice__taxincluded' se ha agregado al DOM
+                        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+                        if (taxIncludedElement) {
+                            console.log('.bestprice__taxincluded se ha agregado al DOM');
+                            setIsEventActive(true);
+                            return; // Solo necesitas verificar una vez
+                        }
+                    }
                 }
-            }
-        });
-
-        // Observa cambios en el elemento que contiene los resultados
-        const resultsContainer = document.querySelector('.results-list__page');
-        if (resultsContainer) {
-            observer.observe(resultsContainer, { childList: true, subtree: true });
-        }
+            },
+            queries: [{ element: '.bestprice__taxincluded' }],
+        };
+    
+        const observer = new MutationSummary(observerConfig);
 
         return () => {
             observer.disconnect();
         };
     }, []);
-
-    const waitForContentToShow = () => {
-        const interval = setInterval(() => {
-            const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
-            if (taxIncludedElement) {
-                console.log('Contenido cargado, se encontró .bestprice__taxincluded');
-                showTaxIncludedTrue();
-                clearInterval(interval);
-            }
-        }, 1000); // Verificar cada segundo (puedes ajustar este valor)
-
-        // Establecer un límite de tiempo para dejar de esperar después de cierto tiempo
-        setTimeout(() => {
-            console.log('Tiempo de espera agotado, el contenido no se cargó.');
-            clearInterval(interval);
-        }, 10000); // Detener después de 10 segundos (ajusta este valor según sea necesario)
-    };
 
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
