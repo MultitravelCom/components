@@ -400,10 +400,10 @@ const BannerTopHotelResult = () => {
                 for (const mutation of mutations) {
                     if (mutation.added) {
                         // Verifica si '.bestprice__taxincluded' se ha agregado al DOM
-                        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
+                        const taxIncludedElement = document.querySelector('.results-list__page');
                         if (!taxIncludedElement) {
                             console.log('.bestprice__taxincluded se ha agregado al DOM');
-                            showTaxIncludedTrue();
+                            setIsEventActive(true);
                             return; // Solo necesitas verificar una vez
                         }
                     }
