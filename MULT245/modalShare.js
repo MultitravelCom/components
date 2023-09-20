@@ -401,7 +401,7 @@ const BannerTopHotelResult = () => {
                     if (mutation.added) {
                         // Verifica si '.bestprice__taxincluded' se ha agregado al DOM
                         const taxIncludedElement = document.querySelector('.results-list__page');
-                        if (taxIncludedElement) {
+                        if (!taxIncludedElement) {
                             console.log('.bestprice__taxincluded se ha agregado al DOM');
                             showTaxIncludedTrue();
                             return; // Solo necesitas verificar una vez
