@@ -412,10 +412,9 @@ const BannerTopHotelResult = () => {
             rootNode: document.querySelector('.results-list__page'), // Escuchar solo en results-list__page
             callback: (summaries) => {
                 console.log('Cambios detectados en results-list__page:', summaries);
-
                 updateEventActiveState(); // Actualizar el estado cuando haya cambios
             },
-            queries: [{ element: '.bestprice__taxincluded' }],
+            queries: [{ element: '.results-list__page' }], // Escuchar cualquier cambio en results-list__page
         };
     
         const observer = new MutationSummary(observerConfig);
@@ -423,7 +422,8 @@ const BannerTopHotelResult = () => {
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, []); // Se ejecuta una vez al montar el componente
+    
 
     const bannerStyleHotelResult = {
         display: isEventActive ? 'flex' : 'none',
