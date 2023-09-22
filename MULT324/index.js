@@ -94,6 +94,21 @@ async function fetchDataFromAPI() {
     }
 }
 
+async function fetchDataFromAPIPrice() {
+    try {
+        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-caribes');
+        if (!response.ok) {
+            throw new Error('No se pudo obtener los datos de la API');
+        }
+        const responseDataPrice = await response.json();
+
+        return responseDataPrice;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 // ************************************************
 // Filter
 function filtrarDestinos(destinos, nombreDestino) {
@@ -293,9 +308,11 @@ const BannerTravelSale = () => {
 const Card = ({ destinos, onContactClick }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
+    const [pricesLoaded, setPricesLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
+    const [pricesByDestino, setPricesByDestino] = React.useState({});
 
 
     const handleBannerClick = () => {
@@ -316,10 +333,10 @@ const Card = ({ destinos, onContactClick }) => {
             .then((data) => {
                 if (Array.isArray(data.destinos)) {
                     if (data.destinos.length > 0) {
-                        setLoaded(true);
-                        setDestinos(data.destinos);
+                        // setLoaded(true);
+                        // setDestinos(data.destinos);
                     } else {
-                        setLoaded(true);
+                        // setLoaded(true);
                         setNoDestinos(true);
                     }
                 } else {
@@ -334,22 +351,57 @@ const Card = ({ destinos, onContactClick }) => {
         const fetchData = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
-                console.log(responseData);
                 setData(responseData);
+                setLoaded(true);
 
                 setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
 
             } catch (error) {
+                setLoaded(true);
                 console.error(error);
             }
         };
 
         fetchData();
     }, []);
+    React.useEffect(() => {
+        const fetchDataPrecio = async () => {
+            try {
+                const responseData = await fetchDataFromAPIPrice();
+
+                const prices = responseData.data.reduce((acc, item) => {
+                    const destino = item.attributes.Destino;
+                    const card = item.attributes.Card;
+
+                    if (!acc[destino]) {
+                        acc[destino] = {};
+                    }
+
+                    if (!acc[destino][card]) {
+                        acc[destino][card] = [];
+                    }
+
+                    acc[destino][card].push({
+                        Tarifa_Temporada_Alta: item.attributes.Tarifa_Temporada_Alta,
+                        Tarifa_Temporada_Baja: item.attributes.Tarifa_Temporada_Baja,
+                    });
+
+                    return acc;
+                }, {});
+                setPricesByDestino(prices);
+                setPricesLoaded(true);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+
+        fetchDataPrecio();
+    }, []);
 
     return (
         <>
-            {loaded ? (
+            {loaded && pricesLoaded ? (
                 destinos.length > 0 ? (
                     destinos.map(destino => (
                         <div key={destino.id} className="carrusel__elemento">
@@ -370,12 +422,24 @@ const Card = ({ destinos, onContactClick }) => {
                                     <img
                                         alt={`Imagen banner ${destino.title}`}
                                         src={destino.img}
-                                        useMap={`#${destino.id}`}
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
-                                    <div className="priceStyle left">{destino.priceBaja}</div>
-                                    <div className="priceStyle right">{destino.price}</div>
+                                    {pricesByDestino[destino.destino] && pricesByDestino[destino.destino][destino.cardOrden] ? (
+                                        pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
+                                            <div key={index} className="main_container_priceStyle">
+                                                <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                                                <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        // Manejo de casos donde los datos no están disponibles
+                                        <div className="main_container_priceStyle">
+                                            <div className="priceStyle left">Consultar tarifa</div>
+                                            <div className="priceStyle right">Consultar tarifa</div>
+                                        </div>
+                                    )}
+
                                 </div>
                                 <div className="main__container__buttonsCars">
                                     <>
@@ -526,8 +590,6 @@ function App() {
 
         setSelectedFormId(formId);
         setIsFormVisible(true);
-
-        console.log("isFormVisible:", isFormVisible);
     };
 
     const handleCloseForm = () => {
@@ -575,11 +637,8 @@ function App() {
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />
-
                             <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={PlayaDelCarmen} onContactClick={handleOpenForm} />
-
                             <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
-
                             <CardContainer btnStyles={btnStyles[3]} destinosFiltrados={Panama} onContactClick={handleOpenForm} />
                         </div>
                     </div>

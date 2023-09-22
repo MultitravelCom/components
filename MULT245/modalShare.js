@@ -377,19 +377,7 @@ const BannerTopHotelResult = () => {
     // const handleCloseModal = () => {
     //     setModalOpen(false);
     //     toggleWhatsappDisplayStyle(false);
-    // };
-
-    const showTaxIncludedTrue = () => {
-        const taxIncludedElement = document.querySelector('.bestprice__taxincluded');
-
-        if (taxIncludedElement) {
-            console.log('taxIncludedTrue: true');
-            setIsEventActive(false);
-        } else {
-            console.log('taxIncludedTrue: false');
-            setIsEventActive(true);
-        }
-    };
+    // }
 
     React.useEffect(() => {
         console.log("Se está ejecutando el useEffect");
@@ -400,10 +388,10 @@ const BannerTopHotelResult = () => {
             
             if (!taxIncludedElement) {
                 console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
-                setIsEventActive(true); // Mostrar el banner
+                setIsEventActive(true); 
             } else {
                 console.log('.bestprice__taxincluded se ha encontrado en el DOM');
-                setIsEventActive(false); // Ocultar el banner
+                setIsEventActive(false);
             }
         };
     
@@ -422,7 +410,7 @@ const BannerTopHotelResult = () => {
         return () => {
             observer.disconnect();
         };
-    }, []); // Se ejecuta una vez al montar el componente
+    }, []);
     
 
     const bannerStyleHotelResult = {
