@@ -423,20 +423,20 @@ const BannerTopHotelResult = () => {
                 <picture>
                     <source
                         media="(min-width: 1024px)"
-                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
 
                     />
                     <img
                         className="main__container__bannerTopTravelSaleS__img"
-                        src="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>
