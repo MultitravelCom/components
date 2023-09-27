@@ -380,17 +380,15 @@ const BannerTopHotelResult = () => {
     // }
 
     React.useEffect(() => {
-        console.log("Se está ejecutando el useEffect");
     
         // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
         const updateEventActiveState = () => {
             const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
             
             if (!taxIncludedElement) {
-                console.log('.bestprice__taxincluded no se ha encontrado en el DOM');
+                
                 setIsEventActive(true); 
             } else {
-                console.log('.bestprice__taxincluded se ha encontrado en el DOM');
                 setIsEventActive(false);
             }
         };
@@ -399,7 +397,6 @@ const BannerTopHotelResult = () => {
         const observerConfig = {
             rootNode: document.querySelector('.results-list__page'), // Escuchar solo en results-list__page
             callback: (summaries) => {
-                console.log('Cambios detectados en results-list__page:', summaries);
                 updateEventActiveState(); // Actualizar el estado cuando haya cambios
             },
             queries: [{ element: '.results-list__page' }], // Escuchar cualquier cambio en results-list__page

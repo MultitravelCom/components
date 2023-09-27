@@ -73,8 +73,6 @@ const insertNewDivSearchResult = () => {
         queries: [{ element: '.results-list__page' }]
     });
 
-    console.log('Observador de mutaciones configurado');
-
     function handleDOMChanges(summaries) {
         const summary = summaries[0];
 

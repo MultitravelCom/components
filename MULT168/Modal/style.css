@@ -436,6 +436,7 @@
     background-color: #283747;
 }
 .whatsAppFixes{
+    display: block;
     right: 140px;
 }
 
@@ -456,6 +457,7 @@
         display: block;
     }
     .whatsAppFixes{
+        display: none;
         right: 0;
     }
 }
