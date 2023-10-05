@@ -218,7 +218,7 @@ const App = () => {
     React.useEffect(() => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
-        const openModalLading = document.querySelector('.classOpenModal');
+        const openModalLading = document.querySelector('.classOpenModal, .btn_FormBitrix');
         
         const handleButtonClick = () => {
             setOpenModal(true);
@@ -237,7 +237,7 @@ const App = () => {
             const isDesktop = window.innerWidth > 768;
 
             if (isDesktop) {
-                const btnStyleVentaPerList = document.querySelectorAll('.classOpenModal');
+                const btnStyleVentaPerList = document.querySelectorAll('.classOpenModal, .btn_FormBitrix');
 
                 if (btnStyleVentaPerList.length > 0) {
                     btnStyleVentaPerList.forEach((btnStyleVentaPer) => {
