@@ -234,7 +234,6 @@ function agregarTagAWithHREF(resultsListPage) {
     }
 
     items.forEach(item => {
-        console.log("----------->22");
         const anchorElement = document.createElement("a");
         anchorElement.setAttribute("href", "javascript:void(0)");
         anchorElement.classList.add("js-result-detail-action");

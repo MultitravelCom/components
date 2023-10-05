@@ -1,768 +1,671 @@
-<script src="https://cdn.bitrix24.com/b19657597/crm/form/loader_56.js"></script>
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css" />
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://multitravelcom.github.io/style/General/addHeaderLinks.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/babel" src="https://multitravelcom.github.io/components/MULT168/Modal/index.js"></script>
-<link href="https://multitravelcom.github.io/components/MULT168/Modal/style.css" rel="stylesheet" />
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.production.min.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+></script>
+<script
+  type="text/babel"
+  src="https://multitravelcom.github.io/components/MULT168/Modal/index.js"
+></script>
+<link
+  href="https://multitravelcom.github.io/components/MULT168/Modal/style.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://multitravelcom.github.io/style/Transfers/style.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://multitravelcom.github.io/style/General/style.css"
+  rel="stylesheet"
+/>
+<!-- ICONO -->
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+<!-- css -->
 <style>
-  /* BITRIX */
-  .modalBitrix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .modal-content-Bitrix {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    max-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .modal-content-inner {
-    padding: 20px;
-    overflow: auto;
-  }
-
-  .modal-content-Bitrix input,
-  .modal-content-Bitrix textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .b24-form-wrapper.b24-form-shadow {
-    box-shadow: none !important;
-  }
-
-  .b24-form-wrapper.b24-form-border-bottom {
-    border-bottom: white !important;
-  }
-
-  .b24-form-control-alert {
-    margin-bottom: 0 !important;
-  }
-
-  .b24-form-header-padding {
-    padding: 0 !important;
-  }
-
-  .BitrixFormTitle {
-    display: flex;
-    padding: 1rem 1rem 0.5rem;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  .bitrixFormTitle_text {
-    text-align: center;
-    width: 98%;
-  }
-
-  .bitrixFormTitle_text>p {
-    font-weight: 600;
-    font-size: 16px;
-    margin: 0 !important;
-  }
-
-  .b24-form-content {
-    padding: 0 31px !important;
-  }
-
-  .modal-content-Bitrix input,
-  .modal-content-Bitrix textarea {
-    margin-bottom: 1px !important;
-  }
-
-  .style__btn__britrix {
-    display: flex;
-    width: 193px;
-    height: 26px;
-    padding: 4px 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    border: 1px solid #0d4e88;
-    background: #fff;
-    color: #0d4e88;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-top: 5px;
-  }
-
-  .style__btn__britrix:hover {
-    background: #0d4e88;
-    color: #fff;
-  }
-
-  .close-button-bitrix {
-    position: absolute;
-    top: 3px;
-    right: 12px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 999999;
-  }
-
-  .b24-form-control-text .b24-form-control {
-    height: 50px;
-  }
-
-  .b24-form-control-string .b24-form-control,
-  .b24-form-control-list .b24-form-control,
-  .b24-form-control-text .b24-form-control,
-  .b24-form-control-select .field-item {
-    height: 50px !important;
-  }
-
-  /* container */
   .upper-menu__login-button {
     display: none;
   }
-
-  .page-header-bar {
-    padding: 0 !important;
+  /* Variables */
+  :root {
+    --border-radius-divs: 8px 40px 8px 40px;
+    --margin-section: 3rem;
+    --border-solid-card: 2px solid #dddd;
+    --fondo-card: #ffffff;
+    --box-shadow: 10px 10px 6px -5px rgba(0, 0, 0, 0.12);
+    --fondo-btn: #0d4e88;
+    --fondo-btn-hover: #324352;
   }
-
-  .content-body {
-    margin-top: 0;
+  .glyphicon-agent {
+    font-size: 26px !important;
   }
-
-  .content-body>.container {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  .main__conteiner>img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .main__conteiner-principal {
-    margin-top: -32px;
-  }
-
-  source>img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .main-content {
-    background-color: white !important;
-  }
-
+  /* Estilo de los titulos */
   .main__conteiner__titulo {
     font-weight: 700;
     margin-bottom: 1rem;
     font-size: 20px;
     letter-spacing: 0.1px;
   }
-
-  .main__conteiner__s1__destacado__card>a {
-    display: block;
-    height: 100%;
+  /* Estilo seccion Cuentas bancarias. */
+  .main__container__cuentas__bancarias {
+    margin-bottom: 2rem;
   }
-
-  /* /* Banner hero * */
-  .main_conteiner__s1_medio {
-    width: 100%;
-    height: 126px;
+  /* Estilo Div&#39;s */
+  .divStyle {
+    border: var(--border-solid-card);
+    border-radius: var(--border-radius-divs);
+    padding: 16px;
+    background-color: #ffffff;
+    width: 272px;
+    min-height: 200px;
+    margin: 7px;
+    margin-left: 0;
   }
-
-  .main_conteiner__s1_medio__paquetes {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin-bottom: 4rem;
-    margin-top: 1rem;
-  }
-
-  .main_conteiner__s1_medio__paquetes__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .page-header-bar {
-    padding: 0 !important;
-  }
-
-  /* Lo mejor de Multitravel.com */
-  .main__conteiner__s1 {
-    margin-top: 1rem;
-  }
-
-  .main__conteiner__s1__titulo {
-    padding: 16px 0;
-    font-size: 20px;
-  }
-
-  .main__conteiner__s1__destacado {
+  .container__cuentas__bancarias {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    height: 320px;
-    gap: 1rem;
-    overflow: hidden;
-    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  .main__conteiner__s1__destacado__texto {
-    padding-right: 0px;
+  .container__cuenta__img {
+    margin-bottom: 15px;
   }
-
-  .main__conteiner__s1__destacado__texto>h1 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
-    margin-bottom: 0.4rem;
+  .container__cuenta__img img {
+    width: 120px;
   }
-
-  .main__conteiner__s1__destacado__texto>p {
-    font-size: 16px;
+  .container__cuenta__texto {
+    line-height: 1.6rem;
+    font-size: 14px;
   }
-
-  .main__conteiner__s1__destacado__card {
-    overflow: hidden;
-    height: 378px;
-    width: 100%;
-    border: 1px solid #e1e1e1;
-    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1));
-    position: relative;
-  }
-
-  .main__conteiner__s1__destacado__card__img {
-    width: 100%;
-    object-fit: contain;
-  }
-
-  .uno {
-    border-radius: 8px;
-  }
-
-  .dos,
-  .tres,
-  .cuatro,
-  .cinco,
-  .seis {
-    border-radius: 8px;
-  }
-
-  /* Carrusel */
-  .carrusel__contenedor {
-    position: relative;
+  /* Transacciones Contac Center */
+  /* Estilo acordeon */
+  .main__container__contac__center {
     margin-bottom: 3rem;
   }
-
-  .carrusel__anterior,
-  .carrusel__siguiente {
-    position: absolute;
-    display: block;
-    width: 35px;
-    height: 35px;
-    border: none;
-    top: calc(50% - 24px);
+  details {
+    background: var(--fondo-card);
+    border-radius: 6px;
+    border: var(--border-solid-card);
+    margin-bottom: 1rem;
     cursor: pointer;
-    line-height: 35px;
-    color: #fff;
-    background: #fccd07;
+    padding: 1rem;
+  }
+  details:hover {
+    cursor: pointer;
+  }
+  i {
+    transition: 300ms;
     font-size: 1.5rem;
-    z-index: 1;
-    border-radius: 50%;
-    opacity: 100%;
   }
-
-  .carrusel__anterior:hover,
-  .carrusel__siguiente:hover {
-    opacity: 100%;
-  }
-
-  .carrusel__anterior {
-    left: -13px;
-  }
-
-  .carrusel__siguiente {
-    right: -13px;
-  }
-
-  .carrusel__elemento {
-    margin: 10px;
-  }
-
-  .glider.draggable .glider-slide img {
-    user-select: all !important;
-    pointer-events: all !important;
-  }
-
-  /* Spinner */
-  .lds-roller {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 37%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-  }
-
-  .lds-roller div {
-    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    transform-origin: 40px 40px;
-  }
-
-  .lds-roller div:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #fccd07;
-    margin: -4px 0 0 -4px;
-  }
-
-  .lds-roller div:nth-child(1) {
-    animation-delay: -0.036s;
-  }
-
-  .lds-roller div:nth-child(1):after {
-    top: 63px;
-    left: 63px;
-  }
-
-  .lds-roller div:nth-child(2) {
-    animation-delay: -0.072s;
-  }
-
-  .lds-roller div:nth-child(2):after {
-    top: 68px;
-    left: 56px;
-  }
-
-  .lds-roller div:nth-child(3) {
-    animation-delay: -0.108s;
-  }
-
-  .lds-roller div:nth-child(3):after {
-    top: 71px;
-    left: 48px;
-  }
-
-  .lds-roller div:nth-child(4) {
-    animation-delay: -0.144s;
-  }
-
-  .lds-roller div:nth-child(4):after {
-    top: 72px;
-    left: 40px;
-  }
-
-  .lds-roller div:nth-child(5) {
-    animation-delay: -0.18s;
-  }
-
-  .lds-roller div:nth-child(5):after {
-    top: 71px;
-    left: 32px;
-  }
-
-  .lds-roller div:nth-child(6) {
-    animation-delay: -0.216s;
-  }
-
-  .lds-roller div:nth-child(6):after {
-    top: 68px;
-    left: 24px;
-  }
-
-  .lds-roller div:nth-child(7) {
-    animation-delay: -0.252s;
-  }
-
-  .lds-roller div:nth-child(7):after {
-    top: 63px;
-    left: 17px;
-  }
-
-  .lds-roller div:nth-child(8) {
-    animation-delay: -0.288s;
-  }
-
-  .lds-roller div:nth-child(8):after {
-    top: 56px;
-    left: 12px;
-  }
-
-  @keyframes lds-roller {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .btn_Style_Venta_Per {
-    position: absolute;
-    bottom: 8px;
-    right: 4%;
-    padding: 2% 5%;
-    color: white;
-    min-width: 93%;
-    background-color: #2a8bfe;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn_from_bitrix {
-    position: initial;
-    z-index: 999999;
-    top: 16px;
-  }
-
-  .btn_Style_Venta_Per:hover {
-    background-color: #1169b7;
-  }
-
-  .main_container_priceStyle {
+  summary {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 14.3%;
-    width: 100%;
-  }
-
-  .priceStyle {
-    position: relative;
-    font-size: 20px;
     font-weight: 700;
   }
-
-  /* BANNER TRAVEL SALE */
-  .main_conteiner__s2_bannerTravelSale {
+  details[open] {
+    transition: 300ms;
+  }
+  details[open] i {
+    transform: rotate(180deg);
+    transition: 300ms;
+  }
+  .acordeonStyle {
+    padding-top: 1rem;
+  }
+  /* SECCION 3 */
+  /* Multitravel.com piensa en todo */
+  .main__conteiner__s3__piensa {
+    height: 248px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 4rem;
   }
-
-  .main__container_BannerTravelSale {
-    border-radius: 16px;
-    background: #6E37D0;
-    max-width: 1120px;
-    height: 144px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    margin: 40px auto;
-    overflow: hidden;
+  .main__conteiner__s3 > .container {
+    padding: 0;
   }
-
-
-  /* ---*-*-*-*-*-*-*-*-*-*- */
-  /* MOBILE */
-  @media (max-width: 964px) {
-    .main__conteiner__s1__destacado {
-      max-height: 600px;
-      display: flex;
-      justify-content: space-between;
-      overflow-x: auto;
-      gap: 1rem;
-    }
-
-    .glider::-webkit-scrollbar {
-      width: 0 !important;
-    }
-
-    .uno,
-    .dos,
-    .tres,
-    .cuatro,
-    .cinco,
-    .seis {
-      min-width: 90%;
-      text-align: center;
-      background-color: #ddd;
-    }
-
-    .main__conteiner__s1>.main__conteiner__titulos {
-      padding-block: 0px;
-    }
-
-    .pagos__card__texto__btn {
-      display: none;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .carrusel {
-      margin-top: 3rem;
-    }
-
-    /* Estilos btn buscar mobile */
-    .pull-right {
-      width: 100%;
-    }
-
-    /* Estilo caja de busqueda */
-    .multi-searcher {
-      margin: 8px;
-    }
-
-    .multi-searcher__content {
-      border-radius: 1rem !important;
-    }
-
-    .show-more {
-      display: none;
-    }
-
-    #flights-searcher {
-      margin: 8px;
-    }
-  }
-
-  @media (min-width: 868px) {
-    .main__conteiner-principal {
-      margin-top: 0;
-    }
-  }
-
-  @media (max-width: 564px) {
-
-    /* SECCION 1 */
-    .main__conteiner__s1 {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .main__conteiner__s1__titulo {
-      display: inline;
-      margin-bottom: 1rem;
-    }
-
-    .main__conteiner__s1__destacado__texto {
-      display: none;
-    }
-
-    .main__conteiner__s1 {
-      margin-bottom: 0;
-    }
-
-    .carrusel__anterior,
-    .carrusel__siguiente {
-      display: none;
-    }
-
-    .bitrixFormTitle-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;
-      width: 100%;
-    }
-
-    .bitrixFormTitle_text>p {
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    /* BANNER TRAVEL SALE */
-    .main__container_BannerTravelSale {
-      min-width: 310px;
-      height: 264px;
-      margin: 20px 10px;
-    }
-  }
-
-  /* ****************************************************** */
-  /* BannerTop PreViaje4 */
-  .rowStyle {
-    display: flex;
-    gap: 20px;
-  }
-
-  .main__container__left,
-  .main__container__right {
-    border-radius: 40px 8px;
-    overflow: hidden;
-    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  }
-
-  .main__container__right {
+  .uno__s3 {
+    background-image: url(https://www.multitravel.com/images/upload//LandingPage/Vuelos/alojamineto-vuelos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px 8px 8px 40px;
+    height: 100%;
+    padding-inline: 0;
     position: relative;
+    overflow: hidden;
   }
-
-  .btnStyleBannerPre {
-    position: absolute;
-    bottom: 8%;
-    right: 18%;
-    width: 64%;
-    height: 15%;
-    border-radius: 12px;
-    background: #0d4e88;
-    color: #f3f3f3;
+  .dos__s3 {
+    background-image: url(https://www.multitravel.com/images/upload//LandingPage/Vuelos/paquetes-vuelos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    height: 100%;
+    padding-inline: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .tres__s3 {
+    background-image: url(https://www.multitravel.com/images/upload//LandingPage/Vuelos/actividades-vuelos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px 40px 8px 8px;
+    height: 100%;
+    padding-inline: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hover__s3:hover {
+    box-shadow: var(--box-shadow);
+  }
+  .main__conteiner__s3__piensa__parrafo {
+    background-color: #1b88e7;
+    font-size: 18px;
+    opacity: 90%;
+    width: 100%;
+    height: 61px;
+    text-align: inherit;
+    padding: 1.2rem;
+    color: white;
     font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    padding-left: 40px;
+    letter-spacing: 1px;
   }
-
-  .btnStyleBannerPre:hover {
-    background-color: #134570;
-    color: #f3f3f3;
-  }
-
-  @media (max-width: 767px) {
-    .rowStyle {
+  /* Mobile */
+  @media (max-width: 564px) {
+    /* SECCION 3 */
+    .main__conteiner__s3__piensa {
       flex-direction: column;
     }
-
-    .main__container__left {
-      display: none;
+    .uno__s3,
+    .dos__s3,
+    .tres__s3 {
+      border-radius: 8px;
     }
-
-    .main__container__right {
-      max-width: 334px;
-      margin: auto;
+    .main__conteiner__s3__piensa__parrafo {
+      width: 200px;
+      height: 100%;
+      left: 0;
+      border-radius: 0px 8px 40px 0px;
     }
-
-    .btnStyleBannerPre {
-      position: absolute;
-      bottom: 6%;
-      right: 20%;
-      width: 58%;
-      height: 15%;
-      border-radius: 12px;
-      background: #0d4e88;
-      color: #f3f3f3;
+    .main__conteiner__s3__piensa__parrafo > p {
+      padding: 9px;
     }
   }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .btnStyleBannerPre {
-      display: none;
+  @media screen and (min-width: 0px) and (max-width: 600px) {
+    /* SCROLL HORIZONTAL */
+    .scroll-mobile {
+      max-width: 100%;
+      display: flex;
+      overflow: auto;
     }
-
-    .btnStyleBannerPre {
-      bottom: 23px;
-      right: 51px;
-      width: 59%;
-      height: 13%;
-      border-radius: 12px;
-      background: #0d4e88;
-      color: #f3f3f3;
-      padding: 3px 0 0 0;
+    .scroll-mobile::-webkit-scrollbar {
+      width: 0;
+    }
+    .scroll-mobile .divStyle {
+      min-width: 258px;
     }
   }
-
-  @media (width: 1024px) {
-    .containerPreViaje {
-      margin-top: 40px;
+  @media screen and (min-width: 601px) and (max-width: 1022px) {
+    /* ajustes de cuentas bancarias */
+    .container__cuentas__bancarias {
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
     }
   }
-
-  /* Warning Price */
-  .main__warningPrice {
-    max-width: 590px;
-    min-height: 60px;
-    background: #eaf4fc;
-    border: 1px solid #0d4e88;
-    border-radius: 8px;
-    padding: 6px 16px;
-    display: flex;
+  /* <!-- Banner Promo AR --> */
+  .confirm-booking__section {
+    margin-bottom: 44px;
+  }
+  .banner__promo {
+    display: none;
     align-items: center;
+    position: relative;
+    border-radius: 4px 4px 40px 4px !important;
+    min-height: 96px;
+    padding: 25px 4px !important;
   }
-
-  .main__warningPrice>p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 144%;
-    color: #000000;
-    max-width: 524px;
-    min-height: 32px;
+  .promo__ar {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 7px;
+  }
+  .glyphicon-agent {
+    font-size: 43px;
+    margin: 0 5px;
+  }
+  .promo__ar_parrafo > h3 {
+    font-size: 16px;
+    font-weight: 700;
     margin: 0 !important;
   }
-
-  .glyphicon-info-circle {
-    color: #2196f3;
-    font-size: 19px;
-    min-width: 32px;
+  .promo__ar__btn {
+    border-radius: 40px;
+    width: 110px;
+    height: 33px;
+    font-size: 14px;
+    margin: auto;
   }
-
-  /* EVENTS ICOS */
-  .eventImg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    left: 14px;
-    top: 12px;
-    background: #a3a3a3;
-    border-radius: 64%;
-    text-align: center;
-    overflow: hidden;
-  }
-
+  /* Mobile */
   @media (max-width: 767px) {
-    .eventImg {
-      width: 38px;
-      height: 38px;
-    }
-
-    .b24-form-field {
-      margin-bottom: 0px;
-    }
-
-    .b24-form-btn {
-      min-height: 37px;
-      padding: 0;
-    }
-
-    .b24-form-control-text .b24-form-control {
-      height: 72px;
+    .promo__ar {
+      flex-direction: column;
     }
   }
 </style>
-<div class="container__" id="root"></div>
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
-<script type="text/babel" src="https://multitravelcom.github.io/style/Estaticas/argentina_satelite.js"></script>
-<script id="mcjs">
-  !(function (c, h, i, m, p) {
-    (m = c.createElement(h)),
-      (p = c.getElementsByTagName(h)[0]),
-      (m.async = 1),
-      (m.src = i),
-      p.parentNode.insertBefore(m, p);
-  })(
-    document,
-    "script",
-    "https://chimpstatic.com/mcjs-connected/js/users/d09ee86703b1761e8337397e9/6e305f08d149ab3c55d2d9573.js"
-  );
-</script>
+<div class="row" style="font-size: 16px">
+  <section id="home-sliding-offers-1" class="container home-row">
+    <div class="col-xs-12 static-images" style="margin-bottom: 5rem">
+      <picture data-alt="Imagen contenido 1">
+        <source
+          media="(min-width: 1200px)"
+          srcset="/images/upload/BACK END/Tarjetas-Banner-EStaticoV5.jpg"
+        />
+        <source
+          media="(min-width: 992px)"
+          srcset="/images/upload/BACK END/Tarjetas-Banner-EStaticoV5.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="/images/upload/BACK END/Tarjetas-Banner-EStaticoV5.jpg"
+        />
+        <source
+          srcset="/images/upload/mediosdepago/BACK END/Tarjetas-Banner-EStaticoV5.jpg"
+        />
+        <img
+          src="/images/upload/BACK END/Tarjetas-Banner-EStaticoV5.jpg"
+          alt="Imagen contenido 1"
+          loading="lazy"
+          class="img-fluid"
+          ;=""
+          style="height: 230px"
+        />
+      </picture>
+    </div>
+    <div class="home-row" style="margin-bottom: 1rem">
+      <section data-preview-id="staticImages">
+        <div class="offer-title">
+          <div class="text-left">
+            <h1 class="main__conteiner__titulo">Transacciones Web</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-6 static-images">
+            <article
+              class="thumbnail text-left"
+              style="
+                padding: 24px;
+                border: 2px solid #ddd;
+                border-radius: 1rem;
+                background-color: #ffffff;
+              "
+            >
+              <h2 style="padding-bottom: 1rem">
+                <strong>Tarjeta de d&#233;bito</strong>
+              </h2>
+              <p>
+                Pod&#233;s abonar todos nuestros productos a trav&#233;s de tu
+                tarjeta de d&#233;bito. Antes de realizar el pago, ten&#233; en
+                cuenta que tienen un l&#237;mite de extracci&#243;n diario. Te
+                recomendamos que te comuniques con tu banco para chequear la
+                disponibilidad de dinero.
+              </p>
+            </article>
+          </div>
+          <div class="col-xs-12 col-md-6 static-images">
+            <article
+              class="thumbnail text-left"
+              style="
+                padding: 24px;
+                border: 2px solid #ddd;
+                border-radius: 1rem;
+                background-color: #ffffff;
+                height: 100%;
+              "
+            >
+              <h2 style="padding-bottom: 1rem">
+                <strong>Tarjeta de Cr&#233;dito</strong>
+              </h2>
+              <p style="margin-bottom: 32px">
+                Pod&#233;s abonar en cuotas cualquiera de nuestros productos.
+                Consult&#225; los detalles, destinos, las restricciones de cada
+                tarjeta de cr&#233;dito y las promociones bancarias.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Cuentas bancarias de Multitravel.com -->
+    <div class="main__container__cuentas__bancarias">
+      <h2 class="main__conteiner__titulo">
+        Cuentas bancarias de Multitravel.com
+      </h2>
+      <div class="container__cuentas__bancarias scroll-mobile">
+        <!-- Santander -->
+        <div class="container__cuenta__santander divStyle">
+          <div class="container__cuenta__img">
+            <img
+              src="https://www.multitravel.com/images/upload//mediosdepago/BSantanderV5.png"
+              alt="Imagen logo banco Santander"
+            />
+          </div>
+          <div class="container__cuenta__texto">
+            <ul>
+              <li><strong>CUIT MULTITRAVEL:</strong> 30716969300</li>
+              <li><strong>CUENTA:</strong> 149916</li>
+              <li><strong>ALIAS:</strong> MULTITRAVELCOM</li>
+              <li><strong>CBU:</strong> 0720087820000001499168</li>
+              <li><strong>MONEDA:</strong> ARS</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Patagonia -->
+        <div class="container__cuenta__patagonia divStyle">
+          <div class="container__cuenta__img">
+            <img
+              src="https://www.multitravel.com/images/upload//mediosdepago/BPatagoniaV5.png"
+              alt="Imagen logo banco Patagonia"
+            />
+          </div>
+          <div class="container__cuenta__texto">
+            <ul>
+              <li><strong>CUIT MULTITRAVEL:</strong> 30716969300</li>
+              <li><strong>CUENTA:</strong> 010-133011371000</li>
+              <li><strong>CBU:</strong> 03400104 00133011371004</li>
+              <li><strong>MONEDA:</strong>ARS</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Comafi -->
+        <div class="container__cuenta__comafi divStyle">
+          <div class="container__cuenta__img">
+            <img
+              src="https://www.multitravel.com/images/upload//mediosdepago/BComafiV5.png"
+              alt="Imagen logo banco Comafi"
+            />
+          </div>
+          <div class="container__cuenta__texto">
+            <ul>
+              <li><strong>CUIT MULTITRAVEL:</strong> 30716969300</li>
+              <li><strong>CUENTA:</strong> 251446</li>
+              <li><strong>CBU:</strong>2990000000002514460002</li>
+              <li><strong>ALIAS:</strong> MULTITRAVEL.COM</li>
+              <li><strong>MONEDA:</strong> ARS</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Meli -->
+        <div class="container__cuenta__meli divStyle">
+          <div class="container__cuenta__img">
+            <img
+              src="https://www.multitravel.com/images/upload//mediosdepago/MPagoV5.png"
+              alt="Imagen logo banco MercadoPago"
+            />
+          </div>
+          <div class="container__cuenta__texto">
+            <ul>
+              <li><strong>ALIAS:</strong>MULTITRAVEL</li>
+              <li><strong>CVU:</strong> 0000003100087241425641</li>
+              <li><strong>MONEDA:</strong>ARS</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Macro -->
+        <div class="container__cuenta__comafi divStyle">
+          <div class="container__cuenta__img">
+            <img
+              src="https://www.multitravel.com/images/upload//mediosdepago/BMacroV5.png"
+              alt="Imagen logo banco Comafi"
+            />
+          </div>
+          <div class="container__cuenta__texto">
+            <ul>
+              <li><strong>CUIT MULTITRAVEL:</strong>30716969300</li>
+              <li><strong>CUENTA:</strong>354009421129318</li>
+              <li><strong>CBU:</strong>2850540430094211293181</li>
+              <li><strong>MONEDA:</strong>ARS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Promo AR -->
+    <div class="confirm-booking__section banner__promo">
+      <div class="promo__ar">
+        <div class="promo__ar__icon">
+          <em class="glyphicon glyphicon-agent" aria-hidden="true"></em>
+        </div>
+        <div class="promo__ar_parrafo">
+          <h3>
+            &#191;Sab&#237;as que tenemos 6 cuotas sin inter&#233;s con
+            Aerol&#237;neas Argentinas?
+          </h3>
+          <p>Estas son ofertas exclusivas offline en vuelos por Argentina</p>
+        </div>
+        <button class="btn btn-primary promo__ar__btn">
+          <a
+            style="color: white; text-decoration: none"
+            target="_blank"
+            href="https://wa.link/v9ejqn"
+            >Contactarme</a
+          >
+        </button>
+      </div>
+    </div>
+    <!-- Transacciones Contac Center -->
+    <div class="main__container__contac__center">
+      <h2 class="main__conteiner__titulo">Transacciones Contac Center</h2>
+      <div class="main__container__contac__center__acord">
+        <div class="main__container__contac__center__acord__trasferencia">
+          <details>
+            <summary>
+              <div>Trasferencia o dep&#243;sito bancario</div>
+              <div><em class="bx bx-chevron-down"></em></div>
+            </summary>
+            <div class="acordeonStyle">
+              <p>
+                - Pod&#233;s abonar todos nuestros productos personalmente en el
+                banco, desde un cajero autom&#225;tico o desde cualquier
+                dispositivo m&#243;vil.
+              </p>
+              <p>
+                - Ten&#233; en cuenta que el tiempo de acreditaci&#243;n puede
+                ser entre 48 y 72 hs de acuerdo al tipo de modalidad que elijas.
+                Si la realizas desde el interior del pa&#237;s, el tiempo de
+                acreditaci&#243;n puede ser de hasta 96 hs. Record&#225; que
+                hasta que la acreditaci&#243;n no sea efectiva, no est&#225;
+                confirmada tu reserva, puede variar precio y disponibilidad.
+              </p>
+              <p>
+                - Si posees una cuenta en alguno de los bancos mencionados
+                abajo, te recomendamos que la utilices para hacer la
+                transferencia, debido a que la acreditaci&#243;n es m&#225;s
+                r&#225;pida entre cuentas del mismo banco. Luego de realizar el
+                pago, env&#237;ale a nuestros agentes el cup&#243;n escaneado
+                con tu nombre y apellido y c&#243;digo de reserva.
+              </p>
+              <p>&nbsp;</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <div>Pago Facil</div>
+              <div><em class="bx bx-chevron-down"></em></div>
+            </summary>
+            <div class="acordeonStyle">
+              <p>
+                &#191;Quieres una forma m&#225;s sencilla de hacer tus pagos?
+                Con Pago Facil, puedes hacer tus compras y pagos de manera
+                r&#225;pida y c&#243;moda! &#161;No te pierdas esta oportunidad
+                de simplificar tus pagos con Pago Facil.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <div>Pagos mixtos</div>
+              <div><em class="bx bx-chevron-down"></em></div>
+            </summary>
+            <div class="acordeonStyle">
+              <p>
+                Pod&#233;s abonar todos nuestros productos con dos medios de
+                pago diferentes. Ya sea tarjeta de cr&#233;dito, d&#233;bito,
+                transferencia bancar&#237;a o dep&#243;sito. Para ello, debes
+                comunicarte con nuestros agentes para realizarlo de forma
+                personalizada.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+    <!-- Beneficios Amex - Multitravel.com -->
+    <div class="home-row" style="margin-bottom: 3rem">
+      <h2 class="main__conteiner__titulo">Beneficios Amex - Multitravel.com</h2>
+      <section data-preview-id="staticImages">
+        <div class="row">
+          <!-- TEXTO -->
+          <div class="col-xs-12 col-md-6 static-images">
+            <article
+              class="thumbnail text-left"
+              style="
+                padding: 24px;
+                border: 2px solid #ddd;
+                border-radius: 1rem;
+                background-color: #ffffff;
+                height: 100%;
+                margin-bottom: 20px;
+              "
+            >
+              <p>
+                Abon&#225; cualquier producto nacional en 3 cuotas sin
+                inter&#233;s con tu tarjeta American Express emitida con
+                Santander. Para ello, debes comunicarte con nuestros
+                especialistas para hacerlo de forma personalizada.
+              </p>
+            </article>
+          </div>
+          <!-- IMG CON TEXTO -->
+          <div class="col-xs-12 col-md-6 static-images">
+            <article
+              class="thumbnail text-left"
+              style="
+                background-size: cover;
+                padding: 24px 24px 24px 24px;
+                border: 0px solid #ddd;
+                border-radius: 1rem;
+                background-color: #ffffff;
+                height: 100%;
+                background-position: bottom;
+                margin-bottom: 20px;
+                background-image: url(https://www.multitravel.com/handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBackWeb/callphone.jpg&amp;mediaSize=lg&amp;imgSize=original);
+                color: transparent;
+                user-select: none;
+              "
+            >
+              <p>
+                Abon&#225; cualquier producto nacional en 3 cuotas sin
+                inter&#233;s con tu tarjeta American Express emitida con
+                Santander. Para ello, debes comunicarte con nuestros
+                especialistas para hacerlo de forma personalizada.
+              </p>
+            </article>
+          </div>
+          <!-- Las promociones son exclusivamente -->
+        </div>
+      </section>
+    </div>
+    <!-- seccion AHORA 12 IMAGENES -->
+    <div class="home-row" style="margin-bottom: 1rem">
+      <section data-preview-id="staticImages">
+        <h2 class="main__conteiner__titulo">Ademas...</h2>
+        <div class="row">
+          <div
+            class="col-xs-12 col-md-6 static-images"
+            style="padding-bottom: 5px"
+          >
+            <picture data-alt="Imagen contenido 1">
+              <source
+                media="(min-width: 1200px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBACK+END%2fAhora-12-V3.jpg&amp;mediaSize=lg&amp;imgSize=original
+                "
+              />
+              <source
+                media="(min-width: 992px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBACK+END%2fAhora-12-V3.jpg&amp;mediaSize=md&amp;imgSize=original
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBACK+END%2fAhora-12-V3.jpg&amp;mediaSize=sm&amp;imgSize=original
+                "
+              />
+              <source
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBACK+END%2fAhora-12-V3.jpg&amp;mediaSize=xs&amp;imgSize=original
+                "
+              />
+              <img
+                src="/images/upload/BACK END/Ahora-12-V3.jpg"
+                alt="Imagen contenido 1"
+                loading="lazy"
+                style="height: 170px; margin-bottom: 11px"
+              />
+            </picture>
+          </div>
+          <div class="col-xs-12 col-md-6 static-images">
+            <picture data-alt="Imagen contenido 1">
+              <source
+                media="(min-width: 1200px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fBACK+END%2fTarjetasMediodePagoV2.jpg&amp;mediaSize=xs&amp;imgSize=original
+                "
+              />
+              <source
+                media="(min-width: 992px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fmediosdepago%2fTarjetasMediodePagoV2.jpg&amp;mediaSize=md&amp;imgSize=original
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fmediosdepago%2fTarjetasMediodePagoV2.jpg&amp;mediaSize=sm&amp;imgSize=original
+                "
+              />
+              <source
+                srcset="
+                  /handlers/ImageRequest.ashx?path=%2fimages%2fupload%2fmediosdepago%2fTarjetasMediodePagoV2.jpg&amp;mediaSize=xs&amp;imgSize=original
+                "
+              />
+              <img
+                src="/images/upload/mediosdepago/TarjetasMediodePagoV2.jpg"
+                alt="Imagen contenido 1"
+                loading="lazy"
+                style="height: 170px"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

@@ -480,6 +480,7 @@ source>img {
     color: white;
     background-color: #2A8BFE;
     border: 1px solid #2A8BFE;
+    width: 90%;
 }
 
 .btn_FormBitrix:hover {

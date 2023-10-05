@@ -442,22 +442,31 @@ const Card = ({ destinos, onContactClick }) => {
 
                                 </div>
                                 <div className="main__container__buttonsCars">
-                                    <>
-                                        <ButtonLading
-                                            id={destino.title}
-                                            className={buttonSwitch === "A" ? "btn_Whatsapp" : "btn_FormBitrix"}
-                                            text={buttonSwitch === "A" ? "Whatsapp" : "Agendar llamada"}
-                                            onClick={buttonSwitch === "A" ? handleWhatsAppClick : () => onContactClick(destino.id)}
-                                            svgType={buttonSwitch === "A" ? 'whatsapp' : null}
-                                        />
+                                    {buttonSwitch === "A" ? (
+                                        <>
+                                            <ButtonLading
+                                                id={destino.title}
+                                                className="btn_Whatsapp"
+                                                text="Whatsapp"
+                                                onClick={handleWhatsAppClick}
+                                                svgType="whatsapp"
+                                            />
+                                            <ButtonLading
+                                                id={destino.id}
+                                                className="classOpenModal"
+                                                text="Llamar"
+                                                onClick={handleBannerClick}
+                                                svgType="phone"
+                                            />
+                                        </>
+                                    ) : (
                                         <ButtonLading
                                             id={destino.id}
-                                            className="classOpenModal"
-                                            text={buttonSwitch === "A" ? "Llamar" : "Llamar Ahora"}
+                                            className="btn_FormBitrix"
+                                            text="Llamar Ahora"
                                             onClick={handleBannerClick}
-                                            svgType={buttonSwitch === "A" ? 'phone' : null}
                                         />
-                                    </>
+                                    )}
                                 </div>
                             </div>
                         </div>
