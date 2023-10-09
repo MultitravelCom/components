@@ -6,6 +6,18 @@ function removeContainerClass() {
 
 removeContainerClass();
 
+function Button(props) {
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        window.open(props.link, '_blank');
+    }
+
+    return (
+        <button className={props.style} onClick={handleClick}>{props.text}</button>
+    );
+}
+
 // *************************************
 
 function ButtonTresSecciones(props) {
