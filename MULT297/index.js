@@ -102,7 +102,7 @@ const checkAndRenderResult = async () => {
 
 
         ReactDOM.render(<CompartirAlojamientoResult />, nuevoDivResult);
-        renderBanner();
+        // renderBanner();
     });
 };
 cambiarTextoBoton();
