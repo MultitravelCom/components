@@ -207,7 +207,7 @@ const App = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
     React.useEffect(() => {
-        const openModalButton = document.querySelector('.whatsAppFixes');
+        const openModalButton = document.querySelector('.');
 
 
         const handleButtonClick = () => {

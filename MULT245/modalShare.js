@@ -355,7 +355,7 @@ const BannerMensageCardApp = () => {
             )}
 
             {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"Pagá en 3 cuotas sin interés y hasta 12 cuotas fijas"} />
+                <BannerMensageCard text_p={"3 cuotas sin interés a través del 0800 349 0003"} />
             )}
 
             {showFreezePriceMessageC && (
