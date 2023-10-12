@@ -104,7 +104,7 @@ const ButtonContacCenter = () => {
     )
 }
 
-const BodyLanding = () => {
+const BodyLanding = ({ isMobile }) => {
     const isMobile = window.innerWidth <= 768;
 
     const handleOpenForm = (formId) => {
@@ -164,6 +164,8 @@ const BodyLanding = () => {
 const App = () => {
     const [loaded, setLoaded] = React.useState(true);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+
 
     const handleCloseForm = () => {
         setSelectedFormId(null);
@@ -178,7 +180,7 @@ const App = () => {
                         <BannerTop />
                     </div>
                     <div className="main__conteiner main__conteiner-principal container">
-                        <BodyLanding />
+                        <BodyLanding isMobile={isMobile}/>
                     </div>
                     {isFormVisible && (
                         <div className="modalBitrix">
