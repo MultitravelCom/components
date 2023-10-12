@@ -20,14 +20,6 @@
     left: 25%;
 }
 
-.main__container__bodyLading__image {
-    max-width: 834px;
-    min-height: 243px;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-}
-
 .main__container__bodyLading__text>h1 {
     color: #040000;
     font-size: 100px;
@@ -46,20 +38,13 @@
     text-transform: uppercase;
 }
 
-.main__container__buttonsCars {
-    position: inherit;
-}
-.btn_Style_Venta_Per{
-    justify-content: space-evenly;
-}
-
 @media (max-width: 767px) {
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
     }
 
-    .main__container__bodyLading__button {
+    .btn_Style_Venta_Per{
         width: 91%;
         margin: auto;
         left: inherit;
