@@ -43,7 +43,8 @@
 }
 
 @media (max-width: 767px) {
-    .main__container__bodyLading, .main__container__bodyLading__button {
+    .main__container__bodyLading,
+    .main__container__buttonsCars {
         flex-direction: column;
     }
 }
