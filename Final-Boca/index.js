@@ -101,7 +101,7 @@ const ButtonContacCenter = () => {
     )
 }
 
-const BodyLanding = ({ isMobile }) => {
+const BodyLanding = () => {
     const handleOpenForm = (formId) => {
         setSelectedFormId(formId);
         setIsFormVisible(true);
@@ -131,9 +131,8 @@ const BodyLanding = ({ isMobile }) => {
                 </picture>
             </div>
             <div className="main__container__bodyLading__text__button">
-                {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} /> }
+                <ButtonContacCenter onContactClick={handleOpenForm} />
             </div>
-            {isMobile ? <ButtonContacCenter onContactClick={handleOpenForm} /> : null }
         </div>
     )
 }
@@ -156,7 +155,7 @@ const App = () => {
                         <BannerTop />
                     </div>
                     <div className="main__conteiner main__conteiner-principal container">
-                        <BodyLanding isMobile={isMobile}/>
+                        <BodyLanding />
                     </div>
                     {isFormVisible && (
                         <div className="modalBitrix">
