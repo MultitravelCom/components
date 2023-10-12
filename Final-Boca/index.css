@@ -43,7 +43,7 @@
 }
 
 @media (max-width: 767px) {
-    .main__container__bodyLading {
+    .main__container__bodyLading, .main__container__bodyLading__button {
         flex-direction: column;
     }
 }
