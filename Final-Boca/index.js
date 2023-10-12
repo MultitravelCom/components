@@ -148,7 +148,7 @@ const App = () => {
                         <BannerTop />
                     </div>
                     <div className="main__conteiner main__conteiner-principal container">
-
+                        <BodyLanding />
                     </div>
                     {isFormVisible && (
                         <div className="modalBitrix">
