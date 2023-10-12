@@ -84,8 +84,8 @@ const BodyLanding = () => {
         <div className="main__container__bodyLading">
             <div className="main__container__bodyLading__text__button">
                 <div className="main__container__bodyLading__text">
-                    <h3>VIAJÁ A LA</h3>
-                    <h2>FINAL</h2>
+                    <h4>VIAJÁ A LA</h4>
+                    <h1>FINAL</h1>
                 </div>
                 <div className="main__container__bodyLading__button">
                     <div className="main__container__buttonsCars">

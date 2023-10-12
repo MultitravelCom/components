@@ -1,3 +1,7 @@
+.main__conteiner-principal {
+    margin: 45px auto;
+}
+
 .main__container__bodyLading {
     display: flex;
     align-items: center;
@@ -13,4 +17,22 @@
     height: 376px;
     border-radius: 16px;
     overflow: hidden;
+}
+
+.main__container__bodyLading__text>h1 {
+    color: #040000;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.main__container__bodyLading__text>h4 {
+    color: #040000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
 }
