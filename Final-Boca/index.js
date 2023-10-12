@@ -107,6 +107,13 @@ const ButtonContacCenter = () => {
 
 const BodyLanding = () => {
 
+    const handleOpenForm = (formId) => {
+
+        setSelectedFormId(formId);
+        setIsFormVisible(true);
+
+    };
+
     return (
         <div className="main__container__bodyLading">
             <div className="main__container__bodyLading__text__button">
@@ -120,7 +127,7 @@ const BodyLanding = () => {
                         </>
                     )}
                 </div>
-                <ButtonContacCenter />
+                <ButtonContacCenter onContactClick={handleOpenForm} />
             </div>
             <div className="main__container__bodyLading__image">
                 <picture>
@@ -149,7 +156,7 @@ const BodyLanding = () => {
                     />
                 </picture>
             </div>
-            <ButtonContacCenter />
+            <ButtonContacCenter onContactClick={handleOpenForm} />
         </div>
     )
 }
@@ -157,12 +164,6 @@ const BodyLanding = () => {
 const App = () => {
     const [loaded, setLoaded] = React.useState(true);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
-
-    const handleOpenForm = (formId) => {
-        setSelectedFormId(formId);
-        setIsFormVisible(true);
-
-    };
 
     const handleCloseForm = () => {
         setSelectedFormId(null);
