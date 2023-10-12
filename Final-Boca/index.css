@@ -49,6 +49,9 @@
 .main__container__buttonsCars {
     position: inherit;
 }
+.btn_Style_Venta_Per{
+    justify-content: space-evenly;
+}
 
 @media (max-width: 767px) {
     .main__container__bodyLading,

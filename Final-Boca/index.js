@@ -78,24 +78,22 @@ const ButtonContacCenter = () => {
     };
     return (
         <>
-            <div className="main__container__bodyLading__button">
-                <div className="main__container__buttonsCars">
-                    <>
-                        <ButtonLading
-                            className="btn_Whatsapp"
-                            text="Whatsapp"
-                            onClick={handleWhatsAppClick}
-                            svgType="whatsapp"
-                        />
-                        <ButtonLading
-                            className="classOpenModal"
-                            text="Llamar"
-                            onClick={handleBannerClick}
-                            svgType="phone"
-                        />
-                    </>
+            <div className="main__container__buttonsCars">
+                <>
+                    <ButtonLading
+                        className="btn_Whatsapp"
+                        text="Whatsapp"
+                        onClick={handleWhatsAppClick}
+                        svgType="whatsapp"
+                    />
+                    <ButtonLading
+                        className="classOpenModal"
+                        text="Llamar"
+                        onClick={handleBannerClick}
+                        svgType="phone"
+                    />
+                </>
 
-                </div>
             </div>
         </>
     )
