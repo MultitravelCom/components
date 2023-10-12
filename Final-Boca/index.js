@@ -130,9 +130,7 @@ const BodyLanding = () => {
                     />
                 </picture>
             </div>
-            <div className="main__container__bodyLading__text__button">
-                <ButtonContacCenter onContactClick={handleOpenForm} />
-            </div>
+            <ButtonContacCenter onContactClick={handleOpenForm} />
         </div>
     )
 }
