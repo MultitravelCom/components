@@ -129,25 +129,19 @@ const BodyLanding = ({ isMobile }) => {
                 <picture>
                     <source
                         media="(min-width: 1024px)"
-                        srcSet="
-                        https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp
-          "
+                        srcSet="https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp"
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="
-                        https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp
-          "
+                        srcSet="https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        srcSet="
-                        https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Mobile.webp
-          "
+                        srcSet="https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Mobile.webp"
                     />
                     <img
                         className="main_conteiner__s1_medio__paquetes__img"
-                        src="https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/Desktop.webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>

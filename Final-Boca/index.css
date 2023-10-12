@@ -15,7 +15,7 @@
 
 .main__container__bodyLading__image {
     max-width: 834px;
-    height: 376px;
+    min-height: 243px;
     border-radius: 16px;
     overflow: hidden;
 }
