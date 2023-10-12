@@ -38,17 +38,24 @@
     text-transform: uppercase;
 }
 
-.btn_Style_Venta_Per{
+.btn_Style_Venta_Per {
     justify-content: center;
 }
 
+.main__container__buttonsCars {
+    bottom: 22px;
+    justify-content: flex-start;
+    left: 13%;
+}
+
 @media (max-width: 767px) {
+
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
     }
 
-    .btn_Style_Venta_Per{
+    .btn_Style_Venta_Per {
         width: 91%;
         margin: auto;
         left: inherit;
