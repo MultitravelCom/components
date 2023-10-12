@@ -123,7 +123,7 @@ const BodyLanding = ({ isMobile }) => {
                         </>
                     )}
                 </div>
-                <ButtonContacCenter onContactClick={handleOpenForm} />
+                {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} /> }
             </div>
             <div className="main__container__bodyLading__image">
                 <picture>
@@ -152,7 +152,7 @@ const BodyLanding = ({ isMobile }) => {
                     />
                 </picture>
             </div>
-            {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} />}
+            {isMobile ? <ButtonContacCenter onContactClick={handleOpenForm} /> : null }
         </div>
     )
 }
