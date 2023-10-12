@@ -65,9 +65,7 @@ const Loader = () => {
 };
 
 const ButtonContacCenter = () => {
-
     const [openModal, setOpenModal] = React.useState(false);
-
     const isMobile = window.innerWidth <= 768;
 
     const handleBannerClick = () => {
