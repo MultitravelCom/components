@@ -1,0 +1,16 @@
+.main__container__bodyLading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__container__bodyLading__button {
+    position: relative;
+}
+
+.main__container__bodyLading__image {
+    width: 834px;
+    height: 376px;
+    border-radius: 16px;
+    overflow: hidden;
+}
