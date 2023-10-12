@@ -5,20 +5,17 @@ const BannerTop = () => {
                 <source
                     media="(min-width: 1024px)"
                     srcSet="
-                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerDesktop.webp
-          "
+                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerDesktop.webp"
                 />
                 <source
                     media="(min-width: 768px) and (max-width: 1023px)"
                     srcSet="
-                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerMobile.webp
-          "
+                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerDesktop.webp"
                 />
                 <source
                     media="(max-width: 767px)"
                     srcSet="
-                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerDesktop.webp
-          "
+                    https://multitravelcom.github.io/MT/Evento/CopaLibertadores2023/BannerMobile.webp"
                 />
                 <img
                     className="main_conteiner__s1_medio__paquetes__img"
