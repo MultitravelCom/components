@@ -65,6 +65,23 @@ const Loader = () => {
 };
 
 const ButtonContacCenter = () => {
+
+    const [openModal, setOpenModal] = React.useState(false);
+
+    const isMobile = window.innerWidth <= 768;
+
+    const handleBannerClick = () => {
+        if (window.innerWidth <= 768) {
+            window.location.href = 'tel:08003480003';
+        } else {
+            setOpenModal(true);
+        }
+    };
+
+    const handleWhatsAppClick = () => {
+        const whatsappURL = 'https://wa.link/64zdo9';
+        window.open(whatsappURL, '_blank');
+    };
     return (
         <>
             <div className="main__container__bodyLading__button">
@@ -91,22 +108,7 @@ const ButtonContacCenter = () => {
 }
 
 const BodyLanding = () => {
-    const [openModal, setOpenModal] = React.useState(false);
 
-    const isMobile = window.innerWidth <= 768;
-
-    const handleBannerClick = () => {
-        if (window.innerWidth <= 768) {
-            window.location.href = 'tel:08003480003';
-        } else {
-            setOpenModal(true);
-        }
-    };
-
-    const handleWhatsAppClick = () => {
-        const whatsappURL = 'https://wa.link/64zdo9';
-        window.open(whatsappURL, '_blank');
-    };
     return (
         <div className="main__container__bodyLading">
             <div className="main__container__bodyLading__text__button">
