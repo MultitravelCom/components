@@ -50,6 +50,9 @@
 }
 
 @media (max-width: 767px) {
+    .main__conteiner.main__conteiner-principal {
+        margin: 20px auto;
+    }
 
     .main__container__bodyLading,
     .main__container__buttonsCars {
@@ -61,5 +64,9 @@
         width: 91%;
         margin: 3px auto;
         left: inherit;
+    }
+
+    .main__container__buttonsCars {
+        bottom: 32px;
     }
 }
