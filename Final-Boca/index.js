@@ -105,8 +105,6 @@ const ButtonContacCenter = () => {
 }
 
 const BodyLanding = ({ isMobile }) => {
-    const isMobileButton = window.innerWidth <= 768;
-
     const handleOpenForm = (formId) => {
         setSelectedFormId(formId);
         setIsFormVisible(true);
@@ -154,7 +152,7 @@ const BodyLanding = ({ isMobile }) => {
                     />
                 </picture>
             </div>
-            {isMobileButton ? null : <ButtonContacCenter onContactClick={handleOpenForm} />}
+            {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} />}
         </div>
     )
 }
