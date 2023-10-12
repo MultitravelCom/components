@@ -14,7 +14,7 @@
 }
 
 .main__container__bodyLading__image {
-    width: 834px;
+    max-width: 834px;
     height: 376px;
     border-radius: 16px;
     overflow: hidden;
@@ -39,7 +39,7 @@
 }
 
 .main__container__buttonsCars {
-    bottom: inherit;
+    position: inherit;
 }
 
 @media (max-width: 767px) {
