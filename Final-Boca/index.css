@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 32px;
 }
 
 .main__container__bodyLading__button {
@@ -35,4 +36,14 @@
     font-weight: 800;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.main__container__buttonsCars {
+    bottom: inherit;
+}
+
+@media (max-width: 767px) {
+    .main__container__bodyLading {
+        flex-direction: column;
+    }
 }
