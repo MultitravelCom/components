@@ -109,9 +109,6 @@ const BodyLanding = ({ isMobile }) => {
 
     return (
         <div className="main__container__bodyLading">
-            <div className="main__container__bodyLading__text__button">
-                {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} /> }
-            </div>
             <div className="main__container__bodyLading__image">
                 <picture>
                     <source
@@ -132,6 +129,9 @@ const BodyLanding = ({ isMobile }) => {
                         alt="Imagen banner promociones"
                     />
                 </picture>
+            </div>
+            <div className="main__container__bodyLading__text__button">
+                {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} /> }
             </div>
             {isMobile ? <ButtonContacCenter onContactClick={handleOpenForm} /> : null }
         </div>

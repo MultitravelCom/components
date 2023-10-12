@@ -46,7 +46,7 @@
 
 .main__container__bodyLading__text__button {
     position: absolute;
-    bottom: 0;
+    bottom: 26px;
 }
 
 @media (max-width: 767px) {
