@@ -76,14 +76,12 @@ const BodyLanding = () => {
                     <div className="main__container__buttonsCars">
                         <>
                             <ButtonLading
-                                id={destino.title}
                                 className="btn_Whatsapp"
                                 text="Whatsapp"
                                 onClick={handleWhatsAppClick}
                                 svgType="whatsapp"
                             />
                             <ButtonLading
-                                id={destino.id}
                                 className="classOpenModal"
                                 text="Llamar"
                                 onClick={handleBannerClick}
