@@ -16,6 +16,8 @@
 
 .main__container__bodyLading__button {
     position: absolute;
+    bottom: 26px;
+    left: 25%;
 }
 
 .main__container__bodyLading__image {
@@ -48,20 +50,13 @@
     position: inherit;
 }
 
-.main__container__bodyLading__text__button {
-    position: absolute;
-    bottom: 26px;
-    left: 25%;
-}
-
 @media (max-width: 767px) {
-
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
     }
 
-    .main__container__bodyLading__text__button {
+    .main__container__bodyLading__button {
         width: 91%;
         margin: auto;
         left: inherit;
