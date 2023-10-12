@@ -67,6 +67,7 @@ const Loader = () => {
 const BodyLanding = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
+    const isMobile = window.innerWidth <= 768;
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
@@ -84,8 +85,14 @@ const BodyLanding = () => {
         <div className="main__container__bodyLading">
             <div className="main__container__bodyLading__text__button">
                 <div className="main__container__bodyLading__text">
-                    <h4>VIAJÁ A LA</h4>
-                    <h1>FINAL</h1>
+                    {isMobile ? (
+                        <h4>VIAJÁ A LA FINAL</h4>
+                    ) : (
+                        <>
+                            <h4>VIAJÁ A LA </h4>
+                            <h1>FINAL</h1>
+                        </>
+                    )}
                 </div>
                 <div className="main__container__bodyLading__button">
                     <div className="main__container__buttonsCars">
