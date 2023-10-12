@@ -8,10 +8,14 @@
     justify-content: center;
     gap: 32px;
     position: relative;
+    max-width: 834px;
+    min-height: 243px;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .main__container__bodyLading__button {
-    position: relative;
+    position: absolute;
 }
 
 .main__container__bodyLading__image {
@@ -51,8 +55,15 @@
 }
 
 @media (max-width: 767px) {
+
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
+    }
+
+    .main__container__bodyLading__text__button {
+        width: 91%;
+        margin: auto;
+        left: inherit;
     }
 }
