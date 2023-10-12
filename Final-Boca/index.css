@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     gap: 32px;
+    position: relative;
 }
 
 .main__container__bodyLading__button {
@@ -42,7 +43,13 @@
     position: inherit;
 }
 
+.main__container__bodyLading {
+    position: absolute;
+    bottom: 0;
+}
+
 @media (max-width: 767px) {
+
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
