@@ -19,6 +19,7 @@
     min-height: 243px;
     border-radius: 16px;
     overflow: hidden;
+    position: relative;
 }
 
 .main__container__bodyLading__text>h1 {
@@ -43,7 +44,7 @@
     position: inherit;
 }
 
-.main__container__bodyLading {
+.main__container__bodyLading__text__button {
     position: absolute;
     bottom: 0;
 }
