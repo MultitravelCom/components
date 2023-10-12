@@ -64,6 +64,32 @@ const Loader = () => {
     );
 };
 
+const ButtonContacCenter = () => {
+    return (
+        <>
+            <div className="main__container__bodyLading__button">
+                <div className="main__container__buttonsCars">
+                    <>
+                        <ButtonLading
+                            className="btn_Whatsapp"
+                            text="Whatsapp"
+                            onClick={handleWhatsAppClick}
+                            svgType="whatsapp"
+                        />
+                        <ButtonLading
+                            className="classOpenModal"
+                            text="Llamar"
+                            onClick={handleBannerClick}
+                            svgType="phone"
+                        />
+                    </>
+
+                </div>
+            </div>
+        </>
+    )
+}
+
 const BodyLanding = () => {
     const [openModal, setOpenModal] = React.useState(false);
 
@@ -94,25 +120,7 @@ const BodyLanding = () => {
                         </>
                     )}
                 </div>
-                <div className="main__container__bodyLading__button">
-                    <div className="main__container__buttonsCars">
-                        <>
-                            <ButtonLading
-                                className="btn_Whatsapp"
-                                text="Whatsapp"
-                                onClick={handleWhatsAppClick}
-                                svgType="whatsapp"
-                            />
-                            <ButtonLading
-                                className="classOpenModal"
-                                text="Llamar"
-                                onClick={handleBannerClick}
-                                svgType="phone"
-                            />
-                        </>
-
-                    </div>
-                </div>
+                <ButtonContacCenter />
             </div>
             <div className="main__container__bodyLading__image">
                 <picture>
@@ -141,6 +149,7 @@ const BodyLanding = () => {
                     />
                 </picture>
             </div>
+            <ButtonContacCenter />
         </div>
     )
 }
