@@ -113,16 +113,6 @@ const BodyLanding = ({ isMobile }) => {
     return (
         <div className="main__container__bodyLading">
             <div className="main__container__bodyLading__text__button">
-                <div className="main__container__bodyLading__text">
-                    {isMobile ? (
-                        <h4>VIAJÁ A LA FINAL</h4>
-                    ) : (
-                        <>
-                            <h4>VIAJÁ A LA </h4>
-                            <h1>FINAL</h1>
-                        </>
-                    )}
-                </div>
                 {isMobile ? null : <ButtonContacCenter onContactClick={handleOpenForm} /> }
             </div>
             <div className="main__container__bodyLading__image">
