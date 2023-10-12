@@ -53,6 +53,7 @@
     .main__container__bodyLading,
     .main__container__buttonsCars {
         flex-direction: column;
+        left: inherit;
     }
 
     .btn_Style_Venta_Per {
