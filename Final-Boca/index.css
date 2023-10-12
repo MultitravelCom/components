@@ -38,6 +38,10 @@
     text-transform: uppercase;
 }
 
+.btn_Style_Venta_Per{
+    justify-content: center;
+}
+
 @media (max-width: 767px) {
     .main__container__bodyLading,
     .main__container__buttonsCars {
