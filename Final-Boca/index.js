@@ -36,7 +36,7 @@ const Loader = () => {
 };
 
 const App = () => {
-    const [loaded, setLoaded] = React.useState(false);
+    const [loaded, setLoaded] = React.useState(true);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
 
     const handleOpenForm = (formId) => {
