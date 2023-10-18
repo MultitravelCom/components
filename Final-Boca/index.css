@@ -44,6 +44,7 @@
 }
 
 .main__container__buttonsCars {
+    width: 120px;
     bottom: 22px;
     justify-content: flex-start;
     left: 13%;

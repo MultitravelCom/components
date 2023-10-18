@@ -73,7 +73,7 @@ const ButtonContacCenter = () => {
     };
 
     const handleWhatsAppClick = () => {
-        const whatsappURL = 'https://wa.link/64zdo9';
+        const whatsappURL = 'https://wa.link/sjljhs';
         window.open(whatsappURL, '_blank');
     };
     return (
