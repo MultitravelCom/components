@@ -1,3 +1,11 @@
+// API
+async function getCouponsFetch() {
+    const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras');
+    const data = await res.json();
+    return data.cupones;
+}
+
+
 function makeScrollableContainer(containerSelector) {
     const container = document.querySelector(containerSelector);
     let isDragging = false;
@@ -90,7 +98,7 @@ async function changeText() {
 async function showPromocodesDiv() {
     // Espera a que el elemento exista antes de intentar mostrarlo
     while (true) {
-        const promocodesDiv = document.querySelector('.confirm-booking__promocodes');
+        const promocodesDiv = document.querySelector('');
         if (promocodesDiv) {
             promocodesDiv.style.display = 'block';
             break;
@@ -99,8 +107,19 @@ async function showPromocodesDiv() {
     }
 };
 // Funcion timer(para mostrar desde / hasta cierta fecha)
-const isWithinDateRange = (startDate, endDate) => {
+const isWithinDateRange = (data) => {
+    // Extraer las fechas de inicio y finalización de los datos de la API
+    const startDateStr = data.attributes.Desde;
+    const endDateStr = data.attributes.Hasta;
+
+    // Convertir las cadenas de fecha en objetos Date
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
+
+    // Obtener la fecha actual
     const currentDate = new Date();
+
+    // Comprobar si la fecha actual está dentro del rango
     return currentDate >= startDate && currentDate <= endDate;
 };
 
@@ -110,11 +129,6 @@ function ComponenteCupones() {
 
     const [couponsData, setCouponsData] = React.useState([]);
 
-    const getCouponsFetch = async () => {
-        const res = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/MULT205/cuponesDB.json');
-        const data = await res.json();
-        return data.cupones;
-    }
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -126,7 +140,7 @@ function ComponenteCupones() {
 
     return (
         <>
-            {couponsData.map(({ id, title, description, duration, cupon }) => (
+            {couponsData.map(({ id, attributes: { title, description, duration, Cupon } }) => (
                 < div className="modal__content-uno" key={id}>
                     <div className="modal__content-uno-title">
                         <div className="modal__content-uno-logo">
@@ -151,8 +165,8 @@ function ComponenteCupones() {
                             </div>
                         </div>
                         <div className="modal__content-cupon">
-                            <h2>{cupon}</h2>
-                            <CardCuponButton textToCopy={cupon} />
+                            <h2>{Cupon}</h2>
+                            <CardCuponButton textToCopy={Cupon} />
                         </div>
                     </div>
                 </div >
@@ -162,11 +176,7 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-
-    const startDate = new Date(2023, 7, 27, 22, 0); // 27 de Agosto a las 23:30
-    const endDate = new Date(2023, 8, 8, 23, 30);   // 2 de Septiembre a las 23:30
-    const shouldShowCupones = isWithinDateRange(startDate, endDate);
-
+    const [shouldShowCupones, setShouldShowCupones] = React.useState(false);
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -189,6 +199,15 @@ const ModalCupones = ({ isOpen, onClose }) => {
             const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
             makeScrollableContainer(containerSelector);
         }
+
+        const fetchData = async () => {
+            const data = await getCouponsFetch();
+            const shouldShow = data.some((coupon) => isWithinDateRange(coupon.attributes));
+            console.log('shouldShowCupones ------>>', shouldShow);
+            setShouldShowCupones(shouldShow);
+        };
+
+        fetchData();
 
         document.addEventListener('keydown', handleKeyDown);
 
