@@ -162,9 +162,9 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
-    const [shouldShowCupones, setShouldShowCupones] = useState(false);
+    const [startDate, setStartDate] = React.useState(null);
+    const [endDate, setEndDate] =  React.useState(null);
+    const [shouldShowCupones, setShouldShowCupones] =  React.useState(false);
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
