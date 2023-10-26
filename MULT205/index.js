@@ -1,6 +1,7 @@
 const getCouponsFetch = async () => {
     const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras');
     const data = await res.json();
+    console.log("---DATA ---->", data)
     return data.data;
 }
 
@@ -37,7 +38,7 @@ function movePromoCodesContainer() {
 // movePromoCodesContainer();
 
 function toggleWhatsappDisplayStyle(isOpen) {
-    const whatsappSelector = document.querySelector('.');
+    const whatsappSelector = document.querySelector('.whatsAppFixes');
     if (whatsappSelector) {
         whatsappSelector.style.display = isOpen ? 'none' : 'block';
     }
@@ -125,7 +126,7 @@ function ComponenteCupones() {
 
     return (
         <>
-            {couponsData.map(({ id, title, description, duration, Cupon, Desde, Hasta }) => (
+            {couponsData.map(({ id, title, description, duration, Cupon }) => (
                 < div className="modal__content-uno" key={id}>
                     <div className="modal__content-uno-title">
                         <div className="modal__content-uno-logo">
@@ -138,20 +139,20 @@ function ComponenteCupones() {
                         </div>
                         <div className="modal__content-title-circleCalendar">
                             <div className="modal__content-title-h3">
-                                <h2>{title}</h2>
+                                <h2>{attributes.title}</h2>
                             </div>
                             <div className="modal__content-title-circle">
                                 <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                <p>{description}</p>
+                                <p>{attributes.description}</p>
                             </div>
                             <div className="modal__content-title-calendar">
                                 <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
-                                <p>{duration}</p>
+                                <p>{attributes.duration}</p>
                             </div>
                         </div>
                         <div className="modal__content-cupon">
-                            <h2>{Cupon}</h2>
-                            <CardCuponButton textToCopy={Cupon} />
+                            <h2>{attributes.Cupon}</h2>
+                            <CardCuponButton textToCopy={attributes.Cupon} />
                         </div>
                     </div>
                 </div >
@@ -161,11 +162,9 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-
-    const startDate = new Date(2023, 7, 27, 22, 0); // 27 de Agosto a las 23:30
-    const endDate = new Date(2023, 8, 8, 23, 30);   // 2 de Septiembre a las 23:30
-    const shouldShowCupones = isWithinDateRange(startDate, endDate);
-
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    const [shouldShowCupones, setShouldShowCupones] = useState(false);
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -184,17 +183,28 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
+        const fetchData = async () => {
+            const data = await getCouponsFetch();
+            setStartDate(new Date(data.attributes.startDate));
+            setEndDate(new Date(data.attributes.endDate));
+        };
+
         if (isOpen) {
+            fetchData();
             const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
             makeScrollableContainer(containerSelector);
         }
 
         document.addEventListener('keydown', handleKeyDown);
 
+        const currentDate = new Date();
+        const showCupones = currentDate >= startDate && currentDate <= endDate;
+        setShouldShowCupones(showCupones);
+
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isOpen]);
+    }, [isOpen, startDate, endDate]);
 
     return (
 
