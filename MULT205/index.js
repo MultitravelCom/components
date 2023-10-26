@@ -207,6 +207,8 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
         const currentDate = new Date();
         const showCupones = currentDate >= startDate && currentDate <= endDate;
+        console.log('currentDate:', currentDate);
+        console.log('showCupones:', showCupones);
         setShouldShowCupones(showCupones);
 
         return () => {
