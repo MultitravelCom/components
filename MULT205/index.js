@@ -31,7 +31,7 @@ function movePromoCodesContainer() {
 // movePromoCodesContainer();
 
 function toggleWhatsappDisplayStyle(isOpen) {
-    const whatsappSelector = document.querySelector('.');
+    const whatsappSelector = document.querySelector('.whatsAppFixes');
     if (whatsappSelector) {
         whatsappSelector.style.display = isOpen ? 'none' : 'block';
     }
@@ -105,7 +105,7 @@ const isWithinDateRange = (startDate, endDate) => {
 };
 // *************************** FETCH *********************************
 const getCouponsFetch = async () => {
-    const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras');
+    const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras?populate=*');
     const data = await res.json();
     return data.data;
 }
@@ -166,7 +166,7 @@ function ComponenteCupones() {
 const ModalCupones = ({ isOpen, onClose }) => {
 
     const startDate = new Date(2023, 7, 27, 22, 0); // 27 de Agosto a las 23:30
-    const endDate = new Date(2023, 8, 8, 23, 30);   // 2 de Septiembre a las 23:30
+    const endDate = new Date(2023, 30, 8, 23, 30);   // 2 de Septiembre a las 23:30
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
 
