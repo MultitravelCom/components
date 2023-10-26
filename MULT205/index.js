@@ -119,7 +119,7 @@ function ComponenteCupones() {
     React.useEffect(() => {
         const fetchData = async () => {
             const data = await getCouponsFetch();
-            setCouponsData(data);
+            setCouponsData(data.data[0].attributes);
         };
         fetchData();
     }, []);
@@ -189,8 +189,8 @@ const ModalCupones = ({ isOpen, onClose }) => {
     React.useEffect(() => {
         const fetchData = async () => {
             const data = await getCouponsFetch();
-            const startDateValue = new Date(data.attributes.startDate);
-            const endDateValue = new Date(data.attributes.endDate);
+            const startDateValue = new Date(data[0].attributes.startDate);
+            const endDateValue = new Date(data[0].attributes.endDate);
             console.log('startDate:', startDateValue);
             console.log('endDate:', endDateValue);
             setStartDate(startDateValue);
