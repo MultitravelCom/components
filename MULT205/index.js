@@ -98,7 +98,7 @@ async function changeText() {
 async function showPromocodesDiv() {
     // Espera a que el elemento exista antes de intentar mostrarlo
     while (true) {
-        const promocodesDiv = document.querySelector('');
+        const promocodesDiv = document.querySelector('.confirm-booking__promocodes');
         if (promocodesDiv) {
             promocodesDiv.style.display = 'block';
             break;
@@ -195,10 +195,10 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-        // if (isOpen) {
-        //     const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
-        //     makeScrollableContainer(containerSelector);
-        // }
+        if (isOpen) {
+            const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
+            makeScrollableContainer(containerSelector);
+        }
 
         const fetchData = async () => {
             const data = await getCouponsFetch();
