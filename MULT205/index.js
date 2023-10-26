@@ -1,3 +1,9 @@
+const getCouponsFetch = async () => {
+    const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras');
+    const data = await res.json();
+    return data.data;
+}
+
 function makeScrollableContainer(containerSelector) {
     const container = document.querySelector(containerSelector);
     let isDragging = false;
@@ -107,14 +113,7 @@ const isWithinDateRange = (startDate, endDate) => {
 // ************************* Componentes *******************************
 // Cupones
 function ComponenteCupones() {
-
     const [couponsData, setCouponsData] = React.useState([]);
-
-    const getCouponsFetch = async () => {
-        const res = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/MULT205/cuponesDB.json');
-        const data = await res.json();
-        return data.cupones;
-    }
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -126,7 +125,7 @@ function ComponenteCupones() {
 
     return (
         <>
-            {couponsData.map(({ id, title, description, duration, cupon }) => (
+            {couponsData.map(({ id, title, description, duration, Cupon, Desde, Hasta }) => (
                 < div className="modal__content-uno" key={id}>
                     <div className="modal__content-uno-title">
                         <div className="modal__content-uno-logo">
@@ -151,8 +150,8 @@ function ComponenteCupones() {
                             </div>
                         </div>
                         <div className="modal__content-cupon">
-                            <h2>{cupon}</h2>
-                            <CardCuponButton textToCopy={cupon} />
+                            <h2>{Cupon}</h2>
+                            <CardCuponButton textToCopy={Cupon} />
                         </div>
                     </div>
                 </div >
