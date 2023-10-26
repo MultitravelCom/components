@@ -2,7 +2,8 @@
 async function getCouponsFetch() {
     const res = await fetch('https://strapicontent.apimultitravel.com/api/cuponeras');
     const data = await res.json();
-    return data.cupones;
+    console.log("------------------>", data )
+    return data;
 }
 
 
