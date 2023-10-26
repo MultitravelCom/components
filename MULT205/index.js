@@ -203,11 +203,13 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
         const fetchData = async () => {
             const data = await getCouponsFetch();
+            console.log('fetchData se está ejecutando.');
+            console.log('Datos de fetchData:', data);
             const shouldShow = data.some((coupon) => isWithinDateRange(coupon.attributes));
             console.log('shouldShowCupones ------>>', shouldShow);
             setShouldShowCupones(shouldShow);
         };
-
+    
         fetchData();
 
         document.addEventListener('keydown', handleKeyDown);
