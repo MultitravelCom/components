@@ -168,7 +168,7 @@ function ComponenteCupones() {
 const ModalCupones = ({ isOpen, onClose }) => {
     const [startDate, setStartDate] = React.useState(null);
     const [endDate, setEndDate] = React.useState(null);
-    const [shouldShowCupones, setShouldShowCupones] = React.useState(false);
+    const [shouldShowCupones, setShouldShowCupones] = React.useState(true);
 
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
@@ -189,8 +189,12 @@ const ModalCupones = ({ isOpen, onClose }) => {
     React.useEffect(() => {
         const fetchData = async () => {
             const data = await getCouponsFetch();
-            setStartDate(new Date(data.attributes.startDate));
-            setEndDate(new Date(data.attributes.endDate));
+            const startDateValue = new Date(data.attributes.startDate);
+            const endDateValue = new Date(data.attributes.endDate);
+            console.log('startDate:', startDateValue);
+            console.log('endDate:', endDateValue);
+            setStartDate(startDateValue);
+            setEndDate(endDateValue);
         };
 
         if (isOpen) {
