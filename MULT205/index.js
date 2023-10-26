@@ -39,7 +39,7 @@ function movePromoCodesContainer() {
 // movePromoCodesContainer();
 
 function toggleWhatsappDisplayStyle(isOpen) {
-    const whatsappSelector = document.querySelector('.');
+    const whatsappSelector = document.querySelector('.confirm-booking__promocodes');
     if (whatsappSelector) {
         whatsappSelector.style.display = isOpen ? 'none' : 'block';
     }
