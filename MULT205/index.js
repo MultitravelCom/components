@@ -195,10 +195,10 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-        if (isOpen) {
-            const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
-            makeScrollableContainer(containerSelector);
-        }
+        // if (isOpen) {
+        //     const containerSelector = '.modal-content__cupones-row'; // Selector del contenedor con los cupones
+        //     makeScrollableContainer(containerSelector);
+        // }
 
         const fetchData = async () => {
             const data = await getCouponsFetch();
