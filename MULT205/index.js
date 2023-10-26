@@ -166,8 +166,6 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-    const [startDate, setStartDate] = React.useState(null);
-    const [endDate, setEndDate] = React.useState(null);
     const [shouldShowCupones, setShouldShowCupones] = React.useState(true);
 
     const handleOutsideClick = (event) => {
@@ -187,15 +185,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
     };
 
     React.useEffect(() => {
-        const fetchData = async () => {
-            const data = await getCouponsFetch();
-            const startDateValue = new Date(data[0].attributes.startDate);
-            const endDateValue = new Date(data[0].attributes.endDate);
-            console.log('startDate:', startDateValue);
-            console.log('endDate:', endDateValue);
-            setStartDate(startDateValue);
-            setEndDate(endDateValue);
-        };
 
         if (isOpen) {
             fetchData();
@@ -205,16 +194,10 @@ const ModalCupones = ({ isOpen, onClose }) => {
 
         document.addEventListener('keydown', handleKeyDown);
 
-        const currentDate = new Date();
-        const showCupones = currentDate >= startDate && currentDate <= endDate;
-        console.log('currentDate:', currentDate);
-        console.log('showCupones:', showCupones);
-        setShouldShowCupones(showCupones);
-
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isOpen, startDate, endDate]);
+    }, [isOpen]);
 
     return (
 
