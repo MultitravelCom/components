@@ -126,9 +126,15 @@ function ComponenteCupones() {
         fetchData();
     }, []);
 
+    const filteredCoupons = couponsData.filter((item) => {
+        const startDate = new Date(item.attributes.Desde);
+        const endDate = new Date(item.attributes.Hasta);
+        return isWithinDateRange(startDate, endDate);
+    });
+
     return (
         <>
-            {couponsData.map(item => {
+            {filteredCoupons.map(item => {
                 const { id, attributes } = item;
                 const { title, description, duration, Cupon } = attributes;
 
@@ -169,10 +175,8 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-
-    const startDate = new Date(2023, 7, 27, 22, 0); // 27 de Agosto a las 23:30
-    const endDate = new Date(2023, 30, 8, 23, 30);   // 2 de Septiembre a las 23:30
-    const shouldShowCupones = isWithinDateRange(startDate, endDate);
+    const [startDate, setStartDate] = React.useState(null);
+    const [endDate, setEndDate] = React.useState(null);
 
 
     const handleOutsideClick = (event) => {
@@ -203,6 +207,26 @@ const ModalCupones = ({ isOpen, onClose }) => {
             document.removeEventListener('keydown', handleKeyDown);
         };
     }, [isOpen]);
+
+    React.useEffect(() => {
+        const fetchDates = async () => {
+            try {
+                const data = await getCouponsFetch();
+                if (data && data.data && data.data.length > 0) {
+                    const firstCoupon = data.data[0].attributes;
+                    setStartDate(new Date(firstCoupon.Desde));
+                    setEndDate(new Date(firstCoupon.Hasta));
+                }
+            } catch (error) {
+                console.error('Error al obtener las fechas de los cupones:', error);
+            }
+        };
+
+        fetchDates();
+    }, []);
+
+    const shouldShowCupones = startDate && endDate ? isWithinDateRange(startDate, endDate) : false;
+
 
     return (
 
