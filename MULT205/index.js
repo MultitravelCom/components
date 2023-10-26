@@ -113,18 +113,28 @@ const getCouponsFetch = async () => {
 // Cupones
 function ComponenteCupones() {
     const [couponsData, setCouponsData] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
         const fetchData = async () => {
-            const result = await getCouponsFetch();
-            if (result.data.length > 0) {
-                const data = result.data;
-                setCouponsData(data);
-                console.log("Datos en couponsData:", data);
+            try {
+                const result = await getCouponsFetch();
+                if (result.data.length > 0) {
+                    const data = result.data;
+                    setCouponsData(data);
+                    console.log("Datos en couponsData:", data);
+                }
+            } finally {
+                setLoading(false);
             }
         };
         fetchData();
     }, []);
+
+    if (loading) {
+        // Mostrar un loader mientras se cargan los datos
+        return <span>Cargando cupones de descuento...</span>;
+    }
 
     const filteredCoupons = couponsData.filter((item) => {
         const startDate = new Date(item.attributes.Desde);
