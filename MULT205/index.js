@@ -132,6 +132,10 @@ function ComponenteCupones() {
         return isWithinDateRange(startDate, endDate);
     });
 
+    if (filteredCoupons.length === 0) {
+        return <span>Sin cupones por el momento</span>;
+    }
+
     return (
         <>
             {filteredCoupons.map(item => {
@@ -175,10 +179,6 @@ function ComponenteCupones() {
 };
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
-    const [startDate, setStartDate] = React.useState(null);
-    const [endDate, setEndDate] = React.useState(null);
-
-
     const handleOutsideClick = (event) => {
         if (event.target.classList.contains('overlay__cupones')) {
             onClose();
@@ -208,26 +208,6 @@ const ModalCupones = ({ isOpen, onClose }) => {
         };
     }, [isOpen]);
 
-    React.useEffect(() => {
-        const fetchDates = async () => {
-            try {
-                const data = await getCouponsFetch();
-                if (data && data.data && data.data.length > 0) {
-                    const firstCoupon = data.data[0].attributes;
-                    setStartDate(new Date(firstCoupon.Desde));
-                    setEndDate(new Date(firstCoupon.Hasta));
-                }
-            } catch (error) {
-                console.error('Error al obtener las fechas de los cupones:', error);
-            }
-        };
-
-        fetchDates();
-    }, []);
-
-    const shouldShowCupones = startDate && endDate ? isWithinDateRange(startDate, endDate) : false;
-
-
     return (
 
         <div className="overlay__cupones" id="overlay__cupones" onClick={handleOutsideClick} onKeyDown={handleKeyDown} tabIndex={-1}>
@@ -238,7 +218,7 @@ const ModalCupones = ({ isOpen, onClose }) => {
                         <span className="close-modal-cupon" onClick={onClose}>X</span>
                     </div>
                     <div className="row modal-content__cupones-row">
-                        {shouldShowCupones ? <ComponenteCupones /> : <span>No hay cupones disponibles.</span>}
+                        <ComponenteCupones />
                     </div>
                 </div>
             </div>
