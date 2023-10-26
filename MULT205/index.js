@@ -141,20 +141,20 @@ function ComponenteCupones() {
                             </div>
                             <div className="modal__content-title-circleCalendar">
                                 <div className="modal__content-title-h3">
-                                    <h2>{attributes.title}</h2>
+                                    <h2>{title}</h2>
                                 </div>
                                 <div className="modal__content-title-circle">
                                     <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                    <p>{attributes.description}</p>
+                                    <p>{description}</p>
                                 </div>
                                 <div className="modal__content-title-calendar">
                                     <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
-                                    <p>{attributes.duration}</p>
+                                    <p>{duration}</p>
                                 </div>
                             </div>
                             <div className="modal__content-cupon">
-                                <h2>{attributes.Cupon}</h2>
-                                <CardCuponButton textToCopy={attributes.Cupon} />
+                                <h2>{Cupon}</h2>
+                                <CardCuponButton textToCopy={Cupon} />
                             </div>
                         </div>
                     </div >
