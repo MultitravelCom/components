@@ -128,7 +128,7 @@ function ComponenteCupones() {
 
     return (
         <>
-            {couponsData.map(({ id, title, description, duration, Cupon }) => (
+            {couponsData.data.map(({ id, title, description, duration, Cupon }) => (
                 < div className="modal__content-uno" key={id}>
                     <div className="modal__content-uno-title">
                         <div className="modal__content-uno-logo">
