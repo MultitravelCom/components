@@ -120,7 +120,7 @@ const btnStyles = [
     { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
     { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
     { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Cana - Alojamientos Punta Cana', destino: "PuntaCana" },
-    { carrusel: "carrusel__lista4", btnLeft: "btnLeft4", btnRight: "btnRight4", title: 'Paquetes Panamá - Alojamientos Panamá', destino: "Panama" },
+    { carrusel: "carrusel__lista4", btnLeft: "btnLeft4", btnRight: "btnRight4", title: 'Paquetes CUBA - Alojamiento CUBA', destino: "Panama" },
 ];
 
 // *****************************************************
