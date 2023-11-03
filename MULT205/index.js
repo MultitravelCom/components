@@ -150,7 +150,7 @@ function ComponenteCupones() {
         <>
             {filteredCoupons.map(item => {
                 const { id, attributes } = item;
-                const { titulo, descripcion, duracion, Cupon, Hasta } = attributes;
+                const { Titulo, Descripcion, duracion, Cupon, Hasta } = attributes;
 
                 return (
                     < div className="modal__content-uno" key={id}>
@@ -165,11 +165,11 @@ function ComponenteCupones() {
                             </div>
                             <div className="modal__content-title-circleCalendar">
                                 <div className="modal__content-title-h3">
-                                    <h2>{titulo}</h2>
+                                    <h2>{Titulo}</h2>
                                 </div>
                                 <div className="modal__content-title-circle">
                                     <div className="main__warningPric__icon glyphicon glyphicon-info-circle"></div>
-                                    <p>{descripcion}</p>
+                                    <p>{Descripcion}</p>
                                 </div>
                                 <div className="modal__content-title-calendar">
                                     <div className="main__warningPric__icon glyphicon glyphicon-calendar"></div>
