@@ -395,7 +395,7 @@
 }
 
 .confirm-booking__promocodes {
-  display: none;
+  display: flex;
   justify-content: space-between;
   padding: 6px 0 !important;
   border-radius: 8px;

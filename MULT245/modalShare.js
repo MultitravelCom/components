@@ -380,7 +380,6 @@ const BannerTopHotelResult = () => {
     // }
 
     React.useEffect(() => {
-    
         // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
         const updateEventActiveState = () => {
             const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
