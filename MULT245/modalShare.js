@@ -367,17 +367,17 @@ const BannerMensageCardApp = () => {
 
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
-    // const [modalOpen, setModalOpen] = React.useState(false);
+    const [modalOpen, setModalOpen] = React.useState(false);
 
-    // const handleOpenModal = () => {
-    //     setModalOpen(true);
-    //     toggleWhatsappDisplayStyle(true);
-    // };
+    const handleOpenModal = () => {
+        setModalOpen(true);
+        toggleWhatsappDisplayStyle(true);
+    };
 
-    // const handleCloseModal = () => {
-    //     setModalOpen(false);
-    //     toggleWhatsappDisplayStyle(false);
-    // }
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        toggleWhatsappDisplayStyle(false);
+    }
 
     React.useEffect(() => {
         // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
@@ -410,12 +410,12 @@ const BannerTopHotelResult = () => {
     
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'flex' : 'none',
+        display: isEventActive ? 'flex' : 'flex',
     };
 
     return (
         <>
-            <div className="main__container__bannerTopHotelResult" style={bannerStyleHotelResult} >
+            <div className="main__container__bannerTopHotelResult" style={bannerStyleHotelResult} onClick={handleOpenModal}>
                 <picture>
                     <source
                         media="(min-width: 1024px)"
@@ -437,7 +437,7 @@ const BannerTopHotelResult = () => {
                     />
                 </picture>
             </div>
-            {/* {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />} */}
+            {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
         </>
     );
 };
