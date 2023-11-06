@@ -289,7 +289,7 @@ function Pagos() {
 }
 
 const Redes = () => {
-
+    const [isImage1, setImage1] = React.useState(true);
     const [backgroundColor, setBackgroundColor] = React.useState("#2A91EB");
     const [text, setText] = React.useState({
         title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
@@ -303,6 +303,7 @@ const Redes = () => {
                 subtitle: "APROVECHÁ LAS PROMOS EXCLUSIVAS DEL CYBER MONDAY",
             });
             setBackgroundColor("#083257");
+            setImage1(!isImage1);
         } else {
             setText({
                 title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
@@ -316,11 +317,19 @@ const Redes = () => {
     return (
         <div className="main__container__redes" style={{ backgroundColor: backgroundColor }}>
             <div className="main__container__redes__img">
-                <img
-                    src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
-                    className="main__container__redes__img_left"
-                    alt="Imagen1"
-                />
+                {isImage1 ? (
+                    <img
+                        src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
+                        className="main__container__redes__img_left"
+                        alt="Imagen1"
+                    />
+                ) : (
+                    <img
+                        src="https://multitravelcom.github.io/components/MULT225/img/GirlCyberMonday.png"
+                        className="main__container__redes__img_left"
+                        alt="Imagen2"
+                    />
+                )}
             </div>
             <div className="main__container__redes__text">
                 <h2>{text.title}</h2>
