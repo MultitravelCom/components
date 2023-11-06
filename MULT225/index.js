@@ -314,7 +314,7 @@ const Redes = () => {
     const subtitleClassName = isWithinDateRange() ? "subTextColorCyber" : "textColorOriginal";
 
     return (
-        <div className="main__container__redes" style={backgroundColor}>
+        <div className="main__container__redes" style={{ backgroundColor: backgroundColor }}>
             <div className="main__container__redes__img">
                 <img
                     src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
