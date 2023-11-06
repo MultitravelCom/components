@@ -326,7 +326,7 @@ const Redes = () => {
                 ) : (
                     <img
                         src="https://multitravelcom.github.io/components/MULT225/img/GirlCyberMonday.png"
-                        className="main__container__redes__img_left"
+                        className="main__container__redes__img_left--event"
                         alt="Imagen2"
                     />
                 )}

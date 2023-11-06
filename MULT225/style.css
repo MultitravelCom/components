@@ -259,6 +259,13 @@
     height: 120px;
 }
 
+.main__container__redes__img_left--event {
+    bottom: 0px;
+    position: absolute;
+    left: 16px;
+    width: 100px;
+}
+
 .main__container_secciones {
     display: flex;
     margin-top: 1rem;
