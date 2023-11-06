@@ -313,7 +313,9 @@
 #home-top {
     margin-bottom: inherit !important;
 }
-.body.home.home--default .home-v5__searcher, .multi-searcher__content{
+
+.body.home.home--default .home-v5__searcher,
+.multi-searcher__content {
     background-color: #D3EAFF !important;
 }
 
@@ -328,6 +330,15 @@
     background: #F0F0F0 !important;
     padding: 2rem !important;
     border-radius: 0px 0px 80px 0px;
+}
+
+.textColorOriginal {
+    color: #FFFFFF;
+}
+
+/* CYBER */
+.subTextColorCyber {
+    color: #FF8DFA;
 }
 
 /* .home-row.home-v5.fix-margin {

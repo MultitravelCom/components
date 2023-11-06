@@ -18,6 +18,13 @@ function Button(props) {
     );
 }
 
+const isWithinDateRange = () => {
+    const currentDate = new Date();
+    const startDate = new Date("2023-11-06");
+    const endDate = new Date("2023-11-13");
+    return currentDate >= startDate && currentDate <= endDate;
+};
+
 // *************************************
 
 function ButtonTresSecciones(props) {
@@ -282,29 +289,32 @@ function Pagos() {
 }
 
 const Redes = () => {
-    const originalColor = '#2A91EB';
-    const specialColor = '#6D37D1';
 
-    const startDate = new Date(2023, 7, 27, 22);
-    const endDate = new Date(2023, 8, 2, 23);
-
-    const [backgroundColor, setBackgroundColor] = React.useState(originalColor);
+    const [backgroundColor, setBackgroundColor] = React.useState("#2A91EB");
+    const [text, setText] = React.useState({
+        title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
+        subtitle: "DESCUBRÍ ANTES QUE NADIE OFERTAS EXCLUSIVAS",
+    });
 
     React.useEffect(() => {
-        const currentDate = new Date();
-        const isWithinRange = currentDate >= startDate && currentDate <= endDate;
-
-        const color = isWithinRange ? specialColor : originalColor;
-
-        setBackgroundColor(color);
+        if (isWithinDateRange()) {
+            setText({
+                title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
+                subtitle: "APROVECHÁ LAS PROMOS EXCLUSIVAS DEL CYBER MONDAY",
+            });
+            setBackgroundColor("#083257");
+        } else {
+            setText({
+                title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
+                subtitle: "DESCUBRÍ ANTES QUE NADIE OFERTAS EXCLUSIVAS",
+            });
+        }
     }, []);
 
-    const redesStyle = {
-        backgroundColor: backgroundColor,
-    };
+    const subtitleClassName = isWithinDateRange() ? "subTextColorCyber" : "textColorOriginal";
 
     return (
-        <div className="main__container__redes" style={redesStyle}>
+        <div className="main__container__redes" style={backgroundColor}>
             <div className="main__container__redes__img">
                 <img
                     src="https://multitravelcom.github.io/components-ladings/img/Imagen1.png"
@@ -313,8 +323,8 @@ const Redes = () => {
                 />
             </div>
             <div className="main__container__redes__text">
-                <h2>¡SEGUINOS EN NUESTRAS REDES SOCIALES!</h2>
-                <p>DESCUBRÍ ANTES QUE NADIE OFERTAS EXCLUSIVAS</p>
+                <h2>{text.title}</h2>
+                <p className={subtitleClassName}>{text.subtitle}</p>
             </div>
             <div className="main__container__redes__img_right">
                 <div className="main__container__redes__img_right__fb redes__img_circle">
