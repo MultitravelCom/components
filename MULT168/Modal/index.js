@@ -46,6 +46,21 @@ function ButtonIngresar(props) {
     );
 }
 
+// CONEXION API STRAPI
+async function fetchDataFromAPI() {
+    try {
+        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/widget-atencion');
+        if (!response.ok) {
+            throw new Error('No se pudo obtener los datos de la API');
+        }
+        const responseData = await response.json();
+        return responseData;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 function ButtonModalLink(props) {
     const handleClick = (event) => {
         console.log("callToPhone:", props.callToPhone);
@@ -132,18 +147,18 @@ const Modal = ({ open, onClose }) => {
                         buttonText="Llamar"
                         callToPhone={true}
                     />
-                    {/* <ModalContactos
+                    <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
-                        ventasText="Posventa <span>11 4960 8454</span>"
+                        ventasText="Posventa <span>11 4979 1877</span>"
                         horarioClass="green"
-                        horarioText="Lunes a domingo las 24hs"
+                        horarioText="Lunes a viernes de 10 a 20 hs / Sábado de 10 a 15 hs"
                         diasClass="green"
-                        spanText="Escribí al whatsapp para que nuestros especialistas te ayuden."
+                        spanText=""
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/5s5eba"
                         buttonText="Enviar mensaje"
-                    /> */}
+                    />
                 </>
             );
         } else {
@@ -175,7 +190,7 @@ const Modal = ({ open, onClose }) => {
                         buttonLink="https://wa.link/64zdo9"
                         buttonText="Enviar mensaje"
                     /> */}
-                    {/* <ModalContactos
+                    <ModalContactos
                         iconModal="glyphicon-whatsapp-bottomless"
                         ventasClass="green"
                         ventasText="Posventa / Consultas <span>11 4979 1877</span>"
@@ -186,7 +201,7 @@ const Modal = ({ open, onClose }) => {
                         buttonStyle="btn_Style_Venta_Contactarme"
                         buttonLink="https://wa.link/5s5eba"
                         buttonText="Enviar mensaje"
-                    /> */}
+                    />
                 </>
             );
         }
