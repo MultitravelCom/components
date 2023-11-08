@@ -120,7 +120,7 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 };
 
 const Modal = ({ open, onClose }) => {
-    const [apiData, setApiData] = useState(null)
+    const [apiData, setApiData] = React.useState(null)
 
 
     const now = new Date();
