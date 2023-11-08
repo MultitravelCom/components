@@ -169,7 +169,7 @@ const Modal = ({ open, onClose }) => {
                             horarioText="Lunes a viernes de 10 a 20 hs"
                             diasText="Sábado de 10 a 15 hs"
                             diasClass="green"
-                            spanText=""
+                    
                             buttonStyle="btn_Style_Venta_Contactarme"
                             buttonLink="https://wa.link/5s5eba"
                             buttonText="Enviar mensaje"
