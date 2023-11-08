@@ -138,7 +138,7 @@ const Modal = ({ open, onClose }) => {
             });
     }, []);
     const shouldVentaTelefonica = apiData?.data?.attributes?.Venta_Telefonica;
-    const shouldContactoWhatsapp = apiData?.data?.attributes?.Venta_Telefonica;
+    const shouldContactoWhatsapp = apiData?.data?.attributes?.Contacto_Whatsapp;
 
     const renderModal = () => {
             return (
