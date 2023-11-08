@@ -152,7 +152,7 @@ const Modal = ({ open, onClose }) => {
                             horarioText="Lunes a viernes de 10 a 20 hs"
                             diasClass="blue"
                             diasText="Sábados de 10 a 15 hs"
-                            spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
+                           
                             buttonStyle="btn_Style_Venta_llamar"
                             buttonLink="08003480003"
                             buttonText="Llamar"
