@@ -162,7 +162,7 @@ const Modal = ({ open, onClose }) => {
                     }
                     {shouldContactoWhatsapp ? (
                         <ModalContactos
-                            iconModal="glyphicon-whatsapp-bottomless"
+                            iconModal="glyphicon-whatsapp-bottomless styleWaIconModal"
                             ventasClass="green"
                             ventasText="Posventa <span>11 4979 1877</span>"
                             horarioClass="green"
