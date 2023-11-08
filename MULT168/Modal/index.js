@@ -47,7 +47,7 @@ function ButtonIngresar(props) {
 }
 
 // CONEXION API STRAPI
-async function fetchDataFromAPI() {
+async function fetchDataWidgetFromAPI() {
     try {
         const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/widget-atencion');
         if (!response.ok) {
@@ -120,92 +120,63 @@ const ModalContactos = ({ ventasClass, ventasText, horarioClass, horarioText, di
 };
 
 const Modal = ({ open, onClose }) => {
+    const [apiData, setApiData] = useState(null)
+
 
     const now = new Date();
     const currentDay = now.getDay();
     const currentHour = now.getHours();
 
 
+    React.useEffect(() => {
+        fetchDataWidgetFromAPI()
+            .then((data) => {
+                setApiData(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+    const shouldVentaTelefonica = apiData?.data?.attributes?.Venta_Telefonica;
+    const shouldContactoWhatsapp = apiData?.data?.attributes?.Venta_Telefonica;
+
     const renderModal = () => {
-        if (
-            (currentDay >= 1 && currentDay <= 5 && currentHour >= 10 && currentHour < 20) ||
-            (currentDay === 6 && currentHour >= 10 && currentHour < 15)
-        ) {
             return (
                 <>
-                    <ModalContactos
-                        iconModal="glyphicon-phone stylePhoneIconModal"
-                        ventasClass="blue"
-                        ventasText="Ventas <span>0800 348 0003</span>"
-                        horarioClass="blue"
-                        horarioText="Lunes a viernes de 10 a 20 hs"
-                        diasClass="blue"
-                        diasText="Sábados de 10 a 15 hs"
-                        spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
-                        buttonStyle="btn_Style_Venta_llamar"
-                        buttonLink="08003480003"
-                        buttonText="Llamar"
-                        callToPhone={true}
-                    />
-                    <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
-                        ventasClass="green"
-                        ventasText="Posventa <span>11 4979 1877</span>"
-                        horarioClass="green"
-                        horarioText="Lunes a viernes de 10 a 20 hs"
-                        diasText="Sábado de 10 a 15 hs"
-                        diasClass="green"
-                        spanText=""
-                        buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/5s5eba"
-                        buttonText="Enviar mensaje"
-                    />
+                    {shouldVentaTelefonica ? (
+                        <ModalContactos
+                            iconModal="glyphicon-phone stylePhoneIconModal"
+                            ventasClass="blue"
+                            ventasText="Ventas <span>0800 348 0003</span>"
+                            horarioClass="blue"
+                            horarioText="Lunes a viernes de 10 a 20 hs"
+                            diasClass="blue"
+                            diasText="Sábados de 10 a 15 hs"
+                            spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
+                            buttonStyle="btn_Style_Venta_llamar"
+                            buttonLink="08003480003"
+                            buttonText="Llamar"
+                            callToPhone={true}
+                        />
+                    ) : null
+                    }
+                    {shouldContactoWhatsapp ? (
+                        <ModalContactos
+                            iconModal="glyphicon-whatsapp-bottomless"
+                            ventasClass="green"
+                            ventasText="Posventa <span>11 4979 1877</span>"
+                            horarioClass="green"
+                            horarioText="Lunes a viernes de 10 a 20 hs"
+                            diasText="Sábado de 10 a 15 hs"
+                            diasClass="green"
+                            spanText=""
+                            buttonStyle="btn_Style_Venta_Contactarme"
+                            buttonLink="https://wa.link/5s5eba"
+                            buttonText="Enviar mensaje"
+                        />
+                    ) : null}
                 </>
             );
-        } else {
-            return (
-                <>
-                    <ModalContactos
-                        iconModal="glyphicon-phone stylePhoneIconModal"
-                        ventasClass="blue"
-                        ventasText="Ventas <span>0800 348 0003</span>"
-                        horarioClass="blue"
-                        horarioText="Lunes a viernes de 10 a 20 hs"
-                        diasClass="blue"
-                        diasText="Sábados de 10 a 15 hs"
-                        spanText="Llamá al número en pantalla para que nuestros especialistas te asesoren con tu compra."
-                        buttonStyle="btn_Style_Venta_llamar"
-                        buttonLink="08003480003"
-                        buttonText="Llamar"
-                        callToPhone={true}
-                    />
-                    {/* <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless styleWaIconModal"
-                        ventasClass="green"
-                        ventasText="Consulta por ventas <span>11 4979 1877</span>"
-                        horarioClass="green"
-                        horarioText="Fuera de horario de venta telefónica"
-                        diasClass="green"
-                        spanText="Dejanos tu consulta y nos contactaremos en nuestro horario de atención."
-                        buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/64zdo9"
-                        buttonText="Enviar mensaje"
-                    /> */}
-                    <ModalContactos
-                        iconModal="glyphicon-whatsapp-bottomless"
-                        ventasClass="green"
-                        ventasText="Posventa / Consultas <span>11 4979 1877</span>"
-                        horarioClass="green"
-                        horarioText="Nuevo asistente virtual disponible"
-                        diasClass="green"
-                        spanText="Escribí al whatsapp que nuestro asistente virtual te indicara los pasos a seguir."
-                        buttonStyle="btn_Style_Venta_Contactarme"
-                        buttonLink="https://wa.link/5s5eba"
-                        buttonText="Enviar mensaje"
-                    />
-                </>
-            );
-        }
     };
 
     if (!open) return null;
@@ -235,7 +206,7 @@ const App = () => {
         const openModalButton = document.querySelector('.whatsAppFixes');
         const buttonIngresar = document.getElementById('container__widget');
         const openModalLading = document.querySelector('.classOpenModal, .btn_FormBitrix');
-        
+
         const handleButtonClick = () => {
             setOpenModal(true);
         };
@@ -243,7 +214,7 @@ const App = () => {
         function handleGlobalKeyPress(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
-                setOpenModal(false); 
+                setOpenModal(false);
             }
         }
 
