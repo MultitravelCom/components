@@ -79,7 +79,7 @@ async function fetchDataFromAPI() {
 
 async function fetchDataSwichWA() {
     try {
-        const response = await fetch('http://localhost:1337/api/landing-veranos');
+        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos');
         if (!response.ok) {
             throw new Error('No se pudo obtener los datos de la API');
         }
