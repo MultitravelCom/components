@@ -339,34 +339,47 @@ const Card = ({ destinos }) => {
         const fetchDataPrecio = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
-
+    
                 const prices = responseData.data.reduce((acc, item) => {
                     const destino = item.attributes.Destino;
-                    const card = item.attributes.Card;
-
+    
                     if (!acc[destino]) {
                         acc[destino] = {};
                     }
-
-                    if (!acc[destino][card]) {
-                        acc[destino][card] = [];
+    
+                    // Verificamos si hay datos en el array "Card"
+                    if (Array.isArray(item.attributes.Card)) {
+                        // Iteramos sobre cada elemento en "Card"
+                        item.attributes.Card.forEach(card => {
+                            const cardId = card.id;
+                            const cardTitle = card.Titulo_Card;
+                            const tarifaTemporadaBaja = card.Tarifa_Temporada_Baja;
+                            const tarifaTemporadaAlta = card.Tarifa_Temporada_Alta;
+    
+                            // Verificamos si ya existe una entrada para esta card
+                            if (!acc[destino][cardTitle]) {
+                                acc[destino][cardTitle] = [];
+                            }
+    
+                            // Agregamos las tarifas al array
+                            acc[destino][cardTitle].push({
+                                id: cardId,
+                                Tarifa_Temporada_Baja: tarifaTemporadaBaja,
+                                Tarifa_Temporada_Alta: tarifaTemporadaAlta
+                            });
+                        });
                     }
-
-                    acc[destino][card].push({
-                        Tarifa_Temporada_Alta: item.attributes.Tarifa_Temporada_Alta,
-                        Tarifa_Temporada_Baja: item.attributes.Tarifa_Temporada_Baja,
-                    });
-
+                    
                     return acc;
                 }, {});
+    
                 setPricesByDestino(prices);
                 setPricesLoaded(true);
             } catch (error) {
                 console.error(error);
             }
         };
-
-
+    
         fetchDataPrecio();
     }, []);
 
