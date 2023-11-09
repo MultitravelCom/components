@@ -457,7 +457,7 @@ const Card = ({ destinos }) => {
 
 };
 const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
-    const [btnStyles, setBtnStyles] = React.useState([]);
+    const [localBtnStyles, setLocalBtnStyles] = React.useState([]);
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
 
     const setupGlider = () => {
@@ -531,7 +531,7 @@ const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
               };
             });
     
-            setBtnStyles(nuevosBtnStyles);
+            setLocalBtnStyles(nuevosBtnStyles);
           } catch (error) {
             console.error(error);
           }
@@ -591,15 +591,9 @@ const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
 
 function App() {
     const [loaded, setLoaded] = React.useState(false);
-    // const [destinos, setDestinos] = React.useState([]);
     const [selectedFormId, setSelectedFormId] = React.useState(false);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
     const [btnStyles, setBtnStyles] = React.useState([]);
-
-    // const Cancun = filtrarDestinos(destinos, "Cancun");
-    // const PlayaDelCarmen = filtrarDestinos(destinos, 'PlayaDelCarmen');
-    // const PuntaCana = filtrarDestinos(destinos, 'PuntaCana');
-    // const Panama = filtrarDestinos(destinos, 'Panama');
 
     const handleOpenForm = (formId) => {
 
@@ -642,12 +636,6 @@ function App() {
         fetchData();
     }, []);
 
-    // React.useEffect(() => {
-    //     fetchDestinos().then(data => {
-    //         setDestinos(data.destinos);
-    //     });
-    // }, []);
-
     return (
         <>
             {!loaded && <Loader />}
@@ -666,11 +654,7 @@ function App() {
                         null
                     } */}
                     <div className="main__conteiner main__conteiner-principal container">
-                        {/* <div className="carrusel">
-                            <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={PlayaDelCarmen} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
-                        </div> */}
+                 
                         <div className="carrusel">
                             {btnStyles.map((btnStyle, index) => (
                                 <CardContainer
