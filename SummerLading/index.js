@@ -465,12 +465,9 @@ const Card = ({ destinos }) => {
     );
 
 };
-const CardContainer = ({ destinos, onContactClick }) => {
+const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
     const [btnStyles, setBtnStyles] = React.useState([]);
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
-
-    const destinosFiltrados = destinos.filter(destino => destino.destino === btnStyles.destino);
-
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
@@ -550,7 +547,7 @@ const CardContainer = ({ destinos, onContactClick }) => {
         };
     
         fetchData();
-      }, [destinos]);
+      }, []);
 
     React.useEffect(() => {
         const observer = new MutationObserver((mutations) => {
