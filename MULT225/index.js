@@ -99,7 +99,7 @@ function Ofertas() {
                             btn_link="https://www.multitravel.com/insurances/"
                         />
                         <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
+                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
                             boxs_ofertas_text="Asistencias"
                         />
                     </div>
@@ -128,7 +128,7 @@ function Ofertas() {
                             btn_link="https://www.multitravel.com/flights/"
                         />
                         <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
+                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
                             boxs_ofertas_text="Asistencias"
                             btn_link="https://www.multitravel.com/insurances/"
                         />
@@ -158,7 +158,7 @@ function Ofertas() {
                             btn_link="https://www.multitravel.com/flights/"
                         />
                         <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
+                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
                             boxs_ofertas_text="Asistencias"
                             btn_link="https://www.multitravel.com/insurances/"
                         />
