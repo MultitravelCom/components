@@ -92,20 +92,6 @@ async function fetchDataSwichWA() {
     }
 }
 
-// ************************************************
-// Filter
-// function filtrarDestinos(destinos, nombreDestino) {
-//     const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
-//     return destinosFiltrados;
-// }
-
-// const btnStyles = [
-//     { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
-//     { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
-//     { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Canel Alojamientos Punta Cana', destino: "PuntaCana" },
-// ];
-
-
 // *********************** BITRIX ******************
 // FormBitrix
 const BitrixFormComponent = ({ isVisible }) => {
