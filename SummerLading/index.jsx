@@ -450,7 +450,7 @@ const Card = ({ destinos }) => {
     );
 
 };
-const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
+const CardContainer = ({ destinosFiltrados, onContactClick }) => {
     const [btnStyles, setBtnStyles] = React.useState([]);
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
 
@@ -647,7 +647,6 @@ function App() {
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />
                             <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={PlayaDelCarmen} onContactClick={handleOpenForm} />
                             <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[3]} destinosFiltrados={Panama} onContactClick={handleOpenForm} />
                         </div>
                     </div>
                     {isFormVisible && (
