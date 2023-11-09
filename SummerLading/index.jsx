@@ -63,7 +63,6 @@ mostrarSeccion();
 
 // ***************************  Conexion a BD ***************************************
 
-
 async function fetchDataFromAPI() {
     try {
         const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-whatsapp');
@@ -80,7 +79,7 @@ async function fetchDataFromAPI() {
 
 async function fetchDataFromAPIPrice() {
     try {
-        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-caribes');
+        const response = await fetch('http://localhost:1337/api/landing-veranos?populate=*');
         if (!response.ok) {
             throw new Error('No se pudo obtener los datos de la API');
         }
@@ -100,12 +99,11 @@ function filtrarDestinos(destinos, nombreDestino) {
     return destinosFiltrados;
 }
 
-const btnStyles = [
-    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
-    { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
-    { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Cana - Alojamientos Punta Cana', destino: "PuntaCana" },
-    { carrusel: "carrusel__lista4", btnLeft: "btnLeft4", btnRight: "btnRight4", title: 'Paquetes CUBA - Alojamiento CUBA', destino: "Panama" },
-];
+// const btnStyles = [
+//     { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
+//     { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
+//     { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Canel Alojamientos Punta Cana', destino: "PuntaCana" },
+// ];
 
 // *********************** BITRIX ******************
 // FormBitrix
@@ -286,7 +284,6 @@ const Card = ({ destinos, onContactClick }) => {
     const [data, setData] = React.useState([]);
     const [pricesByDestino, setPricesByDestino] = React.useState({});
 
-
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
             window.location.href = 'tel:08003480003';
@@ -343,7 +340,7 @@ const Card = ({ destinos, onContactClick }) => {
 
                 const prices = responseData.data.reduce((acc, item) => {
                     const destino = item.attributes.Destino;
-                    const card = item.attributes.Card;
+                    const card = item.attributes.Card_N;
 
                     if (!acc[destino]) {
                         acc[destino] = {};
@@ -454,6 +451,7 @@ const Card = ({ destinos, onContactClick }) => {
 
 };
 const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
+    const [btnStyles, setBtnStyles] = React.useState([]);
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
 
     const setupGlider = () => {
@@ -509,6 +507,34 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
     };
 
     React.useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const responseData = await fetchDataFromAPIPrice();
+            const data = responseData.data || [];
+    
+            const nuevosBtnStyles = data.map(item => {
+              const id = item.id;
+              const tituloSeccion = item.attributes?.Titulo_Seccion;
+    
+              return {
+                carrusel: `carrusel__lista${id}`,
+                btnLeft: `btnLeft${id}`,
+                btnRight: `btnRight${id}`,
+                title: tituloSeccion || '',
+                destino: item.attributes?.Destino || '',
+              };
+            });
+    
+            setBtnStyles(nuevosBtnStyles);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+    React.useEffect(() => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
@@ -556,6 +582,7 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
         </>
     );
 };
+
 function App() {
     const [loaded, setLoaded] = React.useState(false);
     // const [destinos, setDestinos] = React.useState([]);
