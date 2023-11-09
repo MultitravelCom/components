@@ -326,38 +326,38 @@ const Card = ({ destinos }) => {
         const fetchDataPrecio = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
-    
+
                 const prices = responseData.data.reduce((acc, item) => {
                     const destino = item.attributes.Destino;
-    
+
                     if (!acc[destino]) {
                         acc[destino] = {};
                     }
-    
+
                     cardArray.forEach(card => {
                         const { id, Titulo_Card, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
-        
+
                         if (!acc[destino][Titulo_Card]) {
                             acc[destino][Titulo_Card] = [];
                         }
-        
+
                         acc[destino][Titulo_Card].push({
                             id,
                             Tarifa_Temporada_Baja,
                             Tarifa_Temporada_Alta
                         });
                     });
-                    
+
                     return acc;
                 }, {});
-    
+
                 setPricesByDestino(prices);
                 setPricesLoaded(true);
             } catch (error) {
                 console.error(error);
             }
         };
-    
+
         fetchDataPrecio();
     }, []);
 
@@ -443,7 +443,7 @@ const Card = ({ destinos }) => {
     );
 
 };
-const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
+const CardContainer = ({ btnStyles, destinosFiltrados }) => {
     const [localBtnStyles, setLocalBtnStyles] = React.useState([]);
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
 
@@ -501,33 +501,33 @@ const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
 
     React.useEffect(() => {
         const fetchData = async () => {
-          try {
-            const responseData = await fetchDataFromAPI();
-            const data = responseData.data || [];
-    
-            console.log("Data from API:", data);
-            
-            const nuevosBtnStyles = data.map(item => {
-              const id = item.id;
-              const tituloSeccion = item.attributes?.Titulo_Seccion;
-    
-              return {
-                carrusel: `carrusel__lista${id}`,
-                btnLeft: `btnLeft${id}`,
-                btnRight: `btnRight${id}`,
-                title: tituloSeccion || '',
-                destino: item.attributes?.Destino || '',
-              };
-            });
-    
-            setLocalBtnStyles(nuevosBtnStyles);
-          } catch (error) {
-            console.error(error);
-          }
+            try {
+                const responseData = await fetchDataFromAPI();
+                const data = responseData.data || [];
+
+                console.log("Data from API:", data);
+
+                const nuevosBtnStyles = data.map(item => {
+                    const id = item.id;
+                    const tituloSeccion = item.attributes?.Titulo_Seccion;
+
+                    return {
+                        carrusel: `carrusel__lista${id}`,
+                        btnLeft: `btnLeft${id}`,
+                        btnRight: `btnRight${id}`,
+                        title: tituloSeccion || '',
+                        destino: item.attributes?.Destino || '',
+                    };
+                });
+
+                setLocalBtnStyles(nuevosBtnStyles);
+            } catch (error) {
+                console.error(error);
+            }
         };
-    
+
         fetchData();
-      }, []);
+    }, []);
 
     React.useEffect(() => {
         const observer = new MutationObserver((mutations) => {
@@ -564,7 +564,7 @@ const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
                     <div className={carrusel} id={title}>
-                        <Card destinos={destinosFiltrados} onContactClick={onContactClick} />
+                        <Card destinos={destinosFiltrados || []} onContactClick={handleOpenForm} />
                     </div>
                     <button
                         aria-label="Siguiente"
@@ -643,7 +643,7 @@ function App() {
                         null
                     } */}
                     <div className="main__conteiner main__conteiner-principal container">
-                 
+
                         <div className="carrusel">
                             {btnStyles.map((btnStyle, index) => (
                                 <CardContainer
