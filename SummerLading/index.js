@@ -303,6 +303,7 @@ const Card = ({ destinos }) => {
                 console.log(error);
             });
     }, []);
+
     React.useEffect(() => {
         const fetchData = async () => {
             try {
@@ -504,6 +505,8 @@ const CardContainer = ({ btnStyles,destinosFiltrados, onContactClick }) => {
             const responseData = await fetchDataFromAPI();
             const data = responseData.data || [];
     
+            console.log("Data from API:", data);
+            
             const nuevosBtnStyles = data.map(item => {
               const id = item.id;
               const tituloSeccion = item.attributes?.Titulo_Seccion;
