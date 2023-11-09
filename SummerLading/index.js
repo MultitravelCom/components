@@ -347,28 +347,19 @@ const Card = ({ destinos }) => {
                         acc[destino] = {};
                     }
     
-                    // Verificamos si hay datos en el array "Card"
-                    if (Array.isArray(item.attributes.Card)) {
-                        // Iteramos sobre cada elemento en "Card"
-                        item.attributes.Card.forEach(card => {
-                            const cardId = card.id;
-                            const cardTitle = card.Titulo_Card;
-                            const tarifaTemporadaBaja = card.Tarifa_Temporada_Baja;
-                            const tarifaTemporadaAlta = card.Tarifa_Temporada_Alta;
-    
-                            // Verificamos si ya existe una entrada para esta card
-                            if (!acc[destino][cardTitle]) {
-                                acc[destino][cardTitle] = [];
-                            }
-    
-                            // Agregamos las tarifas al array
-                            acc[destino][cardTitle].push({
-                                id: cardId,
-                                Tarifa_Temporada_Baja: tarifaTemporadaBaja,
-                                Tarifa_Temporada_Alta: tarifaTemporadaAlta
-                            });
+                    cardArray.forEach(card => {
+                        const { id, Titulo_Card, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
+        
+                        if (!acc[destino][Titulo_Card]) {
+                            acc[destino][Titulo_Card] = [];
+                        }
+        
+                        acc[destino][Titulo_Card].push({
+                            id,
+                            Tarifa_Temporada_Baja,
+                            Tarifa_Temporada_Alta
                         });
-                    }
+                    });
                     
                     return acc;
                 }, {});
