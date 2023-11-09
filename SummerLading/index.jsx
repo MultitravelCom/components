@@ -275,7 +275,7 @@ const BannerTop = () => {
 //     )
 // }
 
-const Card = ({ destinos, onContactClick }) => {
+const Card = ({ destinos }) => {
     const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
     const [pricesLoaded, setPricesLoaded] = React.useState(false);
