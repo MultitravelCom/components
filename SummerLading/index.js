@@ -77,27 +77,27 @@ async function fetchDataFromAPI() {
     }
 }
 
-async function fetchDataFromAPIPrice() {
-    try {
-        const response = await fetch('http://localhost:1337/api/landing-veranos?populate=*');
-        if (!response.ok) {
-            throw new Error('No se pudo obtener los datos de la API');
-        }
-        const responseDataPrice = await response.json();
+// async function fetchDataFromAPIPrice() {
+//     try {
+//         const response = await fetch('http://localhost:1337/api/landing-veranos?populate=*');
+//         if (!response.ok) {
+//             throw new Error('No se pudo obtener los datos de la API');
+//         }
+//         const responseDataPrice = await response.json();
 
-        return responseDataPrice;
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-}
+//         return responseDataPrice;
+//     } catch (error) {
+//         console.error(error);
+//         throw error;
+//     }
+// }
 
 // ************************************************
 // Filter
-function filtrarDestinos(destinos, nombreDestino) {
-    const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
-    return destinosFiltrados;
-}
+// function filtrarDestinos(destinos, nombreDestino) {
+//     const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
+//     return destinosFiltrados;
+// }
 
 // const btnStyles = [
 //     { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
@@ -336,7 +336,7 @@ const Card = ({ destinos }) => {
     React.useEffect(() => {
         const fetchDataPrecio = async () => {
             try {
-                const responseData = await fetchDataFromAPIPrice();
+                const responseData = await fetchDataFromAPI();
 
                 const prices = responseData.data.reduce((acc, item) => {
                     const destino = item.attributes.Destino;
@@ -512,7 +512,7 @@ const CardContainer = ({ destinos, onContactClick }) => {
     React.useEffect(() => {
         const fetchData = async () => {
           try {
-            const responseData = await fetchDataFromAPIPrice();
+            const responseData = await fetchDataFromAPI();
             const data = responseData.data || [];
     
             const nuevosBtnStyles = data.map(item => {
@@ -612,7 +612,7 @@ function App() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const responseData = await fetchDataFromAPIPrice();
+                const responseData = await fetchDataFromAPI();
                 const data = responseData.data || [];
 
                 const nuevosBtnStyles = data.map(item => {
