@@ -65,7 +65,7 @@ mostrarSeccion();
 
 async function fetchDataFromAPI() {
     try {
-        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-whatsapp');
+        const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos?populate=*');
         if (!response.ok) {
             throw new Error('No se pudo obtener los datos de la API');
         }
@@ -588,11 +588,12 @@ function App() {
     // const [destinos, setDestinos] = React.useState([]);
     const [selectedFormId, setSelectedFormId] = React.useState(false);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
+    const [btnStyles, setBtnStyles] = React.useState([]);
 
-    const Cancun = filtrarDestinos(destinos, "Cancun");
-    const PlayaDelCarmen = filtrarDestinos(destinos, 'PlayaDelCarmen');
-    const PuntaCana = filtrarDestinos(destinos, 'PuntaCana');
-    const Panama = filtrarDestinos(destinos, 'Panama');
+    // const Cancun = filtrarDestinos(destinos, "Cancun");
+    // const PlayaDelCarmen = filtrarDestinos(destinos, 'PlayaDelCarmen');
+    // const PuntaCana = filtrarDestinos(destinos, 'PuntaCana');
+    // const Panama = filtrarDestinos(destinos, 'Panama');
 
     const handleOpenForm = (formId) => {
 
@@ -608,7 +609,23 @@ function App() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                await fetchDataFromAPI();
+                const responseData = await fetchDataFromAPIPrice();
+                const data = responseData.data || [];
+
+                const nuevosBtnStyles = data.map(item => {
+                    const id = item.id;
+                    const tituloSeccion = item.attributes?.Titulo_Seccion;
+
+                    return {
+                        carrusel: `carrusel__lista${id}`,
+                        btnLeft: `btnLeft${id}`,
+                        btnRight: `btnRight${id}`,
+                        title: tituloSeccion || '',
+                        destino: item.attributes?.Destino || '',
+                    };
+                });
+
+                setBtnStyles(nuevosBtnStyles);
                 setLoaded(true);
             } catch (error) {
                 console.error('Error al obtener datos:', error);
@@ -643,10 +660,20 @@ function App() {
                         null
                     } */}
                     <div className="main__conteiner main__conteiner-principal container">
-                        <div className="carrusel">
+                        {/* <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />
                             <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={PlayaDelCarmen} onContactClick={handleOpenForm} />
                             <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
+                        </div> */}
+                        <div className="carrusel">
+                            {btnStyles.map((btnStyle, index) => (
+                                <CardContainer
+                                    key={index}
+                                    btnStyles={btnStyle}
+                                    destinosFiltrados={filtrarDestinos(destinos, btnStyle.destino)}
+                                    onContactClick={handleOpenForm}
+                                />
+                            ))}
                         </div>
                     </div>
                     {isFormVisible && (
