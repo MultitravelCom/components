@@ -77,20 +77,20 @@ async function fetchDataFromAPI() {
     }
 }
 
-// async function fetchDataFromAPIPrice() {
-//     try {
-//         const response = await fetch('http://localhost:1337/api/landing-veranos?populate=*');
-//         if (!response.ok) {
-//             throw new Error('No se pudo obtener los datos de la API');
-//         }
-//         const responseDataPrice = await response.json();
+async function fetchDataSwichWA() {
+    try {
+        const response = await fetch('http://localhost:1337/api/landing-veranos');
+        if (!response.ok) {
+            throw new Error('No se pudo obtener los datos de la API');
+        }
+        const responseDataPrice = await response.json();
 
-//         return responseDataPrice;
-//     } catch (error) {
-//         console.error(error);
-//         throw error;
-//     }
-// }
+        return responseDataPrice;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
 
 // ************************************************
 // Filter
@@ -104,6 +104,7 @@ async function fetchDataFromAPI() {
 //     { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
 //     { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Canel Alojamientos Punta Cana', destino: "PuntaCana" },
 // ];
+
 
 // *********************** BITRIX ******************
 // FormBitrix
@@ -319,7 +320,7 @@ const Card = ({ destinos }) => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const responseData = await fetchDataFromAPI();
+                const responseData = await fetchDataSwichWA();
                 setData(responseData);
                 setLoaded(true);
 
@@ -333,6 +334,7 @@ const Card = ({ destinos }) => {
 
         fetchData();
     }, []);
+
     React.useEffect(() => {
         const fetchDataPrecio = async () => {
             try {
@@ -340,7 +342,7 @@ const Card = ({ destinos }) => {
 
                 const prices = responseData.data.reduce((acc, item) => {
                     const destino = item.attributes.Destino;
-                    const card = item.attributes.Card_N;
+                    const card = item.attributes.Card;
 
                     if (!acc[destino]) {
                         acc[destino] = {};
