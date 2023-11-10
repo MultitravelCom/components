@@ -381,9 +381,16 @@ const CardList = ({ cards, onContactClick, btnStyles }) => {
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
+    console.log("----AAAA-->", btnStyles)
+
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
         const btnRightElement = document.querySelector(`.${btnRight}`);
+
+        if (!btnLeftElement || !btnRightElement) {
+            console.error('No se encontraron elementos para los botones de Glider.');
+            return;
+        }
 
         btnLeftElement.addEventListener('click', function (event) {
             event.preventDefault();
