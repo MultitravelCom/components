@@ -369,8 +369,9 @@ const Card = ({ card, btnStyles }) => {
 };
 
 const CardList = ({ cards, onContactClick, btnStyles }) => {
+    const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
     return (
-        <div className="carrusel__contenedor">
+        <div className={carrusel}>
             {cards.map((card) => (
                 <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
             ))}
@@ -540,7 +541,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div className={carrusel}>
+                    <div>
                         <CardList cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
