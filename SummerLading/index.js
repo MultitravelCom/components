@@ -270,36 +270,36 @@ const Card = ({ cards, btnStyles }) => {
 
     const { title } = btnStyles || {};
 
-    // const handleBannerClick = () => {
-    //     if (window.innerWidth <= 768) {
-    //         window.location.href = 'tel:08003480003';
-    //     } else {
-    //         setOpenModal(true);
-    //     }
-    // };
+    const handleBannerClick = () => {
+        if (window.innerWidth <= 768) {
+            window.location.href = 'tel:08003480003';
+        } else {
+            setOpenModal(true);
+        }
+    };
 
-    // const handleWhatsAppClick = () => {
-    //     const whatsappURL = 'https://wa.link/64zdo9';
-    //     window.open(whatsappURL, '_blank');
-    // };
+    const handleWhatsAppClick = () => {
+        const whatsappURL = 'https://wa.link/64zdo9';
+        window.open(whatsappURL, '_blank');
+    };
 
-    // React.useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const responseData = await fetchDataSwichWA();
-    //             setData(responseData);
-    //             setLoaded(true);
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const responseData = await fetchDataSwichWA();
+                setData(responseData);
+             
 
-    //             setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
+                setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
 
-    //         } catch (error) {
-    //             setLoaded(true);
-    //             console.error(error);
-    //         }
-    //     };
+            } catch (error) {
+             
+                console.error(error);
+            }
+        };
 
-    //     fetchData();
-    // }, []);
+        fetchData();
+    }, []);
 
     return (
         <>
@@ -327,7 +327,7 @@ const Card = ({ cards, btnStyles }) => {
                                     <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
                                     <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
                                 </div>
-                                {/* <div className="main__container__buttonsCars">
+                                <div className="main__container__buttonsCars">
                                     {buttonSwitch === "A" ? (
                                         <>
                                             <ButtonLading
@@ -353,7 +353,7 @@ const Card = ({ cards, btnStyles }) => {
                                             onClick={handleBannerClick}
                                         />
                                     )}
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     ))
