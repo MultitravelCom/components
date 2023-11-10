@@ -479,7 +479,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div className={carrusel}>
+                    <div className={`test ${carrusel}`}>
                         <CardList cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
