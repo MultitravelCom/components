@@ -506,7 +506,7 @@ function App() {
                     const tituloSeccion = item.attributes?.Titulo_Seccion;
                     const cards = item.attributes?.Card || [];
 
-                    console.log("id---->", id)
+                    console.log("----cards.id---->", cards.id)
 
                     return {
                         carrusel: `carrusel__lista${id}`,
