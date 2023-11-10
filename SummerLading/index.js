@@ -262,13 +262,15 @@ const BannerTop = () => {
 //     )
 // }
 
-const Card = ({ destinos }) => {
+const Card = ({ card, id, btnStyles, onContactClick }) => {
     const [loaded, setLoaded] = React.useState(false);
-    const [pricesLoaded, setPricesLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
-    const [pricesByDestino, setPricesByDestino] = React.useState({});
+
+    const { title, btnLeft, btnRight, carrusel, destino } = btnStyles;
+    
+    console.log("Card id:", id);
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
@@ -304,14 +306,14 @@ const Card = ({ destinos }) => {
     return (
         <>
             {loaded ? (
-                <div key={destinos.id} className="carrusel__elemento">
+                <div className="carrusel__elemento">
                     <div
                         className="main__conteiner__s1__destacado__card uno"
                         style={{ height: "100%", width: "100%" }}
                     >
-                        {destinos.events === "si" && shouldShowEvent() && (
+                        {/* {destinos.events === "si" && shouldShowEvent() && (
                             <EventImg style="eventImg" />
-                        )}
+                        )} */}
                         <picture>
                             <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
                             />
@@ -462,7 +464,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     </button>
                     <div className={carrusel} id={title}>
                         {cards.map((card) => (
-                            <Card key={card.id} card={card} onContactClick={onContactClick} />
+                            <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles}/>
                         ))}
                     </div>
                     <button
@@ -507,7 +509,7 @@ function App() {
                     const cards = item.attributes?.Card || [];
 
                     console.log("id---->", id)
-                    
+
                     return {
                         carrusel: `carrusel__lista${id}`,
                         btnLeft: `btnLeft${id}`,
