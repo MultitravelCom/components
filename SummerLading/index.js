@@ -484,7 +484,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
                     <div className={carrusel} id={title}>
-                        <Card cards={cards} onContactClick={onContactClick} />
+                        {/* <Card cards={cards} onContactClick={onContactClick} /> */}
                     </div>
                     <button
                         aria-label="Siguiente"
