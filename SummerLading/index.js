@@ -424,16 +424,24 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     };
 
     React.useEffect(() => {
-        const carruselElement = document.querySelector(`.${carrusel}`);
-        console.log('Intentando observar el carrusel:', carruselElement);
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+                    setupGlider();
+                    observer.disconnect();
+                }
+            });
+        });
 
-        if (carruselElement) {
-            setupGlider();  // Configurar Glider directamente, sin esperar a mutaciones
-        } else {
-            console.error('No se encontró el carrusel en el DOM');
-        }
-    }, [carrusel]);
-    
+        observer.observe(document.querySelector(`.${carrusel}`), {
+            childList: true,
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [btnLeft, btnRight, carrusel]);
+
     return (
         <>
             <div key={title} className="main__conteiner__s1">
@@ -451,7 +459,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     </button>
                     <div className={carrusel} id={title}>
                         {cards.map((card) => (
-                        <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
+                            <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
                         ))}
                     </div>
                     <button
@@ -528,13 +536,9 @@ function App() {
                     <div className="main__conteiner main__conteiner-principal container">
 
                         <div className="carrusel">
-                            {btnStyles.map((btnStyle, index) => (
-                                <CardContainer
-                                    key={index}
-                                    btnStyles={btnStyle}
-                                    onContactClick={handleOpenForm}
-                                />
-                            ))}
+                            <CardContainer btnStyles={btnStyles[0]} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[1]} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[2]} onContactClick={handleOpenForm} />
                         </div>
                     </div>
                     {isFormVisible && (
