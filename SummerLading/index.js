@@ -262,7 +262,7 @@ const BannerTop = () => {
 //     )
 // }
 
-const Card = ({ card, btnStyles }) => {
+const Card = ({ card, onContactClick, title, btnLeft, btnRight, carrusel, destino }) => {
     const [loaded, setLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
@@ -462,7 +462,16 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     </button>
                     <div className={carrusel} id={title}>
                         {cards.map((card) => (
-                            <Card key={card.id} card={card} onContactClick={onContactClick} btnStyles={btnStyles}/>
+                            <Card
+                            key={card.id}
+                            card={card}
+                            onContactClick={onContactClick}
+                            title={title}
+                            btnLeft={btnLeft}
+                            btnRight={btnRight}
+                            carrusel={carrusel}
+                            destino={destino}
+                        />
                         ))}
                     </div>
                     <button
