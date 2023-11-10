@@ -267,6 +267,7 @@ const Card = ({ cards, btnStyles }) => {
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
+    const [gliderConfigured, setGliderConfigured] = useState(false);
 
     const { title } = btnStyles || {};
 
@@ -300,6 +301,17 @@ const Card = ({ cards, btnStyles }) => {
 
         fetchData();
     }, []);
+
+    React.useEffect(() => {
+        if (!gliderConfigured) {
+            const setupGlider = () => {
+                // Configuración de Glider
+                setGliderConfigured(true);
+            };
+    
+            setupGlider();
+        }
+    }, [gliderConfigured]);
 
     return (
         <>
