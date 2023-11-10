@@ -379,7 +379,7 @@ const CardList = ({ cards, onContactClick, btnStyles }) => {
 };
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
-    const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
+    const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
