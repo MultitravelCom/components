@@ -306,57 +306,59 @@ const Card = ({ card, btnStyles }) => {
     return (
         <>
             {loaded ? (
-                <div
-                    className="main__conteiner__s1__destacado__card uno"
-                    style={{ height: "100%", width: "100%" }}
-                >
-                    {/* {destinos.events === "si" && shouldShowEvent() && (
+                <div className="carrusel__elemento">
+                    <div
+                        className="main__conteiner__s1__destacado__card uno"
+                        style={{ height: "100%", width: "100%" }}
+                    >
+                        {/* {destinos.events === "si" && shouldShowEvent() && (
                             <EventImg style="eventImg" />
                         )} */}
-                    <picture>
-                        <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                        />
-                        <source
-                            media="(min-width: 768px) and (max-width: 1023px)"
-                            srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                        />
-                        <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                        />
-                        <img
-                            alt={"imagenes"}
-                            srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                        />
-                    </picture>
-                    <div className="main_container_priceStyle">
-                        <div className="priceStyle left">${Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                        <div className="priceStyle right">${Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
-                    </div>
-                    <div className="main__container__buttonsCars">
-                        {buttonSwitch === "A" ? (
-                            <>
-                                <ButtonLading
-                                    id={title}
-                                    className="btn_Whatsapp"
-                                    text="Whatsapp"
-                                    onClick={handleWhatsAppClick}
-                                    svgType="whatsapp"
-                                />
+                        <picture>
+                            <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source
+                                media="(min-width: 768px) and (max-width: 1023px)"
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <img
+                                alt={"imagenes"}
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                        </picture>
+                        <div className="main_container_priceStyle">
+                            <div className="priceStyle left">${Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                            <div className="priceStyle right">${Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                        </div>
+                        <div className="main__container__buttonsCars">
+                            {buttonSwitch === "A" ? (
+                                <>
+                                    <ButtonLading
+                                        id={title}
+                                        className="btn_Whatsapp"
+                                        text="Whatsapp"
+                                        onClick={handleWhatsAppClick}
+                                        svgType="whatsapp"
+                                    />
+                                    <ButtonLading
+                                        id={id}
+                                        className="classOpenModal"
+                                        text="Llamar"
+                                        onClick={handleBannerClick}
+                                        svgType="phone"
+                                    />
+                                </>
+                            ) : (
                                 <ButtonLading
                                     id={id}
-                                    className="classOpenModal"
-                                    text="Llamar"
+                                    className="btn_FormBitrix"
+                                    text="Llamar Ahora"
                                     onClick={handleBannerClick}
-                                    svgType="phone"
                                 />
-                            </>
-                        ) : (
-                            <ButtonLading
-                                id={id}
-                                className="btn_FormBitrix"
-                                text="Llamar Ahora"
-                                onClick={handleBannerClick}
-                            />
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -367,9 +369,8 @@ const Card = ({ card, btnStyles }) => {
 };
 
 const CardList = ({ cards, onContactClick, btnStyles }) => {
-    const { title, carrusel } = btnStyles || {};
     return (
-        <div className="carrusel__elemento">
+        <div>
             {cards.map((card) => (
                 <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
             ))}
