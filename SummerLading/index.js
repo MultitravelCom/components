@@ -368,7 +368,7 @@ const Card = ({ card, btnStyles }) => {
     );
 };
 
-const CardContainer = ({ btnStyles, onContactClick }) => {
+const CardContainer = ({ btnStyles }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
     const setupGlider = () => {
@@ -465,11 +465,11 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    {/* <div className={carrusel} id={title}>
+                    <div className={carrusel} id={title}>
                         {cards.map((card) => (
                         <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
                         ))}
-                    </div> */}
+                    </div>
                     <button
                         aria-label="Siguiente"
                         className={`carrusel__siguiente ${btnRight}`}
