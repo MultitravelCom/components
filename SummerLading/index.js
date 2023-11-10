@@ -426,8 +426,9 @@ const Card = ({ destinos }) => {
     );
 };
 const CardContainer = ({ btnStyles }) => {
-    const [btnStyles, setBtnStyles] = React.useState([]);
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
+
+    console.log("CardContainer props:", btnStyles);
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
@@ -619,14 +620,7 @@ function App() {
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
                     </div>
-                    {/* {shouldShowEvent()
-                        ?
-                        <div className="main_conteiner__s2_bannerTravelSale">
-                            <BannerTravelSale />
-                        </div>
-                        :
-                        null
-                    } */}
+
                     <div className="main__conteiner main__conteiner-principal container">
 
                         <div className="carrusel">
