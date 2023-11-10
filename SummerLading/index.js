@@ -425,8 +425,8 @@ const Card = ({ destinos }) => {
         </>
     );
 };
-const CardContainer = ({ btnStyles }) => {
-    const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
+const CardContainer = ({ btnStyles, onContactClick }) => {
+    const { title, btnLeft, btnRight, carrusel, destino, cards, onContactClick } = btnStyles;
 
     console.log("CardContainer props:", btnStyles);
 
