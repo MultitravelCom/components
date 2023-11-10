@@ -263,7 +263,6 @@ const BannerTop = () => {
 // }
 
 const Card = ({ destinos }) => {
-    const [noDestinos, setNoDestinos] = React.useState(false);
     const [loaded, setLoaded] = React.useState(false);
     const [pricesLoaded, setPricesLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
@@ -426,7 +425,8 @@ const Card = ({ destinos }) => {
         </>
     );
 };
-const CardContainer = ({ btnStyles, destinosFiltrados }) => {
+const CardContainer = ({ btnStyles }) => {
+    const [btnStyles, setBtnStyles] = React.useState([]);
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
     const setupGlider = () => {
@@ -583,6 +583,7 @@ function App() {
         const fetchData = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
+                console.log('API Response:', responseData);
                 const data = responseData.data || [];
 
                 const nuevosBtnStyles = data.map(item => {
