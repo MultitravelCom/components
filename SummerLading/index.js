@@ -308,7 +308,7 @@ const Card = ({ cards, btnStyles }) => {
                 // Configuración de Glider
                 setGliderConfigured(true);
             };
-    
+
             setupGlider();
         }
     }, [gliderConfigured]);
@@ -446,27 +446,32 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         console.log('Glider se ha inicializado correctamente.');
     };
 
-    React.useEffect(() => {
+    // React.useEffect(() => {
+    //     console.log('Ejecutando useEffect...');
+    //     setupGlider(); // Configura el Glider al principio
+
+    //     const observer = new MutationObserver((mutations) => {
+    //         mutations.forEach((mutation) => {
+    //             if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+    //                 // setupGlider();
+    //                 observer.disconnect();
+    //             }
+    //         });
+    //     });
+
+    //     observer.observe(document.querySelector(`.${carrusel}`), {
+    //         childList: true,
+    //     });
+
+    //     return () => {
+    //         observer.disconnect();
+    //     };
+    // }, [carrusel]);
+
+    useEffect(() => {
         console.log('Ejecutando useEffect...');
         setupGlider(); // Configura el Glider al principio
-
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-                    // setupGlider();
-                    observer.disconnect();
-                }
-            });
-        });
-
-        observer.observe(document.querySelector(`.${carrusel}`), {
-            childList: true,
-        });
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [carrusel]);
+    }, []);
 
     return (
         <>
@@ -484,7 +489,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
                     <div className={carrusel} id={title}>
-                        {/* <Card cards={cards} onContactClick={onContactClick} /> */}
+                        <Card cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
                         aria-label="Siguiente"
