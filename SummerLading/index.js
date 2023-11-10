@@ -269,9 +269,9 @@ const Card = ({ card, btnStyles }) => {
     const [data, setData] = React.useState([]);
 
     const { title } = btnStyles;
-    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card || {};
+    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card } = card || {};
 
-    console.log("Card id:", id, title);
+    console.log("Card id:", id, Card);
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
