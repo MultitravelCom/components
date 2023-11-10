@@ -368,7 +368,7 @@ const Card = ({ card, btnStyles }) => {
     );
 };
 
-const CardContainer = ({ btnStyles }) => {
+const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
     const setupGlider = () => {
