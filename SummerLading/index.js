@@ -268,7 +268,7 @@ const Card = ({ card, btnStyles }) => {
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
 
-    const { title, btnLeft, btnRight, carrusel, destino } = btnStyles;
+    const { title } = btnStyles;
     const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card || {};
 
     console.log("Card id:", id, title);
@@ -371,8 +371,6 @@ const Card = ({ card, btnStyles }) => {
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
-
-    console.log("CardContainer props:", btnStyles, onContactClick);
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
