@@ -323,8 +323,8 @@ const Card = ({ cards, btnStyles }) => {
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
-                                    <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                    <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                                    <div className="priceStyle left">${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, '.')}</div>
+                                    <div className="priceStyle right">${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, '.')}</div>
                                 </div>
                                 <div className="main__container__buttonsCars">
                                     {buttonSwitch === "A" && (
@@ -372,12 +372,9 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
     const setupGlider = () => {
-        console.log('Configurando Glider...');
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
         const btnRightElement = document.querySelector(`.${btnRight}`);
-        console.log("btnLeftElement---->", btnLeftElement)
-        console.log("btnLeftElement---->", btnRightElement)
-        console.log("carrusel---->", carrusel)
+        
 
         if (!btnLeftElement || !btnRightElement) {
             console.error('No se encontraron elementos para los botones de Glider.');
@@ -431,7 +428,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             rewind: true,
         });
 
-        console.log('Glider se ha inicializado correctamente.');
     };
 
     // React.useEffect(() => {
@@ -457,7 +453,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     // }, [carrusel]);
 
     React.useEffect(() => {
-        console.log('Ejecutando useEffect...');
         setupGlider(); // Configura el Glider al principio
     }, []);
 
