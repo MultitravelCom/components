@@ -483,36 +483,6 @@ const CardContainer = ({ btnStyles }) => {
     };
 
     React.useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const responseData = await fetchDataFromAPI();
-                const data = responseData.data || [];
-
-                console.log("Data from API:", data);
-
-                const nuevosBtnStyles = data.map(item => {
-                    const id = item.id;
-                    const tituloSeccion = item.attributes?.Titulo_Seccion;
-
-                    return {
-                        carrusel: `carrusel__lista${id}`,
-                        btnLeft: `btnLeft${id}`,
-                        btnRight: `btnRight${id}`,
-                        title: tituloSeccion || '',
-                        destino: item.attributes?.Destino || '',
-                    };
-                });
-
-                setLocalBtnStyles(nuevosBtnStyles);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    React.useEffect(() => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
@@ -590,6 +560,7 @@ function App() {
                 const nuevosBtnStyles = data.map(item => {
                     const id = item.id;
                     const tituloSeccion = item.attributes?.Titulo_Seccion;
+                    const cards = item.attributes?.Card || [];
 
                     return {
                         carrusel: `carrusel__lista${id}`,
@@ -597,6 +568,7 @@ function App() {
                         btnRight: `btnRight${id}`,
                         title: tituloSeccion || '',
                         destino: item.attributes?.Destino || '',
+                        cards: cards
                     };
                 });
 
