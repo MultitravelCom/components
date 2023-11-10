@@ -536,9 +536,9 @@ function App() {
                     <div className="main__conteiner main__conteiner-principal container">
 
                         <div className="carrusel">
-                            <CardContainer btnStyles={btnStyles[0]} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[1]} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[2]} onContactClick={handleOpenForm} />
+                            {btnStyles.map((btnStyle, index) => (
+                                <CardContainer key={index} btnStyles={btnStyle} onContactClick={handleOpenForm} />
+                            ))}
                         </div>
                     </div>
                     {isFormVisible && (
