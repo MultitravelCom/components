@@ -433,14 +433,19 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             });
         });
 
-        observer.observe(document.querySelector(`.${carrusel}`), {
+        const carruselElement = document.querySelector(`.${carrusel}`);
+    if (carruselElement) {
+        observer.observe(carruselElement, {
             childList: true,
         });
+    } else {
+        console.error('No se encontró el carrusel en el DOM');
+    }
 
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [btnLeft, btnRight, carrusel]);
 
     return (
         <>
