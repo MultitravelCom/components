@@ -442,8 +442,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         };
     }, [btnLeft, btnRight, carrusel]);
 
-    console.log("--cards-->", cards)
-
     return (
         <>
             <div key={title} className="main__conteiner__s1">
@@ -461,7 +459,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     </button>
                     <div className={carrusel} id={title}>
                         {cards.map((card) => (
-                        <Card key={card.id} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
+                        <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
                         ))}
                     </div>
                     <button
