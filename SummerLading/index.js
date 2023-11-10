@@ -445,6 +445,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     };
 
     React.useEffect(() => {
+        console.log('Ejecutando useEffect...');
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
