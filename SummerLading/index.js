@@ -431,6 +431,9 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             ],
             rewind: true,
         });
+
+        console.log('Glider se ha inicializado correctamente.');
+
     };
 
     React.useEffect(() => {
@@ -443,14 +446,9 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             });
         });
 
-        const carruselElement = document.querySelector(`.${carrusel}`);
-        if (carruselElement) {
-            observer.observe(carruselElement, {
-                childList: true,
-            });
-        } else {
-            console.error('No se encontró el carrusel en el DOM');
-        }
+        observer.observe(document.querySelector(`.${carrusel}`), {
+            childList: true,
+        });
 
         return () => {
             observer.disconnect();
@@ -472,7 +470,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div className={carrusel} id={title}>
+                    <div className={carrusel}>
                         <CardList cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
