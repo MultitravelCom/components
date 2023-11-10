@@ -368,6 +368,16 @@ const Card = ({ card, btnStyles }) => {
     );
 };
 
+const CardList = ({ cards, onContactClick }) => {
+    return (
+        <div className="carrusel__contenedor">
+            {cards.map((card) => (
+                <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} />
+            ))}
+        </div>
+    );
+};
+
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
@@ -434,13 +444,13 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         });
 
         const carruselElement = document.querySelector(`.${carrusel}`);
-    if (carruselElement) {
-        observer.observe(carruselElement, {
-            childList: true,
-        });
-    } else {
-        console.error('No se encontró el carrusel en el DOM');
-    }
+        if (carruselElement) {
+            observer.observe(carruselElement, {
+                childList: true,
+            });
+        } else {
+            console.error('No se encontró el carrusel en el DOM');
+        }
 
         return () => {
             observer.disconnect();
@@ -462,11 +472,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div className={carrusel} id={title}>
-                        {cards.map((card) => (
-                            <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
-                        ))}
-                    </div>
+                    <CardList cards={cards} onContactClick={onContactClick} />
                     <button
                         aria-label="Siguiente"
                         className={`carrusel__siguiente ${btnRight}`}
