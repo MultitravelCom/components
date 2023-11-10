@@ -269,7 +269,8 @@ const Card = ({ card, id, btnStyles, onContactClick }) => {
     const [data, setData] = React.useState([]);
 
     const { title, btnLeft, btnRight, carrusel, destino } = btnStyles;
-    
+    const { Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
+
     console.log("Card id:", id);
 
     const handleBannerClick = () => {
@@ -329,8 +330,8 @@ const Card = ({ card, id, btnStyles, onContactClick }) => {
                             />
                         </picture>
                         <div className="main_container_priceStyle">
-                            <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                            <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                            <div className="priceStyle left">${Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                            <div className="priceStyle right">${Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
                         </div>
                         <div className="main__container__buttonsCars">
                             {buttonSwitch === "A" ? (
