@@ -440,7 +440,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         return () => {
             observer.disconnect();
         };
-    }, [btnLeft, btnRight, carrusel]);
+    }, []);
 
     return (
         <>
