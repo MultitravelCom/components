@@ -263,7 +263,7 @@ const BannerTop = () => {
 // }
 
 const Card = ({ cards, btnStyles }) => {
-    const [loaded, setLoaded] = React.useState(false);
+    const [loaded, setLoaded] = React.useState(true);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
@@ -288,12 +288,11 @@ const Card = ({ cards, btnStyles }) => {
             try {
                 const responseData = await fetchDataSwichWA();
                 setData(responseData);
-             
 
                 setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
 
             } catch (error) {
-             
+
                 console.error(error);
             }
         };
@@ -328,7 +327,7 @@ const Card = ({ cards, btnStyles }) => {
                                     <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
                                 </div>
                                 <div className="main__container__buttonsCars">
-                                    {buttonSwitch === "A" ? (
+                                    {buttonSwitch === "A" && (
                                         <>
                                             <ButtonLading
                                                 id={card.title}
@@ -345,7 +344,8 @@ const Card = ({ cards, btnStyles }) => {
                                                 svgType="phone"
                                             />
                                         </>
-                                    ) : (
+                                    )}
+                                    {buttonSwitch === "B" && (
                                         <ButtonLading
                                             id={card.id}
                                             className="btn_FormBitrix"
