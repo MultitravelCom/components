@@ -367,9 +367,9 @@ const Card = ({ card, btnStyles }) => {
 };
 
 const CardList = ({ cards, onContactClick, btnStyles }) => {
-    const { title, carrusel, cards } = btnStyles || {};
+    const { title, carrusel } = btnStyles || {};
     return (
-        <div key={destino.id} className="carrusel__elemento">
+        <div className="carrusel__elemento">
             {cards.map((card) => (
                 <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
             ))}
