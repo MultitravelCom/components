@@ -383,7 +383,7 @@ const Card = ({ cards, btnStyles }) => {
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
-    const carruselRef = useRef(null);
+    const carruselRef = React.useRef(null);
 
     const setupGlider = () => {
         console.log('Configurando Glider...');
