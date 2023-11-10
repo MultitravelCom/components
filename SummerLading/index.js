@@ -453,7 +453,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-                    setupGlider();
+                    // setupGlider();
                     observer.disconnect();
                 }
             });
