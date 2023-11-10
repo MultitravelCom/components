@@ -444,6 +444,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     }, [btnLeft, btnRight, carrusel]);
 
     console.log ("--cards-->", cards )
+    console.log ("--btnStyles-->", btnStyles )
 
     return (
         <>
