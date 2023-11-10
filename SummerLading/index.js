@@ -337,14 +337,14 @@ const Card = ({ card, btnStyles }) => {
                             {buttonSwitch === "A" ? (
                                 <>
                                     <ButtonLading
-                                        id={destino.title}
+                                        id={title}
                                         className="btn_Whatsapp"
                                         text="Whatsapp"
                                         onClick={handleWhatsAppClick}
                                         svgType="whatsapp"
                                     />
                                     <ButtonLading
-                                        id={destino.id}
+                                        id={id}
                                         className="classOpenModal"
                                         text="Llamar"
                                         onClick={handleBannerClick}
@@ -353,7 +353,7 @@ const Card = ({ card, btnStyles }) => {
                                 </>
                             ) : (
                                 <ButtonLading
-                                    id={destino.id}
+                                    id={id}
                                     className="btn_FormBitrix"
                                     text="Llamar Ahora"
                                     onClick={handleBannerClick}
@@ -373,9 +373,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
     console.log("CardContainer props:", btnStyles, onContactClick);
-
-
-
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
