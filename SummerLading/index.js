@@ -383,6 +383,8 @@ const Card = ({ cards, btnStyles }) => {
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
+    const carruselRef = useRef(null);
+
     const setupGlider = () => {
         console.log('Configurando Glider...');
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
@@ -404,7 +406,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             event.preventDefault();
         });
 
-        new Glider(document.querySelector(`.${carrusel}`), {
+        new Glider(carruselRef.current, {
             slidesToShow: 1.2,
             slidesToScroll: 0.5,
             draggable: true,
@@ -468,7 +470,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     //     };
     // }, [carrusel]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         console.log('Ejecutando useEffect...');
         setupGlider(); // Configura el Glider al principio
     }, []);
@@ -488,7 +490,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div className={carrusel} id={title}>
+                    <div className={carrusel} id={title} ref={carruselRef}>
                         <Card cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
