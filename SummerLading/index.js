@@ -381,71 +381,132 @@ const CardList = ({ cards, onContactClick, btnStyles }) => {
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
 
-    console.log("----AAAA-->", btnStyles)
+    // const setupGlider = () => {
+    //     console.log('Configurando Glider...');
+    //     const btnLeftElement = document.querySelector(`.${btnLeft}`);
+    //     const btnRightElement = document.querySelector(`.${btnRight}`);
 
-    const setupGlider = () => {
-        console.log('Configurando Glider...');
-        const btnLeftElement = document.querySelector(`.${btnLeft}`);
-        const btnRightElement = document.querySelector(`.${btnRight}`);
+    //     if (!btnLeftElement || !btnRightElement) {
+    //         console.error('No se encontraron elementos para los botones de Glider.');
+    //         return;
+    //     }
 
-        if (!btnLeftElement || !btnRightElement) {
-            console.error('No se encontraron elementos para los botones de Glider.');
-            return;
-        }
+    //     btnLeftElement.addEventListener('click', function (event) {
+    //         event.preventDefault();
+    //     });
 
-        btnLeftElement.addEventListener('click', function (event) {
-            event.preventDefault();
-        });
+    //     btnRightElement.addEventListener('click', function (event) {
+    //         event.preventDefault();
+    //     });
 
-        btnRightElement.addEventListener('click', function (event) {
-            event.preventDefault();
-        });
+    //     new Glider(document.querySelector(`.${carrusel}`), {
+    //         slidesToShow: 1.2,
+    //         slidesToScroll: 0.5,
+    //         draggable: true,
+    //         arrows: {
+    //             prev: btnLeftElement,
+    //             next: btnRightElement,
+    //         },
+    //         responsive: [
+    //             {
+    //                 // screens greater than >= 775px
+    //                 breakpoint: 450,
+    //                 settings: {
+    //                     // Set to `auto` and provide item width to adjust to viewport
+    //                     slidesToShow: "2.2",
+    //                     slidesToScroll: "1",
+    //                 },
+    //             },
+    //             {
+    //                 // screens greater than >= 775px
+    //                 breakpoint: 760,
+    //                 settings: {
+    //                     // Set to `auto` and provide item width to adjust to viewport
+    //                     slidesToShow: "3.2",
+    //                     slidesToScroll: "1",
+    //                 },
+    //             },
+    //             {
+    //                 // screens greater than >= 1024px
+    //                 breakpoint: 1024,
+    //                 settings: {
+    //                     slidesToShow: 4,
+    //                     slidesToScroll: 1,
+    //                 },
+    //             },
+    //         ],
+    //         rewind: true,
+    //     });
 
-        new Glider(document.querySelector(`.${carrusel}`), {
-            slidesToShow: 1.2,
-            slidesToScroll: 0.5,
-            draggable: true,
-            arrows: {
-                prev: btnLeftElement,
-                next: btnRightElement,
-            },
-            responsive: [
-                {
-                    // screens greater than >= 775px
-                    breakpoint: 450,
-                    settings: {
-                        // Set to `auto` and provide item width to adjust to viewport
-                        slidesToShow: "2.2",
-                        slidesToScroll: "1",
-                    },
-                },
-                {
-                    // screens greater than >= 775px
-                    breakpoint: 760,
-                    settings: {
-                        // Set to `auto` and provide item width to adjust to viewport
-                        slidesToShow: "3.2",
-                        slidesToScroll: "1",
-                    },
-                },
-                {
-                    // screens greater than >= 1024px
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                    },
-                },
-            ],
-            rewind: true,
-        });
+    //     console.log('Glider se ha inicializado correctamente.');
 
-        console.log('Glider se ha inicializado correctamente.');
-
-    };
+    // };
 
     React.useEffect(() => {
         console.log('Ejecutando useEffect...');
+
+        const setupGlider = () => {
+            console.log('Configurando Glider...');
+            const btnLeftElement = document.querySelector(`.${btnLeft}`);
+            const btnRightElement = document.querySelector(`.${btnRight}`);
+
+            if (!btnLeftElement || !btnRightElement) {
+                console.error('No se encontraron elementos para los botones de Glider.');
+                return;
+            }
+
+            btnLeftElement.addEventListener('click', function (event) {
+                event.preventDefault();
+            });
+
+            btnRightElement.addEventListener('click', function (event) {
+                event.preventDefault();
+            });
+
+            new Glider(document.querySelector(`.${carrusel}`), {
+                slidesToShow: 1.2,
+                slidesToScroll: 0.5,
+                draggable: true,
+                arrows: {
+                    prev: btnLeftElement,
+                    next: btnRightElement,
+                },
+                responsive: [
+                    {
+                        // screens greater than >= 775px
+                        breakpoint: 450,
+                        settings: {
+                            // Set to `auto` and provide item width to adjust to viewport
+                            slidesToShow: "2.2",
+                            slidesToScroll: "1",
+                        },
+                    },
+                    {
+                        // screens greater than >= 775px
+                        breakpoint: 760,
+                        settings: {
+                            // Set to `auto` and provide item width to adjust to viewport
+                            slidesToShow: "3.2",
+                            slidesToScroll: "1",
+                        },
+                    },
+                    {
+                        // screens greater than >= 1024px
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                        },
+                    },
+                ],
+                rewind: true,
+            });
+
+            console.log('Glider se ha inicializado correctamente.');
+        };
+
+        setupGlider(); // Configura el Glider al principio
+
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
