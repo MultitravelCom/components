@@ -269,7 +269,6 @@ const Card = ({ cards, btnStyles }) => {
     const [data, setData] = React.useState([]);
 
     const { title } = btnStyles || {};
-    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card, Titulo_Card } = card || {};
 
 
     const handleBannerClick = () => {
@@ -331,8 +330,8 @@ const Card = ({ cards, btnStyles }) => {
                                 />
                             </picture>
                             <div className="main_container_priceStyle">
-                                <div className="priceStyle left">${Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                <div className="priceStyle right">${Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                                <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                                <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
                             </div>
                             <div className="main__container__buttonsCars">
                                 {buttonSwitch === "A" ? (
@@ -345,7 +344,7 @@ const Card = ({ cards, btnStyles }) => {
                                             svgType="whatsapp"
                                         />
                                         <ButtonLading
-                                            id={id}
+                                            id={card.id}
                                             className="classOpenModal"
                                             text="Llamar"
                                             onClick={handleBannerClick}
@@ -354,7 +353,7 @@ const Card = ({ cards, btnStyles }) => {
                                     </>
                                 ) : (
                                     <ButtonLading
-                                        id={id}
+                                        id={card.id}
                                         className="btn_FormBitrix"
                                         text="Llamar Ahora"
                                         onClick={handleBannerClick}
