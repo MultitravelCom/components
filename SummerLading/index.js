@@ -262,14 +262,14 @@ const BannerTop = () => {
 //     )
 // }
 
-const Card = ({ card, id, btnStyles, onContactClick }) => {
+const Card = ({ card, btnStyles }) => {
     const [loaded, setLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
 
     const { title, btnLeft, btnRight, carrusel, destino } = btnStyles;
-    const { Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
+    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
 
     console.log("Card id:", id);
 
