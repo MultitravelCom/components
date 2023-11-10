@@ -427,16 +427,24 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+                    console.log('Carrusel añadido al DOM, configurando Glider');
                     setupGlider();
                     observer.disconnect();
                 }
             });
         });
-
-        observer.observe(document.querySelector(`.${carrusel}`), {
-            childList: true,
-        });
-
+    
+        const carruselElement = document.querySelector(`.${carrusel}`);
+        console.log('Intentando observar el carrusel:', carruselElement);
+    
+        if (carruselElement) {
+            observer.observe(carruselElement, {
+                childList: true,
+            });
+        } else {
+            console.error('No se encontró el carrusel en el DOM');
+        }
+    
         return () => {
             observer.disconnect();
         };
