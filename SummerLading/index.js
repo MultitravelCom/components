@@ -268,7 +268,7 @@ const Card = ({ card, btnStyles }) => {
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
 
-    const { title } = btnStyles;
+    const { title } = btnStyles || {};
     const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card, Titulo_Card } = card || {};
 
 
