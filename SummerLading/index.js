@@ -267,7 +267,7 @@ const Card = ({ cards, btnStyles }) => {
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
-    const [gliderConfigured, setGliderConfigured] = useState(false);
+    const [gliderConfigured, setGliderConfigured] = React.useState(false);
 
     const { title } = btnStyles || {};
 
