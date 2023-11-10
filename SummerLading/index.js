@@ -262,13 +262,14 @@ const BannerTop = () => {
 //     )
 // }
 
-const Card = ({ cards, btnStyles }) => {
+const Card = ({ card, btnStyles }) => {
     const [loaded, setLoaded] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
 
     const { title } = btnStyles || {};
+    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card, Titulo_Card } = card || {};
 
 
     const handleBannerClick = () => {
@@ -305,72 +306,76 @@ const Card = ({ cards, btnStyles }) => {
     return (
         <>
             {loaded ? (
-                cards.length > 0 ? (
-                    cards.map((card) => (
-                        <div key={card.Titulo_Card} className="carrusel__elemento">
-                        <div
-                            className="main__conteiner__s1__destacado__card uno"
-                            style={{ height: "100%", width: "100%" }}
-                        >
-                            {/* {destinos.events === "si" && shouldShowEvent() && (
-                                <EventImg style="eventImg" />
-                            )} */}
-                            <picture>
-                                <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                />
-                                <source
-                                    media="(min-width: 768px) and (max-width: 1023px)"
-                                    srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                />
-                                <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                />
-                                <img
-                                    alt={"imagenes"}
-                                    srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                />
-                            </picture>
-                            <div className="main_container_priceStyle">
-                                <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
-                            </div>
-                            <div className="main__container__buttonsCars">
-                                {buttonSwitch === "A" ? (
-                                    <>
-                                        <ButtonLading
-                                            id={title}
-                                            className="btn_Whatsapp"
-                                            text="Whatsapp"
-                                            onClick={handleWhatsAppClick}
-                                            svgType="whatsapp"
-                                        />
-                                        <ButtonLading
-                                            id={card.id}
-                                            className="classOpenModal"
-                                            text="Llamar"
-                                            onClick={handleBannerClick}
-                                            svgType="phone"
-                                        />
-                                    </>
-                                ) : (
+                <div className="carrusel__elemento">
+                    <div
+                        className="main__conteiner__s1__destacado__card uno"
+                        style={{ height: "100%", width: "100%" }}
+                    >
+                        {/* {destinos.events === "si" && shouldShowEvent() && (
+                            <EventImg style="eventImg" />
+                        )} */}
+                        <picture>
+                            <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source
+                                media="(min-width: 768px) and (max-width: 1023px)"
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <img
+                                alt={"imagenes"}
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                        </picture>
+                        <div className="main_container_priceStyle">
+                            <div className="priceStyle left">${Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                            <div className="priceStyle right">${Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                        </div>
+                        <div className="main__container__buttonsCars">
+                            {buttonSwitch === "A" ? (
+                                <>
                                     <ButtonLading
-                                        id={card.id}
-                                        className="btn_FormBitrix"
-                                        text="Llamar Ahora"
-                                        onClick={handleBannerClick}
+                                        id={title}
+                                        className="btn_Whatsapp"
+                                        text="Whatsapp"
+                                        onClick={handleWhatsAppClick}
+                                        svgType="whatsapp"
                                     />
-                                )}
-                            </div>
+                                    <ButtonLading
+                                        id={id}
+                                        className="classOpenModal"
+                                        text="Llamar"
+                                        onClick={handleBannerClick}
+                                        svgType="phone"
+                                    />
+                                </>
+                            ) : (
+                                <ButtonLading
+                                    id={id}
+                                    className="btn_FormBitrix"
+                                    text="Llamar Ahora"
+                                    onClick={handleBannerClick}
+                                />
+                            )}
                         </div>
                     </div>
-                    ))
-                ) : (
-                    <p>No hay destinos disponibles.</p>
-                )
+                </div>
             ) : (
                 <Loader />
             )}
         </>
-    )
+    );
+};
+
+const CardList = ({ cards, onContactClick, btnStyles }) => {
+    return (
+        <div className="carrusel__contenedor">
+            {cards.map((card) => (
+                <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
+            ))}
+        </div>
+    );
 };
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
@@ -535,8 +540,8 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <div>
-                        <Card key={cards.Titulo_Card} card={cards} onContactClick={onContactClick} btnStyles={btnStyles} />
+                    <div className={carrusel}>
+                        <CardList cards={cards} onContactClick={onContactClick} />
                     </div>
                     <button
                         aria-label="Siguiente"
