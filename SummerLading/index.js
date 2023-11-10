@@ -262,141 +262,111 @@ const BannerTop = () => {
 //     )
 // }
 
-// const Card = ({ cards, btnStyles }) => {
-//     const [loaded, setLoaded] = React.useState(false);
-//     const [openModal, setOpenModal] = React.useState(false);
-//     const [buttonSwitch, setButtonSwitch] = React.useState("B");
-//     const [data, setData] = React.useState([]);
-//     const [gliderConfigured, setGliderConfigured] = React.useState(false);
-
-//     const { title } = btnStyles || {};
-
-//     const handleBannerClick = () => {
-//         if (window.innerWidth <= 768) {
-//             window.location.href = 'tel:08003480003';
-//         } else {
-//             setOpenModal(true);
-//         }
-//     };
-
-//     const handleWhatsAppClick = () => {
-//         const whatsappURL = 'https://wa.link/64zdo9';
-//         window.open(whatsappURL, '_blank');
-//     };
-
-//     React.useEffect(() => {
-//         const fetchData = async () => {
-//             try {
-//                 const responseData = await fetchDataSwichWA();
-//                 setData(responseData);
-//                 setLoaded(true);
-
-//                 setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
-
-//             } catch (error) {
-//                 setLoaded(true);
-//                 console.error(error);
-//             }
-//         };
-
-//         fetchData();
-//     }, []);
-
-//     React.useEffect(() => {
-//         if (!gliderConfigured) {
-//             const setupGlider = () => {
-//                 // Configuración de Glider
-//                 setGliderConfigured(true);
-//             };
-
-//             setupGlider();
-//         }
-//     }, [gliderConfigured]);
-
-//     return (
-//         <>
-//             {loaded ? (
-//                 cards ? (
-//                     cards.map((card) => (
-//                         <div key={card.id} className="carrusel__elemento">
-//                             <div
-//                                 className="main__conteiner__s1__destacado__card uno"
-//                                 style={{ height: "100%", width: "100%" }}
-//                             >
-//                                 {/* {destinos.events === "si" && shouldShowEvent() && (
-//                                     <EventImg style="eventImg" />
-//                                 )} */}
-//                                 <picture>
-//                                     <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
-//                                     <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
-//                                     <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
-//                                     <img
-//                                         alt={"imagenes"}
-//                                         srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-//                                     />
-//                                 </picture>
-//                                 <div className="main_container_priceStyle">
-//                                     <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-//                                     <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
-//                                 </div>
-//                                 <div className="main__container__buttonsCars">
-//                                     {buttonSwitch === "A" ? (
-//                                         <>
-//                                             <ButtonLading
-//                                                 id={card.title}
-//                                                 className="btn_Whatsapp"
-//                                                 text="Whatsapp"
-//                                                 onClick={handleWhatsAppClick}
-//                                                 svgType="whatsapp"
-//                                             />
-//                                             <ButtonLading
-//                                                 id={card.id}
-//                                                 className="classOpenModal"
-//                                                 text="Llamar"
-//                                                 onClick={handleBannerClick}
-//                                                 svgType="phone"
-//                                             />
-//                                         </>
-//                                     ) : (
-//                                         <ButtonLading
-//                                             id={card.id}
-//                                             className="btn_FormBitrix"
-//                                             text="Llamar Ahora"
-//                                             onClick={handleBannerClick}
-//                                         />
-//                                     )}
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))
-//                 ) : (
-//                     <p>No hay destinos disponibles.</p>
-//                 )
-//             ) : (
-//                 <Loader />
-//             )}
-//         </>
-//     );
-// };
-
 const Card = ({ cards, btnStyles }) => {
+    const [loaded, setLoaded] = React.useState(false);
+    const [openModal, setOpenModal] = React.useState(false);
+    const [buttonSwitch, setButtonSwitch] = React.useState("B");
+    const [data, setData] = React.useState([]);
+
     const { title } = btnStyles || {};
 
+    // const handleBannerClick = () => {
+    //     if (window.innerWidth <= 768) {
+    //         window.location.href = 'tel:08003480003';
+    //     } else {
+    //         setOpenModal(true);
+    //     }
+    // };
+
+    // const handleWhatsAppClick = () => {
+    //     const whatsappURL = 'https://wa.link/64zdo9';
+    //     window.open(whatsappURL, '_blank');
+    // };
+
+    // React.useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const responseData = await fetchDataSwichWA();
+    //             setData(responseData);
+    //             setLoaded(true);
+
+    //             setButtonSwitch(responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B");
+
+    //         } catch (error) {
+    //             setLoaded(true);
+    //             console.error(error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
+
     return (
-        <div className="carrusel__elemento">
-            {cards ? (
-                cards.map((card) => (
-                    <div key={card.id} className="main__conteiner__s1__destacado__card uno">
-                        {/* Contenido de la tarjeta */}
-                        <p>{card.title}</p>
-                    </div>
-                ))
+        <>
+            {loaded ? (
+                cards ? (
+                    cards.map((card) => (
+                        <div key={card.id} className="carrusel__elemento">
+                            <div
+                                className="main__conteiner__s1__destacado__card uno"
+                                style={{ height: "100%", width: "100%" }}
+                            >
+                                {/* {destinos.events === "si" && shouldShowEvent() && (
+                                    <EventImg style="eventImg" />
+                                )} */}
+                                <picture>
+                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <img
+                                        alt={"imagenes"}
+                                        srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                                    />
+                                </picture>
+                                <div className="main_container_priceStyle">
+                                    <div className="priceStyle left">${card.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                                    <div className="priceStyle right">${card.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                                </div>
+                                {/* <div className="main__container__buttonsCars">
+                                    {buttonSwitch === "A" ? (
+                                        <>
+                                            <ButtonLading
+                                                id={card.title}
+                                                className="btn_Whatsapp"
+                                                text="Whatsapp"
+                                                onClick={handleWhatsAppClick}
+                                                svgType="whatsapp"
+                                            />
+                                            <ButtonLading
+                                                id={card.id}
+                                                className="classOpenModal"
+                                                text="Llamar"
+                                                onClick={handleBannerClick}
+                                                svgType="phone"
+                                            />
+                                        </>
+                                    ) : (
+                                        <ButtonLading
+                                            id={card.id}
+                                            className="btn_FormBitrix"
+                                            text="Llamar Ahora"
+                                            onClick={handleBannerClick}
+                                        />
+                                    )}
+                                </div> */}
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <p>No hay destinos disponibles.</p>
+                )
             ) : (
-                <p>No hay destinos disponibles.</p>
+                <Loader />
             )}
-        </div>
+        </>
     );
 };
+
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
