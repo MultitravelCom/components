@@ -269,9 +269,8 @@ const Card = ({ card, btnStyles }) => {
     const [data, setData] = React.useState([]);
 
     const { title } = btnStyles;
-    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card } = card || {};
+    const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta, Card, Titulo_Card } = card || {};
 
-    console.log("Card id:", id, Card);
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
@@ -443,8 +442,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
         };
     }, [btnLeft, btnRight, carrusel]);
 
-    console.log ("--cards-->", cards )
-    console.log ("--btnStyles-->", btnStyles )
+    console.log("--cards-->", cards)
 
     return (
         <>
@@ -463,7 +461,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     </button>
                     <div className={carrusel} id={title}>
                         {cards.map((card) => (
-                            <Card key={card.id} card={card} onContactClick={onContactClick} btnStyles={btnStyles}/>
+                        <Card key={card.id} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
                         ))}
                     </div>
                     <button
@@ -499,15 +497,12 @@ function App() {
         const fetchData = async () => {
             try {
                 const responseData = await fetchDataFromAPI();
-                console.log('API Response:', responseData);
                 const data = responseData.data || [];
 
                 const nuevosBtnStyles = data.map(item => {
                     const id = item.id;
                     const tituloSeccion = item.attributes?.Titulo_Seccion;
                     const cards = item.attributes?.Card || [];
-
-                    console.log("----cards.id---->", cards.id)
 
                     return {
                         carrusel: `carrusel__lista${id}`,
