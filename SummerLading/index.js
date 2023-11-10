@@ -271,7 +271,7 @@ const Card = ({ card, btnStyles }) => {
     const { title, btnLeft, btnRight, carrusel, destino } = btnStyles;
     const { id, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card || {};
 
-    console.log("Card id:", id);
+    console.log("Card id:", id, title);
 
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
