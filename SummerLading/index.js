@@ -375,15 +375,17 @@ const Card = ({ destinos }) => {
                                     <EventImg style="eventImg" />
                                 )}
                                 <picture>
-                                    <source media="(min-width: 1024px)" srcSet={destino.img} />
+                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                                    />
                                     <source
                                         media="(min-width: 768px) and (max-width: 1023px)"
-                                        srcSet={destino.img}
+                                        srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
                                     />
-                                    <source media="(max-width: 767px)" srcSet={destino.img} />
+                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                                    />
                                     <img
-                                        alt={`Imagen banner ${destino.title}`}
-                                        src={destino.img}
+                                        alt={"imagenes"}
+                                        srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
