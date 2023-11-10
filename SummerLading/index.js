@@ -388,6 +388,9 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
             console.log('Configurando Glider...');
             const btnLeftElement = document.querySelector(`.${btnLeft}`);
             const btnRightElement = document.querySelector(`.${btnRight}`);
+            console.log("btnLeftElement---->", btnLeftElement)
+            console.log("btnLeftElement---->", btnRightElement)
+            console.log("carrusel---->", carrusel)
 
             if (!btnLeftElement || !btnRightElement) {
                 console.error('No se encontraron elementos para los botones de Glider.');
