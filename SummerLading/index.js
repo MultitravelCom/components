@@ -426,9 +426,12 @@ const Card = ({ destinos }) => {
     );
 };
 const CardContainer = ({ btnStyles, onContactClick }) => {
-    const { title, btnLeft, btnRight, carrusel, destino, cards, onContactClick } = btnStyles;
+    const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
-    console.log("CardContainer props:", btnStyles);
+    console.log("CardContainer props:", btnStyles, onContactClick);
+
+
+    
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
