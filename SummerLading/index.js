@@ -304,25 +304,20 @@ const Card = ({ cards, btnStyles }) => {
     return (
         <>
             {loaded ? (
-                destinos.length > 0 ? (
+                cards ? (
                     cards.map((card) => (
-                        <div className="carrusel__elemento">
+                        <div key={card.id} className="carrusel__elemento">
                             <div
                                 className="main__conteiner__s1__destacado__card uno"
                                 style={{ height: "100%", width: "100%" }}
                             >
                                 {/* {destinos.events === "si" && shouldShowEvent() && (
-    <EventImg style="eventImg" />
-)} */}
+                                    <EventImg style="eventImg" />
+                                )} */}
                                 <picture>
-                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                    />
-                                    <source
-                                        media="(min-width: 768px) and (max-width: 1023px)"
-                                        srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                    />
-                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                    />
+                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
                                     <img
                                         alt={"imagenes"}
                                         srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
@@ -369,7 +364,7 @@ const Card = ({ cards, btnStyles }) => {
                 <Loader />
             )}
         </>
-    )
+    );
 };
 
 
