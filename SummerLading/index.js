@@ -303,7 +303,7 @@ const Card = ({ cards, btnStyles }) => {
 
     return (
         <>
-            {loaded && pricesLoaded ? (
+            {loaded ? (
                 destinos.length > 0 ? (
                     cards.map((card) => (
                         <div className="carrusel__elemento">
@@ -372,15 +372,6 @@ const Card = ({ cards, btnStyles }) => {
     )
 };
 
-const CardList = ({ cards, onContactClick, btnStyles }) => {
-    return (
-        <div >
-            {cards.map((card) => (
-                <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
-            ))}
-        </div>
-    );
-};
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
