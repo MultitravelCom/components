@@ -384,6 +384,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     console.log("----AAAA-->", btnStyles)
 
     const setupGlider = () => {
+        console.log('Configurando Glider...');
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
         const btnRightElement = document.querySelector(`.${btnRight}`);
 
