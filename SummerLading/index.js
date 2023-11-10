@@ -424,32 +424,16 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     };
 
     React.useEffect(() => {
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-                    console.log('Carrusel añadido al DOM, configurando Glider');
-                    setupGlider();
-                    observer.disconnect();
-                }
-            });
-        });
-    
         const carruselElement = document.querySelector(`.${carrusel}`);
         console.log('Intentando observar el carrusel:', carruselElement);
-    
+
         if (carruselElement) {
-            observer.observe(carruselElement, {
-                childList: true,
-            });
+            setupGlider();  // Configurar Glider directamente, sin esperar a mutaciones
         } else {
             console.error('No se encontró el carrusel en el DOM');
         }
+    }, [carrusel]);
     
-        return () => {
-            observer.disconnect();
-        };
-    }, [btnLeft, btnRight, carrusel]);
-
     return (
         <>
             <div key={title} className="main__conteiner__s1">
