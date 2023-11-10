@@ -301,137 +301,78 @@ const Card = ({ destinos }) => {
         fetchData();
     }, []);
 
-    React.useEffect(() => {
-        const fetchDataPrecio = async () => {
-            try {
-                const responseData = await fetchDataFromAPI();
-
-                const prices = responseData.data.reduce((acc, item) => {
-                    const destino = item.attributes.Destino;
-
-                    if (!acc[destino]) {
-                        acc[destino] = {};
-                    }
-
-                    item.attributes.Card.forEach((card) => {
-                        const { id, Card, Titulo_Card, Tarifa_Temporada_Baja, Tarifa_Temporada_Alta } = card;
-
-                        if (!acc[destino][Card]) {
-                            acc[destino][Card] = [];
-                        }
-
-                        acc[destino][Card].push({
-                            id,
-                            Titulo_Card,
-                            Tarifa_Temporada_Baja,
-                            Tarifa_Temporada_Alta,
-                        });
-                    });
-
-                    return acc;
-                }, {});
-
-                setPricesByDestino(prices);
-                setPricesLoaded(true);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchDataPrecio();
-    }, []);
-
     return (
         <>
-            {loaded && pricesLoaded ? (
-                Object.keys(pricesByDestino).map((destino) => (
-                    Object.keys(pricesByDestino[destino]).map((cardType, index) => (
-                        pricesByDestino[destino][cardType].map((tarifa, tarifaIndex) => (
-
-                            <div key={destinos.id} className="carrusel__elemento">
-                                <div
-                                    className="main__conteiner__s1__destacado__card uno"
-                                    style={{ height: "100%", width: "100%" }}
-                                >
-                                    {destinos.events === "si" && shouldShowEvent() && (
-                                        <EventImg style="eventImg" />
-                                    )}
-                                    <picture>
-                                        <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                        />
-                                        <source
-                                            media="(min-width: 768px) and (max-width: 1023px)"
-                                            srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                        />
-                                        <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                        />
-                                        <img
-                                            alt={"imagenes"}
-                                            srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
-                                        />
-                                    </picture>
-                                    <div className="main_container_priceStyle">
-                                        {pricesByDestino[destino.destino] && pricesByDestino[destino.destino][destino.cardOrden] ? (
-                                            pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
-                                                <div key={index} className="main_container_priceStyle">
-                                                    <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                                    <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            // Manejo de casos donde los datos no están disponibles
-                                            <div className="main_container_priceStyle">
-                                                <div className="priceStyle left">Consultar tarifa</div>
-                                                <div className="priceStyle right">Consultar tarifa</div>
-                                            </div>
-                                        )}
-
-                                    </div>
-                                    <div className="main__container__buttonsCars">
-                                        {buttonSwitch === "A" ? (
-                                            <>
-                                                <ButtonLading
-                                                    id={destino.title}
-                                                    className="btn_Whatsapp"
-                                                    text="Whatsapp"
-                                                    onClick={handleWhatsAppClick}
-                                                    svgType="whatsapp"
-                                                />
-                                                <ButtonLading
-                                                    id={destino.id}
-                                                    className="classOpenModal"
-                                                    text="Llamar"
-                                                    onClick={handleBannerClick}
-                                                    svgType="phone"
-                                                />
-                                            </>
-                                        ) : (
-                                            <ButtonLading
-                                                id={destino.id}
-                                                className="btn_FormBitrix"
-                                                text="Llamar Ahora"
-                                                onClick={handleBannerClick}
-                                            />
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    ))
-                ))
+            {loaded ? (
+                <div key={destinos.id} className="carrusel__elemento">
+                    <div
+                        className="main__conteiner__s1__destacado__card uno"
+                        style={{ height: "100%", width: "100%" }}
+                    >
+                        {destinos.events === "si" && shouldShowEvent() && (
+                            <EventImg style="eventImg" />
+                        )}
+                        <picture>
+                            <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source
+                                media="(min-width: 768px) and (max-width: 1023px)"
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                            <img
+                                alt={"imagenes"}
+                                srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                            />
+                        </picture>
+                        <div className="main_container_priceStyle">
+                            <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
+                            <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                        </div>
+                        <div className="main__container__buttonsCars">
+                            {buttonSwitch === "A" ? (
+                                <>
+                                    <ButtonLading
+                                        id={destino.title}
+                                        className="btn_Whatsapp"
+                                        text="Whatsapp"
+                                        onClick={handleWhatsAppClick}
+                                        svgType="whatsapp"
+                                    />
+                                    <ButtonLading
+                                        id={destino.id}
+                                        className="classOpenModal"
+                                        text="Llamar"
+                                        onClick={handleBannerClick}
+                                        svgType="phone"
+                                    />
+                                </>
+                            ) : (
+                                <ButtonLading
+                                    id={destino.id}
+                                    className="btn_FormBitrix"
+                                    text="Llamar Ahora"
+                                    onClick={handleBannerClick}
+                                />
+                            )}
+                        </div>
+                    </div>
+                </div>
             ) : (
                 <Loader />
             )}
         </>
     );
 };
+
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles;
 
     console.log("CardContainer props:", btnStyles, onContactClick);
 
 
-    
+
 
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
