@@ -368,11 +368,11 @@ const Card = ({ card, btnStyles }) => {
     );
 };
 
-const CardList = ({ cards, onContactClick }) => {
+const CardList = ({ cards, onContactClick, btnStyles }) => {
     return (
         <div className="carrusel__contenedor">
             {cards.map((card) => (
-                <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} />
+                <Card key={card.Titulo_Card} card={card} onContactClick={onContactClick} btnStyles={btnStyles} />
             ))}
         </div>
     );
