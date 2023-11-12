@@ -234,33 +234,33 @@ const BannerTop = () => {
     )
 }
 
-// const BannerTravelSale = () => {
-//     return (
-//         <>
-//             <div className="main__container_BannerTravelSale">
-//                 <picture>
-//                     <source
-//                         media="(min-width: 1024px)"
-//                         srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
-//                     />
-//                     <source
-//                         media="(min-width: 768px) and (max-width: 1023px)"
-//                         srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
-//                     />
-//                     <source
-//                         media="(max-width: 767px)"
-//                         srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Mobile.webp"
-//                     />
-//                     <img
-//                         className="main_conteiner__s1_medio__paquetes__img"
-//                         src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
-//                         alt="Imagen banner promociones"
-//                     />
-//                 </picture>
-//             </div>
-//         </>
-//     )
-// }
+const SecondaryBanner = () => {
+    return (
+        <>
+            <div className="main__container_BannerTravelSale">
+                <picture>
+                    <source
+                        media="(min-width: 1024px)"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                    />
+                    <source
+                        media="(min-width: 768px) and (max-width: 1023px)"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                    />
+                    <source
+                        media="(max-width: 767px)"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Mobile.webp"
+                    />
+                    <img
+                        className="main_conteiner__s1_medio__paquetes__img"
+                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                        alt="Imagen banner promociones"
+                    />
+                </picture>
+            </div>
+        </>
+    )
+}
 
 const Card = ({ cards, btnStyles }) => {
     const [loaded, setLoaded] = React.useState(true);
@@ -314,12 +314,12 @@ const Card = ({ cards, btnStyles }) => {
                                     <EventImg style="eventImg" />
                                 )} */}
                                 <picture>
-                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
-                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
-                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp" />
+                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
+                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
+                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
                                     <img
                                         alt={"imagenes"}
-                                        srcSet="https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-42.webp"
+                                        srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp"
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
@@ -374,7 +374,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     const setupGlider = () => {
         const btnLeftElement = document.querySelector(`.${btnLeft}`);
         const btnRightElement = document.querySelector(`.${btnRight}`);
-        
+
 
         if (!btnLeftElement || !btnRightElement) {
             console.error('No se encontraron elementos para los botones de Glider.');
@@ -543,6 +543,10 @@ function App() {
                 <>
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
+                    </div>
+
+                    <div className="main_conteiner__s2_bannerTravelSale">
+                        <SecondaryBanner />
                     </div>
 
                     <div className="main__conteiner main__conteiner-principal container">
