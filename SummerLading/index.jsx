@@ -1,5 +1,5 @@
 // *************** Style ************************
-const StyledPrice = styled.div`
+const StyledPriceContainer = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
@@ -15,17 +15,25 @@ const StyledPrice = styled.div`
     height: 86px;
     bottom: -9px;
     right: 26px;
-  };
+  }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     height: 21%;
     bottom: 3%;
     right: 41px;
-  };
+  }
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 22%;
     bottom: -4%;
     right: 21px;
-  };
+  }
+`;
+
+const StyledPrice = style.div`
+font-size: 20px;
+font-weight: 700;
+@media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 // ***********************************************
 function addHeaderLinks() {
@@ -373,7 +381,11 @@ const Card = ({ cards }) => {
       {loaded ? (
         cards ? (
           cards.map((card) => (
-            <div key={card.id} className="carrusel__elemento" style={{ position: 'relative' }}>
+            <div
+              key={card.id}
+              className="carrusel__elemento"
+              style={{ position: "relative" }}
+            >
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
@@ -399,14 +411,14 @@ const Card = ({ cards }) => {
                     srcSet={card.Link_imagen_Card}
                   />
                 </picture>
-                <StyledPrice>
-                  <div className="priceStyle left">
+                <StyledPriceContainer>
+                  <StyledPrice>
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
-                  </div>
+                  </StyledPrice>
                   <div className="priceStyle right">
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
                   </div>
-                </StyledPrice>
+                </StyledPriceContainer>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" && (
                     <>
