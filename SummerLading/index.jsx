@@ -362,7 +362,7 @@ const Card = ({ cards }) => {
   const [buttonSwitch, setButtonSwitch] = React.useState("B");
   const [data, setData] = React.useState([]);
 
-  console.log("cards--.>", cards)
+  console.log("cards--.>", card.Imagen_Card)
 
   const handleBannerClick = () => {
     if (window.innerWidth <= 768) {
