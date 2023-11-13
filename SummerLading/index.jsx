@@ -164,7 +164,7 @@ const BitrixFormTitle = () => {
   );
 };
 // *************** Style ************************
-const Component = styled.div`
+const StyledPrice = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
@@ -392,14 +392,14 @@ const Card = ({ cards }) => {
                     srcSet={card.Link_imagen_Card}
                   />
                 </picture>
-                <Component>
+                <StyledPrice>
                   <div className="priceStyle left">
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </div>
                   <div className="priceStyle right">
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
                   </div>
-                </Component>
+                </StyledPrice>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" && (
                     <>
