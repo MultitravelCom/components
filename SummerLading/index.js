@@ -59,10 +59,7 @@ function mostrarSeccion() {
     }
 }
 mostrarSeccion();
-
-
 // ***************************  Conexion a BD ***************************************
-
 async function fetchDataFromAPI() {
     try {
         const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos?populate=*');
@@ -76,7 +73,6 @@ async function fetchDataFromAPI() {
         throw error;
     }
 }
-
 async function fetchDataSwichWA() {
     try {
         const response = await fetch('https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos');
@@ -91,7 +87,6 @@ async function fetchDataSwichWA() {
         throw error;
     }
 }
-
 // *********************** BITRIX ******************
 // FormBitrix
 const BitrixFormComponent = ({ isVisible }) => {
@@ -263,6 +258,20 @@ const Card = ({ cards, btnStyles }) => {
 
     const { title } = btnStyles || {};
 
+    const priceStyle = {
+        display: 'flex',
+        alignItems: 'stretch',
+        justifyContent: 'space-between',
+        position: 'absolute',
+        flexDirection: 'column',
+        height: '93px',
+        right: '76px',
+        '@media (max-width: 768px)': {
+            flexDirection: 'row', 
+            height: 'auto',
+        },
+    };
+
     const handleBannerClick = () => {
         if (window.innerWidth <= 768) {
             window.location.href = 'tel:08003480003';
@@ -315,7 +324,7 @@ const Card = ({ cards, btnStyles }) => {
                                         srcSet={card.Link_imagen_Card}
                                     />
                                 </picture>
-                                <div className="main_container_priceStyle">
+                                <div className={`main_conteiner__s1_medio__paquetes ${priceStyleSummer}`}>
                                     <div className="priceStyle left">${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, '.')}</div>
                                     <div className="priceStyle right">${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, '.')}</div>
                                 </div>
