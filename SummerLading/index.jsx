@@ -414,19 +414,19 @@ const Card = ({ cards }) => {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={card.Imagen_Card.data.attributes.url}
+                    srcSet={card.Imagen_Card.data[0].attributes.url}
                   />
                   <source
                     media="(min-width: 768px) and (max-width: 1023px)"
-                    srcSet={card.Imagen_Card.data.attributes.url}
+                    srcSet={card.Imagen_Card.data[0].attributes.url}
                   />
                   <source
                     media="(max-width: 767px)"
-                    srcSet={card.Imagen_Card.data.attributes.url}
+                    srcSet={card.Imagen_Card.data[0].attributes.url}
                   />
                   <img
                     alt={`img ${card.Titulo_Card}`}
-                    srcSet={card.Imagen_Card.data.attributes.url}
+                    srcSet={card.Imagen_Card.data[0].attributes.url}
                   />
                 </picture>
                 <StyledPriceContainer>
