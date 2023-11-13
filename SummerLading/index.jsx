@@ -11,10 +11,15 @@ const StyledPriceContainer = styled.div`
   right: 28px;
   flex-direction: column;
   justify-content: space-between;
+  @media (width: 320px) {
+    height: 82px;
+    bottom: -6px;
+    right: 23px;
+  }
   @media (max-width: 424px) {
-    height: 86px;
-    bottom: -9px;
-    right: 26px;
+    height: 82px;
+    bottom: -6px;
+    right: 23px;
   }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     height: 21%;
@@ -36,6 +41,9 @@ const StyledPriceContainer = styled.div`
 const StyledPrice = styled.div`
 font-size: 20px;
 font-weight: 700;
+@media (width: 320px) {
+    font-size: 19px;
+  };
 @media (width: 768px) {
     font-size: 16px;
   };
