@@ -99,7 +99,7 @@ async function showPromocodesDiv() {
     }
 };
 // Funcion timer(para mostrar desde / hasta cierta fecha)
-const isWithinDateRange = (startDate, endDate) => {
+const isWithinDateRangeCoupons = (startDate, endDate) => {
     const currentDate = new Date();
     return currentDate >= startDate && currentDate <= endDate;
 };
@@ -139,7 +139,7 @@ function ComponenteCupones() {
     const filteredCoupons = couponsData.filter((item) => {
         const startDate = new Date(item.attributes.Desde);
         const endDate = new Date(item.attributes.Hasta);
-        return isWithinDateRange(startDate, endDate);
+        return isWithinDateRangeCoupons(startDate, endDate);
     });
 
     if (filteredCoupons.length === 0) {
