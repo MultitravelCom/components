@@ -165,7 +165,7 @@ const BitrixFormTitle = () => {
 };
 // *************** Style ************************
 
-export const StyledPrice = styled.div`
+const StyledPrice = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
