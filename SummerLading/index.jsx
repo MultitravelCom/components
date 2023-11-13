@@ -1,5 +1,4 @@
 // *************** Style ************************
-
 const StyledPrice = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
@@ -12,15 +11,23 @@ const StyledPrice = styled.div`
   right: 28px;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     height: 86px;
     bottom: -9px;
     right: 26px;
-  }
+  };
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    height: 21%;
+    bottom: 3%;
+    right: 41px;
+  };
+  @media (min-width: 768px) and (max-width: 1023px) {
+    height: 22%;
+    bottom: -4%;
+    right: 21px;
+  };
 `;
-
 // ***********************************************
-
 function addHeaderLinks() {
   const head = document.head || document.getElementsByTagName("head")[0];
   const meta = document.createElement("meta");
@@ -499,28 +506,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
       rewind: true,
     });
   };
-
-  // React.useEffect(() => {
-  //     console.log('Ejecutando useEffect...');
-  //     setupGlider(); // Configura el Glider al principio
-
-  //     const observer = new MutationObserver((mutations) => {
-  //         mutations.forEach((mutation) => {
-  //             if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-  //                 // setupGlider();
-  //                 observer.disconnect();
-  //             }
-  //         });
-  //     });
-
-  //     observer.observe(document.querySelector(`.${carrusel}`), {
-  //         childList: true,
-  //     });
-
-  //     return () => {
-  //         observer.disconnect();
-  //     };
-  // }, [carrusel]);
 
   React.useEffect(() => {
     setupGlider(); // Configura el Glider al principio
