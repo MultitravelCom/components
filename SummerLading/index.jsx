@@ -130,7 +130,7 @@ mostrarSeccion();
 async function fetchDataFromAPI() {
   try {
     const response = await fetch(
-      "https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos?populate=*"
+      "https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos?populate[0]=Card&populate[1]=Card.Imagen_Card"
     );
     if (!response.ok) {
       throw new Error("No se pudo obtener los datos de la API");
@@ -412,19 +412,19 @@ const Card = ({ cards }) => {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={card.Link_imagen_Card}
+                    srcSet={card.Imagen_Card.data.attributes.url}
                   />
                   <source
                     media="(min-width: 768px) and (max-width: 1023px)"
-                    srcSet={card.Link_imagen_Card}
+                    srcSet={card.Imagen_Card.data.attributes.url}
                   />
                   <source
                     media="(max-width: 767px)"
-                    srcSet={card.Link_imagen_Card}
+                    srcSet={card.Imagen_Card.data.attributes.url}
                   />
                   <img
                     alt={`img ${card.Titulo_Card}`}
-                    srcSet={card.Link_imagen_Card}
+                    srcSet={card.Imagen_Card.data.attributes.url}
                   />
                 </picture>
                 <StyledPriceContainer>
@@ -489,12 +489,11 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
       console.error("No se encontraron elementos para los botones de Glider.");
       return;
     }
+
     if (numberOfCards < 5) {
-        // Si hay menos de 5 tarjetas, oculta las flechas
         btnLeftElement.style.display = 'none';
         btnRightElement.style.display = 'none';
       } else {
-        // Si hay 5 o más tarjetas, configura el carrusel normalmente
         btnLeftElement.addEventListener("click", function (event) {
           event.preventDefault();
         });
