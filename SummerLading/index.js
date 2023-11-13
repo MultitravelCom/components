@@ -2,10 +2,10 @@ function addHeaderLinks() {
     const head = document.head || document.getElementsByTagName('head')[0];
     const meta = document.createElement('meta');
 
-    document.title = "Paquetes turísticos al caribe | Multitravel.com"
+    document.title = "Paquetes turísticos Bariloche verano 2024 | Multitravel.com"
 
     meta.setAttribute('name', 'description');
-    meta.setAttribute('content', 'Compará paquetes al caribe y conseguí los mejores precios en alojamiento y vuelos a Bariloche, Iguazú y Mendoza. Solicitá atención personalizada por whatsapp');
+    meta.setAttribute('content', 'Compará paquetes a Bariloche y conseguí los mejores precios en alojamiento y vuelos');
 
     const linkCDNGlider = document.createElement('link');
 
@@ -140,6 +140,10 @@ const BitrixFormTitle = () => {
         </div>
     )
 }
+// *************** Style ************************
+const Component = styled.div`
+    background: red;
+`
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
     const svgWA = (
@@ -250,7 +254,7 @@ const SecondaryBanner = () => {
     )
 }
 
-const Card = ({ cards, btnStyles }) => {
+const Card = ({ cards }) => {
     const [loaded, setLoaded] = React.useState(true);
     const [openModal, setOpenModal] = React.useState(false);
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
@@ -265,7 +269,7 @@ const Card = ({ cards, btnStyles }) => {
         width: 'initial',
         height: '93px',
         bottom: "0",
-        right: '76px',
+        right: '33px',
         '@media (max-width: 768px)': {
             height: '85px',
             bottom: "-9px",
@@ -326,8 +330,10 @@ const Card = ({ cards, btnStyles }) => {
                                     />
                                 </picture>
                                 <div className="main_conteiner__s1_medio__paquetes" style={priceStyleSummer}>
-                                    <div className="priceStyle left">${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, '.')}</div>
-                                    <div className="priceStyle right">${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, '.')}</div>
+                                    <Component>
+                                        <div className="priceStyle left">${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, '.')}</div>
+                                        <div className="priceStyle right">${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, '.')}</div>
+                                    </Component>
                                 </div>
                                 <div className="main__container__buttonsCars">
                                     {buttonSwitch === "A" && (
