@@ -141,7 +141,7 @@ const BitrixFormTitle = () => {
     )
 }
 // *************** Style ************************
-const Component = React.styled.div`
+const Component = styled.div`
     background: red;
 `
 // ************** COMPONENTES ********************
