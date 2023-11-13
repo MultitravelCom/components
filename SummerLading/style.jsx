@@ -1,4 +1,4 @@
-const StyledPrice = styled.div`
+export const StyledPrice = styled.div`
   overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;

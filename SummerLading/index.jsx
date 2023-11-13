@@ -1,3 +1,6 @@
+import { StyledPrice } from "./style.jsx"
+
+
 function addHeaderLinks() {
   const head = document.head || document.getElementsByTagName("head")[0];
   const meta = document.createElement("meta");
