@@ -39,15 +39,15 @@ const StyledPriceContainer = styled.div`
 `;
 
 const StyledPrice = styled.div`
-font-size: 20px;
-font-weight: 700;
-@media (width: 320px) {
+  font-size: 20px;
+  font-weight: 700;
+  @media (width: 320px) {
     font-size: 19px;
-  };
-@media (width: 768px) {
+  }
+  @media (width: 768px) {
     font-size: 16px;
-  };
-@media (width: 1024px) {
+  }
+  @media (width: 1024px) {
     font-size: 16px;
   }
 `;
@@ -145,7 +145,7 @@ async function fetchDataFromAPI() {
 async function fetchDataSwichWA() {
   try {
     const response = await fetch(
-      "https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-veranos"
+      "https://32tpwbxjq7.us-east-1.awsapprunner.com/api/landing-whatsapp"
     );
     if (!response.ok) {
       throw new Error("No se pudo obtener los datos de la API");
@@ -362,7 +362,7 @@ const Card = ({ cards }) => {
   const [buttonSwitch, setButtonSwitch] = React.useState("B");
   const [data, setData] = React.useState([]);
 
-  console.log("cards--.>", cards.Imagen_Card)
+  console.log("cards--.>", cards.Imagen_Card);
 
   const handleBannerClick = () => {
     if (window.innerWidth <= 768) {
@@ -403,9 +403,7 @@ const Card = ({ cards }) => {
               key={card.id}
               className="carrusel__elemento"
               style={{ position: "relative" }}
-
             >
-                  {console.log("--->", card.Imagen_Card.data[0].attributes)}
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
@@ -440,25 +438,26 @@ const Card = ({ cards }) => {
                   </StyledPrice>
                 </StyledPriceContainer>
                 <div className="main__container__buttonsCars">
-                  {buttonSwitch === "A" && (
+                  {buttonSwitch === "A" ? (
                     <>
+                    
                       <ButtonLading
-                        id={card.title}
+                        id={card.id}
                         className="btn_Whatsapp"
                         text="Whatsapp"
                         onClick={handleWhatsAppClick}
                         svgType="whatsapp"
                       />
                       <ButtonLading
-                        id={card.id}
+                        id={card.Titulo_Card}
                         className="classOpenModal"
                         text="Llamar"
                         onClick={handleBannerClick}
                         svgType="phone"
                       />
+
                     </>
-                  )}
-                  {buttonSwitch === "B" && (
+                  ) : (
                     <ButtonLading
                       id={card.id}
                       className="btn_FormBitrix"
@@ -495,16 +494,16 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
     }
 
     if (numberOfCards < 5) {
-        btnLeftElement.style.display = 'none';
-        btnRightElement.style.display = 'none';
-      } else {
-        btnLeftElement.addEventListener("click", function (event) {
-          event.preventDefault();
-        });
-    
-        btnRightElement.addEventListener("click", function (event) {
-          event.preventDefault();
-        });
+      btnLeftElement.style.display = "none";
+      btnRightElement.style.display = "none";
+    } else {
+      btnLeftElement.addEventListener("click", function (event) {
+        event.preventDefault();
+      });
+
+      btnRightElement.addEventListener("click", function (event) {
+        event.preventDefault();
+      });
     }
 
     new Glider(document.querySelector(`.${carrusel}`), {
