@@ -39,15 +39,15 @@ const StyledPriceContainer = styled.div`
 `;
 
 const StyledPrice = styled.div`
-  font-size: 20px;
-  font-weight: 700;
-  @media (width: 320px) {
+font-size: 20px;
+font-weight: 700;
+@media (width: 320px) {
     font-size: 19px;
-  }
-  @media (width: 768px) {
+  };
+@media (width: 768px) {
     font-size: 16px;
-  }
-  @media (width: 1024px) {
+  };
+@media (width: 1024px) {
     font-size: 16px;
   }
 `;
@@ -483,19 +483,26 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
   const setupGlider = () => {
     const btnLeftElement = document.querySelector(`.${btnLeft}`);
     const btnRightElement = document.querySelector(`.${btnRight}`);
+    const numberOfCards = cards.length;
 
     if (!btnLeftElement || !btnRightElement) {
       console.error("No se encontraron elementos para los botones de Glider.");
       return;
     }
-
-    btnLeftElement.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
-
-    btnRightElement.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
+    if (numberOfCards < 5) {
+        // Si hay menos de 5 tarjetas, oculta las flechas
+        btnLeftElement.style.display = 'none';
+        btnRightElement.style.display = 'none';
+      } else {
+        // Si hay 5 o más tarjetas, configura el carrusel normalmente
+        btnLeftElement.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+    
+        btnRightElement.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+    }
 
     new Glider(document.querySelector(`.${carrusel}`), {
       slidesToShow: 1.2,
@@ -548,25 +555,21 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
           </h2>
         </div>
         <div className="carrusel__contenedor">
-          {cards && cards.length >= 5 && (
-            <button
-              aria-label="Anterior"
-              className={`carrusel__anterior ${btnLeft}`}
-            >
-              <i className="fa fa-chevron-left" aria-hidden="true"></i>
-            </button>
-          )}
+          <button
+            aria-label="Anterior"
+            className={`carrusel__anterior ${btnLeft}`}
+          >
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+          </button>
           <div className={carrusel} id={title}>
             <Card cards={cards} onContactClick={onContactClick} />
           </div>
-          {cards && cards.length >= 5 && (
-            <button
-              aria-label="Siguiente"
-              className={`carrusel__siguiente ${btnRight}`}
-            >
-              <i className="fa fa-chevron-right" aria-hidden="true"></i>
-            </button>
-          )}
+          <button
+            aria-label="Siguiente"
+            className={`carrusel__siguiente ${btnRight}`}
+          >
+            <i className="fa fa-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </>
