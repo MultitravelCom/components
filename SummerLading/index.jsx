@@ -176,6 +176,11 @@ const Component = styled.div`
   right: 28px;
   flex-direction: column;
   justify-content: space-between;
+  @media (width: 425px) {
+    height: 86px;
+    bottom: -9px;
+    right: 26px;
+  }
   @media (max-width: 768px) {
     height: 86px;
     bottom: -9px;
@@ -361,7 +366,7 @@ const Card = ({ cards }) => {
       {loaded ? (
         cards ? (
           cards.map((card) => (
-            <div key={card.id} className="carrusel__elemento">
+            <div key={card.id} className="carrusel__elemento" style={{ position: 'relative' }}>
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
