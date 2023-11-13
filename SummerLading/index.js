@@ -234,19 +234,19 @@ const SecondaryBanner = () => {
                 <picture>
                     <source
                         media="(min-width: 1024px)"
-                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner (1).webp"
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner (2).webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        srcSet="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Mobile.webp"
+                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner (2).webp"
                     />
                     <img
                         className="main_conteiner__s1_medio__paquetes__img"
-                        src="https://multitravelcom.github.io/MT/Evento/TravelSale-2023/Banner-Landing/Caribe/Banner-Desktop.webp"
+                        src="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner (1).webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>
