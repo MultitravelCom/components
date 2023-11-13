@@ -445,66 +445,60 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
   const { title, btnLeft, btnRight, carrusel, destino, cards } =
     btnStyles || {};
 
-    const setupGlider = () => {
-        const btnLeftElement = document.querySelector(`.${btnLeft}`);
-        const btnRightElement = document.querySelector(`.${btnRight}`);
-      
-        if (!btnLeftElement || !btnRightElement) {
-          console.error("No se encontraron elementos para los botones de Glider.");
-          return;
-        }
-      
-        btnLeftElement.addEventListener("click", function (event) {
-          event.preventDefault();
-        });
-      
-        btnRightElement.addEventListener("click", function (event) {
-          event.preventDefault();
-        });
-      
-        const carruselElement = document.querySelector(`.${carrusel}`);
-        const cardsCount = carruselElement.querySelectorAll('.carrusel__elemento').length;
-      
-        if (cardsCount > 4) {
-          new Glider(carruselElement, {
-            slidesToShow: 1.2,
-            slidesToScroll: 0.5,
-            draggable: true,
-            arrows: {
-              prev: btnLeftElement,
-              next: btnRightElement,
-            },
-            responsive: [
-              {
-                // screens greater than >= 775px
-                breakpoint: 450,
-                settings: {
-                  slidesToShow: "2.2",
-                  slidesToScroll: "1",
-                },
-              },
-              {
-                // screens greater than >= 775px
-                breakpoint: 760,
-                settings: {
-                  slidesToShow: "3.2",
-                  slidesToScroll: "1",
-                },
-              },
-              {
-                // screens greater than >= 1024px
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 4,
-                  slidesToScroll: 1,
-                },
-              },
-            ],
-            rewind: true,
-          });
-        }
-      };
-      
+  const setupGlider = () => {
+    const btnLeftElement = document.querySelector(`.${btnLeft}`);
+    const btnRightElement = document.querySelector(`.${btnRight}`);
+
+    if (!btnLeftElement || !btnRightElement) {
+      console.error("No se encontraron elementos para los botones de Glider.");
+      return;
+    }
+
+    btnLeftElement.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+
+    btnRightElement.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+
+    new Glider(document.querySelector(`.${carrusel}`), {
+      slidesToShow: 1.2,
+      slidesToScroll: 0.5,
+      draggable: true,
+      arrows: {
+        prev: btnLeftElement,
+        next: btnRightElement,
+      },
+      responsive: [
+        {
+          // screens greater than >= 775px
+          breakpoint: 450,
+          settings: {
+            slidesToShow: "2.2",
+            slidesToScroll: "1",
+          },
+        },
+        {
+          // screens greater than >= 775px
+          breakpoint: 760,
+          settings: {
+            slidesToShow: "3.2",
+            slidesToScroll: "1",
+          },
+        },
+        {
+          // screens greater than >= 1024px
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+      rewind: true,
+    });
+  };
 
   // React.useEffect(() => {
   //     console.log('Ejecutando useEffect...');
