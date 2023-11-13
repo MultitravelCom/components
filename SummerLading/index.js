@@ -262,7 +262,9 @@ const Card = ({ cards, btnStyles }) => {
         justifyContent: 'space-between',
         position: 'absolute',
         flexDirection: 'column',
+        width: 'initial',
         height: '93px',
+        bottom: "0",
         right: '76px',
         '@media (max-width: 768px)': {
             flexDirection: 'row', 
