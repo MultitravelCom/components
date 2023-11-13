@@ -267,8 +267,9 @@ const Card = ({ cards, btnStyles }) => {
         bottom: "0",
         right: '76px',
         '@media (max-width: 768px)': {
-            flexDirection: 'row', 
-            height: 'auto',
+            height: '85px',
+            bottom: "-9px",
+            right: '67px',
         },
     };
 
