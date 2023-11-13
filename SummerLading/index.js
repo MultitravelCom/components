@@ -256,8 +256,6 @@ const Card = ({ cards, btnStyles }) => {
     const [buttonSwitch, setButtonSwitch] = React.useState("B");
     const [data, setData] = React.useState([]);
 
-    const { title } = btnStyles || {};
-
     const priceStyleSummer = {
         display: 'flex',
         alignItems: 'stretch',
@@ -324,7 +322,7 @@ const Card = ({ cards, btnStyles }) => {
                                         srcSet={card.Link_imagen_Card}
                                     />
                                 </picture>
-                                <div className={`main_conteiner__s1_medio__paquetes ${priceStyleSummer}`}>
+                                <div className="main_conteiner__s1_medio__paquetes" style={priceStyleSummer}>
                                     <div className="priceStyle left">${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, '.')}</div>
                                     <div className="priceStyle right">${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, '.')}</div>
                                 </div>
