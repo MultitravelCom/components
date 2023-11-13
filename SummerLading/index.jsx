@@ -1,27 +1,35 @@
 // *************** Style ************************
 const StyledPriceContainer = styled.div`
-  overflow: hidden;
-  margin-bottom: 4rem;
-  margin-top: 1rem;
-  display: flex;
-  position: absolute;
-  width: initial;
-  height: 94px;
-  bottom: 2px;
-  right: 28px;
-  flex-direction: column;
-  justify-content: space-between;
-  @media (max-width: 425px) {
-    height: 86px;
-    bottom: -9px;
-    right: 26px;
+overflow: hidden;
+margin-top: 1rem;
+display: flex;
+position: absolute;
+width: initial;
+height: 94px;
+bottom: 58px;
+right: 28px;
+flex-direction: column;
+justify-content: space-between;
+  @media (max-width: 424px) {
+    height: 21%;
+    bottom: 3%;
+    right: 41px;
   }
-  @media screen and (min-width: 425px) and (max-width: 767px) {
+  @media (max-width: 425px) {
+    height: 20%;
+    right: 60px;
+  }
+  @media screen and (min-width: 426px) and (max-width: 767px) {
     height: 21%;
     bottom: 3%;
     right: 41px;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
+    height: 22%;
+    bottom: -4%;
+    right: 21px;
+  }
+  @media (width: 1024px) {
     height: 22%;
     bottom: -4%;
     right: 21px;
