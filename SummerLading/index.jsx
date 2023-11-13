@@ -177,7 +177,7 @@ const Component = styled.div`
     height: 93px;
     bottom: 0;
     right: 33px;
-    @media (max-width: 768px): {
+    @media (max-width: 768px) {
         height: 85px;
         bottom: -9px;
         right: 67px;
