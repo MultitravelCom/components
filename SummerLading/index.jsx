@@ -405,7 +405,7 @@ const Card = ({ cards }) => {
               style={{ position: "relative" }}
 
             >
-                  {console.log("--->", card)}
+                  {console.log("--->", card.Imagen_Card.data)}
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
