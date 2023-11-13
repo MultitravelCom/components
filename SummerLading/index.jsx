@@ -405,7 +405,7 @@ const Card = ({ cards }) => {
               style={{ position: "relative" }}
 
             >
-                  {console.log("--->", card.Imagen_Card.data)}
+                  {console.log("--->", card.Imagen_Card.data.attributes)}
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
@@ -424,7 +424,7 @@ const Card = ({ cards }) => {
                   />
                   <source
                     media="(max-width: 767px)"
-                    srcSet={card.Imagen_Card.data?.attributes?.url}
+                    srcSet={card.Imagen_Card.data.attributes?.url}
                   />
                   <img
                     alt={`img ${card.Titulo_Card}`}
