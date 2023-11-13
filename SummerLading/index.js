@@ -258,7 +258,7 @@ const Card = ({ cards, btnStyles }) => {
 
     const { title } = btnStyles || {};
 
-    const priceStyle = {
+    const priceStyleSummer = {
         display: 'flex',
         alignItems: 'stretch',
         justifyContent: 'space-between',
@@ -403,7 +403,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     // screens greater than >= 775px
                     breakpoint: 450,
                     settings: {
-                        // Set to `auto` and provide item width to adjust to viewport
                         slidesToShow: "2.2",
                         slidesToScroll: "1",
                     },
@@ -412,7 +411,6 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
                     // screens greater than >= 775px
                     breakpoint: 760,
                     settings: {
-                        // Set to `auto` and provide item width to adjust to viewport
                         slidesToShow: "3.2",
                         slidesToScroll: "1",
                     },
