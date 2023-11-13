@@ -1,3 +1,26 @@
+// *************** Style ************************
+
+const StyledPrice = styled.div`
+  overflow: hidden;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  display: flex;
+  position: absolute;
+  width: initial;
+  height: 94px;
+  bottom: 2px;
+  right: 28px;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    height: 86px;
+    bottom: -9px;
+    right: 26px;
+  }
+`;
+
+// ***********************************************
+
 function addHeaderLinks() {
   const head = document.head || document.getElementsByTagName("head")[0];
   const meta = document.createElement("meta");
@@ -163,26 +186,6 @@ const BitrixFormTitle = () => {
     </div>
   );
 };
-// *************** Style ************************
-
-const StyledPrice = styled.div`
-  overflow: hidden;
-  margin-bottom: 4rem;
-  margin-top: 1rem;
-  display: flex;
-  position: absolute;
-  width: initial;
-  height: 94px;
-  bottom: 2px;
-  right: 28px;
-  flex-direction: column;
-  justify-content: space-between;
-  @media (max-width: 768px) {
-    height: 86px;
-    bottom: -9px;
-    right: 26px;
-  }
-`;
 
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
@@ -363,7 +366,11 @@ const Card = ({ cards }) => {
       {loaded ? (
         cards ? (
           cards.map((card) => (
-            <div key={card.id} className="carrusel__elemento" style={{ position: 'relative' }}>
+            <div
+              key={card.id}
+              className="carrusel__elemento"
+              style={{ position: "relative" }}
+            >
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
@@ -459,42 +466,49 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
       event.preventDefault();
     });
 
-    new Glider(document.querySelector(`.${carrusel}`), {
-      slidesToShow: 1.2,
-      slidesToScroll: 0.5,
-      draggable: true,
-      arrows: {
-        prev: btnLeftElement,
-        next: btnRightElement,
-      },
-      responsive: [
-        {
-          // screens greater than >= 775px
-          breakpoint: 450,
-          settings: {
-            slidesToShow: "2.2",
-            slidesToScroll: "1",
-          },
+    const carruselElement = document.querySelector(`.${carrusel}`);
+    const cardsCount = carruselElement.querySelectorAll(
+      ".carrusel__elemento"
+    ).length;
+
+    if (cardsCount > 4) {
+      new Glider(carruselElement, {
+        slidesToShow: 1.2,
+        slidesToScroll: 0.5,
+        draggable: true,
+        arrows: {
+          prev: btnLeftElement,
+          next: btnRightElement,
         },
-        {
-          // screens greater than >= 775px
-          breakpoint: 760,
-          settings: {
-            slidesToShow: "3.2",
-            slidesToScroll: "1",
+        responsive: [
+          {
+            // screens greater than >= 775px
+            breakpoint: 450,
+            settings: {
+              slidesToShow: "2.2",
+              slidesToScroll: "1",
+            },
           },
-        },
-        {
-          // screens greater than >= 1024px
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
+          {
+            // screens greater than >= 775px
+            breakpoint: 760,
+            settings: {
+              slidesToShow: "3.2",
+              slidesToScroll: "1",
+            },
           },
-        },
-      ],
-      rewind: true,
-    });
+          {
+            // screens greater than >= 1024px
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+        rewind: true,
+      });
+    }
   };
 
   // React.useEffect(() => {
