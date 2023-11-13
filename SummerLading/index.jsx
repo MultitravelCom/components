@@ -362,7 +362,7 @@ const Card = ({ cards }) => {
   const [buttonSwitch, setButtonSwitch] = React.useState("B");
   const [data, setData] = React.useState([]);
 
-  console.log("cards--.>", card.Imagen_Card)
+  console.log("cards--.>", cards.Imagen_Card)
 
   const handleBannerClick = () => {
     if (window.innerWidth <= 768) {
@@ -403,7 +403,9 @@ const Card = ({ cards }) => {
               key={card.id}
               className="carrusel__elemento"
               style={{ position: "relative" }}
+
             >
+                  {console.log("--->", card)}
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
