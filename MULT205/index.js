@@ -139,7 +139,13 @@ function ComponenteCupones() {
     const filteredCoupons = couponsData.filter((item) => {
         const startDate = new Date(item.attributes.Desde);
         const endDate = new Date(item.attributes.Hasta);
-        return isWithinDateRangeCoupons(startDate, endDate);
+        // return isWithinDateRangeCoupons(startDate, endDate);
+        
+        const result = isWithinDateRangeCoupons(startDate, endDate);
+        console.log("---->>", result)
+
+        return result;
+        
     });
 
     if (filteredCoupons.length === 0) {
