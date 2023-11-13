@@ -121,6 +121,7 @@ function ComponenteCupones() {
                 const result = await getCouponsFetch();
                 if (result.data.length > 0) {
                     const data = result.data;
+                    console.log("---DATA--->", data)
                     setCouponsData(data);
                     console.log("Datos en couponsData:", data);
                 }
@@ -154,6 +155,7 @@ function ComponenteCupones() {
 
     return (
         <>
+        {console.log("---filteredCoupons--->", filteredCoupons)}
             {filteredCoupons.map(item => {
                 const { id, attributes } = item;
                 const { Titulo, Descripcion, Cupon, Hasta } = attributes;
