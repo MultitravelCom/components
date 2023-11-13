@@ -165,23 +165,22 @@ const BitrixFormTitle = () => {
 };
 // *************** Style ************************
 const Component = styled.div`
-    overflow: hidden;
-    margin-bottom: 4rem;
-    margin-top: 1rem;
-    display: flex;
-    alignItems: stretch;
-    justifyContent: space-between;
-    position: absolute;
-    flexDirection: column;
-    width: initial;
-    height: 93px;
-    bottom: 0;
-    right: 33px;
-    @media (max-width: 768px) {
-        height: 85px;
-        bottom: -9px;
-        right: 67px;
-    }
+  overflow: hidden;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  display: flex;
+  position: absolute;
+  width: initial;
+  height: 94px;
+  bottom: 2px;
+  right: 28px;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    height: 86px;
+    bottom: -9px;
+    right: 26px;
+  }
 `;
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
@@ -388,16 +387,14 @@ const Card = ({ cards }) => {
                     srcSet={card.Link_imagen_Card}
                   />
                 </picture>
-                  <Component>
-                    <div className="priceStyle left">
-                      $
-                      {card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
-                    </div>
-                    <div className="priceStyle right">
-                      $
-                      {card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
-                    </div>
-                  </Component>
+                <Component>
+                  <div className="priceStyle left">
+                    ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
+                  </div>
+                  <div className="priceStyle right">
+                    ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
+                  </div>
+                </Component>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" && (
                     <>
