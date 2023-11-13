@@ -362,6 +362,8 @@ const Card = ({ cards }) => {
   const [buttonSwitch, setButtonSwitch] = React.useState("B");
   const [data, setData] = React.useState([]);
 
+  console.log("cards--.>", cards)
+
   const handleBannerClick = () => {
     if (window.innerWidth <= 768) {
       window.location.href = "tel:08003480003";
