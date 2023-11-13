@@ -36,7 +36,7 @@ const StyledPriceContainer = styled.div`
 const StyledPrice = styled.div`
 font-size: 20px;
 font-weight: 700;
-@media (max-width: 768px) {
+@media (width: 1024px) {
     font-size: 16px;
   }
 `;
