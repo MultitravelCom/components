@@ -44,7 +44,6 @@ function ComponenteCupones() {
                 if (result.data.length > 0) {
                     const data = result.data;
                     setCouponsData(data);
-                    console.log("Datos en couponsData:", data);
                 }
             } finally {
                 setLoading(false);
