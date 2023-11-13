@@ -28,14 +28,17 @@ const StyledPriceContainer = styled.div`
   }
   @media (width: 1024px) {
     height: 22%;
-    bottom: -4%;
-    right: 21px;
+    bottom: -3%;
+    right: 23px;
   }
 `;
 
 const StyledPrice = styled.div`
 font-size: 20px;
 font-weight: 700;
+@media (width: 768px) {
+    font-size: 16px;
+  };
 @media (width: 1024px) {
     font-size: 16px;
   }
