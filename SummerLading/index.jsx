@@ -165,23 +165,23 @@ const BitrixFormTitle = () => {
 };
 // *************** Style ************************
 const Component = styled.div`
-    overflow: 'hidden',
-    margin-bottom: '4rem',
-    margin-top: '1rem',
-    display: 'flex',
-    alignItems: 'stretch',
-    justifyContent: 'space-between',
-    position: 'absolute',
-    flexDirection: 'column',
-    width: 'initial',
-    height: '93px',
-    bottom: "0",
-    right: '33px',
-    '@media (max-width: 768px)': {
-        height: '85px',
-        bottom: "-9px",
-        right: '67px',
-    },
+    overflow: hidden;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    display: flex;
+    alignItems: stretch;
+    justifyContent: space-between;
+    position: absolute;
+    flexDirection: column;
+    width: initial;
+    height: 93px;
+    bottom: 0;
+    right: 33px;
+    @media (max-width: 768px): {
+        height: 85px;
+        bottom: -9px;
+        right: 67px;
+    }
 `;
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
