@@ -415,9 +415,9 @@ const Card = ({ cards }) => {
                   <StyledPrice>
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
-                  <div className="priceStyle right">
+                  <StyledPrice>
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
-                  </div>
+                  </StyledPrice>
                 </StyledPriceContainer>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" && (
