@@ -405,7 +405,7 @@ const Card = ({ cards }) => {
               style={{ position: "relative" }}
 
             >
-                  {console.log("--->", card.Imagen_Card.data.attributes)}
+                  {console.log("--->", card.Imagen_Card.data[0].attributes)}
               <div
                 className="main__conteiner__s1__destacado__card uno"
                 style={{ height: "100%", width: "100%" }}
@@ -416,19 +416,19 @@ const Card = ({ cards }) => {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={card.Imagen_Card.data.attributes?.url}
+                    srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                   <source
                     media="(min-width: 768px) and (max-width: 1023px)"
-                    srcSet={card.Imagen_Card.data.attributes?.url}
+                    srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                   <source
                     media="(max-width: 767px)"
-                    srcSet={card.Imagen_Card.data.attributes?.url}
+                    srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                   <img
                     alt={`img ${card.Titulo_Card}`}
-                    srcSet={card.Imagen_Card.data.attributes?.url}
+                    srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                 </picture>
                 <StyledPriceContainer>
