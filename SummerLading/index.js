@@ -234,19 +234,19 @@ const SecondaryBanner = () => {
                 <picture>
                     <source
                         media="(min-width: 1024px)"
-                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner%20(1).webp"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Banner-Dos/Banner%20(1).webp"
                     />
                     <source
                         media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner%20(2).webp"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Banner-Dos/Banner%20(2).webp"
                     />
                     <source
                         media="(max-width: 767px)"
-                        srcSet="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner%20(2).webp"
+                        srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Banner-Dos/Banner%20(2).webp"
                     />
                     <img
                         className="main_conteiner__s1_medio__paquetes__img"
-                        src="https://multitravelcom.github.io/MT/Verano-2024/Banner-Dos/Banner%20(1).webp"
+                        src="https://multitravelcom.github.io/MT/Evento/Verano-2024/Banner-Dos/Banner%20(1).webp"
                         alt="Imagen banner promociones"
                     />
                 </picture>
@@ -359,7 +359,6 @@ const Card = ({ cards, btnStyles }) => {
         </>
     );
 };
-
 
 const CardContainer = ({ btnStyles, onContactClick }) => {
     const { title, btnLeft, btnRight, carrusel, destino, cards } = btnStyles || {};
