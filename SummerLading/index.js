@@ -307,12 +307,12 @@ const Card = ({ cards, btnStyles }) => {
                                     <EventImg style="eventImg" />
                                 )} */}
                                 <picture>
-                                    <source media="(min-width: 1024px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
-                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
-                                    <source media="(max-width: 767px)" srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp" />
+                                    <source media="(min-width: 1024px)" srcSet={card.Link_imagen_Card} />
+                                    <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={card.Link_imagen_Card} />
+                                    <source media="(max-width: 767px)" srcSet={card.Link_imagen_Card} />
                                     <img
-                                        alt={"imagenes"}
-                                        srcSet="https://multitravelcom.github.io/MT/Evento/Verano-2024/Section-1/Card%20(1).webp"
+                                        alt={`img ${card.Titulo_Card}`}
+                                        srcSet={card.Link_imagen_Card}
                                     />
                                 </picture>
                                 <div className="main_container_priceStyle">
