@@ -165,9 +165,9 @@ const BitrixFormTitle = () => {
 };
 // *************** Style ************************
 const Component = styled.div`
-    overflow: hidden;
-    margin-bottom: 4rem;
-    margin-top: 1rem;
+    overflow: 'hidden',
+    margin-bottom: '4rem',
+    margin-top: '1rem',
     display: 'flex',
     alignItems: 'stretch',
     justifyContent: 'space-between',
