@@ -373,7 +373,7 @@ const Card = ({ cards }) => {
   };
 
   const handleWhatsAppClick = () => {
-    const whatsappURL = "https://wa.link/64zdo9";
+    const whatsappURL = "https://wa.link/sz5doo";
     window.open(whatsappURL, "_blank");
   };
 
