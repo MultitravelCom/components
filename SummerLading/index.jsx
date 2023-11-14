@@ -16,6 +16,11 @@ const StyledPriceContainer = styled.div`
     bottom: -6px;
     right: 23px;
   }
+  @media (width: 375px) {
+    height: 95px;
+    bottom: 6px;
+    right: 29px;
+  }
   @media (max-width: 424px) {
     height: 82px;
     bottom: -6px;
