@@ -443,14 +443,14 @@ const Card = ({ cards }) => {
                   {buttonSwitch === "A" ? (
                     <>
                       <ButtonLading
-                        id={destino.title}
+                        id={card.Titulo_Card}
                         className="btn_Whatsapp"
                         text="Whatsapp"
                         onClick={handleWhatsAppClick}
                         svgType="whatsapp"
                       />
                       <ButtonLading
-                        id={destino.id}
+                        id={card.id}
                         className="classOpenModal"
                         text="Llamar"
                         onClick={handleBannerClick}
@@ -459,7 +459,7 @@ const Card = ({ cards }) => {
                     </>
                   ) : (
                     <ButtonLading
-                      id={destino.id}
+                      id={card.id}
                       className="btn_FormBitrix"
                       text="Llamar Ahora"
                       onClick={handleBannerClick}
