@@ -362,19 +362,21 @@ const Card = ({ cards }) => {
   const [buttonSwitch, setButtonSwitch] = React.useState("B");
   const [data, setData] = React.useState([]);
 
-  console.log("cards--.>", cards.Imagen_Card);
-
   const handleBannerClick = () => {
     if (window.innerWidth <= 768) {
       window.location.href = "tel:08003480003";
     } else {
       setOpenModal(true);
     }
+    console.log("Banner Clicked"); // Agregar console.log aquí
+
   };
 
   const handleWhatsAppClick = () => {
     const whatsappURL = "https://wa.link/sz5doo";
     window.open(whatsappURL, "_blank");
+    console.log("WhatsApp Clicked"); // Agregar console.log aquí
+
   };
 
   React.useEffect(() => {
@@ -440,26 +442,24 @@ const Card = ({ cards }) => {
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" ? (
                     <>
-                    
                       <ButtonLading
-                        id={card.id}
+                        id={destino.title}
                         className="btn_Whatsapp"
                         text="Whatsapp"
                         onClick={handleWhatsAppClick}
                         svgType="whatsapp"
                       />
                       <ButtonLading
-                        id={card.Titulo_Card}
+                        id={destino.id}
                         className="classOpenModal"
                         text="Llamar"
                         onClick={handleBannerClick}
                         svgType="phone"
                       />
-
                     </>
                   ) : (
                     <ButtonLading
-                      id={card.id}
+                      id={destino.id}
                       className="btn_FormBitrix"
                       text="Llamar Ahora"
                       onClick={handleBannerClick}
