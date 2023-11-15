@@ -556,7 +556,7 @@ const CardContainer = ({ btnStyles, onContactClick }) => {
   return (
     <>
       <div key={title} className="main__conteiner__s1">
-        <div className="main__conteiner__s1__titulo" id={`seccion${destino}`}>
+        <div className="main__conteiner__s1__titulo" id={`${destino}`}>
           <h2 key={title}>
             <strong>{title}</strong>
           </h2>
