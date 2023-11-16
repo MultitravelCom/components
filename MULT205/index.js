@@ -316,7 +316,7 @@ const App = () => {
 
     React.useEffect(() => {
         const confirmBookingPromocodes = document.querySelector('.confirm-booking__promocodes');
-        confirmBookingPromocodes.style.display = 'flex';
+        confirmBookingPromocodes.style.display = 'none';
         whatsappRef.current = document.querySelector('.whatsAppFixes');
     }, []);
 
