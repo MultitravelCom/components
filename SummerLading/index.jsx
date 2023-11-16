@@ -382,10 +382,10 @@ const Card = ({ cards }) => {
 
   };
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClickSummer = () => {
     const whatsappURL = "https://wa.link/sz5doo";
     window.open(whatsappURL, "_blank");
-    console.log("WhatsApp Clicked"); // Agregar console.log aquí
+    console.log("handleWhatsAppClickSummer"); // Agregar console.log aquí
 
   };
 
@@ -456,7 +456,7 @@ const Card = ({ cards }) => {
                         id={card.Titulo_Card}
                         className="btn_Whatsapp"
                         text="Whatsapp"
-                        onClick={handleWhatsAppClick}
+                        onClick={handleWhatsAppClickSummer}
                         svgType="whatsapp"
                       />
                       <ButtonLadingSummer
