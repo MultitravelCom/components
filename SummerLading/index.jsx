@@ -229,7 +229,7 @@ const BitrixFormTitle = () => {
 };
 
 // ************** COMPONENTES ********************
-function ButtonLading(props) {
+function ButtonLadingSummer(props) {
   const svgWA = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -452,14 +452,14 @@ const Card = ({ cards }) => {
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" ? (
                     <>
-                      <ButtonLading
+                      <ButtonLadingSummer
                         id={card.Titulo_Card}
                         className="btn_Whatsapp"
                         text="Whatsapp"
                         onClick={handleWhatsAppClick}
                         svgType="whatsapp"
                       />
-                      <ButtonLading
+                      <ButtonLadingSummer
                         id={card.id}
                         className="classOpenModal"
                         text="Llamar"
@@ -468,7 +468,7 @@ const Card = ({ cards }) => {
                       />
                     </>
                   ) : (
-                    <ButtonLading
+                    <ButtonLadingSummer
                       id={card.id}
                       className="btn_FormBitrix"
                       text="Llamar Ahora"
