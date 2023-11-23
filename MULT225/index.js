@@ -20,8 +20,8 @@ function Button(props) {
 
 const isWithinDateRange = () => {
     const currentDate = new Date();
-    const startDate = new Date("2023-11-06");
-    const endDate = new Date("2023-11-13");
+    const startDate = new Date("2023-11-23T23:59:00");
+    const endDate = new Date("2023-11-24T23:59:00"); // 6:30 PM
     return currentDate >= startDate && currentDate <= endDate;
 };
 
@@ -300,15 +300,16 @@ const Redes = () => {
         if (isWithinDateRange()) {
             setText({
                 title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
-                subtitle: "APROVECHÁ LAS PROMOS EXCLUSIVAS DEL CYBER MONDAY",
+                subtitle: "APROVECHA LAS PROMOS EXCLUSIVAS DEL BLACK FRIDAY",
             });
-            setBackgroundColor("#083257");
-            setImage1(!isImage1);
+            setBackgroundColor("black");
+            // setImage1(!isImage1);
         } else {
             setText({
                 title: "¡SEGUINOS EN NUESTRAS REDES SOCIALES!",
                 subtitle: "DESCUBRÍ ANTES QUE NADIE OFERTAS EXCLUSIVAS",
             });
+            setBackgroundColor("#2A91EB")
         }
     }, []);
 
