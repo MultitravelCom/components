@@ -21,7 +21,7 @@ function Button(props) {
 const isWithinDateRange = () => {
     const currentDate = new Date();
     const startDate = new Date("2023-11-23T23:59:00");
-    const endDate = new Date("2023-11-24T23:59:00"); // 6:30 PM
+    const endDate = new Date("2023-11-27T23:59:00"); // 6:30 PM
     return currentDate >= startDate && currentDate <= endDate;
 };
 
