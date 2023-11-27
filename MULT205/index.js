@@ -155,7 +155,7 @@ function ComponenteCupones() {
 
     return (
         <>
-        {console.log("---filteredCoupons--->", filteredCoupons)}
+        
             {filteredCoupons.map(item => {
                 const { id, attributes } = item;
                 const { Titulo, Descripcion, Cupon, Hasta } = attributes;
