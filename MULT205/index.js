@@ -69,7 +69,7 @@ function moveBookingBreakdownTable() {
 
         const fullLines = shoppingBasketLines.querySelectorAll('.shopping-basket__line-price');
         fullLines.forEach(line => {
-            line.style.display = 'none';
+            line.style.display = 'flex';
         });
     }
 };
@@ -121,9 +121,9 @@ function ComponenteCupones() {
                 const result = await getCouponsFetch();
                 if (result.data.length > 0) {
                     const data = result.data;
-                    console.log("---DATA--->", data)
+                    
                     setCouponsData(data);
-                    console.log("Datos en couponsData:", data);
+                    
                 }
             } finally {
                 setLoading(false);
