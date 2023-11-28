@@ -171,7 +171,7 @@ const Modal = ({ open, onClose }) => {
                             diasClass="green"
                     
                             buttonStyle="btn_Style_Venta_Contactarme"
-                            buttonLink="https://wa.link/5s5eba"
+                            buttonLink="https://wa.link/ic3kv5"
                             buttonText="Enviar mensaje"
                         />
                     ) : null}
