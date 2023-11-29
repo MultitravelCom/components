@@ -377,15 +377,15 @@ const BannerMensageCardApp = () => {
     return (
         <>
             {showFreezePriceMessageA && (
-                <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
+                <BannerMensageCard text_p={"Paga ahora y congela el precio"} />
             )}
 
             {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"3 cuotas sin interés a través del 0800 349 0003"} />
+                <BannerMensageCard text_p={"Aprovechá el descuento con el código: HOTELESOFF5"} />
             )}
 
             {showFreezePriceMessageC && (
-                <BannerMensageCard text_p={"Comprá ahora y congela el precio en pesos"} />
+                <BannerMensageCard text_p={"Paga ahora y congela el precio"} />
             )}
         </>
     );
