@@ -378,15 +378,12 @@ const Card = ({ cards }) => {
     } else {
       setOpenModal(true);
     }
-    console.log("Banner Clicked"); // Agregar console.log aquí
 
   };
 
   const handleWhatsAppClickSummer = () => {
     const whatsappURL = "https://wa.link/sz5doo";
     window.open(whatsappURL, "_blank");
-    console.log("handleWhatsAppClickSummer"); // Agregar console.log aquí
-
   };
 
   React.useEffect(() => {
@@ -396,7 +393,7 @@ const Card = ({ cards }) => {
         setData(responseData);
 
         setButtonSwitch(
-          responseData.data?.attributes?.Whatsapp_Activo ? "A" : "B"
+          responseData.data?.attributes?.Whatsapp_Activo ? "A" : "A"
         );
       } catch (error) {
         console.error(error);
