@@ -91,12 +91,12 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
                             boxs_ofertas_text="Alojamientos"
-                            btn_link="https://www.multitravel.com/hotels/"
+                            btn_link="https://ar.multitravel.com/hotels/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
                             boxs_ofertas_text="Paquetes"
-                            btn_link="https://www.multitravel.com/insurances/"
+                            btn_link="https://ar.multitravel.com/insurances/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
@@ -120,17 +120,17 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
                             boxs_ofertas_text="Paquetes"
-                            btn_link="https://www.multitravel.com/packages/flighthotel/"
+                            btn_link="https://ar.multitravel.com/packages/flighthotel/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-vuelo.webp"
                             boxs_ofertas_text="Vuelos"
-                            btn_link="https://www.multitravel.com/flights/"
+                            btn_link="https://ar.multitravel.com/flights/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
                             boxs_ofertas_text="Asistencias"
-                            btn_link="https://www.multitravel.com/insurances/"
+                            btn_link="https://ar.multitravel.com/insurances/"
                         />
                     </div>
                 </div>
@@ -150,17 +150,17 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
                             boxs_ofertas_text="Alojamientos"
-                            btn_link="https://www.multitravel.com/hotels/"
+                            btn_link="https://ar.multitravel.com/hotels/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-vuelo.webp"
                             boxs_ofertas_text="Vuelos"
-                            btn_link="https://www.multitravel.com/flights/"
+                            btn_link="https://ar.multitravel.com/flights/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
                             boxs_ofertas_text="Asistencias"
-                            btn_link="https://www.multitravel.com/insurances/"
+                            btn_link="https://ar.multitravel.com/insurances/"
                         />
                     </div>
                 </div>
@@ -180,17 +180,17 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
                             boxs_ofertas_text="Alojamientos"
-                            btn_link="https://www.multitravel.com/hotels/"
+                            btn_link="https://ar.multitravel.com/hotels/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-vuelo.webp"
                             boxs_ofertas_text="Vuelos"
-                            btn_link="https://www.multitravel.com/flights/"
+                            btn_link="https://ar.multitravel.com/flights/"
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
                             boxs_ofertas_text="Paquetes"
-                            btn_link="https://www.multitravel.com/packages/flighthotel/"
+                            btn_link="https://ar.multitravel.com/packages/flighthotel/"
                         />
                     </div>
                 </div>
@@ -272,7 +272,7 @@ function Pagos() {
                 boxs_pagos_img="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Desktop.png"
                 boxs_pagos_img_mobile="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Mobile.png"
                 text_position="text_position__left"
-                boxs_button_link="https://www.multitravel.com/medios-de-pago"
+                boxs_button_link="https://ar.multitravel.com/medios-de-pago"
             />
             <Boxs
                 text_h2_pagos="Quienes somos"
@@ -282,7 +282,7 @@ function Pagos() {
                 boxs_pagos_img="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Desktop2.png"
                 boxs_pagos_img_mobile="https://multitravelcom.github.io/components-ladings/img/MedisodePago-Mobile2.png"
                 text_position="text_position__right"
-                boxs_button_link="https://www.multitravel.com/quienes-somos"
+                boxs_button_link="https://ar.multitravel.com/quienes-somos"
             />
         </div>
     );

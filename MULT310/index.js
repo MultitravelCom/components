@@ -221,7 +221,7 @@ function changeWidthOfContainer() {
    document.head.appendChild(styleElement);
 }
 document.addEventListener('DOMContentLoaded', () => {
-  if (decodeURIComponent(window.location.href).includes('https://www.multitravel.com/flights/results.aspx')) {
+  if (decodeURIComponent(window.location.href).includes('https://ar.multitravel.com/flights/results.aspx')) {
     changeWidthOfContainer();
     const observer = new MutationObserver(onDivAdded);
     const observerConfig = { childList: true, subtree: true };
