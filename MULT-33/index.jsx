@@ -45,6 +45,7 @@ const AccodionNavegate = () => {
   return (
     <>
       <div className="accordeon-footer" onClick={() => setIsOpen(prevState => !prevState)}>
+        <img src="MULT-33\AR.png" alt="" />
         <p>Argentina</p>
       </div>
       {isOpen && (
