@@ -33,16 +33,16 @@ const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const accordeonFooter = document.querySelector('.accordeon-footer');
+    const accordeonFooter = document.querySelector(".accordeon-footer");
 
     const handleClick = () => {
-      setIsOpen(prevState => !prevState);
+      setIsOpen((prevState) => !prevState);
     };
 
-    accordeonFooter.addEventListener('click', handleClick);
+    accordeonFooter.addEventListener("click", handleClick);
 
     return () => {
-      accordeonFooter.removeEventListener('click', handleClick);
+      accordeonFooter.removeEventListener("click", handleClick);
     };
   }, []);
 
@@ -62,7 +62,12 @@ const AccodionNavegate = () => {
 };
 
 const AccodionNavegateSite = () => {
-  return <AccodionNavegateSiteTitle />;
+  return (
+    <>
+      <AccodionNavegateSiteTitle />
+      <AccodionNavegate />
+    </>
+  );
 };
 
 ReactDOM.render(
