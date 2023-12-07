@@ -3,7 +3,7 @@ const AccodionNavegateSiteTitle = () => {
 
     React.useEffect(() => {
       const handleTitle = () => {
-        const currentPath = window.location.pathname;
+        const currentPath = window.location.href;
         console.log("--currentPath->", currentPath)
         const newTitle =
           currentPath === 'https://ar.multitravel.com/' ? 'Navegar en este sitio:' : currentPath === 'https://br.multitravel.com/' ? 'Navegar no site de:' : 'Navegar en este sitio';
