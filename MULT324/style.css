@@ -842,3 +842,7 @@ source>img {
 .cookie-policy__content>a {
     text-decoration: revert;
 }
+
+#main-menu-products > ul > li:nth-child(4){
+    display: none;
+  }
