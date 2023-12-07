@@ -32,6 +32,16 @@ const AccodionNavegateSiteTitle = () => {
 const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const handleOptionClick = (country) => {
+    if (country === 'Argentina') {
+    //   window.location.href = 'https://ar.multitravel.com/';
+    console.log("-AR-->")
+    } else if (country === 'Brasil') {
+    //   window.location.href = 'https://br.multitravel.com/';
+    console.log("-BR-->")
+    }
+  };
+
   React.useEffect(() => {
     const accordeonFooter = document.querySelector(".accordeon-footer");
 
@@ -53,8 +63,8 @@ const AccodionNavegate = () => {
       </div>
       {isOpen && (
         <div className="accordeon-footer-open">
-          <p>Argentina</p>
-          <p>Brasil</p>
+          <p onClick={() => handleOptionClick('Ar')}>Argentina</p>
+          <p onClick={() => handleOptionClick('Br')}>Brasil</p>
         </div>
       )}
     </>
