@@ -33,12 +33,12 @@ const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const handleOptionClick = (country) => {
-    if (country === 'Argentina') {
-    //   window.location.href = 'https://ar.multitravel.com/';
-    console.log("-AR-->")
-    } else if (country === 'Brasil') {
-    //   window.location.href = 'https://br.multitravel.com/';
-    console.log("-BR-->")
+    if (country === "Argentina") {
+      //   window.location.href = 'https://ar.multitravel.com/';
+      console.log("-AR-->");
+    } else if (country === "Brasil") {
+      //   window.location.href = 'https://br.multitravel.com/';
+      console.log("-BR-->");
     }
   };
 
@@ -61,12 +61,10 @@ const AccodionNavegate = () => {
       <div className="accordeon-footer">
         <p>Argentina</p>
       </div>
-      {isOpen && (
-        <div className="accordeon-footer-open">
-          <p onClick={() => handleOptionClick('Ar')}>Argentina</p>
-          <p onClick={() => handleOptionClick('Br')}>Brasil</p>
-        </div>
-      )}
+      <div className={isOpen ? "accordeon-footer-open" : "hidden"}>
+        <p onClick={() => handleOptionClick("Ar")}>Argentina</p>
+        <p onClick={() => handleOptionClick("Br")}>Brasil</p>
+      </div>
     </>
   );
 };
