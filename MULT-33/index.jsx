@@ -24,9 +24,7 @@ const AccodionNavegateSiteTitle = () => {
 
 const AccodionNavegateSite = () => {
     return(
-        <div>
-            <h1>Test</h1>
-        </div>
+        <AccodionNavegateSiteTitle />
     )
 }
 
