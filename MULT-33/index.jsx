@@ -3,7 +3,7 @@ const AccodionNavegateSiteTitle = () => {
 
   React.useEffect(() => {
     const handleTitle = () => {
-      const currentPath = window.location.href;
+      const currentURL = window.location.href;
       const isBR = currentURL.includes("https://br.multitravel.com/");
       const isAR = currentURL.includes("https://ar.multitravel.com/");
 
