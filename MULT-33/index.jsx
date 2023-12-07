@@ -33,10 +33,10 @@ const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const handleOptionClick = (country) => {
-    if (country === 'Argentina') {
+    if (country === 'Ar') {
     //   window.location.href = 'https://ar.multitravel.com/';
     console.log("-AR-->")
-    } else if (country === 'Brasil') {
+    } else if (country === 'Br') {
     //   window.location.href = 'https://br.multitravel.com/';
     console.log("-BR-->")
     }
