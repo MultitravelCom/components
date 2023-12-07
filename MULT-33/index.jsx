@@ -5,7 +5,7 @@ const AccodionNavegateSiteTitle = () => {
       const handleTitle = () => {
         const currentPath = window.location.pathname;
         const newTitle =
-          currentPath === 'ar.multitravel.com' ? 'Navegar en este sitio:' : currentPath === 'br.multitravel.com' ? 'Navegar no site de:' : 'Navegar en este sitio';
+          currentPath === 'https://ar.multitravel.com/' ? 'Navegar en este sitio:' : currentPath === 'https://br.multitravel.com/' ? 'Navegar no site de:' : 'Navegar en este sitio';
         setTitle(newTitle);
       };
   
@@ -19,6 +19,14 @@ const AccodionNavegateSiteTitle = () => {
         <div>
             <h1>{title}</h1>
         </div>
+    )
+}
+
+const AccodionNavegate = () =>{
+    return(
+        <>
+
+        </>
     )
 }
 
