@@ -123,12 +123,12 @@ const AccodionNavegate = () => {
       {isOpen && (
         <AccordeonFooterOpen>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
-            <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
+            <FlagImage src={getFlagImage("Argentina")} alt="" />
           </StyledParagraph>
           <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
-            <FlagImage src={getFlagImage("Brasil")} alt="" />
             Brasil
+            <FlagImage src={getFlagImage("Brasil")} alt="" />
           </StyledParagraph>
         </AccordeonFooterOpen>
       )}
