@@ -38,7 +38,7 @@ const StyledParagraph = styled.p`
   letter-spacing: -0.16px;
   cursor: pointer;
   &:hover {
-    background: #EAF3FF;
+    background: #eaf3ff;
   }
 `;
 
@@ -78,12 +78,14 @@ const AccodionNavegate = () => {
   const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
 
   const handleOptionClick = (country) => {
+    const url =
+      country === "Argentina"
+        ? "https://ar.multitravel.com/"
+        : "https://br.multitravel.com/";
+    window.location.href = url;
+
     setSelectedCountry(country);
     setIsOpen((prevState) => !prevState);
-  };
-
-  const handleRedirect = (url) => {
-    window.location.href = url;
   };
 
   const getFlagImage = (country) => {
