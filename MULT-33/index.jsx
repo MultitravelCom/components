@@ -31,27 +31,32 @@ const AccodionNavegateSiteTitle = () => {
 
 const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedCountry, setSelectedCountry] = React.useState("");
 
   const handleOptionClick = (country) => {
-    if (country === 'Ar') {
-    //   window.location.href = 'https://ar.multitravel.com/';
-    console.log("-AR-->")
-    } else if (country === 'Br') {
-    //   window.location.href = 'https://br.multitravel.com/';
-    console.log("-BR-->")
-    }
+    setSelectedCountry(country);
+    setIsOpen(prevState => !prevState);
   };
 
   return (
     <>
-      <div className="accordeon-footer" onClick={() => setIsOpen(prevState => !prevState)}>
-        <img src="./MULT-33\AR.png" alt="" />
-        <p>Argentina</p>
+      <div
+        className="accordeon-footer"
+        onClick={() => setIsOpen((prevState) => !prevState)}
+      >
+        <img src={getFlagImage(selectedCountry)} alt="" />
+        <p>{selectedCountry}</p>
       </div>
       {isOpen && (
-        <div className="https://multitravelcom.github.io/components/MULT-33/AR.png">
-          <p onClick={() => handleOptionClick('Ar')}>Argentina</p>
-          <p onClick={() => handleOptionClick('Br')}>Brasil</p>
+        <div className="accordeon-footer-open">
+          <p onClick={() => handleOptionClick("Argentina")}>
+            <img src={getFlagImage("Argentina")} alt="" />
+            Argentina
+          </p>
+          <p onClick={() => handleOptionClick("Brasil")}>
+            <img src={getFlagImage("Brasil")} alt="" />
+            Brasil
+          </p>
         </div>
       )}
     </>
