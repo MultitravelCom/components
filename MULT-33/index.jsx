@@ -93,6 +93,8 @@ const AccordionNavegate = () => {
   const [redirectUrl, setRedirectUrl] = React.useState(null);
   const accordionRef = React.useRef(null);
 
+  console.log("---isOpen--->>", isOpen)
+
   const handleOptionClick = (country) => {
     const url =
       country === "Argentina"
