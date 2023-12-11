@@ -45,11 +45,11 @@ const AccodionNavegate = () => {
   return (
     <>
       <div className="accordeon-footer" onClick={() => setIsOpen(prevState => !prevState)}>
-        <img src="MULT-33\AR.png" alt="" />
+        <img src="./MULT-33\AR.png" alt="" />
         <p>Argentina</p>
       </div>
       {isOpen && (
-        <div className="accordeon-footer-open">
+        <div className="https://multitravelcom.github.io/components/MULT-33/AR.png">
           <p onClick={() => handleOptionClick('Ar')}>Argentina</p>
           <p onClick={() => handleOptionClick('Br')}>Brasil</p>
         </div>
