@@ -24,7 +24,7 @@ const AccordeonFooterOpen = styled.div`
   @media (max-width: 768px) {
     display: block;
     position: absolute;
-    top: 64px;
+    top: 96px;
     left: 10px;
     z-index: 999;
   }
