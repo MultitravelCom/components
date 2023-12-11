@@ -18,6 +18,7 @@ const AccordeonFooterOpen = styled.div`
   border: 1px solid var(--primary-blue-usafa, #0d4e88);
   background: #fff;
   margin-top: 11px;
+  gap: 11px;
 `;
 
 const FlagImage = styled.img`
@@ -28,7 +29,7 @@ const FlagImage = styled.img`
 
 const StyledParagraph = styled.p`
   color: black;
-  marigin: 0;
+  margin: 0;
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
@@ -36,7 +37,6 @@ const StyledParagraph = styled.p`
   line-height: 24px; /* 150% */
   letter-spacing: -0.16px;
 `;
-
 // **************************************************
 const AccodionNavegateSiteTitle = () => {
   const [title, setTitle] = React.useState("");
