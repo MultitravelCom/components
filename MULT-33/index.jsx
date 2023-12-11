@@ -96,13 +96,22 @@ const AccordionNavegate = () => {
   console.log("---isOpen--->>", isOpen)
 
   const handleOptionClick = (country) => {
-    const url =
-      country === "Argentina"
-        ? "https://ar.multitravel.com/"
-        : "https://br.multitravel.com/";
+    const argentinaUrl = "https://ar.multitravel.com/";
+    const brazilUrl = "https://br.multitravel.com/";
   
-    setSelectedCountry(country);
-    setRedirectUrl(url);
+    const currentUrl = window.location.href;
+    let urlToRedirect = "";
+  
+    if (country === "Argentina" && currentUrl !== argentinaUrl) {
+      urlToRedirect = argentinaUrl;
+    } else if (country === "Brasil" && currentUrl !== brazilUrl) {
+      urlToRedirect = brazilUrl;
+    }
+  
+    if (urlToRedirect) {
+      setSelectedCountry(country);
+      setRedirectUrl(urlToRedirect);
+    }
   };
 
   const getFlagImage = (country) => {
@@ -136,12 +145,13 @@ const AccordionNavegate = () => {
 
   return (
     <>
-      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)} ref={accordionRef}>
+    <div ref={accordionRef}>
+      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
         <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
-        <AccordeonFooterOpen ref={accordionRef}>
+        <AccordeonFooterOpen>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
             <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
@@ -152,6 +162,7 @@ const AccordionNavegate = () => {
           </StyledParagraph>
         </AccordeonFooterOpen>
       )}
+    </div>
     </>
   );
 };
