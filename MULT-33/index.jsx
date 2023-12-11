@@ -13,7 +13,7 @@ const AccordeonFooter = styled.div`
 const AccordeonFooterOpen = styled.div`
   display: flex;
   width: 301px;
-  padding: 16px;
+  padding: 16px 0;
   flex-direction: column;
   border-radius: 24px;
   border: 1px solid #0d4e88;
@@ -25,7 +25,7 @@ const AccordeonFooterOpen = styled.div`
 const FlagImage = styled.img`
   width: 24px;
   height: 24px;
-  margin-right: 6px;
+  margin: 0 24px;
 `;
 
 const StyledParagraph = styled.p`
@@ -38,9 +38,16 @@ const StyledParagraph = styled.p`
   line-height: 24px;
   letter-spacing: -0.16px;
   cursor: pointer;
-  &:hover {
-    background: #eaf3ff;
-  }
+  padding: 8px 0;
+  
+  ${(props) =>
+    !props.noHover &&
+    css`
+      &:hover {
+        background: #eaf3ff;
+      }
+    `}
+
 `;
 
 const StyledTitle = styled.h1`
@@ -102,7 +109,7 @@ const AccodionNavegate = () => {
     <>
       <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
-        <StyledParagraph>{selectedCountry}</StyledParagraph>
+        <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
         <AccordeonFooterOpen>
