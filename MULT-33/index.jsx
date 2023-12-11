@@ -22,12 +22,12 @@ const AccordeonFooterOpen = styled.div`
   margin-top: 11px;
   overflow: hidden;
   @media (max-width: 768px) {
-      display: block; /* Asegura que el contenido esté visible */
-      position: relative; /* Posiciona el acordeón de forma fija */
-      top: 0; /* Ajusta la posición desde arriba */
-      left: 0; /* Ajusta la posición desde la izquierda */
-      z-index: 999; /* Valor alto de z-index para superponerse sobre otros elementos */
-    }
+    display: block;
+    position: absolute;
+    top: 64px;
+    left: 10px;
+    z-index: 999;
+  }
 `;
 
 const FlagImage = styled.img`
@@ -134,27 +134,26 @@ const AccordionNavegate = () => {
 };
 
 const AccordionNavegateSite = () => {
-    const accordeonRef = React.useRef(null);
+  const accordeonRef = React.useRef(null);
 
-    const handleClickOutside = (event) => {
-        if (accordeonRef.current && !accordeonRef.current.contains(event.target)) {
-          setIsOpen(false);
-        }
-      };
-  
-    useEffect(() => {
-      document.addEventListener('mousedown', handleClickOutside);
-  
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, []);
+  const handleClickOutside = (event) => {
+    if (accordeonRef.current && !accordeonRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
       <AccordionNavegateSiteTitle />
-      <AccordionNavegate ref={accordeonRef}/>
+      <AccordionNavegate ref={accordeonRef} />
     </>
   );
 };
