@@ -20,6 +20,11 @@ const FlagImage = styled.img`
   flex-shrink: 0;
 `;
 
+const StyledParagraph = styled.p`
+  color: black;
+  marigin: 0;
+`;
+
 // **************************************************
 const AccodionNavegateSiteTitle = () => {
   const [title, setTitle] = React.useState("");
@@ -78,14 +83,14 @@ const AccodionNavegate = () => {
       </AccordeonFooter>
       {isOpen && (
         <AccordeonFooterOpen>
-          <p onClick={() => handleOptionClick("Argentina")}>
+          <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
             <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
-          </p>
-          <p onClick={() => handleOptionClick("Brasil")}>
+          </StyledParagraph>
+          <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
             <FlagImage src={getFlagImage("Brasil")} alt="" />
             Brasil
-          </p>
+          </StyledParagraph>
         </AccordeonFooterOpen>
       )}
     </>
