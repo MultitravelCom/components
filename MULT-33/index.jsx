@@ -62,7 +62,9 @@ const StyledTitle = styled.h1`
 `;
 
 const ChevronIcon = styled.span`
-  &.chevron-up {
+  &.glyphicon-chevron-up {
+    position: absolute;
+    right: 0;
     ${(props) =>
       props.isOpen &&
       `
@@ -115,8 +117,6 @@ const AccordionNavegate = () => {
   );
   const [redirectUrl, setRedirectUrl] = React.useState(null);
   const accordionRef = React.useRef(null);
-
-  console.log("---isOpen--->>", isOpen);
 
   const handleOptionClick = (country) => {
     const argentinaUrl = "https://ar.multitravel.com/";
