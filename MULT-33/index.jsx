@@ -4,7 +4,7 @@ const AccordeonFooter = styled.div`
   align-items: center;
   gap: 6px;
   border-radius: 32px;
-  padding: 18px;
+  padding: 6px;
   width: 300px;
   border: 1px solid #cacaca;
   background: #fff;
@@ -25,7 +25,7 @@ const AccordeonFooterOpen = styled.div`
 const FlagImage = styled.img`
   width: 24px;
   height: 24px;
-  margin: 0 24px;
+  margin: 0 8px;
 `;
 
 const StyledParagraph = styled.p`
@@ -44,7 +44,6 @@ const StyledParagraph = styled.p`
     `
       &:hover {
         background: #eaf3ff;
-        /* Otros estilos para el hover */
       }
     `}
 `;
