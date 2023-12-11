@@ -65,11 +65,11 @@ const ChevronIcon = styled.span`
   &.glyphicon-chevron-up {
     position: absolute;
     right: 0;
+    transition: transform 0.3s ease-in-out;
     ${(props) =>
       props.isOpen &&
       `
         transform: rotate(180deg);
-        transition: transform 0.3s ease-in-out;
       `}
   }
 `;
