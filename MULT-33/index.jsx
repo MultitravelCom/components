@@ -141,7 +141,7 @@ const AccordionNavegate = () => {
         <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
-        <AccordeonFooterOpen>
+        <AccordeonFooterOpen ref={accordionRef}>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
             <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
