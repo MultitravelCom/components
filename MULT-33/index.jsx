@@ -134,26 +134,10 @@ const AccordionNavegate = () => {
 };
 
 const AccordionNavegateSite = () => {
-  const accordeonRef = React.useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (accordeonRef.current && !accordeonRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <>
       <AccordionNavegateSiteTitle />
-      <AccordionNavegate ref={accordeonRef} />
+      <AccordionNavegate />
     </>
   );
 };
