@@ -6,6 +6,7 @@ const AccordeonFooter = styled.div`
   border-radius: 32px;
   padding: 6px;
   width: 300px;
+  height: 60px;
   border: 1px solid #cacaca;
   background: #fff;
   cursor: pointer;
@@ -20,6 +21,16 @@ const AccordeonFooterOpen = styled.div`
   background: #fff;
   margin-top: 11px;
   overflow: hidden;
+  @media (max-width: 768px) {
+      display: block; /* Asegura que el contenido esté visible */
+      position: fixed; /* Posiciona el acordeón de forma fija */
+      top: 0; /* Ajusta la posición desde arriba */
+      left: 0; /* Ajusta la posición desde la izquierda */
+      width: 100%; /* Ancho completo */
+      height: 100%; /* Altura completa */
+      background-color: white; /* Color de fondo para el acordeón */
+      z-index: 999; /* Valor alto de z-index para superponerse sobre otros elementos */
+    }
 `;
 
 const FlagImage = styled.img`
