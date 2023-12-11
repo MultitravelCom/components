@@ -87,9 +87,19 @@ const AccordionNavegateSiteTitle = () => {
   return <StyledTitle>{title}</StyledTitle>;
 };
 
+const getCountryFromUrl = () => {
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("https://ar.multitravel.com/")) {
+      return "Argentina";
+    } else if (currentUrl.includes("https://br.multitravel.com/")) {
+      return "Brasil";
+    }
+    return null;
+  };
+
 const AccordionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
+  const [selectedCountry, setSelectedCountry] = React.useState(getCountryFromUrl());
   const [redirectUrl, setRedirectUrl] = React.useState(null);
   const accordionRef = React.useRef(null);
 
