@@ -90,6 +90,7 @@ const AccordionNavegateSiteTitle = () => {
 const AccordionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
+  const accordionRef = React.useRef(null);
 
   const handleOptionClick = (country) => {
     const url =
@@ -111,9 +112,23 @@ const AccordionNavegate = () => {
     return "";
   };
 
+  const handleClickOutside = (event) => {
+    if (accordionRef.current && !accordionRef.current.contains(event.target)) {
+      setIsOpen(false); // Cerrar el acordeón
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
+      <AccordeonFooter ref={accordionRef} onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
         <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
