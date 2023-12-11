@@ -31,7 +31,7 @@ const AccodionNavegateSiteTitle = () => {
 
 const AccodionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState("");
+  const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
 
   const handleOptionClick = (country) => {
     setSelectedCountry(country);
