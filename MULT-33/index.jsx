@@ -18,13 +18,13 @@ const AccordeonFooterOpen = styled.div`
   border: 1px solid var(--primary-blue-usafa, #0d4e88);
   background: #fff;
   margin-top: 11px;
-  gap: 11px;
+  gap: 1rem;
 `;
 
 const FlagImage = styled.img`
   width: 24px;
   height: 24px;
-  flex-shrink: 0;
+  margin-right: 6px;
 `;
 
 const StyledParagraph = styled.p`
