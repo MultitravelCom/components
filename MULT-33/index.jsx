@@ -19,7 +19,7 @@ const AccordeonFooterOpen = styled.div`
   border: 1px solid #0d4e88;
   background: #fff;
   margin-top: 11px;
-  gap: 1rem;
+  overflow: hidden;
 `;
 
 const FlagImage = styled.img`
