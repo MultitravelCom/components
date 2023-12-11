@@ -36,6 +36,14 @@ const StyledParagraph = styled.p`
   font-weight: 400;
   line-height: 24px; /* 150% */
   letter-spacing: -0.16px;
+  &:hover {
+    background: #EAF3FF;
+  }
+`;
+
+const StyledTitle = styled.h1`
+  padding-top: 64px;
+  gap: 73px;
 `;
 // **************************************************
 const AccodionNavegateSiteTitle = () => {
@@ -62,11 +70,7 @@ const AccodionNavegateSiteTitle = () => {
     return () => window.removeEventListener("popstate", handleTitle);
   }, []);
 
-  return (
-    <div>
-      <h1>{title}</h1>
-    </div>
-  );
+  return <StyledTitle>{title}</StyledTitle>;
 };
 
 const AccodionNavegate = () => {
