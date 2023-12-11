@@ -178,7 +178,7 @@ const AccordionNavegate = () => {
         <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
-          <ChevronIcon className="glyphicon chevron-up" isOpen={isOpen} />
+          <ChevronIcon className="glyphicon glyphicon-chevron-up" isOpen={isOpen} />
         </AccordeonFooter>
         {isOpen && (
           <AccordeonFooterOpen>
