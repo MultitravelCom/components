@@ -102,9 +102,9 @@ const AccordionNavegate = () => {
     const currentUrl = window.location.href;
     let urlToRedirect = "";
   
-    if (country === "Argentina" && currentUrl !== argentinaUrl) {
+    if (country === "Argentina" && !currentUrl.includes("https://ar.multitravel.com/")) {
       urlToRedirect = argentinaUrl;
-    } else if (country === "Brasil" && currentUrl !== brazilUrl) {
+    } else if (country === "Brasil" && !currentUrl.includes("https://br.multitravel.com/")) {
       urlToRedirect = brazilUrl;
     }
   
