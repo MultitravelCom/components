@@ -60,6 +60,16 @@ const StyledParagraph = styled.p`
 const StyledTitle = styled.h1`
   gap: 73px;
 `;
+
+const ChevronIcon = styled.span`
+  &.chevron-up {
+    ${(props) =>
+      props.isOpen &&
+      `
+        transform: rotate(180deg);
+      `}
+  }
+`;
 // **************************************************
 const AccordionNavegateSiteTitle = () => {
   const [title, setTitle] = React.useState("");
@@ -88,36 +98,44 @@ const AccordionNavegateSiteTitle = () => {
 };
 
 const getCountryFromUrl = () => {
-    const currentUrl = window.location.href;
-    if (currentUrl.includes("https://ar.multitravel.com/")) {
-      return "Argentina";
-    } else if (currentUrl.includes("https://br.multitravel.com/")) {
-      return "Brasil";
-    }
-    return null;
-  };
+  const currentUrl = window.location.href;
+  if (currentUrl.includes("https://ar.multitravel.com/")) {
+    return "Argentina";
+  } else if (currentUrl.includes("https://br.multitravel.com/")) {
+    return "Brasil";
+  }
+  return null;
+};
 
 const AccordionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState(getCountryFromUrl());
+  const [selectedCountry, setSelectedCountry] = React.useState(
+    getCountryFromUrl()
+  );
   const [redirectUrl, setRedirectUrl] = React.useState(null);
   const accordionRef = React.useRef(null);
 
-  console.log("---isOpen--->>", isOpen)
+  console.log("---isOpen--->>", isOpen);
 
   const handleOptionClick = (country) => {
     const argentinaUrl = "https://ar.multitravel.com/";
     const brazilUrl = "https://br.multitravel.com/";
-  
+
     const currentUrl = window.location.href;
     let urlToRedirect = "";
-  
-    if (country === "Argentina" && !currentUrl.includes("https://ar.multitravel.com/")) {
+
+    if (
+      country === "Argentina" &&
+      !currentUrl.includes("https://ar.multitravel.com/")
+    ) {
       urlToRedirect = argentinaUrl;
-    } else if (country === "Brasil" && !currentUrl.includes("https://br.multitravel.com/")) {
+    } else if (
+      country === "Brasil" &&
+      !currentUrl.includes("https://br.multitravel.com/")
+    ) {
       urlToRedirect = brazilUrl;
     }
-  
+
     if (urlToRedirect) {
       setSelectedCountry(country);
       setRedirectUrl(urlToRedirect);
@@ -155,24 +173,25 @@ const AccordionNavegate = () => {
 
   return (
     <>
-    <div ref={accordionRef}>
-      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
-        <FlagImage src={getFlagImage(selectedCountry)} alt="" />
-        <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
-      </AccordeonFooter>
-      {isOpen && (
-        <AccordeonFooterOpen>
-          <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
-            <FlagImage src={getFlagImage("Argentina")} alt="" />
-            Argentina
-          </StyledParagraph>
-          <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
-            <FlagImage src={getFlagImage("Brasil")} alt="" />
-            Brasil
-          </StyledParagraph>
-        </AccordeonFooterOpen>
-      )}
-    </div>
+      <div ref={accordionRef}>
+        <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
+          <FlagImage src={getFlagImage(selectedCountry)} alt="" />
+          <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
+          <ChevronIcon isOpen={isOpen} className="glyphicon chevron-up" />
+        </AccordeonFooter>
+        {isOpen && (
+          <AccordeonFooterOpen>
+            <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
+              <FlagImage src={getFlagImage("Argentina")} alt="" />
+              Argentina
+            </StyledParagraph>
+            <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
+              <FlagImage src={getFlagImage("Brasil")} alt="" />
+              Brasil
+            </StyledParagraph>
+          </AccordeonFooterOpen>
+        )}
+      </div>
     </>
   );
 };
