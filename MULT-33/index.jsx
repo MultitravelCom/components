@@ -11,6 +11,7 @@ const AccordeonFooter = styled.div`
   background: #fff;
   cursor: pointer;
 `;
+
 const AccordeonFooterOpen = styled.div`
   display: flex;
   width: 301px;
@@ -119,12 +120,12 @@ const AccordionNavegate = () => {
       {isOpen && (
         <AccordeonFooterOpen>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
-            Argentina
             <FlagImage src={getFlagImage("Argentina")} alt="" />
+            Argentina
           </StyledParagraph>
           <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
-            Brasil
             <FlagImage src={getFlagImage("Brasil")} alt="" />
+            Brasil
           </StyledParagraph>
         </AccordeonFooterOpen>
       )}
