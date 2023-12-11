@@ -39,15 +39,14 @@ const StyledParagraph = styled.p`
   letter-spacing: -0.16px;
   cursor: pointer;
   padding: 8px 0;
-  
   ${(props) =>
     !props.noHover &&
-    css`
+    `
       &:hover {
         background: #eaf3ff;
+        /* Otros estilos para el hover */
       }
     `}
-
 `;
 
 const StyledTitle = styled.h1`
