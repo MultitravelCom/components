@@ -8,6 +8,7 @@ const AccordeonFooter = styled.div`
   width: 300px;
   border: 1px solid #cacaca;
   background: #fff;
+  cursor: pointer;
 `;
 const AccordeonFooterOpen = styled.div`
   display: flex;
