@@ -69,7 +69,6 @@ const AccordionNavegateSiteTitle = () => {
       const isBR = currentURL.includes("https://br.multitravel.com/");
       const isAR = currentURL.includes("https://ar.multitravel.com/");
 
-      console.log("--isAR/isBR->", isAR, isBR);
       const newTitle = isBR
         ? "Navegar en este sitio:"
         : isAR
@@ -143,6 +142,6 @@ const AccordionNavegateSite = () => {
 };
 
 ReactDOM.render(
-  <AccordionNavegate />,
+  <AccordionNavegateSite />,
   document.getElementById("main-footer-checkbooking")
 );
