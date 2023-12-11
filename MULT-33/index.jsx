@@ -102,7 +102,7 @@ const AccordionNavegate = () => {
 
     setSelectedCountry(country);
     setRedirectUrl(url);
-    setIsOpen((prevState) => !prevState);
+    // setIsOpen((prevState) => !prevState);
   };
 
   const getFlagImage = (country) => {
@@ -136,12 +136,12 @@ const AccordionNavegate = () => {
 
   return (
     <>
-      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)} ref={accordionRef}>
+      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
         <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
-        <AccordeonFooterOpen>
+        <AccordeonFooterOpen ref={accordionRef}>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
             <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
