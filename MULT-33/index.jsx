@@ -12,10 +12,10 @@ const AccordeonFooter = styled.div`
 const AccordeonFooterOpen = styled.div`
   display: flex;
   width: 301px;
-  padding: 16px 0px;
+  padding: 16px;
   flex-direction: column;
   border-radius: 24px;
-  border: 1px solid var(--primary-blue-usafa, #0d4e88);
+  border: 1px solid #0d4e88;
   background: #fff;
   margin-top: 11px;
   gap: 1rem;
@@ -34,7 +34,7 @@ const StyledParagraph = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   letter-spacing: -0.16px;
   cursor: pointer;
   &:hover {
@@ -43,7 +43,6 @@ const StyledParagraph = styled.p`
 `;
 
 const StyledTitle = styled.h1`
-  padding-top: 64px;
   gap: 73px;
 `;
 // **************************************************
@@ -81,6 +80,10 @@ const AccodionNavegate = () => {
   const handleOptionClick = (country) => {
     setSelectedCountry(country);
     setIsOpen((prevState) => !prevState);
+  };
+
+  const handleRedirect = (url) => {
+    window.location.href = url;
   };
 
   const getFlagImage = (country) => {
