@@ -126,6 +126,10 @@ const AccordionNavegate = () => {
     };
   }, []);
 
+  React.useEffect(() => {
+    setIsOpen((prevState) => !prevState);
+  }, [selectedCountry]);
+
   return (
     <>
       <AccordeonFooter ref={accordionRef} onClick={() => setIsOpen((prevState) => !prevState)}>
