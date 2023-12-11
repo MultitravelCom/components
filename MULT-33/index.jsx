@@ -35,7 +35,16 @@ const AccodionNavegate = () => {
 
   const handleOptionClick = (country) => {
     setSelectedCountry(country);
-    setIsOpen(prevState => !prevState);
+    setIsOpen((prevState) => !prevState);
+  };
+
+  const getFlagImage = (country) => {
+    if (country === "Argentina") {
+      return "https://multitravelcom.github.io/components/MULT-33/AR.png";
+    } else if (country === "Brasil") {
+      return "https://multitravelcom.github.io/components/MULT-33/BR.png";
+    }
+    return "";
   };
 
   return (
