@@ -100,11 +100,12 @@ const AccordionNavegate = () => {
       country === "Argentina"
         ? "https://ar.multitravel.com/"
         : "https://br.multitravel.com/";
-    window.location.href = url;
-
+  
     setSelectedCountry(country);
     setRedirectUrl(url);
     // setIsOpen((prevState) => !prevState);
+  
+    window.location.href = url;
   };
 
   const getFlagImage = (country) => {
