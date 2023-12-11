@@ -90,6 +90,7 @@ const AccordionNavegateSiteTitle = () => {
 const AccordionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
+  const [redirectUrl, setRedirectUrl] = React.useState(null);
   const accordionRef = React.useRef(null);
 
   const handleOptionClick = (country) => {
@@ -100,6 +101,7 @@ const AccordionNavegate = () => {
     window.location.href = url;
 
     setSelectedCountry(country);
+    setRedirectUrl(url);
     setIsOpen((prevState) => !prevState);
   };
 
@@ -114,7 +116,7 @@ const AccordionNavegate = () => {
 
   const handleClickOutside = (event) => {
     if (accordionRef.current && !accordionRef.current.contains(event.target)) {
-      setIsOpen(false); // Cerrar el acordeón
+      setIsOpen(false);
     }
   };
 
@@ -127,17 +129,19 @@ const AccordionNavegate = () => {
   }, []);
 
   React.useEffect(() => {
-    setIsOpen((prevState) => !prevState);
-  }, [selectedCountry]);
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+    }
+  }, [redirectUrl]);
 
   return (
     <>
-      <AccordeonFooter ref={accordionRef} onClick={() => setIsOpen((prevState) => !prevState)}>
+      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
         <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
-        <AccordeonFooterOpen>
+        <AccordeonFooterOpen ref={accordionRef}>
           <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
             <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
