@@ -1,3 +1,26 @@
+// ******************* STYLED **********************
+const AccordeonFooter = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border-radius: 32px;
+  padding: 18px;
+  width: 300px;
+`;
+const AccordeonFooterOpen = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+const FlagImage = styled.img`
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+`;
+
+// **************************************************
 const AccodionNavegateSiteTitle = () => {
   const [title, setTitle] = React.useState("");
 
@@ -49,24 +72,21 @@ const AccodionNavegate = () => {
 
   return (
     <>
-      <div
-        className="accordeon-footer"
-        onClick={() => setIsOpen((prevState) => !prevState)}
-      >
-        <img src={getFlagImage(selectedCountry)} alt="" />
+      <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
+        <FlagImage src={getFlagImage(selectedCountry)} alt="" />
         <p>{selectedCountry}</p>
-      </div>
+      </AccordeonFooter>
       {isOpen && (
-        <div className="accordeon-footer-open">
+        <AccordeonFooterOpen>
           <p onClick={() => handleOptionClick("Argentina")}>
-            <img src={getFlagImage("Argentina")} alt="" />
+            <FlagImage src={getFlagImage("Argentina")} alt="" />
             Argentina
           </p>
           <p onClick={() => handleOptionClick("Brasil")}>
-            <img src={getFlagImage("Brasil")} alt="" />
+            <FlagImage src={getFlagImage("Brasil")} alt="" />
             Brasil
           </p>
-        </div>
+        </AccordeonFooterOpen>
       )}
     </>
   );
