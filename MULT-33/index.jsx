@@ -103,9 +103,6 @@ const AccordionNavegate = () => {
   
     setSelectedCountry(country);
     setRedirectUrl(url);
-    // setIsOpen((prevState) => !prevState);
-  
-    window.location.href = url;
   };
 
   const getFlagImage = (country) => {
