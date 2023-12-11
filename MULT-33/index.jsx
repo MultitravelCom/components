@@ -67,6 +67,7 @@ const ChevronIcon = styled.span`
       props.isOpen &&
       `
         transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
       `}
   }
 `;
