@@ -63,7 +63,7 @@ const StyledTitle = styled.h1`
   gap: 73px;
 `;
 // **************************************************
-const AccodionNavegateSiteTitle = () => {
+const AccordionNavegateSiteTitle = () => {
   const [title, setTitle] = React.useState("");
 
   React.useEffect(() => {
@@ -90,7 +90,7 @@ const AccodionNavegateSiteTitle = () => {
   return <StyledTitle>{title}</StyledTitle>;
 };
 
-const AccodionNavegate = () => {
+const AccordionNavegate = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCountry, setSelectedCountry] = React.useState("Argentina");
 
@@ -136,16 +136,33 @@ const AccodionNavegate = () => {
   );
 };
 
-const AccodionNavegateSite = () => {
+const AccordionNavegateSite = () => {
+    const accordeonRef = React.useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (accordeonRef.current && !accordeonRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      };
+  
+    useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+
+
   return (
     <>
-      <AccodionNavegateSiteTitle />
-      <AccodionNavegate />
+      <AccordionNavegateSiteTitle />
+      <AccordionNavegate ref={accordeonRef}/>
     </>
   );
 };
 
 ReactDOM.render(
-  <AccodionNavegateSite />,
+  <AccordionNavegate />,
   document.getElementById("main-footer-checkbooking")
 );
