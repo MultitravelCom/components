@@ -23,12 +23,9 @@ const AccordeonFooterOpen = styled.div`
   overflow: hidden;
   @media (max-width: 768px) {
       display: block; /* Asegura que el contenido esté visible */
-      position: fixed; /* Posiciona el acordeón de forma fija */
+      position: relative; /* Posiciona el acordeón de forma fija */
       top: 0; /* Ajusta la posición desde arriba */
       left: 0; /* Ajusta la posición desde la izquierda */
-      width: 100%; /* Ancho completo */
-      height: 100%; /* Altura completa */
-      background-color: white; /* Color de fondo para el acordeón */
       z-index: 999; /* Valor alto de z-index para superponerse sobre otros elementos */
     }
 `;
