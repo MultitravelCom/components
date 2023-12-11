@@ -3,15 +3,21 @@ const AccordeonFooter = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
-  background: white;
   border-radius: 32px;
   padding: 18px;
   width: 300px;
+  border: 1px solid #cacaca;
+  background: #fff;
 `;
 const AccordeonFooterOpen = styled.div`
   display: flex;
-  align-items: center;
-  gap: 6px;
+  width: 301px;
+  padding: 16px 0px;
+  flex-direction: column;
+  border-radius: 24px;
+  border: 1px solid var(--primary-blue-usafa, #0d4e88);
+  background: #fff;
+  margin-top: 11px;
 `;
 
 const FlagImage = styled.img`
@@ -23,6 +29,12 @@ const FlagImage = styled.img`
 const StyledParagraph = styled.p`
   color: black;
   marigin: 0;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.16px;
 `;
 
 // **************************************************
@@ -79,7 +91,7 @@ const AccodionNavegate = () => {
     <>
       <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
         <FlagImage src={getFlagImage(selectedCountry)} alt="" />
-        <p>{selectedCountry}</p>
+        <StyledParagraph>{selectedCountry}</StyledParagraph>
       </AccordeonFooter>
       {isOpen && (
         <AccordeonFooterOpen>
