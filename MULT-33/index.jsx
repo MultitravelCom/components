@@ -207,16 +207,24 @@ const AccordionNavegateSite = () => {
 
 // ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
 
-const targetElement = document.getElementById('main-footer-checkbooking');
-
-if (targetElement) {
-  console.log('¡Elemento encontrado!'); // Agregar un console.log para verificar si se encuentra el elemento
-
-  ReactDOM.render(
-    <AccordionNavegateSite />,
-    targetElement
-  );
-} else {
-  console.log('El elemento no fue encontrado');
-}
+const intervalID = setInterval(() => {
+    const targetElement = document.getElementById('main-footer-checkbooking');
+    
+    if (targetElement) {
+      clearInterval(intervalID); // Detener el intervalo una vez que se encuentra el elemento
+    
+      console.log('¡Elemento encontrado!'); // Agregar un console.log para verificar si se encuentra el elemento
+      
+      // Realizar acciones con el elemento encontrado, por ejemplo, renderizar el componente
+      ReactDOM.render(
+        <AccordionNavegateSite />,
+        targetElement
+      );
+    }
+  }, 100); // Verificar cada 100ms
+  
+  // Detener el intervalo después de un tiempo específico (por ejemplo, 5 segundos)
+  setTimeout(() => {
+    clearInterval(intervalID);
+  }, 5000);
 
