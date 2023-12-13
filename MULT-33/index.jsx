@@ -1,11 +1,3 @@
-function agregarScript() {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
-    document.body.appendChild(scriptElement);
-  }
-
-  agregarScript();
-
 // ******************* STYLED **********************
 const AccordeonFooter = styled.div`
   display: flex;
@@ -213,7 +205,18 @@ const AccordionNavegateSite = () => {
   );
 };
 
-ReactDOM.render(
-  <AccordionNavegateSite />,
-  document.getElementById("main-footer-checkbooking")
-);
+function addStyledComponentScript() {
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
+  
+    scriptElement.onload = function() {
+      ReactDOM.render(
+        <AccordionNavegateSite />,
+        document.getElementById('main-footer-checkbooking')
+      );
+    };
+  
+    document.body.appendChild(scriptElement);
+  }
+  
+  addStyledComponentScript();
