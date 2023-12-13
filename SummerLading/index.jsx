@@ -48,7 +48,7 @@ const StyledPriceContainer = styled.div`
   }
 `;
 
-const StyledPrice = styled.div`
+const StyledPrice = styled.span`
   font-size: 20px;
   font-weight: 700;
   @media (width: 320px) {
