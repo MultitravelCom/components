@@ -181,11 +181,11 @@ const AccordionNavegate = () => {
         </AccordeonFooter>
         {isOpen && (
           <AccordeonFooterOpen>
-            <StyledParagraph fontSize="16px" onClick={() => handleOptionClick("Argentina")}>
+            <StyledParagraph fontSize="14px" onClick={() => handleOptionClick("Argentina")}>
               <FlagImage src={getFlagImage("Argentina")} alt="" />
               Argentina
             </StyledParagraph>
-            <StyledParagraph fontSize="16px" onClick={() => handleOptionClick("Brasil")}>
+            <StyledParagraph fontSize="14px" onClick={() => handleOptionClick("Brasil")}>
               <FlagImage src={getFlagImage("Brasil")} alt="" />
               Brasil
             </StyledParagraph>
