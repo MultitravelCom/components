@@ -213,12 +213,6 @@ const AccordionNavegateSite = () => {
   );
 };
 
-const mainFooterCheckbooking = document.querySelector('#main-footer-checkbooking')
 console.log(".mainFooterCheckbooking------->>", mainFooterCheckbooking)
-if(mainFooterCheckbooking){
-    ReactDOM.render(<AccordionNavegateSite />, mainFooterCheckbooking);
-}else{
-    console.log(".NOOOOOOO")
-
-}
+ReactDOM.render(<AccordionNavegateSite />, mainFooterCheckbooking);
 
