@@ -63,7 +63,7 @@ const StyledTitle = styled.h4`
 const ChevronIcon = styled.span`
   &.glyphicon-chevron-down {
     position: absolute;
-    right: 34px;
+    right: 50px;
     transition: transform 0.3s ease-in-out;
     ${(props) =>
       props.isOpen &&
