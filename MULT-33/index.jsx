@@ -197,9 +197,9 @@ const AccordionNavegate = () => {
 };
 
 const AccordionNavegateSite = () => {
-    const [scriptCargado, setScriptCargado] = useState(false);
+    const [scriptCargado, setScriptCargado] = React.useState(false);
   
-    useEffect(() => {
+    React.useEffect(() => {
       function agregarScript() {
         const scriptElement = document.createElement('script');
         scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
