@@ -475,4 +475,5 @@
 /* ********** MULT-33 */
 #main-footer-checkbooking{
     padding: 0 !important;
+    display: none;
 }

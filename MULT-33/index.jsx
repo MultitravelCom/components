@@ -197,6 +197,14 @@ const AccordionNavegate = () => {
 };
 
 const AccordionNavegateSite = () => {
+  React.useEffect(() => {
+    const element = document.getElementById('main-footer-checkbooking');
+    if (element) {
+      element.style.display = 'block';
+      console.log('Se cambió el estilo a "display: block"');
+    }
+  }, []);
+
   return (
     <>
       <AccordionNavegateSiteTitle />
