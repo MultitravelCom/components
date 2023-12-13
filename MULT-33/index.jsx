@@ -212,7 +212,7 @@ const AccordionNavegateSite = () => {
     </>
   );
 };
-const mainFooterCheckbooking = document.getElementById("mainFooterCheckbooking")
+const mainFooterCheckbooking = document.getElementById("main-footer-checkbooking")
 console.log(".mainFooterCheckbooking------->>", mainFooterCheckbooking)
-ReactDOM.render(<AccordionNavegateSite />, document.getElementById("mainFooterCheckbooking"));
+ReactDOM.render(<AccordionNavegateSite />, document.getElementById("main-footer-checkbooking"));
 
