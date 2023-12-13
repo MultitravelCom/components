@@ -130,19 +130,19 @@ const AccordionNavegate = () => {
 
     ) {
       urlToRedirect = argentinaUrl;
-      setIsOpen(false);
     } else if (
       country === "Brasil" &&
       !currentUrl.includes("https://br.multitravel.com/")
     ) {
       urlToRedirect = brazilUrl;
-      setIsOpen(false);
     }
 
     if (urlToRedirect) {
       setSelectedCountry(country);
       setRedirectUrl(urlToRedirect);
     }
+
+    setIsOpen(false);
   };
 
   const getFlagImage = (country) => {
