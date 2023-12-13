@@ -82,9 +82,9 @@ const AccordionNavegateSiteTitle = () => {
       const isBR = currentURL.includes("https://br.multitravel.com/");
       const isAR = currentURL.includes("https://ar.multitravel.com/");
 
-      const newTitle = isBR
+      const newTitle = isAR
         ? "Navegar en este sitio:"
-        : isAR
+        : isBR
         ? "Navegar no site de:"
         : "Navegar en este sitio:";
       setTitle(newTitle);
