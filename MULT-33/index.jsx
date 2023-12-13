@@ -127,13 +127,16 @@ const AccordionNavegate = () => {
     if (
       country === "Argentina" &&
       !currentUrl.includes("https://ar.multitravel.com/")
+
     ) {
       urlToRedirect = argentinaUrl;
+      setIsOpen(false);
     } else if (
       country === "Brasil" &&
       !currentUrl.includes("https://br.multitravel.com/")
     ) {
       urlToRedirect = brazilUrl;
+      setIsOpen(false);
     }
 
     if (urlToRedirect) {
@@ -201,7 +204,6 @@ const AccordionNavegateSite = () => {
     const element = document.getElementById('main-footer-checkbooking');
     if (element) {
       element.style.display = 'block';
-      console.log('Se cambió el estilo a "display: block"');
     }
   }, []);
 
