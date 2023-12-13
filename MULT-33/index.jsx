@@ -213,5 +213,18 @@ const AccordionNavegateSite = () => {
   );
 };
 
-ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
+// ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
+
+const targetElement = document.getElementById('main-footer-checkbooking');
+
+if (targetElement) {
+  console.log('¡Elemento encontrado!'); // Agregar un console.log para verificar si se encuentra el elemento
+
+  ReactDOM.render(
+    <AccordionNavegateSite />,
+    targetElement
+  );
+} else {
+  console.log('El elemento no fue encontrado');
+}
 
