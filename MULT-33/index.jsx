@@ -1,5 +1,5 @@
 // ******************* STYLED **********************
-const AccordeonContainer = style.div`
+const AccordeonContainer = styled.div`
 display: block;
 `;
 
