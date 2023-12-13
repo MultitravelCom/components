@@ -212,7 +212,12 @@ const AccordionNavegateSite = () => {
     </>
   );
 };
-const mainFooterCheckbooking = document.getElementById("main-footer-checkbooking")
-console.log(".mainFooterCheckbooking------->>", mainFooterCheckbooking)
-ReactDOM.render(<AccordionNavegateSite />, document.getElementById("main-footer-checkbooking"));
+document.addEventListener('DOMContentLoaded', () => {
+    const mainFooterCheckbooking = document.getElementById("main-footer-checkbooking")
+    console.log(".mainFooterCheckbooking------->>", mainFooterCheckbooking)
+    ReactDOM.render(
+      <AccordionNavegateSite />,
+      document.getElementById('main-footer-checkbooking')
+    );
+  });
 
