@@ -218,4 +218,4 @@ setTimeout(() => {
       <AccordionNavegateSite />,
       document.getElementById('main-footer-checkbooking')
     );
-  }, 2000);
+  }, 3000);
