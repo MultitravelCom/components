@@ -1,4 +1,8 @@
 // ******************* STYLED **********************
+const AccordeonContainer = style.div`
+display: block;
+`;
+
 const AccordeonFooter = styled.div`
   display: flex;
   align-items: center;
@@ -176,7 +180,7 @@ const AccordionNavegate = () => {
 
   return (
     <>
-      <div ref={accordionRef}>
+      <AccordeonContainer ref={accordionRef}>
         <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
@@ -194,7 +198,7 @@ const AccordionNavegate = () => {
             </StyledParagraph>
           </AccordeonFooterOpen>
         )}
-      </div>
+      </AccordeonContainer>
     </>
   );
 };
