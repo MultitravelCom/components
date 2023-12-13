@@ -213,25 +213,4 @@ const AccordionNavegateSite = () => {
   );
 };
 
-// ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
-
-const intervalID = setInterval(() => {
-    const targetElement = document.getElementById('main-footer');
-    
-        if (targetElement) {
-        clearInterval(intervalID); 
-        
-        console.log('¡Elemento encontrado!');
-        
-
-        ReactDOM.render(
-            <AccordionNavegateSite />,
-            targetElement
-        );
-        }
-    }, 100); 
-  
-  setTimeout(() => {
-    clearInterval(intervalID);
-  }, 5000);
-
+ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
