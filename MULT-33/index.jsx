@@ -205,18 +205,33 @@ const AccordionNavegateSite = () => {
   );
 };
 
-function addStyledComponentScript() {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
+function agregarScript() {
+    return new Promise((resolve, reject) => {
+      const scriptElement = document.createElement('script');
+      scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
   
-    scriptElement.onload = function() {
-      ReactDOM.render(
+      scriptElement.onload = function() {
+        resolve();
+      };
+  
+      scriptElement.onerror = function() {
+        reject(new Error('Error al cargar el script'));
+      };
+  
+      document.body.appendChild(scriptElement);
+    });
+  }
+
+  async function renderizarComponenteDespuesDelScript() {
+    try {
+      await agregarScript();
+        ReactDOM.render(
         <AccordionNavegateSite />,
         document.getElementById('main-footer-checkbooking')
       );
-    };
-  
-    document.body.appendChild(scriptElement);
+    } catch (error) {
+      console.error(error);
+    }
   }
   
-  addStyledComponentScript();
+  renderizarComponenteDespuesDelScript();
