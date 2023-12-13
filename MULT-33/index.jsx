@@ -208,7 +208,7 @@ const AccordionNavegateSite = () => {
 // ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
 
 const intervalID = setInterval(() => {
-    const targetElement = document.getElementById('main-footer-checkbooking');
+    const targetElement = document.getElementById('main-footer');
     
     if (targetElement) {
       clearInterval(intervalID); // Detener el intervalo una vez que se encuentra el elemento
