@@ -40,7 +40,7 @@ const FlagImage = styled.img`
 const StyledParagraph = styled.p`
   color: black;
   margin: 0;
-  font-size: 16px;
+  font-size: ${(props) => props.fontSize || '16px'};
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
@@ -181,11 +181,11 @@ const AccordionNavegate = () => {
         </AccordeonFooter>
         {isOpen && (
           <AccordeonFooterOpen>
-            <StyledParagraph onClick={() => handleOptionClick("Argentina")}>
+            <StyledParagraph fontSize="16px" onClick={() => handleOptionClick("Argentina")}>
               <FlagImage src={getFlagImage("Argentina")} alt="" />
               Argentina
             </StyledParagraph>
-            <StyledParagraph onClick={() => handleOptionClick("Brasil")}>
+            <StyledParagraph fontSize="16px" onClick={() => handleOptionClick("Brasil")}>
               <FlagImage src={getFlagImage("Brasil")} alt="" />
               Brasil
             </StyledParagraph>
