@@ -5,7 +5,7 @@ const AccordeonFooter = styled.div`
   gap: 6px;
   border-radius: 32px;
   padding: 6px;
-  width: 300px;
+  width: 100%;
   height: 60px;
   border: 1px solid #cacaca;
   background: #fff;
@@ -14,7 +14,7 @@ const AccordeonFooter = styled.div`
 
 const AccordeonFooterOpen = styled.div`
   display: flex;
-  width: 301px;
+  width: 100%;
   padding: 16px 0;
   flex-direction: column;
   border-radius: 24px;
@@ -40,7 +40,6 @@ const FlagImage = styled.img`
 const StyledParagraph = styled.p`
   color: black;
   margin: 0;
-  font-family: Nunito;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -57,14 +56,14 @@ const StyledParagraph = styled.p`
     `}
 `;
 
-const StyledTitle = styled.h1`
+const StyledTitle = styled.h4`
   gap: 73px;
 `;
 
 const ChevronIcon = styled.span`
-  &.glyphicon-chevron-up {
+  &.glyphicon-chevron-down {
     position: absolute;
-    right: 0;
+    right: 34px;
     transition: transform 0.3s ease-in-out;
     ${(props) =>
       props.isOpen &&
@@ -178,7 +177,7 @@ const AccordionNavegate = () => {
         <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
-          <ChevronIcon className="glyphicon glyphicon-chevron-up" isOpen={isOpen} />
+          <ChevronIcon className="glyphicon glyphicon-chevron-down" isOpen={isOpen} />
         </AccordeonFooter>
         {isOpen && (
           <AccordeonFooterOpen>
