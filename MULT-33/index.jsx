@@ -1,3 +1,11 @@
+function agregarScript() {
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
+    document.body.appendChild(scriptElement);
+  }
+
+  agregarScript();
+
 // ******************* STYLED **********************
 const AccordeonFooter = styled.div`
   display: flex;
@@ -210,20 +218,19 @@ const AccordionNavegateSite = () => {
 const intervalID = setInterval(() => {
     const targetElement = document.getElementById('main-footer');
     
-    if (targetElement) {
-      clearInterval(intervalID); // Detener el intervalo una vez que se encuentra el elemento
-    
-      console.log('¡Elemento encontrado!'); // Agregar un console.log para verificar si se encuentra el elemento
-      
-      // Realizar acciones con el elemento encontrado, por ejemplo, renderizar el componente
-      ReactDOM.render(
-        <AccordionNavegateSite />,
-        targetElement
-      );
-    }
-  }, 100); // Verificar cada 100ms
+        if (targetElement) {
+        clearInterval(intervalID); 
+        
+        console.log('¡Elemento encontrado!');
+        
+
+        ReactDOM.render(
+            <AccordionNavegateSite />,
+            targetElement
+        );
+        }
+    }, 100); 
   
-  // Detener el intervalo después de un tiempo específico (por ejemplo, 5 segundos)
   setTimeout(() => {
     clearInterval(intervalID);
   }, 5000);
