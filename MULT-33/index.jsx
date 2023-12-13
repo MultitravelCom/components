@@ -1,11 +1,3 @@
-function agregarScript() {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
-    document.body.appendChild(scriptElement);
-  }
-
-  agregarScript();
-
 // ******************* STYLED **********************
 const AccordeonFooter = styled.div`
   display: flex;
@@ -214,3 +206,4 @@ const AccordionNavegateSite = () => {
 };
 
 ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
+
