@@ -1,3 +1,11 @@
+function agregarScript() {
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
+    document.body.appendChild(scriptElement);
+  }
+
+  agregarScript();
+
 // ******************* STYLED **********************
 const AccordeonFooter = styled.div`
   display: flex;
@@ -197,40 +205,16 @@ const AccordionNavegate = () => {
 };
 
 const AccordionNavegateSite = () => {
-    const [scriptCargado, setScriptCargado] = React.useState(false);
-  
-    React.useEffect(() => {
-      function agregarScript() {
-        const scriptElement = document.createElement('script');
-        scriptElement.src = 'https://unpkg.com/styled-components/dist/styled-components.min.js';
-        document.body.appendChild(scriptElement);
-  
-        scriptElement.onload = function() {
-          setScriptCargado(true);
-        };
-  
-        scriptElement.onerror = function() {
-          console.error('Error al cargar el script');
-        };
-      }
-      agregarScript();
-    }, []);
-  
-    return (
-      <>
-        {scriptCargado && (
-          <>
-            <AccordionNavegateSiteTitle />
-            <AccordionNavegate />
-          </>
-        )}
-      </>
-    );
-  };
-
-  ReactDOM.render(
-    <AccordionNavegateSite />,
-    document.getElementById('main-footer-checkbooking')
+  return (
+    <>
+      <AccordionNavegateSiteTitle />
+      <AccordionNavegate />
+    </>
   );
+};
 
+    ReactDOM.render(
+      <AccordionNavegateSite />,
+      document.getElementById('main-footer-checkbooking')
+    );
 
