@@ -88,6 +88,8 @@ const StyledAccordeonFooter = styled.div`
   cursor: pointer;
 `;
 
+StyledAccordeonFooter.displayName = 'StyledAccordeonFooter';
+
 // ***********************************************
 function addHeaderLinks() {
   const head = document.head || document.getElementsByTagName("head")[0];
