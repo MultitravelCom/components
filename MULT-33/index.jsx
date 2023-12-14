@@ -4,7 +4,7 @@ display: block;
 `;
 
 const StyledAccordeonFooter = styled.div`
-  display: flex;
+ &&{ display: flex;
   align-items: center;
   gap: 6px;
   border-radius: 32px;
@@ -13,7 +13,7 @@ const StyledAccordeonFooter = styled.div`
   height: 60px;
   border: 1px solid #cacaca;
   background: #fff;
-  cursor: pointer;
+  cursor: pointer;}
 `;
 
 const StyledAccordeonFooterOpen = styled.div`
