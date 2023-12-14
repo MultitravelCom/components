@@ -1,10 +1,10 @@
 // ******************* STYLED **********************
-const AccordeonContainer = styled.div`
+const StyledAccordeonContainer = styled.div`
 display: block;
 `;
 
-const AccordeonFooter = styled.div`
-&& {
+const StyledAccordeonFooter = styled.div`
+&.accordeonFooter  {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -18,7 +18,7 @@ const AccordeonFooter = styled.div`
 }
 `;
 
-const AccordeonFooterOpen = styled.div`
+const StyledAccordeonFooterOpen = styled.div`
   display: flex;
   width: 100%;
   padding: 16px 0;
@@ -182,14 +182,14 @@ const AccordionNavegate = () => {
 
   return (
     <>
-      <AccordeonContainer ref={accordionRef}>
-        <AccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
+      <StyledAccordeonContainer ref={accordionRef}>
+        <StyledAccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)} className="accordeonFooter">
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
           <ChevronIcon className="glyphicon glyphicon-chevron-down" isOpen={isOpen} />
-        </AccordeonFooter>
+        </StyledAccordeonFooter>
         {isOpen && (
-          <AccordeonFooterOpen>
+          <StyledAccordeonFooterOpen>
             <StyledParagraph fontSize="14px" onClick={() => handleOptionClick("Argentina")}>
               <FlagImage src={getFlagImage("Argentina")} alt="" />
               Argentina
@@ -198,9 +198,9 @@ const AccordionNavegate = () => {
               <FlagImage src={getFlagImage("Brasil")} alt="" />
               Brasil
             </StyledParagraph>
-          </AccordeonFooterOpen>
+          </StyledAccordeonFooterOpen>
         )}
-      </AccordeonContainer>
+      </StyledAccordeonContainer>
     </>
   );
 };

@@ -12,36 +12,43 @@ const StyledPriceContainer = styled.div`
   right: 28px;
   flex-direction: column;
   justify-content: space-between;
+
   @media (width: 320px) {
     height: 82px;
     bottom: -6px;
     right: 23px;
   }
+
   @media (width: 375px) {
     height: 95px;
     bottom: 6px;
     right: 29px;
   }
+
   @media (width: 390px) {
     height: 99px;
     bottom: 9px;
     right: 38px;
   }
+
   @media (width: 424px) {
     height: 82px;
     bottom: -6px;
     right: 23px;
   }
+
   @media screen and (min-width: 425px) and (max-width: 767px) {
     height: 21%;
     bottom: 3%;
     right: 41px;
   }
+
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 22%;
     bottom: -4%;
     right: 21px;
   }
+  
   @media (width: 1024px) {
     height: 22%;
     bottom: -3%;
