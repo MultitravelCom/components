@@ -4,7 +4,6 @@ display: block;
 `;
 
 const StyledAccordeonFooter = styled.div`
-&.accordeonFooter  {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -15,7 +14,6 @@ const StyledAccordeonFooter = styled.div`
   border: 1px solid #cacaca;
   background: #fff;
   cursor: pointer;
-}
 `;
 
 const StyledAccordeonFooterOpen = styled.div`
@@ -183,7 +181,7 @@ const AccordionNavegate = () => {
   return (
     <>
       <StyledAccordeonContainer ref={accordionRef}>
-        <StyledAccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)} className="accordeonFooter">
+        <StyledAccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
           <ChevronIcon className="glyphicon glyphicon-chevron-down" isOpen={isOpen} />
