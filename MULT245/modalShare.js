@@ -392,7 +392,7 @@ const BannerMensageCardApp = () => {
 };
 
 const BannerTopHotelResult = () => {
-    const [isEventActive, setIsEventActive] = React.useState(false);
+    const [isEventActive, setIsEventActive] = React.useState(true);
     const [modalOpen, setModalOpen] = React.useState(false);
 
     const handleOpenModal = () => {
@@ -436,7 +436,7 @@ const BannerTopHotelResult = () => {
     
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'none' : 'none',
+        display: isEventActive ? 'flex' : 'none',
     };
 
     return (
