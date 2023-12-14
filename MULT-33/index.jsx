@@ -16,8 +16,6 @@ const StyledAccordeonFooter = styled.div`
   cursor: pointer;
 `;
 
-StyledAccordeonFooter.displayName = 'StyledAccordeonFooter';
-
 const StyledAccordeonFooterOpen = styled.div`
   display: flex;
   width: 100%;
