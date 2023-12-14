@@ -17,6 +17,8 @@ const StyledAccordeonFooter = styled.div`
 }
 `;
 
+StyledAccordeonFooter.displayName = 'StyledAccordeonFooter';
+
 const StyledAccordeonFooterOpen = styled.div`
   display: flex;
   width: 100%;
