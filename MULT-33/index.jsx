@@ -13,7 +13,8 @@ const StyledAccordeonFooter = styled.div`
   height: 60px;
   border: 1px solid #cacaca;
   background: #fff;
-  cursor: pointer;}
+  cursor: pointer;
+}
 `;
 
 const StyledAccordeonFooterOpen = styled.div`
