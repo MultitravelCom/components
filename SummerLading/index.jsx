@@ -48,6 +48,10 @@ const StyledPriceContainer = styled.div`
   }
 `;
 
+const StyledContainerButtonsCars = styled.div`
+
+`;
+
 const StyledPrice = styled.span`
   font-size: 20px;
   font-weight: 700;
@@ -446,7 +450,7 @@ const Card = ({ cards }) => {
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
                 </StyledPriceContainer>
-                <div className="main__container__buttonsCars">
+                <StyledContainerButtonsCars>
                   {buttonSwitch === "A" ? (
                     <>
                       <ButtonLadingSummer
@@ -472,7 +476,7 @@ const Card = ({ cards }) => {
                       onClick={handleClickContact}
                     />
                   )}
-                </div>
+                </StyledContainerButtonsCars>
               </div>
             </div>
           ))
