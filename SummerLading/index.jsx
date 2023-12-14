@@ -1,6 +1,7 @@
 // *************** Style ************************
 const StyledPriceContainer = styled.div`
-  overflow: hidden;
+  && {
+    overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
   display: flex;
@@ -45,7 +46,7 @@ const StyledPriceContainer = styled.div`
     height: 22%;
     bottom: -3%;
     right: 23px;
-  }
+  }}
 `;
 
 const StyledPrice = styled.span`
