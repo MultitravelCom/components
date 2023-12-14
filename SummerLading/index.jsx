@@ -438,7 +438,7 @@ const Card = ({ cards }) => {
                     srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                 </picture>
-                <StyledPriceContainer>
+                <StyledPriceContainer >
                   <StyledPrice>
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>

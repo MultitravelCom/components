@@ -4,7 +4,7 @@ display: block;
 `;
 
 const AccordeonFooter = styled.div`
-&&{
+&& {
   display: flex;
   align-items: center;
   gap: 6px;
