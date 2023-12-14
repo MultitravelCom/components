@@ -1,7 +1,7 @@
 // *************** Style ************************
 const StyledPriceContainer = styled.div`
 &.claseAdicional {
-    overflow: hidden;
+  overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
   display: flex;
@@ -48,7 +48,7 @@ const StyledPriceContainer = styled.div`
     bottom: -4%;
     right: 21px;
   }
-  
+
   @media (width: 1024px) {
     height: 22%;
     bottom: -3%;
@@ -57,7 +57,7 @@ const StyledPriceContainer = styled.div`
 `;
 
 const StyledPrice = styled.span`
-  font-size: 20px;
+  &.claseAdicionalPrice {font-size: 20px;
   font-weight: 700;
   @media (width: 320px) {
     font-size: 19px;
@@ -67,7 +67,7 @@ const StyledPrice = styled.span`
   }
   @media (width: 1024px) {
     font-size: 16px;
-  }
+  }}
 `;
 // ***********************************************
 function addHeaderLinks() {
@@ -447,7 +447,7 @@ const Card = ({ cards }) => {
                   />
                 </picture>
                 <StyledPriceContainer className="claseAdicional">
-                  <StyledPrice>
+                  <StyledPrice className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
                   <StyledPrice>
