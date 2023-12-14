@@ -75,21 +75,6 @@ const StyledPrice = styled.span`
 }
 `;
 
-const StyledAccordeonFooter = styled.div`
- display: flex;
-  align-items: center;
-  gap: 6px;
-  border-radius: 32px;
-  padding: 6px;
-  width: 100%;
-  height: 60px;
-  border: 1px solid #cacaca;
-  background: #fff;
-  cursor: pointer;
-`;
-
-StyledAccordeonFooter.displayName = 'StyledAccordeonFooter';
-
 // ***********************************************
 function addHeaderLinks() {
   const head = document.head || document.getElementsByTagName("head")[0];
