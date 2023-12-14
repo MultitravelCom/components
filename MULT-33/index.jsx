@@ -4,6 +4,7 @@ display: block;
 `;
 
 const AccordeonFooter = styled.div`
+&&{
   display: flex;
   align-items: center;
   gap: 6px;
@@ -14,6 +15,7 @@ const AccordeonFooter = styled.div`
   border: 1px solid #cacaca;
   background: #fff;
   cursor: pointer;
+}
 `;
 
 const AccordeonFooterOpen = styled.div`
