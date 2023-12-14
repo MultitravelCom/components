@@ -455,7 +455,7 @@ const Card = ({ cards }) => {
                   <StyledPrice className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
-                  <StyledPrice>
+                  <StyledPrice className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
                 </StyledPriceContainer>
