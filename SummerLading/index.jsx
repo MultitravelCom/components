@@ -1,6 +1,6 @@
 // *************** Style ************************
 const StyledPriceContainer = styled.div`
-  && {
+&.claseAdicional {
     overflow: hidden;
   margin-bottom: 4rem;
   margin-top: 1rem;
@@ -439,7 +439,7 @@ const Card = ({ cards }) => {
                     srcSet={card.Imagen_Card.data[0].attributes?.url}
                   />
                 </picture>
-                <StyledPriceContainer >
+                <StyledPriceContainer className="claseAdicional">
                   <StyledPrice>
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </StyledPrice>
