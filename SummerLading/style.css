@@ -1,0 +1,81 @@
+.claseAdicional {
+    overflow: hidden;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    display: flex;
+    position: absolute;
+    width: initial;
+    height: 94px;
+    bottom: 2px;
+    right: 28px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.claseAdicionalPrice {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+@media (width: 320px) {
+    .claseAdicional {
+      height: 82px;
+      bottom: -6px;
+      right: 23px;
+    }
+    .claseAdicionalPrice {
+        font-size: 19px;
+      }
+}
+  
+@media (width: 375px) {
+    .claseAdicional {
+      height: 95px;
+      bottom: 6px;
+      right: 29px;
+    }
+}
+  
+@media (width: 390px) {
+    .claseAdicional {
+      height: 99px;
+      bottom: 9px;
+      right: 38px;
+    }
+}
+  
+@media (width: 424px) {
+    .claseAdicional {
+      height: 82px;
+      bottom: -6px;
+      right: 23px;
+    }
+}
+  
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .claseAdicional {
+      height: 21%;
+      bottom: 3%;
+      right: 41px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .claseAdicional {
+      height: 22%;
+      bottom: -4%;
+      right: 21px;
+    }
+    .claseAdicionalPrice {
+        font-size: 16px;
+      }
+}
+  
+@media (width: 1024px) {
+    .claseAdicional {
+      height: 22%;
+      bottom: -3%;
+      right: 23px;
+    }
+    .claseAdicionalPrice {
+        font-size: 16px;
+    }
+}
