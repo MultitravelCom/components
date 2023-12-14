@@ -57,17 +57,22 @@ const StyledPriceContainer = styled.div`
 `;
 
 const StyledPrice = styled.span`
-  &.claseAdicionalPrice {font-size: 20px;
+  &.claseAdicionalPrice {
+  font-size: 20px;
   font-weight: 700;
+
   @media (width: 320px) {
     font-size: 19px;
   }
+
   @media (width: 768px) {
     font-size: 16px;
   }
+
   @media (width: 1024px) {
     font-size: 16px;
-  }}
+  }
+}
 `;
 // ***********************************************
 function addHeaderLinks() {
