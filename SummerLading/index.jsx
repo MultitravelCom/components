@@ -57,7 +57,7 @@ const StyledPriceContainer = styled.div`
 `;
 
 const StyledPrice = styled.span`
-  && {
+  &.claseAdicionalPrice {
   font-size: 20px;
   font-weight: 700;
 
