@@ -27,7 +27,7 @@ const StyledAccordeonFooterOpen = styled.div`
   margin-top: 11px;
   overflow: hidden;
   @media (max-width: 768px) {
-    width: 95%;
+    width: 94%;
     display: block;
     position: absolute;
     left: 10px;
