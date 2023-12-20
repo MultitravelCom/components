@@ -45,7 +45,17 @@ async function cargarEstilosYModales() {
 };
 
 async function aplicarClaseRecomendada(resultsListPage) {
+
+    if (!resultsListPage || !resultsListPage.querySelectorAll) {
+        console.error('resultsListPage no es válido o no tiene querySelectorAll');
+        return;
+    }
     const items = resultsListPage.querySelectorAll('.results-list__item');
+
+    if (!items || items.length === 0) {
+        console.warn('No se encontraron elementos .results-list__item');
+        return;
+    }
 
     items.forEach(item => {
         const tieneDeals = item.querySelector('.deals') !== null;
