@@ -97,6 +97,7 @@
   right: 11px;
   width: 100% !important;
   text-align: end;
+  position: absolute;
 }
 
 .info-card__actions>.btn-small {
