@@ -386,12 +386,12 @@ const Card = ({ cards }) => {
                   />
                 </picture>
                 <div className="claseAdicional">
-                  <span className="claseAdicionalPrice">
+                  {card.Tarifa_Salida_A && (<span className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
-                  </span>
-                  <span className="claseAdicionalPrice">
+                  </span>)}
+                  {card.Tarifa_Salida_B && (<span className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
-                  </span>
+                  </span>)}
                 </div>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" ? (
