@@ -386,10 +386,10 @@ const Card = ({ cards }) => {
                   />
                 </picture>
                 <div className="claseAdicional">
-                  {card.Tarifa_Salida_A && (<span className="claseAdicionalPrice">
+                  {card.Tarifa_Salida_A > 0 && (<span className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_A.toLocaleString().replace(/,/g, ".")}
                   </span>)}
-                  {card.Tarifa_Salida_B && (<span className="claseAdicionalPrice">
+                  {card.Tarifa_Salida_B > 0 && (<span className="claseAdicionalPrice">
                     ${card.Tarifa_Salida_B.toLocaleString().replace(/,/g, ".")}
                   </span>)}
                 </div>
