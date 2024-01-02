@@ -1,13 +1,6 @@
 import React from "react";
 
-type DataItem = {
-  id: number;
-  attributes: {
-    Vertical: string[];
-  };
-};
-
-async function fetchDataFromAPIStrapi(): Promise<DataItem[]> {
+async function fetchDataFromAPIStrapi() {
   try {
     const response = await fetch('https://strapicontent.apimultitravel.com/api/banner-top-junipers?populate=*');
     if (!response.ok) {
@@ -25,17 +18,15 @@ fetchDataFromAPIStrapi();
 
 async function procesarDatosDeAPI() {
   try {
-    // Obtener los datos de la API utilizando fetchDataFromAPIStrapi
-    const jsonData: any = await fetchDataFromAPIStrapi();
+    const jsonData = await fetchDataFromAPIStrapi();
 
-    // Tu código de procesamiento de datos aquí
-    const result: { [key: string]: any[] } = {};
+    const result = {};
 
-    jsonData.data.forEach((item: any) => {
-      const verticals: string[] = item.attributes.Vertical;
-      const ubicacion: string = item.attributes.Ubicacion;
+    jsonData.data.forEach((item) => {
+      const verticals = item.attributes.Vertical;
+      const ubicacion = item.attributes.Ubicacion;
 
-      verticals.forEach((vertical: string) => {
+      verticals.forEach((vertical) => {
         if (!result[vertical]) {
           result[vertical] = [];
         }
@@ -53,21 +44,19 @@ async function procesarDatosDeAPI() {
       });
     });
 
-    // Crear la estructura de salida final
-    const finalResult = Object.keys(result).map((vertical: string) => ({
+    const finalResult = Object.keys(result).map((vertical) => ({
       vertical,
       data: result[vertical],
     }));
 
     finalResult.forEach((obj) => {
       console.log(JSON.stringify(obj, null, 2));
-      console.log(); // Agregar una línea en blanco para separación
+      console.log();
     });
   } catch (error) {
-    console.error("Error al procesar datos de la API:", error);
+    console.error("Error processing API data:", error);
   }
 }
-
 procesarDatosDeAPI();
 
 const scrollHandler = (event, target) => {
