@@ -305,10 +305,8 @@ const BannerContainer = ({
 };
 
 function App() {
-  const [urlIncludesPaquetes, setUrlIncludesPaquetes] =
-    React.useState<boolean>(false);
-
-  const [propsBanner, setPropsBanner] = React.useState<propsDataBanner>();
+  const [urlIncludesPaquetes, setUrlIncludesPaquetes] = React.useState(false);
+  const [propsBanner, setPropsBanner] = React.useState();
   const [shouldScroll, setShouldScroll] = React.useState(true);
 
   React.useEffect(() => {
@@ -320,101 +318,99 @@ function App() {
   const fetchData = async () => {
     try {
       const data = await fetchDataFromAPIStrapi();
-
       const verticalsDataSegmented = getVerticalData(data);
       const propsForBanner = setDataForBanner(verticalsDataSegmented);
       setPropsBanner(propsForBanner);
     } catch (error) {
-      console.error("Error al obtener datos de la API:", error);
+      console.error("Error fetching API data:", error);
     }
   };
 
   const bannerId = getBannerId();
   const showBanner = getShowBannerStatus();
   const isMobile = window.innerWidth <= 768;
+
   return (
     <div className="container-fluid main__container__bannerTop scroll-mobile">
-      <>
-        {isMobile ? (
-          <>
-            <BannerContainer
-              bannerId={`bannerTop__left_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_left"
-              position="left"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[1]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[1]}
-              imageUrl={propsBanner?.imageUrl[1]}
-            />
-            <BannerContainer
-              bannerId={`bannerTop__center_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_center"
-              position="center"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[0]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[0]}
-              imageUrl={propsBanner?.imageUrl[0]}
-            />
-            <BannerContainer
-              bannerId={`bannerTop__right_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_right"
-              position="right"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[2]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[2]}
-              imageUrl={propsBanner?.imageUrl[2]}
-            />
-          </>
-        ) : (
-          <>
-            <BannerContainer
-              bannerId={`bannerTop__left_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_left"
-              position="left"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[0]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[0]}
-              imageUrl={propsBanner?.imageUrl[0]}
-            />
-            <BannerContainer
-              bannerId={`bannerTop__center_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_center"
-              position="center"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[1]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[1]}
-              imageUrl={propsBanner?.imageUrl[1]}
-            />
-            <BannerContainer
-              bannerId={`bannerTop__right_${bannerId}`}
-              showPackageImages={false}
-              scrollAncla={(event) =>
-                shouldScroll && scrollHandler(event, "home-sliding-offers-2")
-              }
-              containerClassName="main__container_right"
-              position="right"
-              imageUrlsDesktop={propsBanner?.imageUrlsDesktop[2]}
-              imageUrlMobile={propsBanner?.imageUrlMobile[2]}
-              imageUrl={propsBanner?.imageUrl[2]}
-            />
-          </>
-        )}
-      </>
+      {isMobile ? (
+        <>
+          <BannerContainer
+            bannerId={`bannerTop__left_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_left"
+            position="left"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[1]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[1]}
+            imageUrl={propsBanner?.imageUrl[1]}
+          />
+          <BannerContainer
+            bannerId={`bannerTop__center_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_center"
+            position="center"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[0]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[0]}
+            imageUrl={propsBanner?.imageUrl[0]}
+          />
+          <BannerContainer
+            bannerId={`bannerTop__right_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_right"
+            position="right"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[2]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[2]}
+            imageUrl={propsBanner?.imageUrl[2]}
+          />
+        </>
+      ) : (
+        <>
+          <BannerContainer
+            bannerId={`bannerTop__left_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_left"
+            position="left"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[0]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[0]}
+            imageUrl={propsBanner?.imageUrl[0]}
+          />
+          <BannerContainer
+            bannerId={`bannerTop__center_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_center"
+            position="center"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[1]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[1]}
+            imageUrl={propsBanner?.imageUrl[1]}
+          />
+          <BannerContainer
+            bannerId={`bannerTop__right_${bannerId}`}
+            showPackageImages={false}
+            scrollAncla={(event) =>
+              shouldScroll && scrollHandler(event, "home-sliding-offers-2")
+            }
+            containerClassName="main__container_right"
+            position="right"
+            imageUrlsDesktop={propsBanner?.imageUrlsDesktop[2]}
+            imageUrlMobile={propsBanner?.imageUrlMobile[2]}
+            imageUrl={propsBanner?.imageUrl[2]}
+          />
+        </>
+      )}
     </div>
   );
 }
