@@ -48,8 +48,8 @@ async function procesarDatosDeAPI() {
     }));
 
     finalResult.forEach((obj) => {
-      console.log(JSON.stringify(obj, null, 2));
-      console.log();
+      // console.log(JSON.stringify(obj, null, 2));
+      // console.log();
     });
   } catch (error) {
     console.error("Error processing API data:", error);
