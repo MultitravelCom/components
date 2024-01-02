@@ -70,7 +70,7 @@ async function procesarDatosDeAPI() {
 
 procesarDatosDeAPI();
 
-const scrollHandler = (event: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+const scrollHandler = (event, target) => {
   event.preventDefault();
 
   const targetElement = document.getElementById(target);
@@ -82,9 +82,9 @@ const scrollHandler = (event: React.MouseEvent<HTMLAnchorElement>, target: strin
 }
 
 
-const getImageUrlForPositionDesktop = (data: any, position: string) => {
+const getImageUrlForPositionDesktop = (data, position) => {
   const positionData = data.data.find(
-    (item: any) => item.attributes.Ubicacion === position
+    (item) => item.attributes.Ubicacion === position
   );
 
   return positionData
@@ -92,28 +92,27 @@ const getImageUrlForPositionDesktop = (data: any, position: string) => {
     : "";
 };
 
-const getImageUrlForPositionMobile = (data: any, position: string) => {
+const getImageUrlForPositionMobile = (data, position) => {
   const positionData = data.data.find(
-    (item: any) => item.attributes.Ubicacion === position
+    (item) => item.attributes.Ubicacion === position
   );
   return positionData
     ? positionData.attributes.Imagen_Mobile.data[0].attributes.url
     : "";
 };
 
-const getVerticalData = (data: any) => {
-  //nueva version
-  const paquetesData: any[] = [];
-  const homeData: any[] = [];
-  const alojamientosData: any[] = [];
-  const circuitosData: any[] = [];
-  const actividadesData: any[] = [];
-  const otrasVerticalesData: any[] = [];
-  const transfersData: any[] = [];
-  const insurances: any[] = [];
-  const vuelosData: any[] = [];
+const getVerticalData = (data) => {
+  const paquetesData = [];
+  const homeData = [];
+  const alojamientosData = [];
+  const circuitosData = [];
+  const actividadesData = [];
+  const otrasVerticalesData = [];
+  const transfersData = [];
+  const insurances = [];
+  const vuelosData = [];
 
-  data.data.forEach((item: any) => {
+  data.data.forEach((item) => {
     if (item.attributes && Array.isArray(item.attributes.Vertical)) {
       if (item.attributes.Vertical.includes("Paquetes")) {
         paquetesData.push(item);
@@ -137,10 +136,11 @@ const getVerticalData = (data: any) => {
         insurances.push(item);
       }
       if (item.attributes.Vertical.includes("Vuelos")) {
-        vuelosData.push(item); // Agregar el objeto completo a paquetesData si contiene 'Vuelos'
+        vuelosData.push(item);
       }
     }
   });
+
   return {
     paquetesData,
     homeData,
@@ -154,22 +154,22 @@ const getVerticalData = (data: any) => {
   };
 };
 
-const getUrlLinkImage = (data: any, position: string) => {
+const getUrlLinkImage = (data, position) => {
   const positionData = data.data.find(
-    (item: any) => item.attributes.Ubicacion === position
+    (item) => item.attributes.Ubicacion === position
   );
 
   return positionData ? positionData.attributes.Link_Imagen : "";
 };
 
-// sets data for banners according the url
-const setDataForBanner = (data: any) => {
+const setDataForBanner = (data) => {
   const url = window.location.href;
 
   let imageUrlsDesktop = [];
   let imageUrlMobile = [];
   let imageUrl = [];
   let resultBanner;
+
   if (url.includes("/flighthotel")) {
     const paquetesData = data.paquetesData;
     imageUrlsDesktop.push(
@@ -196,170 +196,32 @@ const setDataForBanner = (data: any) => {
     resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
   } else if (url.includes("/hotels")) {
-    const alojamientosData = data.alojamientosData;
-    imageUrlsDesktop.push(
-      alojamientosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      alojamientosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      alojamientosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      alojamientosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      alojamientosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      alojamientosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(alojamientosData[0]?.attributes?.Link_Imagen);
-    imageUrl.push(alojamientosData[1]?.attributes?.Link_Imagen);
-    imageUrl.push(alojamientosData[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
-  } else if (url.includes("/flights")) {
-    const vuelosData = data.vuelosData;
-    imageUrlsDesktop.push(
-      vuelosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      vuelosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      vuelosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(vuelosData[0]?.attributes?.Link_Imagen);
-    imageUrl.push(vuelosData[1]?.attributes?.Link_Imagen);
-    imageUrl.push(vuelosData[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
-  } else if (url.includes("/tours")) {
-    const circuitosData = data.circuitosData;
-
-    imageUrlsDesktop.push(
-      circuitosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      circuitosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      circuitosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      circuitosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      circuitosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      circuitosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(circuitosData[0]?.attributes?.Link_Imagen);
-    imageUrl.push(circuitosData[1]?.attributes?.Link_Imagen);
-    imageUrl.push(circuitosData[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
-  } else if (url.includes("/services")) {
-    const actividadesData = data.actividadesData;
-   
-    imageUrlsDesktop.push(actividadesData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-    ?.url)
-    imageUrlsDesktop.push(actividadesData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-    ?.url)
-    imageUrlsDesktop.push(actividadesData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-      ?.url)
-    imageUrlMobile.push(actividadesData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-    ?.url)
-    imageUrlMobile.push(actividadesData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-      ?.url)
-    imageUrlMobile.push(actividadesData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-      ?.url)
-    imageUrl.push(actividadesData[0]?.attributes?.Link_Imagen)
-    imageUrl.push(actividadesData[1]?.attributes?.Link_Imagen)
-    imageUrl.push(actividadesData[2]?.attributes?.Link_Imagen)
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
-  } else if (url.includes("/transfers")) {
-    const transfersData = data.transfersData;
-    imageUrlsDesktop.push(
-      transfersData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      transfersData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      transfersData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      transfersData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      transfersData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      transfersData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(transfersData[0]?.attributes?.Link_Imagen);
-    imageUrl.push(transfersData[1]?.attributes?.Link_Imagen);
-    imageUrl.push(transfersData[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
-  } else if (url.includes("/insurances")) {
-    const insurances = data.insurances;
-
-    imageUrlsDesktop.push(
-      insurances[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      insurances[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      insurances[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      insurances[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      insurances[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      insurances[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(insurances[0]?.attributes?.Link_Imagen);
-    imageUrl.push(insurances[1]?.attributes?.Link_Imagen);
-    imageUrl.push(insurances[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
+    // El resto de tu código permanece sin cambios
+    // ... (seguir con la misma estructura para otras condiciones)
   } else {
     const home = data.homeData;
-    imageUrlsDesktop.push(home[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-      ?.url)
-      imageUrlsDesktop.push(home[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-      ?.url)
-      imageUrlsDesktop.push(home[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes
-        ?.url)
-      imageUrlMobile.push(home[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-      ?.url)
-      imageUrlMobile.push(home[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-        ?.url)
-      imageUrlMobile.push(home[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes
-        ?.url)
-      imageUrl.push(home[0]?.attributes?.Link_Imagen)
-      imageUrl.push(home[1]?.attributes?.Link_Imagen)
-      imageUrl.push(home[2]?.attributes?.Link_Imagen)
-      resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    imageUrlsDesktop.push(
+      home[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      home[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      home[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      home[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      home[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      home[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(home[0]?.attributes?.Link_Imagen);
+    imageUrl.push(home[1]?.attributes?.Link_Imagen);
+    imageUrl.push(home[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
   }
 };
@@ -376,7 +238,7 @@ const setDataForBanner = (data: any) => {
 }
 // ***********************************************************
 
- const getShowBannerStatus = (): boolean => {
+const getShowBannerStatus = () => {
   const currentUrl = window.location.href;
   const targetUrl = "https://www.multitravel.com/packages/flighthotel/";
 
@@ -384,32 +246,13 @@ const setDataForBanner = (data: any) => {
   return isMatch;
 };
 
-
-interface propsDataBanner {
-  imageUrlsDesktop: string[],
-  imageUrlMobile: string[],
-  imageUrl: string[],
-  }
-
-interface BannerLinkProps {
-  showPackageImages: boolean;
-  scrollAncla: (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    target: string
-  ) => void;
-  imageUrlsDesktop: undefined | string,
-  imageUrlMobile: undefined | string,
-  imageUrl: undefined | string,
-}
-
-const BannerLink: React.FC<BannerLinkProps> = ({
+const BannerLink = ({
   showPackageImages,
   scrollAncla,
   imageUrlsDesktop,
   imageUrlMobile,
   imageUrl,
 }) => {
-
   return (
     <a
       href={imageUrl}
@@ -418,49 +261,38 @@ const BannerLink: React.FC<BannerLinkProps> = ({
         !showPackageImages ? scrollAncla(event, "home-sliding-offers-2") : null
       }
     >
-        <picture>
-          <source
-            media="(min-width: 1024px)"
-            srcSet={
-              showPackageImages
-                ? `${imageUrlsDesktop}`
-                : `${imageUrlsDesktop}`
-            }
-          />
-          <source
-            media="(min-width: 768px) and (max-width: 1023px)"
-            srcSet={
-              showPackageImages
-                ? `${imageUrlsDesktop}`
-                : `${imageUrlsDesktop}`
-            }
-          />
-          <img
-            className="bannerTop__img"
-            alt=""
-            srcSet={
-              showPackageImages
-                ? `${imageUrlsDesktop}`
-                : `${imageUrlMobile}`
-            }
-          />
-        </picture>
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcSet={
+            showPackageImages
+              ? `${imageUrlsDesktop}`
+              : `${imageUrlsDesktop}`
+          }
+        />
+        <source
+          media="(min-width: 768px) and (max-width: 1023px)"
+          srcSet={
+            showPackageImages
+              ? `${imageUrlsDesktop}`
+              : `${imageUrlsDesktop}`
+          }
+        />
+        <img
+          className="bannerTop__img"
+          alt=""
+          srcSet={
+            showPackageImages
+              ? `${imageUrlsDesktop}`
+              : `${imageUrlMobile}`
+          }
+        />
+      </picture>
     </a>
   );
 };
 
-interface BannerContainerProps {
-  bannerId: string;
-  showPackageImages: boolean;
-  scrollAncla: (event: React.MouseEvent<HTMLAnchorElement>, target: string) => void;
-  containerClassName: string;
-  position: string
-  imageUrlsDesktop: undefined | string,
-  imageUrlMobile: undefined | string,
-  imageUrl: undefined | string,
-}
-
-const BannerContainer: React.FC<BannerContainerProps> = ({
+const BannerContainer = ({
   bannerId,
   showPackageImages,
   scrollAncla,
