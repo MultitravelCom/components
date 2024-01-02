@@ -1,5 +1,3 @@
-import React from "react";
-
 async function fetchDataFromAPIStrapi() {
   try {
     const response = await fetch('https://strapicontent.apimultitravel.com/api/banner-top-junipers?populate=*');
