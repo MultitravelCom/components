@@ -183,32 +183,170 @@ const setDataForBanner = (data) => {
     resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
   } else if (url.includes("/hotels")) {
-    // El resto de tu código permanece sin cambios
-    // ... (seguir con la misma estructura para otras condiciones)
+    const alojamientosData = data.alojamientosData;
+    imageUrlsDesktop.push(
+      alojamientosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      alojamientosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      alojamientosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      alojamientosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      alojamientosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      alojamientosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(alojamientosData[0]?.attributes?.Link_Imagen);
+    imageUrl.push(alojamientosData[1]?.attributes?.Link_Imagen);
+    imageUrl.push(alojamientosData[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
+  } else if (url.includes("/flights")) {
+    const vuelosData = data.vuelosData;
+    imageUrlsDesktop.push(
+      vuelosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      vuelosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      vuelosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      vuelosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      vuelosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      vuelosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(vuelosData[0]?.attributes?.Link_Imagen);
+    imageUrl.push(vuelosData[1]?.attributes?.Link_Imagen);
+    imageUrl.push(vuelosData[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
+  } else if (url.includes("/tours")) {
+    const circuitosData = data.circuitosData;
+
+    imageUrlsDesktop.push(
+      circuitosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      circuitosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      circuitosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      circuitosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      circuitosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      circuitosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(circuitosData[0]?.attributes?.Link_Imagen);
+    imageUrl.push(circuitosData[1]?.attributes?.Link_Imagen);
+    imageUrl.push(circuitosData[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
+  } else if (url.includes("/services")) {
+    const actividadesData = data.actividadesData;
+   
+    imageUrlsDesktop.push(actividadesData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+    ?.url)
+    imageUrlsDesktop.push(actividadesData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+    ?.url)
+    imageUrlsDesktop.push(actividadesData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+      ?.url)
+    imageUrlMobile.push(actividadesData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+    ?.url)
+    imageUrlMobile.push(actividadesData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+      ?.url)
+    imageUrlMobile.push(actividadesData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+      ?.url)
+    imageUrl.push(actividadesData[0]?.attributes?.Link_Imagen)
+    imageUrl.push(actividadesData[1]?.attributes?.Link_Imagen)
+    imageUrl.push(actividadesData[2]?.attributes?.Link_Imagen)
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
+  } else if (url.includes("/transfers")) {
+    const transfersData = data.transfersData;
+    imageUrlsDesktop.push(
+      transfersData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      transfersData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      transfersData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      transfersData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      transfersData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      transfersData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(transfersData[0]?.attributes?.Link_Imagen);
+    imageUrl.push(transfersData[1]?.attributes?.Link_Imagen);
+    imageUrl.push(transfersData[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
+  } else if (url.includes("/insurances")) {
+    const insurances = data.insurances;
+
+    imageUrlsDesktop.push(
+      insurances[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      insurances[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlsDesktop.push(
+      insurances[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      insurances[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      insurances[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrlMobile.push(
+      insurances[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+    );
+    imageUrl.push(insurances[0]?.attributes?.Link_Imagen);
+    imageUrl.push(insurances[1]?.attributes?.Link_Imagen);
+    imageUrl.push(insurances[2]?.attributes?.Link_Imagen);
+    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    return resultBanner;
   } else {
     const home = data.homeData;
-    imageUrlsDesktop.push(
-      home[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      home[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      home[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      home[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      home[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      home[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(home[0]?.attributes?.Link_Imagen);
-    imageUrl.push(home[1]?.attributes?.Link_Imagen);
-    imageUrl.push(home[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+    imageUrlsDesktop.push(home[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+      ?.url)
+      imageUrlsDesktop.push(home[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+      ?.url)
+      imageUrlsDesktop.push(home[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes
+        ?.url)
+      imageUrlMobile.push(home[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+      ?.url)
+      imageUrlMobile.push(home[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+        ?.url)
+      imageUrlMobile.push(home[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes
+        ?.url)
+      imageUrl.push(home[0]?.attributes?.Link_Imagen)
+      imageUrl.push(home[1]?.attributes?.Link_Imagen)
+      imageUrl.push(home[2]?.attributes?.Link_Imagen)
+      resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
   }
 };
