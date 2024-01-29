@@ -1,5 +1,5 @@
 
-.carrusel__anterior.btnLeft, .carrusel__anterior.btnLeft2, .carrusel__anterior.btnLeft3, .carrusel__anterior.btnRight, .carrusel__anterior.btnRight2, .carrusel__anterior.btnRight3 {
+.carrusel__anterior.btnLeft, .carrusel__anterior.btnLeft2, .carrusel__anterior.btnLeft3, .btnRight, .btnRight2, .btnRight3 {
     display: none;
 }
   
