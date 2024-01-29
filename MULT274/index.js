@@ -346,6 +346,7 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
                     <button
                         aria-label="Anterior"
                         className={`carrusel__anterior ${btnLeft}`}
+                        style="display: none;"
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
@@ -355,6 +356,7 @@ const CardContainer = ({ btnStyles, destinosFiltrados }) => {
                     <button
                         aria-label="Siguiente"
                         className={`carrusel__siguiente ${btnRight}`}
+                        style="display: none;"
                     >
                         <i className="fa fa-chevron-right" aria-hidden="true"></i>
                     </button>
