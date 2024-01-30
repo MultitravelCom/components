@@ -1,17 +1,18 @@
-
+/*to hide arrow buttons of the sections*/
 .carrusel__anterior.btnLeft, .carrusel__anterior.btnLeft2, .carrusel__anterior.btnLeft3, .btnRight, .btnRight2, .btnRight3 {
     display: none;
 }
 
 
-/* .main_conteiner__s2_bannerTravelSale {
+
+
+/*To hide the last two elements of the section and adjust width*/
+.glider-track > *:nth-last-child(-n+2) {
     display: none;
 }
-   */
 
-
-   .glider-track > *:nth-last-child(-n+2) {
-    display: none;
+.glider-track  {
+    width: 100%;
 }
 
 
