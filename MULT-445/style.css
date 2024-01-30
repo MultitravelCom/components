@@ -11,8 +11,9 @@
     display: none;
 }
 
-.glider-track  {
-    max-width: 100%!important;
+
+@media (min-width: 768px) { /* Adjust this breakpoint as needed */
+    .glider-track  {
+        max-width: 100%!important;
+    }
 }
-
-
