@@ -9,3 +9,9 @@
 }
    */
 
+
+   .glider-track > *:nth-last-child(-n+2) {
+    display: none;
+}
+
+
