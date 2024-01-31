@@ -377,15 +377,15 @@ const BannerMensageCardApp = () => {
     return (
         <>
             {showFreezePriceMessageA && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
 
             {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
 
             {showFreezePriceMessageC && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
         </>
     );
