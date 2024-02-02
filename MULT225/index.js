@@ -507,7 +507,7 @@ function App() {
             <div className="main__container_app_components">
                 <div className="main__container_app_components__backBlue">
                     <Redes />
-                    <Pagos />
+                    {/* <Pagos /> */}
                 </div>
                 <div className="main__container_app_components____seccion__ofertas">
                     <Ofertas />
