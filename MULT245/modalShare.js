@@ -373,21 +373,15 @@ const BannerMensageCardApp = () => {
         showFreezePriceMessageC = taxIncludedTrue
     }
 
-
+ console.log("isEventActive", isEventActive)
     return (
-        <>
-            {showFreezePriceMessageA && (
-                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
-            )}
-
-            {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
-            )}
-
-            {showFreezePriceMessageC && (
-                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
-            )}
-        </>
+        isEventActive && (
+            <>
+                {(showFreezePriceMessageA || showFreezePriceMessageB || showFreezePriceMessageC) && (
+                    <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
+                )}
+            </>
+        )
     );
 };
 
