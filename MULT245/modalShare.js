@@ -267,9 +267,9 @@ const zonasTravelSale = [
 ];
 //   *************************************************************
 // ********************** Timer *****************************
-function shouldShowEvent() {
+function shouldShowEventBanner() {
     const startDate = new Date("2023-08-27T22:00:00");
-    const endDate = new Date("2023-11-15T23:30:00");
+    const endDate = new Date("2024-02-14T23:59:00");
     const now = new Date();
 
     return now >= startDate && now <= endDate;
@@ -409,15 +409,19 @@ const BannerTopHotelResult = () => {
         // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
         const updateEventActiveState = () => {
             const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
-            
+
             if (!taxIncludedElement) {
-                
-                setIsEventActive(true); 
+
+                setIsEventActive(true);
             } else {
                 setIsEventActive(false);
             }
         };
-    
+
+        if (shouldShowEventBanner) {
+            setIsEventActive(true);
+        }
+
         // Configurar un observador para detectar cambios en results-list__page
         const observerConfig = {
             rootNode: document.querySelector('.results-list__page'), // Escuchar solo en results-list__page
@@ -426,17 +430,17 @@ const BannerTopHotelResult = () => {
             },
             queries: [{ element: '.results-list__page' }], // Escuchar cualquier cambio en results-list__page
         };
-    
+
         const observer = new MutationSummary(observerConfig);
-    
+
         return () => {
             observer.disconnect();
         };
     }, []);
-    
+
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'flex' : 'flex',
+        display: isEventActive ? 'flex' : 'none',
     };
 
     return (
