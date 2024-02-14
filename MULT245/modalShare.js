@@ -355,11 +355,19 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
+    const [isEventActive, setIsEventActive] = React.useState(true);
+
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
     let showFreezePriceMessageA = false;
     let showFreezePriceMessageB = false;
     let showFreezePriceMessageC = false;
+
+    React.useEffect(() => {
+        if (shouldShowEventBanner) {
+            setIsEventActive(true);
+        }
+    }, []);
 
     if (isZoneInTravelSale()) {
         travelSaleTrue = true;
@@ -373,7 +381,7 @@ const BannerMensageCardApp = () => {
         showFreezePriceMessageC = taxIncludedTrue
     }
 
- console.log("isEventActive", isEventActive)
+    console.log("isEventActive", isEventActive)
     return (
         isEventActive && (
             <>
