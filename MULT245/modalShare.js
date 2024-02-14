@@ -117,7 +117,7 @@ const getCouponsFetch = async () => {
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
     const startDate = new Date("2023-11-05T23:30:00");
-    const endDate = new Date("2023-11-15T23:30:00");
+    const endDate = new Date("2024-11-15T23:30:00");
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
 
@@ -377,15 +377,15 @@ const BannerMensageCardApp = () => {
     return (
         <>
             {showFreezePriceMessageA && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
 
             {showFreezePriceMessageB && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
 
             {showFreezePriceMessageC && (
-                <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
             )}
         </>
     );

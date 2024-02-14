@@ -505,10 +505,10 @@ function App() {
     return (
         <>
             <div className="main__container_app_components">
-                <div className="main__container_app_components__backBlue">
+                {/* <div className="main__container_app_components__backBlue"> */}
                     <Redes />
-                    <Pagos />
-                </div>
+                    {/* <Pagos /> */}
+                {/* </div> */}
                 <div className="main__container_app_components____seccion__ofertas">
                     <Ofertas />
                 </div>

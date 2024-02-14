@@ -184,7 +184,7 @@
     text-align: left;
     margin: auto;
     margin-bottom: 40px;
-    top: -63px;
+    top: -43px;
     align-items: center;
     justify-content: flex-end;
 }
@@ -280,7 +280,8 @@
     background-color: #d3eaff;
     padding: 1rem;
     position: relative;
-    min-height: 400px;
+    min-height: 180px;
+    height: 180px;
 }
 
 .main__container_app_components__ofertas>h2 {
