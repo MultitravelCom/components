@@ -364,7 +364,7 @@ const BannerMensageCardApp = () => {
     if (isZoneInTravelSale()) {
         travelSaleTrue = true;
     }
-    if (shouldShowEvent()) {
+    if (shouldShowEventBanner()) {
         showFreezePriceMessageA = travelSaleTrue;
         showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
         showFreezePriceMessageC = taxIncludedTrue && !travelSaleTrue;
@@ -434,7 +434,7 @@ const BannerTopHotelResult = () => {
 
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'flex' : 'none',
+        display: isEventActive ? 'flex' : 'none'
     };
 
     return (
