@@ -355,7 +355,7 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [isEventActive, setIsEventActive] = React.useState(true);
+    const [isEventActive, setIsEventActive] = React.useState(false);
 
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
