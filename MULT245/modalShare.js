@@ -385,7 +385,7 @@ const BannerMensageCardApp = () => {
         isEventActive && (
             <>
                 {(showFreezePriceMessageA || showFreezePriceMessageB || showFreezePriceMessageC) && (
-                    <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: 50MILOFF"} />
+                    <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
                 )}
             </>
         )
