@@ -269,7 +269,7 @@ const zonasTravelSale = [
 // ********************** Timer *****************************
 function shouldShowEventBanner() {
     const startDate = new Date("2023-08-27T22:00:00");
-    const endDate = new Date("2024-02-14T23:59:00");
+    const endDate = new Date("2024-02-13T23:59:00");
     const now = new Date();
 
     return now >= startDate && now <= endDate;
@@ -421,7 +421,7 @@ const BannerTopHotelResult = () => {
         };
 
         if (shouldShowEventBanner) {
-            setIsEventActive(true);
+            setIsEventActive(false);
         }
 
         // Configurar un observador para detectar cambios en results-list__page
