@@ -381,7 +381,6 @@ const BannerMensageCardApp = () => {
         showFreezePriceMessageC = taxIncludedTrue
     }
 
-    console.log("isEventActive", isEventActive)
     return (
         isEventActive && (
             <>
