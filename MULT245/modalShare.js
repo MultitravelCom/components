@@ -420,9 +420,9 @@ const BannerTopHotelResult = () => {
             }
         };
 
-        if (shouldShowEventBanner) {
-            setIsEventActive(false);
-        }
+        // if (shouldShowEventBanner) {
+        //     setIsEventActive(false);
+        // }
 
         // Configurar un observador para detectar cambios en results-list__page
         const observerConfig = {
@@ -442,7 +442,7 @@ const BannerTopHotelResult = () => {
 
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'flex' : 'none'
+        display: isEventActive ? 'none' : 'none'
     };
 
     return (
