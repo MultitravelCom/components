@@ -355,7 +355,7 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [isEventActive, setIsEventActive] = React.useState(false);
+    const [isEventActive, setIsEventActive] = React.useState(true);
 
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
     let travelSaleTrue = false;
@@ -365,7 +365,7 @@ const BannerMensageCardApp = () => {
 
     React.useEffect(() => {
         if (shouldShowEventBanner) {
-            setIsEventActive(false);
+            setIsEventActive(true);
         }
     }, []);
 
@@ -385,7 +385,7 @@ const BannerMensageCardApp = () => {
         isEventActive && (
             <>
                 {(showFreezePriceMessageA || showFreezePriceMessageB || showFreezePriceMessageC) && (
-                    <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: MULTILOVERS"} />
+                    <BannerMensageCard text_p={"Aprovechá el cupón de hasta $50.000: 50MILOFF"} />
                 )}
             </>
         )
