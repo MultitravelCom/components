@@ -394,7 +394,7 @@ const BannerMensageCardApp = () => {
 };
 
 const BannerTopHotelResult = () => {
-    const [isEventActive, setIsEventActive] = React.useState(true);
+    const [isEventActive, setIsEventActive] = React.useState(false);
     const [modalOpen, setModalOpen] = React.useState(false);
 
     const handleOpenModal = () => {
