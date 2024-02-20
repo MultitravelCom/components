@@ -441,7 +441,7 @@ const BannerTopHotelResult = () => {
 
 
     const bannerStyleHotelResult = {
-        display: isEventActive ? 'none' : 'none'
+        display: isEventActive ? 'flex' : 'flex'
     };
 
     return (
