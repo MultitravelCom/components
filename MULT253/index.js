@@ -150,23 +150,25 @@ function aplicarModificaciones(resultsListPage) {
     findElementsByUid(uidList);
 }
 
-const uidList = ['GHU@JP310739', 'OtroUID', 'OtroMasUID'];
+const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G' ,'GHU@JP037034' ,'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331' ,'GHU@JP151442'];
 
 function findElementsByUid(uidList) {
     const itemsWithDataUid = document.querySelectorAll('.results-list__item');
 
     uidList.forEach(uidToFind => {
         let found = false;
+
         itemsWithDataUid.forEach(item => {
             const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
 
             if (dataUidElement) {
-                console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
+                console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
                 found = true;
             }
         });
+
         if (!found) {
-            console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
+            console.log(`Elemento con data-uid ${uidToFind} no encontrado en ningún elemento con la clase results-list__item.`);
         }
     });
 }
