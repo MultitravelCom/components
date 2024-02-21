@@ -147,7 +147,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    findElementByUid('GHU@JP037012');
+    findElementsByUid(uidList);
 }
 
 const uidList = ['GHU@JP310739', 'OtroUID', 'OtroMasUID'];
@@ -161,13 +161,10 @@ function findElementsByUid(uidList) {
             const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
 
             if (dataUidElement) {
-                // Realizar la acción específica aquí para el uidToFind encontrado
                 console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
                 found = true;
             }
         });
-
-        // Si no se encuentra el elemento, muestra un mensaje de consola
         if (!found) {
             console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
         }
