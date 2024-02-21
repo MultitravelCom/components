@@ -140,8 +140,7 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-
-async function findElementsByUid(resultsListPage) {
+function findElementsByUid(resultsListPage) {
     const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
     itemsWithDataUid.forEach(item => {

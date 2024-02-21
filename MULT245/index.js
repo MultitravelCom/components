@@ -258,6 +258,21 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
+function findElementsByUid(resultsListPage) {
+    const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
+
+    itemsWithDataUid.forEach(item => {
+        const dataUidElement = item.getAttribute('data-uid');
+
+        if (dataUidElement) {
+            console.log(`Valor dentro de data-uid: ${dataUidElement}`);
+        } else {
+            console.log(`Atributo data-uid no encontrado en el elemento.`);
+        }
+    });
+}
+
+
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
     // agreeStarIcon(resultsListPage);
@@ -267,6 +282,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
+    findElementsByUid(resultsListPage);
 };
 
 function observarCambiosCheckAndRender() {
@@ -277,6 +293,7 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
+                    findElementsByUid(resultsListPage);
                 });
             });
         },
@@ -299,4 +316,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
+    findElementsByUid(resultsListPage);
 });
