@@ -144,7 +144,6 @@ const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G',
 
 function findElementsByUid(uidList) {
 
-
     const itemsWithDataUid = document.querySelectorAll('.results-list__item');
 
     uidList.forEach(uidToFind => {
@@ -166,6 +165,7 @@ function findElementsByUid(uidList) {
 }
 
 function aplicarModificaciones(resultsListPage) {
+    console.log("ejecutando aplicarModificaciones")
     removeImageLinks(resultsListPage);
     aplicarClaseRecomendada(resultsListPage);
     agreeStarIcon(resultsListPage);
@@ -174,7 +174,6 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyButton(resultsListPage);
     findElementsByUid(uidList);
 }
-
 
 function observarCambiosCheckAndRender() {
     const observerConfig = {
