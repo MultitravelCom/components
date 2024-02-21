@@ -150,22 +150,29 @@ function aplicarModificaciones(resultsListPage) {
     findElementByUid('GHU@JP037012');
 }
 
+
+const uidList = ['GHU@JP310739', 'OtroUID', 'OtroMasUID'];
+
+
 function findElementsByUid(uidList) {
     const itemsWithDataUid = document.querySelectorAll('.results-list__item');
 
     uidList.forEach(uidToFind => {
+        let found = false;
         itemsWithDataUid.forEach(item => {
             const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
 
             if (dataUidElement) {
                 // Realizar la acción específica aquí para el uidToFind encontrado
                 console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
-                // Por ejemplo, puedes llamar a otra función o ejecutar algún código aquí
+                found = true;
             }
         });
 
         // Si no se encuentra el elemento, muestra un mensaje de consola
-        console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
+        if (!found) {
+            console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
+        }
     });
 }
 
@@ -177,9 +184,9 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementByUid('GHU@JP037012');
+                    findElementsByUid(uidList)
                 });
-                findElementByUid('GHU@JP037012');
+                findElementsByUid(uidList)
                 cargarEstilosYModales();
             }); 
         },
@@ -198,5 +205,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     aplicarClaseRecomendada();
-    findElementByUid('GHU@JP037012');
+    findElementsByUid(uidList);
 });
