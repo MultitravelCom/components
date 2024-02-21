@@ -510,10 +510,10 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
             slidesToShow: 1.2,
             slidesToScroll: 0.5,
             draggable: true,
-            // arrows: {
-            //     prev: btnLeftElement,
-            //     next: btnRightElement,
-            // },
+            arrows: {
+                prev: btnLeftElement,
+                next: btnRightElement,
+            },
             responsive: [
                 {
                     // screens greater than >= 775px
@@ -574,21 +574,21 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
                     </h2>
                 </div>
                 <div className="carrusel__contenedor">
-                    <button
+                    {/* <button
                         aria-label="Anterior"
                         className={`carrusel__anterior ${btnLeft}`}
                     >
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                    </button>
+                    </button> */}
                     <div className={carrusel} id={title}>
                         <Card destinos={destinosFiltrados} onContactClick={onContactClick} />
                     </div>
-                    <button
+                    {/* <button
                         aria-label="Siguiente"
                         className={`carrusel__siguiente ${btnRight}`}
                     >
                         <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </>
