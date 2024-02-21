@@ -258,20 +258,19 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
-function findElementsByUid(resultsListPage) {
+async function findElementsByUid(resultsListPage, uidToFind) {
     const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
     itemsWithDataUid.forEach(item => {
-        const dataUidElement = item.getAttribute('data-uid');
+        const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
 
         if (dataUidElement) {
-            console.log(`Valor dentro de data-uid: ${dataUidElement}`);
+            console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
         } else {
-            console.log(`Atributo data-uid no encontrado en el elemento.`);
+            console.log(`Elemento con data-uid ${uidToFind} no encontrado en ningún elemento con la clase results-list__item.`);
         }
     });
 }
-
 
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
@@ -282,7 +281,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    findElementsByUid(resultsListPage);
+    findElementsByUid(resultsListPage, 'GHU@JP155487');
 };
 
 function observarCambiosCheckAndRender() {
@@ -293,7 +292,7 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementsByUid(resultsListPage);
+                    findElementsByUid(resultsListPage, 'GHU@JP155487');
                 });
             });
         },
@@ -316,5 +315,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
-    findElementsByUid(resultsListPage);
+    findElementsByUid(resultsListPage, 'GHU@JP155487');
 });
