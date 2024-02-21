@@ -1,34 +1,30 @@
 // Lista de data-uid y sus correspondientes URLs de imagen
 const dataUidMapping = {
     'GHU@JP037012': 'https://cdn0.frasess.net/es/posts/5/4/2/frases_de_rocky_245_600.jpg',
-    // Agrega más mapeos según sea necesario
 };
 
-// Función para reemplazar los enlaces de imagen según el data-uid
-function replaceImageLinks() {
+function findElementByUid(uidToFind) {
     // Selecciona todos los elementos dentro de results-list__page con data-uid
     const resultElements = document.querySelectorAll('.results-list__page .results-list__item [data-uid]');
 
-    // Itera sobre cada elemento
+    // Itera sobre cada elemento y verifica si el data-uid coincide con el que estás buscando
     resultElements.forEach(element => {
         // Obtiene el valor de data-uid
         const dataUid = element.getAttribute('data-uid');
 
-        // Verifica si el data-uid existe en el mapeo
-        if (dataUidMapping[dataUid]) {
-            // Obtiene el enlace de imagen asociado al data-uid
-            const imageUrl = dataUidMapping[dataUid];
-
-            // Encuentra el selector de la imagen dentro del elemento actual
-            const imgElement = element.querySelector('.info-card__image img');
-
-            // Verifica si se encontró la imagen y actualiza su src
-            if (imgElement) {
-                imgElement.src = imageUrl;
-            }
+        // Verifica si el data-uid coincide con el que estás buscando
+        if (dataUid === uidToFind) {
+            // Si lo encuentra, muestra un mensaje de consola y retorna el elemento
+            console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
+            console.log(element); // Puedes omitir esta línea si no necesitas imprimir el elemento completo
+            return element;
         }
     });
+
+    // Si no se encuentra el elemento, muestra un mensaje de consola
+    console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
+    return null; // Retorna null si no se encuentra el elemento
 }
 
-// Llama a la función para realizar la sustitución
-replaceImageLinks();
+// Llama a la función con el data-uid que estás buscando
+const elementoEncontrado = findElementByUid('GHU@JP037012');
