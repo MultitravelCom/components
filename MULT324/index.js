@@ -510,10 +510,10 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
             slidesToShow: 1.2,
             slidesToScroll: 0.5,
             draggable: true,
-            arrows: {
-                prev: btnLeftElement,
-                next: btnRightElement,
-            },
+            // arrows: {
+            //     prev: btnLeftElement,
+            //     next: btnRightElement,
+            // },
             responsive: [
                 {
                     // screens greater than >= 775px
