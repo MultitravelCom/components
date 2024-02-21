@@ -84,7 +84,7 @@ const AccordionNavegateSiteTitle = () => {
     const handleTitle = () => {
       const currentURL = window.location.href;
       const isBR = currentURL.includes("https://br.multitravel.com/");
-      const isAR = currentURL.includes("https://ar.multitravel.com/");
+      const isAR = currentURL.includes("https://multitravel.com.ar/");
 
       const newTitle = isAR
         ? "Navegar en este sitio:"
@@ -105,7 +105,7 @@ const AccordionNavegateSiteTitle = () => {
 
 const getCountryFromUrl = () => {
   const currentUrl = window.location.href;
-  if (currentUrl.includes("https://ar.multitravel.com/")) {
+  if (currentUrl.includes("https://multitravel.com.ar/")) {
     return "Argentina";
   } else if (currentUrl.includes("https://br.multitravel.com/")) {
     return "Brasil";
@@ -122,7 +122,7 @@ const AccordionNavegate = () => {
   const accordionRef = React.useRef(null);
 
   const handleOptionClick = (country) => {
-    const argentinaUrl = "https://ar.multitravel.com/";
+    const argentinaUrl = "https://multitravel.com.ar/";
     const brazilUrl = "https://br.multitravel.com/";
 
     const currentUrl = window.location.href;
@@ -130,7 +130,7 @@ const AccordionNavegate = () => {
 
     if (
       country === "Argentina" &&
-      !currentUrl.includes("https://ar.multitravel.com/")
+      !currentUrl.includes("https://multitravel.com.ar/")
 
     ) {
       urlToRedirect = argentinaUrl;
