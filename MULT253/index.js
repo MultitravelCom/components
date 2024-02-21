@@ -147,6 +147,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
+    findElementByUid('GHU@JP037012');
 }
 
 function findElementByUid(uidToFind) {
@@ -200,4 +201,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     aplicarClaseRecomendada();
+    findElementByUid('GHU@JP037012');
 });
