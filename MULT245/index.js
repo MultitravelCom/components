@@ -313,6 +313,7 @@ function observarCambiosCheckAndRender() {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
+        findElementsByUid(resultsListPage, uidList);
     });
 };
 
@@ -324,5 +325,4 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
-    findElementsByUid(resultsListPage, uidList);
 });
