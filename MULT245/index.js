@@ -258,15 +258,24 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
-async function findElementsByUid(resultsListPage, uidToFind) {
+const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
+
+async function findElementsByUid(resultsListPage, uidList) {
     const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
-    itemsWithDataUid.forEach(item => {
-        const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
+    uidList.forEach(uidToFind => {
+        let found = false;
 
-        if (dataUidElement) {
-            console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
-        } else {
+        itemsWithDataUid.forEach(item => {
+            const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
+
+            if (dataUidElement) {
+                console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
+                found = true;
+            }
+        });
+
+        if (!found) {
             console.log(`Elemento con data-uid ${uidToFind} no encontrado en ningún elemento con la clase results-list__item.`);
         }
     });
@@ -281,7 +290,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    findElementsByUid(resultsListPage, 'GHU@JP155487');
+    findElementsByUid(resultsListPage, uidList);
 };
 
 function observarCambiosCheckAndRender() {
@@ -292,7 +301,7 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementsByUid(resultsListPage, 'GHU@JP155487');
+                    findElementsByUid(resultsListPage, uidList);
                 });
             });
         },
@@ -315,5 +324,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
-    findElementsByUid(resultsListPage, 'GHU@JP155487');
+    findElementsByUid(resultsListPage, uidList);
 });
