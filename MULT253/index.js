@@ -140,11 +140,12 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
 
-function findElementsByUid(uidList) {
+function findElementsByUid(resultsListPage) {
 
-    const itemsWithDataUid = document.querySelectorAll('.results-list__item');
+    const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
+
+    const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
     uidList.forEach(uidToFind => {
         let found = false;
@@ -172,7 +173,7 @@ function aplicarModificaciones(resultsListPage) {
     changeCopyMap(resultsListPage);
     applyDisplayNoneToAllButLastButton(resultsListPage);
     changeCopyButton(resultsListPage);
-    findElementsByUid(uidList);
+    findElementsByUid(resultsListPage);
 }
 
 function observarCambiosCheckAndRender() {
@@ -183,7 +184,7 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementsByUid(uidList)
+                    findElementsByUid(resultsListPage)
                 });
                 cargarEstilosYModales();
             });
