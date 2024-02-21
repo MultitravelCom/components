@@ -141,26 +141,16 @@ async function changeCopyButton(resultsListPage) {
 };
 
 
-function findElementsByUid(resultsListPage) {
-
-    const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
-
+async function findElementsByUid(resultsListPage) {
     const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
-    uidList.forEach(uidToFind => {
-        let found = false;
+    itemsWithDataUid.forEach(item => {
+        const dataUidElement = item.getAttribute('data-uid');
 
-        itemsWithDataUid.forEach(item => {
-            const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
-
-            if (dataUidElement) {
-                console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
-                found = true;
-            }
-        });
-
-        if (!found) {
-            console.log(`Elemento con data-uid ${uidToFind} no encontrado en ningún elemento con la clase results-list__item.`);
+        if (dataUidElement) {
+            console.log(`Valor dentro de data-uid: ${dataUidElement}`);
+        } else {
+            console.log(`Atributo data-uid no encontrado en el elemento.`);
         }
     });
 }
@@ -184,9 +174,11 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementsByUid(resultsListPage)
+                    findElementsByUid(resultsListPage);
+                    
                 });
                 cargarEstilosYModales();
+                findElementsByUid(resultsListPage);
             });
         },
         queries: [{ element: '.results-list__page' }],
@@ -204,4 +196,5 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     aplicarClaseRecomendada();
+    findElementsByUid(resultsListPage);
 });
