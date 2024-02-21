@@ -151,7 +151,6 @@ function aplicarModificaciones(resultsListPage) {
 }
 
 function findElementByUid(uidToFind) {
-    // Selecciona todos los elementos dentro de results-list__page con data-uid
     const articleDataUid = document.querySelectorAll('.results-list__page article[data-uid]');
 
     articleDataUid.forEach(item => {
@@ -178,6 +177,7 @@ function observarCambiosCheckAndRender() {
                     aplicarModificaciones(resultsListPage);
                     findElementByUid('GHU@JP037012');
                 });
+                findElementByUid('GHU@JP037012');
                 cargarEstilosYModales();
             });
         },
