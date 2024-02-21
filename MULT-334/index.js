@@ -7,7 +7,7 @@ const dataUidMapping = {
 // Función para reemplazar los enlaces de imagen según el data-uid
 function replaceImageLinks() {
     // Selecciona todos los elementos dentro de results-list__page con data-uid
-    const resultElements = document.querySelectorAll('.results-list__page [data-uid]');
+    const resultElements = document.querySelectorAll('.results-list__page .results-list__item [data-uid]');
 
     // Itera sobre cada elemento
     resultElements.forEach(element => {
