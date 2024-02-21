@@ -150,21 +150,23 @@ function aplicarModificaciones(resultsListPage) {
     findElementByUid('GHU@JP037012');
 }
 
-function findElementByUid(uidToFind) {
-    const articleDataUid = document.querySelectorAll('.results-list__page article[data-uid]');
+function findElementsByUid(uidList) {
+    const itemsWithDataUid = document.querySelectorAll('.results-list__item');
 
-    articleDataUid.forEach(item => {
-        const dataUid = item.getAttribute('data-uid');
-        console.log(`Valor de data-uid: ${dataUid}`);
+    uidList.forEach(uidToFind => {
+        itemsWithDataUid.forEach(item => {
+            const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
 
-        if (dataUid === uidToFind) {
-            console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
-        }
+            if (dataUidElement) {
+                // Realizar la acción específica aquí para el uidToFind encontrado
+                console.log(`Elemento con data-uid ${uidToFind} encontrado.`);
+                // Por ejemplo, puedes llamar a otra función o ejecutar algún código aquí
+            }
+        });
+
+        // Si no se encuentra el elemento, muestra un mensaje de consola
+        console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
     });
-
-    // Si no se encuentra el elemento, muestra un mensaje de consola
-    console.log(`Elemento con data-uid ${uidToFind} no encontrado.`);
-    return null;
 }
 
 function observarCambiosCheckAndRender() {
@@ -179,7 +181,7 @@ function observarCambiosCheckAndRender() {
                 });
                 findElementByUid('GHU@JP037012');
                 cargarEstilosYModales();
-            });
+            }); 
         },
         queries: [{ element: '.results-list__page' }],
     };
