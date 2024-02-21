@@ -181,9 +181,9 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
+                    findElementByUid('GHU@JP037012');
                 });
                 cargarEstilosYModales();
-                findElementByUid('GHU@JP037012');
             });
         },
         queries: [{ element: '.results-list__page' }],
