@@ -127,10 +127,10 @@ function filtrarDestinos(destinos, nombreDestino) {
 }
 
 const btnStyles = [
-    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes Cancún  – Alojamientos Cancún', destino: "Cancun" },
-    { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes Playa del Carmen – Alojamientos Playa del Carmen', destino: "PlayaDelCarmen" },
-    { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Cana - Alojamientos Punta Cana', destino: "PuntaCana" },
-    { carrusel: "carrusel__lista4", btnLeft: "btnLeft4", btnRight: "btnRight4", title: 'Paquetes CUBA - Alojamiento CUBA', destino: "Panama" },
+    { carrusel: "carrusel__lista", btnLeft: "btnLeft", btnRight: "btnRight", title: 'Paquetes en Republica Dominicana', destino: "Mexico" },
+    { carrusel: "carrusel__lista2", btnLeft: "btnLeft2", btnRight: "btnRight2", title: 'Paquetes a Mexico', destino: "RepublicaDominicana" },
+    // { carrusel: "carrusel__lista3", btnLeft: "btnLeft3", btnRight: "btnRight3", title: 'Paquetes Punta Cana - Alojamientos Punta Cana', destino: "PuntaCana" },
+    // { carrusel: "carrusel__lista4", btnLeft: "btnLeft4", btnRight: "btnRight4", title: 'Paquetes CUBA - Alojamiento CUBA', destino: "Panama" },
 ];
 
 // *****************************************************
@@ -600,10 +600,10 @@ function App() {
     const [selectedFormId, setSelectedFormId] = React.useState(false);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
 
-    const Cancun = filtrarDestinos(destinos, "Cancun");
-    const PlayaDelCarmen = filtrarDestinos(destinos, 'PlayaDelCarmen');
-    const PuntaCana = filtrarDestinos(destinos, 'PuntaCana');
-    const Panama = filtrarDestinos(destinos, 'Panama');
+    const RepublicaDominicana = filtrarDestinos(destinos, "RepublicaDominicana");
+    const Mexico = filtrarDestinos(destinos, 'Mexico');
+    // const PuntaCana = filtrarDestinos(destinos, 'PuntaCana');
+    // const Panama = filtrarDestinos(destinos, 'Panama');
 
     const handleOpenForm = (formId) => {
 
@@ -655,10 +655,10 @@ function App() {
                     } */}
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
-                            <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Cancun} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={PlayaDelCarmen} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[3]} destinosFiltrados={Panama} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={RepublicaDominicana} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={Mexico} onContactClick={handleOpenForm} />
+                            {/* <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={PuntaCana} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[3]} destinosFiltrados={Panama} onContactClick={handleOpenForm} /> */}
                         </div>
                     </div>
                     {isFormVisible && (
