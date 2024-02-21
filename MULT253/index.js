@@ -140,19 +140,11 @@ async function changeCopyButton(resultsListPage) {
     checkResultsListPage();
 };
 
-function aplicarModificaciones(resultsListPage) {
-    removeImageLinks(resultsListPage);
-    aplicarClaseRecomendada(resultsListPage);
-    agreeStarIcon(resultsListPage);
-    changeCopyMap(resultsListPage);
-    applyDisplayNoneToAllButLastButton(resultsListPage);
-    changeCopyButton(resultsListPage);
-    findElementsByUid(uidList);
-}
-
-const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G' ,'GHU@JP037034' ,'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331' ,'GHU@JP151442'];
+const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
 
 function findElementsByUid(uidList) {
+
+
     const itemsWithDataUid = document.querySelectorAll('.results-list__item');
 
     uidList.forEach(uidToFind => {
@@ -173,6 +165,17 @@ function findElementsByUid(uidList) {
     });
 }
 
+function aplicarModificaciones(resultsListPage) {
+    removeImageLinks(resultsListPage);
+    aplicarClaseRecomendada(resultsListPage);
+    agreeStarIcon(resultsListPage);
+    changeCopyMap(resultsListPage);
+    applyDisplayNoneToAllButLastButton(resultsListPage);
+    changeCopyButton(resultsListPage);
+    findElementsByUid(uidList);
+}
+
+
 function observarCambiosCheckAndRender() {
     const observerConfig = {
         rootNode: document.documentElement,
@@ -184,7 +187,7 @@ function observarCambiosCheckAndRender() {
                     findElementsByUid(uidList)
                 });
                 cargarEstilosYModales();
-            }); 
+            });
         },
         queries: [{ element: '.results-list__page' }],
     };
