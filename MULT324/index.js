@@ -495,16 +495,16 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
     const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
 
     const setupGlider = () => {
-        const btnLeftElement = document.querySelector(`.${btnLeft}`);
-        const btnRightElement = document.querySelector(`.${btnRight}`);
+        // const btnLeftElement = document.querySelector(`.${btnLeft}`);
+        // const btnRightElement = document.querySelector(`.${btnRight}`);
 
-        btnLeftElement.addEventListener('click', function (event) {
-            event.preventDefault();
-        });
+        // btnLeftElement.addEventListener('click', function (event) {
+        //     event.preventDefault();
+        // });
 
-        btnRightElement.addEventListener('click', function (event) {
-            event.preventDefault();
-        });
+        // btnRightElement.addEventListener('click', function (event) {
+        //     event.preventDefault();
+        // });
 
         new Glider(document.querySelector(`.${carrusel}`), {
             slidesToShow: 1.2,
