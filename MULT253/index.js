@@ -159,6 +159,7 @@ function observarCambiosCheckAndRender() {
                     aplicarModificaciones(resultsListPage);
                 });
                 cargarEstilosYModales();
+                findElementByUid('GHU@JP037012');
             });
         },
         queries: [{ element: '.results-list__page' }],
