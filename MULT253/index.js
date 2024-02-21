@@ -150,9 +150,7 @@ function aplicarModificaciones(resultsListPage) {
     findElementByUid('GHU@JP037012');
 }
 
-
 const uidList = ['GHU@JP310739', 'OtroUID', 'OtroMasUID'];
-
 
 function findElementsByUid(uidList) {
     const itemsWithDataUid = document.querySelectorAll('.results-list__item');
@@ -186,7 +184,6 @@ function observarCambiosCheckAndRender() {
                     aplicarModificaciones(resultsListPage);
                     findElementsByUid(uidList)
                 });
-                findElementsByUid(uidList)
                 cargarEstilosYModales();
             }); 
         },
@@ -205,5 +202,4 @@ function observarCambiosCheckAndRender() {
 document.addEventListener('DOMContentLoaded', async function () {
     observarCambiosCheckAndRender();
     aplicarClaseRecomendada();
-    findElementsByUid(uidList);
 });
