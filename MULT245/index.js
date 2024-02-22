@@ -259,15 +259,15 @@ function agregarTagAWithHREF(resultsListPage) {
 };
 
 const uidList = [
-    { uid: 'GHU@JP310739', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_310739_image.png' },
-    { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_image.png' },
-    { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_image.png' },
-    { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179G_image.png' },
+    { uid: 'GHU@JP037012', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037012_5e92b0e3c5.jpg' },
+    { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_2d73592232.jpg' },
+    { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_34fb4f72f5.png' },
+    { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179_G_1f56e66828.jpg' },
     { uid: 'GHU@JP037034', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037034_7d8402a8e4.png' },
-    { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_image.png' },
-    { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_image.png' },
-    { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_image.png' },
-    { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_image.png' },
+    { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_eac8d4d23d.jpg' },
+    { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_13e6eb25f9.jpg' },
+    { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_0036e6f499.jpg' },
+    { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_727025b794.jpg' },
 ];
 
 function replaceImageForUid(resultsListPage, uidList) {
