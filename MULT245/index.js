@@ -258,27 +258,45 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
-const uidList = ['GHU@JP310739', 'GHU@JP417661', 'GHU@JP155487', 'GHU@JP06179G', 'GHU@JP037034', 'GHU@JP157542', 'GHU@JP984081', 'GHU@JP789331', 'GHU@JP151442'];
+const uidList = [
+    { uid: 'GHU@JP310739', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_310739_image.png' },
+    { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_image.png' },
+    { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_image.png' },
+    { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179G_image.png' },
+    { uid: 'GHU@JP037034', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037034_7d8402a8e4.png' },
+    { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_image.png' },
+    { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_image.png' },
+    { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_image.png' },
+    { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_image.png' },
+];
 
-async function findElementsByUid(resultsListPage, uidList) {
-    const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
+function replaceImageForUid(resultsListPage, uid, imageUrl) {
+    const itemWithDataUid = resultsListPage.querySelector(`.results-list__item [data-uid="${uid}"]`);
 
-    uidList.forEach(uidToFind => {
-        let found = false;
+    if (itemWithDataUid) {
+        const imageHolder = itemWithDataUid.querySelector('.info-card__image-holder');
 
-        itemsWithDataUid.forEach(item => {
-            const dataUidElement = item.querySelector(`[data-uid="${uidToFind}"]`);
+        if (imageHolder) {
+            const pictureElement = imageHolder.querySelector('picture');
 
-            if (dataUidElement) {
-                console.log(`Elemento con data-uid ${uidToFind} encontrado en un elemento con la clase results-list__item.`);
-                found = true;
+            if (pictureElement) {
+                const imgElement = pictureElement.querySelector('img');
+
+                if (imgElement) {
+                    imgElement.src = imageUrl;
+                    console.log(`Enlace de imagen reemplazado para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+                } else {
+                    console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
+                }
+            } else {
+                console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
             }
-        });
-
-        if (!found) {
-            console.log(`Elemento con data-uid ${uidToFind} no encontrado en ningún elemento con la clase results-list__item.`);
+        } else {
+            console.log(`No se encontró el contenedor de imagen para reemplazar en data-uid ${uid}.`);
         }
-    });
+    } else {
+        console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
+    }
 }
 
 function aplicarModificaciones(resultsListPage) {
@@ -290,7 +308,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    findElementsByUid(resultsListPage, uidList);
+    replaceImageForUid(resultsListPage, uid, imageUrl);
 };
 
 function observarCambiosCheckAndRender() {
@@ -301,7 +319,7 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    findElementsByUid(resultsListPage, uidList);
+                    replaceImageForUid(resultsListPage, uid, imageUrl);
                 });
             });
         },
@@ -313,7 +331,7 @@ function observarCambiosCheckAndRender() {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage);
-        findElementsByUid(resultsListPage, uidList);
+        replaceImageForUid(resultsListPage, uid, imageUrl);
     });
 };
 
