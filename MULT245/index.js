@@ -279,7 +279,7 @@ async function replaceImageForUid(resultsListPage) {
         const uidList = apiData.map(entry => {
             return {
                 uid: entry.attributes.JP,
-                imageUrl: entry.attributes.Imagenes_Portada?.data?.[0]?.attributes?.formats?.thumbnail?.url
+                imageUrl: entry.attributes.Imagenes_Portad?.data?.[0]?.attributes?.formats?.thumbnail?.url
             };
         });
 
