@@ -258,19 +258,20 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
+const uidList = [
+    { uid: 'GHU@JP310739', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_310739_image.png' },
+    { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_image.png' },
+    { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_image.png' },
+    { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179G_image.png' },
+    { uid: 'GHU@JP037034', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037034_7d8402a8e4.png' },
+    { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_image.png' },
+    { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_image.png' },
+    { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_image.png' },
+    { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_image.png' },
+];
 
 function replaceImageForUid(resultsListPage, uid, imageUrl) {
-    const uidList = [
-        { uid: 'GHU@JP310739', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_310739_image.png' },
-        { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_image.png' },
-        { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_image.png' },
-        { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179G_image.png' },
-        { uid: 'GHU@JP037034', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037034_7d8402a8e4.png' },
-        { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_image.png' },
-        { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_image.png' },
-        { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_image.png' },
-        { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_image.png' },
-    ];
+
     const itemWithDataUid = resultsListPage.querySelector(`.results-list__item [data-uid="${uid}"]`);
 
     if (itemWithDataUid) {
@@ -299,7 +300,7 @@ function replaceImageForUid(resultsListPage, uid, imageUrl) {
     }
 }
 
-function aplicarModificaciones(resultsListPage) {
+function aplicarModificaciones(resultsListPage, uid, imageUrl) {
     aplicarClaseRecomendada(resultsListPage);
     // agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
@@ -330,7 +331,7 @@ function observarCambiosCheckAndRender() {
 
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
-        aplicarModificaciones(resultsListPage);
+        aplicarModificaciones(resultsListPage, uid, imageUrl);
         replaceImageForUid(resultsListPage, uid, imageUrl);
     });
 };
