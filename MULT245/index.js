@@ -258,53 +258,81 @@ function agregarTagAWithHREF(resultsListPage) {
     });
 };
 
-const uidList = [
-    { uid: 'GHU@JP037012', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037012_5e92b0e3c5.jpg' },
-    { uid: 'GHU@JP417661', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_417661_2d73592232.jpg' },
-    { uid: 'GHU@JP155487', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_155487_34fb4f72f5.png' },
-    { uid: 'GHU@JP06179G', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_06179_G_1f56e66828.jpg' },
-    { uid: 'GHU@JP037034', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_037034_7d8402a8e4.png' },
-    { uid: 'GHU@JP157542', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_157542_eac8d4d23d.jpg' },
-    { uid: 'GHU@JP984081', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_984081_13e6eb25f9.jpg' },
-    { uid: 'GHU@JP789331', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_789331_0036e6f499.jpg' },
-    { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_727025b794.jpg' },
-];
+async function fetchDataPortadaHotels() {
+    try {
+        const response = await fetch('https://strapicontent.apimultitravel.com/api/imagene-portada-hoteles?populate=*');
+        if (!response.ok) {
+            throw new Error('No se pudo obtener los datos de la API');
+        }
+        const dataJp = await response.json();
 
-function replaceImageForUid(resultsListPage, uidList) {
-    const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
+        return dataJp.data;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
 
-    uidList.forEach(entry => {
-        const uid = entry.uid;
-        const imageUrl = entry.imageUrl;
 
-        itemsWithDataUid.forEach(item => {
-            const dataUidElement = item.querySelector(`[data-uid="${uid}"]`);
+async function getJPData() {
+    try {
+        const apiData = await fetchDataPortadaHotels();
+        const jpValue = apiData.JP;
 
-            if (dataUidElement) {
-                const pictureElement = dataUidElement.querySelector('picture');
+        // Llamar a la función replaceImageForUid con el valor "JP"
+        replaceImageForUid(resultsListPage, uidList, jpValue);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-                if (pictureElement) {
-                    const sources = pictureElement.querySelectorAll('source');
-                    sources.forEach(source => {
-                        source.srcset = imageUrl;
-                    });
+async function replaceImageForUid(resultsListPage) {
+    try {
+        const apiData = await fetchDataPortadaHotels();
+        const uidList = apiData.map(entry => {
+            return {
+                uid: entry.attributes.JP,
+                imageUrl: entry.attributes.Imagenes_Portad.data.attributes.formats.thumbnail.url
+            };
+        });
 
-                    const imgElement = pictureElement.querySelector('img');
+        const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
-                    if (imgElement) {
-                        imgElement.src = imageUrl;
-                        console.log(`Enlaces de imagen reemplazados para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+        uidList.forEach(entry => {
+            const uid = entry.uid;
+            const imageUrl = entry.imageUrl;
+
+            itemsWithDataUid.forEach(item => {
+                const dataUidElement = item.querySelector(`[data-uid="GHU@${uid}"]`);
+
+                if (dataUidElement) {
+                    const pictureElement = dataUidElement.querySelector('picture');
+
+                    if (pictureElement) {
+                        const sources = pictureElement.querySelectorAll('source');
+                        sources.forEach(source => {
+                            source.srcset = imageUrl;
+                        });
+
+                        const imgElement = pictureElement.querySelector('img');
+
+                        if (imgElement) {
+                            imgElement.src = imageUrl;
+                            console.log(`Enlaces de imagen reemplazados para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+                        } else {
+                            console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
+                        }
                     } else {
-                        console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
+                        console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
                     }
                 } else {
-                    console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
+                    console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
                 }
-            } else {
-                console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
-            }
+            });
         });
-    });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 function aplicarModificaciones(resultsListPage) {
@@ -316,7 +344,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    replaceImageForUid(resultsListPage, uidList);
+    replaceImageForUid(resultsListPage);
 };
 
 function observarCambiosCheckAndRender() {
@@ -337,13 +365,13 @@ function observarCambiosCheckAndRender() {
 
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
-        aplicarModificaciones(resultsListPage, uid, imageUrl);
+        aplicarModificaciones(resultsListPage);
     });
 };
 
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
-    observarCambiosCheckAndRender(uidList);
+    observarCambiosCheckAndRender();
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
