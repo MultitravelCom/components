@@ -279,7 +279,7 @@ async function replaceImageForUid(resultsListPage) {
         const uidList = apiData.map(entry => {
             return {
                 uid: entry.attributes.JP,
-                imageUrl: entry.attributes.Imagenes_Portad?.data?.[0]?.attributes?.formats?.thumbnail?.url
+                imageUrl: entry.attributes.Imagenes_Portada?.data?.[0]?.attributes?.formats?.thumbnail?.url
             };
         });
 
@@ -305,15 +305,8 @@ async function replaceImageForUid(resultsListPage) {
 
                         if (imgElement) {
                             imgElement.src = imageUrl;
-                            console.log(`Enlaces de imagen reemplazados para data-uid ${uid}. Nueva URL: ${imageUrl}`);
-                        } else {
-                            console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
-                        }
-                    } else {
-                        console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
-                    }
-                } else {
-                    console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
+                        } 
+                    } 
                 }
             });
         });
