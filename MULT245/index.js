@@ -270,37 +270,43 @@ const uidList = [
     { uid: 'GHU@JP151442', imageUrl: 'https://strapi-s3-images-content.s3.amazonaws.com/JP_151442_image.png' },
 ];
 
-function replaceImageForUid(resultsListPage, uid, imageUrl) {
+function replaceImageForUid(resultsListPage, uidList) {
+    const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
 
-    const itemWithDataUid = resultsListPage.querySelector(`.results-list__item [data-uid="${uid}"]`);
+    uidList.forEach(entry => {
+        const uid = entry.uid;
+        const imageUrl = entry.imageUrl;
 
-    if (itemWithDataUid) {
-        const imageHolder = itemWithDataUid.querySelector('.info-card__image-holder');
+        const itemWithDataUid = resultsListPage.querySelector(`.results-list__item [data-uid="${uid}"]`);
 
-        if (imageHolder) {
-            const pictureElement = imageHolder.querySelector('picture');
+        if (itemWithDataUid) {
+            const imageHolder = itemWithDataUid.querySelector('.info-card__image-holder');
 
-            if (pictureElement) {
-                const imgElement = pictureElement.querySelector('img');
+            if (imageHolder) {
+                const pictureElement = imageHolder.querySelector('picture');
 
-                if (imgElement) {
-                    imgElement.src = imageUrl;
-                    console.log(`Enlace de imagen reemplazado para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+                if (pictureElement) {
+                    const imgElement = pictureElement.querySelector('img');
+
+                    if (imgElement) {
+                        imgElement.src = imageUrl;
+                        console.log(`Enlace de imagen reemplazado para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+                    } else {
+                        console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
+                    }
                 } else {
-                    console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
+                    console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
                 }
             } else {
-                console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
+                console.log(`No se encontró el contenedor de imagen para reemplazar en data-uid ${uid}.`);
             }
         } else {
-            console.log(`No se encontró el contenedor de imagen para reemplazar en data-uid ${uid}.`);
+            console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
         }
-    } else {
-        console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
-    }
+    });
 }
 
-function aplicarModificaciones(resultsListPage, uid, imageUrl) {
+function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
     // agreeStarIcon(resultsListPage);
     changeCopyMap(resultsListPage);
@@ -309,7 +315,7 @@ function aplicarModificaciones(resultsListPage, uid, imageUrl) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    replaceImageForUid(resultsListPage, uid, imageUrl);
+    replaceImageForUid(resultsListPage, uidList);
 };
 
 function observarCambiosCheckAndRender() {
@@ -320,7 +326,6 @@ function observarCambiosCheckAndRender() {
                 const resultsListPages = document.querySelectorAll('.results-list__page');
                 resultsListPages.forEach(resultsListPage => {
                     aplicarModificaciones(resultsListPage);
-                    replaceImageForUid(resultsListPage, uid, imageUrl);
                 });
             });
         },
@@ -332,14 +337,12 @@ function observarCambiosCheckAndRender() {
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
         aplicarModificaciones(resultsListPage, uid, imageUrl);
-        replaceImageForUid(resultsListPage, uid, imageUrl);
     });
 };
 
-
 document.addEventListener('DOMContentLoaded', async function () {
     removeClassResultInHotelResults();
-    observarCambiosCheckAndRender();
+    observarCambiosCheckAndRender(uidList);
     cargarEstilosYModales();
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
