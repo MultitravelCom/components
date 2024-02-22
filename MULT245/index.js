@@ -277,20 +277,23 @@ function replaceImageForUid(resultsListPage, uidList) {
         const uid = entry.uid;
         const imageUrl = entry.imageUrl;
 
-        const itemWithDataUid = resultsListPage.querySelector(`.results-list__item [data-uid="${uid}"]`);
+        itemsWithDataUid.forEach(item => {
+            const dataUidElement = item.querySelector(`[data-uid="${uid}"]`);
 
-        if (itemWithDataUid) {
-            const imageHolder = itemWithDataUid.querySelector('.info-card__image-holder');
-
-            if (imageHolder) {
-                const pictureElement = imageHolder.querySelector('picture');
+            if (dataUidElement) {
+                const pictureElement = dataUidElement.querySelector('picture');
 
                 if (pictureElement) {
+                    const sources = pictureElement.querySelectorAll('source');
+                    sources.forEach(source => {
+                        source.srcset = imageUrl;
+                    });
+
                     const imgElement = pictureElement.querySelector('img');
 
                     if (imgElement) {
                         imgElement.src = imageUrl;
-                        console.log(`Enlace de imagen reemplazado para data-uid ${uid}. Nueva URL: ${imageUrl}`);
+                        console.log(`Enlaces de imagen reemplazados para data-uid ${uid}. Nueva URL: ${imageUrl}`);
                     } else {
                         console.log(`No se encontró una etiqueta img para reemplazar en data-uid ${uid}.`);
                     }
@@ -298,11 +301,9 @@ function replaceImageForUid(resultsListPage, uidList) {
                     console.log(`No se encontró una etiqueta picture para reemplazar en data-uid ${uid}.`);
                 }
             } else {
-                console.log(`No se encontró el contenedor de imagen para reemplazar en data-uid ${uid}.`);
+                console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
             }
-        } else {
-            console.log(`Elemento con data-uid ${uid} no encontrado en ningún elemento con la clase results-list__item.`);
-        }
+        });
     });
 }
 
