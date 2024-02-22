@@ -273,26 +273,13 @@ async function fetchDataPortadaHotels() {
     }
 }
 
-
-async function getJPData() {
-    try {
-        const apiData = await fetchDataPortadaHotels();
-        const jpValue = apiData.JP;
-
-        // Llamar a la función replaceImageForUid con el valor "JP"
-        replaceImageForUid(resultsListPage, uidList, jpValue);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 async function replaceImageForUid(resultsListPage) {
     try {
         const apiData = await fetchDataPortadaHotels();
         const uidList = apiData.map(entry => {
             return {
                 uid: entry.attributes.JP,
-                imageUrl: entry.attributes.Imagenes_Portad.data.attributes.formats.thumbnail.url
+                imageUrl: entry.attributes.Imagenes_Portad?.data?.[0]?.attributes?.formats?.thumbnail?.url
             };
         });
 
