@@ -642,7 +642,7 @@ source>img {
     /* BANNER TRAVEL SALE */
     .main__container_BannerTravelSale {
         width: 310px;
-        height: 264px;
+        height: 100%;
         margin: 20px 10px;
     }
 }
