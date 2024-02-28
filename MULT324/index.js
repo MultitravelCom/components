@@ -392,8 +392,8 @@ const Card = ({ destinos, onContactClick }) => {
                     }
 
                     acc[destino][card].push({
-                        Tarifa_Izquierda: item.attributes.Tarifa_Temporada_Alta,
-                        Tarifa_Derecha: item.attributes.Tarifa_Temporada_Baja,
+                        Tarifa_Izquierda: item.attributes.Tarifa_Tarifa_Izquierda,
+                        Tarifa_Derecha: item.attributes.Tarifa_Tarifa_Derecha,
                         Divisa_Izquierda: item.attributes.Divisa_Alta,
                         Divisa_Derecha: item.attributes.Divisa_Baja
                     });
