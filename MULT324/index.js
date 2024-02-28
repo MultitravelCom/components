@@ -288,7 +288,7 @@ const BannerTop = () => {
         </div>
     )
 }
-const BannerTravelSale = () => {
+const BannerMarketin = () => {
     return (
         <>
             <div className="main__container_BannerTravelSale">
@@ -645,14 +645,14 @@ function App() {
                     <div className="main_conteiner__s1_medio top_mkt">
                         <BannerTop />
                     </div>
-                    {/* {shouldShowEvent()
+                    {shouldShowEvent()
                         ?
                         <div className="main_conteiner__s2_bannerTravelSale">
-                            <BannerTravelSale />
+                            <BannerMarketin />
                         </div>
                         :
                         null
-                    } */}
+                    }
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
                             <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={RepublicaDominicana} onContactClick={handleOpenForm} />
