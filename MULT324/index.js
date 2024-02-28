@@ -33,7 +33,7 @@ function addHeaderLinks() {
     linkElement.setAttribute('rel', 'alternate');
     linkElement.setAttribute('hreflang', 'es-ar');
     linkElement.setAttribute('href', 'https://ar.multitravel.com');
-  
+
     // Agregar el elemento <link> al head del documento HTML
     document.head.appendChild(linkElement);
 }
@@ -440,8 +440,8 @@ const Card = ({ destinos, onContactClick }) => {
                                     {pricesByDestino[destino.destino] && pricesByDestino[destino.destino][destino.cardOrden] ? (
                                         pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
                                             <div key={index} className="main_container_priceStyle">
-                                                <div className="priceStyle left">{tarifa.Divisa_Izquierda === "ARS" ? "$" : tarifa.Divisa_Izquierda}{tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, '.')}</div>
-                                                <div className="priceStyle right">{tarifa.Divisa_Derecha === "ARS" ? "$" : tarifa.Divisa_Derecha}{tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, '.')}</div>
+                                                <div className="priceStyle left">{tarifa.Divisa_Izquierda === "ARS" ? "$" : tarifa.Divisa_Izquierda}{tarifa.Tarifa_Izquierda ? tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}</div>
+                                                <div className="priceStyle right">{tarifa.Divisa_Derecha === "ARS" ? "$" : tarifa.Divisa_Derecha}{tarifa.Tarifa_Derecha ? tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}</div>
                                             </div>
                                         ))
                                     ) : (
