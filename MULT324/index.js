@@ -394,8 +394,8 @@ const Card = ({ destinos, onContactClick }) => {
                     acc[destino][card].push({
                         Tarifa_Izquierda: item.attributes.Tarifa_Izquierda,
                         Tarifa_Derecha: item.attributes.Tarifa_Derecha,
-                        Divisa_Izquierda: item.attributes.Divisa_Alta,
-                        Divisa_Derecha: item.attributes.Divisa_Baja
+                        Divisa_Izquierda: item.attributes.Divisa_Izquierda,
+                        Divisa_Derecha: item.attributes.Divisa_Derecha
                     });
 
                     return acc;
@@ -440,8 +440,14 @@ const Card = ({ destinos, onContactClick }) => {
                                     {pricesByDestino[destino.destino] && pricesByDestino[destino.destino][destino.cardOrden] ? (
                                         pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
                                             <div key={index} className="main_container_priceStyle">
-                                                <div className="priceStyle left">{tarifa.Divisa_Izquierda === "ARS" ? "$" : tarifa.Divisa_Izquierda}{tarifa.Tarifa_Izquierda ? tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}</div>
-                                                <div className="priceStyle right">{tarifa.Divisa_Derecha === "ARS" ? "$" : tarifa.Divisa_Derecha}{tarifa.Tarifa_Derecha ? tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}</div>
+                                                <div className="priceStyle left">
+                                                    {tarifa.Divisa_Izquierda === "ARS" ? "$" : tarifa.Divisa_Izquierda}
+                                                    {tarifa.Tarifa_Izquierda ? tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}
+                                                </div>
+                                                <div className="priceStyle right">
+                                                    {tarifa.Divisa_Derecha === "ARS" ? "$" : tarifa.Divisa_Derecha}
+                                                    {tarifa.Tarifa_Derecha ? tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, '.') : 'Consultar tarifa'}
+                                                </div>
                                             </div>
                                         ))
                                     ) : (
