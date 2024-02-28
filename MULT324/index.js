@@ -392,8 +392,10 @@ const Card = ({ destinos, onContactClick }) => {
                     }
 
                     acc[destino][card].push({
-                        Tarifa_Temporada_Alta: item.attributes.Tarifa_Temporada_Alta,
-                        Tarifa_Temporada_Baja: item.attributes.Tarifa_Temporada_Baja,
+                        Tarifa_Izquierda: item.attributes.Tarifa_Temporada_Alta,
+                        Tarifa_Derecha: item.attributes.Tarifa_Temporada_Baja,
+                        Divisa_Izquierda: item.attributes.Divisa_Alta,
+                        Divisa_Derecha: item.attributes.Divisa_Baja
                     });
 
                     return acc;
@@ -438,12 +440,11 @@ const Card = ({ destinos, onContactClick }) => {
                                     {pricesByDestino[destino.destino] && pricesByDestino[destino.destino][destino.cardOrden] ? (
                                         pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
                                             <div key={index} className="main_container_priceStyle">
-                                                <div className="priceStyle left">${tarifa.Tarifa_Temporada_Baja.toLocaleString().replace(/,/g, '.')}</div>
-                                                <div className="priceStyle right">${tarifa.Tarifa_Temporada_Alta.toLocaleString().replace(/,/g, '.')}</div>
+                                                <div className="priceStyle left">{tarifa.Divisa_Izquierda === "ARS" ? "$" : tarifa.Divisa_Izquierda}{tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, '.')}</div>
+                                                <div className="priceStyle right">{tarifa.Divisa_Derecha === "ARS" ? "$" : tarifa.Divisa_Derecha}{tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, '.')}</div>
                                             </div>
                                         ))
                                     ) : (
-                                        // Manejo de casos donde los datos no están disponibles
                                         <div className="main_container_priceStyle">
                                             <div className="priceStyle left">Consultar tarifa</div>
                                             <div className="priceStyle right">Consultar tarifa</div>
