@@ -231,18 +231,18 @@ function shouldShowEvent() {
     return now >= startDate && now <= endDate;
 }
 
-const EventImg = (props) => {
-    if (shouldShowEvent()) {
-        return (
-            <div className={props.style}>
-                <img
-                    alt={`Imagen evento promocion`}
-                    src={"https://multitravelcom.github.io/MT/icons/LogoCyber.webp"}
-                />
-            </div>
-        );
-    }
-};
+// const EventImg = (props) => {
+//     if (shouldShowEvent()) {
+//         return (
+//             <div className={props.style}>
+//                 <img
+//                     alt={`Imagen evento promocion`}
+//                     src={"https://multitravelcom.github.io/MT/icons/LogoCyber.webp"}
+//                 />
+//             </div>
+//         );
+//     }
+// };
 
 // const WarningPrice = () => {
 //     return (
