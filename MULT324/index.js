@@ -421,9 +421,9 @@ const Card = ({ destinos, onContactClick }) => {
                                 className="main__conteiner__s1__destacado__card uno"
                                 style={{ height: "100%", width: "100%" }}
                             >
-                                {destino.events === "si" && shouldShowEvent() && (
+                                {/* {destino.events === "si" && shouldShowEvent() && (
                                     <EventImg style="eventImg" />
-                                )}
+                                )} */}
                                 <picture>
                                     <source media="(min-width: 1024px)" srcSet={destino.img} />
                                     <source
