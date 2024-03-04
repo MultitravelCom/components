@@ -3,9 +3,6 @@
     display: none;
 }
 
-
-
-
 /*To hide the last two elements of the section and adjust width*/
 .glider-track > *:nth-last-child(-n+2) {
     display: none;
