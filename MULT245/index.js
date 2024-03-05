@@ -293,6 +293,7 @@ async function replaceImageForUid(resultsListPage) {
                 const dataUidElement = item.querySelector(`[data-uid="GHU@${uid}"]`);
 
                 if (dataUidElement) {
+                    console.log(`JP found: ${uid}`); // Agrega el console.log aquí
                     const pictureElement = dataUidElement.querySelector('picture');
 
                     if (pictureElement) {
@@ -314,6 +315,7 @@ async function replaceImageForUid(resultsListPage) {
         console.error(error);
     }
 }
+
 
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
