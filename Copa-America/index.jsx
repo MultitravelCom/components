@@ -661,9 +661,9 @@ function App() {
                     }
                     <div className="main__conteiner main__conteiner-principal container">
                         <div className="carrusel">
-                            <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={Seccion_1} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={Seccion_2} onContactClick={handleOpenForm} />
-                            <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={Seccion_3} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[0]} destinosFiltrados={seccion_uno} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[1]} destinosFiltrados={seccion_dos} onContactClick={handleOpenForm} />
+                            <CardContainer btnStyles={btnStyles[2]} destinosFiltrados={seccion_tres} onContactClick={handleOpenForm} />
                       
                         </div>
                     </div>
