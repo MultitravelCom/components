@@ -101,10 +101,17 @@ async function fetchDataCopaAmerica() {
     }
 }
 
+const fetchDestinos = async () => {
+    const response = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/Copa-America/dbCaribe.json');
+    const data = await response.json();
+
+    return data;
+};
+
 // ************************************************
 // Filter
 function filtrarDestinos(destinos, nombreDestino) {
-    const destinosFiltrados = destinos.data.filter(item => item.attributes.Destino === nombreDestino);
+    const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
     return destinosFiltrados;
 }
 
@@ -338,24 +345,24 @@ const Card = ({ destinos, onContactClick }) => {
     };
 
     React.useEffect(() => {
-        fetchDataCopaAmerica()
+        fetchDestinos()
             .then((data) => {
-                if (Array.isArray(data.data)) { // Cambio aquí
-                    if (data.data.length > 0) { // Cambio aquí
+                if (Array.isArray(data.destinos)) {
+                    if (data.destinos.length > 0) {
                         // setLoaded(true);
-                        // setDestinos(data.data); // Cambio aquí
+                        // setDestinos(data.destinos);
                     } else {
                         // setLoaded(true);
                         setNoDestinos(true);
                     }
                 } else {
-                    console.log("La propiedad 'data' no es un array."); // Cambio aquí
+                    console.log("La propiedad 'destinos' no es un array.");
                 }
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [])
 
     
     React.useEffect(() => {
@@ -625,8 +632,8 @@ function App() {
     };
 
     React.useEffect(() => {
-        fetchDataCopaAmerica().then(data => {
-            setDestinos(data.data);
+        fetchDestinos().then(data => {
+            setDestinos(data.destinos);
         });
     }, []);
 

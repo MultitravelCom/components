@@ -1,0 +1,148 @@
+{
+    "destinos": [
+        {
+            "id": "a1",
+            "cardOrden": "Card 1",
+            "destino": "Seccion_1",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/Cancun-31.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Cancún Bay Resort",
+            "priceBaja": "$826.770",
+            "price": "$1.112.810",
+            "events": "si"
+        },
+        {
+            "id": "a2",
+            "cardOrden": "Card 2",
+            "destino": "Seccion_1",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/Cancun-32.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Park Royal Beach Cancún",
+            "priceBaja": "$981.556",
+            "price": "$1.420.650",
+            "events": "si"
+        },
+        {
+            "id": "a3",
+            "cardOrden": "Card 3",
+            "destino": "Seccion_1",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/Cancun-33.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Wyndham Grand Cancún",
+            "priceBaja": "$1.002.815",
+            "price": "$1.423.680",
+            "events": "si"
+        },
+        {
+            "id": "a4",
+            "cardOrden": "Card 4",
+            "destino": "Seccion_1",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/Cancun-34.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "NYX Cancún",
+            "priceBaja": "$83.515",
+            "price": "$123.390",
+            "events": "si"
+        },
+        {
+            "id": "b1",
+            "cardOrden": "Card 1",
+            "destino": "Seccion_2",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-37.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Riu Lupita",
+            "priceBaja": "$822.230",
+            "price": "$1.264.900",
+            "events": "si"
+        },
+        {
+            "id": "b2",
+            "cardOrden": "Card 2",
+            "destino": "Seccion_2",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-38.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Viva Maya By Wyndham",
+            "priceBaja": "$899.735",
+            "price": "$1.341.715",
+            "events": "si"
+        },
+        {
+            "id": "b3",
+            "cardOrden": "Card 3",
+            "destino": "Seccion_2",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-39.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Grand Riviera Princess",
+            "priceBaja": "$975.475",
+            "price": "$1.539.145",
+            "events": "si"
+        },
+        {
+            "id": "b4",
+            "cardOrden": "Card 4",
+            "destino": "Seccion_2",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-40.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "The Reef Playacar",
+            "priceBaja": "$963.410",
+            "price": "$133.130",
+            "events": "si"
+        },
+        {
+            "id": "b1",
+            "cardOrden": "Card 1",
+            "destino": "Seccion_3",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-37.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/n1y7se",
+            "title": "Paquete Riu Lupita",
+            "priceBaja": "$822.230",
+            "price": "$1.264.900",
+            "events": "si"
+        },
+        {
+            "id": "b2",
+            "cardOrden": "Card 2",
+            "destino": "Seccion_3",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-38.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/fsf72k",
+            "title": "Paquete Viva Maya By Wyndham",
+            "priceBaja": "$899.735",
+            "price": "$1.341.715",
+            "events": "si"
+        },
+        {
+            "id": "b3",
+            "cardOrden": "Card 3",
+            "destino": "Seccion_3",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-39.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/e4ksdi",
+            "title": "Paquete Grand Riviera Princess",
+            "priceBaja": "$975.475",
+            "price": "$1.539.145",
+            "events": "si"
+        },
+        {
+            "id": "b4",
+            "cardOrden": "Card 4",
+            "destino": "Seccion_3",
+            "img": "https://multitravelcom.github.io/MT/Evento/Landings-Doble/Caribe/DelCarmen-40.webp",
+            "className": "uno",
+            "linkWa": "https://wa.link/ggn9q9",
+            "title": "The Reef Playacar",
+            "priceBaja": "$963.410",
+            "price": "$133.130",
+            "events": "si"
+        }
+    ]
+}
