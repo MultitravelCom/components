@@ -219,6 +219,14 @@ const BitrixFormTitle = () => {
     </div>
   );
 };
+
+// ****************** WHATSAPP ********************
+
+const handleWhatsAppClick = () => {
+    const whatsappURL = "https://wa.link/64zdo9";
+    window.open(whatsappURL, "_blank");
+  };
+
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
   const svgWA = (
@@ -350,7 +358,11 @@ const BannerTop = () => {
 const BannerMarketin = () => {
   return (
     <>
-      <div className="main__container_BannerTravelSale">
+      <div
+        className="main__container_BannerTravelSale"
+        onClick={handleWhatsAppClick}
+        style={{ cursor: "pointer" }}
+      >
         <picture>
           <source
             media="(min-width: 1024px)"
@@ -389,11 +401,6 @@ const Card = ({ destinos, onContactClick }) => {
     } else {
       setOpenModal(true);
     }
-  };
-
-  const handleWhatsAppClick = () => {
-    const whatsappURL = "https://wa.link/64zdo9";
-    window.open(whatsappURL, "_blank");
   };
 
   React.useEffect(() => {
