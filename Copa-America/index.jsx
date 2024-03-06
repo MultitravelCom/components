@@ -131,22 +131,22 @@ const btnStyles = [
     carrusel: "carrusel__lista",
     btnLeft: "btnLeft",
     btnRight: "btnRight",
-    title: "Paquetes Copa America",
-    destino: "seccion_uno",
+    title: "Paquetes Copa América",
+    destino: "seccion_1",
   },
   {
     carrusel: "carrusel__lista2",
     btnLeft: "btnLeft2",
     btnRight: "btnRight2",
-    title: "Paquetes Copa America",
-    destino: "seccion_dos",
+    title: "Paquetes Copa América",
+    destino: "Seccion_2",
   },
   {
     carrusel: "carrusel__lista3",
     btnLeft: "btnLeft3",
     btnRight: "btnRight3",
-    title: "Vuelos a Estados Unidos ",
-    destino: "seccion_tres",
+    title: "Vuelos a Estados Unidos",
+    destino: "seccion_3",
   },
 ];
 
