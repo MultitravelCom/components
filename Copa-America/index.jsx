@@ -103,10 +103,10 @@ async function fetchDataCopaAmerica() {
 
 // ************************************************
 // Filter
-function filtrarDestinos(destinos, nombreDestino) {
-    const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
-    return destinosFiltrados;
-}
+// function filtrarDestinos(destinos, nombreDestino) {
+//     const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
+//     return destinosFiltrados;
+// }
 
 const btnStyles = [
     {
@@ -336,6 +336,7 @@ const Card = ({ destinos, onContactClick }) => {
         const whatsappURL = 'https://wa.link/64zdo9';
         window.open(whatsappURL, '_blank');
     };
+
     
     React.useEffect(() => {
         const fetchData = async () => {
