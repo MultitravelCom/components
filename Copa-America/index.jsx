@@ -456,7 +456,8 @@ const Card = ({ destinos, onContactClick }) => {
             Tarifa_Derecha: item.attributes.Tarifa_Derecha,
             Divisa_Izquierda: item.attributes.Divisa_Izquierda,
             Divisa_Derecha: item.attributes.Divisa_Derecha,
-            Imagen_Card: item.attributes.Imagen_Card.data.attributes.formats.url,
+            Imagen_Card:
+              item.attributes.Imagen_Card.data.attributes.formats.url,
           });
 
           return acc;
@@ -484,27 +485,32 @@ const Card = ({ destinos, onContactClick }) => {
                 {/* {destino.events === "si" && shouldShowEvent() && (
                                     <EventImg style="eventImg" />
                                 )} */}
-                {pricesByDestino[destino.destino][destino.cardOrden].map(
-                  (tarifa, index) => (
-                    <picture key={index}>
-                      <source
-                        media="(min-width: 1024px)"
-                        srcSet={tarifa.Imagen_Card}
-                      />
-                      <source
-                        media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet={tarifa.Imagen_Card}
-                      />
-                      <source
-                        media="(max-width: 767px)"
-                        srcSet={tarifa.Imagen_Card}
-                      />
-                      <img
-                        alt={`Imagen banner ${tarifa.Imagen_Card}`}
-                        src={tarifa.Imagen_Card}
-                      />
-                    </picture>
+                {pricesByDestino[destino.destino] &&
+                pricesByDestino[destino.destino][destino.cardOrden] ? (
+                  pricesByDestino[destino.destino][destino.cardOrden].map(
+                    (tarifa, index) => (
+                      <picture key={index}>
+                        <source
+                          media="(min-width: 1024px)"
+                          srcSet={tarifa.Imagen_Card}
+                        />
+                        <source
+                          media="(min-width: 768px) and (max-width: 1023px)"
+                          srcSet={tarifa.Imagen_Card}
+                        />
+                        <source
+                          media="(max-width: 767px)"
+                          srcSet={tarifa.Imagen_Card}
+                        />
+                        <img
+                          alt={`Imagen banner ${tarifa.Imagen_Card}`}
+                          src={tarifa.Imagen_Card}
+                        />
+                      </picture>
+                    )
                   )
+                ) : (
+                  <p>No hay destinos disponibles.</p>
                 )}
 
                 <div className="main_container_priceStyle">
