@@ -103,10 +103,10 @@ async function fetchDataCopaAmerica() {
 
 // ************************************************
 // Filter
-// function filtrarDestinos(destinos, nombreDestino) {
-//     const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
-//     return destinosFiltrados;
-// }
+function filtrarDestinos(destinos, nombreDestino) {
+    const destinosFiltrados = destinos.filter(destino => destino.attributes.Destino === nombreDestino);
+    return destinosFiltrados;
+}
 
 const btnStyles = [
     {
@@ -588,9 +588,9 @@ function App() {
     const [selectedFormId, setSelectedFormId] = React.useState(false);
     const [isFormVisible, setIsFormVisible] = React.useState(false);
 
-    // const seccion_uno = filtrarDestinos(destinos, "Seccion_1");
-    // const seccion_dos = filtrarDestinos(destinos, 'Seccion_2');
-    // const seccion_tres = filtrarDestinos(destinos, 'Seccion_3');
+    const seccion_uno = filtrarDestinos(destinos, "Seccion_1");
+    const seccion_dos = filtrarDestinos(destinos, 'Seccion_2');
+    const seccion_tres = filtrarDestinos(destinos, 'Seccion_3');
 
 
     const handleOpenForm = (formId) => {
