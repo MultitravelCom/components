@@ -340,16 +340,16 @@ const Card = ({ destinos, onContactClick }) => {
     React.useEffect(() => {
         fetchDataCopaAmerica()
             .then((data) => {
-                if (Array.isArray(data.destinos)) {
-                    if (data.destinos.length > 0) {
+                if (Array.isArray(data.data)) { // Cambio aquí
+                    if (data.data.length > 0) { // Cambio aquí
                         // setLoaded(true);
-                        // setDestinos(data.destinos);
+                        // setDestinos(data.data); // Cambio aquí
                     } else {
                         // setLoaded(true);
                         setNoDestinos(true);
                     }
                 } else {
-                    console.log("La propiedad 'destinos' no es un array.");
+                    console.log("La propiedad 'data' no es un array."); // Cambio aquí
                 }
             })
             .catch((error) => {
