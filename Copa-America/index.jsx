@@ -456,7 +456,7 @@ const Card = ({ destinos, onContactClick }) => {
             Tarifa_Derecha: item.attributes.Tarifa_Derecha,
             Divisa_Izquierda: item.attributes.Divisa_Izquierda,
             Divisa_Derecha: item.attributes.Divisa_Derecha,
-            Imagen_Card: item.attributes.Imagen_Card[0].data.attributes.formats.url,
+            Imagen_Card: item.attributes.Imagen_Card.data.attributes.url,
           });
 
           return acc;
