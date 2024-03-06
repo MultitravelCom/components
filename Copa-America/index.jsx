@@ -708,9 +708,21 @@ function App() {
   const [selectedFormId, setSelectedFormId] = React.useState(false);
   const [isFormVisible, setIsFormVisible] = React.useState(false);
 
-  const seccion_uno = filtrarDestinos(destinos, "Seccion_1");
-  const seccion_dos = filtrarDestinos(destinos, "Seccion_2");
-  const seccion_tres = filtrarDestinos(destinos, "Seccion_3");
+  const agruparDestinosPorSeccion = (destinos) => {
+    return destinos.reduce((agrupados, destino) => {
+      const seccion = destino.attributes.Destino;
+
+      if (!agrupados[seccion]) {
+        agrupados[seccion] = [];
+      }
+
+      agrupados[seccion].push(destino);
+
+      return agrupados;
+    }, {});
+  };
+
+  const destinosAgrupados = agruparDestinosPorSeccion(destinos);
 
   const handleOpenForm = (formId) => {
     setSelectedFormId(formId);
@@ -757,7 +769,7 @@ function App() {
             </div>
           ) : null}
           <div className="main__conteiner main__conteiner-principal container">
-            <div className="carrusel">
+            {/* <div className="carrusel">
               <CardContainer
                 btnStyles={btnStyles[0]}
                 destinosFiltrados={seccion_uno}
@@ -773,7 +785,16 @@ function App() {
                 destinosFiltrados={seccion_tres}
                 onContactClick={handleOpenForm}
               />
-            </div>
+            </div> */}
+            {Object.keys(destinosAgrupados).map((seccion, index) => (
+              <div key={index} className="carrusel">
+                <CardContainer
+                  btnStyles={btnStyles[index]}
+                  destinosFiltrados={destinosAgrupados[seccion]}
+                  onContactClick={handleOpenForm}
+                />
+              </div>
+            ))}
           </div>
           {isFormVisible && (
             <div className="modalBitrix">
