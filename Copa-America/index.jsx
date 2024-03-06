@@ -735,9 +735,14 @@ function App() {
   };
 
   React.useEffect(() => {
-    fetchDestinos().then((data) => {
-      setDestinos(data.destinos);
-    });
+    fetchDataCopaAmerica()
+      .then((responseDataPrice) => {
+        setDestinos(responseDataPrice.destinos);
+      })
+      .catch((error) => {
+        console.error("Error al obtener destinos:", error);
+        // Aquí podrías manejar el error, mostrar un mensaje al usuario, etc.
+      });
   }, []);
 
   React.useEffect(() => {
