@@ -103,10 +103,10 @@ async function fetchDataCopaAmerica() {
 
 // ************************************************
 // Filter
-// function filtrarDestinos(destinos, nombreDestino) {
-//     const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
-//     return destinosFiltrados;
-// }
+function filtrarDestinos(destinos, nombreDestino) {
+    const destinosFiltrados = destinos.filter(destino => destino.destino === nombreDestino);
+    return destinosFiltrados;
+}
 
 const btnStyles = [
     {
@@ -336,26 +336,7 @@ const Card = ({ destinos, onContactClick }) => {
         const whatsappURL = 'https://wa.link/64zdo9';
         window.open(whatsappURL, '_blank');
     };
-
-    // React.useEffect(() => {
-    //     fetchDataCopaAmerica()
-    //         .then((data) => {
-    //             if (Array.isArray(data.destinos)) {
-    //                 if (data.destinos.length > 0) {
-    //                     // setLoaded(true);
-    //                     // setDestinos(data.destinos);
-    //                 } else {
-    //                     // setLoaded(true);
-    //                     setNoDestinos(true);
-    //                 }
-    //             } else {
-    //                 console.log("La propiedad 'destinos' no es un array.");
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }, []);
+    
     React.useEffect(() => {
         const fetchData = async () => {
             try {
@@ -413,7 +394,7 @@ const Card = ({ destinos, onContactClick }) => {
     return (
         <>
             {loaded && pricesLoaded ? (
-                destinos.length = 0 ? (
+                destinos.length > 0 ? (
                     destinos.map(destino => (
                         <div key={destino.id} className="carrusel__elemento">
                             <div
@@ -636,11 +617,11 @@ function App() {
         fetchData();
     }, []);
 
-    // React.useEffect(() => {
-    //     fetchDataCopaAmerica().then(data => {
-    //         setDestinos(data.destinos);
-    //     });
-    // }, []);
+    React.useEffect(() => {
+        fetchDataCopaAmerica().then(data => {
+            setDestinos(data.destinos);
+        });
+    }, []);
 
     return (
         <>
