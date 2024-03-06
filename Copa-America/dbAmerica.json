@@ -4,108 +4,96 @@
             "id": "a1",
             "cardOrden": "Card 1",
             "destino": "Seccion_1",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Cancún Bay Resort",
+            "title": "Paquete I",
             "events": "si"
         },
         {
             "id": "a2",
             "cardOrden": "Card 2",
             "destino": "Seccion_1",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Park Royal Beach Cancún",
+            "title": "Paquete II",
             "events": "si"
         },
         {
             "id": "a3",
             "cardOrden": "Card 3",
             "destino": "Seccion_1",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Wyndham Grand Cancún",
+            "title": "Paquete III",
             "events": "si"
         },
         {
             "id": "a4",
             "cardOrden": "Card 4",
             "destino": "Seccion_1",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "NYX Cancún",
+            "title": "Paquete Full",
             "events": "si"
         },
         {
             "id": "b1",
             "cardOrden": "Card 1",
             "destino": "Seccion_2",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Riu Lupita",
+            "title": "Paquete Cuartos de Final",
             "events": "si"
         },
         {
             "id": "b2",
             "cardOrden": "Card 2",
             "destino": "Seccion_2",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Viva Maya By Wyndham",
+            "title": "Paquete Cuartos de Final II",
             "events": "si"
         },
         {
             "id": "b3",
             "cardOrden": "Card 3",
             "destino": "Seccion_2",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Grand Riviera Princess",
+            "title": "Paquete Semifinal",
             "events": "si"
         },
         {
             "id": "b4",
             "cardOrden": "Card 4",
             "destino": "Seccion_2",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "The Reef Playacar",
+            "title": "Paquete Final Copa América",
             "events": "si"
         },
         {
             "id": "b1",
             "cardOrden": "Card 1",
             "destino": "Seccion_3",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Riu Lupita",
+            "title": "Vuelos a Atlanta",
             "events": "si"
         },
         {
             "id": "b2",
             "cardOrden": "Card 2",
             "destino": "Seccion_3",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Viva Maya By Wyndham",
+            "title": "Vuelos a Nueva York",
             "events": "si"
         },
         {
             "id": "b3",
             "cardOrden": "Card 3",
             "destino": "Seccion_3",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "Paquete Grand Riviera Princess",
+            "title": "Vuelos a Miami",
             "events": "si"
         },
         {
             "id": "b4",
             "cardOrden": "Card 4",
             "destino": "Seccion_3",
-            "img": "https://strapi-s3-images-content.s3.amazonaws.com/Freehand_Miami_adee346113.jpg",
             "className": "uno",
-            "title": "The Reef Playacar",
+            "title": "TVuelos a Houston",
             "events": "si"
         }
     ]
