@@ -427,7 +427,7 @@ const Card = ({ destinos, onContactClick }) => {
   React.useEffect(() => {
     const fetchDataPrecio = async () => {
       try {
-        const responseData = await fetchDataFromAPIPrice();
+        const responseData = await fetchDataCopaAmerica();
 
         const prices = responseData.data.reduce((acc, item) => {
           const destino = item.attributes.Destino;
