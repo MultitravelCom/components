@@ -102,7 +102,7 @@ async function fetchDataCopaAmerica() {
 }
 
 const fetchDestinos = async () => {
-    const response = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/Copa-America/dbCaribe.json');
+    const response = await fetch('https://raw.githubusercontent.com/MultitravelCom/components/master/Copa-America/dbAmerica.json');
     const data = await response.json();
 
     return data;
