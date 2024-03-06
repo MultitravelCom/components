@@ -413,7 +413,7 @@ const Card = ({ destinos, onContactClick }) => {
     return (
         <>
             {loaded && pricesLoaded ? (
-                destinos.length = 0 ? (
+                destinos.length > 0 ? (
                     destinos.map(destino => (
                         <div key={destino.id} className="carrusel__elemento">
                             <div
