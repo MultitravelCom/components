@@ -5,7 +5,7 @@ function addHeaderLinks() {
     document.title = "Paquetes a la copa América | Multitravel.com"
 
     meta.setAttribute('name', 'description');
-    meta.setAttribute('content', 'Compará paquetes a la copa América y conseguí los mejores precios en alojamiento y vuelos a Bariloche, Iguazú y Mendoza. Solicitá atención personalizada por whatsapp');
+    meta.setAttribute('content', 'Compará paquetes a la copa América y conseguí los mejores precios en alojamiento y vuelos');
 
     const linkCDNGlider = document.createElement('link');
 
@@ -104,7 +104,7 @@ async function fetchDataCopaAmerica() {
 // ************************************************
 // Filter
 function filtrarDestinos(destinos, nombreDestino) {
-    const destinosFiltrados = destinos.filter(destino => destino.attributes.Destino === nombreDestino);
+    const destinosFiltrados = destinos.data.filter(destino => destino.attributes.Destino === nombreDestino);
     return destinosFiltrados;
 }
 
