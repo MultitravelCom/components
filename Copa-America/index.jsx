@@ -104,7 +104,7 @@ async function fetchDataCopaAmerica() {
 // ************************************************
 // Filter
 function filtrarDestinos(destinos, nombreDestino) {
-    const destinosFiltrados = destinos.data.filter(destino => destino.attributes.Destino === nombreDestino);
+    const destinosFiltrados = destinos.data.filter(item => item.attributes.Destino === nombreDestino);
     return destinosFiltrados;
 }
 
@@ -180,7 +180,7 @@ const BitrixFormTitle = () => {
     return (
         <div className="BitrixFormTitle">
             <div className="bitrixFormTitle_text">
-                <p class="single-line">Completa tus datos para que te contacte un especialista.</p>
+                <p className="single-line">Completa tus datos para que te contacte un especialista.</p>
             </div>
             {/* <ButtonBitrixForm /> */}
         </div>
@@ -336,6 +336,26 @@ const Card = ({ destinos, onContactClick }) => {
         const whatsappURL = 'https://wa.link/64zdo9';
         window.open(whatsappURL, '_blank');
     };
+
+    React.useEffect(() => {
+        fetchDataCopaAmerica()
+            .then((data) => {
+                if (Array.isArray(data.destinos)) {
+                    if (data.destinos.length > 0) {
+                        // setLoaded(true);
+                        // setDestinos(data.destinos);
+                    } else {
+                        // setLoaded(true);
+                        setNoDestinos(true);
+                    }
+                } else {
+                    console.log("La propiedad 'destinos' no es un array.");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     
     React.useEffect(() => {
@@ -605,6 +625,12 @@ function App() {
     };
 
     React.useEffect(() => {
+        fetchDataCopaAmerica().then(data => {
+            setDestinos(data.data);
+        });
+    }, []);
+
+    React.useEffect(() => {
         const fetchData = async () => {
             try {
                 await fetchDataFromAPI();
@@ -616,12 +642,6 @@ function App() {
         };
 
         fetchData();
-    }, []);
-
-    React.useEffect(() => {
-        fetchDataCopaAmerica().then(data => {
-            setDestinos(data.destinos);
-        });
     }, []);
 
     return (
