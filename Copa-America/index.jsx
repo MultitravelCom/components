@@ -519,43 +519,35 @@ const Card = ({ destinos, onContactClick }) => {
 
                 <div className="main_container_priceStyle">
                   {pricesByDestino[destino.destino] &&
-                    pricesByDestino[destino.destino][destino.cardOrden] ? (
-                    pricesByDestino[destino.destino][destino.cardOrden].map(
-                      (tarifa, index) => (
-                        <div key={index} className="main_container_priceStyle">
-                          <div className="priceStyle left">
-                            {tarifa.Tarifa_Izquierda !== 0 && tarifa.Tarifa_Izquierda !== null && tarifa.Tarifa_Izquierda !== undefined ? (
-                              <>
-                                {tarifa.Divisa_Izquierda === "ARS"
-                                  ? "$ "
-                                  : `${tarifa.Divisa_Izquierda} `}
-                                {tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, ".")}
-                              </>
-                            ) : (
-                              "Consultar tarifa"
-                            )}
-                          </div>
-                          <div className="priceStyle right">
-                            {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
-                              <>
-                                {tarifa.Divisa_Derecha === "ARS"
-                                  ? "$ "
-                                  : `${tarifa.Divisa_Derecha} `}
-                                {tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, ".")}
-                              </>
-                            ) : (
-                              "Consultar tarifa"
-                            )}
-                          </div>
+                    pricesByDestino[destino.destino][destino.cardOrden] &&
+                    pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
+                      <div key={index} className="main_container_priceStyle">
+                        <div className="priceStyle left">
+                          {tarifa.Tarifa_Izquierda !== 0 && tarifa.Tarifa_Izquierda !== null && tarifa.Tarifa_Izquierda !== undefined ? (
+                            <>
+                              {tarifa.Divisa_Izquierda === "ARS"
+                                ? "$ "
+                                : `${tarifa.Divisa_Izquierda} `}
+                              {tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, ".")}
+                            </>
+                          ) : (
+                            "Consultar tarifa"
+                          )}
                         </div>
-                      )
-                    )
-                  ) : (
-                    <div className="main_container_priceStyle">
-                      <div className="priceStyle left">Consultar tarifa</div>
-                      <div className="priceStyle right">Consultar tarifa</div>
-                    </div>
-                  )}
+                        <div className="priceStyle right">
+                          {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
+                            <>
+                              {tarifa.Divisa_Derecha === "ARS"
+                                ? "$ "
+                                : `${tarifa.Divisa_Derecha} `}
+                              {tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, ".")}
+                            </>
+                          ) : (
+                            "Consultar tarifa"
+                          )}
+                        </div>
+                      </div>
+                    ))}
                 </div>
                 <div className="main__container__buttonsCars">
                   {buttonSwitch === "A" ? (
