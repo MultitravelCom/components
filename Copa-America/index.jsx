@@ -456,11 +456,11 @@ const Card = ({ destinos, onContactClick }) => {
           }
 
           acc[destino][card].push({
-            Tarifa_Izquierda: item.attributes.Tarifa_Izquierda,
-            Tarifa_Derecha: item.attributes.Tarifa_Derecha,
-            Divisa_Izquierda: item.attributes.Divisa_Izquierda,
-            Divisa_Derecha: item.attributes.Divisa_Derecha,
-            Imagen_Card: item.attributes.Imagen_Card.data.attributes.url,
+            Tarifa_Izquierda: item?.attributes?.Tarifa_Izquierda,
+            Tarifa_Derecha: item?.attributes?.Tarifa_Derecha,
+            Divisa_Izquierda: item?.attributes?.Divisa_Izquierda,
+            Divisa_Derecha: item?.attributes?.Divisa_Derecha,
+            Imagen_Card: item?.attributes?.Imagen_Card?.data?.attributes?.url,
           });
 
           return acc;
