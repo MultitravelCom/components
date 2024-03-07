@@ -531,7 +531,7 @@ const Card = ({ destinos, onContactClick }) => {
                               {tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, ".")}
                             </>
                           ) : (
-                            "Consultar tarifa"
+                            null
                           )}
                         </div>
                         <div className="priceStyle right">
@@ -543,7 +543,7 @@ const Card = ({ destinos, onContactClick }) => {
                               {tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, ".")}
                             </>
                           ) : (
-                            "Consultar tarifa"
+                            null
                           )}
                         </div>
                       </div>
