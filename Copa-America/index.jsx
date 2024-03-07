@@ -482,34 +482,17 @@ const Card = ({ destinos, onContactClick }) => {
         destinos.length > 0 ? (
           destinos.map((destino) => (
             <div key={destino.id} className="carrusel__elemento">
-              <div
-                className="main__conteiner__s1__destacado__card uno"
-                style={{ height: "100%", width: "100%" }}
-              >
-                {/* {destino.events === "si" && shouldShowEvent() && (
-                                    <EventImg style="eventImg" />
-                                )} */}
+              <div className="main__conteiner__s1__destacado__card uno" style={{ height: "100%", width: "100%" }}>
+                {/* {destino.events === "si" && shouldShowEvent() && (<EventImg style="eventImg" />)} */}
                 {pricesByDestino[destino.destino] &&
                   pricesByDestino[destino.destino][destino.cardOrden] ? (
                   pricesByDestino[destino.destino][destino.cardOrden].map(
                     (tarifa, index) => (
                       <picture key={index}>
-                        <source
-                          media="(min-width: 1024px)"
-                          srcSet={tarifa.Imagen_Card}
-                        />
-                        <source
-                          media="(min-width: 768px) and (max-width: 1023px)"
-                          srcSet={tarifa.Imagen_Card}
-                        />
-                        <source
-                          media="(max-width: 767px)"
-                          srcSet={tarifa.Imagen_Card}
-                        />
-                        <img
-                          alt={`Imagen Card ${tarifa.Imagen_Card}`}
-                          src={tarifa.Card}
-                        />
+                        <source media="(min-width: 1024px)" srcSet={tarifa.Imagen_Card} />
+                        <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={tarifa.Imagen_Card} />
+                        <source media="(max-width: 767px)" srcSet={tarifa.Imagen_Card} />
+                        <img alt={`Imagen Card ${tarifa.Imagen_Card}`} src={tarifa.Card} />
                       </picture>
                     )
                   )
@@ -522,18 +505,18 @@ const Card = ({ destinos, onContactClick }) => {
                     pricesByDestino[destino.destino][destino.cardOrden] &&
                     pricesByDestino[destino.destino][destino.cardOrden].map((tarifa, index) => (
                       <div key={index} className="main_container_priceStyle">
-                        <div className="priceStyle left">
-                          {tarifa.Tarifa_Izquierda !== 0 && tarifa.Tarifa_Izquierda !== null && tarifa.Tarifa_Izquierda !== undefined ? (
+                        {tarifa.Tarifa_Izquierda !== 0 && tarifa.Tarifa_Izquierda !== null && tarifa.Tarifa_Izquierda !== undefined ? (
+                          <div className="priceStyle left">
                             <>
                               {tarifa.Divisa_Izquierda === "ARS"
                                 ? "$ "
                                 : `${tarifa.Divisa_Izquierda} `}
                               {tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, ".")}
                             </>
-                          ) : (
-                            null
-                          )}
-                        </div>
+                          </div>
+                        ) : (
+                          null
+                        )}
                         {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
                           <div className="priceStyle right">
                             <>
