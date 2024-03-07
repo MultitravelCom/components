@@ -456,6 +456,7 @@ const Card = ({ destinos, onContactClick }) => {
           }
 
           acc[destino][card].push({
+            Card: item?.attributes?.Card,
             Tarifa_Izquierda: item?.attributes?.Tarifa_Izquierda,
             Tarifa_Derecha: item?.attributes?.Tarifa_Derecha,
             Divisa_Izquierda: item?.attributes?.Divisa_Izquierda,
@@ -495,25 +496,25 @@ const Card = ({ destinos, onContactClick }) => {
                       <picture key={index}>
                         <source
                           media="(min-width: 1024px)"
-                          srcSet={tarifa.Imagen_Card}
+                          srcSet={tarifa.Card}
                         />
                         <source
                           media="(min-width: 768px) and (max-width: 1023px)"
-                          srcSet={tarifa.Imagen_Card}
+                          srcSet={tarifa.Card}
                         />
                         <source
                           media="(max-width: 767px)"
-                          srcSet={tarifa.Imagen_Card}
+                          srcSet={tarifa.Card}
                         />
                         <img
-                          alt={`Imagen banner ${tarifa.Imagen_Card}`}
-                          src={tarifa.Imagen_Card}
+                          alt={`Imagen Card ${tarifa.Card}`}
+                          src={tarifa.Card}
                         />
                       </picture>
                     )
                   )
                 ) : (
-                  <p>No hay destinos disponibles.</p>
+                  <p>Error al cargar la imagen.</p>
                 )}
 
                 <div className="main_container_priceStyle">
@@ -523,26 +524,28 @@ const Card = ({ destinos, onContactClick }) => {
                       (tarifa, index) => (
                         <div key={index} className="main_container_priceStyle">
                           <div className="priceStyle left">
-                            {tarifa.Divisa_Izquierda === "ARS"
-                              ? "$ "
-                              : `${tarifa.Divisa_Izquierda} `}
-                            {tarifa.Tarifa_Izquierda
-                              ? tarifa.Tarifa_Izquierda.toLocaleString().replace(
-                                /,/g,
-                                "."
-                              )
-                              : "Consultar tarifa"}
+                            {tarifa.Tarifa_Izquierda !== 0 && tarifa.Tarifa_Izquierda !== null && tarifa.Tarifa_Izquierda !== undefined ? (
+                              <>
+                                {tarifa.Divisa_Izquierda === "ARS"
+                                  ? "$ "
+                                  : `${tarifa.Divisa_Izquierda} `}
+                                {tarifa.Tarifa_Izquierda.toLocaleString().replace(/,/g, ".")}
+                              </>
+                            ) : (
+                              "Consultar tarifa"
+                            )}
                           </div>
                           <div className="priceStyle right">
-                            {tarifa.Divisa_Derecha === "ARS"
-                              ? "$ "
-                              : `${tarifa.Divisa_Derecha} `}
-                            {tarifa.Tarifa_Derecha
-                              ? tarifa.Tarifa_Derecha.toLocaleString().replace(
-                                /,/g,
-                                "."
-                              )
-                              : "Consultar tarifa"}
+                          {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
+                              <>
+                                {tarifa.Divisa_Derecha === "ARS"
+                                  ? "$ "
+                                  : `${tarifa.Divisa_Derecha} `}
+                                {tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, ".")}
+                              </>
+                            ) : (
+                              "Consultar tarifa"
+                            )}
                           </div>
                         </div>
                       )
