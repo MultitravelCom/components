@@ -223,9 +223,9 @@ const BitrixFormTitle = () => {
 // ****************** WHATSAPP ********************
 
 const handleWhatsAppClick = () => {
-    const whatsappURL = "https://wa.link/64zdo9";
-    window.open(whatsappURL, "_blank");
-  };
+  const whatsappURL = "https://wa.link/64zdo9";
+  window.open(whatsappURL, "_blank");
+};
 
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
@@ -330,25 +330,20 @@ const BannerTop = () => {
         <source
           media="(min-width: 1024px)"
           srcSet="
-            https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-1.webp
+          https://strapi-s3-images-content.s3.amazonaws.com/Desktop_Banner1_f7c8b735e3.webp
           "
         />
         <source
           media="(min-width: 768px) and (max-width: 1023px)"
-          srcSet="
-                    https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-2.webp
-                    "
+          srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Tablet_Banner1_2f3659c126.webp"
         />
         <source
           media="(max-width: 767px)"
-          srcSet="
-                    https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-3.webp
-                    "
+          srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Mobile_Banner1_23068f4095.webp"
         />
         <img
           className="main_conteiner__s1_medio__paquetes__img"
-          src="            https://multitravelcom.github.io/MT/Evento/Caribe/Banner/banner-1.webp
-                    "
+          src="https://strapi-s3-images-content.s3.amazonaws.com/Desktop_Banner1_f7c8b735e3.webp"
           alt="Imagen banner promociones"
         />
       </picture>
@@ -366,19 +361,19 @@ const BannerMarketin = () => {
         <picture>
           <source
             media="(min-width: 1024px)"
-            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Banner_MKT_Desktop_53522b82c8.webp"
+            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Desktop_1890a70b8d.webp"
           />
           <source
             media="(min-width: 768px) and (max-width: 1023px)"
-            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Banner_MKT_Desktop_53522b82c8.webp"
+            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Desktop_1890a70b8d.webp"
           />
           <source
             media="(max-width: 767px)"
-            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Banner_MKT_Mobile_9b9fdf4a70.webp"
+            srcSet="https://strapi-s3-images-content.s3.amazonaws.com/Mobile_ba48f02241.webp"
           />
           <img
             className="main_conteiner__s1_medio__paquetes__img"
-            src="https://strapi-s3-images-content.s3.amazonaws.com/Banner_MKT_Desktop_53522b82c8.webp"
+            src="https://strapi-s3-images-content.s3.amazonaws.com/Desktop_1890a70b8d.webp"
             alt="Imagen banner promociones"
           />
         </picture>
@@ -494,7 +489,7 @@ const Card = ({ destinos, onContactClick }) => {
                                     <EventImg style="eventImg" />
                                 )} */}
                 {pricesByDestino[destino.destino] &&
-                pricesByDestino[destino.destino][destino.cardOrden] ? (
+                  pricesByDestino[destino.destino][destino.cardOrden] ? (
                   pricesByDestino[destino.destino][destino.cardOrden].map(
                     (tarifa, index) => (
                       <picture key={index}>
@@ -523,7 +518,7 @@ const Card = ({ destinos, onContactClick }) => {
 
                 <div className="main_container_priceStyle">
                   {pricesByDestino[destino.destino] &&
-                  pricesByDestino[destino.destino][destino.cardOrden] ? (
+                    pricesByDestino[destino.destino][destino.cardOrden] ? (
                     pricesByDestino[destino.destino][destino.cardOrden].map(
                       (tarifa, index) => (
                         <div key={index} className="main_container_priceStyle">
@@ -533,9 +528,9 @@ const Card = ({ destinos, onContactClick }) => {
                               : `${tarifa.Divisa_Izquierda} `}
                             {tarifa.Tarifa_Izquierda
                               ? tarifa.Tarifa_Izquierda.toLocaleString().replace(
-                                  /,/g,
-                                  "."
-                                )
+                                /,/g,
+                                "."
+                              )
                               : "Consultar tarifa"}
                           </div>
                           <div className="priceStyle right">
@@ -544,9 +539,9 @@ const Card = ({ destinos, onContactClick }) => {
                               : `${tarifa.Divisa_Derecha} `}
                             {tarifa.Tarifa_Derecha
                               ? tarifa.Tarifa_Derecha.toLocaleString().replace(
-                                  /,/g,
-                                  "."
-                                )
+                                /,/g,
+                                "."
+                              )
                               : "Consultar tarifa"}
                           </div>
                         </div>
