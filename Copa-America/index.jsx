@@ -534,18 +534,18 @@ const Card = ({ destinos, onContactClick }) => {
                             null
                           )}
                         </div>
-                        <div className="priceStyle right">
-                          {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
+                        {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
+                          <div className="priceStyle right">
                             <>
                               {tarifa.Divisa_Derecha === "ARS"
                                 ? "$ "
                                 : `${tarifa.Divisa_Derecha} `}
                               {tarifa.Tarifa_Derecha.toLocaleString().replace(/,/g, ".")}
                             </>
-                          ) : (
-                            null
-                          )}
-                        </div>
+                          </div>
+                        ) : (
+                          null
+                        )}
                       </div>
                     ))}
                 </div>
