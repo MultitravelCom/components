@@ -496,25 +496,25 @@ const Card = ({ destinos, onContactClick }) => {
                       <picture key={index}>
                         <source
                           media="(min-width: 1024px)"
-                          srcSet={tarifa.Card}
+                          srcSet={tarifa.Imagen_Card}
                         />
                         <source
                           media="(min-width: 768px) and (max-width: 1023px)"
-                          srcSet={tarifa.Card}
+                          srcSet={tarifa.Imagen_Card}
                         />
                         <source
                           media="(max-width: 767px)"
-                          srcSet={tarifa.Card}
+                          srcSet={tarifa.Imagen_Card}
                         />
                         <img
-                          alt={`Imagen Card ${tarifa.Card}`}
+                          alt={`Imagen Card ${tarifa.Imagen_Card}`}
                           src={tarifa.Card}
                         />
                       </picture>
                     )
                   )
                 ) : (
-                  <p>Error al cargar la imagen.</p>
+                  <p>No hay destinos disponibles.</p>
                 )}
 
                 <div className="main_container_priceStyle">
@@ -536,7 +536,7 @@ const Card = ({ destinos, onContactClick }) => {
                             )}
                           </div>
                           <div className="priceStyle right">
-                          {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
+                            {tarifa.Tarifa_Derecha !== 0 && tarifa.Tarifa_Derecha !== null && tarifa.Tarifa_Derecha !== undefined ? (
                               <>
                                 {tarifa.Divisa_Derecha === "ARS"
                                   ? "$ "
