@@ -81,33 +81,34 @@ function Ofertas() {
 
     if (path === "/flights/") {
         return (
-            <>
-                <div className="main__container_secciones">
-                    <div className="offer-title">
-                        <div class="text-left">
-                            <h2 class="title_h2"><b>Más ofertas en Multitravel.com</b>
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="main__container_app_components__ofertas__">
-                        <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
-                            boxs_ofertas_text="Alojamientos"
-                            btn_link={`${webLink}hotels/`}
-                        />
-                        <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
-                            boxs_ofertas_text="Paquetes"
-                            btn_link={`${webLink}insurances/`}
-                        />
-                        <Secciones
-                            boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
-                            boxs_ofertas_text="Asistencias"
-                            btn_link={`${webLink}insurances/`}
-                        />
-                    </div>
-                </div>
-            </>
+            // <>
+            //     <div className="main__container_secciones">
+            //         <div className="offer-title">
+            //             <div class="text-left">
+            //                 <h2 class="title_h2"><b>Más ofertas en Multitravel.com</b>
+            //                 </h2>
+            //             </div>
+            //         </div>
+            //         <div className="main__container_app_components__ofertas__">
+            //             <Secciones
+            //                 boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-alojamiento.webp"
+            //                 boxs_ofertas_text="Alojamientos"
+            //                 btn_link={`${webLink}hotels/`}
+            //             />
+            //             <Secciones
+            //                 boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
+            //                 boxs_ofertas_text="Paquetes"
+            //                 btn_link={`${webLink}insurances/`}
+            //             />
+            //             <Secciones
+            //                 boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-asistencia.webp"
+            //                 boxs_ofertas_text="Asistencias"
+            //                 btn_link={`${webLink}insurances/`}
+            //             />
+            //         </div>
+            //     </div>
+            // </>
+            null
         );
     } else if (path === "/hotels/") {
         return (
