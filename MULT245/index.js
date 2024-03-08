@@ -326,7 +326,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    replaceImageForUid(resultsListPage);
+    // replaceImageForUid(resultsListPage);
 };
 
 function observarCambiosCheckAndRender() {
