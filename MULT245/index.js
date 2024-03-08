@@ -351,11 +351,11 @@ function observarCambiosCheckAndRender() {
     });
 };
 
-document.addEventListener('DOMContentLoaded', async function () {
-    removeClassResultInHotelResults();
-    observarCambiosCheckAndRender();
-    cargarEstilosYModales();
-    aplicarEstiloSegunLongitud();
-    aplicarClaseRecomendada();
-    checkURL();
-});
+// document.addEventListener('DOMContentLoaded', async function () {
+//     removeClassResultInHotelResults();
+//     observarCambiosCheckAndRender();
+//     cargarEstilosYModales();
+//     aplicarEstiloSegunLongitud();
+//     aplicarClaseRecomendada();
+//     checkURL();
+// });
