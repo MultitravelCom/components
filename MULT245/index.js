@@ -326,7 +326,7 @@ function aplicarModificaciones(resultsListPage) {
     aplicarEstiloSegunLongitud();
     agregarTagAWithHREF(resultsListPage);
     checkURL();
-    // replaceImageForUid(resultsListPage);
+    replaceImageForUid(resultsListPage);
 };
 
 function observarCambiosCheckAndRender() {
@@ -351,11 +351,11 @@ function observarCambiosCheckAndRender() {
     });
 };
 
-// document.addEventListener('DOMContentLoaded', async function () {
-//     removeClassResultInHotelResults();
-//     observarCambiosCheckAndRender();
-//     cargarEstilosYModales();
-//     aplicarEstiloSegunLongitud();
-//     aplicarClaseRecomendada();
-//     checkURL();
-// });
+document.addEventListener('DOMContentLoaded', async function () {
+    removeClassResultInHotelResults();
+    observarCambiosCheckAndRender();
+    cargarEstilosYModales();
+    aplicarEstiloSegunLongitud();
+    aplicarClaseRecomendada();
+    checkURL();
+});
