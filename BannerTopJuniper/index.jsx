@@ -207,31 +207,31 @@ const setDataForBanner = (data) => {
     imageUrl.push(alojamientosData[2]?.attributes?.Link_Imagen);
     resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
-  } else if (url.includes("/flights")) {
-    const vuelosData = data.vuelosData;
-    imageUrlsDesktop.push(
-      vuelosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      vuelosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlsDesktop.push(
-      vuelosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrlMobile.push(
-      vuelosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
-    );
-    imageUrl.push(vuelosData[0]?.attributes?.Link_Imagen);
-    imageUrl.push(vuelosData[1]?.attributes?.Link_Imagen);
-    imageUrl.push(vuelosData[2]?.attributes?.Link_Imagen);
-    resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
-    return resultBanner;
+  // } else if (url.includes("/flights")) {
+  //   const vuelosData = data.vuelosData;
+  //   imageUrlsDesktop.push(
+  //     vuelosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+  //   );
+  //   imageUrlsDesktop.push(
+  //     vuelosData[1]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+  //   );
+  //   imageUrlsDesktop.push(
+  //     vuelosData[2]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
+  //   );
+  //   imageUrlMobile.push(
+  //     vuelosData[0]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+  //   );
+  //   imageUrlMobile.push(
+  //     vuelosData[1]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+  //   );
+  //   imageUrlMobile.push(
+  //     vuelosData[2]?.attributes?.Imagen_Mobile?.data[0]?.attributes?.url
+  //   );
+  //   imageUrl.push(vuelosData[0]?.attributes?.Link_Imagen);
+  //   imageUrl.push(vuelosData[1]?.attributes?.Link_Imagen);
+  //   imageUrl.push(vuelosData[2]?.attributes?.Link_Imagen);
+  //   resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
+  //   return resultBanner;
   } else if (url.includes("/tours")) {
     const circuitosData = data.circuitosData;
 
@@ -551,4 +551,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("BannerToop"));
+ReactDOM.render(<App />, document.getElementById("BannerTop"));
