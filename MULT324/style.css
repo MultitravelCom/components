@@ -700,6 +700,21 @@ source>img {
     overflow: hidden;
 }
 
+.main_container_priceStyle {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 17.3%;
+    width: 96%;
+}
+
+.priceStyle {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 @media (max-width: 767px) {
     .rowStyle {
         flex-direction: column;
@@ -726,7 +741,7 @@ source>img {
     }
 
     .priceStyle {
-        font-size: 25px;
+        font-size: 19px;
     }
 
     .eventImg {
@@ -774,22 +789,6 @@ source>img {
         margin-top: 40px
     }
 }
-
-.main_container_priceStyle {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 17.3%;
-    width: 96%;
-}
-
-.priceStyle {
-    position: relative;
-    font-size: 20px;
-    font-weight: 700;
-}
-
 
 /* Warning Price */
 .main__warningPrice {

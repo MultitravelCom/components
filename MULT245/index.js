@@ -343,7 +343,7 @@ function observarCambiosCheckAndRender() {
         queries: [{ element: '.results-list__page' }],
     };
 
-    const observer = new MutationSummary(observerConfig);
+    observer = new MutationSummary(observerConfig);
 
     const resultsListPages = document.querySelectorAll('.results-list__page');
     resultsListPages.forEach(resultsListPage => {
