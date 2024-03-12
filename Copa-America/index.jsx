@@ -223,9 +223,9 @@ const BitrixFormTitle = () => {
 // ****************** WHATSAPP ********************
 
 const handleWhatsAppClick = () => {
-    const whatsappURL = "https://wa.link/64zdo9";
-    window.open(whatsappURL, "_blank");
-  };
+  const whatsappURL = "https://wa.link/64zdo9";
+  window.open(whatsappURL, "_blank");
+};
 
 // ************** COMPONENTES ********************
 function ButtonLading(props) {
@@ -402,8 +402,6 @@ const Card = ({ destinos, onContactClick }) => {
       setOpenModal(true);
     }
   };
-
-
 
   React.useEffect(() => {
     fetchDestinos()
@@ -600,6 +598,7 @@ const Card = ({ destinos, onContactClick }) => {
 };
 const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
   const { title, btnRight, btnLeft, carrusel, destino } = btnStyles;
+  const mostrarFechas = destinosFiltrados.length > 4;
 
   const setupGlider = () => {
     // const btnLeftElement = document.querySelector(`.${btnLeft}`);
@@ -681,24 +680,28 @@ const CardContainer = ({ btnStyles, destinosFiltrados, onContactClick }) => {
           </h2>
         </div>
         <div className="carrusel__contenedor">
-          {/* <button
-                        aria-label="Anterior"
-                        className={`carrusel__anterior ${btnLeft}`}
-                    >
-                        <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                    </button> */}
+          {mostrarFechas && (
+            <button
+              aria-label="Anterior"
+              className={`carrusel__anterior ${btnLeft}`}
+            >
+              <i className="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+          )}
           <div className={carrusel} id={title}>
             <Card
               destinos={destinosFiltrados}
               onContactClick={onContactClick}
             />
           </div>
-          {/* <button
-                        aria-label="Siguiente"
-                        className={`carrusel__siguiente ${btnRight}`}
-                    >
-                        <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                    </button> */}
+          {mostrarFechas && (
+            <button
+              aria-label="Siguiente"
+              className={`carrusel__siguiente ${btnRight}`}
+            >
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          )}
         </div>
       </div>
     </>
