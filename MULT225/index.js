@@ -124,7 +124,7 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
                             boxs_ofertas_text="Paquetes"
-                            btn_link={`${webLink}flighthotel/`}
+                            btn_link={`${newWebLink}paquetes-turisticos`}
                         />
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-vuelo.webp"
@@ -194,7 +194,7 @@ function Ofertas() {
                         <Secciones
                             boxs_ofertas_img="https://multitravelcom.github.io/MT/Secciones/EnTodo/product-paquetes.webp"
                             boxs_ofertas_text="Paquetes"
-                            btn_link={`${webLink}flighthotel/`}
+                            btn_link={`${webLink}paquetes-turisticos/`}
                         />
                     </div>
                 </div>
