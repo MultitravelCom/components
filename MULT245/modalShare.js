@@ -384,8 +384,11 @@ const BannerMensageCardApp = () => {
     return (
         isEventActive && (
             <>
-                {(showFreezePriceMessageA || showFreezePriceMessageB || showFreezePriceMessageC) && (
-                    <BannerMensageCard text_p={"Aprovechá el descuento con el código: 50MILOFF"} />
+                {( showFreezePriceMessageB) && (
+                    <BannerMensageCard text_p={"Aprovechá cuota simple - 3 y 6 cuotas"} />
+                )}
+                {(showFreezePriceMessageC) && (
+                    <BannerMensageCard text_p={"Comunicate y ahorrá 30% abonando en USD"} />
                 )}
             </>
         )
@@ -538,7 +541,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    renderBanner();
+    // renderBanner();
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
