@@ -591,5 +591,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-renderBanner();
+// renderBanner();
 
