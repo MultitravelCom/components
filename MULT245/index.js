@@ -283,38 +283,69 @@ async function replaceImageForUid(resultsListPage) {
             };
         });
 
-        const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
-
         uidList.forEach(entry => {
-            const uid = entry.uid;
-            const imageUrl = entry.imageUrl;
+            const { uid, imageUrl } = entry;
 
-            itemsWithDataUid.forEach(item => {
-                const dataUidElement = item.querySelector(`[data-uid="GHU@${uid}"]`);
+            // Buscamos el div que contiene el JP correspondiente
+            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
 
-                if (dataUidElement) {
-                    console.log(`JP found: ${uid}`);
-                    const pictureElement = dataUidElement.querySelector('picture');
+            if (itemWithDataUid) {
+                console.log(`JP found: ${uid}`);
+                const pictureElement = itemWithDataUid.querySelector('picture');
 
-                    if (pictureElement) {
-                        const sources = pictureElement.querySelectorAll('source');
-                        sources.forEach(source => {
-                            source.srcset = imageUrl;
-                        });
+                if (pictureElement) {
+                    // Modificamos o creamos la imagen si es necesario
+                    const imgElement = pictureElement.querySelector('img');
+                    if (imgElement) {
+                        imgElement.src = imageUrl;
+                    } else {
+                        const newImgElement = document.createElement('img');
+                        newImgElement.src = imageUrl;
+                        newImgElement.alt = '';
+                        newImgElement.loading = 'lazy';
+                        pictureElement.appendChild(newImgElement);
+                    }
+                } else {
+                    // Si no existe el pictureElement, creamos la estructura completa
+                    const newDiv = document.createElement('div');
+                    newDiv.className = 'info-card__image-holder js-open-gallery';
+                    newDiv.setAttribute('data-target', '.info-card__modal');
+                    newDiv.setAttribute('data-title', 'Selina Bariloche');
+                    newDiv.setAttribute('data-category', '<span class=\'group-icon category-icon\'><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span></span>');
 
-                        const imgElement = pictureElement.querySelector('img');
+                    const newPictureElement = document.createElement('picture');
 
-                        if (imgElement) {
-                            imgElement.src = imageUrl;
-                        } 
-                    } 
+                    const sources = [
+                        { media: '(min-width: 1200px)', mediaSize: 'lg' },
+                        { media: '(min-width: 992px)', mediaSize: 'md' },
+                        { media: '(min-width: 768px)', mediaSize: 'sm' },
+                        { media: '(min-width:0px)', mediaSize: 'xs' }
+                    ];
+
+                    sources.forEach(source => {
+                        const sourceElement = document.createElement('source');
+                        sourceElement.media = source.media;
+                        sourceElement.srcset = `/handlers/imageRequest.ashx?path=${encodeURIComponent(imageUrl)}&mediaSize=${source.mediaSize}&imgSize=tiny`;
+                        newPictureElement.appendChild(sourceElement);
+                    });
+
+                    const newImgElement = document.createElement('img');
+                    newImgElement.alt = '';
+                    newImgElement.loading = 'lazy';
+                    newImgElement.src = imageUrl;
+
+                    newPictureElement.appendChild(newImgElement);
+                    newDiv.appendChild(newPictureElement);
+                    
+                    itemWithDataUid.appendChild(newDiv);
                 }
-            });
+            }
         });
     } catch (error) {
         console.error(error);
     }
 }
+
 
 
 function aplicarModificaciones(resultsListPage) {
