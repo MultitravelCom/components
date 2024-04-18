@@ -308,29 +308,6 @@ async function replaceImageForUid(resultsListPage) {
                             imgElement.src = imageUrl;
                         } 
                     } 
-                } else {
-                    // Si no se encuentra el data-uid, creamos el div con la estructura deseada y agregamos la imagen
-                    const infoCardImageHolder = document.createElement('div');
-                    infoCardImageHolder.className = 'info-card__image-holder js-open-gallery';
-                    infoCardImageHolder.setAttribute('data-target', '.info-card__modal');
-                    infoCardImageHolder.setAttribute('data-title', 'Selina Bariloche');
-                    infoCardImageHolder.setAttribute('data-category', '<span class=\'group-icon category-icon\'><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span></span>');
-
-                    const pictureElement = document.createElement('picture');
-                    const sourceElement = document.createElement('source');
-                    sourceElement.setAttribute('media', '(min-width: 1200px)');
-                    sourceElement.srcset = imageUrl;
-
-                    const imgElement = document.createElement('img');
-                    imgElement.alt = '';
-                    imgElement.loading = 'lazy';
-                    imgElement.src = imageUrl;
-
-                    pictureElement.appendChild(sourceElement);
-                    pictureElement.appendChild(imgElement);
-                    infoCardImageHolder.appendChild(pictureElement);
-
-                    item.appendChild(infoCardImageHolder);
                 }
             });
         });
@@ -338,7 +315,6 @@ async function replaceImageForUid(resultsListPage) {
         console.error(error);
     }
 }
-
 
 
 function aplicarModificaciones(resultsListPage) {
