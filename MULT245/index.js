@@ -283,39 +283,33 @@ async function replaceImageForUid(resultsListPage) {
             };
         });
 
+        const itemsWithDataUid = resultsListPage.querySelectorAll('.results-list__item');
+
         uidList.forEach(entry => {
-            const { uid, imageUrl } = entry;
+            const uid = entry.uid;
+            const imageUrl = entry.imageUrl;
 
-            // Buscamos el div que contiene el JP correspondiente
-            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
+            itemsWithDataUid.forEach(item => {
+                const dataUidElement = item.querySelector(`[data-uid="GHU@${uid}"]`);
 
-            if (itemWithDataUid) {
-                console.log(`JP found: ${uid}`);
-                const pictureElement = itemWithDataUid.querySelector('picture');
+                if (dataUidElement) {
+                    console.log(`JP found: ${uid}`);
+                    const pictureElement = dataUidElement.querySelector('picture');
 
-                if (pictureElement) {
-                    // Verificamos si ya hay fuentes dentro del elemento picture
-                    const sources = pictureElement.querySelectorAll('source');
-                    if (sources.length === 0) {
-                        // Si no hay fuentes, creamos una nueva fuente y la agregamos
-                        const sourceElement = document.createElement('source');
-                        sourceElement.srcset = imageUrl;
-                        pictureElement.appendChild(sourceElement);
-                    }
+                    if (pictureElement) {
+                        const sources = pictureElement.querySelectorAll('source');
+                        sources.forEach(source => {
+                            source.srcset = imageUrl;
+                        });
 
-                    // Modificamos o creamos la imagen si es necesario
-                    const imgElement = pictureElement.querySelector('img');
-                    if (imgElement) {
-                        imgElement.src = imageUrl;
-                    } else {
-                        const newImgElement = document.createElement('img');
-                        newImgElement.src = imageUrl;
-                        newImgElement.alt = '';
-                        newImgElement.loading = 'lazy';
-                        pictureElement.appendChild(newImgElement);
-                    }
+                        const imgElement = pictureElement.querySelector('img');
+
+                        if (imgElement) {
+                            imgElement.src = imageUrl;
+                        } 
+                    } 
                 }
-            }
+            });
         });
     } catch (error) {
         console.error(error);
