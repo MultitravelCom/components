@@ -294,46 +294,42 @@ async function replaceImageForUid(resultsListPage) {
                 const pictureElement = itemWithDataUid.querySelector('picture');
 
                 if (pictureElement) {
+                    const sources = pictureElement.querySelectorAll('source');
+                    sources.forEach(source => {
+                        source.srcset = imageUrl;
+                    });
+
                     const imgElement = pictureElement.querySelector('img');
+
                     if (imgElement) {
                         imgElement.src = imageUrl;
-                    }
-                }
+                    } 
+                } 
             } else {
-                // Si no se encuentra el data-uid, creamos la estructura completa
+                // Si no se encuentra el div donde reemplazar la imagen, creamos el div dentro de contenedor info-card__image info-card__image--action
                 const newDiv = document.createElement('div');
-                newDiv.className = 'info-card__image-holder js-open-gallery';
-                newDiv.setAttribute('data-target', '.info-card__modal');
-                newDiv.setAttribute('data-title', 'Selina Bariloche');
-                newDiv.setAttribute('data-category', '<span class=\'group-icon category-icon\'><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span></span>');
-
+                newDiv.className = 'info-card__image info-card__image--action';
+                
+                // Creamos el picture element y sus hijos con la imagen
                 const newPictureElement = document.createElement('picture');
-
-                const sources = [
-                    { media: '(min-width: 1200px)', mediaSize: 'lg' },
-                    { media: '(min-width: 992px)', mediaSize: 'md' },
-                    { media: '(min-width: 768px)', mediaSize: 'sm' },
-                    { media: '(min-width:0px)', mediaSize: 'xs' }
-                ];
-
-                sources.forEach(source => {
-                    const sourceElement = document.createElement('source');
-                    sourceElement.media = source.media;
-                    sourceElement.srcset = `/handlers/imageRequest.ashx?path=${encodeURIComponent(imageUrl)}&mediaSize=${source.mediaSize}&imgSize=tiny`;
-                    newPictureElement.appendChild(sourceElement);
-                });
-
+                const newSourceElement = document.createElement('source');
+                newSourceElement.media = '(min-width: 1200px)';
+                newSourceElement.srcset = imageUrl;
+                
                 const newImgElement = document.createElement('img');
                 newImgElement.alt = '';
                 newImgElement.loading = 'lazy';
                 newImgElement.src = imageUrl;
 
+                newPictureElement.appendChild(newSourceElement);
                 newPictureElement.appendChild(newImgElement);
                 newDiv.appendChild(newPictureElement);
-                
-                // Agregamos el nuevo div al div del item actual
-                const resultsDiv = resultsListPage.querySelector('.results-list');
-                resultsDiv.appendChild(newDiv);
+
+                // Agregamos el nuevo div al contenedor correspondiente
+                const infoCardImageContainer = resultsListPage.querySelector('.info-card__image');
+                if (infoCardImageContainer) {
+                    infoCardImageContainer.appendChild(newDiv);
+                }
             }
         });
     } catch (error) {
