@@ -289,6 +289,13 @@ async function replaceImageForUid(resultsListPage) {
             const uid = entry.uid;
             const imageUrl = entry.imageUrl;
 
+            // Verificamos si ya existe un div con el mismo JP dentro de la estructura del div
+            const existingDiv = resultsListPage.querySelector(`[data-jp="${uid}"]`);
+            if (existingDiv) {
+                // Si ya existe, no hacemos nada
+                return;
+            }
+
             itemsWithDataUid.forEach(item => {
                 const dataUidElement = item.querySelector(`[data-uid="GHU@${uid}"]`);
 
@@ -308,6 +315,31 @@ async function replaceImageForUid(resultsListPage) {
                             imgElement.src = imageUrl;
                         } 
                     } 
+                } else {
+                    // Si no se encuentra el data-uid, creamos el nuevo div solo si no existe un div con el mismo JP
+                    const newDiv = document.createElement('div');
+                    newDiv.className = 'info-card__image-holder js-open-gallery';
+                    newDiv.setAttribute('data-target', '.info-card__modal');
+                    newDiv.setAttribute('data-title', 'Selina Bariloche');
+                    newDiv.setAttribute('data-category', '<span class=\'group-icon category-icon\'><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span></span>');
+                    newDiv.setAttribute('data-jp', uid);
+
+                    const pictureElement = document.createElement('picture');
+                    const sourceElement = document.createElement('source');
+                    sourceElement.setAttribute('media', '(min-width: 1200px)');
+                    sourceElement.srcset = imageUrl;
+
+                    const imgElement = document.createElement('img');
+                    imgElement.alt = '';
+                    imgElement.loading = 'lazy';
+                    imgElement.src = imageUrl;
+
+                    pictureElement.appendChild(sourceElement);
+                    pictureElement.appendChild(imgElement);
+                    newDiv.appendChild(pictureElement);
+
+                    // Agregamos el nuevo div al div del item actual
+                    item.appendChild(newDiv);
                 }
             });
         });
@@ -315,6 +347,7 @@ async function replaceImageForUid(resultsListPage) {
         console.error(error);
     }
 }
+
 
 
 function aplicarModificaciones(resultsListPage) {
