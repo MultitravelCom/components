@@ -425,7 +425,7 @@ const BannerTopHotelResult = () => {
         setIsEventActive(shouldShowEventBanner());
     }, []);
 
-    console.log(isEventActive)
+    console.log("banner",isEventActive)
 
     return (
         <>
@@ -570,7 +570,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    // renderBanner();
+    renderBanner();
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
@@ -620,5 +620,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-// renderBanner();
+renderBanner();
 
