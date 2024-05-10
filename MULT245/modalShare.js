@@ -424,6 +424,7 @@ const BannerTopHotelResult = () => {
         setIsEventActive(shouldShowEventBanner());
     }, []);
 
+    console.log(modalOpen)
 
     return (
         <>
