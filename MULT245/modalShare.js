@@ -369,6 +369,7 @@ const BannerMensageCardApp = () => {
         setIsEventActive(shouldShowEventBanner());
     }, []);
 
+    console.log("men",isEventActive)
 
     return (
         !isEventActive ? (
@@ -424,7 +425,7 @@ const BannerTopHotelResult = () => {
         setIsEventActive(shouldShowEventBanner());
     }, []);
 
-    console.log(modalOpen)
+    console.log(isEventActive)
 
     return (
         <>
