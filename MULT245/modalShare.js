@@ -427,9 +427,54 @@ const BannerTopHotelResult = () => {
 
     return (
         <>
-        {isEventActive ?
-            taxIncludedElement ? (
-                <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
+            {isEventActive ?
+                taxIncludedElement ? (
+                    <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                        <picture>
+                            <source
+                                media="(min-width: 1024px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Internacional/Banners-Resultado-Desktop%202.webp"
+                            />
+                            <source
+                                media="(min-width: 768px) and (max-width: 1023px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Internacional/Banners-Resultado-Desktop%202.webp"
+                            />
+                            <source
+                                media="(max-width: 767px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Internacional/Banners-Resultado-Mobile%202.webp"
+                            />
+                            <img
+                                className="main__container__bannerTopTravelSaleS__img"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Internacional/Banners-Resultado-Desktop%202.webp"
+                                alt="Imagen banner promociones"
+                            />
+                        </picture>
+                    </div>
+                ) : (
+                    <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                        <picture>
+                            <source
+                                media="(min-width: 1024px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Nacional/Banners-Resultado-Desktop%202.webp"
+                            />
+                            <source
+                                media="(min-width: 768px) and (max-width: 1023px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Nacional/Banners-Resultado-Desktop%202.webp"
+                            />
+                            <source
+                                media="(max-width: 767px)"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Nacional/Banners-Resultado-Mobile%202.webp"
+                            />
+                            <img
+                                className="main__container__bannerTopTravelSaleS__img"
+                                srcSet="https://multitravelcom.github.io/components/MULT245/img/Nacional/Banners-Resultado-Desktop%202.webp"
+                                alt="Imagen banner promociones"
+                            />
+                        </picture>
+                    </div>
+                )
+                :
+                <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
                     <picture>
                         <source
                             media="(min-width: 1024px)"
@@ -450,54 +495,9 @@ const BannerTopHotelResult = () => {
                         />
                     </picture>
                 </div>
-            ) : (
-                <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
-                    <picture>
-                        <source
-                            media="(min-width: 1024px)"
-                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                        />
-                        <source
-                            media="(min-width: 768px) and (max-width: 1023px)"
-                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                        />
-                        <source
-                            media="(max-width: 767px)"
-                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
-                        />
-                        <img
-                            className="main__container__bannerTopTravelSaleS__img"
-                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                            alt="Imagen banner promociones"
-                        />
-                    </picture>
-                </div>
-            )
-            :
-            <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
-                <picture>
-                    <source
-                        media="(min-width: 1024px)"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                    />
-                    <source
-                        media="(min-width: 768px) and (max-width: 1023px)"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                    />
-                    <source
-                        media="(max-width: 767px)"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
-                    />
-                    <img
-                        className="main__container__bannerTopTravelSaleS__img"
-                        srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
-                        alt="Imagen banner promociones"
-                    />
-                </picture>
-            </div>
-        }
-        {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
-    </>
+            }
+            {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
+        </>
     );
 };
 const renderBanner = () => {
