@@ -450,7 +450,9 @@ const BannerTopHotelResult = () => {
                             />
                         </picture>
                     </div>
-                ) : (
+                ) 
+                :
+                (
                     <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
                         <picture>
                             <source
@@ -474,7 +476,7 @@ const BannerTopHotelResult = () => {
                     </div>
                 )
                 :
-                <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                (<div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
                     <picture>
                         <source
                             media="(min-width: 1024px)"
@@ -495,7 +497,7 @@ const BannerTopHotelResult = () => {
                         />
                     </picture>
                 </div>
-            }
+            )}
             {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
         </>
     );
