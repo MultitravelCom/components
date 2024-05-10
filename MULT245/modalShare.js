@@ -268,10 +268,9 @@ const zonasTravelSale = [
 //   *************************************************************
 // ********************** Timer *****************************
 function shouldShowEventBanner() {
-    const startDate = new Date("2023-08-27T22:00:00");
-    const endDate = new Date("2024-02-13T23:59:00");
+    const startDate = new Date("2023-05-12T23:59:00");
+    const endDate = new Date("2024-05-19T23:59:00");
     const now = new Date();
-
     return now >= startDate && now <= endDate;
 }
 // **********************************************
@@ -355,49 +354,60 @@ const BannerMensageCard = ({ text_p }) => {
 }
 
 const BannerMensageCardApp = () => {
-    const [isEventActive, setIsEventActive] = React.useState(true);
+    const [isEventActive, setIsEventActive] = React.useState(false);
 
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
-    let travelSaleTrue = false;
-    let showFreezePriceMessageA = false;
-    let showFreezePriceMessageB = false;
-    let showFreezePriceMessageC = false;
+
+    function shouldShowEventBanner() {
+        const startDate = new Date("2023-05-12T23:59:00");
+        const endDate = new Date("2024-05-19T23:59:00");
+        const now = new Date();
+        return now >= startDate && now <= endDate;
+    }
 
     React.useEffect(() => {
-        if (shouldShowEventBanner) {
-            setIsEventActive(true);
-        }
+        setIsEventActive(shouldShowEventBanner());
     }, []);
 
-    if (isZoneInTravelSale()) {
-        travelSaleTrue = true;
-    }
-    if (shouldShowEventBanner()) {
-        showFreezePriceMessageA = travelSaleTrue;
-        showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
-        showFreezePriceMessageC = taxIncludedTrue && !travelSaleTrue;
-    } else {
-        showFreezePriceMessageB = !taxIncludedTrue && !travelSaleTrue;
-        showFreezePriceMessageC = taxIncludedTrue
-    }
 
     return (
-        isEventActive && (
+        !isEventActive ? (
             <>
-                {( showFreezePriceMessageB) && (
-                    <BannerMensageCard text_p={"Aprovechá cuota simple - 3 y 6 cuotas"} />
+                {(!taxIncludedTrue) && (
+                    <BannerMensageCard text_p={"Hot sale con 12 cuotas sin interés"} />
                 )}
-                {(showFreezePriceMessageC) && (
-                    <BannerMensageCard text_p={"Comunicate y ahorrá 30% abonando en USD"} />
+                {(taxIncludedTrue) && (
+                    <BannerMensageCard text_p={"$70.000 de descuento con el cupón: HOT70MIL"} />
                 )}
             </>
         )
+            :
+            (
+                <>
+                    {(!taxIncludedTrue) && (
+                        <BannerMensageCard text_p={"Aprovechá cuota simple - 3 y 6 cuotas"} />
+                    )}
+                    {(taxIncludedTrue) && (
+                        <BannerMensageCard text_p={"Comunicate y ahorrá 30% abonando en USD"} />
+                    )}
+                </>
+            )
     );
 };
 
 const BannerTopHotelResult = () => {
     const [isEventActive, setIsEventActive] = React.useState(false);
     const [modalOpen, setModalOpen] = React.useState(false);
+
+
+    const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
+
+    function shouldShowEventBanner() {
+        const startDate = new Date("2023-05-12T23:59:00");
+        const endDate = new Date("2024-05-19T23:59:00");
+        const now = new Date();
+        return now >= startDate && now <= endDate;
+    }
 
     const handleOpenModal = () => {
         setModalOpen(true);
@@ -409,47 +419,62 @@ const BannerTopHotelResult = () => {
         toggleWhatsappDisplayStyle(false);
     }
 
+
     React.useEffect(() => {
-        // Función para actualizar el estado en función de la presencia de bestprice__taxincluded
-        const updateEventActiveState = () => {
-            const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
-
-            if (!taxIncludedElement) {
-
-                setIsEventActive(true);
-            } else {
-                setIsEventActive(false);
-            }
-        };
-
-        // if (shouldShowEventBanner) {
-        //     setIsEventActive(false);
-        // }
-
-        // Configurar un observador para detectar cambios en results-list__page
-        const observerConfig = {
-            rootNode: document.querySelector('.results-list__page'), // Escuchar solo en results-list__page
-            callback: (summaries) => {
-                updateEventActiveState(); // Actualizar el estado cuando haya cambios
-            },
-            queries: [{ element: '.results-list__page' }], // Escuchar cualquier cambio en results-list__page
-        };
-
-        const observer = new MutationSummary(observerConfig);
-
-        return () => {
-            observer.disconnect();
-        };
+        setIsEventActive(shouldShowEventBanner());
     }, []);
 
 
-    const bannerStyleHotelResult = {
-        display: isEventActive ? 'flex' : 'flex'
-    };
-
     return (
         <>
-            <div className="main__container__bannerTopHotelResult" style={bannerStyleHotelResult} onClick={handleOpenModal}>
+        {isEventActive ?
+            taxIncludedElement ? (
+                <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        />
+                        <source
+                            media="(min-width: 768px) and (max-width: 1023px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        />
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
+                        />
+                        <img
+                            className="main__container__bannerTopTravelSaleS__img"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                            alt="Imagen banner promociones"
+                        />
+                    </picture>
+                </div>
+            ) : (
+                <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        />
+                        <source
+                            media="(min-width: 768px) and (max-width: 1023px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                        />
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
+                        />
+                        <img
+                            className="main__container__bannerTopTravelSaleS__img"
+                            srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerD-Resultado.webp"
+                            alt="Imagen banner promociones"
+                        />
+                    </picture>
+                </div>
+            )
+            :
+            <div className="main__container__bannerTopHotelResult" style={{display:"flex"}} onClick={handleOpenModal}>
                 <picture>
                     <source
                         media="(min-width: 1024px)"
@@ -462,7 +487,6 @@ const BannerTopHotelResult = () => {
                     <source
                         media="(max-width: 767px)"
                         srcSet="https://multitravelcom.github.io/MT/Secciones/BannerResultado-Alojamiento/BannerM-Resultado.webp"
-
                     />
                     <img
                         className="main__container__bannerTopTravelSaleS__img"
@@ -471,8 +495,9 @@ const BannerTopHotelResult = () => {
                     />
                 </picture>
             </div>
-            {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
-        </>
+        }
+        {modalOpen && <ModalCupones isOpen={modalOpen} onClose={handleCloseModal} />}
+    </>
     );
 };
 const renderBanner = () => {
