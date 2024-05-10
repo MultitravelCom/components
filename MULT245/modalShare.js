@@ -267,12 +267,6 @@ const zonasTravelSale = [
 ];
 //   *************************************************************
 // ********************** Timer *****************************
-function shouldShowEventBanner() {
-    const startDate = new Date("2023-05-12T23:59:00");
-    const endDate = new Date("2024-05-19T23:59:00");
-    const now = new Date();
-    return now >= startDate && now <= endDate;
-}
 // **********************************************
 
 function isZoneInTravelSale() {
@@ -358,21 +352,21 @@ const BannerMensageCardApp = () => {
 
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
-    function shouldShowEventBanner() {
-        const startDate = new Date("2023-05-12T23:59:00");
+    function shouldShowEventMensaje() {
+        const startDate = new Date("2024-05-12T23:59:00");
         const endDate = new Date("2024-05-19T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
     }
 
     React.useEffect(() => {
-        setIsEventActive(shouldShowEventBanner());
+        setIsEventActive(shouldShowEventMensaje());
     }, []);
 
     console.log("men",isEventActive)
 
     return (
-        !isEventActive ? (
+        isEventActive ? (
             <>
                 {(!taxIncludedTrue) && (
                     <BannerMensageCard text_p={"Hot sale con 12 cuotas sin interés"} />
@@ -404,7 +398,7 @@ const BannerTopHotelResult = () => {
     const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
 
     function shouldShowEventBanner() {
-        const startDate = new Date("2023-05-12T23:59:00");
+        const startDate = new Date("2024-05-12T23:59:00");
         const endDate = new Date("2024-05-19T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
