@@ -570,7 +570,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    renderBanner();
+    // renderBanner();
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
@@ -620,5 +620,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-renderBanner();
+// renderBanner();
 
