@@ -425,7 +425,7 @@ const BannerTopHotelResult = () => {
         <>
             {isEventActive ?
                 (taxIncludedElement ? (
-                    <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                    <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }}>
                         <picture>
                             <source
                                 media="(min-width: 1024px)"
@@ -449,7 +449,7 @@ const BannerTopHotelResult = () => {
                 )
                     :
                     (
-                        <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                        <div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} >
                             <picture>
                                 <source
                                     media="(min-width: 1024px)"
@@ -472,7 +472,7 @@ const BannerTopHotelResult = () => {
                         </div>
                     ))
                 :
-                (<div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} onClick={handleOpenModal}>
+                (<div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} >
                     <picture>
                         <source
                             media="(min-width: 1024px)"
