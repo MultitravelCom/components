@@ -419,8 +419,6 @@ const BannerTopHotelResult = () => {
         setIsEventActive(shouldShowEventBanner());
     }, []);
 
-    console.log("banner",taxIncludedElement)
-
     return (
         <>
             {isEventActive ?
