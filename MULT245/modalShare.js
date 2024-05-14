@@ -363,8 +363,6 @@ const BannerMensageCardApp = () => {
         setIsEventActive(shouldShowEventMensaje());
     }, []);
 
-    console.log("men",isEventActive)
-
     return (
         isEventActive ? (
             <>
