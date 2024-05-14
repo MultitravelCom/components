@@ -288,7 +288,7 @@ async function replaceImageForUid(resultsListPage) {
 
             // Buscamos el div que contiene el JP correspondiente
             
-            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="HOT:GHU@${uid}"]`);
+            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
             console.log('itemWithDataUid:', itemWithDataUid);
 
             if (itemWithDataUid) {
