@@ -287,7 +287,7 @@ async function replaceImageForUid(resultsListPage) {
             const { uid, imageUrl } = entry;
 
             // Buscamos el div que contiene el JP correspondiente
-            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
+            const itemWithDataUid = resultsListPage.querySelector(`[data-uid="HOT:GHU@${uid}"]`);
 
             if (itemWithDataUid) {
                 console.log(`JP found: ${uid}`)
@@ -381,4 +381,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
+    replaceImageForUid();
 });
