@@ -305,7 +305,6 @@ async function replaceImageForUid(resultsListPage) {
                         imgElement.src = imageUrl;
                     }
                 } else {
-                    // Si no hay un pictureElement, creamos la estructura completa y la agregamos al contenedor adecuado
                     const newDiv = document.createElement('div');
                     newDiv.className = 'info-card__image-holder js-open-gallery';
                     newDiv.setAttribute('data-target', '.info-card__modal');
@@ -326,7 +325,9 @@ async function replaceImageForUid(resultsListPage) {
                     newPictureElement.appendChild(newImgElement);
                     newDiv.appendChild(newPictureElement);
 
-                    // Agregamos el nuevo div al contenedor adecuado
+
+                    console.log("Se creo JP")
+
                     const infoCardImageContainer = itemWithDataUid.querySelector('.info-card__image.info-card__image--action');
                     if (infoCardImageContainer) {
                         infoCardImageContainer.appendChild(newDiv);
@@ -338,9 +339,6 @@ async function replaceImageForUid(resultsListPage) {
         console.error(error);
     }
 }
-
-
-
 
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
