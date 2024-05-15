@@ -382,4 +382,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     aplicarEstiloSegunLongitud();
     aplicarClaseRecomendada();
     checkURL();
+    replaceImageForUid();
 });
