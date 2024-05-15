@@ -274,7 +274,6 @@ async function fetchDataPortadaHotels() {
 }
 
 async function replaceImageForUid(resultsListPage) {
-    console.log("EJECUNTANDOOOOOOO")
     try {
         const apiData = await fetchDataPortadaHotels();
         const uidList = apiData.map(entry => {
@@ -290,9 +289,9 @@ async function replaceImageForUid(resultsListPage) {
             // Buscamos el div que contiene el JP correspondiente
             const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
             console.log("itemWithDataUida", itemWithDataUid)
+            console.log(`JP found: ${uid}`)
 
             if (itemWithDataUid) {
-                console.log(`JP found: ${uid}`)
                 const pictureElement = itemWithDataUid.querySelector('picture');
 
                 if (pictureElement) {
