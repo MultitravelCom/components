@@ -274,6 +274,7 @@ async function fetchDataPortadaHotels() {
 }
 
 async function replaceImageForUid(resultsListPage) {
+    console.log("EJECUNTANDOOOOOOO")
     try {
         const apiData = await fetchDataPortadaHotels();
         const uidList = apiData.map(entry => {
