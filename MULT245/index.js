@@ -307,6 +307,7 @@ async function replaceImageForUid(resultsListPage) {
             const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
             console.log("itemWithDataUida", itemWithDataUid)
             console.log(`JP found: ${uid}`)
+            console.log("imageUrl:", imageUrl);
 
             if (itemWithDataUid) {
                 const pictureElement = itemWithDataUid.querySelector('picture');
