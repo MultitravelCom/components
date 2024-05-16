@@ -275,8 +275,25 @@ async function fetchDataPortadaHotels() {
 
 async function replaceImageForUid(resultsListPage) {
     try {
-        const apiData = await fetchDataPortadaHotels();
-        const uidList = apiData.map(entry => {
+        const pageSize = 100; // Tamaño de página deseado
+        let allData = [];
+
+        // Hacemos un bucle para obtener los datos de cada página
+        let currentPage = 1;
+        let totalPages = 1;
+        do {
+            const response = await fetch(`https://strapicontent.apimultitravel.com/api/imagene-portada-hoteles?pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}`);
+            if (!response.ok) {
+                throw new Error(`No se pudo obtener los datos de la API en la página ${currentPage}`);
+            }
+            const data = await response.json();
+            allData = allData.concat(data.data); // Concatenamos los datos de la página actual
+            totalPages = data.meta.pagination.pageCount; // Actualizamos el número total de páginas
+            currentPage++; // Pasamos a la siguiente página
+        } while (currentPage <= totalPages);
+
+        // Procesamos los datos como desees
+        const uidList = allData.map(entry => {
             return {
                 uid: entry.attributes.JP,
                 imageUrl: entry.attributes.Imagenes_Portad?.data?.[0]?.attributes?.formats?.thumbnail?.url
