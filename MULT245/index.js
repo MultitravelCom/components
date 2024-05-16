@@ -282,7 +282,7 @@ async function replaceImageForUid(resultsListPage) {
         let currentPage = 1;
         let totalPages = 1;
         do {
-            const response = await fetch(`https://strapicontent.apimultitravel.com/api/imagene-portada-hoteles?pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}`);
+            const response = await fetch(`https://strapicontent.apimultitravel.com/api/imagene-portada-hoteles?pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&populate=*`);
             if (!response.ok) {
                 throw new Error(`No se pudo obtener los datos de la API en la página ${currentPage}`);
             }
@@ -309,7 +309,7 @@ async function replaceImageForUid(resultsListPage) {
             console.log(`JP found: ${uid}`)
             console.log("imageUrl:", imageUrl);
 
-            if (itemWithDataUid) {
+            if (itemWithDataUid && imageUrl) {
                 const pictureElement = itemWithDataUid.querySelector('picture');
 
                 if (pictureElement) {
