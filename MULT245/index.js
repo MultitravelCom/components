@@ -287,12 +287,12 @@ async function replaceImageForUid(resultsListPage) {
                 throw new Error(`No se pudo obtener los datos de la API en la página ${currentPage}`);
             }
             const data = await response.json();
-            allData = allData.concat(data.data); // Concatenamos los datos de la página actual
-            totalPages = data.meta.pagination.pageCount; // Actualizamos el número total de páginas
-            currentPage++; // Pasamos a la siguiente página
+            allData = allData.concat(data.data);
+            totalPages = data.meta.pagination.pageCount;
+            currentPage++;
         } while (currentPage <= totalPages);
 
-        // Procesamos los datos como desees
+
         const uidList = allData.map(entry => {
             return {
                 uid: entry.attributes.JP,
@@ -303,11 +303,7 @@ async function replaceImageForUid(resultsListPage) {
         uidList.forEach(entry => {
             const { uid, imageUrl } = entry;
 
-            // Buscamos el div que contiene el JP correspondiente
             const itemWithDataUid = resultsListPage.querySelector(`[data-uid="GHU@${uid}"]`);
-            console.log("itemWithDataUida", itemWithDataUid)
-            console.log(`JP found: ${uid}`)
-            console.log("imageUrl:", imageUrl);
 
             if (itemWithDataUid && imageUrl) {
                 const pictureElement = itemWithDataUid.querySelector('picture');
@@ -329,7 +325,7 @@ async function replaceImageForUid(resultsListPage) {
                     newDiv.setAttribute('data-target', '.info-card__modal');
                     newDiv.setAttribute('data-title', 'Selina Bariloche');
                     newDiv.setAttribute('data-category', '<span class=\'group-icon category-icon\'><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span><span class=\'glyphicon glyphicon-star\'></span></span>');
-                    
+
                     const newPictureElement = document.createElement('picture');
                     const newSourceElement = document.createElement('source');
                     newSourceElement.media = '(min-width: 1200px)';
@@ -343,9 +339,6 @@ async function replaceImageForUid(resultsListPage) {
                     newPictureElement.appendChild(newSourceElement);
                     newPictureElement.appendChild(newImgElement);
                     newDiv.appendChild(newPictureElement);
-
-
-                    console.log("Se creo JP")
 
                     const infoCardImageContainer = itemWithDataUid.querySelector('.info-card__image.info-card__image--action');
                     if (infoCardImageContainer) {
