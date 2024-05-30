@@ -257,7 +257,7 @@ const App = () => {
 
     return (
         <>
-            <div className="container-fluid flex_container">
+            <div className="flex_container">
                 <ButtonModal
                     id="container__widget"
                     style="main__container__widget"
