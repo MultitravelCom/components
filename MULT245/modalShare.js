@@ -381,7 +381,7 @@ const BannerMensageCardApp = () => {
                         <BannerMensageCard text_p={"Aprovechá cuota simple - 3 y 6 cuotas"} />
                     )}
                     {(taxIncludedTrue) && (
-                        <BannerMensageCard text_p={"Comunicate y ahorrá 20% abonando en USD"} />
+                        <BannerMensageCard text_p={"Pagá menos comprando en dólares"} />
                     )}
                 </>
             )
