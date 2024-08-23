@@ -396,8 +396,8 @@ const BannerTopHotelResult = () => {
     const taxIncludedElement = document.querySelector('.results-list__page .bestprice__taxincluded');
 
     function shouldShowEventBanner() {
-        const startDate = new Date("2024-05-12T23:59:00");
-        const endDate = new Date("2024-05-19T23:59:00");
+        const startDate = new Date("2024-08-25T23:59:00");
+        const endDate = new Date("2024-09-01T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
     }
