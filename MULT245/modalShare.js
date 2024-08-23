@@ -353,8 +353,8 @@ const BannerMensageCardApp = () => {
     let taxIncludedTrue = !!document.querySelector('.bestprice__taxincluded');
 
     function shouldShowEventMensaje() {
-        const startDate = new Date("2024-05-12T23:59:00");
-        const endDate = new Date("2024-05-19T23:59:00");
+        const startDate = new Date("2024-08-25T23:59:00");
+        const endDate = new Date("2024-09-01T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
     }
@@ -367,10 +367,10 @@ const BannerMensageCardApp = () => {
         isEventActive ? (
             <>
                 {(!taxIncludedTrue) && (
-                    <BannerMensageCard text_p={"Hot sale con 12 cuotas sin interés"} />
+                    <BannerMensageCard text_p={"12 cuotas y 20%OFF ingresando el cupón: TRAVELSALE20"} />
                 )}
                 {(taxIncludedTrue) && (
-                    <BannerMensageCard text_p={"$70.000 de descuento con el cupón: HOT70MIL"} />
+                    <BannerMensageCard text_p={"20%OFF ingresando el cupón: TRAVELSALE20"} />
                 )}
             </>
         )
