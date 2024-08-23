@@ -468,7 +468,7 @@ const BannerTopHotelResult = () => {
                         </div>
                     ))
                 :
-                (<div className="main__container__bannerTopHotelResult" style={{ display: "flex" }} >
+                (<div className="main__container__bannerTopHotelResult" style={{ display: "none" }} >
                     <picture>
                         <source
                             media="(min-width: 1024px)"
