@@ -513,42 +513,6 @@ const renderBanner = () => {
     }
 };
 
-// const checkAndRender = async () => {
-//     const infoCardContents = document.querySelectorAll('.info-card__content');
-//     const infoCardImgContents = document.querySelectorAll('.info-card__image');
-
-//     // Esperar a que los elementos estén disponibles
-//     while (infoCardContents.length === 0) {
-//         await new Promise(resolve => setTimeout(resolve, 1000));
-//     }
-
-//     // Renderizar componentes de imágenes
-//     infoCardImgContents.forEach(infoCardImgContent => {
-//         if (!infoCardImgContent.querySelector('.main__container__iconImg')) {
-//             const nuevoDivIconImg = document.createElement('div');
-//             infoCardImgContent.appendChild(nuevoDivIconImg);
-//             nuevoDivIconImg.classList.add("main__container__iconImg", "js-open-gallery");
-//             ReactDOM.render(<IconImg />, nuevoDivIconImg);
-//         }
-//     });
-
-//     // Renderizar componentes de contenido
-//     infoCardContents.forEach(infoCardContent => {
-//         if (!infoCardContent.querySelector('.main__container__bannerMensageCard__App')) {
-//             const nuevoDivReact = document.createElement('div');
-//             const nuevoDivBannerMensage = document.createElement('div');
-
-//             infoCardContent.appendChild(nuevoDivReact);
-//             infoCardContent.appendChild(nuevoDivBannerMensage);
-
-//             nuevoDivBannerMensage.classList.add('main__container__bannerMensageCard__App');
-
-//             ReactDOM.render(<CompartirAlojamiento />, nuevoDivReact);
-//             ReactDOM.render(<BannerMensageCardApp isZoneInSale={isZoneInTravelSale()} />, nuevoDivBannerMensage);
-//         }
-//     });
-// };
-
 const checkAndRender = async () => {
 
     let infoCardContents = document.querySelectorAll('.info-card__content');
@@ -560,7 +524,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    setTmeout(renderBanner, 6000);
+    setTmeout(renderBanner, 5000);
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
@@ -610,5 +574,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-setTimeout(renderBanner, 6000);
+setTimeout(renderBanner, 5000);
 

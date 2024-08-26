@@ -333,19 +333,19 @@ const App = () => {
     );
 };
 
-// async function run() {
-//     await changeText();
-//     await showPromocodesDiv();
-// }
+async function run() {
+    await changeText();
+    await showPromocodesDiv();
+}
 
-// run();
+run();
 
 
-// const confirmBooking = document.querySelector('.confirm-booking__promocodes');
-// if (confirmBooking) {
-//     const newElementBookingCupons = document.createElement('div');
-//     newElementBookingCupons.classList.add('container__conocer__cupones');
-//     ReactDOM.render(<App />, newElementBookingCupons);
+const confirmBooking = document.querySelector('.confirm-booking__promocodes');
+if (confirmBooking) {
+    const newElementBookingCupons = document.createElement('div');
+    newElementBookingCupons.classList.add('container__conocer__cupones');
+    ReactDOM.render(<App />, newElementBookingCupons);
 
-//     confirmBooking.appendChild(newElementBookingCupons);
-// }
+    confirmBooking.appendChild(newElementBookingCupons);
+}
