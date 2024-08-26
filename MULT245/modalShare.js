@@ -378,10 +378,10 @@ const BannerMensageCardApp = () => {
             (
                 <>
                     {(!taxIncludedTrue) && (
-                        <BannerMensageCard text_p={"Aprovechá cuota simple - 3 y 6 cuotas"} />
+                        <BannerMensageCard text_p={"12 cuotas y 20%OFF ingresando el cupón: TRAVELSALE20"} />
                     )}
                     {(taxIncludedTrue) && (
-                        <BannerMensageCard text_p={"Pagá menos comprando en dólares"} />
+                        <BannerMensageCard text_p={"20%OFF ingresando el cupón: TRAVELSALE20"} />
                     )}
                 </>
             )
@@ -524,7 +524,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    setTmeout(renderBanner, 2000);
+    // setTmeout(renderBanner, 2000);
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
@@ -572,6 +572,8 @@ function observarCambiosCheckAndRenderII() {
 
     checkAndRender(); // Llamar a checkAndRender al cargar la página por primera vez
 }
+
+
 checkAndRender();
 observarCambiosCheckAndRenderII();
 setTimeout(renderBanner, 2000);
