@@ -524,7 +524,7 @@ const checkAndRender = async () => {
         infoCardImgContents = document.querySelectorAll('.info-card__image');
     }
 
-    setTmeout(renderBanner, 5000);
+    setTmeout(renderBanner, 2000);
 
     infoCardImgContents.forEach(infoCardImgContent => {
 
@@ -574,5 +574,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-setTimeout(renderBanner, 5000);
+setTimeout(renderBanner, 2000);
 
