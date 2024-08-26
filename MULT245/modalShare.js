@@ -574,5 +574,5 @@ function observarCambiosCheckAndRenderII() {
 }
 checkAndRender();
 observarCambiosCheckAndRenderII();
-setTimeout(renderBanner, 2000);
+setTimeout(renderBanner,5000);
 
