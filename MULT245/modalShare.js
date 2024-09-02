@@ -354,7 +354,7 @@ const BannerMensageCardApp = () => {
 
     function shouldShowEventMensaje() {
         const startDate = new Date("2024-08-25T23:59:00");
-        const endDate = new Date("2024-09-01T23:59:00");
+        const endDate = new Date("2024-09-06T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
     }
@@ -397,7 +397,7 @@ const BannerTopHotelResult = () => {
 
     function shouldShowEventBanner() {
         const startDate = new Date("2024-08-25T23:59:00");
-        const endDate = new Date("2024-09-01T23:59:00");
+        const endDate = new Date("2024-09-06T23:59:00");
         const now = new Date();
         return now >= startDate && now <= endDate;
     }
