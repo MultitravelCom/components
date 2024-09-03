@@ -117,7 +117,7 @@ const getCouponsFetch = async () => {
 // Modal
 const ModalCupones = ({ isOpen, onClose }) => {
     const startDate = new Date("2024-08-25T23:59:00");
-    const endDate = new Date("2024-09-01T23:59:00");
+    const endDate = new Date("2024-09-06T23:59:00");
     const shouldShowCupones = isWithinDateRange(startDate, endDate);
 
 
