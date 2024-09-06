@@ -352,6 +352,41 @@ async function replaceImageForUid(resultsListPage) {
     }
 }
 
+async function truncateTitles(selector, maxWords = null) {
+    const titles = document.querySelectorAll(selector);
+
+    titles.forEach(function (title) {
+        // Obtiene el texto original
+        const originalText = title.textContent;
+
+        // Si se ha pasado un número máximo de palabras, aplicar truncado de palabras
+        if (maxWords !== null) {
+            const words = originalText.split(' ');
+            if (words.length > maxWords) {
+                const truncatedText = words.slice(0, maxWords).join(' ') + ' ...';
+                title.textContent = truncatedText;
+
+                // Imprime en la consola el texto original y truncado
+                console.log('Texto original:', originalText);
+                console.log('Texto truncado:', truncatedText);
+            } else {
+                console.log('Texto sin truncar:', originalText);
+            }
+        } else {
+            // Aplicar truncado de una línea usando estilos CSS dinámicamente
+            title.style.display = '-webkit-box';
+            title.style.webkitBoxOrient = 'vertical';
+            title.style.overflow = 'hidden';
+            title.style.textOverflow = 'ellipsis';
+            title.style.whiteSpace = 'nowrap'; // Evita varias líneas
+            title.style.webkitLineClamp = '1'; // Limitar a una línea
+
+            // Imprime en la consola el texto original (ya que el truncado se maneja con CSS)
+            console.log('Texto (CSS truncado):', originalText);
+        }
+    });
+}
+
 function aplicarModificaciones(resultsListPage) {
     aplicarClaseRecomendada(resultsListPage);
     // agreeStarIcon(resultsListPage);
@@ -362,6 +397,7 @@ function aplicarModificaciones(resultsListPage) {
     agregarTagAWithHREF(resultsListPage);
     checkURL();
     replaceImageForUid(resultsListPage);
+    truncateTitles('.info-card__title--action a');
 };
 
 function observarCambiosCheckAndRender() {
