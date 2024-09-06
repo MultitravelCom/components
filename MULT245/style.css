@@ -173,7 +173,7 @@
 
 .info-card__action-item {
   display: none;
-} 
+}
 
 .info-card__category>.glyphicon .glyphicon-star {
   font-size: 21px;
@@ -340,10 +340,11 @@
   align-items: center;
   border-radius: 8px;
   overflow: hidden;
-  cursor:  pointer;
+  cursor: pointer;
 
 }
-.container-BannerTopHotelResult{
+
+.container-BannerTopHotelResult {
   padding: 5px;
 }
 
@@ -934,6 +935,15 @@
     right: inherit;
     bottom: -23px;
   }
+}
+
+.info-card__title a {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 767px) {
