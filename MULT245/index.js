@@ -389,7 +389,7 @@ function aplicarModificaciones(resultsListPage) {
     agregarTagAWithHREF(resultsListPage);
     checkURL();
     replaceImageForUid(resultsListPage);
-    truncateTitles('.info-card__title--action a', 7);
+    truncateTitles('.info-card__title--action a', 4);
 };
 
 function observarCambiosCheckAndRender() {
