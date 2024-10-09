@@ -79,7 +79,7 @@ function Ofertas() {
     const newWebLink = 'https://multitravel.com.ar/';
     const path = window.location.pathname;
 
-    if (path === "/flights/") {
+    if (path === "/vuelos/") {
         return (
             // <>
             //     <div className="main__container_secciones">

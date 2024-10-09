@@ -1,14 +1,14 @@
 [
     {
         "destino": "BHI",
-        "deep_link": "https://ar.multitravel.com/flights/results.aspx?destinationID=48563&originID=42117&paxs=10&accion=searchflights&endDate=2023-07-01&roundtrip=roundtrip&startDate=2023-06-25"
+        "deep_link": "https://ar.multitravel.com/vuelos/results.aspx?destinationID=48563&originID=42117&paxs=10&accion=searchflights&endDate=2023-07-01&roundtrip=roundtrip&startDate=2023-06-25"
     },
     {
         "destino": "BRC",
-        "deep_link": "https://ar.multitravel.com/flights/results.aspx?destinationID=48656&originID=42117&paxs=10&accion=searchflights&endDate=2023-08-03&roundtrip=roundtrip&startDate=2023-07-30"
+        "deep_link": "https://ar.multitravel.com/vuelos/results.aspx?destinationID=48656&originID=42117&paxs=10&accion=searchflights&endDate=2023-08-03&roundtrip=roundtrip&startDate=2023-07-30"
     },
     {
         "destino": "SLA",
-        "deep_link": "https://ar.multitravel.com/flights/results.aspx?destinationID=58487&originID=42117&paxs=10&accion=searchflights&endDate=2023-08-14&roundtrip=roundtrip&startDate=2023-08-08"
+        "deep_link": "https://ar.multitravel.com/vuelos/results.aspx?destinationID=58487&originID=42117&paxs=10&accion=searchflights&endDate=2023-08-14&roundtrip=roundtrip&startDate=2023-08-08"
     }
 ]

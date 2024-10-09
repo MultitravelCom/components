@@ -143,7 +143,6 @@ function ComponenteCupones() {
         // return isWithinDateRangeCoupons(startDate, endDate);
         
         const result = isWithinDateRangeCoupons(startDate, endDate);
-        console.log("---->>", result)
 
         return result;
         

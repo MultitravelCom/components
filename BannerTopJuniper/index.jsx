@@ -207,7 +207,7 @@ const setDataForBanner = (data) => {
     imageUrl.push(alojamientosData[2]?.attributes?.Link_Imagen);
     resultBanner = { imageUrlsDesktop, imageUrlMobile, imageUrl };
     return resultBanner;
-  } else if (url.includes("/flights")) {
+  } else if (url.includes("/vuelos")) {
     const vuelosData = data.vuelosData;
     imageUrlsDesktop.push(
       vuelosData[0]?.attributes?.Imagen_Desktop?.data[0]?.attributes?.url
