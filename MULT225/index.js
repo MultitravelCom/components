@@ -114,9 +114,22 @@ const Secciones = ({ seccion, url, className }) => {
 };
 
 function Ofertas(props) {
+
+    const subdomain = getSubdomain();
+
+    const content = {
+        br: {
+            title: 'Mais ofertas em Multitravel.com',
+        },
+        cl: {
+            title: 'Mas ofertas en Multitravel.com',
+        }
+    };
+    const text = content[subdomain]
+
     return (
         <>
-            <h2 className="main__conteiner__titulo">Mais ofertas em Multitravel.com</h2>
+            <h2 className="main__conteiner__titulo">{text.title}</h2>
             <div className="main__conteiner">
                 <div className="main__conteiner__s3__piensa row-cols-3">
                     <Secciones seccion={props.seccion1} url={props.url1} className={props.className1} />
