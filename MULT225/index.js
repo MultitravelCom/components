@@ -55,7 +55,7 @@ const MediosDePagos = () => {
         cl: {
             section: 'Medios de pago',
             title: 'Tú decides',
-            subtitle: 'Encuentra...',
+            subtitle: 'Encuentra todos los medios de pago exclusivos para ti',
             button: 'Descubrir'
         }
     };
