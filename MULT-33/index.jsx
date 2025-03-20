@@ -1,6 +1,6 @@
 // ******************* STYLED **********************
 const StyledAccordeonContainer = styled.div`
-display: block;
+  display: block;
 `;
 
 const StyledAccordeonFooter = styled.div`
@@ -44,7 +44,7 @@ const FlagImage = styled.img`
 const StyledParagraph = styled.p`
   color: black;
   margin: 0;
-  font-size: ${(props) => props.fontSize || '16px'};
+  font-size: ${(props) => props.fontSize || "16px"};
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
@@ -85,12 +85,14 @@ const AccordionNavegateSiteTitle = () => {
       const currentURL = window.location.href;
       const isBR = currentURL.includes("https://br.multitravel.com/");
       const isAR = currentURL.includes("https://multitravel.com.ar/");
+      const isCL = currentURL.includes("https://cl.multitravel.com/");
 
-      const newTitle = isAR
-        ? "Navegar en este sitio:"
-        : isBR
-        ? "Navegar no site de:"
-        : "Navegar en este sitio:";
+      const newTitle =
+        isAR || isCL
+          ? "Navegar en este sitio:"
+          : isBR
+          ? "Navegar no site de:"
+          : "Navegar en este sitio:";
       setTitle(newTitle);
     };
 
@@ -109,6 +111,8 @@ const getCountryFromUrl = () => {
     return "Argentina";
   } else if (currentUrl.includes("https://br.multitravel.com/")) {
     return "Brasil";
+  } else if (currentUrl.includes("https://cl.multitravel.com/")) {
+    return "Chile";
   }
   return null;
 };
@@ -124,6 +128,7 @@ const AccordionNavegate = () => {
   const handleOptionClick = (country) => {
     const argentinaUrl = "https://multitravel.com.ar/";
     const brazilUrl = "https://br.multitravel.com/";
+    const chileUrl = "https://cl.multitravel.com/";
 
     const currentUrl = window.location.href;
     let urlToRedirect = "";
@@ -131,7 +136,6 @@ const AccordionNavegate = () => {
     if (
       country === "Argentina" &&
       !currentUrl.includes("https://multitravel.com.ar/")
-
     ) {
       urlToRedirect = argentinaUrl;
     } else if (
@@ -139,6 +143,11 @@ const AccordionNavegate = () => {
       !currentUrl.includes("https://br.multitravel.com/")
     ) {
       urlToRedirect = brazilUrl;
+    } else if (
+      country === "Chile" &&
+      !currentUrl.includes("https://cl.multitravel.com/")
+    ) {
+      urlToRedirect = chileUrl;
     }
 
     if (urlToRedirect) {
@@ -154,6 +163,8 @@ const AccordionNavegate = () => {
       return "https://multitravelcom.github.io/components/MULT-33/AR.png";
     } else if (country === "Brasil") {
       return "https://multitravelcom.github.io/components/MULT-33/BR.png";
+    }else if (country === "Chile") {
+      return "https://multitravelcom.github.io/components/MULT-33/CL.png";
     }
     return "";
   };
@@ -181,20 +192,38 @@ const AccordionNavegate = () => {
   return (
     <>
       <StyledAccordeonContainer ref={accordionRef}>
-        <StyledAccordeonFooter onClick={() => setIsOpen((prevState) => !prevState)}>
+        <StyledAccordeonFooter
+          onClick={() => setIsOpen((prevState) => !prevState)}
+        >
           <FlagImage src={getFlagImage(selectedCountry)} alt="" />
           <StyledParagraph noHover>{selectedCountry}</StyledParagraph>
-          <ChevronIcon className="glyphicon glyphicon-chevron-down" isOpen={isOpen} />
+          <ChevronIcon
+            className="glyphicon glyphicon-chevron-down"
+            isOpen={isOpen}
+          />
         </StyledAccordeonFooter>
         {isOpen && (
           <StyledAccordeonFooterOpen>
-            <StyledParagraph fontSize="14px" onClick={() => handleOptionClick("Argentina")}>
+            <StyledParagraph
+              fontSize="14px"
+              onClick={() => handleOptionClick("Argentina")}
+            >
               <FlagImage src={getFlagImage("Argentina")} alt="" />
               Argentina
             </StyledParagraph>
-            <StyledParagraph fontSize="14px" onClick={() => handleOptionClick("Brasil")}>
+            <StyledParagraph
+              fontSize="14px"
+              onClick={() => handleOptionClick("Brasil")}
+            >
               <FlagImage src={getFlagImage("Brasil")} alt="" />
               Brasil
+            </StyledParagraph>
+            <StyledParagraph
+              fontSize="14px"
+              onClick={() => handleOptionClick("Chile")}
+            >
+              <FlagImage src={getFlagImage("Chile")} alt="" />
+              Chile
             </StyledParagraph>
           </StyledAccordeonFooterOpen>
         )}
@@ -205,9 +234,9 @@ const AccordionNavegate = () => {
 
 const AccordionNavegateSite = () => {
   React.useEffect(() => {
-    const element = document.getElementById('main-footer-checkbooking');
+    const element = document.getElementById("main-footer-checkbooking");
     if (element) {
-      element.style.display = 'block';
+      element.style.display = "block";
     }
   }, []);
 
@@ -219,5 +248,7 @@ const AccordionNavegateSite = () => {
   );
 };
 
-ReactDOM.render(<AccordionNavegateSite />,document.getElementById('main-footer-checkbooking'));
-
+ReactDOM.render(
+  <AccordionNavegateSite />,
+  document.getElementById("main-footer-checkbooking")
+);
