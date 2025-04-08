@@ -111,10 +111,10 @@ function hidedocTypeOnClick(docTypeSelector, docTypeDNIselector) {
     }
 }
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("🚀 ~ changeDocumentText:", changeDocumentText)
     changeDocumentText();
     modifyFieldsTextFlights();
     modifyFieldsTextBooking();
     changePostalCodeText();
     hidedocTypeOnClick('#select2-pax-document-type-bu-container', '#select2-pax-document-type-ub-result-467h-2');
-
 });
