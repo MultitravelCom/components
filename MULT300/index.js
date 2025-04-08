@@ -51,7 +51,7 @@ function modifyFieldsTextBooking() {
         const fieldLabel = fieldContainer.querySelector('.confirm-booking__field-label');
         if (fieldLabel) {
             const labelContent = fieldLabel.textContent.trim();
-            if (labelContent === 'Documento de identidad / Pasaporte') {
+            if (labelContent === 'Documento de identidad / Pasaporte*') {
                 fieldLabel.textContent = 'RUT/Pasaporte*';
             }
         }
@@ -69,7 +69,7 @@ function changeDocumentText() {
         const fieldLabel = element.querySelector('.booking-paxes__pax-field-label');
         if (fieldLabel) {
             const labelText = fieldLabel.textContent.trim();
-            if (labelText === 'Número do documento*') {
+            if (labelText === 'Documento de identidad / Pasaporte*') {
                 fieldLabel.textContent = 'RUT/Pasaporte';
             }
         }
@@ -79,6 +79,7 @@ function changeDocumentText() {
 function changePostalCodeText() {
     // Encuentra el contenedor que contiene los campos
     const fieldsContainer = document.querySelector('.confirm-booking__fields');
+    console.log("🚀 ~ changePostalCodeText ~ fieldsContainer")
 
     // Busca todos los elementos con la clase confirm-booking__field col-sm-2 dentro del contenedor
     const elementsToModify = fieldsContainer.querySelectorAll('.confirm-booking__field.col-sm-2');
