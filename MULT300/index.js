@@ -110,7 +110,7 @@ function hidedocTypeOnClick(docTypeSelector, docTypeDNIselector) {
         console.error('Los elementos no fueron encontrados en el DOM.');
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     changeDocumentText();
     modifyFieldsTextFlights();
     modifyFieldsTextBooking();
