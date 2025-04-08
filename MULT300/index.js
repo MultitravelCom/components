@@ -30,8 +30,8 @@ function modifyFieldsTextFlights() {
         const fieldLabel = element.querySelector('.confirm-booking__field-label');
         if (fieldLabel) {
             const labelContent = fieldLabel.textContent.trim();
-            if (labelContent === 'Documento de identidade / Passaporte') {
-                fieldLabel.textContent = 'CPF/CNPJ*';
+            if (labelContent === 'Documento de identidad / Pasaporte') {
+                fieldLabel.textContent = 'RUT/Pasaporte*';
             }
         }
     });
@@ -51,8 +51,8 @@ function modifyFieldsTextBooking() {
         const fieldLabel = fieldContainer.querySelector('.confirm-booking__field-label');
         if (fieldLabel) {
             const labelContent = fieldLabel.textContent.trim();
-            if (labelContent === 'Documento de identidade / Passaporte*') {
-                fieldLabel.textContent = 'CPF/CNPJ*';
+            if (labelContent === 'Documento de identidad / Pasaporte') {
+                fieldLabel.textContent = 'RUT/Pasaporte*';
             }
         }
     } else {
@@ -70,11 +70,31 @@ function changeDocumentText() {
         if (fieldLabel) {
             const labelText = fieldLabel.textContent.trim();
             if (labelText === 'Número do documento*') {
-                fieldLabel.textContent = 'CPF/CNPJ';
+                fieldLabel.textContent = 'RUT/Pasaporte';
             }
         }
     });
 }
+
+function changePostalCodeText() {
+    // Encuentra el contenedor que contiene los campos
+    const fieldsContainer = document.querySelector('.confirm-booking__fields');
+
+    // Busca todos los elementos con la clase confirm-booking__field col-sm-2 dentro del contenedor
+    const elementsToModify = fieldsContainer.querySelectorAll('.confirm-booking__field.col-sm-2');
+
+    // Recorre los elementos y realiza las modificaciones necesarias
+    elementsToModify.forEach(element => {
+        const fieldLabel = element.querySelector('.confirm-booking__field-label');
+        if (fieldLabel) {
+            const labelContent = fieldLabel.textContent.trim();
+            if (labelContent === 'Código postal') {
+                fieldLabel.textContent = 'Comuna';
+            }
+        }
+    });
+}
+
 // Funcion para ocutar DNI del campo pasaporte en B1
 function hidedocTypeOnClick(docTypeSelector, docTypeDNIselector) {
     const docType = document.querySelector(docTypeSelector);
@@ -93,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     changeDocumentText();
     modifyFieldsTextFlights();
     modifyFieldsTextBooking();
+    changePostalCodeText();
     hidedocTypeOnClick('#select2-pax-document-type-bu-container', '#select2-pax-document-type-ub-result-467h-2');
 
 });
