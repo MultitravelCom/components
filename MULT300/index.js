@@ -89,7 +89,7 @@ function changePostalCodeText() {
         const fieldLabel = element.querySelector('.confirm-booking__field-label');
         if (fieldLabel) {
             const labelContent = fieldLabel.textContent.trim();
-            if (labelContent === 'Código postal') {
+            if (labelContent === 'Código postal*') {
                 fieldLabel.textContent = 'Comuna';
             }
         }
@@ -110,7 +110,7 @@ function hidedocTypeOnClick(docTypeSelector, docTypeDNIselector) {
         console.error('Los elementos no fueron encontrados en el DOM.');
     }
 }
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
     changeDocumentText();
     modifyFieldsTextFlights();
     modifyFieldsTextBooking();
