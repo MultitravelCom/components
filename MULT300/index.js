@@ -88,7 +88,7 @@ function changePostalCodeText() {
         const fieldLabel = element.querySelector('.confirm-booking__field-label');
         if (fieldLabel) {
             const labelContent = fieldLabel.textContent.trim();
-            if (labelContent === 'Código postal') {
+            if (labelContent === 'Código postal*') {
                 fieldLabel.textContent = 'Comuna';
             }
         }
@@ -102,12 +102,12 @@ function hidedocTypeOnClick(docTypeSelector, docTypeDNIselector) {
 
     if (docType && docTypeDNI) {
         docType.addEventListener('click', function () {
-          console.log("click");
-          docTypeDNI.style.display = 'none';
+            console.log("click");
+            docTypeDNI.style.display = 'none';
         });
-      } else {
+    } else {
         console.error('Los elementos no fueron encontrados en el DOM.');
-      }
+    }
 }
 document.addEventListener("DOMContentLoaded", function () {
     changeDocumentText();
